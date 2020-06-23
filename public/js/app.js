@@ -38451,6 +38451,211 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Prevision.vue?vue&type=template&id=3c84d4f0&":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Prevision.vue?vue&type=template&id=3c84d4f0& ***!
+  \************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "container text-center my-3",
+        attrs: { id: "PrevisionCarousel" }
+      },
+      [
+        _c("div", { staticClass: "row mx-auto my-auto" }, [
+          _c(
+            "div",
+            {
+              staticClass: "carousel slide w-100",
+              attrs: { id: "recipeCarousel", "data-ride": "carousel" }
+            },
+            [
+              _c(
+                "div",
+                {
+                  staticClass: "carousel-inner w-100",
+                  attrs: { role: "listbox" }
+                },
+                [
+                  _c("div", { staticClass: "carousel-item active" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c(
+                        "div",
+                        { staticClass: "card card-body carousel--prevision" },
+                        [
+                          _c("img", {
+                            staticClass: "img-fluid",
+                            attrs: {
+                              src: "img/Logo_Consalud.png",
+                              alt: "Consalud"
+                            }
+                          })
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "carousel-item" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c(
+                        "div",
+                        { staticClass: "card card-body carousel--prevision" },
+                        [
+                          _c("img", {
+                            staticClass: "img-fluid",
+                            attrs: {
+                              src: "img/Logo_Banmedica.png",
+                              alt: "Banmedica"
+                            }
+                          })
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "carousel-item" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c(
+                        "div",
+                        { staticClass: "card card-body carousel--prevision" },
+                        [
+                          _c("img", {
+                            staticClass: "img-fluid",
+                            attrs: {
+                              src: "img/Logo_Cruz_Blanca.png",
+                              alt: "Cruz_Blanca"
+                            }
+                          })
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "carousel-item" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c(
+                        "div",
+                        { staticClass: "card card-body carousel--prevision" },
+                        [
+                          _c("img", {
+                            staticClass: "img-fluid",
+                            attrs: { src: "img/Logo_Fonasa.svg", alt: "Fonasa" }
+                          })
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "carousel-item" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c(
+                        "div",
+                        { staticClass: "card card-body carousel--prevision" },
+                        [
+                          _c("img", {
+                            staticClass: "img-fluid",
+                            attrs: {
+                              src: "img/Logo_Masvida.png",
+                              alt: "Mas_Vida"
+                            }
+                          })
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "carousel-item" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c(
+                        "div",
+                        { staticClass: "card card-body carousel--prevision" },
+                        [
+                          _c("img", {
+                            staticClass: "img-fluid",
+                            attrs: {
+                              src: "img/Logo_Colmena_2.jpg",
+                              alt: "Colmena"
+                            }
+                          })
+                        ]
+                      )
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "carousel-control-prev w-auto",
+                  attrs: {
+                    href: "#recipeCarousel",
+                    role: "button",
+                    "data-slide": "prev"
+                  }
+                },
+                [
+                  _c("span", {
+                    staticClass:
+                      "carousel-control-prev-icon bg-dark border border-dark rounded-circle",
+                    attrs: { "aria-hidden": "true" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "sr-only" }, [_vm._v("Previous")])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "carousel-control-next w-auto",
+                  attrs: {
+                    href: "#recipeCarousel",
+                    role: "button",
+                    "data-slide": "next"
+                  }
+                },
+                [
+                  _c("span", {
+                    staticClass:
+                      "carousel-control-next-icon bg-dark border border-dark rounded-circle",
+                    attrs: { "aria-hidden": "true" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "sr-only" }, [_vm._v("Next")])
+                ]
+              )
+            ]
+          )
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js":
 /*!********************************************************************!*\
   !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
@@ -50647,6 +50852,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 Vue.component('navbar', __webpack_require__(/*! ./components/Navbar.vue */ "./resources/js/components/Navbar.vue")["default"]);
 Vue.component('carousel', __webpack_require__(/*! ./components/Carousel.vue */ "./resources/js/components/Carousel.vue")["default"]);
+Vue.component('prevision', __webpack_require__(/*! ./components/Prevision.vue */ "./resources/js/components/Prevision.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -53626,6 +53832,59 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Prevision.vue":
+/*!***********************************************!*\
+  !*** ./resources/js/components/Prevision.vue ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Prevision_vue_vue_type_template_id_3c84d4f0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Prevision.vue?vue&type=template&id=3c84d4f0& */ "./resources/js/components/Prevision.vue?vue&type=template&id=3c84d4f0&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _Prevision_vue_vue_type_template_id_3c84d4f0___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Prevision_vue_vue_type_template_id_3c84d4f0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Prevision.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Prevision.vue?vue&type=template&id=3c84d4f0&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/Prevision.vue?vue&type=template&id=3c84d4f0& ***!
+  \******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Prevision_vue_vue_type_template_id_3c84d4f0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Prevision.vue?vue&type=template&id=3c84d4f0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Prevision.vue?vue&type=template&id=3c84d4f0&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Prevision_vue_vue_type_template_id_3c84d4f0___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Prevision_vue_vue_type_template_id_3c84d4f0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/jquery.easing.min.js":
 /*!*******************************************!*\
   !*** ./resources/js/jquery.easing.min.js ***!
@@ -53868,8 +54127,8 @@ global.$ = global.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jqu
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Psicología Chile\Proyectos\psicologia-chile\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Psicología Chile\Proyectos\psicologia-chile\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\alvaro\Desktop\Psicologia Chile\Upgrade Psicologia\Upgrade Psicologia Chile\psicologia-chile\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\alvaro\Desktop\Psicologia Chile\Upgrade Psicologia\Upgrade Psicologia Chile\psicologia-chile\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

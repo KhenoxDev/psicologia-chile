@@ -14,8 +14,34 @@
         <div id="app">
 			<navbar logo="{{ asset('img/logo.png') }}"></navbar>
 			<carousel></carousel>
-
+			<prevision></prevision>
         </div>
-        <script src="{{ asset('js/app.js') }}"></script>
+		<script src="{{ asset('js/app.js') }}"></script>
+
+		<!-- Carousel Prevision -->
+		<script>
+			$('#recipeCarousel').carousel({
+				interval: 4000
+				})
+
+				$('.carousel .carousel-item').each(function(){
+					var minPerSlide = 3;
+					var next = $(this).next();
+					if (!next.length) {
+					next = $(this).siblings(':first');
+					}
+					next.children(':first-child').clone().appendTo($(this));
+
+					for (var i=0;i<minPerSlide;i++) {
+						next=next.next();
+						if (!next.length) {
+							next = $(this).siblings(':first');
+						}
+
+						next.children(':first-child').clone().appendTo($(this));
+					}
+				});
+		</script>
+
     </body>
 </html>

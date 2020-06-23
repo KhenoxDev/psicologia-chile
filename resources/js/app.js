@@ -12,7 +12,6 @@ require('./jquery.easing.min');
 require('./scripts');
 require('./bootstrap');
 
-
 window.Vue = require('vue');
 
 /**
@@ -28,6 +27,7 @@ window.Vue = require('vue');
 
 Vue.component('navbar', require('./components/Navbar.vue').default);
 Vue.component('carousel', require('./components/Carousel.vue').default);
+Vue.component('prevision', require('./components/Prevision.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

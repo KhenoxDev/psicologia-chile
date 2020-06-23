@@ -11230,3 +11230,87 @@ form .row:first-child .floating-label-form-group {
   background-color: #1a252f;
 }
 
+/* Bootstrap Lightbox using Modal */
+
+#profile-grid {
+  overflow: auto;
+  white-space: normal;
+}
+
+#profile-grid .profile {
+  padding-bottom: 40px;
+}
+
+#profile-grid .panel {
+  padding: 0;
+}
+
+#profile-grid .panel-body {
+  padding: 15px;
+}
+
+#profile-grid .profile-name {
+  font-weight: bold;
+}
+
+#profile-grid .thumbnail {
+  margin-bottom: 6px;
+}
+
+#profile-grid .panel-thumbnail {
+  overflow: hidden;
+}
+
+#profile-grid .img-rounded {
+  border-radius: 4px 4px 0 0;
+}
+
+/* Estilo Carousel Prevision */
+
+/* TODO: pendiente de transformar a SCSS */
+
+@media (max-width: 768px) {
+  .carousel-inner .carousel-item > div {
+    display: none;
+  }
+
+  .carousel-inner .carousel-item > div:first-child {
+    display: block;
+  }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+  display: flex;
+}
+
+/* display 3 */
+
+@media (min-width: 768px) {
+  .carousel-inner .carousel-item-right.active,
+  .carousel-inner .carousel-item-next {
+    transform: translateX(33.333%);
+  }
+
+  .carousel-inner .carousel-item-left.active,
+  .carousel-inner .carousel-item-prev {
+    transform: translateX(-33.333%);
+  }
+}
+
+.carousel-inner .carousel-item-right,
+.carousel-inner .carousel-item-left {
+  transform: translateX(0);
+}
+
+/* Tanaño imagenes carousel prevision height: 95px */
+
+.carousel--prevision {
+  height: 140px;
+}
+
+/* Responsividad resoluciones */
+
+/* TODO: falta agregar responsividad */
+
