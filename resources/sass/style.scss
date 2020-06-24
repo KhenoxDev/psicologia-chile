@@ -392,3 +392,15 @@ form .row:first-child .floating-label-form-group {
 
 /* Responsividad resoluciones */
 /* TODO: falta agregar responsividad */
+
+
+
+/* botón "ver todas las consultas" */
+.boton--verconsultas {
+	color: $dark;
+	font-weight: bold
+}
+
+.underline--verconsultas {
+	border-bottom: 2px solid currentColor;
+}

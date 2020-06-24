@@ -11314,3 +11314,14 @@ form .row:first-child .floating-label-form-group {
 
 /* TODO: falta agregar responsividad */
 
+/* botón "ver todas las consultas" */
+
+.boton--verconsultas {
+  color: #323232;
+  font-weight: bold;
+}
+
+.underline--verconsultas {
+  border-bottom: 2px solid currentColor;
+}
+

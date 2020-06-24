@@ -38285,6 +38285,224 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/FrequentlyQuestions.vue?vue&type=template&id=0da9f797&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/FrequentlyQuestions.vue?vue&type=template&id=0da9f797& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "container text-center my-3",
+        attrs: { id: "FrequentlyQuestionsCarrousel" }
+      },
+      [
+        _c("h2", { staticClass: "font-weight-light" }, [
+          _c("span", { staticClass: "underline--verconsultas" }, [
+            _vm._v("Consultas Frecuentes")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row mx-auto my-auto" }, [
+          _c(
+            "div",
+            {
+              staticClass: "carousel slide w-100",
+              attrs: { id: "recipeCarouselFAQ", "data-ride": "carousel" }
+            },
+            [
+              _c(
+                "div",
+                {
+                  staticClass: "carousel-inner w-100",
+                  attrs: { role: "listbox" }
+                },
+                [
+                  _c("div", { staticClass: "carousel-item active" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c(
+                        "div",
+                        { staticClass: "card card-body carousel--prevision" },
+                        [
+                          _c("img", {
+                            staticClass: "img-fluid",
+                            attrs: { src: "", alt: "" }
+                          }),
+                          _vm._v("Tengo crisis de pánico muy seguido "),
+                          _c("br"),
+                          _vm._v(" ¿qué puedo hacer?\n                        ")
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "carousel-item" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c(
+                        "div",
+                        { staticClass: "card card-body carousel--prevision" },
+                        [
+                          _c("img", {
+                            staticClass: "img-fluid",
+                            attrs: { src: "", alt: "" }
+                          }),
+                          _vm._v("2\n                        ")
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "carousel-item" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c(
+                        "div",
+                        { staticClass: "card card-body carousel--prevision" },
+                        [
+                          _c("img", {
+                            staticClass: "img-fluid",
+                            attrs: { src: "", alt: "" }
+                          }),
+                          _vm._v("3\n                        ")
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "carousel-item" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c(
+                        "div",
+                        { staticClass: "card card-body carousel--prevision" },
+                        [
+                          _c("img", {
+                            staticClass: "img-fluid",
+                            attrs: { src: "", alt: "" }
+                          }),
+                          _vm._v("4\n                        ")
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "carousel-item" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c(
+                        "div",
+                        { staticClass: "card card-body carousel--prevision" },
+                        [
+                          _c("img", {
+                            staticClass: "img-fluid",
+                            attrs: { src: "", alt: "" }
+                          }),
+                          _vm._v("5\n                        ")
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "carousel-item" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c(
+                        "div",
+                        { staticClass: "card card-body carousel--prevision" },
+                        [
+                          _c("img", {
+                            staticClass: "img-fluid",
+                            attrs: { src: "", alt: "" }
+                          }),
+                          _vm._v("6\n                        ")
+                        ]
+                      )
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "carousel-control-prev w-auto",
+                  attrs: {
+                    href: "#recipeCarouselFAQ",
+                    role: "button",
+                    "data-slide": "prev"
+                  }
+                },
+                [
+                  _c("span", {
+                    staticClass:
+                      "carousel-control-prev-icon bg-dark border border-dark rounded-circle",
+                    attrs: { "aria-hidden": "true" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "sr-only" }, [_vm._v("Previous")])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "carousel-control-next w-auto",
+                  attrs: {
+                    href: "#recipeCarouselFAQ",
+                    role: "button",
+                    "data-slide": "next"
+                  }
+                },
+                [
+                  _c("span", {
+                    staticClass:
+                      "carousel-control-next-icon bg-dark border border-dark rounded-circle",
+                    attrs: { "aria-hidden": "true" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "sr-only" }, [_vm._v("Next")])
+                ]
+              )
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("br"),
+          _vm._v(" "),
+          _c("ul", [
+            _c("li", { staticClass: "btn btn-warning" }, [
+              _c(
+                "a",
+                { staticClass: "boton--verconsultas", attrs: { href: "" } },
+                [_vm._v("Ver Todas Las Consultas")]
+              )
+            ])
+          ])
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Navbar.vue?vue&type=template&id=6dde423b&":
 /*!*********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Navbar.vue?vue&type=template&id=6dde423b& ***!
@@ -38480,6 +38698,8 @@ var staticRenderFns = [
         attrs: { id: "PrevisionCarousel" }
       },
       [
+        _c("h2", { staticClass: "font-weight-light" }, [_vm._v("Previsión")]),
+        _vm._v(" "),
         _c("div", { staticClass: "row mx-auto my-auto" }, [
           _c(
             "div",
@@ -50853,6 +51073,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 Vue.component('navbar', __webpack_require__(/*! ./components/Navbar.vue */ "./resources/js/components/Navbar.vue")["default"]);
 Vue.component('carousel', __webpack_require__(/*! ./components/Carousel.vue */ "./resources/js/components/Carousel.vue")["default"]);
 Vue.component('prevision', __webpack_require__(/*! ./components/Prevision.vue */ "./resources/js/components/Prevision.vue")["default"]);
+Vue.component('frequentlyquestions', __webpack_require__(/*! ./components/FrequentlyQuestions.vue */ "./resources/js/components/FrequentlyQuestions.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -53740,6 +53961,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel_vue_vue_type_template_id_fe98726a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel_vue_vue_type_template_id_fe98726a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/FrequentlyQuestions.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/FrequentlyQuestions.vue ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _FrequentlyQuestions_vue_vue_type_template_id_0da9f797___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FrequentlyQuestions.vue?vue&type=template&id=0da9f797& */ "./resources/js/components/FrequentlyQuestions.vue?vue&type=template&id=0da9f797&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _FrequentlyQuestions_vue_vue_type_template_id_0da9f797___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _FrequentlyQuestions_vue_vue_type_template_id_0da9f797___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/FrequentlyQuestions.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/FrequentlyQuestions.vue?vue&type=template&id=0da9f797&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/FrequentlyQuestions.vue?vue&type=template&id=0da9f797& ***!
+  \****************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FrequentlyQuestions_vue_vue_type_template_id_0da9f797___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./FrequentlyQuestions.vue?vue&type=template&id=0da9f797& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/FrequentlyQuestions.vue?vue&type=template&id=0da9f797&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FrequentlyQuestions_vue_vue_type_template_id_0da9f797___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FrequentlyQuestions_vue_vue_type_template_id_0da9f797___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
