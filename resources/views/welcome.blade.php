@@ -14,7 +14,7 @@
         <div id="app">
 			<navbar logo="{{ asset('img/logo.png') }}"></navbar>
 			<carousel></carousel>
-
+            <three-steps></three-steps>
         </div>
         <script src="{{ asset('js/app.js') }}"></script>
     </body>

@@ -9,13 +9,6 @@
 	}
 }
 
-@media (min-width: 992px) {
-	.page-section .page-section-heading {
-		font-size: 3rem;
-		line-height: 2.5rem;
-	}
-}
-
 .divider-custom {
 	margin: 1.25rem 0 1.5rem;
 	width: 100%;
@@ -92,7 +85,14 @@
 	font-weight: 700;
 
 	.navbar-brand {
+		width: 280px;
 		color: $white;
+
+		.logo {
+			min-width: 25%;
+			max-width: 100%;
+			width: 100%;
+		}
 	}
 
 	.navbar-nav {
@@ -100,70 +100,62 @@
 		align-items: center;
 
 
-		li.nav-item a.nav-link {
-			font-size: 0.9rem;
-			color: $dark;
+		.nav-item {
+			.nav-link {
+				font-size: 70%;
+				color: $dark;
 
-			&:hover {
-				color: $orange-selected;
+				&:hover {
+					color: $orange-selected;
+				}
+
+				&:active,
+				&:focus {
+					color: $dark;
+				}
+
+				&.active {
+					color: $orange-selected;
+				}
 			}
+		}
 
-			&:active,
-			&:focus {
-				color: $white;
-			}
+		.login--container {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
 
-			&.active {
-				color: $orange-selected;
+			a {
+				margin-left: 1rem;
+				padding: 0.7rem;
+				background-color: $orange-selected;
+				border-radius: 15px;
+				font-size: 70%;
+				text-decoration: none;
+				color: #fff;
 			}
 		}
 	}
 
 	.navbar-toggler {
-		font-size: 80%;
+		font-size: 70%;
 		padding: 0.8rem;
 	}
 }
 
-@media (min-width: 992px) {
-	#mainNav {
-		// padding-top: 1.5rem;
-		// padding-bottom: 1.5rem;
-		transition: padding-top 0.3s, padding-bottom 0.3s;
-
-		.navbar-brand {
-			width: 310px;
-			font-size: 1.75em;
-			transition: font-size 0.3s;
-		}
-
-		.navbar-nav {
-			margin-top: 0;
-
-
-			>li.nav-item>a.nav-link.active {
-				color: $dark;
-				background: $orange-selected;
-
-				&:active,
-				&:focus,
-				&:hover {
-					color: $dark;
-					background: $orange-selected;
-				}
-			}
-		}
-
-		&.navbar-shrink {
-			padding-top: 0.5rem;
-			padding-bottom: 0.5rem;
-
-			.navbar-brand {
-				font-size: 1.5em;
-			}
-		}
+/* Carousel banner home */
+.carousel-inner {
+	img {
+		width: 100%;
+		height: 100%;
 	}
 }
+
+/* Custom buttons */
+.btn-orange {
+	background-color: $orange-selected;
+}
+
 
 .masthead {
 	padding-top: calc(6rem + 74px);
@@ -180,22 +172,6 @@
 
 	.masthead-avatar {
 		width: 15rem;
-	}
-}
-
-@media (min-width: 992px) {
-	.masthead {
-		padding-top: calc(6rem + 104px);
-		padding-bottom: 6rem;
-
-		.masthead-heading {
-			font-size: 4rem;
-			line-height: 3.5rem;
-		}
-
-		.masthead-subheading {
-			font-size: 1.5rem;
-		}
 	}
 }
 
@@ -240,13 +216,6 @@
 		line-height: 3rem;
 		color: $orange-selected;
 		opacity: 1;
-	}
-}
-
-@media (min-width: 992px) {
-	.portfolio-modal .portfolio-modal-title {
-		font-size: 3rem;
-		line-height: 2.5rem;
 	}
 }
 
@@ -308,4 +277,126 @@ form .row:first-child .floating-label-form-group {
 
 .copyright {
 	background-color: #1a252f;
+}
+
+/* Third steps */
+.step--container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2rem 4rem;
+
+	img {
+		margin-bottom: 1rem;
+	}
+
+	span {
+		font-size: 80%;
+		color: $dark;
+		font-weight: bold;
+		margin-bottom: 1rem;
+	}
+
+	p {
+		font-size: 80%;
+		color: $dark;
+		text-align: center;
+	}
+}
+
+.step--line {
+	&::before {
+		content: "";
+		background: $gray-3;
+		display: block;
+		position: absolute;
+		top: 45%;
+		left: 70%;
+		width: 60%;
+		height: 4px;
+	}
+}
+
+
+
+/* Media Queries */
+@media (max-width: 2560px) {}
+
+@media (max-width: 1440px) {}
+
+@media (max-width: 1024px) {}
+
+@media (max-width: 992px) {}
+
+@media (max-width: 768px) {
+	#mainNav {
+		.navbar-nav {
+			margin-top: 0;
+
+			.login--container {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				justify-content: space-between;
+				align-items: center;
+
+				a {
+					text-align: center;
+					width: 25%;
+					margin-bottom: 0.5rem;
+				}
+			}
+		}
+	}
+
+	.step--line {
+		&::before {
+			width: 45%;
+			margin-left: 1rem;
+		}
+	}
+}
+
+@media (max-width: 425px) {
+	#mainNav {
+		.navbar-nav {
+			margin-top: 0;
+
+			.login--container {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				justify-content: space-between;
+				align-items: center;
+
+				a {
+					text-align: center;
+					width: 100%;
+					margin-bottom: 0.5rem;
+				}
+			}
+		}
+
+		.navbar-brand {
+			.logo {
+				max-width: 70%;
+			}
+		}
+	}
+
+	.step--line {
+		&::before {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 375px) {}
+
+@media (max-width: 320px) {
+	#mainNav {
+		.navbar-brand {
+			width: 205px;
+		}
+	}
 }

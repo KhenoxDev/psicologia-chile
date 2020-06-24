@@ -1,5 +1,5 @@
 <template>
-  <div id="demo" class="carousel slide" data-ride="carousel">
+  <div id="demo" class="carousel slide container-fluid" data-ride="carousel">
     <!-- Indicators -->
     <ul class="carousel-indicators">
       <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -33,9 +33,3 @@
     </a>
   </div>
 </template>
-<style lang="scss">
-.carousel-inner img {
-  width: 100%;
-  height: 100%;
-}
-</style>

@@ -2,10 +2,10 @@
   <nav class="navbar navbar-expand-lg bg-white text-uppercase" id="mainNav">
     <div class="container-fluid">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <img class="logo" :src="logo" :alt="logo-txt" />
+        <img class="logo" :src="logo" :alt="logo_txt" />
       </a>
       <button
-        class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+        class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold btn-orange text-white rounded"
         type="button"
         data-toggle="collapse"
         data-target="#navbarResponsive"
@@ -62,29 +62,7 @@
 </template>
 <script>
 export default {
-  props: ["logo", "logo-txt"]
+  props: ["logo", "logo_txt"]
 };
 </script>
-<style lang="scss">
-.logo {
-  min-width: 25%;
-  max-width: 80%;
-  width: 100%;
-}
-
-.login--container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  a {
-    margin-left: 1rem;
-    padding: 1rem;
-    background-color: #f7941e;
-    border-radius: 15px;
-    font-size: 0.9rem;
-    text-decoration: none;
-    color: #fff;
-  }
-}
-</style>
 
