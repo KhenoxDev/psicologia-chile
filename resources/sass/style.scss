@@ -395,12 +395,75 @@ form .row:first-child .floating-label-form-group {
 
 
 
+/* PREGUNTAS FRECUENTES */
+
 /* botón "ver todas las consultas" */
-.boton--verconsultas {
-	color: $dark;
-	font-weight: bold
+.seemore--questions {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 1rem;
+	button {
+		color: $dark;
+		font-weight: bold;
+		padding: 0.5rem 1rem 0.5rem 1rem;
+		text-transform: uppercase;
+	}
 }
 
 .underline--verconsultas {
 	border-bottom: 2px solid currentColor;
+	/* position: absolute; */
 }
+
+.texto--verconsultas {
+	text-align: left;
+}
+
+/* Estilo tarjeta primera pregunta frecuente */
+.first-card-faq {
+	background: $teal-tiny;
+}
+
+/* Texto sobre imagen primera pregunta frecuente 1 */
+.contenedor33{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+ /* Texto sobre imagen primera pregunta frecuente 2 */
+.texto-encima33{
+	position: absolute;
+	top: 30%;
+	left: 0;
+	width: 100%;
+	color: $gray-4;
+	font-weight: bold;
+}
+/* Texto sobre imagen primera pregunta frecuente 3 */
+.centrado33{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Estilo flechitas carusel */
+/* .carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-image: none !important;
+  color: red !important;
+  font-size: 20px;
+} */
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='gray' viewBox='2 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='gray' viewBox='-1 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+
+
+/* FIN ESTILO PREGUNTAS FRECUENTES */

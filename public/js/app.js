@@ -38310,11 +38310,11 @@ var staticRenderFns = [
     return _c(
       "div",
       {
-        staticClass: "container text-center my-3",
+        staticClass: "container-fluid text-center my-3",
         attrs: { id: "FrequentlyQuestionsCarrousel" }
       },
       [
-        _c("h2", { staticClass: "font-weight-light" }, [
+        _c("h2", { staticClass: "font-weight-light texto--verconsultas" }, [
           _c("span", { staticClass: "underline--verconsultas" }, [
             _vm._v("Consultas Frecuentes")
           ])
@@ -38335,103 +38335,175 @@ var staticRenderFns = [
                   attrs: { role: "listbox" }
                 },
                 [
-                  _c("div", { staticClass: "carousel-item active" }, [
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c(
-                        "div",
-                        { staticClass: "card card-body carousel--prevision" },
-                        [
-                          _c("img", {
-                            staticClass: "img-fluid",
-                            attrs: { src: "", alt: "" }
-                          }),
-                          _vm._v("Tengo crisis de pánico muy seguido "),
-                          _c("br"),
-                          _vm._v(" ¿qué puedo hacer?\n                        ")
-                        ]
-                      )
-                    ])
-                  ]),
+                  _c(
+                    "div",
+                    { staticClass: "carousel-item active contenedor33" },
+                    [
+                      _c("div", { staticClass: "col-md-3" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "card card-body carousel--prevision first-card-faq"
+                          },
+                          [
+                            _c("img", {
+                              staticClass: "img-fluid",
+                              attrs: {
+                                src:
+                                  "img/faq_interrogacion_primera_pregunta5.svg",
+                                alt: ""
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "texto-encima33" }, [
+                              _vm._v("Tengo crisis de pánico muy seguido "),
+                              _c("br"),
+                              _vm._v(" ¿qué puedo hacer? ")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", {})
+                          ]
+                        )
+                      ])
+                    ]
+                  ),
                   _vm._v(" "),
-                  _c("div", { staticClass: "carousel-item" }, [
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c(
-                        "div",
-                        { staticClass: "card card-body carousel--prevision" },
-                        [
-                          _c("img", {
-                            staticClass: "img-fluid",
-                            attrs: { src: "", alt: "" }
-                          }),
-                          _vm._v("2\n                        ")
-                        ]
-                      )
-                    ])
-                  ]),
+                  _c(
+                    "div",
+                    { staticClass: "carousel-item active contenedor33" },
+                    [
+                      _c("div", { staticClass: "col-md-3" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "card card-body carousel--prevision first-card-faq"
+                          },
+                          [
+                            _c("img", {
+                              staticClass: "img-fluid",
+                              attrs: {
+                                src:
+                                  "img/faq_interrogacion_primera_pregunta5.svg",
+                                alt: ""
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "texto-encima33" }, [
+                              _vm._v("Tengo crisis de pánico muy seguido "),
+                              _c("br"),
+                              _vm._v(" ¿qué puedo hacer? ")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", {})
+                          ]
+                        )
+                      ])
+                    ]
+                  ),
                   _vm._v(" "),
-                  _c("div", { staticClass: "carousel-item" }, [
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c(
-                        "div",
-                        { staticClass: "card card-body carousel--prevision" },
-                        [
-                          _c("img", {
-                            staticClass: "img-fluid",
-                            attrs: { src: "", alt: "" }
-                          }),
-                          _vm._v("3\n                        ")
-                        ]
-                      )
-                    ])
-                  ]),
+                  _c(
+                    "div",
+                    { staticClass: "carousel-item active contenedor33" },
+                    [
+                      _c("div", { staticClass: "col-md-3" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "card card-body carousel--prevision first-card-faq"
+                          },
+                          [
+                            _c("img", {
+                              staticClass: "img-fluid",
+                              attrs: {
+                                src:
+                                  "img/faq_interrogacion_primera_pregunta5.svg",
+                                alt: ""
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "texto-encima33" }, [
+                              _vm._v("Tengo crisis de pánico muy seguido "),
+                              _c("br"),
+                              _vm._v(" ¿qué puedo hacer? ")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", {})
+                          ]
+                        )
+                      ])
+                    ]
+                  ),
                   _vm._v(" "),
-                  _c("div", { staticClass: "carousel-item" }, [
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c(
-                        "div",
-                        { staticClass: "card card-body carousel--prevision" },
-                        [
-                          _c("img", {
-                            staticClass: "img-fluid",
-                            attrs: { src: "", alt: "" }
-                          }),
-                          _vm._v("4\n                        ")
-                        ]
-                      )
-                    ])
-                  ]),
+                  _c(
+                    "div",
+                    { staticClass: "carousel-item active contenedor33" },
+                    [
+                      _c("div", { staticClass: "col-md-3" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "card card-body carousel--prevision first-card-faq"
+                          },
+                          [
+                            _c("img", {
+                              staticClass: "img-fluid",
+                              attrs: {
+                                src:
+                                  "img/faq_interrogacion_primera_pregunta5.svg",
+                                alt: ""
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "texto-encima33" }, [
+                              _vm._v("Tengo crisis de pánico muy seguido "),
+                              _c("br"),
+                              _vm._v(" ¿qué puedo hacer? ")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", {})
+                          ]
+                        )
+                      ])
+                    ]
+                  ),
                   _vm._v(" "),
-                  _c("div", { staticClass: "carousel-item" }, [
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c(
-                        "div",
-                        { staticClass: "card card-body carousel--prevision" },
-                        [
-                          _c("img", {
-                            staticClass: "img-fluid",
-                            attrs: { src: "", alt: "" }
-                          }),
-                          _vm._v("5\n                        ")
-                        ]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "carousel-item" }, [
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c(
-                        "div",
-                        { staticClass: "card card-body carousel--prevision" },
-                        [
-                          _c("img", {
-                            staticClass: "img-fluid",
-                            attrs: { src: "", alt: "" }
-                          }),
-                          _vm._v("6\n                        ")
-                        ]
-                      )
-                    ])
-                  ])
+                  _c(
+                    "div",
+                    { staticClass: "carousel-item active contenedor33" },
+                    [
+                      _c("div", { staticClass: "col-md-3" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "card card-body carousel--prevision first-card-faq"
+                          },
+                          [
+                            _c("img", {
+                              staticClass: "img-fluid",
+                              attrs: {
+                                src:
+                                  "img/faq_interrogacion_primera_pregunta5.svg",
+                                alt: ""
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "texto-encima33" }, [
+                              _vm._v("Tengo crisis de pánico muy seguido "),
+                              _c("br"),
+                              _vm._v(" ¿qué puedo hacer? ")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", {})
+                          ]
+                        )
+                      ])
+                    ]
+                  )
                 ]
               ),
               _vm._v(" "),
@@ -38447,8 +38519,7 @@ var staticRenderFns = [
                 },
                 [
                   _c("span", {
-                    staticClass:
-                      "carousel-control-prev-icon bg-dark border border-dark rounded-circle",
+                    staticClass: "carousel-control-prev-icon",
                     attrs: { "aria-hidden": "true" }
                   }),
                   _vm._v(" "),
@@ -38468,8 +38539,7 @@ var staticRenderFns = [
                 },
                 [
                   _c("span", {
-                    staticClass:
-                      "carousel-control-next-icon bg-dark border border-dark rounded-circle",
+                    staticClass: "carousel-control-next-icon",
                     attrs: { "aria-hidden": "true" }
                   }),
                   _vm._v(" "),
@@ -38480,17 +38550,9 @@ var staticRenderFns = [
           )
         ]),
         _vm._v(" "),
-        _c("div", [
-          _c("br"),
-          _vm._v(" "),
-          _c("ul", [
-            _c("li", { staticClass: "btn btn-warning" }, [
-              _c(
-                "a",
-                { staticClass: "boton--verconsultas", attrs: { href: "" } },
-                [_vm._v("Ver Todas Las Consultas")]
-              )
-            ])
+        _c("div", { staticClass: "seemore--questions" }, [
+          _c("button", { staticClass: "btn btn-warning" }, [
+            _vm._v("ver todas las consultas")
           ])
         ])
       ]
@@ -38694,11 +38756,13 @@ var staticRenderFns = [
     return _c(
       "div",
       {
-        staticClass: "container text-center my-3",
+        staticClass: "container-fluid text-center my-3",
         attrs: { id: "PrevisionCarousel" }
       },
       [
-        _c("h2", { staticClass: "font-weight-light" }, [_vm._v("Previsión")]),
+        _c("h2", { staticClass: "font-weight-light texto--verconsultas" }, [
+          _vm._v("Previsión")
+        ]),
         _vm._v(" "),
         _c("div", { staticClass: "row mx-auto my-auto" }, [
           _c(
@@ -38834,8 +38898,7 @@ var staticRenderFns = [
                 },
                 [
                   _c("span", {
-                    staticClass:
-                      "carousel-control-prev-icon bg-dark border border-dark rounded-circle",
+                    staticClass: "carousel-control-prev-icon",
                     attrs: { "aria-hidden": "true" }
                   }),
                   _vm._v(" "),
@@ -38855,8 +38918,7 @@ var staticRenderFns = [
                 },
                 [
                   _c("span", {
-                    staticClass:
-                      "carousel-control-next-icon bg-dark border border-dark rounded-circle",
+                    staticClass: "carousel-control-next-icon",
                     attrs: { "aria-hidden": "true" }
                   }),
                   _vm._v(" "),
