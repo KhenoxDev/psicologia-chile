@@ -408,3 +408,243 @@ form .row:first-child .floating-label-form-group {
 		}
 	}
 }
+
+/* Bootstrap Lightbox using Modal */
+
+#profile-grid {
+	overflow: auto;
+	white-space: normal;
+
+	.profile {
+		padding-bottom: 40px;
+	}
+
+	.panel {
+		padding: 0;
+	}
+
+	.panel-body {
+		padding: 15px;
+	}
+
+	.profile-name {
+		font-weight: bold;
+	}
+
+	.thumbnail {
+		margin-bottom: 6px;
+	}
+
+	.panel-thumbnail {
+		overflow: hidden;
+	}
+
+	.img-rounded {
+		border-radius: 4px 4px 0 0;
+	}
+}
+
+
+/* Estilo Carousel Prevision */
+/* TODO: pendiente de transformar a SCSS */
+
+@media (max-width: 768px) {
+	.carousel-inner .carousel-item>div {
+		display: none;
+	}
+
+	.carousel-inner .carousel-item>div:first-child {
+		display: block;
+	}
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+	display: flex;
+}
+
+/* display 3 */
+@media (min-width: 768px) {
+
+	.carousel-inner .carousel-item-right.active,
+	.carousel-inner .carousel-item-next {
+		transform: translateX(33.333%);
+	}
+
+	.carousel-inner .carousel-item-left.active,
+	.carousel-inner .carousel-item-prev {
+		transform: translateX(-33.333%);
+	}
+}
+
+.carousel-inner .carousel-item-right,
+.carousel-inner .carousel-item-left {
+	transform: translateX(0);
+}
+
+
+/* Tanaño imagenes carousel prevision height: 95px */
+.carousel--prevision {
+	height: 140px;
+}
+
+
+/* Responsividad resoluciones */
+/* TODO: falta agregar responsividad */
+
+
+
+/* PREGUNTAS FRECUENTES */
+
+/* botón "ver todas las consultas" */
+.seemore--questions {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 1rem;
+
+	button {
+		color: $dark;
+		font-weight: bold;
+		padding: 0.5rem 1rem 0.5rem 1rem;
+		text-transform: uppercase;
+	}
+}
+
+.underline--verconsultas {
+	border-bottom: 2px solid currentColor;
+	/* position: absolute; */
+}
+
+.texto--verconsultas {
+	text-align: left;
+}
+
+/* Estilo tarjeta primera pregunta frecuente */
+.first-card-faq {
+	background: $teal-tiny;
+	margin: 1rem;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	img {
+		width: 60%;
+		height: auto;
+	}
+}
+
+/* Texto sobre imagen primera pregunta frecuente 1 */
+.contenedor33 {
+	position: relative;
+	display: inline-block;
+	text-align: center;
+}
+
+/* Texto sobre imagen primera pregunta frecuente 2 */
+.texto-encima33 {
+	position: absolute;
+	top: 36%;
+	left: 0%;
+	width: 100%;
+	color: $gray-4;
+	font-weight: bold;
+	font-size: 100%;
+	text-align: center;
+}
+
+/* Texto sobre imagen primera pregunta frecuente 3 */
+.centrado33 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/* Estilo flechitas carusel */
+/* .carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-image: none !important;
+  color: red !important;
+  font-size: 20px;
+} */
+
+/* .carousel-control-prev-icon {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='gray' viewBox='2 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='gray' viewBox='-1 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+} */
+
+
+/* FIN ESTILO PREGUNTAS FRECUENTES */
+
+.line--separator {
+	height: 2px !important;
+	background-color: $gray-3 !important;
+}
+
+.title--section {
+	font-size: 1.7rem;
+	color: $dark;
+}
+
+
+
+.card-prevision {
+	margin: 1rem;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: $gray-5;
+
+	img {
+		width: 70%;
+		height: auto;
+	}
+}
+
+
+/* Estilo Prevision */
+.texto-encima44 {
+	position: absolute;
+	top: 36%;
+	left: 0%;
+	width: 100%;
+	font-weight: bold;
+	font-size: 100%;
+	text-align: center;
+}
+
+/* Estilo Featured Plans */
+.texto-encima55 {
+	position: absolute;
+	top: 100%;
+	left: 0%;
+	width: 100%;
+	color: $dark;
+	font-weight: bold;
+	font-size: 100%;
+	text-align: center;
+}
+
+.card-featuredplans {
+	margin: 1rem;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	img {
+		width: 60%;
+		height: auto;
+	}
+}
+
+.carousel--featuredplans {
+	height: 140px;
+}
