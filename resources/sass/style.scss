@@ -317,6 +317,19 @@ form .row:first-child .floating-label-form-group {
 	}
 }
 
+.title--three-steps {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+
+	span {
+		font-weight: bold;
+		font-size: 1.5rem;
+		color: $dark;
+	}
+}
+
 
 
 /* Media Queries */
@@ -351,8 +364,7 @@ form .row:first-child .floating-label-form-group {
 
 	.step--line {
 		&::before {
-			width: 45%;
-			margin-left: 1rem;
+			display: none;
 		}
 	}
 }
@@ -384,11 +396,7 @@ form .row:first-child .floating-label-form-group {
 		}
 	}
 
-	.step--line {
-		&::before {
-			display: none;
-		}
-	}
+
 }
 
 @media (max-width: 375px) {}

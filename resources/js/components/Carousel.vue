@@ -1,35 +1,44 @@
 <template>
-  <div id="demo" class="carousel slide container-fluid" data-ride="carousel">
-    <!-- Indicators -->
-    <ul class="carousel-indicators">
-      <li data-target="#demo" data-slide-to="0" class="active"></li>
-      <li data-target="#demo" data-slide-to="1"></li>
-      <li data-target="#demo" data-slide-to="2"></li>
-      <li data-target="#demo" data-slide-to="3"></li>
-    </ul>
-
-    <!-- The slideshow -->
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="img/banner-1.jpg" alt="Banner 1" />
-      </div>
-      <div class="carousel-item">
-        <img src="img/banner-2.jpg" alt="Banner 2" />
-      </div>
-      <div class="carousel-item">
-        <img src="img/banner-3.jpg" alt="Banner 3" />
-      </div>
-      <div class="carousel-item">
-        <img src="img/banner-4.jpg" alt="Banner 4" />
-      </div>
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#demo" data-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </a>
+  <div class="container-fluid">
+    <vueper-slides
+      infinite
+      autoplay
+      :pause-on-hover="pauseOnHover"
+      :slide-ratio="1 / 3"
+      :bullets="false"
+      :touchable="false"
+      :transitionSpeed="200"
+    >
+      <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
+    </vueper-slides>
   </div>
 </template>
+<script>
+import { VueperSlides, VueperSlide } from "vueperslides";
+
+export default {
+  components: { VueperSlides, VueperSlide },
+  data() {
+    return {
+      slides: [
+        {
+          title: "Slide #1",
+          image: "img/banner-1.jpg"
+        },
+        {
+          title: "Slide #2",
+          image: "img/banner-2.jpg"
+        },
+        {
+          title: "Slide #3",
+          image: "img/banner-3.jpg"
+        },
+        {
+          title: "Slide #4",
+          image: "img/banner-4.jpg"
+        }
+      ]
+    };
+  }
+};
+</script>

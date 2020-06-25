@@ -1,5 +1,8 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid mt-4">
+    <div class="title--three-steps">
+      <span>Tres simples pasos encontrar tu psicólogo</span>
+    </div>
     <div class="row">
       <div class="col-md-4">
         <div class="step--container step--line">
