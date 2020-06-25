@@ -444,56 +444,10 @@ form .row:first-child .floating-label-form-group {
 	}
 }
 
-
-/* Estilo Carousel Prevision */
-/* TODO: pendiente de transformar a SCSS */
-
-@media (max-width: 768px) {
-	.carousel-inner .carousel-item>div {
-		display: none;
-	}
-
-	.carousel-inner .carousel-item>div:first-child {
-		display: block;
-	}
-}
-
-.carousel-inner .carousel-item.active,
-.carousel-inner .carousel-item-next,
-.carousel-inner .carousel-item-prev {
-	display: flex;
-}
-
-/* display 3 */
-@media (min-width: 768px) {
-
-	.carousel-inner .carousel-item-right.active,
-	.carousel-inner .carousel-item-next {
-		transform: translateX(33.333%);
-	}
-
-	.carousel-inner .carousel-item-left.active,
-	.carousel-inner .carousel-item-prev {
-		transform: translateX(-33.333%);
-	}
-}
-
-.carousel-inner .carousel-item-right,
-.carousel-inner .carousel-item-left {
-	transform: translateX(0);
-}
-
-
 /* Tanaño imagenes carousel prevision height: 95px */
 .carousel--prevision {
 	height: 140px;
 }
-
-
-/* Responsividad resoluciones */
-/* TODO: falta agregar responsividad */
-
-
 
 /* PREGUNTAS FRECUENTES */
 
@@ -531,12 +485,13 @@ form .row:first-child .floating-label-form-group {
 	justify-content: center;
 
 	img {
-		width: 60%;
+		width: 55%;
 		height: auto;
 	}
 }
 
 /* Texto sobre imagen primera pregunta frecuente 1 */
+/* TODO: Cambiar nombre a la clase */
 .contenedor33 {
 	position: relative;
 	display: inline-block;
@@ -544,6 +499,7 @@ form .row:first-child .floating-label-form-group {
 }
 
 /* Texto sobre imagen primera pregunta frecuente 2 */
+/* TODO: Cambiar nombre a la clase */
 .texto-encima33 {
 	position: absolute;
 	top: 36%;
@@ -556,6 +512,7 @@ form .row:first-child .floating-label-form-group {
 }
 
 /* Texto sobre imagen primera pregunta frecuente 3 */
+/* TODO: Cambiar nombre a la clase */
 .centrado33 {
 	position: absolute;
 	top: 50%;
@@ -610,6 +567,7 @@ form .row:first-child .floating-label-form-group {
 
 
 /* Estilo Prevision */
+/* TODO: Cambiar nombre a la clase */
 .texto-encima44 {
 	position: absolute;
 	top: 36%;
@@ -621,6 +579,7 @@ form .row:first-child .floating-label-form-group {
 }
 
 /* Estilo Featured Plans */
+/* TODO: Cambiar nombre a la clase */
 .texto-encima55 {
 	position: absolute;
 	top: 100%;

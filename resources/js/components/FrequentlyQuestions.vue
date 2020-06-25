@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid mt-4">
     <span class="title--section">Consultas frecuentes</span>
     <hr class="line--separator" />
     <vueper-slides
@@ -30,7 +30,6 @@
 </template>
 <script>
 import { VueperSlides, VueperSlide } from "vueperslides";
-import "vueperslides/dist/vueperslides.css";
 
 export default {
   components: { VueperSlides, VueperSlide },
