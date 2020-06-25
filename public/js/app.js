@@ -1990,6 +1990,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2001,26 +2008,45 @@ __webpack_require__.r(__webpack_exports__);
       slides: [{
         title: "Slide #1",
         content: "Slide content.",
-        price: "$14.990"
+        price: "$14.490 c/sesión",
+        cantSes: "5 Sesiones",
+        description: "En este plan ingresan psicologos seleccionados para dar un servicio de calidad a un precio accesible.",
+        promocion: true,
+        sale: "Promoción!"
       }, {
         title: "Slide #2",
-        content: "Slide content."
+        content: "Slide content.",
+        price: "$12.490 c/sesión",
+        cantSes: "4 Sesiones",
+        description: "En este plan ingresan psicologos seleccionados para dar un servicio de calidad a un precio accesible.",
+        promocion: false,
+        sale: "Promoción!"
       }, {
         title: "Slide #3",
-        content: "Slide content."
-      }, {
-        title: "Slide #4",
-        content: "Slide content."
-      }, {
-        title: "Slide #5",
-        content: "Slide content."
-      }, {
-        title: "Slide #6",
-        content: "Slide content."
-      }, {
-        title: "Slide #7",
-        content: "Slide content."
-      }]
+        content: "Slide content.",
+        price: "$17.490 c/sesión",
+        cantSes: "3 Sesiones",
+        description: "En este plan ingresan psicologos seleccionados para dar un servicio de calidad a un precio accesible.",
+        promocion: true,
+        sale: "Promoción!"
+      }
+      /*         {
+                title: "Slide #4",
+                content: "Slide content."
+              },
+              {
+                title: "Slide #5",
+                content: "Slide content."
+              },
+              {
+                title: "Slide #6",
+                content: "Slide content."
+              },
+              {
+                title: "Slide #7",
+                content: "Slide content."
+              } */
+      ]
     };
   }
 });
@@ -37908,7 +37934,7 @@ var render = function() {
     { staticClass: "container-fluid mt-4" },
     [
       _c("span", { staticClass: "title--section" }, [
-        _vm._v("Planes Destacados")
+        _vm._v("Planes destacados")
       ]),
       _vm._v(" "),
       _c("hr", { staticClass: "line--separator" }),
@@ -37944,19 +37970,47 @@ var render = function() {
                             "card card-body carousel--featuredplans card-featuredplans"
                         },
                         [
-                          _c("img", {
-                            staticClass: "img-fluid",
-                            attrs: {
-                              src: "img/Planes_destacados_fondo2.jpg",
-                              alt: ""
-                            }
-                          }),
+                          _c(
+                            "span",
+                            {
+                              staticClass:
+                                "texto-encima-featuredplans text-price"
+                            },
+                            [_vm._v(" " + _vm._s(slide.price) + " ")]
+                          ),
                           _vm._v(" "),
-                          _c("div", { staticClass: "texto-encima55" }, [
-                            _vm._v("asdadad")
-                          ]),
+                          _c(
+                            "span",
+                            {
+                              staticClass:
+                                "texto-encima-featuredplans text-cantses"
+                            },
+                            [_vm._v(" " + _vm._s(slide.cantSes) + " ")]
+                          ),
                           _vm._v(" "),
-                          _c("div", {})
+                          _c(
+                            "span",
+                            {
+                              staticClass:
+                                "texto-encima-featuredplans text-description"
+                            },
+                            [_vm._v(" " + _vm._s(slide.description) + " ")]
+                          ),
+                          _vm._v(" "),
+                          slide.promocion
+                            ? _c(
+                                "span",
+                                {
+                                  staticClass: "circulo",
+                                  attrs: { id: "saleid" }
+                                },
+                                [
+                                  _c("span", [
+                                    _vm._v(" " + _vm._s(slide.sale) + " ")
+                                  ])
+                                ]
+                              )
+                            : _vm._e()
                         ]
                       )
                     ]
@@ -37970,7 +38024,10 @@ var render = function() {
           })
         }),
         1
-      )
+      ),
+      _vm._v(" "),
+      _c("br"),
+      _c("br")
     ],
     1
   )
@@ -60158,8 +60215,8 @@ global.$ = global.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jqu
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Psicología Chile\Proyectos\psicologia-chile\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Psicología Chile\Proyectos\psicologia-chile\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\alvaro\Desktop\Psicologia Chile\Upgrade Psicologia\Upgrade Psicologia Chile\psicologia-chile\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\alvaro\Desktop\Psicologia Chile\Upgrade Psicologia\Upgrade Psicologia Chile\psicologia-chile\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid mt-4">
-    <span class="title--section">Planes Destacados</span>
+    <span class="title--section">Planes destacados</span>
     <hr class="line--separator" />
     <vueper-slides
       class="no-shadow"
@@ -16,13 +16,20 @@
       <vueper-slide v-for="slide in slides" :key="slide.id">
         <template v-slot:content>
           <div class="card card-body carousel--featuredplans card-featuredplans">
-            <img class="img-fluid" src="img/Planes_destacados_fondo2.jpg" alt />
-            <div class="texto-encima55">asdadad</div>
-            <div class></div>
+            <span class="texto-encima-featuredplans text-price"> {{ slide.price }} </span>
+			<span class="texto-encima-featuredplans text-cantses"> {{ slide.cantSes }} </span>
+			<span class="texto-encima-featuredplans text-description"> {{ slide.description }} </span>
+			<!-- Imagen promocion -->
+
+			<span id="saleid" class="circulo" v-if="slide.promocion">
+				<span> {{ slide.sale }} </span>
+			</span>
+
           </div>
         </template>
       </vueper-slide>
     </vueper-slides>
+	<br><br>
   </div>
 </template>
 <script>
@@ -36,17 +43,31 @@ export default {
         {
           title: "Slide #1",
           content: "Slide content.",
-          price: "$14.990"
+		  price: "$14.490 c/sesión",
+		  cantSes: "5 Sesiones",
+		  description: "En este plan ingresan psicologos seleccionados para dar un servicio de calidad a un precio accesible.",
+		  promocion: true,
+		  sale: "Promoción!"
         },
         {
           title: "Slide #2",
-          content: "Slide content."
+		  content: "Slide content.",
+		  price: "$12.490 c/sesión",
+		  cantSes: "4 Sesiones",
+		  description: "En este plan ingresan psicologos seleccionados para dar un servicio de calidad a un precio accesible.",
+		  promocion: false,
+		  sale: "Promoción!"
         },
         {
           title: "Slide #3",
-          content: "Slide content."
+		  content: "Slide content.",
+		  price: "$17.490 c/sesión",
+		  cantSes: "3 Sesiones",
+		  description: "En este plan ingresan psicologos seleccionados para dar un servicio de calidad a un precio accesible.",
+		  promocion: true,
+		  sale: "Promoción!"
         },
-        {
+/*         {
           title: "Slide #4",
           content: "Slide content."
         },
@@ -61,7 +82,7 @@ export default {
         {
           title: "Slide #7",
           content: "Slide content."
-        }
+        } */
       ]
     };
   }

@@ -11340,54 +11340,11 @@ form .row:first-child .floating-label-form-group {
   border-radius: 4px 4px 0 0;
 }
 
-/* Estilo Carousel Prevision */
-
-/* TODO: pendiente de transformar a SCSS */
-
-@media (max-width: 768px) {
-  .carousel-inner .carousel-item > div {
-    display: none;
-  }
-
-  .carousel-inner .carousel-item > div:first-child {
-    display: block;
-  }
-}
-
-.carousel-inner .carousel-item.active,
-.carousel-inner .carousel-item-next,
-.carousel-inner .carousel-item-prev {
-  display: flex;
-}
-
-/* display 3 */
-
-@media (min-width: 768px) {
-  .carousel-inner .carousel-item-right.active,
-  .carousel-inner .carousel-item-next {
-    transform: translateX(33.333%);
-  }
-
-  .carousel-inner .carousel-item-left.active,
-  .carousel-inner .carousel-item-prev {
-    transform: translateX(-33.333%);
-  }
-}
-
-.carousel-inner .carousel-item-right,
-.carousel-inner .carousel-item-left {
-  transform: translateX(0);
-}
-
 /* Tanaño imagenes carousel prevision height: 95px */
 
 .carousel--prevision {
   height: 140px;
 }
-
-/* Responsividad resoluciones */
-
-/* TODO: falta agregar responsividad */
 
 /* PREGUNTAS FRECUENTES */
 
@@ -11428,11 +11385,13 @@ form .row:first-child .floating-label-form-group {
 }
 
 .first-card-faq img {
-  width: 60%;
+  width: 55%;
   height: auto;
 }
 
 /* Texto sobre imagen primera pregunta frecuente 1 */
+
+/* TODO: Cambiar nombre a la clase */
 
 .contenedor33 {
   position: relative;
@@ -11441,6 +11400,8 @@ form .row:first-child .floating-label-form-group {
 }
 
 /* Texto sobre imagen primera pregunta frecuente 2 */
+
+/* TODO: Cambiar nombre a la clase */
 
 .texto-encima33 {
   position: absolute;
@@ -11454,6 +11415,8 @@ form .row:first-child .floating-label-form-group {
 }
 
 /* Texto sobre imagen primera pregunta frecuente 3 */
+
+/* TODO: Cambiar nombre a la clase */
 
 .centrado33 {
   position: absolute;
@@ -11507,11 +11470,14 @@ form .row:first-child .floating-label-form-group {
 
 /* Estilo Prevision */
 
+/* TODO: Cambiar nombre a la clase */
+
 .texto-encima44 {
   position: absolute;
   top: 36%;
   left: 0%;
   width: 100%;
+  color: #edf0f5;
   font-weight: bold;
   font-size: 100%;
   text-align: center;
@@ -11519,28 +11485,61 @@ form .row:first-child .floating-label-form-group {
 
 /* Estilo Featured Plans */
 
-.texto-encima55 {
-  position: absolute;
-  top: 100%;
-  left: 0%;
-  width: 100%;
-  color: #323232;
-  font-weight: bold;
-  font-size: 100%;
-  text-align: center;
-}
-
 .card-featuredplans {
   margin: 1rem;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url(/images/Planes_destacados_fondo.jpg?43c156fc8b2394eff87bc059a8fc59c6);
+  background-position: center center;
+  background-repeat: no-repeat;
+  /* Circulo oferta carousel Planes destacados */
 }
 
-.card-featuredplans img {
-  width: 60%;
-  height: auto;
+.card-featuredplans .texto-encima-featuredplans {
+  /* position: absolute; */
+  /* top: 30%; */
+  left: 0%;
+  width: 100%;
+  color: #323232;
+  font-weight: bold;
+  /* font-size: 100%; */
+  text-align: center;
+  color: #323232;
+}
+
+.card-featuredplans .texto-encima-featuredplans .text-price {
+  top: 20%;
+  font-size: 150%;
+  /* color: grey; */
+}
+
+.card-featuredplans .texto-encima-featuredplans .text-cantses {
+  top: 50%;
+  font-size: 100%;
+  /* color: red; */
+}
+
+.card-featuredplans .circulo {
+  height: 45%;
+  width: 25%;
+  background-color: #f7941e;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+  top: -10%;
+  right: -5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-featuredplans .circulo span {
+  font-size: 57%;
+  color: #323232 !important;
+  font-weight: bold;
 }
 
 .carousel--featuredplans {
