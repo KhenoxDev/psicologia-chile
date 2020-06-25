@@ -13,7 +13,7 @@
       :slide-ratio="1 / 8"
       :dragging-distance="70"
     >
-      <vueper-slide v-for="slide in slides" :key="slide.id">
+      <vueper-slide v-for="slide in slides" :key="slide.id" :style="'margin-bottom:' + ['1rem']">
         <template v-slot:content>
           <div class="card card-body carousel--prevision first-card-faq">
             <img class="img-fluid" src="img/faq_interrogacion_primera_pregunta5.svg" alt />
