@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-    <span class="title--section">Previsión</span>
+    <span class="title--section">Planes Destacados</span>
     <hr class="line--separator" />
     <vueper-slides
       class="no-shadow"
@@ -15,18 +15,17 @@
     >
       <vueper-slide v-for="slide in slides" :key="slide.id">
         <template v-slot:content>
-          <div class="card card-body carousel--prevision card-prevision">
-            <img class="img-fluid" src="" alt />
-            <div class="texto-encima44">
-				<img class="img-fluid" :src="slide.image" :alt="slide.imageDesc">
-				<!-- {{ slide.image }} -->
-				<!-- <img class="img-fluid" src="" alt="">{{ slide.image }} /> -->
+          <div class="card card-body carousel--featuredplans card-featuredplans">
+            <img class="img-fluid" src="img/Planes_destacados_fondo2.jpg" alt />
+            <div class="texto-encima55">
+				asdadad
             </div>
             <div class></div>
           </div>
         </template>
       </vueper-slide>
     </vueper-slides>
+	<br><br>
   </div>
 </template>
 <script>
@@ -41,38 +40,27 @@ export default {
         {
           title: "Slide #1",
 		  content: "Slide content.",
-		  image:  'img/Logo_Banmedica.png',
-		  imageDesc: "Banmedica"
+		  price: "$14.990"
         },
         {
           title: "Slide #2",
-		  content: "Slide content.",
-		  image: 'img/Logo_Fonasa.svg',
-		  imageDesc: "Fonasa"
+		  content: "Slide content."
         },
         {
           title: "Slide #3",
-		  content: "Slide content.",
-		  image: 'img/Logo_Colmena_2.jpg',
-		  imageDesc: "Colmena"
+		  content: "Slide content."
         },
         {
           title: "Slide #4",
-		  content: "Slide content.",
-		  image: 'img/Logo_Masvida.png',
-		  imageDesc: "Masvida"
+		  content: "Slide content."
         },
         {
           title: "Slide #5",
-		  content: "Slide content.",
-		  image: 'img/Logo_Cruz_Blanca.png',
-		  imageDesc: "Cruzblanca"
+		  content: "Slide content."
         },
         {
           title: "Slide #6",
-		  content: "Slide content.",
-		  image: 'img/Logo_Consalud.png',
-		  imageDesc: "Consalud"
+		  content: "Slide content."
         },
         {
           title: "Slide #7",

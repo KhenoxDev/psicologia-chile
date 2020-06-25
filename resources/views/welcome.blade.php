@@ -16,6 +16,7 @@
 			<carousel></carousel>
 			<prevision></prevision>
 			<frequentlyquestions></frequentlyquestions>
+			<featuredplans></featuredplans>
         </div>
 		<script src="{{ asset('js/app.js') }}"></script>
 
