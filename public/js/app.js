@@ -2174,13 +2174,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2193,32 +2186,32 @@ __webpack_require__.r(__webpack_exports__);
       slides: [{
         title: "Slide #1",
         content: "Slide content.",
-        image: 'img/Logo_Banmedica.png',
+        image: "img/Logo_Banmedica.png",
         imageDesc: "Banmedica"
       }, {
         title: "Slide #2",
         content: "Slide content.",
-        image: 'img/Logo_Fonasa.svg',
+        image: "img/Logo_Fonasa.svg",
         imageDesc: "Fonasa"
       }, {
         title: "Slide #3",
         content: "Slide content.",
-        image: 'img/Logo_Colmena_2.jpg',
+        image: "img/Logo_Colmena_2.jpg",
         imageDesc: "Colmena"
       }, {
         title: "Slide #4",
         content: "Slide content.",
-        image: 'img/Logo_Masvida.png',
+        image: "img/Logo_Masvida.png",
         imageDesc: "Masvida"
       }, {
         title: "Slide #5",
         content: "Slide content.",
-        image: 'img/Logo_Cruz_Blanca.png',
+        image: "img/Logo_Cruz_Blanca.png",
         imageDesc: "Cruzblanca"
       }, {
         title: "Slide #6",
         content: "Slide content.",
-        image: 'img/Logo_Consalud.png',
+        image: "img/Logo_Consalud.png",
         imageDesc: "Consalud"
       }, {
         title: "Slide #7",
@@ -38954,13 +38947,13 @@ var render = function() {
             infinite: true,
             transitionSpeed: 100,
             "visible-slides": 3,
-            "slide-ratio": 1 / 8,
-            "dragging-distance": 70
+            "slide-ratio": 1 / 8
           }
         },
         _vm._l(_vm.slides, function(slide) {
           return _c("vueper-slide", {
             key: slide.id,
+            style: "margin-bottom:" + ["1rem"],
             scopedSlots: _vm._u(
               [
                 {
@@ -38976,17 +38969,8 @@ var render = function() {
                         [
                           _c("img", {
                             staticClass: "img-fluid",
-                            attrs: { src: "", alt: "" }
-                          }),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "texto-encima44" }, [
-                            _c("img", {
-                              staticClass: "img-fluid",
-                              attrs: { src: slide.image, alt: slide.imageDesc }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("div", {})
+                            attrs: { src: slide.image, alt: slide.imageDesc }
+                          })
                         ]
                       )
                     ]
@@ -60740,8 +60724,8 @@ global.$ = global.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jqu
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\alvaro\Desktop\Psicologia Chile\Upgrade Psicologia\Upgrade Psicologia Chile\psicologia-chile\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\alvaro\Desktop\Psicologia Chile\Upgrade Psicologia\Upgrade Psicologia Chile\psicologia-chile\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Psicología Chile\Proyectos\psicologia-chile\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\Psicología Chile\Proyectos\psicologia-chile\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

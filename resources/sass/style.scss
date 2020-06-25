@@ -501,9 +501,10 @@ form .row:first-child .floating-label-form-group {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	background-color: $gray-5;
 
 	img {
-		width: 60%;
+		width: 70%;
 		height: auto;
 	}
 }
