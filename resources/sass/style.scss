@@ -310,77 +310,78 @@ form .row:first-child .floating-label-form-group {
 	background-color: #1a252f;
 }
 
-  /* Bootstrap Lightbox using Modal */
+/* Bootstrap Lightbox using Modal */
 
-  #profile-grid {
+#profile-grid {
 	overflow: auto;
 	white-space: normal;
 
 	.profile {
-	  padding-bottom: 40px;
+		padding-bottom: 40px;
 	}
 
 	.panel {
-	  padding: 0;
+		padding: 0;
 	}
 
 	.panel-body {
-	  padding: 15px;
+		padding: 15px;
 	}
 
 	.profile-name {
-	  font-weight: bold;
+		font-weight: bold;
 	}
 
 	.thumbnail {
-	  margin-bottom: 6px;
+		margin-bottom: 6px;
 	}
 
 	.panel-thumbnail {
-	  overflow: hidden;
+		overflow: hidden;
 	}
 
 	.img-rounded {
-	  border-radius: 4px 4px 0 0;
+		border-radius: 4px 4px 0 0;
 	}
-  }
+}
 
 
 /* Estilo Carousel Prevision */
 /* TODO: pendiente de transformar a SCSS */
 
 @media (max-width: 768px) {
-    .carousel-inner .carousel-item > div {
-        display: none;
-    }
-    .carousel-inner .carousel-item > div:first-child {
-        display: block;
-    }
+	.carousel-inner .carousel-item>div {
+		display: none;
+	}
+
+	.carousel-inner .carousel-item>div:first-child {
+		display: block;
+	}
 }
 
 .carousel-inner .carousel-item.active,
 .carousel-inner .carousel-item-next,
 .carousel-inner .carousel-item-prev {
-    display: flex;
+	display: flex;
 }
 
 /* display 3 */
 @media (min-width: 768px) {
 
-    .carousel-inner .carousel-item-right.active,
-    .carousel-inner .carousel-item-next {
-      transform: translateX(33.333%);
-    }
+	.carousel-inner .carousel-item-right.active,
+	.carousel-inner .carousel-item-next {
+		transform: translateX(33.333%);
+	}
 
-    .carousel-inner .carousel-item-left.active,
-    .carousel-inner .carousel-item-prev {
-      transform: translateX(-33.333%);
-    }
+	.carousel-inner .carousel-item-left.active,
+	.carousel-inner .carousel-item-prev {
+		transform: translateX(-33.333%);
+	}
 }
 
 .carousel-inner .carousel-item-right,
-.carousel-inner .carousel-item-left{
-  transform: translateX(0);
+.carousel-inner .carousel-item-left {
+	transform: translateX(0);
 }
 
 
@@ -403,6 +404,7 @@ form .row:first-child .floating-label-form-group {
 	align-items: center;
 	justify-content: center;
 	margin-top: 1rem;
+
 	button {
 		color: $dark;
 		font-weight: bold;
@@ -423,29 +425,43 @@ form .row:first-child .floating-label-form-group {
 /* Estilo tarjeta primera pregunta frecuente */
 .first-card-faq {
 	background: $teal-tiny;
+	margin: 1rem;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	img {
+		width: 60%;
+		height: auto;
+	}
 }
 
 /* Texto sobre imagen primera pregunta frecuente 1 */
-.contenedor33{
-    position: relative;
-    display: inline-block;
-    text-align: center;
+.contenedor33 {
+	position: relative;
+	display: inline-block;
+	text-align: center;
 }
- /* Texto sobre imagen primera pregunta frecuente 2 */
-.texto-encima33{
+
+/* Texto sobre imagen primera pregunta frecuente 2 */
+.texto-encima33 {
 	position: absolute;
-	top: 30%;
-	left: 0;
+	top: 36%;
+	left: 0%;
 	width: 100%;
 	color: $gray-4;
 	font-weight: bold;
+	font-size: 100%;
+	text-align: center;
 }
+
 /* Texto sobre imagen primera pregunta frecuente 3 */
-.centrado33{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.centrado33 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 /* Estilo flechitas carusel */
@@ -457,13 +473,22 @@ form .row:first-child .floating-label-form-group {
 } */
 
 .carousel-control-prev-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='gray' viewBox='2 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='gray' viewBox='2 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
 }
 
 .carousel-control-next-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='gray' viewBox='-1 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='gray' viewBox='-1 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
 }
 
 
 
 /* FIN ESTILO PREGUNTAS FRECUENTES */
+.line--separator {
+	height: 2px !important;
+	background-color: $gray-3 !important;
+}
+
+.title--section {
+	font-size: 1.7rem;
+	color: $dark;
+}
