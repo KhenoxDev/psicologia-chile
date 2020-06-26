@@ -2014,7 +2014,7 @@ __webpack_require__.r(__webpack_exports__);
         cantSes: "5 Sesiones",
         description: "En este plan ingresan psicologos seleccionados para dar un servicio de calidad a un precio accesible.",
         promocion: true,
-        sale: "Promoción!"
+        sale: "¡PROMOCIÓN!"
       }, {
         title: "Slide #2",
         content: "Slide content.",
@@ -2031,24 +2031,23 @@ __webpack_require__.r(__webpack_exports__);
         description: "En este plan ingresan psicologos seleccionados para dar un servicio de calidad a un precio accesible.",
         promocion: false,
         sale: "Promoción!"
-      }
-      /*      {
-                title: "Slide #4",
-                content: "Slide content."
-              },
-              {
-                title: "Slide #5",
-                content: "Slide content."
-              },
-              {
-                title: "Slide #6",
-                content: "Slide content."
-              },
-              {
-                title: "Slide #7",
-                content: "Slide content."
-              } */
-      ]
+      }, {
+        title: "Slide #4",
+        content: "Slide content.",
+        price: "$00.000 c/sesión",
+        cantSes: "0 Sesiones",
+        description: "En este plan ingresan psicologos seleccionados para dar un servicio de calidad a un precio accesible.",
+        promocion: true,
+        sale: "¡PROXIMAMENTE!"
+      }, {
+        title: "Slide #5",
+        content: "Slide content.",
+        price: "$00.000 c/sesión",
+        cantSes: "0 Sesiones",
+        description: "En este plan ingresan psicologos seleccionados para dar un servicio de calidad a un precio accesible.",
+        promocion: true,
+        sale: "¡PROXIMAMENTE!"
+      }]
     };
   }
 });
@@ -37950,16 +37949,15 @@ var render = function() {
             autoplay: true,
             arrows: false,
             infinite: true,
-            transitionSpeed: 10000000,
+            transitionSpeed: 400,
             "visible-slides": 3,
             "slide-ratio": 1 / 6,
-            "dragging-distance": 70
+            "dragging-distance": 200
           }
         },
         _vm._l(_vm.slides, function(slide) {
           return _c("vueper-slide", {
             key: slide.id,
-            style: "border-radius: " + ["1rem"],
             scopedSlots: _vm._u(
               [
                 {
@@ -37975,7 +37973,12 @@ var render = function() {
                         [
                           _c(
                             "div",
-                            { staticClass: "col-md-12 price--container" },
+                            {
+                              staticClass: "col-md-12 price--container",
+                              staticStyle: {
+                                "border-radius": "4px 4px 0px 0px"
+                              }
+                            },
                             [
                               _c("span", { staticClass: "text--price" }, [
                                 _vm._v(" " + _vm._s(slide.price) + " ")
@@ -37991,7 +37994,12 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "div",
-                            { staticClass: "col-md-12 description--container" },
+                            {
+                              staticClass: "col-md-12 description--container",
+                              staticStyle: {
+                                "border-radius": "0px 0px 4px 4px"
+                              }
+                            },
                             [
                               _c("span", [
                                 _vm._v(" " + _vm._s(slide.description) + " ")

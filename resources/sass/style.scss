@@ -582,13 +582,15 @@ form .row:first-child .floating-label-form-group {
 /* Estilo Featured Plans */
 .card--featuredplans {
 	padding: 0;
-	border-radius: 1rem;
+	border-radius: 0.5rem;
+
 	/* Circulo oferta carousel Planes destacados */
 	.circulo {
 		height: 65%;
 		width: 25%;
 		background-color: $orange-selected;
 		border-radius: 50%;
+
 		display: inline-block;
 
 		position: absolute;
@@ -599,10 +601,13 @@ form .row:first-child .floating-label-form-group {
 		align-items: center;
 		justify-content: center;
 
+		box-shadow: 3px 1px 7px 3px rgba(0,0,0,0.75);
+
 		span {
 			font-size: 65%;
 			color: $dark !important;
 			font-weight: bold;
+			font-family: unset;
 		}
 	}
 	.price--container {
@@ -619,10 +624,12 @@ form .row:first-child .floating-label-form-group {
 		.text--price {
 			font-weight: bold;
 			font-size: 150%;
+			font-family: cursive;
 		}
 
 		.text--cantsessions {
-			font-size: 120%;
+			font-size: 129%;
+			font-family: cursive;
 		}
 	}
 
@@ -631,11 +638,13 @@ form .row:first-child .floating-label-form-group {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		font-family: cursive;
 
 		span {
-			font-size: 100%;
+			font-size: 115%;
 			color: $white;
 			text-align: center;
+			padding: 0rem 2rem;
 		}
 
 	}

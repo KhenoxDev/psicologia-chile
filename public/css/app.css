@@ -11487,7 +11487,7 @@ form .row:first-child .floating-label-form-group {
 
 .card--featuredplans {
   padding: 0;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   /* Circulo oferta carousel Planes destacados */
 }
 
@@ -11504,12 +11504,14 @@ form .row:first-child .floating-label-form-group {
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 3px 1px 7px 3px rgba(0, 0, 0, 0.75);
 }
 
 .card--featuredplans .circulo span {
   font-size: 65%;
   color: #323232 !important;
   font-weight: bold;
+  font-family: unset;
 }
 
 .card--featuredplans .price--container {
@@ -11527,10 +11529,12 @@ form .row:first-child .floating-label-form-group {
 .card--featuredplans .price--container .text--price {
   font-weight: bold;
   font-size: 150%;
+  font-family: cursive;
 }
 
 .card--featuredplans .price--container .text--cantsessions {
-  font-size: 120%;
+  font-size: 129%;
+  font-family: cursive;
 }
 
 .card--featuredplans .description--container {
@@ -11538,12 +11542,14 @@ form .row:first-child .floating-label-form-group {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: cursive;
 }
 
 .card--featuredplans .description--container span {
-  font-size: 100%;
+  font-size: 115%;
   color: #fff;
   text-align: center;
+  padding: 0rem 2rem;
 }
 
 .carousel--featuredplans {
