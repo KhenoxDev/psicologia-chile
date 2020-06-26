@@ -11485,64 +11485,69 @@ form .row:first-child .floating-label-form-group {
 
 /* Estilo Featured Plans */
 
-.card-featuredplans {
-  margin: 1rem;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: url(/images/Planes_destacados_fondo.jpg?43c156fc8b2394eff87bc059a8fc59c6);
-  background-position: center center;
-  background-repeat: no-repeat;
+.card--featuredplans {
+  padding: 0;
+  border-radius: 1rem;
   /* Circulo oferta carousel Planes destacados */
 }
 
-.card-featuredplans .texto-encima-featuredplans {
-  /* position: absolute; */
-  /* top: 30%; */
-  left: 0%;
-  width: 100%;
-  color: #323232;
-  font-weight: bold;
-  /* font-size: 100%; */
-  text-align: center;
-  color: #323232;
-}
-
-.card-featuredplans .texto-encima-featuredplans .text-price {
-  top: 20%;
-  font-size: 150%;
-  /* color: grey; */
-}
-
-.card-featuredplans .texto-encima-featuredplans .text-cantses {
-  top: 50%;
-  font-size: 100%;
-  /* color: red; */
-}
-
-.card-featuredplans .circulo {
-  height: 45%;
+.card--featuredplans .circulo {
+  height: 65%;
   width: 25%;
   background-color: #f7941e;
   border-radius: 50%;
   display: inline-block;
   position: absolute;
   z-index: 1;
-  top: -10%;
-  right: -5%;
+  top: 0%;
+  right: -2%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.card-featuredplans .circulo span {
-  font-size: 57%;
+.card--featuredplans .circulo span {
+  font-size: 65%;
   color: #323232 !important;
   font-weight: bold;
 }
 
+.card--featuredplans .price--container {
+  background: #5ec6d1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card--featuredplans .price--container span {
+  color: #fff;
+}
+
+.card--featuredplans .price--container .text--price {
+  font-weight: bold;
+  font-size: 150%;
+}
+
+.card--featuredplans .price--container .text--cantsessions {
+  font-size: 120%;
+}
+
+.card--featuredplans .description--container {
+  background: #606060;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card--featuredplans .description--container span {
+  font-size: 100%;
+  color: #fff;
+  text-align: center;
+}
+
 .carousel--featuredplans {
-  height: 140px;
+  height: 100px;
+  width: 90%;
 }
 

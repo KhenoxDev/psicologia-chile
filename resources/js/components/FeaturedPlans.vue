@@ -8,28 +8,30 @@
       :autoplay="true"
       :arrows="false"
       :infinite="true"
-      :transitionSpeed="100"
+      :transitionSpeed="10000000"
       :visible-slides="3"
-      :slide-ratio="1 / 8"
+      :slide-ratio="1 / 6"
       :dragging-distance="70"
     >
-      <vueper-slide v-for="slide in slides" :key="slide.id">
+      <vueper-slide v-for="slide in slides" :key="slide.id" :style="'border-radius: ' + ['1rem'] ">
         <template v-slot:content>
-          <div class="card card-body carousel--featuredplans card-featuredplans">
-            <span class="texto-encima-featuredplans text-price"> {{ slide.price }} </span>
-			<span class="texto-encima-featuredplans text-cantses"> {{ slide.cantSes }} </span>
-			<span class="texto-encima-featuredplans text-description"> {{ slide.description }} </span>
-			<!-- Imagen promocion -->
-
+		<!-- Campos tabla planes destacados -->
+		<div class="card card-body carousel--featuredplans card--featuredplans">
+			<div class="col-md-12 price--container">
+				<span class="text--price"> {{ slide.price }} </span>
+				<span class="text--cantsessions"> {{ slide.cantSes }} </span>
+			</div>
+			<div class="col-md-12 description--container">
+				<span> {{ slide.description }} </span>
+			</div>
 			<span id="saleid" class="circulo" v-if="slide.promocion">
 				<span> {{ slide.sale }} </span>
 			</span>
-
-          </div>
+		</div>
+		<!-- fin campos tabla planes destacados -->
         </template>
       </vueper-slide>
     </vueper-slides>
-	<br><br>
   </div>
 </template>
 <script>
@@ -64,10 +66,10 @@ export default {
 		  price: "$17.490 c/sesión",
 		  cantSes: "3 Sesiones",
 		  description: "En este plan ingresan psicologos seleccionados para dar un servicio de calidad a un precio accesible.",
-		  promocion: true,
+		  promocion: false,
 		  sale: "Promoción!"
         },
-/*         {
+/*      {
           title: "Slide #4",
           content: "Slide content."
         },

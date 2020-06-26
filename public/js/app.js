@@ -1997,6 +1997,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2027,10 +2029,10 @@ __webpack_require__.r(__webpack_exports__);
         price: "$17.490 c/sesión",
         cantSes: "3 Sesiones",
         description: "En este plan ingresan psicologos seleccionados para dar un servicio de calidad a un precio accesible.",
-        promocion: true,
+        promocion: false,
         sale: "Promoción!"
       }
-      /*         {
+      /*      {
                 title: "Slide #4",
                 content: "Slide content."
               },
@@ -37948,15 +37950,16 @@ var render = function() {
             autoplay: true,
             arrows: false,
             infinite: true,
-            transitionSpeed: 100,
+            transitionSpeed: 10000000,
             "visible-slides": 3,
-            "slide-ratio": 1 / 8,
+            "slide-ratio": 1 / 6,
             "dragging-distance": 70
           }
         },
         _vm._l(_vm.slides, function(slide) {
           return _c("vueper-slide", {
             key: slide.id,
+            style: "border-radius: " + ["1rem"],
             scopedSlots: _vm._u(
               [
                 {
@@ -37967,34 +37970,33 @@ var render = function() {
                         "div",
                         {
                           staticClass:
-                            "card card-body carousel--featuredplans card-featuredplans"
+                            "card card-body carousel--featuredplans card--featuredplans"
                         },
                         [
                           _c(
-                            "span",
-                            {
-                              staticClass:
-                                "texto-encima-featuredplans text-price"
-                            },
-                            [_vm._v(" " + _vm._s(slide.price) + " ")]
+                            "div",
+                            { staticClass: "col-md-12 price--container" },
+                            [
+                              _c("span", { staticClass: "text--price" }, [
+                                _vm._v(" " + _vm._s(slide.price) + " ")
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "span",
+                                { staticClass: "text--cantsessions" },
+                                [_vm._v(" " + _vm._s(slide.cantSes) + " ")]
+                              )
+                            ]
                           ),
                           _vm._v(" "),
                           _c(
-                            "span",
-                            {
-                              staticClass:
-                                "texto-encima-featuredplans text-cantses"
-                            },
-                            [_vm._v(" " + _vm._s(slide.cantSes) + " ")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "span",
-                            {
-                              staticClass:
-                                "texto-encima-featuredplans text-description"
-                            },
-                            [_vm._v(" " + _vm._s(slide.description) + " ")]
+                            "div",
+                            { staticClass: "col-md-12 description--container" },
+                            [
+                              _c("span", [
+                                _vm._v(" " + _vm._s(slide.description) + " ")
+                              ])
+                            ]
                           ),
                           _vm._v(" "),
                           slide.promocion
@@ -38024,10 +38026,7 @@ var render = function() {
           })
         }),
         1
-      ),
-      _vm._v(" "),
-      _c("br"),
-      _c("br")
+      )
     ],
     1
   )
