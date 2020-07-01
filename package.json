@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "vue-flashcard": "^1.1.6",
         "vueperslides": "^2.9.0"
     }
 }

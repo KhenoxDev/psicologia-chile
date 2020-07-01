@@ -11249,6 +11249,64 @@ form .row:first-child .floating-label-form-group {
   color: #323232;
 }
 
+/* Specialists */
+
+.cards--container {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards--container .card--specialist {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+  border-radius: 0.2rem;
+  box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cards--container .card--specialist .specialist {
+  text-align: right;
+  font-size: 100%;
+  font-weight: bold;
+  color: #323232;
+  padding: 0 1rem;
+  border-radius: 0.5rem;
+  max-width: 55%;
+  width: auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  opacity: inherit;
+  flex-direction: column;
+}
+
+.cards--container .card--specialist .specialist .title--psicologia {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.cards--container .card--specialist .specialist .btn--specialist {
+  margin-top: 0.5rem;
+  padding: 0.7rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #323232;
+  background-color: #f0c828;
+}
+
+.cards--container .card--specialist-max {
+  width: 100%;
+  height: 20rem;
+  margin-bottom: 1rem;
+}
+
 /* Media Queries */
 
 @media (max-width: 768px) {
@@ -11340,54 +11398,11 @@ form .row:first-child .floating-label-form-group {
   border-radius: 4px 4px 0 0;
 }
 
-/* Estilo Carousel Prevision */
-
-/* TODO: pendiente de transformar a SCSS */
-
-@media (max-width: 768px) {
-  .carousel-inner .carousel-item > div {
-    display: none;
-  }
-
-  .carousel-inner .carousel-item > div:first-child {
-    display: block;
-  }
-}
-
-.carousel-inner .carousel-item.active,
-.carousel-inner .carousel-item-next,
-.carousel-inner .carousel-item-prev {
-  display: flex;
-}
-
-/* display 3 */
-
-@media (min-width: 768px) {
-  .carousel-inner .carousel-item-right.active,
-  .carousel-inner .carousel-item-next {
-    transform: translateX(33.333%);
-  }
-
-  .carousel-inner .carousel-item-left.active,
-  .carousel-inner .carousel-item-prev {
-    transform: translateX(-33.333%);
-  }
-}
-
-.carousel-inner .carousel-item-right,
-.carousel-inner .carousel-item-left {
-  transform: translateX(0);
-}
-
 /* Tanaño imagenes carousel prevision height: 95px */
 
 .carousel--prevision {
   height: 140px;
 }
-
-/* Responsividad resoluciones */
-
-/* TODO: falta agregar responsividad */
 
 /* PREGUNTAS FRECUENTES */
 
@@ -11428,11 +11443,13 @@ form .row:first-child .floating-label-form-group {
 }
 
 .first-card-faq img {
-  width: 60%;
+  width: 55%;
   height: auto;
 }
 
 /* Texto sobre imagen primera pregunta frecuente 1 */
+
+/* TODO: Cambiar nombre a la clase */
 
 .contenedor33 {
   position: relative;
@@ -11441,6 +11458,8 @@ form .row:first-child .floating-label-form-group {
 }
 
 /* Texto sobre imagen primera pregunta frecuente 2 */
+
+/* TODO: Cambiar nombre a la clase */
 
 .texto-encima33 {
   position: absolute;
@@ -11454,6 +11473,8 @@ form .row:first-child .floating-label-form-group {
 }
 
 /* Texto sobre imagen primera pregunta frecuente 3 */
+
+/* TODO: Cambiar nombre a la clase */
 
 .centrado33 {
   position: absolute;
@@ -11507,6 +11528,8 @@ form .row:first-child .floating-label-form-group {
 
 /* Estilo Prevision */
 
+/* TODO: Cambiar nombre a la clase */
+
 .texto-encima44 {
   position: absolute;
   top: 36%;
@@ -11518,6 +11541,8 @@ form .row:first-child .floating-label-form-group {
 }
 
 /* Estilo Featured Plans */
+
+/* TODO: Cambiar nombre a la clase */
 
 .texto-encima55 {
   position: absolute;

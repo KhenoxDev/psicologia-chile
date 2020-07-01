@@ -11,12 +11,13 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
     <body>
-        <div id="app">
+        <div id="app" class="container">
 			<navbar logo="{{ asset('img/logo.png') }}"></navbar>
 			<carousel></carousel>
             <three-steps></three-steps>
 			<prevision></prevision>
 			<frequentlyquestions></frequentlyquestions>
+			<specialists></specialists>
 			<featuredplans></featuredplans>
         </div>
 		<script src="{{ asset('js/app.js') }}"></script>
