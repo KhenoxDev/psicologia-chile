@@ -11299,6 +11299,11 @@ form .row:first-child .floating-label-form-group {
   font-weight: bold;
   color: #323232;
   background-color: #f0c828;
+  border-radius: 0.5rem;
+}
+
+.cards--container .card--specialist .specialist .btn--specialist:hover {
+  background-color: #ffed4a;
 }
 
 .cards--container .card--specialist-max {

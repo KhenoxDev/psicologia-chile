@@ -378,6 +378,11 @@ form .row:first-child .floating-label-form-group {
 				font-weight: bold;
 				color: $dark;
 				background-color: $yellow-1;
+				border-radius: 0.5rem;
+
+				&:hover {
+					background-color: $yellow;
+				}
 			}
 		}
 	}
