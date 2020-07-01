@@ -11340,54 +11340,11 @@ form .row:first-child .floating-label-form-group {
   border-radius: 4px 4px 0 0;
 }
 
-/* Estilo Carousel Prevision */
-
-/* TODO: pendiente de transformar a SCSS */
-
-@media (max-width: 768px) {
-  .carousel-inner .carousel-item > div {
-    display: none;
-  }
-
-  .carousel-inner .carousel-item > div:first-child {
-    display: block;
-  }
-}
-
-.carousel-inner .carousel-item.active,
-.carousel-inner .carousel-item-next,
-.carousel-inner .carousel-item-prev {
-  display: flex;
-}
-
-/* display 3 */
-
-@media (min-width: 768px) {
-  .carousel-inner .carousel-item-right.active,
-  .carousel-inner .carousel-item-next {
-    transform: translateX(33.333%);
-  }
-
-  .carousel-inner .carousel-item-left.active,
-  .carousel-inner .carousel-item-prev {
-    transform: translateX(-33.333%);
-  }
-}
-
-.carousel-inner .carousel-item-right,
-.carousel-inner .carousel-item-left {
-  transform: translateX(0);
-}
-
 /* Tanaño imagenes carousel prevision height: 95px */
 
 .carousel--prevision {
   height: 140px;
 }
-
-/* Responsividad resoluciones */
-
-/* TODO: falta agregar responsividad */
 
 /* PREGUNTAS FRECUENTES */
 
@@ -11397,7 +11354,7 @@ form .row:first-child .floating-label-form-group {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .seemore--questions button {
@@ -11405,6 +11362,9 @@ form .row:first-child .floating-label-form-group {
   font-weight: bold;
   padding: 0.5rem 1rem 0.5rem 1rem;
   text-transform: uppercase;
+  background-color: #f0c828;
+  border-radius: 0.5rem;
+  border: none;
 }
 
 .underline--verconsultas {
@@ -11428,21 +11388,29 @@ form .row:first-child .floating-label-form-group {
 }
 
 .first-card-faq img {
-  width: 60%;
+  width: 57%;
   height: auto;
 }
 
-/* Texto sobre imagen primera pregunta frecuente 1 */
+/* Estilo resto de las tarjetas pregunta frecuente */
 
-.contenedor33 {
-  position: relative;
-  display: inline-block;
-  text-align: center;
+.another-card-faq {
+  background: #fff;
+  margin: 1rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Texto sobre imagen primera pregunta frecuente 2 */
+.another-card-faq img {
+  width: 55%;
+  height: auto;
+}
 
-.texto-encima33 {
+/* Texto primera imagen pregunta frecuente */
+
+.texto-first-frequentlyquestions {
   position: absolute;
   top: 36%;
   left: 0%;
@@ -11453,13 +11421,29 @@ form .row:first-child .floating-label-form-group {
   text-align: center;
 }
 
-/* Texto sobre imagen primera pregunta frecuente 3 */
+/* Texto resto de imagenes pregunta frecuente */
 
-.centrado33 {
+.texto-another-frequentlyquestions {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 36%;
+  left: 0%;
+  width: 100%;
+  color: #323232;
+  /* font-weight: bold; */
+  font-size: 100%;
+  text-align: center;
+}
+
+/* Espacio margen abajo slider pregunta frecuente */
+
+.test--margin {
+  margin-bottom: 1.2rem;
+}
+
+/* Clase de prueba para ver el borde de frequently questions */
+
+.border-frequentlyquestions {
+  box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
 }
 
 /* Estilo flechitas carusel */
@@ -11507,6 +11491,8 @@ form .row:first-child .floating-label-form-group {
 
 /* Estilo Prevision */
 
+/* TODO: Cambiar nombre a la clase */
+
 .texto-encima44 {
   position: absolute;
   top: 36%;
@@ -11518,6 +11504,8 @@ form .row:first-child .floating-label-form-group {
 }
 
 /* Estilo Featured Plans */
+
+/* TODO: Cambiar nombre a la clase */
 
 .texto-encima55 {
   position: absolute;

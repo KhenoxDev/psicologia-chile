@@ -456,13 +456,16 @@ form .row:first-child .floating-label-form-group {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-top: 1rem;
+	margin-top: 2rem;
 
 	button {
 		color: $dark;
 		font-weight: bold;
 		padding: 0.5rem 1rem 0.5rem 1rem;
 		text-transform: uppercase;
+		background-color: #f0c828;
+		border-radius: 0.5rem;
+		border: none;
 	}
 }
 
@@ -485,22 +488,29 @@ form .row:first-child .floating-label-form-group {
 	justify-content: center;
 
 	img {
+		width: 57%;
+		height: auto;
+	}
+}
+
+/* Estilo resto de las tarjetas pregunta frecuente */
+.another-card-faq {
+	background: $white;
+	margin: 1rem;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	img {
 		width: 55%;
 		height: auto;
 	}
 }
 
-/* Texto sobre imagen primera pregunta frecuente 1 */
-/* TODO: Cambiar nombre a la clase */
-.contenedor33 {
-	position: relative;
-	display: inline-block;
-	text-align: center;
-}
 
-/* Texto sobre imagen primera pregunta frecuente 2 */
-/* TODO: Cambiar nombre a la clase */
-.texto-encima33 {
+/* Texto primera imagen pregunta frecuente */
+.texto-first-frequentlyquestions {
 	position: absolute;
 	top: 36%;
 	left: 0%;
@@ -511,14 +521,29 @@ form .row:first-child .floating-label-form-group {
 	text-align: center;
 }
 
-/* Texto sobre imagen primera pregunta frecuente 3 */
-/* TODO: Cambiar nombre a la clase */
-.centrado33 {
+/* Texto resto de imagenes pregunta frecuente */
+.texto-another-frequentlyquestions {
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	top: 36%;
+	left: 0%;
+	width: 100%;
+	color: $dark;
+	/* font-weight: bold; */
+	font-size: 100%;
+	text-align: center;
 }
+
+/* Espacio margen abajo slider pregunta frecuente */
+.test--margin {
+	margin-bottom: 1.2rem;
+}
+
+
+/* Clase de prueba para ver el borde de frequently questions */
+.border-frequentlyquestions {
+	box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+}
+
 
 /* Estilo flechitas carusel */
 /* .carousel-control-next-icon,
