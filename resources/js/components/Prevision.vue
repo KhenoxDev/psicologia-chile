@@ -6,17 +6,19 @@
     <hr class="line--separator" />
     <vueper-slides
       class="no-shadow desktop--prevision"
-      :bullets="false"
-      :autoplay="true"
+      bullets-outside
+      autoplay
+      infinite
+      slide-multiple
+      :gap="3"
       :arrows="false"
-      :infinite="true"
       :transitionSpeed="100"
       :visible-slides="3"
       :slide-ratio="1 / 8"
     >
       <vueper-slide v-for="slide in slides" :key="slide.id" :style="'margin-bottom:' + ['1rem']">
         <template v-slot:content>
-          <div class="card card-body carousel--prevision card-prevision">
+          <div class="card card-body card--prevision">
             <img class="img-fluid" :src="slide.image" :alt="slide.imageDesc" />
           </div>
         </template>
@@ -34,7 +36,7 @@
     >
       <vueper-slide v-for="slide in slides" :key="slide.id" :style="'margin-bottom:' + ['1rem']">
         <template v-slot:content>
-          <div class="card card-body carousel--prevision card-prevision">
+          <div class="card card-body card--prevision">
             <img class="img-fluid" :src="slide.image" :alt="slide.imageDesc" />
           </div>
         </template>

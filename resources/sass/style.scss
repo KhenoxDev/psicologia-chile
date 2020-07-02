@@ -246,6 +246,50 @@
 	.mobile--prevision {
 		display: none;
 	}
+
+	.card--prevision {
+		margin: 1rem;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: $gray-5;
+
+		img {
+			width: 70%;
+			height: auto;
+		}
+	}
+
+	.vueperslides__bullet {
+		&:focus {
+			outline: none;
+		}
+
+		.default {
+			background-color: rgba(0, 0, 0, 0.3);
+			border: none;
+			box-shadow: none;
+			transition: 0.3s;
+			width: 16px;
+			height: 16px;
+		}
+	}
+
+	.vueperslides__bullet--active {
+		.default {
+			background-color: $orange-selected;
+		}
+	}
+
+	.vueperslides__bullet {
+		span {
+			display: block;
+			color: #fff;
+			font-size: 10px;
+			opacity: 0.8;
+		}
+	}
 }
 
 /* Frequently questions */
@@ -1294,33 +1338,7 @@
 
 
 
-.card-prevision {
-	margin: 1rem;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: $gray-5;
 
-	img {
-		width: 70%;
-		height: auto;
-	}
-}
-
-
-/* Estilo Prevision */
-/* TODO: Cambiar nombre a la clase */
-.texto-encima44 {
-	position: absolute;
-	top: 36%;
-	left: 0%;
-	width: 100%;
-	color: $gray-4;
-	font-weight: bold;
-	font-size: 100%;
-	text-align: center;
-}
 
 /* Estilo Featured Plans */
 .card--featuredplans {

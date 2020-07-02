@@ -1,5 +1,5 @@
 <template>
-  <div id="mainQuestions" class="container mt-4">
+  <div id="mainQuestions" class="container">
     <span class="title--section">
       <strong>Consultas</strong> frecuentes
     </span>
