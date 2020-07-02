@@ -2281,6 +2281,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2319,9 +2337,6 @@ __webpack_require__.r(__webpack_exports__);
         content: "Slide content.",
         image: "img/Logo_Consalud.png",
         imageDesc: "Consalud"
-      }, {
-        title: "Slide #7",
-        content: "Slide content."
       }]
     };
   }
@@ -2419,9 +2434,6 @@ __webpack_require__.r(__webpack_exports__);
         "class": ""
       }]
     };
-  },
-  mounted: function mounted() {
-    console.log(items);
   }
 });
 
@@ -38558,7 +38570,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container-fluid mt-4" },
+    { staticClass: "container mt-4", attrs: { id: "mainPrevision" } },
     [
       _c("span", { staticClass: "title--section" }, [_vm._v("Previsión")]),
       _vm._v(" "),
@@ -38567,7 +38579,7 @@ var render = function() {
       _c(
         "vueper-slides",
         {
-          staticClass: "no-shadow",
+          staticClass: "no-shadow desktop--prevision",
           attrs: {
             bullets: false,
             autoplay: true,
@@ -38576,6 +38588,56 @@ var render = function() {
             transitionSpeed: 100,
             "visible-slides": 3,
             "slide-ratio": 1 / 8
+          }
+        },
+        _vm._l(_vm.slides, function(slide) {
+          return _c("vueper-slide", {
+            key: slide.id,
+            style: "margin-bottom:" + ["1rem"],
+            scopedSlots: _vm._u(
+              [
+                {
+                  key: "content",
+                  fn: function() {
+                    return [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "card card-body carousel--prevision card-prevision"
+                        },
+                        [
+                          _c("img", {
+                            staticClass: "img-fluid",
+                            attrs: { src: slide.image, alt: slide.imageDesc }
+                          })
+                        ]
+                      )
+                    ]
+                  },
+                  proxy: true
+                }
+              ],
+              null,
+              true
+            )
+          })
+        }),
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "vueper-slides",
+        {
+          staticClass: "no-shadow mobile--prevision",
+          attrs: {
+            bullets: false,
+            autoplay: true,
+            arrows: false,
+            infinite: true,
+            transitionSpeed: 100,
+            "visible-slides": 1,
+            "slide-ratio": 1 / 2
           }
         },
         _vm._l(_vm.slides, function(slide) {

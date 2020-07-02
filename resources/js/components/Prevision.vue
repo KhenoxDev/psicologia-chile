@@ -1,9 +1,9 @@
 <template>
-  <div class="container-fluid mt-4">
+  <div id="mainPrevision" class="container mt-4">
     <span class="title--section">Previsión</span>
     <hr class="line--separator" />
     <vueper-slides
-      class="no-shadow"
+      class="no-shadow desktop--prevision"
       :bullets="false"
       :autoplay="true"
       :arrows="false"
@@ -11,6 +11,24 @@
       :transitionSpeed="100"
       :visible-slides="3"
       :slide-ratio="1 / 8"
+    >
+      <vueper-slide v-for="slide in slides" :key="slide.id" :style="'margin-bottom:' + ['1rem']">
+        <template v-slot:content>
+          <div class="card card-body carousel--prevision card-prevision">
+            <img class="img-fluid" :src="slide.image" :alt="slide.imageDesc" />
+          </div>
+        </template>
+      </vueper-slide>
+    </vueper-slides>
+    <vueper-slides
+      class="no-shadow mobile--prevision"
+      :bullets="false"
+      :autoplay="true"
+      :arrows="false"
+      :infinite="true"
+      :transitionSpeed="100"
+      :visible-slides="1"
+      :slide-ratio="1 / 2"
     >
       <vueper-slide v-for="slide in slides" :key="slide.id" :style="'margin-bottom:' + ['1rem']">
         <template v-slot:content>
@@ -65,10 +83,6 @@ export default {
           content: "Slide content.",
           image: "img/Logo_Consalud.png",
           imageDesc: "Consalud"
-        },
-        {
-          title: "Slide #7",
-          content: "Slide content."
         }
       ]
     };

@@ -216,6 +216,17 @@
 	}
 }
 
+/* Prevision */
+#mainPrevision {
+	.desktop--prevision {
+		display: block;
+	}
+
+	.mobile--prevision {
+		display: none;
+	}
+}
+
 /* Media Queries */
 @media only screen and (max-width: 320px) {
 	#mainNav {
@@ -326,6 +337,16 @@
 
 
 			}
+		}
+	}
+
+	#mainPrevision {
+		.desktop--prevision {
+			display: none;
+		}
+
+		.mobile--prevision {
+			display: block;
 		}
 	}
 }
@@ -442,6 +463,17 @@
 			}
 		}
 	}
+
+	#mainPrevision {
+		.desktop--prevision {
+			display: none;
+		}
+
+		.mobile--prevision {
+			display: block;
+		}
+	}
+
 }
 
 @media only screen and (min-width: 376px) and (max-width: 425px) {
@@ -555,6 +587,17 @@
 			}
 		}
 	}
+
+	#mainPrevision {
+		.desktop--prevision {
+			display: none;
+		}
+
+		.mobile--prevision {
+			display: block;
+		}
+	}
+
 }
 
 @media only screen and (min-width: 426px) and (max-width: 768px) {
@@ -667,6 +710,16 @@
 
 
 			}
+		}
+	}
+
+	#mainPrevision {
+		.desktop--prevision {
+			display: none;
+		}
+
+		.mobile--prevision {
+			display: block;
 		}
 	}
 }
@@ -783,6 +836,16 @@
 			}
 		}
 	}
+
+	#mainPrevision {
+		.desktop--prevision {
+			display: none;
+		}
+
+		.mobile--prevision {
+			display: block;
+		}
+	}
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1024px) {
@@ -821,6 +884,17 @@
 			}
 		}
 	}
+
+	#mainPrevision {
+		.desktop--prevision {
+			display: block;
+		}
+
+		.mobile--prevision {
+			display: none;
+		}
+	}
+
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
@@ -853,6 +927,16 @@
 			span {
 				font-size: x-large;
 			}
+		}
+	}
+
+	#mainPrevision {
+		.desktop--prevision {
+			display: block;
+		}
+
+		.mobile--prevision {
+			display: none;
 		}
 	}
 }
@@ -890,6 +974,15 @@
 		}
 	}
 
+	#mainPrevision {
+		.desktop--prevision {
+			display: block;
+		}
+
+		.mobile--prevision {
+			display: none;
+		}
+	}
 }
 
 @media only screen and (min-width: 1921px) and (max-width: 2560px) {
@@ -922,6 +1015,16 @@
 			span {
 				font-size: xx-large;
 			}
+		}
+	}
+
+	#mainPrevision {
+		.desktop--prevision {
+			display: block;
+		}
+
+		.mobile--prevision {
+			display: none;
 		}
 	}
 
@@ -1158,7 +1261,7 @@
 		align-items: center;
 		justify-content: center;
 
-		box-shadow: 3px 1px 7px 3px rgba(0,0,0,0.75);
+		box-shadow: 3px 1px 7px 3px rgba(0, 0, 0, 0.75);
 
 		span {
 			font-size: 65%;
@@ -1167,6 +1270,7 @@
 			font-family: unset;
 		}
 	}
+
 	.price--container {
 		background: $card-top;
 		display: flex;
@@ -1211,5 +1315,3 @@
 	height: 100px;
 	width: 90%;
 }
-
-
