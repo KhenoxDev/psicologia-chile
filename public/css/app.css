@@ -11021,31 +11021,31 @@ a.text-dark:focus {
 
 /* Third steps */
 
-.step--container {
+#mainSteps .step--container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2rem 4rem;
 }
 
-.step--container img {
+#mainSteps .step--container img {
   margin-bottom: 1rem;
 }
 
-.step--container span {
+#mainSteps .step--container span {
   font-size: 80%;
   color: #323232;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
-.step--container p {
+#mainSteps .step--container p {
   font-size: 80%;
   color: #323232;
   text-align: center;
 }
 
-.step--line::before {
+#mainSteps .step--line::before {
   content: "";
   background: #c4c7ce;
   display: block;
@@ -11056,17 +11056,18 @@ a.text-dark:focus {
   height: 4px;
 }
 
-.title--three-steps {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+#mainSteps .title--three-steps {
+  text-align: center;
 }
 
-.title--three-steps span {
+#mainSteps .title--three-steps span {
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 100%;
   color: #323232;
+}
+
+#mainSteps .mobile--steps {
+  display: none;
 }
 
 /* Media Queries */
@@ -11112,8 +11113,48 @@ a.text-dark:focus {
     font-size: xx-large;
   }
 
-  .step--line::before {
+  #mainSteps .step--line::before {
     display: none;
+  }
+
+  #mainSteps .desktop--steps {
+    display: none;
+  }
+
+  #mainSteps .mobile--steps {
+    display: block;
+  }
+
+  #mainSteps .vueperslides__parallax-wrapper::before {
+    content: none;
+  }
+
+  #mainSteps .vueperslides__parallax-wrapper::after {
+    content: none;
+  }
+
+  #mainSteps .vueperslides__bullet:focus {
+    outline: none;
+  }
+
+  #mainSteps .vueperslides__bullet .default {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    box-shadow: none;
+    transition: 0.3s;
+    width: 16px;
+    height: 16px;
+  }
+
+  #mainSteps .vueperslides__bullet--active .default {
+    background-color: #f7941e;
+  }
+
+  #mainSteps .vueperslides__bullet span {
+    display: block;
+    color: #fff;
+    font-size: 10px;
+    opacity: 0.8;
   }
 }
 
@@ -11158,8 +11199,48 @@ a.text-dark:focus {
     font-size: xx-large;
   }
 
-  .step--line::before {
+  #mainSteps .step--line::before {
     display: none;
+  }
+
+  #mainSteps .desktop--steps {
+    display: none;
+  }
+
+  #mainSteps .mobile--steps {
+    display: block;
+  }
+
+  #mainSteps .vueperslides__parallax-wrapper::before {
+    content: none;
+  }
+
+  #mainSteps .vueperslides__parallax-wrapper::after {
+    content: none;
+  }
+
+  #mainSteps .vueperslides__bullet:focus {
+    outline: none;
+  }
+
+  #mainSteps .vueperslides__bullet .default {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    box-shadow: none;
+    transition: 0.3s;
+    width: 16px;
+    height: 16px;
+  }
+
+  #mainSteps .vueperslides__bullet--active .default {
+    background-color: #f7941e;
+  }
+
+  #mainSteps .vueperslides__bullet span {
+    display: block;
+    color: #fff;
+    font-size: 10px;
+    opacity: 0.8;
   }
 }
 
@@ -11204,8 +11285,48 @@ a.text-dark:focus {
     font-size: xx-large;
   }
 
-  .step--line::before {
+  #mainSteps .step--line::before {
     display: none;
+  }
+
+  #mainSteps .desktop--steps {
+    display: none;
+  }
+
+  #mainSteps .mobile--steps {
+    display: block;
+  }
+
+  #mainSteps .vueperslides__parallax-wrapper::before {
+    content: none;
+  }
+
+  #mainSteps .vueperslides__parallax-wrapper::after {
+    content: none;
+  }
+
+  #mainSteps .vueperslides__bullet:focus {
+    outline: none;
+  }
+
+  #mainSteps .vueperslides__bullet .default {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    box-shadow: none;
+    transition: 0.3s;
+    width: 16px;
+    height: 16px;
+  }
+
+  #mainSteps .vueperslides__bullet--active .default {
+    background-color: #f7941e;
+  }
+
+  #mainSteps .vueperslides__bullet span {
+    display: block;
+    color: #fff;
+    font-size: 10px;
+    opacity: 0.8;
   }
 }
 
@@ -11250,8 +11371,48 @@ a.text-dark:focus {
     font-size: xx-large;
   }
 
-  .step--line::before {
+  #mainSteps .step--line::before {
     display: none;
+  }
+
+  #mainSteps .desktop--steps {
+    display: none;
+  }
+
+  #mainSteps .mobile--steps {
+    display: block;
+  }
+
+  #mainSteps .vueperslides__parallax-wrapper::before {
+    content: none;
+  }
+
+  #mainSteps .vueperslides__parallax-wrapper::after {
+    content: none;
+  }
+
+  #mainSteps .vueperslides__bullet:focus {
+    outline: none;
+  }
+
+  #mainSteps .vueperslides__bullet .default {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    box-shadow: none;
+    transition: 0.3s;
+    width: 16px;
+    height: 16px;
+  }
+
+  #mainSteps .vueperslides__bullet--active .default {
+    background-color: #f7941e;
+  }
+
+  #mainSteps .vueperslides__bullet span {
+    display: block;
+    color: #fff;
+    font-size: 10px;
+    opacity: 0.8;
   }
 }
 
@@ -11296,8 +11457,48 @@ a.text-dark:focus {
     font-size: xx-large;
   }
 
-  .step--line::before {
+  #mainSteps .step--line::before {
     display: none;
+  }
+
+  #mainSteps .desktop--steps {
+    display: none;
+  }
+
+  #mainSteps .mobile--steps {
+    display: block;
+  }
+
+  #mainSteps .vueperslides__parallax-wrapper::before {
+    content: none;
+  }
+
+  #mainSteps .vueperslides__parallax-wrapper::after {
+    content: none;
+  }
+
+  #mainSteps .vueperslides__bullet:focus {
+    outline: none;
+  }
+
+  #mainSteps .vueperslides__bullet .default {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    box-shadow: none;
+    transition: 0.3s;
+    width: 16px;
+    height: 16px;
+  }
+
+  #mainSteps .vueperslides__bullet--active .default {
+    background-color: #f7941e;
+  }
+
+  #mainSteps .vueperslides__bullet span {
+    display: block;
+    color: #fff;
+    font-size: 10px;
+    opacity: 0.8;
   }
 }
 
@@ -11325,6 +11526,10 @@ a.text-dark:focus {
   #mainNav .hamburger {
     display: none;
   }
+
+  #mainSteps .title--three-steps span {
+    font-size: large;
+  }
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
@@ -11342,6 +11547,10 @@ a.text-dark:focus {
 
   #mainNav .hamburger {
     display: none;
+  }
+
+  #mainSteps .title--three-steps span {
+    font-size: x-large;
   }
 }
 
@@ -11361,6 +11570,10 @@ a.text-dark:focus {
   #mainNav .hamburger {
     display: none;
   }
+
+  #mainSteps .title--three-steps span {
+    font-size: x-large;
+  }
 }
 
 @media only screen and (min-width: 1921px) and (max-width: 2560px) {
@@ -11378,6 +11591,10 @@ a.text-dark:focus {
 
   #mainNav .hamburger {
     display: none;
+  }
+
+  #mainSteps .title--three-steps span {
+    font-size: xx-large;
   }
 }
 

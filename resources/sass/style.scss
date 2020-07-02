@@ -98,53 +98,57 @@
 }
 
 /* Third steps */
-.step--container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 2rem 4rem;
+#mainSteps {
 
-	img {
-		margin-bottom: 1rem;
+	.step--container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 2rem 4rem;
+
+		img {
+			margin-bottom: 1rem;
+		}
+
+		span {
+			font-size: 80%;
+			color: $dark;
+			font-weight: bold;
+			margin-bottom: 1rem;
+		}
+
+		p {
+			font-size: 80%;
+			color: $dark;
+			text-align: center;
+		}
 	}
 
-	span {
-		font-size: 80%;
-		color: $dark;
-		font-weight: bold;
-		margin-bottom: 1rem;
+	.step--line {
+		&::before {
+			content: "";
+			background: $gray-3;
+			display: block;
+			position: absolute;
+			top: 45%;
+			left: 70%;
+			width: 60%;
+			height: 4px;
+		}
 	}
 
-	p {
-		font-size: 80%;
-		color: $dark;
+	.title--three-steps {
 		text-align: center;
+
+		span {
+			font-weight: bold;
+			font-size: 100%;
+			color: $dark;
+		}
 	}
-}
 
-.step--line {
-	&::before {
-		content: "";
-		background: $gray-3;
-		display: block;
-		position: absolute;
-		top: 45%;
-		left: 70%;
-		width: 60%;
-		height: 4px;
-	}
-}
-
-.title--three-steps {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-
-	span {
-		font-weight: bold;
-		font-size: 1.5rem;
-		color: $dark;
+	.mobile--steps {
+		display: none;
 	}
 }
 
@@ -201,12 +205,67 @@
 		}
 	}
 
-	.step--line {
-		&::before {
+	#mainSteps {
+		.step--line {
+			&::before {
+				display: none;
+			}
+		}
+
+		.desktop--steps {
 			display: none;
 		}
-	}
 
+		.mobile--steps {
+			display: block;
+		}
+
+
+		.vueperslides__parallax-wrapper {
+			&::before {
+				content: none;
+			}
+
+			&::after {
+				content: none;
+			}
+		}
+
+		.vueperslides__bullet {
+			&:focus {
+				outline: none;
+			}
+
+			.default {
+				background-color: rgba(0, 0, 0, 0.3);
+				border: none;
+				box-shadow: none;
+				transition: 0.3s;
+				width: 16px;
+				height: 16px;
+
+
+
+			}
+		}
+
+		.vueperslides__bullet--active {
+			.default {
+				background-color: $orange-selected;
+			}
+		}
+
+		.vueperslides__bullet {
+			span {
+				display: block;
+				color: #fff;
+				font-size: 10px;
+				opacity: 0.8;
+
+
+			}
+		}
+	}
 }
 
 @media only screen and (min-width: 321px) and (max-width: 375px) {
@@ -260,9 +319,65 @@
 		}
 	}
 
-	.step--line {
-		&::before {
+	#mainSteps {
+		.step--line {
+			&::before {
+				display: none;
+			}
+		}
+
+		.desktop--steps {
 			display: none;
+		}
+
+		.mobile--steps {
+			display: block;
+		}
+
+
+		.vueperslides__parallax-wrapper {
+			&::before {
+				content: none;
+			}
+
+			&::after {
+				content: none;
+			}
+		}
+
+		.vueperslides__bullet {
+			&:focus {
+				outline: none;
+			}
+
+			.default {
+				background-color: rgba(0, 0, 0, 0.3);
+				border: none;
+				box-shadow: none;
+				transition: 0.3s;
+				width: 16px;
+				height: 16px;
+
+
+
+			}
+		}
+
+		.vueperslides__bullet--active {
+			.default {
+				background-color: $orange-selected;
+			}
+		}
+
+		.vueperslides__bullet {
+			span {
+				display: block;
+				color: #fff;
+				font-size: 10px;
+				opacity: 0.8;
+
+
+			}
 		}
 	}
 }
@@ -317,9 +432,65 @@
 		}
 	}
 
-	.step--line {
-		&::before {
+	#mainSteps {
+		.step--line {
+			&::before {
+				display: none;
+			}
+		}
+
+		.desktop--steps {
 			display: none;
+		}
+
+		.mobile--steps {
+			display: block;
+		}
+
+
+		.vueperslides__parallax-wrapper {
+			&::before {
+				content: none;
+			}
+
+			&::after {
+				content: none;
+			}
+		}
+
+		.vueperslides__bullet {
+			&:focus {
+				outline: none;
+			}
+
+			.default {
+				background-color: rgba(0, 0, 0, 0.3);
+				border: none;
+				box-shadow: none;
+				transition: 0.3s;
+				width: 16px;
+				height: 16px;
+
+
+
+			}
+		}
+
+		.vueperslides__bullet--active {
+			.default {
+				background-color: $orange-selected;
+			}
+		}
+
+		.vueperslides__bullet {
+			span {
+				display: block;
+				color: #fff;
+				font-size: 10px;
+				opacity: 0.8;
+
+
+			}
 		}
 	}
 }
@@ -375,9 +546,65 @@
 		}
 	}
 
-	.step--line {
-		&::before {
+	#mainSteps {
+		.step--line {
+			&::before {
+				display: none;
+			}
+		}
+
+		.desktop--steps {
 			display: none;
+		}
+
+		.mobile--steps {
+			display: block;
+		}
+
+
+		.vueperslides__parallax-wrapper {
+			&::before {
+				content: none;
+			}
+
+			&::after {
+				content: none;
+			}
+		}
+
+		.vueperslides__bullet {
+			&:focus {
+				outline: none;
+			}
+
+			.default {
+				background-color: rgba(0, 0, 0, 0.3);
+				border: none;
+				box-shadow: none;
+				transition: 0.3s;
+				width: 16px;
+				height: 16px;
+
+
+
+			}
+		}
+
+		.vueperslides__bullet--active {
+			.default {
+				background-color: $orange-selected;
+			}
+		}
+
+		.vueperslides__bullet {
+			span {
+				display: block;
+				color: #fff;
+				font-size: 10px;
+				opacity: 0.8;
+
+
+			}
 		}
 	}
 }
@@ -433,9 +660,65 @@
 		}
 	}
 
-	.step--line {
-		&::before {
+	#mainSteps {
+		.step--line {
+			&::before {
+				display: none;
+			}
+		}
+
+		.desktop--steps {
 			display: none;
+		}
+
+		.mobile--steps {
+			display: block;
+		}
+
+
+		.vueperslides__parallax-wrapper {
+			&::before {
+				content: none;
+			}
+
+			&::after {
+				content: none;
+			}
+		}
+
+		.vueperslides__bullet {
+			&:focus {
+				outline: none;
+			}
+
+			.default {
+				background-color: rgba(0, 0, 0, 0.3);
+				border: none;
+				box-shadow: none;
+				transition: 0.3s;
+				width: 16px;
+				height: 16px;
+
+
+
+			}
+		}
+
+		.vueperslides__bullet--active {
+			.default {
+				background-color: $orange-selected;
+			}
+		}
+
+		.vueperslides__bullet {
+			span {
+				display: block;
+				color: #fff;
+				font-size: 10px;
+				opacity: 0.8;
+
+
+			}
 		}
 	}
 }
@@ -468,6 +751,14 @@
 			display: none;
 		}
 	}
+
+	#mainSteps {
+		.title--three-steps {
+			span {
+				font-size: large;
+			}
+		}
+	}
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
@@ -492,6 +783,14 @@
 
 		.hamburger {
 			display: none;
+		}
+	}
+
+	#mainSteps {
+		.title--three-steps {
+			span {
+				font-size: x-large;
+			}
 		}
 	}
 }
@@ -520,6 +819,15 @@
 			display: none;
 		}
 	}
+
+	#mainSteps {
+		.title--three-steps {
+			span {
+				font-size: x-large;
+			}
+		}
+	}
+
 }
 
 @media only screen and (min-width: 1921px) and (max-width: 2560px) {
@@ -546,6 +854,15 @@
 			display: none;
 		}
 	}
+
+	#mainSteps {
+		.title--three-steps {
+			span {
+				font-size: xx-large;
+			}
+		}
+	}
+
 }
 
 

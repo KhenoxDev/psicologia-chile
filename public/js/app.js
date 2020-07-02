@@ -2288,6 +2288,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vueperslides__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vueperslides */ "./node_modules/vueperslides/dist/vueperslides.common.js");
+/* harmony import */ var vueperslides__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vueperslides__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -2319,9 +2321,39 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log("Component mounted.");
+  components: {
+    VueperSlides: vueperslides__WEBPACK_IMPORTED_MODULE_0__["VueperSlides"],
+    VueperSlide: vueperslides__WEBPACK_IMPORTED_MODULE_0__["VueperSlide"]
+  },
+  data: function data() {
+    return {
+      slides: [{
+        img: "img/1.png",
+        title: "Registrate",
+        content: "Llena Nuestro formulario para encontrar al psicólogo especializado para tí."
+      }, {
+        img: "img/2.png",
+        title: "Agenda tu hora",
+        content: "Atendemos de lunes a domingo, en el horario que más te acomode."
+      }, {
+        img: "img/3.png",
+        title: "Atiéndete",
+        content: "Escoge libremente el lugar que prefieras para iniciar tu sesión online."
+      }]
+    };
   }
 });
 
@@ -38113,8 +38145,7 @@ var render = function() {
   return _c(
     "nav",
     {
-      staticClass:
-        "navbar navbar-expand-lg bg-white text-uppercase container-xl",
+      staticClass: "navbar navbar-expand-lg bg-white text-uppercase container",
       attrs: { id: "mainNav" }
     },
     [
@@ -38383,58 +38414,106 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    { staticClass: "container mt-4", attrs: { id: "mainSteps" } },
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _c(
+        "vueper-slides",
+        {
+          staticClass: "mobile--steps",
+          attrs: { autoplay: "", "fixed-height": "300px" }
+        },
+        _vm._l(_vm.slides, function(slide) {
+          return _c("vueper-slide", {
+            key: slide.id,
+            scopedSlots: _vm._u(
+              [
+                {
+                  key: "content",
+                  fn: function() {
+                    return [
+                      _c("div", { staticClass: "step--container step--line" }, [
+                        _c("img", {
+                          attrs: { src: slide.img, alt: slide.title }
+                        }),
+                        _vm._v(" "),
+                        _c("span", [_vm._v(_vm._s(slide.title))]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v(_vm._s(slide.content))])
+                      ])
+                    ]
+                  },
+                  proxy: true
+                }
+              ],
+              null,
+              true
+            )
+          })
+        }),
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container-fluid mt-4" }, [
-      _c("div", { staticClass: "title--three-steps" }, [
-        _c("span", [_vm._v("Tres simples pasos encontrar tu psicólogo")])
+    return _c("div", { staticClass: "title--three-steps" }, [
+      _c("span", [_vm._v("Tres simples pasos encontrar tu psicólogo")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row desktop--steps" }, [
+      _c("div", { staticClass: "col-md-4" }, [
+        _c("div", { staticClass: "step--container step--line" }, [
+          _c("img", { attrs: { src: "img/1.png", alt: "" } }),
+          _vm._v(" "),
+          _c("span", [_vm._v("Registrate")]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Llena Nuestro formulario para encontrar al psicólogo especializado para tí."
+            )
+          ])
+        ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-4" }, [
-          _c("div", { staticClass: "step--container step--line" }, [
-            _c("img", { attrs: { src: "img/1.png", alt: "" } }),
-            _vm._v(" "),
-            _c("span", [_vm._v("Registrate")]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Llena Nuestro formulario para encontrar al psicólogo especializado para tí."
-              )
-            ])
+      _c("div", { staticClass: "col-md-4" }, [
+        _c("div", { staticClass: "step--container step--line" }, [
+          _c("img", { attrs: { src: "img/2.png", alt: "" } }),
+          _vm._v(" "),
+          _c("span", [_vm._v("Agenda tu hora")]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Atendemos de lunes a domingo, en el horario que más te acomode."
+            )
           ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4" }, [
-          _c("div", { staticClass: "step--container step--line" }, [
-            _c("img", { attrs: { src: "img/2.png", alt: "" } }),
-            _vm._v(" "),
-            _c("span", [_vm._v("Agenda tu hora")]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Atendemos de lunes a domingo, en el horario que más te acomode."
-              )
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4" }, [
-          _c("div", { staticClass: "step--container" }, [
-            _c("img", { attrs: { src: "img/3.png", alt: "" } }),
-            _vm._v(" "),
-            _c("span", [_vm._v("Atiéndete")]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Escoge libremente el lugar que prefieras para iniciar tu sesión online."
-              )
-            ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-4" }, [
+        _c("div", { staticClass: "step--container" }, [
+          _c("img", { attrs: { src: "img/3.png", alt: "" } }),
+          _vm._v(" "),
+          _c("span", [_vm._v("Atiéndete")]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Escoge libremente el lugar que prefieras para iniciar tu sesión online."
+            )
           ])
         ])
       ])

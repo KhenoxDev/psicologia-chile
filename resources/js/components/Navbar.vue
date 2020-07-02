@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-white text-uppercase container-xl" id="mainNav">
+  <nav class="navbar navbar-expand-lg bg-white text-uppercase container" id="mainNav">
     <div class="container-fluid">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <img class="logo" :src="logo" :alt="logo_txt" />
