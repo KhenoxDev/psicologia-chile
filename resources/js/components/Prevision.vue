@@ -1,6 +1,8 @@
 <template>
   <div class="container-fluid mt-4">
-    <span class="title--section">Previsión</span>
+    <span class="title--section">
+      <strong>Pre</strong>visión
+    </span>
     <hr class="line--separator" />
     <vueper-slides
       class="no-shadow"

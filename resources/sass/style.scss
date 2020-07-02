@@ -1,5 +1,26 @@
 @import 'variables';
 
+/* General */
+.line--separator {
+	height: 2px !important;
+	background-color: $gray-3 !important;
+}
+
+.title--section {
+	font-size: 1.7rem;
+	color: $dark;
+}
+
+.bg--gray {
+	background-color: $gray-5;
+	padding: 1rem;
+}
+
+.bg--white {
+	background-color: $white;
+	padding: 1rem;
+}
+
 /* Navbar */
 #mainNav {
 	padding-top: 1rem;
@@ -216,6 +237,69 @@
 	}
 }
 
+/* Frequently questions */
+#mainQuestions {
+	.desktop--questions {
+		display: block;
+	}
+
+	.mobile--questions {
+		display: none;
+	}
+
+	.card--question {
+		margin: 1rem;
+		max-height: 10rem;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.first-card-faq {
+		background: $teal-tiny;
+		background-image: url("img/faq_interrogacion_primera_pregunta.svg");
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+
+		span {
+			color: $white;
+			font-weight: bold;
+			font-size: 100%;
+			text-align: center;
+		}
+	}
+
+	.another-card-faq {
+		background: $white;
+
+		span {
+			color: $dark;
+			font-weight: bold;
+			font-size: 80%;
+			text-align: center;
+		}
+	}
+
+	.seemore--questions {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 2rem;
+
+		button {
+			color: $dark;
+			font-weight: bold;
+			padding: 0.5rem 1rem 0.5rem 1rem;
+			text-transform: uppercase;
+			background-color: #f0c828;
+			border-radius: 0.5rem;
+			border: none;
+		}
+	}
+}
+
 /* Media Queries */
 @media only screen and (max-width: 320px) {
 	#mainNav {
@@ -328,6 +412,21 @@
 			}
 		}
 	}
+
+	#mainQuestions {
+		.desktop--questions {
+			display: none;
+		}
+
+		.mobile--questions {
+			display: block;
+		}
+
+		.card--question {
+			margin: 0rem;
+		}
+	}
+
 }
 
 @media only screen and (min-width: 321px) and (max-width: 375px) {
@@ -440,6 +539,20 @@
 
 
 			}
+		}
+	}
+
+	#mainQuestions {
+		.desktop--questions {
+			display: none;
+		}
+
+		.mobile--questions {
+			display: block;
+		}
+
+		.card--question {
+			margin: 0rem;
 		}
 	}
 }
@@ -555,6 +668,21 @@
 			}
 		}
 	}
+
+	#mainQuestions {
+		.desktop--questions {
+			display: none;
+		}
+
+		.mobile--questions {
+			display: block;
+		}
+
+		.card--question {
+			margin: 0rem;
+		}
+	}
+
 }
 
 @media only screen and (min-width: 426px) and (max-width: 768px) {
@@ -667,6 +795,20 @@
 
 
 			}
+		}
+	}
+
+	#mainQuestions {
+		.desktop--questions {
+			display: none;
+		}
+
+		.mobile--questions {
+			display: block;
+		}
+
+		.card--question {
+			margin: 0rem;
 		}
 	}
 }
@@ -783,6 +925,21 @@
 			}
 		}
 	}
+
+	#mainQuestions {
+		.desktop--questions {
+			display: none;
+		}
+
+		.mobile--questions {
+			display: block;
+		}
+
+		.card--question {
+			margin: 0rem;
+		}
+	}
+
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1024px) {
@@ -976,135 +1133,9 @@
 	}
 }
 
-/* Tanaño imagenes carousel prevision height: 95px */
-.carousel--prevision {
-	height: 140px;
-}
-
-/* PREGUNTAS FRECUENTES */
-
-/* botón "ver todas las consultas" */
-.seemore--questions {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-top: 2rem;
-
-	button {
-		color: $dark;
-		font-weight: bold;
-		padding: 0.5rem 1rem 0.5rem 1rem;
-		text-transform: uppercase;
-		background-color: #f0c828;
-		border-radius: 0.5rem;
-		border: none;
-	}
-}
-
-.underline--verconsultas {
-	border-bottom: 2px solid currentColor;
-	/* position: absolute; */
-}
-
-.texto--verconsultas {
-	text-align: left;
-}
-
-/* Estilo tarjeta primera pregunta frecuente */
-.first-card-faq {
-	background: $teal-tiny;
-	margin: 1rem;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	img {
-		width: 57%;
-		height: auto;
-	}
-}
-
-/* Estilo resto de las tarjetas pregunta frecuente */
-.another-card-faq {
-	background: $white;
-	margin: 1rem;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	img {
-		width: 55%;
-		height: auto;
-	}
-}
-
-
-/* Texto primera imagen pregunta frecuente */
-.texto-first-frequentlyquestions {
-	position: absolute;
-	top: 36%;
-	left: 0%;
-	width: 100%;
-	color: $gray-4;
-	font-weight: bold;
-	font-size: 100%;
-	text-align: center;
-}
-
-/* Texto resto de imagenes pregunta frecuente */
-.texto-another-frequentlyquestions {
-	position: absolute;
-	top: 36%;
-	left: 0%;
-	width: 100%;
-	color: $dark;
-	/* font-weight: bold; */
-	font-size: 100%;
-	text-align: center;
-}
-
-/* Espacio margen abajo slider pregunta frecuente */
-.test--margin {
-	margin-bottom: 1.2rem;
-}
-
-
-/* Clase de prueba para ver el borde de frequently questions */
-.border-frequentlyquestions {
-	box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
-}
-
-
-/* Estilo flechitas carusel */
-/* .carousel-control-next-icon,
-.carousel-control-prev-icon {
-  background-image: none !important;
-  color: red !important;
-  font-size: 20px;
-} */
-
-/* .carousel-control-prev-icon {
-	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='gray' viewBox='2 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
-}
-
-.carousel-control-next-icon {
-	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='gray' viewBox='-1 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
-} */
-
-
 /* FIN ESTILO PREGUNTAS FRECUENTES */
 
-.line--separator {
-	height: 2px !important;
-	background-color: $gray-3 !important;
-}
 
-.title--section {
-	font-size: 1.7rem;
-	color: $dark;
-}
 
 
 
@@ -1158,7 +1189,7 @@
 		align-items: center;
 		justify-content: center;
 
-		box-shadow: 3px 1px 7px 3px rgba(0,0,0,0.75);
+		box-shadow: 3px 1px 7px 3px rgba(0, 0, 0, 0.75);
 
 		span {
 			font-size: 65%;
@@ -1167,6 +1198,7 @@
 			font-family: unset;
 		}
 	}
+
 	.price--container {
 		background: $card-top;
 		display: flex;
@@ -1211,5 +1243,3 @@
 	height: 100px;
 	width: 90%;
 }
-
-

@@ -2096,6 +2096,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2257,6 +2274,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vueperslides__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vueperslides */ "./node_modules/vueperslides/dist/vueperslides.common.js");
 /* harmony import */ var vueperslides__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vueperslides__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
 //
 //
 //
@@ -38229,27 +38248,23 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container-fluid mt-4" },
+    { staticClass: "container mt-4", attrs: { id: "mainQuestions" } },
     [
-      _c("span", { staticClass: "title--section" }, [
-        _vm._v("Consultas frecuentes")
-      ]),
+      _vm._m(0),
       _vm._v(" "),
       _c("hr", { staticClass: "line--separator" }),
       _vm._v(" "),
       _c(
         "vueper-slides",
         {
-          staticClass: "no-shadow",
+          staticClass: "no-shadow desktop--questions",
           attrs: {
             bullets: false,
-            autoplay: true,
+            autoplay: "",
             arrows: false,
             infinite: false,
-            transitionSpeed: 100,
             "visible-slides": 4,
-            "slide-ratio": 1 / 8,
-            "dragging-distance": 70
+            "slide-ratio": 1 / 6
           }
         },
         _vm._l(_vm.slides, function(slide, i) {
@@ -38268,55 +38283,17 @@ var render = function() {
                             "div",
                             {
                               staticClass:
-                                "card card-body carousel--prevision first-card-faq border-frequentlyquestions"
+                                "card card-body card--question first-card-faq"
                             },
-                            [
-                              _c("img", {
-                                staticClass: "img-fluid",
-                                attrs: {
-                                  src:
-                                    "img/faq_interrogacion_primera_pregunta.svg",
-                                  alt: ""
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "texto-first-frequentlyquestions"
-                                },
-                                [
-                                  _vm._v(
-                                    "\n\t\t\t\t" +
-                                      _vm._s(slide.descFAQ) +
-                                      "\n\t\t\t"
-                                  )
-                                ]
-                              )
-                            ]
+                            [_c("span", [_vm._v(_vm._s(slide.descFAQ))])]
                           )
                         : _c(
                             "div",
                             {
                               staticClass:
-                                "card card-body carousel--prevision another-card-faq border-frequentlyquestions"
+                                "card card-body card--question another-card-faq"
                             },
-                            [
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "texto-another-frequentlyquestions"
-                                },
-                                [
-                                  _vm._v(
-                                    "\n\t\t\t\t" +
-                                      _vm._s(slide.descFAQ) +
-                                      "\n\t\t\t"
-                                  )
-                                ]
-                              )
-                            ]
+                            [_c("span", [_vm._v(_vm._s(slide.descFAQ))])]
                           )
                     ]
                   },
@@ -38331,12 +38308,76 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _vm._m(0)
+      _c(
+        "vueper-slides",
+        {
+          staticClass: "no-shadow mobile--questions",
+          attrs: {
+            bullets: false,
+            autoplay: "",
+            arrows: false,
+            infinite: false,
+            "visible-slides": 1,
+            "slide-ratio": 1 / 2,
+            "3d": ""
+          }
+        },
+        _vm._l(_vm.slides, function(slide, i) {
+          return _c("vueper-slide", {
+            key: slide.id,
+            staticClass: "test--margin",
+            attrs: { index: i },
+            scopedSlots: _vm._u(
+              [
+                {
+                  key: "content",
+                  fn: function() {
+                    return [
+                      i == 0
+                        ? _c(
+                            "div",
+                            {
+                              staticClass:
+                                "card card-body card--question first-card-faq"
+                            },
+                            [_c("span", [_vm._v(_vm._s(slide.descFAQ))])]
+                          )
+                        : _c(
+                            "div",
+                            {
+                              staticClass:
+                                "card card-body card--question another-card-faq"
+                            },
+                            [_c("span", [_vm._v(_vm._s(slide.descFAQ))])]
+                          )
+                    ]
+                  },
+                  proxy: true
+                }
+              ],
+              null,
+              true
+            )
+          })
+        }),
+        1
+      ),
+      _vm._v(" "),
+      _vm._m(1)
     ],
     1
   )
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "title--section" }, [
+      _c("strong", [_vm._v("Consultas")]),
+      _vm._v(" frecuentes\n  ")
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -38560,7 +38601,7 @@ var render = function() {
     "div",
     { staticClass: "container-fluid mt-4" },
     [
-      _c("span", { staticClass: "title--section" }, [_vm._v("Previsión")]),
+      _vm._m(0),
       _vm._v(" "),
       _c("hr", { staticClass: "line--separator" }),
       _vm._v(" "),
@@ -38617,7 +38658,17 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "title--section" }, [
+      _c("strong", [_vm._v("Pre")]),
+      _vm._v("visión\n  ")
+    ])
+  }
+]
 render._withStripped = true
 
 
