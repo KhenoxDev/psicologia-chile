@@ -1105,37 +1105,86 @@
 	top: 36%;
 	left: 0%;
 	width: 100%;
+	color: $gray-4;
 	font-weight: bold;
 	font-size: 100%;
 	text-align: center;
 }
 
 /* Estilo Featured Plans */
-/* TODO: Cambiar nombre a la clase */
-.texto-encima55 {
-	position: absolute;
-	top: 100%;
-	left: 0%;
-	width: 100%;
-	color: $dark;
-	font-weight: bold;
-	font-size: 100%;
-	text-align: center;
-}
+.card--featuredplans {
+	padding: 0;
+	border-radius: 0.5rem;
 
-.card-featuredplans {
-	margin: 1rem;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	/* Circulo oferta carousel Planes destacados */
+	.circulo {
+		height: 65%;
+		width: 25%;
+		background-color: $orange-selected;
+		border-radius: 50%;
 
-	img {
-		width: 60%;
-		height: auto;
+		display: inline-block;
+
+		position: absolute;
+		z-index: 1;
+		top: 0%;
+		right: -2%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		box-shadow: 3px 1px 7px 3px rgba(0,0,0,0.75);
+
+		span {
+			font-size: 65%;
+			color: $dark !important;
+			font-weight: bold;
+			font-family: unset;
+		}
+	}
+	.price--container {
+		background: $card-top;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		span {
+			color: $white;
+		}
+
+		.text--price {
+			font-weight: bold;
+			font-size: 150%;
+			font-family: cursive;
+		}
+
+		.text--cantsessions {
+			font-size: 129%;
+			font-family: cursive;
+		}
+	}
+
+	.description--container {
+		background: $card-bottom;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: cursive;
+
+		span {
+			font-size: 115%;
+			color: $white;
+			text-align: center;
+			padding: 0rem 2rem;
+		}
+
 	}
 }
 
 .carousel--featuredplans {
-	height: 140px;
+	height: 100px;
+	width: 90%;
 }
+
+
