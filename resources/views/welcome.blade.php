@@ -18,6 +18,7 @@
 				<three-steps></three-steps>
 				<prevision></prevision>
 				<frequentlyquestions></frequentlyquestions>
+				<specialists></specialists>
 				<featuredplans></featuredplans>
 			</main>
         </div>
