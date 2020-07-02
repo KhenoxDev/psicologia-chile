@@ -355,6 +355,80 @@
 	}
 }
 
+/* Featured plans */
+#mainPlans {
+	.desktop--plans {
+		display: block;
+	}
+
+	.mobile--plans {
+		display: none;
+	}
+
+	.vueperslides__arrow {
+		&:focus {
+			outline: none;
+		}
+	}
+
+	.card--featuredplans {
+		padding: 0;
+		border-radius: 0.5rem;
+		height: 100px;
+		width: 98%;
+
+		.price--container {
+			background: $card-top;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+			span {
+				color: $white;
+			}
+
+			.text--price {
+				font-weight: bold;
+				font-size: x-large;
+			}
+
+			.text--cantsessions {
+				font-size: x-large;
+			}
+
+			.text--promotion {
+				color: $white;
+				font-size: 65%;
+				font-style: oblique;
+				font-weight: bold;
+				background-color: $orange-selected;
+				padding: 0.3rem;
+				border-radius: 0.5rem;
+				margin-top: 0.2rem;
+				text-align: right;
+				position: absolute;
+				top: 0%;
+				right: 1%;
+			}
+		}
+
+		.description--container {
+			background: $card-bottom;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0rem 2rem 1rem;
+
+			span {
+				font-size: 100%;
+				color: $white;
+				text-align: center;
+			}
+
+		}
+	}
+}
 
 /* Media Queries */
 @media only screen and (max-width: 320px) {
@@ -490,6 +564,35 @@
 
 		.card--question {
 			margin: 0rem;
+		}
+	}
+
+	#mainPlans {
+
+		.desktop--plans {
+			display: none;
+		}
+
+		.mobile--plans {
+			display: block;
+
+			.price--container {
+				.text--price {
+					font-weight: bold;
+					font-size: large;
+				}
+
+				.text--cantsessions {
+					font-size: medium;
+				}
+			}
+
+			.description--container {
+				span {
+					text-overflow: ellipsis;
+					font-size: 80%;
+				}
+			}
 		}
 	}
 }
@@ -630,6 +733,17 @@
 			margin: 0rem;
 		}
 	}
+
+	#mainPlans {
+		.desktop--plans {
+			display: none;
+		}
+
+		.mobile--plans {
+			display: block;
+		}
+	}
+
 }
 
 @media only screen and (min-width: 376px) and (max-width: 425px) {
@@ -765,6 +879,16 @@
 
 		.card--question {
 			margin: 0rem;
+		}
+	}
+
+	#mainPlans {
+		.desktop--plans {
+			display: none;
+		}
+
+		.mobile--plans {
+			display: block;
 		}
 	}
 }
@@ -905,6 +1029,16 @@
 			margin: 0rem;
 		}
 	}
+
+	#mainPlans {
+		.desktop--plans {
+			display: none;
+		}
+
+		.mobile--plans {
+			display: block;
+		}
+	}
 }
 
 @media only screen and (min-width: 769px) and (max-width: 991px) {
@@ -1043,6 +1177,16 @@
 			margin: 0rem;
 		}
 	}
+
+	#mainPlans {
+		.desktop--plans {
+			display: none;
+		}
+
+		.mobile--plans {
+			display: block;
+		}
+	}
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1024px) {
@@ -1105,6 +1249,16 @@
 			margin: 1rem;
 		}
 	}
+
+	#mainPlans {
+		.desktop--plans {
+			display: block;
+		}
+
+		.mobile--plans {
+			display: none;
+		}
+	}
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
@@ -1164,6 +1318,15 @@
 		}
 	}
 
+	#mainPlans {
+		.desktop--plans {
+			display: block;
+		}
+
+		.mobile--plans {
+			display: none;
+		}
+	}
 }
 
 @media only screen and (min-width: 1441px) and (max-width: 1920px) {
@@ -1223,6 +1386,15 @@
 		}
 	}
 
+	#mainPlans {
+		.desktop--plans {
+			display: block;
+		}
+
+		.mobile--plans {
+			display: none;
+		}
+	}
 }
 
 @media only screen and (min-width: 1921px) and (max-width: 2560px) {
@@ -1281,138 +1453,14 @@
 			margin: 1rem;
 		}
 	}
-}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Bootstrap Lightbox using Modal */
-
-#profile-grid {
-	overflow: auto;
-	white-space: normal;
-
-	.profile {
-		padding-bottom: 40px;
-	}
-
-	.panel {
-		padding: 0;
-	}
-
-	.panel-body {
-		padding: 15px;
-	}
-
-	.profile-name {
-		font-weight: bold;
-	}
-
-	.thumbnail {
-		margin-bottom: 6px;
-	}
-
-	.panel-thumbnail {
-		overflow: hidden;
-	}
-
-	.img-rounded {
-		border-radius: 4px 4px 0 0;
-	}
-}
-
-/* FIN ESTILO PREGUNTAS FRECUENTES */
-
-
-
-
-
-
-
-/* Estilo Featured Plans */
-.card--featuredplans {
-	padding: 0;
-	border-radius: 0.5rem;
-
-	/* Circulo oferta carousel Planes destacados */
-	.circulo {
-		height: 65%;
-		width: 25%;
-		background-color: $orange-selected;
-		border-radius: 50%;
-
-		display: inline-block;
-
-		position: absolute;
-		z-index: 1;
-		top: 0%;
-		right: -2%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-		box-shadow: 3px 1px 7px 3px rgba(0, 0, 0, 0.75);
-
-		span {
-			font-size: 65%;
-			color: $dark !important;
-			font-weight: bold;
-			font-family: unset;
-		}
-	}
-
-	.price--container {
-		background: $card-top;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-
-		span {
-			color: $white;
+	#mainPlans {
+		.desktop--plans {
+			display: block;
 		}
 
-		.text--price {
-			font-weight: bold;
-			font-size: 150%;
-			font-family: cursive;
-		}
-
-		.text--cantsessions {
-			font-size: 129%;
-			font-family: cursive;
+		.mobile--plans {
+			display: none;
 		}
 	}
-
-	.description--container {
-		background: $card-bottom;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-family: cursive;
-
-		span {
-			font-size: 115%;
-			color: $white;
-			text-align: center;
-			padding: 0rem 2rem;
-		}
-
-	}
-}
-
-.carousel--featuredplans {
-	height: 100px;
-	width: 90%;
 }

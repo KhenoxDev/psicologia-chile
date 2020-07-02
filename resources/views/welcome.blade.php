@@ -20,10 +20,14 @@
 					<prevision></prevision>
 				</div>
 				<div class="bg--gray">
+					<specialists></specialists>
+				</div>
+				<div class="bg--white">
+					<featuredplans></featuredplans>
+				</div>
+				<div class="bg--gray">
 					<frequentlyquestions></frequentlyquestions>
 				</div>
-				<specialists></specialists>
-				<featuredplans></featuredplans>
 			</main>
         </div>
 		<script src="{{ asset('js/app.js') }}"></script>
