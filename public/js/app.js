@@ -2087,6 +2087,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2097,25 +2106,39 @@ __webpack_require__.r(__webpack_exports__);
     return {
       slides: [{
         title: "Slide #1",
-        content: "Slide content."
+        content: "Slide content.",
+        descFAQ: "Tengo crisis de pánico muy seguido ¿qué puedo hacer?",
+        position: "1"
       }, {
         title: "Slide #2",
-        content: "Slide content."
+        content: "Slide content.",
+        descFAQ: "¿Qué es la terapia psicológica online?",
+        position: "2"
       }, {
         title: "Slide #3",
-        content: "Slide content."
+        content: "Slide content.",
+        descFAQ: "Cómo puedo superar mis miedos, aceptarme y enfrentar la vida",
+        position: "3"
       }, {
         title: "Slide #4",
-        content: "Slide content."
+        content: "Slide content.",
+        descFAQ: "¿Cuál es la principal diferencia de la terapia online, versus la terapia psicológica tradicional?",
+        position: "4"
       }, {
         title: "Slide #5",
-        content: "Slide content."
+        content: "Slide content.",
+        descFAQ: "¿Por qué es más económica?",
+        position: "5"
       }, {
         title: "Slide #6",
-        content: "Slide content."
+        content: "Slide content.",
+        descFAQ: "¿Cómo es la confidencialidad de la terapia?",
+        position: "6"
       }, {
         title: "Slide #7",
-        content: "Slide content."
+        content: "Slide content.",
+        descFAQ: "¿Cómo es el proceso de selección de nuestros profesionales?",
+        position: "7"
       }]
     };
   }
@@ -38222,50 +38245,79 @@ var render = function() {
             bullets: false,
             autoplay: true,
             arrows: false,
-            infinite: true,
+            infinite: false,
             transitionSpeed: 100,
             "visible-slides": 4,
             "slide-ratio": 1 / 8,
             "dragging-distance": 70
           }
         },
-        _vm._l(_vm.slides, function(slide) {
+        _vm._l(_vm.slides, function(slide, i) {
           return _c("vueper-slide", {
             key: slide.id,
-            style: "margin-bottom:" + ["1rem"],
+            staticClass: "test--margin",
+            attrs: { index: i },
             scopedSlots: _vm._u(
               [
                 {
                   key: "content",
                   fn: function() {
                     return [
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "card card-body carousel--prevision first-card-faq"
-                        },
-                        [
-                          _c("img", {
-                            staticClass: "img-fluid",
-                            attrs: {
-                              src:
-                                "img/faq_interrogacion_primera_pregunta5.svg",
-                              alt: ""
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "texto-encima33" }, [
-                            _vm._v(
-                              "\n            Tengo crisis de pánico muy seguido\n            "
-                            ),
-                            _c("br"),
-                            _vm._v("¿qué puedo hacer?\n          ")
-                          ]),
-                          _vm._v(" "),
-                          _c("div", {})
-                        ]
-                      )
+                      i == 0
+                        ? _c(
+                            "div",
+                            {
+                              staticClass:
+                                "card card-body carousel--prevision first-card-faq border-frequentlyquestions"
+                            },
+                            [
+                              _c("img", {
+                                staticClass: "img-fluid",
+                                attrs: {
+                                  src:
+                                    "img/faq_interrogacion_primera_pregunta.svg",
+                                  alt: ""
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "texto-first-frequentlyquestions"
+                                },
+                                [
+                                  _vm._v(
+                                    "\n\t\t\t\t" +
+                                      _vm._s(slide.descFAQ) +
+                                      "\n\t\t\t"
+                                  )
+                                ]
+                              )
+                            ]
+                          )
+                        : _c(
+                            "div",
+                            {
+                              staticClass:
+                                "card card-body carousel--prevision another-card-faq border-frequentlyquestions"
+                            },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "texto-another-frequentlyquestions"
+                                },
+                                [
+                                  _vm._v(
+                                    "\n\t\t\t\t" +
+                                      _vm._s(slide.descFAQ) +
+                                      "\n\t\t\t"
+                                  )
+                                ]
+                              )
+                            ]
+                          )
                     ]
                   },
                   proxy: true
@@ -38277,12 +38329,23 @@ var render = function() {
           })
         }),
         1
-      )
+      ),
+      _vm._v(" "),
+      _vm._m(0)
     ],
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "seemore--questions" }, [
+      _c("button", [_vm._v("ver todas las consultas")])
+    ])
+  }
+]
 render._withStripped = true
 
 
