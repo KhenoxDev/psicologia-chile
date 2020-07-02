@@ -1917,14 +1917,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -37880,7 +37872,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container-fluid" },
+    { staticClass: "container" },
     [
       _c(
         "vueper-slides",
@@ -37888,11 +37880,9 @@ var render = function() {
           attrs: {
             infinite: "",
             autoplay: "",
-            "pause-on-hover": _vm.pauseOnHover,
             "slide-ratio": 1 / 3,
             bullets: false,
-            touchable: false,
-            transitionSpeed: 200
+            touchable: false
           }
         },
         _vm._l(_vm.slides, function(slide, i) {

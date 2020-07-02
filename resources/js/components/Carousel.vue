@@ -1,14 +1,6 @@
 <template>
-  <div class="container-fluid">
-    <vueper-slides
-      infinite
-      autoplay
-      :pause-on-hover="pauseOnHover"
-      :slide-ratio="1 / 3"
-      :bullets="false"
-      :touchable="false"
-      :transitionSpeed="200"
-    >
+  <div class="container">
+    <vueper-slides infinite autoplay :slide-ratio="1 / 3" :bullets="false" :touchable="false">
       <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
     </vueper-slides>
   </div>

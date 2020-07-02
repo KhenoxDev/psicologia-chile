@@ -10994,7 +10994,7 @@ a.text-dark:focus {
 #mainNav .navbar-nav .vertical {
   border-left: 2px solid #c4c7ce;
   height: 3rem;
-  margin-right: 1rem;
+  margin: 0rem 1rem;
 }
 
 #mainNav .hamburger {
