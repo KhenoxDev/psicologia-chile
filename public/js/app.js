@@ -2175,8 +2175,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["logo", "logo_txt"]
+  props: ["logo", "logo_txt"],
+  data: function data() {
+    return {
+      active: false
+    };
+  },
+  methods: {
+    isActive: function isActive() {
+      if (this.active == false) {
+        this.active = true;
+      } else {
+        this.active = false;
+      }
+    }
+  }
 });
 
 /***/ }),
@@ -38100,7 +38123,8 @@ var render = function() {
   return _c(
     "nav",
     {
-      staticClass: "navbar navbar-expand-lg bg-white text-uppercase",
+      staticClass:
+        "navbar navbar-expand-lg bg-white text-uppercase container-xl",
       attrs: { id: "mainNav" }
     },
     [
@@ -38119,7 +38143,23 @@ var render = function() {
           ]
         ),
         _vm._v(" "),
-        _vm._m(0),
+        _c(
+          "button",
+          {
+            staticClass: "hamburger hamburger--collapse",
+            class: { "is-active": _vm.active },
+            attrs: {
+              type: "button",
+              "data-toggle": "collapse",
+              "data-target": "#navbarResponsive",
+              "aria-controls": "navbarResponsive",
+              "aria-expanded": "false",
+              "aria-label": "Toggle navigation"
+            },
+            on: { click: _vm.isActive }
+          },
+          [_vm._m(0)]
+        ),
         _vm._v(" "),
         _vm._m(1)
       ])
@@ -38131,22 +38171,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass:
-          "navbar-toggler navbar-toggler-right text-uppercase font-weight-bold btn-orange text-white rounded",
-        attrs: {
-          type: "button",
-          "data-toggle": "collapse",
-          "data-target": "#navbarResponsive",
-          "aria-controls": "navbarResponsive",
-          "aria-expanded": "false",
-          "aria-label": "Toggle navigation"
-        }
-      },
-      [_vm._v("\n      Menu\n      "), _c("i", { staticClass: "fas fa-bars" })]
-    )
+    return _c("span", { staticClass: "hamburger-box" }, [
+      _c("span", { staticClass: "hamburger-inner" })
+    ])
   },
   function() {
     var _vm = this
@@ -38165,7 +38192,7 @@ var staticRenderFns = [
               "a",
               {
                 staticClass:
-                  "nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger",
+                  "nav-link py-3 px-0 px-lg-2 rounded js-scroll-trigger",
                 attrs: { href: "#portfolio" }
               },
               [_vm._v("¿Quienes somos?")]
@@ -38177,7 +38204,7 @@ var staticRenderFns = [
               "a",
               {
                 staticClass:
-                  "nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger",
+                  "nav-link py-3 px-0 px-lg-2 rounded js-scroll-trigger",
                 attrs: { href: "#portfolio" }
               },
               [_vm._v("¿Cómo funciona?")]
@@ -38189,7 +38216,7 @@ var staticRenderFns = [
               "a",
               {
                 staticClass:
-                  "nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger",
+                  "nav-link py-3 px-0 px-lg-2 rounded js-scroll-trigger",
                 attrs: { href: "#portfolio" }
               },
               [_vm._v("Profesionales")]
@@ -38201,7 +38228,7 @@ var staticRenderFns = [
               "a",
               {
                 staticClass:
-                  "nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger",
+                  "nav-link py-3 px-0 px-lg-2 rounded js-scroll-trigger",
                 attrs: { href: "#portfolio" }
               },
               [_vm._v("Especialidades")]
@@ -38213,7 +38240,7 @@ var staticRenderFns = [
               "a",
               {
                 staticClass:
-                  "nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger",
+                  "nav-link py-3 px-0 px-lg-2 rounded js-scroll-trigger",
                 attrs: { href: "#portfolio" }
               },
               [_vm._v("Planes")]
@@ -38225,17 +38252,37 @@ var staticRenderFns = [
               "a",
               {
                 staticClass:
-                  "nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger",
+                  "nav-link py-3 px-0 px-lg-2 rounded js-scroll-trigger",
                 attrs: { href: "#portfolio" }
               },
               [_vm._v("Previsión")]
             )
           ]),
           _vm._v(" "),
-          _c("li", { staticClass: "nav-item mx-0 mx-lg-1 login--container" }, [
-            _c("a", { attrs: { href: "" } }, [_vm._v("Registrate")]),
-            _vm._v(" "),
-            _c("a", { attrs: { href: "" } }, [_vm._v("Iniciar sesión")])
+          _c("div", { staticClass: "vertical" }),
+          _vm._v(" "),
+          _c("li", { staticClass: "nav-item mx-0 mx-lg-1" }, [
+            _c(
+              "a",
+              {
+                staticClass: "login--link",
+                attrs: {
+                  href: "#",
+                  target: "_blank",
+                  rel: "noopener noreferrer"
+                }
+              },
+              [
+                _c("img", {
+                  attrs: { src: "img/navbar/usuario.svg", alt: "" }
+                }),
+                _vm._v(" "),
+                _c("span", [
+                  _vm._v("\n              Ingresa\n              "),
+                  _c("strong", [_vm._v("aquí")])
+                ])
+              ]
+            )
           ])
         ])
       ]

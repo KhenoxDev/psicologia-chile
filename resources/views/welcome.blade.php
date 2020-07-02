@@ -12,12 +12,14 @@
     </head>
     <body>
         <div id="app">
-			<navbar logo="{{ asset('img/logo.png') }}"></navbar>
-			<carousel></carousel>
-            <three-steps></three-steps>
-			<prevision></prevision>
-			<frequentlyquestions></frequentlyquestions>
-			<featuredplans></featuredplans>
+			<navbar logo="{{ asset('img/navbar/logo.png') }}"></navbar>
+			<main id="page-wrap">
+				<carousel></carousel>
+				<three-steps></three-steps>
+				<prevision></prevision>
+				<frequentlyquestions></frequentlyquestions>
+				<featuredplans></featuredplans>
+			</main>
         </div>
 		<script src="{{ asset('js/app.js') }}"></script>
 
