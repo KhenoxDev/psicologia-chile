@@ -28,6 +28,9 @@
 				<div class="bg--gray">
 					<frequentlyquestions></frequentlyquestions>
 				</div>
+				<div class="bg--white">
+					<news></news>
+				</div>
 			</main>
         </div>
 		<script src="{{ asset('js/app.js') }}"></script>
