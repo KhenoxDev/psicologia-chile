@@ -35,6 +35,10 @@
 	justify-content: flex-end;
 }
 
+.bg--dark {
+	background-color: $dark;
+}
+
 /* Navbar */
 #mainNav {
 	padding-top: 1rem;
@@ -329,6 +333,10 @@
 		}
 	}
 
+	.vueperslides__parallax-wrapper {
+		padding: 6rem;
+	}
+
 	.desktop--questions {
 		display: block;
 	}
@@ -406,6 +414,10 @@
 		}
 	}
 
+	.vueperslides__parallax-wrapper {
+		padding: 6rem;
+	}
+
 	.card--featuredplans {
 		padding: 0;
 		border-radius: 0.5rem;
@@ -453,7 +465,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			padding: 0rem 2rem 1rem;
+			padding: 0rem 2rem;
 
 			span {
 				font-size: 100%;
@@ -493,6 +505,76 @@
 		}
 	}
 
+}
+
+/* Footer */
+#mainFooter {
+	.navigation--container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		a {
+			color: $dark;
+			text-decoration: none;
+		}
+	}
+
+	.contact--container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.payment--container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		.payment {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			flex-wrap: wrap;
+
+			.payment--method {
+				display: flex;
+				flex-direction: column;
+
+				span {
+					margin-bottom: 1rem;
+				}
+
+				img {
+					width: 8rem;
+				}
+			}
+		}
+	}
+}
+
+/* Copyright */
+#mainCopyright {
+	.copyright--container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+
+		.social {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+
+			a {
+				margin: 0 0.5rem;
+
+				img {
+					width: 2rem;
+				}
+			}
+		}
+	}
 }
 
 /* Media Queries */
@@ -684,6 +766,17 @@
 			}
 		}
 	}
+
+	#mainCopyright {
+		.copyright--container {
+			justify-content: center;
+
+			small {
+				margin-bottom: 1rem;
+			}
+
+		}
+	}
 }
 
 @media only screen and (min-width: 321px) and (max-width: 375px) {
@@ -856,6 +949,17 @@
 			}
 		}
 	}
+
+	#mainCopyright {
+		.copyright--container {
+			justify-content: center;
+
+			small {
+				margin-bottom: 1rem;
+			}
+
+		}
+	}
 }
 
 @media only screen and (min-width: 376px) and (max-width: 425px) {
@@ -1025,6 +1129,17 @@
 			span {
 				font-size: x-large;
 			}
+		}
+	}
+
+	#mainCopyright {
+		.copyright--container {
+			justify-content: center;
+
+			small {
+				margin-bottom: 1rem;
+			}
+
 		}
 	}
 }

@@ -33,6 +33,8 @@ Vue.component('frequentlyquestions', require('./components/FrequentlyQuestions.v
 Vue.component('featuredplans', require('./components/FeaturedPlans.vue').default);
 Vue.component('specialists', require('./components/Specialists.vue').default);
 Vue.component('voluntary', require('./components/Voluntary.vue').default);
+Vue.component('footer-component', require('./components/Footer.vue').default);
+Vue.component('copyright', require('./components/Copyright.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

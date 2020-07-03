@@ -31,6 +31,12 @@
 				<div class="bg--voluntary">
 					<voluntary></voluntary>
 				</div>
+				<div class="bg--white">
+					<footer-component></footer-component>
+				</div>
+				<div class="bg--dark">
+					<copyright></copyright>
+				</div>
 			</main>
         </div>
 		<script src="{{ asset('js/app.js') }}"></script>
