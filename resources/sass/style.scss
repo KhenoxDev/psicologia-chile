@@ -1213,3 +1213,99 @@
 }
 
 
+
+/* Estilo Featured Professionals */
+#mainProfessionals {
+	.card--featuredprofessionals {
+		padding: 0;
+		border-radius: 0.5rem;
+
+		/* Circulo oferta carousel Profesionales destacados */
+		.circulo--professionals {
+			height: 28%;
+			width: 41%;
+			background-color: $card-top;
+			border-radius: 50%;
+
+			display: inline-block;
+
+			position: absolute;
+			z-index: 1;
+			top: -7%;
+			right: 68%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 1rem;
+
+			box-shadow: 3px 1px 7px 3px rgba(0,0,0,0.75);
+
+			span {
+				font-size: 65%;
+				color: $white !important;
+				font-weight: bold;
+				font-family: unset;
+				transform: rotate(-20deg);
+			}
+		}
+
+		.professionals--container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			top: -45%;
+
+			span {
+				color: $dark;
+				font-weight: bold;
+				font-size: 70%;
+				padding: 0rem 0.5rem;
+				margin-top: 3rem;
+				margin-bottom: 1rem;
+			}
+
+			.test1 {
+				display: none;
+			}
+
+			.cardFeaturedProfessionals:hover + .test1 {
+				display: block;
+			}
+		}
+
+	}
+
+	.carousel--featuredprofessionals {
+		height: 200px;
+		width: 85%;
+		background-color: #f3f3f3;
+	}
+
+	.border--picprofessional {
+		border-radius: 0.5rem;
+		clip-path: polygon(0 0%, 100% 0, 100% 90%, 0 100%);
+	}
+
+	.circulo--flotante {
+		padding: 1rem 1.5rem;
+	}
+
+	.seemore--professionals {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 0rem;
+
+		button {
+			color: $dark;
+			font-weight: bold;
+			padding: 0.5rem 1rem 0.5rem 1rem;
+			text-transform: uppercase;
+			background-color: #f0c828;
+			border-radius: 0.5rem;
+			border: none;
+		}
+	}
+}
+

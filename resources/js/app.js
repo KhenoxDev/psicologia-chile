@@ -32,6 +32,7 @@ Vue.component('prevision', require('./components/Prevision.vue').default);
 Vue.component('frequentlyquestions', require('./components/FrequentlyQuestions.vue').default);
 Vue.component('featuredplans', require('./components/FeaturedPlans.vue').default);
 Vue.component('specialists', require('./components/Specialists.vue').default);
+Vue.component('featuredprofessionals', require('./components/FeaturedProfessionals.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

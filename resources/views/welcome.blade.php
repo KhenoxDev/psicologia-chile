@@ -20,6 +20,7 @@
 				<frequentlyquestions></frequentlyquestions>
 				<specialists></specialists>
 				<featuredplans></featuredplans>
+				<featuredprofessionals></featuredprofessionals>
 			</main>
         </div>
 		<script src="{{ asset('js/app.js') }}"></script>
