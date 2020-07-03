@@ -24,6 +24,7 @@
 				</div>
 				<div class="bg--white">
 					<featuredplans></featuredplans>
+					<featuredprofessionals></featuredprofessionals>
 				</div>
 				<div class="bg--gray">
 					<frequentlyquestions></frequentlyquestions>
