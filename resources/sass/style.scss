@@ -121,6 +121,22 @@
 /* Third steps */
 #mainSteps {
 
+	.step--container-button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		button {
+			color: $dark;
+			font-weight: bold;
+			padding: 0.5rem 1rem 0.5rem 1rem;
+			text-transform: uppercase;
+			background-color: #f0c828;
+			border-radius: 0.5rem;
+			border: none;
+		}
+	}
+
 	.step--container {
 		display: flex;
 		flex-direction: column;
@@ -293,6 +309,12 @@
 
 /* Frequently questions */
 #mainQuestions {
+	.vueperslides__arrow {
+		&:focus {
+			outline: none;
+		}
+	}
+
 	.desktop--questions {
 		display: block;
 	}

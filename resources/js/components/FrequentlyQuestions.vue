@@ -6,12 +6,12 @@
     <hr class="line--separator" />
     <vueper-slides
       class="no-shadow desktop--questions"
-      :bullets="false"
       autoplay
-      :arrows="false"
-      :infinite="false"
+      arrows-outside
+      infinite
+      :bullets="false"
       :visible-slides="4"
-      :slide-ratio="1 / 6"
+      :slide-ratio="1 / 8"
     >
       <vueper-slide v-for="(slide, i) in slides" :index="i" :key="slide.id" class="test--margin">
         <template v-slot:content>
