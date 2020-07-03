@@ -1,6 +1,8 @@
 <template>
-  <div class="container-fluid mt-4">
-    <span class="title--section">Especialidades</span>
+  <div id="mainSpecialist" class="container mt-4">
+    <span class="title--section">
+      <strong>Espe</strong>cialidades
+    </span>
     <hr class="line--separator" />
     <div class="row">
       <div class="col-lg-3 col-md-3 col-sm-12 cards--container">
