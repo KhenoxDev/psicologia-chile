@@ -2093,6 +2093,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -38361,13 +38367,12 @@ var render = function() {
                         "div",
                         {
                           staticClass:
-                            "card card-body carousel--featuredprofessionals card--featuredprofessionals",
+                            "card card-body card--featuredprofessionals",
                           attrs: { id: "cardFeaturedProfessionals" }
                         },
                         [
                           _c("img", {
                             staticClass: "img-fluid border--picprofessional",
-                            staticStyle: { "border-radius": "4px 4px 0px 0px" },
                             attrs: {
                               src: slide.picProfessional,
                               alt: slide.nameProfessional
@@ -38376,25 +38381,15 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "div",
-                            {
-                              staticClass: "col-md-12 professionals--container",
-                              staticStyle: {
-                                "border-radius": "4px 4px 0px 0px"
-                              }
-                            },
+                            { staticClass: "professionals--container" },
                             [
                               _c("span", [
-                                _vm._v(
-                                  " " + _vm._s(slide.nameProfessional) + " "
-                                )
+                                _vm._v(_vm._s(slide.nameProfessional))
                               ]),
                               _vm._v(" "),
                               _c(
                                 "div",
-                                {
-                                  staticClass: "seemore--professionals",
-                                  attrs: { id: "test1" }
-                                },
+                                { staticClass: "seemore--professionals" },
                                 [_c("button", [_vm._v("ver más")])]
                               )
                             ]
@@ -38407,11 +38402,7 @@ var render = function() {
                                   staticClass: "circulo--professionals",
                                   attrs: { id: "saleid" }
                                 },
-                                [
-                                  _c("span", [
-                                    _vm._v(" " + _vm._s(slide.sale) + " ")
-                                  ])
-                                ]
+                                [_c("span", [_vm._v(_vm._s(slide.sale))])]
                               )
                             : _vm._e()
                         ]
@@ -38438,8 +38429,8 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("span", { staticClass: "title--section" }, [
-      _c("strong", [_vm._v(" Profesionales")]),
-      _vm._v(" destacados")
+      _c("strong", [_vm._v("Profesionales")]),
+      _vm._v(" destacados\n  ")
     ])
   }
 ]
@@ -60984,8 +60975,8 @@ global.$ = global.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jqu
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\alvaro\Desktop\Psicologia Chile\Upgrade Psicologia\Upgrade Psicologia Chile\psicologia-chile\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\alvaro\Desktop\Psicologia Chile\Upgrade Psicologia\Upgrade Psicologia Chile\psicologia-chile\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Psicología Chile\Proyectos\psicologia-chile\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\Psicología Chile\Proyectos\psicologia-chile\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

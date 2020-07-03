@@ -1158,7 +1158,7 @@
 		align-items: center;
 		justify-content: center;
 
-		box-shadow: 3px 1px 7px 3px rgba(0,0,0,0.75);
+		box-shadow: 3px 1px 7px 3px rgba(0, 0, 0, 0.75);
 
 		span {
 			font-size: 65%;
@@ -1167,6 +1167,7 @@
 			font-family: unset;
 		}
 	}
+
 	.price--container {
 		background: $card-top;
 		display: flex;
@@ -1216,9 +1217,16 @@
 
 /* Estilo Featured Professionals */
 #mainProfessionals {
+	.circulo--flotante {
+		padding: 1rem 1.5rem;
+	}
+
 	.card--featuredprofessionals {
 		padding: 0;
 		border-radius: 0.5rem;
+		height: 200px;
+		width: 85%;
+		background-color: #f3f3f3;
 
 		/* Circulo oferta carousel Profesionales destacados */
 		.circulo--professionals {
@@ -1238,7 +1246,7 @@
 			justify-content: center;
 			padding: 1rem;
 
-			box-shadow: 3px 1px 7px 3px rgba(0,0,0,0.75);
+			box-shadow: 3px 1px 7px 3px rgba(0, 0, 0, 0.75);
 
 			span {
 				font-size: 65%;
@@ -1254,58 +1262,48 @@
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			top: -45%;
+			height: 10rem;
+			width: auto;
+			border-radius: 4px 4px 0px 0px;
 
 			span {
+				text-align: center;
 				color: $dark;
 				font-weight: bold;
 				font-size: 70%;
-				padding: 0rem 0.5rem;
-				margin-top: 3rem;
+				padding: 0rem 0.2rem;
 				margin-bottom: 1rem;
-			}
-
-			.test1 {
-				display: none;
-			}
-
-			.cardFeaturedProfessionals:hover + .test1 {
-				display: block;
 			}
 		}
 
-	}
-
-	.carousel--featuredprofessionals {
-		height: 200px;
-		width: 85%;
-		background-color: #f3f3f3;
-	}
-
-	.border--picprofessional {
-		border-radius: 0.5rem;
-		clip-path: polygon(0 0%, 100% 0, 100% 90%, 0 100%);
-	}
-
-	.circulo--flotante {
-		padding: 1rem 1.5rem;
-	}
-
-	.seemore--professionals {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		margin-top: 0rem;
-
-		button {
-			color: $dark;
-			font-weight: bold;
-			padding: 0.5rem 1rem 0.5rem 1rem;
-			text-transform: uppercase;
-			background-color: #f0c828;
+		.border--picprofessional {
 			border-radius: 0.5rem;
-			border: none;
+			clip-path: polygon(0 0%, 100% 0, 100% 90%, 0 100%);
+			border-radius: 4px 4px 0px 0px;
+		}
+
+		.seemore--professionals {
+			display: none;
+			align-items: center;
+			justify-content: center;
+			margin-top: 0.5rem;
+
+			button {
+				font-size: x-small;
+				color: $dark;
+				font-weight: bold;
+				padding: 0.5rem 1rem 0.5rem 1rem;
+				text-transform: uppercase;
+				background-color: #f0c828;
+				border-radius: 0.5rem;
+				border: none;
+			}
+		}
+
+		&:hover {
+			.seemore--professionals {
+				display: flex;
+			}
 		}
 	}
 }
-
