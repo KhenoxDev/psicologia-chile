@@ -21,6 +21,20 @@
 	padding: 1rem;
 }
 
+.bg--voluntary {
+	background-image: linear-gradient(to left, $teal-tiny 20%, transparent 80%),
+		url('img/voluntario.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 1rem;
+	height: 20rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+}
+
 /* Navbar */
 #mainNav {
 	padding-top: 1rem;
@@ -451,6 +465,36 @@
 	}
 }
 
+/* Voluntary */
+#mainVoluntary {
+
+	.voluntary--container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-end;
+
+		span {
+			font-size: xx-large;
+			color: $white;
+			font-weight: bold;
+			margin-bottom: 0.5rem;
+		}
+
+		button {
+			background-color: $yellow-1;
+			color: $dark;
+			padding: 0.5rem 1rem;
+			text-transform: uppercase;
+			border: none;
+			border-radius: 0.5rem;
+			width: 11rem;
+			font-weight: bold;
+		}
+	}
+
+}
+
 /* Media Queries */
 @media only screen and (max-width: 320px) {
 	#mainNav {
@@ -632,6 +676,14 @@
 			}
 		}
 	}
+
+	#mainVoluntary {
+		.voluntary--container {
+			span {
+				font-size: x-large;
+			}
+		}
+	}
 }
 
 @media only screen and (min-width: 321px) and (max-width: 375px) {
@@ -793,6 +845,14 @@
 						font-size: 70%;
 					}
 				}
+			}
+		}
+	}
+
+	#mainVoluntary {
+		.voluntary--container {
+			span {
+				font-size: x-large;
 			}
 		}
 	}
@@ -959,6 +1019,14 @@
 			}
 		}
 	}
+
+	#mainVoluntary {
+		.voluntary--container {
+			span {
+				font-size: x-large;
+			}
+		}
+	}
 }
 
 @media only screen and (min-width: 426px) and (max-width: 768px) {
@@ -1105,6 +1173,14 @@
 
 		.mobile--plans {
 			display: block;
+		}
+	}
+
+	#mainVoluntary {
+		.voluntary--container {
+			span {
+				font-size: x-large;
+			}
 		}
 	}
 }
@@ -1255,6 +1331,14 @@
 			display: block;
 		}
 	}
+
+	#mainVoluntary {
+		.voluntary--container {
+			span {
+				font-size: xx-large;
+			}
+		}
+	}
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1024px) {
@@ -1327,6 +1411,14 @@
 			display: none;
 		}
 	}
+
+	#mainVoluntary {
+		.voluntary--container {
+			span {
+				font-size: xx-large;
+			}
+		}
+	}
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
@@ -1393,6 +1485,14 @@
 
 		.mobile--plans {
 			display: none;
+		}
+	}
+
+	#mainVoluntary {
+		.voluntary--container {
+			span {
+				font-size: xx-large;
+			}
 		}
 	}
 }
@@ -1463,6 +1563,14 @@
 			display: none;
 		}
 	}
+
+	#mainVoluntary {
+		.voluntary--container {
+			span {
+				font-size: xx-large;
+			}
+		}
+	}
 }
 
 @media only screen and (min-width: 1921px) and (max-width: 2560px) {
@@ -1529,6 +1637,14 @@
 
 		.mobile--plans {
 			display: none;
+		}
+	}
+
+	#mainVoluntary {
+		.voluntary--container {
+			span {
+				font-size: xx-large;
+			}
 		}
 	}
 }

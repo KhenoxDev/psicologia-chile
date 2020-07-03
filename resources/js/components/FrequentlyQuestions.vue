@@ -1,5 +1,5 @@
 <template>
-  <div id="mainQuestions" class="container">
+  <div id="mainQuestions" class="container mb-4">
     <span class="title--section">
       <strong>Consultas</strong> frecuentes
     </span>
