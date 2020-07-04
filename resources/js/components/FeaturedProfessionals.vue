@@ -4,7 +4,7 @@
       <strong>Profesionales</strong> destacados
     </span>
     <hr class="line--separator" />
-    <vueper-slides class="no-shadow" arrows-outside autoplay infinite :breakpoints="breakpoints">
+    <vueper-slides class="no-shadow" arrows autoplay infinite :breakpoints="breakpoints">
       <vueper-slide v-for="slide in slides" :key="slide.id" class="circulo--flotante">
         <template v-slot:content>
           <!-- Campos tabla profesionales destacados -->
@@ -47,7 +47,6 @@ export default {
         376: {
           slideRatio: 1 / 2,
           visibleSlides: 1,
-          arrows: false,
           bullets: false
         },
         769: {

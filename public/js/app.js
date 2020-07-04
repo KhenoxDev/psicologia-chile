@@ -2184,7 +2184,6 @@ __webpack_require__.r(__webpack_exports__);
         376: {
           slideRatio: 1 / 2,
           visibleSlides: 1,
-          arrows: false,
           bullets: false
         },
         769: {
@@ -2602,23 +2601,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2627,6 +2609,37 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      breakpoints: {
+        321: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false
+        },
+        376: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1
+        },
+        769: {
+          slideRatio: 1 / 4,
+          visibleSlides: 2,
+          arrows: false
+        },
+        1025: {
+          slideRatio: 1 / 6,
+          visibleSlides: 3,
+          arrows: false
+        },
+        1445: {
+          slideRatio: 1 / 8,
+          visibleSlides: 3,
+          arrows: false
+        },
+        2561: {
+          slideRatio: 1 / 8,
+          visibleSlides: 3,
+          arrows: false
+        }
+      },
       slides: [{
         title: "Slide #1",
         content: "Slide content.",
@@ -59874,7 +59887,7 @@ var render = function() {
         {
           staticClass: "no-shadow",
           attrs: {
-            "arrows-outside": "",
+            arrows: "",
             autoplay: "",
             infinite: "",
             breakpoints: _vm.breakpoints
@@ -60436,8 +60449,9 @@ var render = function() {
       _c(
         "vueper-slides",
         {
-          staticClass: "no-shadow desktop--prevision",
+          staticClass: "no-shadow",
           attrs: {
+            breakpoints: _vm.breakpoints,
             "bullets-outside": "",
             autoplay: "",
             infinite: "",
@@ -60447,53 +60461,6 @@ var render = function() {
             transitionSpeed: 100,
             "visible-slides": 3,
             "slide-ratio": 1 / 8
-          }
-        },
-        _vm._l(_vm.slides, function(slide) {
-          return _c("vueper-slide", {
-            key: slide.id,
-            style: "margin-bottom:" + ["1rem"],
-            scopedSlots: _vm._u(
-              [
-                {
-                  key: "content",
-                  fn: function() {
-                    return [
-                      _c(
-                        "div",
-                        { staticClass: "card card-body card--prevision" },
-                        [
-                          _c("img", {
-                            staticClass: "img-fluid",
-                            attrs: { src: slide.image, alt: slide.imageDesc }
-                          })
-                        ]
-                      )
-                    ]
-                  },
-                  proxy: true
-                }
-              ],
-              null,
-              true
-            )
-          })
-        }),
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "vueper-slides",
-        {
-          staticClass: "no-shadow mobile--prevision",
-          attrs: {
-            bullets: false,
-            autoplay: true,
-            arrows: false,
-            infinite: true,
-            transitionSpeed: 100,
-            "visible-slides": 1,
-            "slide-ratio": 1 / 2
           }
         },
         _vm._l(_vm.slides, function(slide) {

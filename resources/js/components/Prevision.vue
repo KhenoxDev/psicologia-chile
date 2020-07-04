@@ -5,7 +5,8 @@
     </span>
     <hr class="line--separator" />
     <vueper-slides
-      class="no-shadow desktop--prevision"
+      class="no-shadow"
+      :breakpoints="breakpoints"
       bullets-outside
       autoplay
       infinite
@@ -24,24 +25,6 @@
         </template>
       </vueper-slide>
     </vueper-slides>
-    <vueper-slides
-      class="no-shadow mobile--prevision"
-      :bullets="false"
-      :autoplay="true"
-      :arrows="false"
-      :infinite="true"
-      :transitionSpeed="100"
-      :visible-slides="1"
-      :slide-ratio="1 / 2"
-    >
-      <vueper-slide v-for="slide in slides" :key="slide.id" :style="'margin-bottom:' + ['1rem']">
-        <template v-slot:content>
-          <div class="card card-body card--prevision">
-            <img class="img-fluid" :src="slide.image" :alt="slide.imageDesc" />
-          </div>
-        </template>
-      </vueper-slide>
-    </vueper-slides>
   </div>
 </template>
 <script>
@@ -51,6 +34,37 @@ export default {
   components: { VueperSlides, VueperSlide },
   data() {
     return {
+      breakpoints: {
+        321: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false
+        },
+        376: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1
+        },
+        769: {
+          slideRatio: 1 / 4,
+          visibleSlides: 2,
+          arrows: false
+        },
+        1025: {
+          slideRatio: 1 / 6,
+          visibleSlides: 3,
+          arrows: false
+        },
+        1445: {
+          slideRatio: 1 / 8,
+          visibleSlides: 3,
+          arrows: false
+        },
+        2561: {
+          slideRatio: 1 / 8,
+          visibleSlides: 3,
+          arrows: false
+        }
+      },
       slides: [
         {
           title: "Slide #1",
