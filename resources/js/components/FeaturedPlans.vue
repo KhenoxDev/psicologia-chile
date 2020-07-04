@@ -5,37 +5,12 @@
     </span>
     <hr class="line--separator" />
     <vueper-slides
-      class="no-shadow desktop--plans"
+      :breakpoints="breakpoints"
+      class="no-shadow"
+      autoplay
       infinite
-      arrows-outside
-      :bullets="false"
-      :visible-slides="3"
-      :slide-ratio="1 / 6"
-    >
-      <vueper-slide v-for="slide in slides" :key="slide.id">
-        <template v-slot:content>
-          <!-- Campos tabla planes destacados -->
-          <div class="card card-body card--featuredplans">
-            <div class="col-md-12 price--container">
-              <span class="text--promotion" v-if="slide.promocion">¡Promoción!</span>
-              <span class="text--price">{{ slide.price }}</span>
-              <span class="text--cantsessions">{{ slide.cantSes }}</span>
-            </div>
-            <div class="col-md-12 description--container">
-              <span>{{ slide.description }}</span>
-            </div>
-          </div>
-          <!-- fin campos tabla planes destacados -->
-        </template>
-      </vueper-slide>
-    </vueper-slides>
-    <vueper-slides
-      class="no-shadow mobile--plans"
-      infinite
-      :bullets="false"
-      :arrows="false"
-      :visible-slides="1"
-      :slide-ratio="1 / 2"
+      slide-multiple
+      bullets-outside
     >
       <vueper-slide v-for="slide in slides" :key="slide.id">
         <template v-slot:content>
@@ -63,6 +38,43 @@ export default {
   components: { VueperSlides, VueperSlide },
   data() {
     return {
+      breakpoints: {
+        321: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false
+        },
+        376: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false
+        },
+        426: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false
+        },
+        769: {
+          slideRatio: 1 / 4,
+          visibleSlides: 2,
+          arrows: false
+        },
+        1025: {
+          slideRatio: 1 / 4,
+          visibleSlides: 2,
+          arrows: false
+        },
+        1445: {
+          slideRatio: 1 / 6,
+          visibleSlides: 3,
+          arrows: false
+        },
+        2561: {
+          slideRatio: 1 / 6,
+          visibleSlides: 3,
+          arrows: false
+        }
+      },
       slides: [
         {
           title: "Slide #1",

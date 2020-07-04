@@ -5,47 +5,22 @@
     </span>
     <hr class="line--separator" />
     <vueper-slides
-      class="no-shadow desktop--questions"
+      class="no-shadow"
       autoplay
-      arrows-outside
+      bullets-outside
+      slide-multiple
       infinite
-      :bullets="false"
-      :visible-slides="4"
-      :slide-ratio="1 / 8"
-    >
-      <vueper-slide v-for="(slide, i) in slides" :index="i" :key="slide.id" class="test--margin">
-        <template v-slot:content>
-          <div v-if="i == 0" class="card card-body card--question first-card-faq">
-            <span>{{ slide.descFAQ }}</span>
-          </div>
-          <div v-else class="card card-body card--question another-card-faq">
-            <span>{{ slide.descFAQ }}</span>
-          </div>
-        </template>
-      </vueper-slide>
-    </vueper-slides>
-    <vueper-slides
-      class="no-shadow mobile--questions"
-      :bullets="false"
-      autoplay
-      :arrows="false"
-      :infinite="false"
-      :visible-slides="1"
-      :slide-ratio="1 / 2"
       3d
+      :breakpoints="breakpoints"
     >
       <vueper-slide v-for="(slide, i) in slides" :index="i" :key="slide.id" class="test--margin">
         <template v-slot:content>
-          <!-- Primera tarjeta pintada  -->
           <div v-if="i == 0" class="card card-body card--question first-card-faq">
-            <!-- <img class="img-fluid" src="img/faq_interrogacion_primera_pregunta.svg" alt /> -->
             <span>{{ slide.descFAQ }}</span>
           </div>
-          <!-- Resto de tarjetas -->
           <div v-else class="card card-body card--question another-card-faq">
             <span>{{ slide.descFAQ }}</span>
           </div>
-          <!-- Fin sentencia if -->
         </template>
       </vueper-slide>
     </vueper-slides>
@@ -61,6 +36,43 @@ export default {
   components: { VueperSlides, VueperSlide },
   data() {
     return {
+      breakpoints: {
+        321: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false
+        },
+        376: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false
+        },
+        426: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false
+        },
+        769: {
+          slideRatio: 1 / 4,
+          visibleSlides: 2,
+          arrows: false
+        },
+        1025: {
+          slideRatio: 1 / 6,
+          visibleSlides: 3,
+          arrows: false
+        },
+        1445: {
+          slideRatio: 1 / 8,
+          visibleSlides: 4,
+          arrows: false
+        },
+        2561: {
+          slideRatio: 1 / 8,
+          visibleSlides: 4,
+          arrows: false
+        }
+      },
       slides: [
         {
           title: "Slide #1",

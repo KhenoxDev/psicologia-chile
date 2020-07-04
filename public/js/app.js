@@ -2043,31 +2043,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2076,6 +2051,43 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      breakpoints: {
+        321: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false
+        },
+        376: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false
+        },
+        426: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false
+        },
+        769: {
+          slideRatio: 1 / 4,
+          visibleSlides: 2,
+          arrows: false
+        },
+        1025: {
+          slideRatio: 1 / 4,
+          visibleSlides: 2,
+          arrows: false
+        },
+        1445: {
+          slideRatio: 1 / 6,
+          visibleSlides: 3,
+          arrows: false
+        },
+        2561: {
+          slideRatio: 1 / 6,
+          visibleSlides: 3,
+          arrows: false
+        }
+      },
       slides: [{
         title: "Slide #1",
         content: "Slide content.",
@@ -2166,6 +2178,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2178,37 +2197,32 @@ __webpack_require__.r(__webpack_exports__);
         321: {
           slideRatio: 1 / 2,
           visibleSlides: 1,
-          arrows: false,
-          bullets: false
+          arrows: false
         },
         376: {
           slideRatio: 1 / 2,
           visibleSlides: 1,
-          bullets: false
+          arrows: false
         },
         769: {
           slideRatio: 1 / 4,
           visibleSlides: 2,
-          arrows: false,
-          bullets: false
+          arrows: false
         },
         1025: {
           slideRatio: 1 / 6,
           visibleSlides: 3,
-          arrows: false,
-          bullets: false
+          arrows: false
         },
         1445: {
           slideRatio: 1 / 8,
           visibleSlides: 4,
-          arrows: false,
-          bullets: false
+          arrows: false
         },
         2561: {
           slideRatio: 1 / 8,
           visibleSlides: 5,
-          arrows: false,
-          bullets: false
+          arrows: false
         }
       },
       slides: [{
@@ -2386,31 +2400,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2419,6 +2408,43 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      breakpoints: {
+        321: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false
+        },
+        376: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false
+        },
+        426: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false
+        },
+        769: {
+          slideRatio: 1 / 4,
+          visibleSlides: 2,
+          arrows: false
+        },
+        1025: {
+          slideRatio: 1 / 6,
+          visibleSlides: 3,
+          arrows: false
+        },
+        1445: {
+          slideRatio: 1 / 8,
+          visibleSlides: 4,
+          arrows: false
+        },
+        2561: {
+          slideRatio: 1 / 8,
+          visibleSlides: 4,
+          arrows: false
+        }
+      },
       slides: [{
         title: "Slide #1",
         content: "Slide content.",
@@ -2617,7 +2643,13 @@ __webpack_require__.r(__webpack_exports__);
         },
         376: {
           slideRatio: 1 / 2,
-          visibleSlides: 1
+          visibleSlides: 1,
+          arrows: false
+        },
+        426: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false
         },
         769: {
           slideRatio: 1 / 4,
@@ -59704,82 +59736,13 @@ var render = function() {
       _c(
         "vueper-slides",
         {
-          staticClass: "no-shadow desktop--plans",
+          staticClass: "no-shadow",
           attrs: {
+            breakpoints: _vm.breakpoints,
+            autoplay: "",
             infinite: "",
-            "arrows-outside": "",
-            bullets: false,
-            "visible-slides": 3,
-            "slide-ratio": 1 / 6
-          }
-        },
-        _vm._l(_vm.slides, function(slide) {
-          return _c("vueper-slide", {
-            key: slide.id,
-            scopedSlots: _vm._u(
-              [
-                {
-                  key: "content",
-                  fn: function() {
-                    return [
-                      _c(
-                        "div",
-                        { staticClass: "card card-body card--featuredplans" },
-                        [
-                          _c(
-                            "div",
-                            { staticClass: "col-md-12 price--container" },
-                            [
-                              slide.promocion
-                                ? _c(
-                                    "span",
-                                    { staticClass: "text--promotion" },
-                                    [_vm._v("¡Promoción!")]
-                                  )
-                                : _vm._e(),
-                              _vm._v(" "),
-                              _c("span", { staticClass: "text--price" }, [
-                                _vm._v(_vm._s(slide.price))
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "span",
-                                { staticClass: "text--cantsessions" },
-                                [_vm._v(_vm._s(slide.cantSes))]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "col-md-12 description--container" },
-                            [_c("span", [_vm._v(_vm._s(slide.description))])]
-                          )
-                        ]
-                      )
-                    ]
-                  },
-                  proxy: true
-                }
-              ],
-              null,
-              true
-            )
-          })
-        }),
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "vueper-slides",
-        {
-          staticClass: "no-shadow mobile--plans",
-          attrs: {
-            infinite: "",
-            bullets: false,
-            arrows: false,
-            "visible-slides": 1,
-            "slide-ratio": 1 / 2
+            "slide-multiple": "",
+            "bullets-outside": ""
           }
         },
         _vm._l(_vm.slides, function(slide) {
@@ -59887,10 +59850,11 @@ var render = function() {
         {
           staticClass: "no-shadow",
           attrs: {
-            arrows: "",
+            breakpoints: _vm.breakpoints,
+            "slide-multiple": "",
             autoplay: "",
             infinite: "",
-            breakpoints: _vm.breakpoints
+            "bullets-outside": ""
           }
         },
         _vm._l(_vm.slides, function(slide) {
@@ -60098,69 +60062,14 @@ var render = function() {
       _c(
         "vueper-slides",
         {
-          staticClass: "no-shadow desktop--questions",
+          staticClass: "no-shadow",
           attrs: {
             autoplay: "",
-            "arrows-outside": "",
+            "bullets-outside": "",
+            "slide-multiple": "",
             infinite: "",
-            bullets: false,
-            "visible-slides": 4,
-            "slide-ratio": 1 / 8
-          }
-        },
-        _vm._l(_vm.slides, function(slide, i) {
-          return _c("vueper-slide", {
-            key: slide.id,
-            staticClass: "test--margin",
-            attrs: { index: i },
-            scopedSlots: _vm._u(
-              [
-                {
-                  key: "content",
-                  fn: function() {
-                    return [
-                      i == 0
-                        ? _c(
-                            "div",
-                            {
-                              staticClass:
-                                "card card-body card--question first-card-faq"
-                            },
-                            [_c("span", [_vm._v(_vm._s(slide.descFAQ))])]
-                          )
-                        : _c(
-                            "div",
-                            {
-                              staticClass:
-                                "card card-body card--question another-card-faq"
-                            },
-                            [_c("span", [_vm._v(_vm._s(slide.descFAQ))])]
-                          )
-                    ]
-                  },
-                  proxy: true
-                }
-              ],
-              null,
-              true
-            )
-          })
-        }),
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "vueper-slides",
-        {
-          staticClass: "no-shadow mobile--questions",
-          attrs: {
-            bullets: false,
-            autoplay: "",
-            arrows: false,
-            infinite: false,
-            "visible-slides": 1,
-            "slide-ratio": 1 / 2,
-            "3d": ""
+            "3d": "",
+            breakpoints: _vm.breakpoints
           }
         },
         _vm._l(_vm.slides, function(slide, i) {

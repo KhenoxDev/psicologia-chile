@@ -42,7 +42,13 @@ export default {
         },
         376: {
           slideRatio: 1 / 2,
-          visibleSlides: 1
+          visibleSlides: 1,
+          arrows: false
+        },
+        426: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false
         },
         769: {
           slideRatio: 1 / 4,
