@@ -730,7 +730,7 @@
 
 /* News */
 #mainNews {
-	.vueperslidesbullet {
+	.vueperslides__bullet {
 		&:focus {
 			outline: none;
 		}
@@ -745,7 +745,7 @@
 		}
 	}
 
-	.vueperslidesbullet--active {
+	.vueperslides__bullet--active {
 		.default {
 			background-color: $orange-selected;
 		}
