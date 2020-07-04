@@ -5,15 +5,12 @@
     </span>
     <hr class="line--separator" />
     <vueper-slides
+	  :breakpoints="breakpoints"
       class="no-shadow"
-      :bullets="false"
       :autoplay="false"
-      :arrows="false"
-      :infinite="true"
-      :transitionSpeed="400"
-      :visible-slides="3"
-      :slide-ratio="1 / 4"
-      :dragging-distance="200"
+      infinite
+	  bullets-outside
+	  slide-multiple
     >
       <vueper-slide v-for="(slide, i) in slides" :index="i" :key="slide.id">
         <template v-slot:content>
@@ -54,6 +51,43 @@ export default {
   components: { VueperSlides, VueperSlide },
   data() {
     return {
+		breakpoints: {
+        321: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false
+        },
+        376: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false
+		},
+		426: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false
+		},
+        769: {
+          slideRatio: 1 / 4,
+          visibleSlides: 2,
+          arrows: false
+        },
+        1025: {
+          slideRatio: 1 / 6,
+          visibleSlides: 3,
+          arrows: false
+        },
+        1445: {
+          slideRatio: 1 / 4,
+          visibleSlides: 3,
+          arrows: false
+        },
+        2561: {
+          slideRatio: 1 / 4,
+          visibleSlides: 3,
+          arrows: false
+        }
+      },
       slides: [
         {
           title: "Slide #1",
