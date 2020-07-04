@@ -33,6 +33,9 @@
 					<voluntary></voluntary>
 				</div>
 				<div class="bg--white">
+					<news></news>
+				</div>
+				<div class="bg--white">
 					<footer-component></footer-component>
 				</div>
 				<div class="bg--dark">

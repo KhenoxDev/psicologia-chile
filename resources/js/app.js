@@ -36,6 +36,7 @@ Vue.component('voluntary', require('./components/Voluntary.vue').default);
 Vue.component('footer-component', require('./components/Footer.vue').default);
 Vue.component('copyright', require('./components/Copyright.vue').default);
 Vue.component('featuredprofessionals', require('./components/FeaturedProfessionals.vue').default);
+Vue.component('news', require('./components/News.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
