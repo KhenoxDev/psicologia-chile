@@ -21,9 +21,6 @@
         <h4 class="text-uppercase mb-4">Medios de pagos</h4>
         <div class="payment">
           <div v-for="pay in payment" :key="pay.id" class="payment--method">
-            <span>
-              <strong>{{ pay.alt }}</strong>
-            </span>
             <img :src="pay.src" :alt="pay.alt" />
           </div>
         </div>
