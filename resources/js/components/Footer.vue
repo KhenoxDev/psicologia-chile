@@ -83,11 +83,11 @@ export default {
         {
           alt: "Webpay",
           src: "img/footer/webpay.jpg"
-        },
-        {
-          alt: "Tranferencia",
-          src: "img/footer/transferencia.png"
         }
+        // {
+        //   alt: "Tranferencia",
+        //   src: "img/footer/transferencia.png"
+        // }
       ]
     };
   }

@@ -384,7 +384,6 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		margin-top: 2rem;
 
 		button {
 			color: $dark;
@@ -479,6 +478,21 @@
 
 /* Featured professionals */
 #mainProfessionals {
+
+	.vueperslides__parallax-wrapper {
+		padding: 7rem;
+	}
+
+	.vueperslides__arrow {
+		&:focus {
+			outline: none;
+		}
+	}
+
+	.mobile--professionals {
+		display: none;
+	}
+
 	.circulo--flotante {
 		padding: 1rem 1.5rem;
 	}
@@ -870,6 +884,21 @@
 
 		}
 	}
+
+	#mainProfessionals {
+		.vueperslides__parallax-wrapper {
+			padding: 7rem;
+		}
+
+		.card--featuredprofessionals {
+			width: 70%;
+			margin-left: 15% !important;
+
+			.seemore--professionals {
+				display: block;
+			}
+		}
+	}
 }
 
 @media only screen and (min-width: 321px) and (max-width: 375px) {
@@ -1051,6 +1080,27 @@
 				margin-bottom: 1rem;
 			}
 
+		}
+	}
+
+	#mainProfessionals {
+		.vueperslides__parallax-wrapper {
+			padding: 7rem;
+		}
+
+		.card--featuredprofessionals {
+			width: 60%;
+			margin-left: 20% !important;
+
+			.seemore--professionals {
+				display: block;
+			}
+
+			.professionals--container {
+				span {
+					margin-bottom: 0rem;
+				}
+			}
 		}
 	}
 }
@@ -1235,6 +1285,31 @@
 
 		}
 	}
+
+	#mainProfessionals {
+
+		.vueperslides__parallax-wrapper {
+			padding: 9rem;
+		}
+
+		.circulo--flotante {
+			padding: 1rem 0.5rem;
+		}
+
+		.card--featuredprofessionals {
+			width: 100%;
+
+			.professionals--container {
+				span {
+					margin-bottom: 0rem;
+				}
+			}
+
+			.seemore--professionals {
+				display: block;
+			}
+		}
+	}
 }
 
 @media only screen and (min-width: 426px) and (max-width: 768px) {
@@ -1388,6 +1463,32 @@
 		.voluntary--container {
 			span {
 				font-size: x-large;
+			}
+		}
+	}
+
+	#mainProfessionals {
+
+		.vueperslides__parallax-wrapper {
+			padding: 8rem;
+		}
+
+		.circulo--flotante {
+			padding: 1rem 1.5rem;
+		}
+
+		.card--featuredprofessionals {
+			width: 70%;
+
+			.professionals--container {
+				span {
+					margin-bottom: 0rem;
+					margin-top: 1rem;
+				}
+			}
+
+			.seemore--professionals {
+				display: block;
 			}
 		}
 	}
@@ -1547,6 +1648,16 @@
 			}
 		}
 	}
+
+	#mainProfessionals {
+		.card--featuredprofessionals {
+			.professionals--container {
+				span {
+					margin-bottom: 0rem;
+				}
+			}
+		}
+	}
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1024px) {
@@ -1627,6 +1738,16 @@
 			}
 		}
 	}
+
+	#mainProfessionals {
+		.card--featuredprofessionals {
+			.professionals--container {
+				span {
+					margin-bottom: 0rem;
+				}
+			}
+		}
+	}
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
@@ -1700,6 +1821,18 @@
 		.voluntary--container {
 			span {
 				font-size: xx-large;
+			}
+		}
+	}
+
+	#mainProfessionals {
+		.card--featuredprofessionals {
+			width: 70%;
+
+			.professionals--container {
+				span {
+					margin-bottom: 0rem;
+				}
 			}
 		}
 	}
@@ -1779,6 +1912,16 @@
 			}
 		}
 	}
+
+	// #mainProfessionals {
+	// 	.desktop--professionals {
+	// 		display: block;
+	// 	}
+
+	// 	.mobile--professionals {
+	// 		display: none;
+	// 	}
+	// }
 }
 
 @media only screen and (min-width: 1921px) and (max-width: 2560px) {
@@ -1855,4 +1998,14 @@
 			}
 		}
 	}
+
+	// #mainProfessionals {
+	// 	.desktop--professionals {
+	// 		display: block;
+	// 	}
+
+	// 	.mobile--professionals {
+	// 		display: none;
+	// 	}
+	// }
 }
