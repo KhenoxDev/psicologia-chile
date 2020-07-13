@@ -369,11 +369,15 @@
 		background-position: center center;
 		background-repeat: no-repeat;
 
-		span {
+		#description {
 			color: $white;
 			font-weight: bold;
 			font-size: 100%;
 			text-align: center;
+		}
+
+		#comments {
+			color: $white;
 		}
 	}
 

@@ -2399,6 +2399,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2445,40 +2453,26 @@ __webpack_require__.r(__webpack_exports__);
         }
       },
       slides: [{
-        title: "Slide #1",
-        content: "Slide content.",
         descFAQ: "Tengo crisis de pánico muy seguido ¿qué puedo hacer?",
-        position: "1"
+        comments: 100
       }, {
-        title: "Slide #2",
-        content: "Slide content.",
         descFAQ: "¿Qué es la terapia psicológica online?",
-        position: "2"
+        comments: 109
       }, {
-        title: "Slide #3",
-        content: "Slide content.",
         descFAQ: "Cómo puedo superar mis miedos, aceptarme y enfrentar la vida",
-        position: "3"
+        comments: 2
       }, {
-        title: "Slide #4",
-        content: "Slide content.",
         descFAQ: "¿Cuál es la principal diferencia de la terapia online, versus la terapia psicológica tradicional?",
-        position: "4"
+        comments: 6
       }, {
-        title: "Slide #5",
-        content: "Slide content.",
         descFAQ: "¿Por qué es más económica?",
-        position: "5"
+        comments: 4
       }, {
-        title: "Slide #6",
-        content: "Slide content.",
         descFAQ: "¿Cómo es la confidencialidad de la terapia?",
-        position: "6"
+        comments: 32
       }, {
-        title: "Slide #7",
-        content: "Slide content.",
         descFAQ: "¿Cómo es el proceso de selección de nuestros profesionales?",
-        position: "7"
+        comments: 34
       }]
     };
   }
@@ -60220,7 +60214,6 @@ var render = function() {
         _vm._l(_vm.slides, function(slide, i) {
           return _c("vueper-slide", {
             key: slide.id,
-            staticClass: "test--margin",
             attrs: { index: i },
             scopedSlots: _vm._u(
               [
@@ -60235,7 +60228,20 @@ var render = function() {
                               staticClass:
                                 "card card-body card--question first-card-faq"
                             },
-                            [_c("span", [_vm._v(_vm._s(slide.descFAQ))])]
+                            [
+                              _c("span", { staticClass: "description" }, [
+                                _vm._v(_vm._s(slide.descFAQ))
+                              ]),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "comments" }, [
+                                _c("i", { staticClass: "fa fa-comment-dots" }),
+                                _vm._v(
+                                  "\n            " +
+                                    _vm._s(slide.comments) +
+                                    "\n          "
+                                )
+                              ])
+                            ]
                           )
                         : _c(
                             "div",
@@ -60243,7 +60249,20 @@ var render = function() {
                               staticClass:
                                 "card card-body card--question another-card-faq"
                             },
-                            [_c("span", [_vm._v(_vm._s(slide.descFAQ))])]
+                            [
+                              _c("span", { staticClass: "description" }, [
+                                _vm._v(_vm._s(slide.descFAQ))
+                              ]),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "comments" }, [
+                                _c("i", { staticClass: "fa fa-comment-dots" }),
+                                _vm._v(
+                                  "\n            " +
+                                    _vm._s(slide.comments) +
+                                    "\n          "
+                                )
+                              ])
+                            ]
                           )
                     ]
                   },
