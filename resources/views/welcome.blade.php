@@ -13,6 +13,7 @@
     <body>
         <div id="app">
 			<navbar logo="{{ asset('img/navbar/logo.png') }}"></navbar>
+			<whatsapp></whatsapp>
 			<main id="page-wrap">
 				<div class="bg--white">
 					<carousel></carousel>

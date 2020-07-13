@@ -1962,37 +1962,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      year: moment__WEBPACK_IMPORTED_MODULE_0___default()().format("YYYY"),
-      socials: [{
-        alt: "Facebook",
-        src: "img/footer/social-network/facebook.svg",
-        link: "https://www.facebook.com/PsicologiaChileOnline"
-      }, {
-        alt: "Instagram",
-        src: "img/footer/social-network/instagram.svg",
-        link: "https://www.instagram.com/psicologiachileonline/"
-      }, {
-        alt: "Youtube",
-        src: "img/footer/social-network/youtube.svg",
-        link: "https://www.youtube.com/channel/UCznPWn2VjzUDtm8fULeeT1w"
-      }, {
-        alt: "Linkedin",
-        src: "img/footer/social-network/linkedin.svg",
-        link: "https://www.linkedin.com/company/psicologiachile/?viewAsMember=true"
-      }, {
-        alt: "Whatsapp",
-        src: "img/footer/social-network/whatsapp.svg",
-        link: "https://api.whatsapp.com/send?phone=56995863952"
-      }]
+      year: moment__WEBPACK_IMPORTED_MODULE_0___default()().format("YYYY")
     };
   }
 });
@@ -2306,6 +2280,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2348,7 +2329,28 @@ __webpack_require__.r(__webpack_exports__);
       //   alt: "Tranferencia",
       //   src: "img/footer/transferencia.png"
       // }
-      ]
+      ],
+      socials: [{
+        alt: "Facebook",
+        src: "img/footer/social-network/facebook.svg",
+        link: "https://www.facebook.com/PsicologiaChileOnline"
+      }, {
+        alt: "Instagram",
+        src: "img/footer/social-network/instagram.svg",
+        link: "https://www.instagram.com/psicologiachileonline/"
+      }, {
+        alt: "Youtube",
+        src: "img/footer/social-network/youtube.svg",
+        link: "https://www.youtube.com/channel/UCznPWn2VjzUDtm8fULeeT1w"
+      }, {
+        alt: "Linkedin",
+        src: "img/footer/social-network/linkedin.svg",
+        link: "https://www.linkedin.com/company/psicologiachile/?viewAsMember=true"
+      }, {
+        alt: "Whatsapp",
+        src: "img/footer/social-network/whatsapp.svg",
+        link: "https://api.whatsapp.com/send?phone=56995863952"
+      }]
     };
   }
 });
@@ -59823,23 +59825,7 @@ var render = function() {
       _c("div", { staticClass: "copyright--container" }, [
         _c("small", [
           _vm._v("Derechos reservados © Psicología Chile " + _vm._s(_vm.year))
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "social" },
-          _vm._l(_vm.socials, function(social) {
-            return _c(
-              "a",
-              {
-                key: social.id,
-                attrs: { href: social.link, target: "_blank" }
-              },
-              [_c("img", { attrs: { src: social.src, alt: social.alt } })]
-            )
-          }),
-          0
-        )
+        ])
       ])
     ]
   )
@@ -60139,7 +60125,29 @@ var render = function() {
                   _c("strong", [_vm._v(_vm._s(contact.link))])
                 ])
               ])
-            })
+            }),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c("h4", { staticClass: "text-uppercase mb-4" }, [
+              _vm._v("Redes sociales")
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "social" },
+              _vm._l(_vm.socials, function(social) {
+                return _c(
+                  "a",
+                  {
+                    key: social.id,
+                    attrs: { href: social.link, target: "_blank" }
+                  },
+                  [_c("img", { attrs: { src: social.src, alt: social.alt } })]
+                )
+              }),
+              0
+            )
           ],
           2
         ),
@@ -60985,6 +60993,50 @@ var staticRenderFns = [
         ])
       ]
     )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Whatsapp.vue?vue&type=template&id=645665fd&":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Whatsapp.vue?vue&type=template&id=645665fd& ***!
+  \***********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { attrs: { id: "mainSocial" } }, [
+      _c(
+        "a",
+        {
+          staticClass: "float",
+          attrs: {
+            href:
+              "https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202.",
+            target: "_blank"
+          }
+        },
+        [_c("i", { staticClass: "fa fa-whatsapp my-float" })]
+      )
+    ])
   }
 ]
 render._withStripped = true
@@ -79270,6 +79322,7 @@ Vue.component('footer-component', __webpack_require__(/*! ./components/Footer.vu
 Vue.component('copyright', __webpack_require__(/*! ./components/Copyright.vue */ "./resources/js/components/Copyright.vue")["default"]);
 Vue.component('featuredprofessionals', __webpack_require__(/*! ./components/FeaturedProfessionals.vue */ "./resources/js/components/FeaturedProfessionals.vue")["default"]);
 Vue.component('news', __webpack_require__(/*! ./components/News.vue */ "./resources/js/components/News.vue")["default"]);
+Vue.component('whatsapp', __webpack_require__(/*! ./components/Whatsapp.vue */ "./resources/js/components/Whatsapp.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -82903,6 +82956,59 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Whatsapp.vue":
+/*!**********************************************!*\
+  !*** ./resources/js/components/Whatsapp.vue ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Whatsapp_vue_vue_type_template_id_645665fd___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Whatsapp.vue?vue&type=template&id=645665fd& */ "./resources/js/components/Whatsapp.vue?vue&type=template&id=645665fd&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _Whatsapp_vue_vue_type_template_id_645665fd___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Whatsapp_vue_vue_type_template_id_645665fd___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Whatsapp.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Whatsapp.vue?vue&type=template&id=645665fd&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/Whatsapp.vue?vue&type=template&id=645665fd& ***!
+  \*****************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Whatsapp_vue_vue_type_template_id_645665fd___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Whatsapp.vue?vue&type=template&id=645665fd& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Whatsapp.vue?vue&type=template&id=645665fd&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Whatsapp_vue_vue_type_template_id_645665fd___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Whatsapp_vue_vue_type_template_id_645665fd___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/jquery.easing.min.js":
 /*!*******************************************!*\
   !*** ./resources/js/jquery.easing.min.js ***!
@@ -83145,8 +83251,8 @@ global.$ = global.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jqu
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Psicología Chile\Proyectos\psicologia-chile\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Psicología Chile\Proyectos\psicologia-chile\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Psicología Chile\psicologia-chile\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\Psicología Chile\psicologia-chile\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

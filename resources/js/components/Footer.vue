@@ -15,6 +15,13 @@
             <strong>{{ contact.link }}</strong>
           </span>
         </div>
+        <br />
+        <h4 class="text-uppercase mb-4">Redes sociales</h4>
+        <div class="social">
+          <a v-for="social in socials" :key="social.id" :href="social.link" target="_blank">
+            <img :src="social.src" :alt="social.alt" />
+          </a>
+        </div>
       </div>
       <!-- Footer About Text-->
       <div class="col-lg-4 payment--container">
@@ -85,6 +92,34 @@ export default {
         //   alt: "Tranferencia",
         //   src: "img/footer/transferencia.png"
         // }
+      ],
+      socials: [
+        {
+          alt: "Facebook",
+          src: "img/footer/social-network/facebook.svg",
+          link: "https://www.facebook.com/PsicologiaChileOnline"
+        },
+        {
+          alt: "Instagram",
+          src: "img/footer/social-network/instagram.svg",
+          link: "https://www.instagram.com/psicologiachileonline/"
+        },
+        {
+          alt: "Youtube",
+          src: "img/footer/social-network/youtube.svg",
+          link: "https://www.youtube.com/channel/UCznPWn2VjzUDtm8fULeeT1w"
+        },
+        {
+          alt: "Linkedin",
+          src: "img/footer/social-network/linkedin.svg",
+          link:
+            "https://www.linkedin.com/company/psicologiachile/?viewAsMember=true"
+        },
+        {
+          alt: "Whatsapp",
+          src: "img/footer/social-network/whatsapp.svg",
+          link: "https://api.whatsapp.com/send?phone=56995863952"
+        }
       ]
     };
   }
