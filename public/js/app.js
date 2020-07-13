@@ -2220,6 +2220,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2228,6 +2233,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      imageP: "",
       professional: "",
       title: "",
       price: 0,
@@ -2312,8 +2318,9 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    getDataProfessional: function getDataProfessional(nameProfessional, titleProfessional, priceProfessional) {
+    getDataProfessional: function getDataProfessional(picProfessional, nameProfessional, titleProfessional, priceProfessional) {
       var vm = this;
+      vm.imageP = picProfessional;
       vm.professional = nameProfessional;
       vm.title = titleProfessional;
       vm.price = priceProfessional;
@@ -60103,6 +60110,7 @@ var render = function() {
                                       on: {
                                         click: function($event) {
                                           return _vm.getDataProfessional(
+                                            slide.picProfessional,
                                             slide.nameProfessional,
                                             slide.titleProfessional,
                                             slide.priceProfessional
@@ -60150,25 +60158,42 @@ var render = function() {
             id: "exampleModalLong",
             tabindex: "-1",
             role: "dialog",
-            "aria-labelledby": "exampleModalLongTitle",
+            "aria-labelledby": "ModalProfessional",
             "aria-hidden": "true"
           }
         },
         [
           _c(
             "div",
-            { staticClass: "modal-dialog", attrs: { role: "document" } },
+            {
+              staticClass: "modal-dialog modal--style",
+              attrs: { role: "document" }
+            },
             [
               _c("div", { staticClass: "modal-content" }, [
-                _vm._m(1),
-                _vm._v(" "),
                 _c("div", { staticClass: "modal-body details--container" }, [
-                  _c("span", [_vm._v(_vm._s(_vm.professional))]),
+                  _c("div", { staticClass: "div--image" }, [
+                    _c("img", {
+                      attrs: { src: _vm.imageP, alt: _vm.professional }
+                    })
+                  ]),
                   _vm._v(" "),
-                  _c("span", [_vm._v(_vm._s(_vm.title))]),
-                  _vm._v(" "),
-                  _c("span", [_vm._v(_vm._s(_vm.price))])
-                ])
+                  _c("div", { staticClass: "div--text" }, [
+                    _c("span", { staticClass: "span--name" }, [
+                      _vm._v(_vm._s(_vm.professional))
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "span--title" }, [
+                      _vm._v(_vm._s(_vm.title))
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "span--price" }, [
+                      _vm._v(_vm._s(_vm.price))
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _vm._m(1)
               ])
             ]
           )
@@ -60185,31 +60210,30 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("span", { staticClass: "title--section" }, [
       _c("strong", [_vm._v("Profesionales")]),
-      _vm._v(" destacados\n  ")
+      _vm._v(" destacados\n    ")
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-header" }, [
+    return _c("div", { staticClass: "modal-footer" }, [
       _c(
-        "h5",
-        { staticClass: "modal-title", attrs: { id: "exampleModalLongTitle" } },
-        [_vm._v("Información Profesional")]
+        "button",
+        {
+          staticClass: "btn btn-primary contract--button",
+          attrs: { type: "button" }
+        },
+        [_vm._v("Contratar")]
       ),
       _vm._v(" "),
       _c(
         "button",
         {
-          staticClass: "close",
-          attrs: {
-            type: "button",
-            "data-dismiss": "modal",
-            "aria-label": "Close"
-          }
+          staticClass: "btn btn-secondary",
+          attrs: { type: "button", "data-dismiss": "modal" }
         },
-        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+        [_vm._v("Cerrar")]
       )
     ])
   }
@@ -83280,8 +83304,8 @@ global.$ = global.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jqu
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Psicología Chile\psicologia-chile\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Psicología Chile\psicologia-chile\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\alvaro\Desktop\Psicologia Chile\Upgrade Psicologia\Upgrade Psicologia Chile\psicologia-chile\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\alvaro\Desktop\Psicologia Chile\Upgrade Psicologia\Upgrade Psicologia Chile\psicologia-chile\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

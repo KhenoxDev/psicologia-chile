@@ -28,7 +28,7 @@
                 <button
                   data-toggle="modal"
                   data-target="#exampleModalLong"
-                  @click="getDataProfessional(slide.nameProfessional, slide.titleProfessional, slide.priceProfessional)"
+                  @click="getDataProfessional(slide.picProfessional, slide.nameProfessional, slide.titleProfessional, slide.priceProfessional)"
                 >Ver más</button>
               </div>
             </div>
@@ -46,26 +46,31 @@
       id="exampleModalLong"
       tabindex="-1"
       role="dialog"
-      aria-labelledby="exampleModalLongTitle"
+      aria-labelledby="ModalProfessional"
       aria-hidden="true"
     >
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog modal--style" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Información Profesional</h5>
+	    <!-- <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenter">Información Profesional</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-          </div>
+          </div> -->
           <div class="modal-body details--container">
-            <span>{{ professional }}</span>
-            <span>{{ title }}</span>
-            <span>{{ price }}</span>
+			<div class="div--image">
+				<img :src="imageP" :alt="professional" />
+			</div>
+			<div class="div--text">
+				<span class="span--name">{{ professional }}</span>
+            	<span class="span--title">{{ title }}</span>
+            	<span class="span--price">{{ price }}</span>
+			</div>
           </div>
-          <!-- <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>-->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary contract--button">Contratar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          </div>
         </div>
       </div>
     </div>
@@ -79,6 +84,7 @@ export default {
   components: { VueperSlides, VueperSlide },
   data() {
     return {
+	  imageP: "",
       professional: "",
       title: "",
       price: 0,
@@ -170,12 +176,14 @@ export default {
   },
   methods: {
     getDataProfessional: function(
+	  picProfessional,
       nameProfessional,
       titleProfessional,
       priceProfessional
     ) {
       let vm = this;
 
+	  vm.imageP = picProfessional;
       vm.professional = nameProfessional;
       vm.title = titleProfessional;
       vm.price = priceProfessional;
