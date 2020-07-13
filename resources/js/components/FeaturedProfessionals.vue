@@ -8,7 +8,7 @@
       class="no-shadow"
       :breakpoints="breakpoints"
       slide-multiple
-      autoplay
+      :autoplay="false"
       infinite
       bullets-outside
     >
@@ -24,7 +24,7 @@
             <div class="professionals--container">
               <span>{{ slide.nameProfessional }}</span>
               <div class="seemore--professionals">
-                <button>ver más</button>
+                <button data-toggle="modal" data-target="#exampleModalLong">ver más</button>
               </div>
             </div>
             <span id="saleid" class="circulo--professionals" v-if="slide.promocion">
@@ -35,6 +35,26 @@
         </template>
       </vueper-slide>
     </vueper-slides>
+	<!-- inicio Modal -->
+	<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLongTitle">Información Profesional</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+			</div>
+		</div>
+	</div>
+	<!-- fin Modal -->
   </div>
 </template>
 <script>
@@ -81,7 +101,9 @@ export default {
           title: "Slide #1",
           content: "Slide content.",
           picProfessional: "img/professionals/Carla_Oyarce.png",
-          nameProfessional: "Carla Oyarce",
+		  nameProfessional: "Carla Oyarce",
+		  titleProfessional: "Psicólogo",
+		  priceProfessional: "$30.000",
           promocion: true,
           sale: "Primera Sesión GRATIS"
         },
@@ -89,7 +111,9 @@ export default {
           title: "Slide #2",
           content: "Slide content.",
           picProfessional: "img/professionals/Alex_Balada_Carrasco.png",
-          nameProfessional: "Alex Balada Carrasco",
+		  nameProfessional: "Alex Balada Carrasco",
+		  titleProfessional: "Psicólogo",
+		  priceProfessional: "$30.000",
           promocion: false,
           sale: "¡PROMOCIÓN!"
         },
@@ -97,7 +121,9 @@ export default {
           title: "Slide #3",
           content: "Slide content.",
           picProfessional: "img/professionals/Claudia_Jeldres_Guajardo.png",
-          nameProfessional: "Claudia Jeldres Guajardo",
+		  nameProfessional: "Claudia Jeldres Guajardo",
+		  titleProfessional: "Psicólogo",
+		  priceProfessional: "$30.000",
           promocion: false,
           sale: "¡PROMOCIÓN!"
         },
@@ -105,7 +131,9 @@ export default {
           title: "Slide #4",
           content: "Slide content.",
           picProfessional: "img/professionals/Gabriel_Gonzalez_Salinas.png",
-          nameProfessional: "Gabriel Gonzalez Salinas",
+		  nameProfessional: "Gabriel Gonzalez Salinas",
+		  titleProfessional: "Psicólogo",
+		  priceProfessional: "$30.000",
           promocion: false,
           sale: "¡PROMOCIÓN!"
         },
@@ -113,7 +141,9 @@ export default {
           title: "Slide #5",
           content: "Slide content.",
           picProfessional: "img/professionals/Sofia_Fiedler_Porzio.png",
-          nameProfessional: "Sofia Fiedler Porzio",
+		  nameProfessional: "Sofia Fiedler Porzio",
+		  titleProfessional: "Psicólogo",
+		  priceProfessional: "$30.000",
           promocion: false,
           sale: "¡PROMOCIÓN!"
         }

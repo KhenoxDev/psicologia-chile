@@ -2185,6 +2185,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2230,6 +2250,8 @@ __webpack_require__.r(__webpack_exports__);
         content: "Slide content.",
         picProfessional: "img/professionals/Carla_Oyarce.png",
         nameProfessional: "Carla Oyarce",
+        titleProfessional: "Psicólogo",
+        priceProfessional: "$30.000",
         promocion: true,
         sale: "Primera Sesión GRATIS"
       }, {
@@ -2237,6 +2259,8 @@ __webpack_require__.r(__webpack_exports__);
         content: "Slide content.",
         picProfessional: "img/professionals/Alex_Balada_Carrasco.png",
         nameProfessional: "Alex Balada Carrasco",
+        titleProfessional: "Psicólogo",
+        priceProfessional: "$30.000",
         promocion: false,
         sale: "¡PROMOCIÓN!"
       }, {
@@ -2244,6 +2268,8 @@ __webpack_require__.r(__webpack_exports__);
         content: "Slide content.",
         picProfessional: "img/professionals/Claudia_Jeldres_Guajardo.png",
         nameProfessional: "Claudia Jeldres Guajardo",
+        titleProfessional: "Psicólogo",
+        priceProfessional: "$30.000",
         promocion: false,
         sale: "¡PROMOCIÓN!"
       }, {
@@ -2251,6 +2277,8 @@ __webpack_require__.r(__webpack_exports__);
         content: "Slide content.",
         picProfessional: "img/professionals/Gabriel_Gonzalez_Salinas.png",
         nameProfessional: "Gabriel Gonzalez Salinas",
+        titleProfessional: "Psicólogo",
+        priceProfessional: "$30.000",
         promocion: false,
         sale: "¡PROMOCIÓN!"
       }, {
@@ -2258,6 +2286,8 @@ __webpack_require__.r(__webpack_exports__);
         content: "Slide content.",
         picProfessional: "img/professionals/Sofia_Fiedler_Porzio.png",
         nameProfessional: "Sofia Fiedler Porzio",
+        titleProfessional: "Psicólogo",
+        priceProfessional: "$30.000",
         promocion: false,
         sale: "¡PROMOCIÓN!"
       }]
@@ -59993,7 +60023,7 @@ var render = function() {
           attrs: {
             breakpoints: _vm.breakpoints,
             "slide-multiple": "",
-            autoplay: "",
+            autoplay: false,
             infinite: "",
             "bullets-outside": ""
           }
@@ -60035,7 +60065,18 @@ var render = function() {
                               _c(
                                 "div",
                                 { staticClass: "seemore--professionals" },
-                                [_c("button", [_vm._v("ver más")])]
+                                [
+                                  _c(
+                                    "button",
+                                    {
+                                      attrs: {
+                                        "data-toggle": "modal",
+                                        "data-target": "#exampleModalLong"
+                                      }
+                                    },
+                                    [_vm._v("ver más")]
+                                  )
+                                ]
                               )
                             ]
                           ),
@@ -60063,7 +60104,9 @@ var render = function() {
           })
         }),
         1
-      )
+      ),
+      _vm._v(" "),
+      _vm._m(1)
     ],
     1
   )
@@ -60075,8 +60118,82 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("span", { staticClass: "title--section" }, [
       _c("strong", [_vm._v("Profesionales")]),
-      _vm._v(" destacados\n  ")
+      _vm._v(" destacados\n    ")
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        attrs: {
+          id: "exampleModalLong",
+          tabindex: "-1",
+          role: "dialog",
+          "aria-labelledby": "exampleModalLongTitle",
+          "aria-hidden": "true"
+        }
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "modal-dialog", attrs: { role: "document" } },
+          [
+            _c("div", { staticClass: "modal-content" }, [
+              _c("div", { staticClass: "modal-header" }, [
+                _c(
+                  "h5",
+                  {
+                    staticClass: "modal-title",
+                    attrs: { id: "exampleModalLongTitle" }
+                  },
+                  [_vm._v("Información Profesional")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "close",
+                    attrs: {
+                      type: "button",
+                      "data-dismiss": "modal",
+                      "aria-label": "Close"
+                    }
+                  },
+                  [
+                    _c("span", { attrs: { "aria-hidden": "true" } }, [
+                      _vm._v("×")
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-body" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-footer" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-secondary",
+                    attrs: { type: "button", "data-dismiss": "modal" }
+                  },
+                  [_vm._v("Close")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  { staticClass: "btn btn-primary", attrs: { type: "button" } },
+                  [_vm._v("Save changes")]
+                )
+              ])
+            ])
+          ]
+        )
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -82302,14 +82419,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!***********************************************************!*\
   !*** ./resources/js/components/FeaturedProfessionals.vue ***!
   \***********************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _FeaturedProfessionals_vue_vue_type_template_id_d91e257a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FeaturedProfessionals.vue?vue&type=template&id=d91e257a& */ "./resources/js/components/FeaturedProfessionals.vue?vue&type=template&id=d91e257a&");
 /* harmony import */ var _FeaturedProfessionals_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FeaturedProfessionals.vue?vue&type=script&lang=js& */ "./resources/js/components/FeaturedProfessionals.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _FeaturedProfessionals_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _FeaturedProfessionals_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -82339,7 +82457,7 @@ component.options.__file = "resources/js/components/FeaturedProfessionals.vue"
 /*!************************************************************************************!*\
   !*** ./resources/js/components/FeaturedProfessionals.vue?vue&type=script&lang=js& ***!
   \************************************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -83145,8 +83263,8 @@ global.$ = global.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jqu
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Psicología Chile\Proyectos\psicologia-chile\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Psicología Chile\Proyectos\psicologia-chile\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\alvaro\Desktop\Psicologia Chile\Upgrade Psicologia\Upgrade Psicologia Chile\psicologia-chile\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\alvaro\Desktop\Psicologia Chile\Upgrade Psicologia\Upgrade Psicologia Chile\psicologia-chile\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
