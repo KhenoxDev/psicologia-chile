@@ -369,15 +369,19 @@
 		background-position: center center;
 		background-repeat: no-repeat;
 
-		#description {
+		.description {
 			color: $white;
 			font-weight: bold;
 			font-size: 100%;
 			text-align: center;
 		}
 
-		#comments {
+		.comments {
 			color: $white;
+			position: absolute;
+			top: 85%;
+			right: 2%;
+			opacity: 50%;
 		}
 	}
 
@@ -389,6 +393,14 @@
 			font-weight: bold;
 			font-size: 80%;
 			text-align: center;
+		}
+
+		.comments {
+			color: $dark;
+			position: absolute;
+			top: 85%;
+			right: 2%;
+			opacity: 50%;
 		}
 	}
 

@@ -60231,15 +60231,6 @@ var render = function() {
                             [
                               _c("span", { staticClass: "description" }, [
                                 _vm._v(_vm._s(slide.descFAQ))
-                              ]),
-                              _vm._v(" "),
-                              _c("span", { staticClass: "comments" }, [
-                                _c("i", { staticClass: "fa fa-comment-dots" }),
-                                _vm._v(
-                                  "\n            " +
-                                    _vm._s(slide.comments) +
-                                    "\n          "
-                                )
                               ])
                             ]
                           )
@@ -60252,15 +60243,6 @@ var render = function() {
                             [
                               _c("span", { staticClass: "description" }, [
                                 _vm._v(_vm._s(slide.descFAQ))
-                              ]),
-                              _vm._v(" "),
-                              _c("span", { staticClass: "comments" }, [
-                                _c("i", { staticClass: "fa fa-comment-dots" }),
-                                _vm._v(
-                                  "\n            " +
-                                    _vm._s(slide.comments) +
-                                    "\n          "
-                                )
                               ])
                             ]
                           )
@@ -61053,7 +61035,7 @@ var staticRenderFns = [
             target: "_blank"
           }
         },
-        [_c("i", { staticClass: "fa fa-whatsapp my-float" })]
+        [_c("i", { staticClass: "fab fa-whatsapp my-float" })]
       )
     ])
   }

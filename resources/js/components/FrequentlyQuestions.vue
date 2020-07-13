@@ -17,17 +17,17 @@
         <template v-slot:content>
           <div v-if="i == 0" class="card card-body card--question first-card-faq">
             <span class="description">{{ slide.descFAQ }}</span>
-            <span class="comments">
-              <i class="fa fa-comment-dots"></i>
+            <!-- <span class="comments">
+              <i class="far fa-comment-dots"></i>
               {{ slide.comments }}
-            </span>
+            </span>-->
           </div>
           <div v-else class="card card-body card--question another-card-faq">
             <span class="description">{{ slide.descFAQ }}</span>
-            <span class="comments">
-              <i class="fa fa-comment-dots"></i>
+            <!-- <span class="comments">
+              <i class="far fa-comment-dots"></i>
               {{ slide.comments }}
-            </span>
+            </span>-->
           </div>
         </template>
       </vueper-slide>
@@ -118,3 +118,4 @@ export default {
   }
 };
 </script>
+
