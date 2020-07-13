@@ -9,6 +9,7 @@
       :breakpoints="breakpoints"
       slide-multiple
       :autoplay="false"
+      :touchable="false"
       infinite
       bullets-outside
     >
@@ -24,7 +25,11 @@
             <div class="professionals--container">
               <span>{{ slide.nameProfessional }}</span>
               <div class="seemore--professionals">
-                <button data-toggle="modal" data-target="#exampleModalLong">ver más</button>
+                <button
+                  data-toggle="modal"
+                  data-target="#exampleModalLong"
+                  @click="getDataProfessional(slide.nameProfessional, slide.titleProfessional, slide.priceProfessional)"
+                >Ver más</button>
               </div>
             </div>
             <span id="saleid" class="circulo--professionals" v-if="slide.promocion">
@@ -35,26 +40,36 @@
         </template>
       </vueper-slide>
     </vueper-slides>
-	<!-- inicio Modal -->
-	<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLongTitle">Información Profesional</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary">Save changes</button>
-			</div>
-			</div>
-		</div>
-	</div>
-	<!-- fin Modal -->
+    <!-- inicio Modal -->
+    <div
+      class="modal fade"
+      id="exampleModalLong"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLongTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Información Profesional</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body details--container">
+            <span>{{ professional }}</span>
+            <span>{{ title }}</span>
+            <span>{{ price }}</span>
+          </div>
+          <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>-->
+        </div>
+      </div>
+    </div>
+    <!-- fin Modal -->
   </div>
 </template>
 <script>
@@ -64,6 +79,9 @@ export default {
   components: { VueperSlides, VueperSlide },
   data() {
     return {
+      professional: "",
+      title: "",
+      price: 0,
       breakpoints: {
         321: {
           slideRatio: 1 / 2,
@@ -101,9 +119,9 @@ export default {
           title: "Slide #1",
           content: "Slide content.",
           picProfessional: "img/professionals/Carla_Oyarce.png",
-		  nameProfessional: "Carla Oyarce",
-		  titleProfessional: "Psicólogo",
-		  priceProfessional: "$30.000",
+          nameProfessional: "Carla Oyarce",
+          titleProfessional: "Psicólogo",
+          priceProfessional: "$30.000",
           promocion: true,
           sale: "Primera Sesión GRATIS"
         },
@@ -111,9 +129,9 @@ export default {
           title: "Slide #2",
           content: "Slide content.",
           picProfessional: "img/professionals/Alex_Balada_Carrasco.png",
-		  nameProfessional: "Alex Balada Carrasco",
-		  titleProfessional: "Psicólogo",
-		  priceProfessional: "$30.000",
+          nameProfessional: "Alex Balada Carrasco",
+          titleProfessional: "Psicólogo",
+          priceProfessional: "$30.000",
           promocion: false,
           sale: "¡PROMOCIÓN!"
         },
@@ -121,9 +139,9 @@ export default {
           title: "Slide #3",
           content: "Slide content.",
           picProfessional: "img/professionals/Claudia_Jeldres_Guajardo.png",
-		  nameProfessional: "Claudia Jeldres Guajardo",
-		  titleProfessional: "Psicólogo",
-		  priceProfessional: "$30.000",
+          nameProfessional: "Claudia Jeldres Guajardo",
+          titleProfessional: "Psicólogo",
+          priceProfessional: "$30.000",
           promocion: false,
           sale: "¡PROMOCIÓN!"
         },
@@ -131,9 +149,9 @@ export default {
           title: "Slide #4",
           content: "Slide content.",
           picProfessional: "img/professionals/Gabriel_Gonzalez_Salinas.png",
-		  nameProfessional: "Gabriel Gonzalez Salinas",
-		  titleProfessional: "Psicólogo",
-		  priceProfessional: "$30.000",
+          nameProfessional: "Gabriel Gonzalez Salinas",
+          titleProfessional: "Psicólogo",
+          priceProfessional: "$30.000",
           promocion: false,
           sale: "¡PROMOCIÓN!"
         },
@@ -141,14 +159,27 @@ export default {
           title: "Slide #5",
           content: "Slide content.",
           picProfessional: "img/professionals/Sofia_Fiedler_Porzio.png",
-		  nameProfessional: "Sofia Fiedler Porzio",
-		  titleProfessional: "Psicólogo",
-		  priceProfessional: "$30.000",
+          nameProfessional: "Sofia Fiedler Porzio",
+          titleProfessional: "Psicólogo",
+          priceProfessional: "$30.000",
           promocion: false,
           sale: "¡PROMOCIÓN!"
         }
       ]
     };
+  },
+  methods: {
+    getDataProfessional: function(
+      nameProfessional,
+      titleProfessional,
+      priceProfessional
+    ) {
+      let vm = this;
+
+      vm.professional = nameProfessional;
+      vm.title = titleProfessional;
+      vm.price = priceProfessional;
+    }
   }
 };
 </script>
