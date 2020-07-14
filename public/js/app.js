@@ -2225,6 +2225,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2237,6 +2240,9 @@ __webpack_require__.r(__webpack_exports__);
       professional: "",
       title: "",
       price: 0,
+      codigoPsy: "",
+      valCollege: "",
+      dispProf: "",
       breakpoints: {
         321: {
           slideRatio: 1 / 2,
@@ -2277,25 +2283,34 @@ __webpack_require__.r(__webpack_exports__);
         titleProfessional: "Psicólogo",
         priceProfessional: "$30.000",
         promocion: true,
-        sale: "Primera Sesión GRATIS"
+        sale: "Primera Sesión GRATIS",
+        codProfessional: "16303320-8",
+        validationCollege: true,
+        dispProfessional: "Lunes a sábado"
       }, {
         title: "Slide #2",
         content: "Slide content.",
         picProfessional: "img/professionals/Alex_Balada_Carrasco.png",
         nameProfessional: "Alex Balada Carrasco",
-        titleProfessional: "Psicólogo",
-        priceProfessional: "$30.000",
+        titleProfessional: "Coach",
+        priceProfessional: "$29.990",
         promocion: false,
-        sale: "¡PROMOCIÓN!"
+        sale: "¡PROMOCIÓN!",
+        codProfessional: "17403380-3",
+        validationCollege: false,
+        dispProfessional: "Lunes a sábado"
       }, {
         title: "Slide #3",
         content: "Slide content.",
         picProfessional: "img/professionals/Claudia_Jeldres_Guajardo.png",
         nameProfessional: "Claudia Jeldres Guajardo",
-        titleProfessional: "Psicólogo",
+        titleProfessional: "Psiquiatra",
         priceProfessional: "$30.000",
         promocion: false,
-        sale: "¡PROMOCIÓN!"
+        sale: "¡PROMOCIÓN!",
+        codProfessional: "12239542-1",
+        validationCollege: true,
+        dispProfessional: "Lunes a sábado"
       }, {
         title: "Slide #4",
         content: "Slide content.",
@@ -2304,7 +2319,10 @@ __webpack_require__.r(__webpack_exports__);
         titleProfessional: "Psicólogo",
         priceProfessional: "$30.000",
         promocion: false,
-        sale: "¡PROMOCIÓN!"
+        sale: "¡PROMOCIÓN!",
+        codProfessional: "18097123-8",
+        validationCollege: false,
+        dispProfessional: "Lunes a sábado"
       }, {
         title: "Slide #5",
         content: "Slide content.",
@@ -2313,17 +2331,23 @@ __webpack_require__.r(__webpack_exports__);
         titleProfessional: "Psicólogo",
         priceProfessional: "$30.000",
         promocion: false,
-        sale: "¡PROMOCIÓN!"
+        sale: "¡PROMOCIÓN!",
+        codProfessional: "17402529-0",
+        validationCollege: false,
+        dispProfessional: "Lunes a sábado"
       }]
     };
   },
   methods: {
-    getDataProfessional: function getDataProfessional(picProfessional, nameProfessional, titleProfessional, priceProfessional) {
+    getDataProfessional: function getDataProfessional(picProfessional, nameProfessional, titleProfessional, priceProfessional, codProfessional, validationCollege, dispProfessional) {
       var vm = this;
       vm.imageP = picProfessional;
       vm.professional = nameProfessional;
       vm.title = titleProfessional;
       vm.price = priceProfessional;
+      vm.codigoPsy = codProfessional;
+      vm.valCollege = validationCollege;
+      vm.dispProf = dispProfessional;
     }
   }
 });
@@ -60113,7 +60137,10 @@ var render = function() {
                                             slide.picProfessional,
                                             slide.nameProfessional,
                                             slide.titleProfessional,
-                                            slide.priceProfessional
+                                            slide.priceProfessional,
+                                            slide.codProfessional,
+                                            slide.validationCollege,
+                                            slide.dispProfessional
                                           )
                                         }
                                       }
@@ -60174,6 +60201,7 @@ var render = function() {
                 _c("div", { staticClass: "modal-body details--container" }, [
                   _c("div", { staticClass: "div--image" }, [
                     _c("img", {
+                      staticClass: "img--professional--modal rounded-circle",
                       attrs: { src: _vm.imageP, alt: _vm.professional }
                     })
                   ]),
@@ -60183,12 +60211,33 @@ var render = function() {
                       _vm._v(_vm._s(_vm.professional))
                     ]),
                     _vm._v(" "),
-                    _c("span", { staticClass: "span--title" }, [
-                      _vm._v(_vm._s(_vm.title))
-                    ]),
+                    _vm.valCollege == true
+                      ? _c("span", { staticClass: "span--title" }, [
+                          _c("img", {
+                            attrs: { src: "img/check-circle.svg", alt: "" }
+                          }),
+                          _vm._v(
+                            " " +
+                              _vm._s(_vm.title) +
+                              " verificado por colegiopsicologos.cl"
+                          )
+                        ])
+                      : _c("span", { staticClass: "span--title" }, [
+                          _c("img", {
+                            attrs: { src: "img/check-circle.svg", alt: "" }
+                          }),
+                          _vm._v(" " + _vm._s(_vm.title) + " ")
+                        ]),
                     _vm._v(" "),
                     _c("span", { staticClass: "span--price" }, [
-                      _vm._v(_vm._s(_vm.price))
+                      _c("i", { staticClass: "fas fa-tags" }),
+                      _vm._v(" " + _vm._s(_vm.price))
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "span--disp" }, [
+                      _c("i", { staticClass: "far fa-calendar-alt" }, [
+                        _vm._v(" " + _vm._s(_vm.dispProf) + " ")
+                      ])
                     ])
                   ])
                 ]),
@@ -60220,10 +60269,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "modal-footer" }, [
       _c(
         "button",
-        {
-          staticClass: "btn btn-primary contract--button",
-          attrs: { type: "button" }
-        },
+        { staticClass: "btn btn-primary", attrs: { type: "button" } },
         [_vm._v("Contratar")]
       ),
       _vm._v(" "),

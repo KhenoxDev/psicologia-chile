@@ -645,22 +645,37 @@
 				flex-direction: column;
 			}
 
-			img {
+			.img--professional--modal {
 				height: 100%;
 				width: 100%;
+				box-shadow: 2px 1px 7px 0px rgba(0, 0, 0, 0.3);
 			}
 
 			.span--name {
 				font-weight: bold;
+				font-size: 150%;
 
 			}
 
 			.span--title {
+				font-size: 13px;
+				margin-bottom: 0.3rem;
+				img{
+					width: 16px;
+					/* display: inline-block;
+					float: inline-start; */
+				}
 
 			}
 
 			.span--price {
+				font-size: 13px;
+				margin-bottom: 0.3rem;
+			}
 
+			.span--disp {
+				font-size: 13px;
+				margin-bottom: 0.3rem;
 			}
 		}
 
@@ -670,10 +685,23 @@
 			flex-direction: row;
 			justify-content: center;
 
-			.contract--button {
+			button:first-child {
 				margin-right: auto;
 			}
+
 		}
+
+		/* .promotion--border {
+			font-size: 0.8rem;
+			text-transform: uppercase;
+			font-weight: 600;
+			transform: rotate(30deg);
+			right: 2px;
+			position: absolute;
+			top: 4px;
+			z-index: 2;
+			background-color: orange;
+		} */
 	}
 	//fin Modal Professional
 }

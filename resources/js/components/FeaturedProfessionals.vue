@@ -28,7 +28,7 @@
                 <button
                   data-toggle="modal"
                   data-target="#exampleModalLong"
-                  @click="getDataProfessional(slide.picProfessional, slide.nameProfessional, slide.titleProfessional, slide.priceProfessional)"
+                  @click="getDataProfessional(slide.picProfessional, slide.nameProfessional, slide.titleProfessional, slide.priceProfessional, slide.codProfessional, slide.validationCollege, slide.dispProfessional)"
                 >Ver más</button>
               </div>
             </div>
@@ -49,7 +49,7 @@
       aria-labelledby="ModalProfessional"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal--style" role="document">
+	  <div class="modal-dialog modal--style" role="document">
         <div class="modal-content">
 	    <!-- <div class="modal-header">
             <h5 class="modal-title" id="exampleModalCenter">Información Profesional</h5>
@@ -58,17 +58,20 @@
             </button>
           </div> -->
           <div class="modal-body details--container">
+			  <!-- <span class="promotion--border">top</span> -->
 			<div class="div--image">
-				<img :src="imageP" :alt="professional" />
+				<img class="img--professional--modal rounded-circle" :src="imageP" :alt="professional" />
 			</div>
 			<div class="div--text">
 				<span class="span--name">{{ professional }}</span>
-            	<span class="span--title">{{ title }}</span>
-            	<span class="span--price">{{ price }}</span>
+				<span v-if="valCollege == true" class="span--title"><img src="img/check-circle.svg" alt=""> {{ title }} verificado por colegiopsicologos.cl</span>
+            	<span v-else class="span--title"><img src="img/check-circle.svg" alt=""> {{ title }} </span>
+				<span class="span--price"><i class="fas fa-tags"></i> {{ price }}</span>
+				<span class="span--disp"><i class="far fa-calendar-alt"> {{ dispProf }} </i></span>
 			</div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary contract--button">Contratar</button>
+            <button type="button" class="btn btn-primary">Contratar</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
           </div>
         </div>
@@ -87,7 +90,10 @@ export default {
 	  imageP: "",
       professional: "",
       title: "",
-      price: 0,
+	  price: 0,
+	  codigoPsy: "",
+	  valCollege: "",
+	  dispProf: "",
       breakpoints: {
         321: {
           slideRatio: 1 / 2,
@@ -129,27 +135,36 @@ export default {
           titleProfessional: "Psicólogo",
           priceProfessional: "$30.000",
           promocion: true,
-          sale: "Primera Sesión GRATIS"
+		  sale: "Primera Sesión GRATIS",
+		  codProfessional: "16303320-8",
+		  validationCollege: true,
+		  dispProfessional: "Lunes a sábado"
         },
         {
           title: "Slide #2",
           content: "Slide content.",
           picProfessional: "img/professionals/Alex_Balada_Carrasco.png",
           nameProfessional: "Alex Balada Carrasco",
-          titleProfessional: "Psicólogo",
-          priceProfessional: "$30.000",
+          titleProfessional: "Coach",
+          priceProfessional: "$29.990",
           promocion: false,
-          sale: "¡PROMOCIÓN!"
+		  sale: "¡PROMOCIÓN!",
+		  codProfessional: "17403380-3",
+		  validationCollege: false,
+		  dispProfessional: "Lunes a sábado"
         },
         {
           title: "Slide #3",
           content: "Slide content.",
           picProfessional: "img/professionals/Claudia_Jeldres_Guajardo.png",
           nameProfessional: "Claudia Jeldres Guajardo",
-          titleProfessional: "Psicólogo",
+          titleProfessional: "Psiquiatra",
           priceProfessional: "$30.000",
           promocion: false,
-          sale: "¡PROMOCIÓN!"
+		  sale: "¡PROMOCIÓN!",
+		  codProfessional: "12239542-1",
+		  validationCollege: true,
+		  dispProfessional: "Lunes a sábado"
         },
         {
           title: "Slide #4",
@@ -159,7 +174,10 @@ export default {
           titleProfessional: "Psicólogo",
           priceProfessional: "$30.000",
           promocion: false,
-          sale: "¡PROMOCIÓN!"
+		  sale: "¡PROMOCIÓN!",
+		  codProfessional: "18097123-8",
+		  validationCollege: false,
+		  dispProfessional: "Lunes a sábado"
         },
         {
           title: "Slide #5",
@@ -169,7 +187,10 @@ export default {
           titleProfessional: "Psicólogo",
           priceProfessional: "$30.000",
           promocion: false,
-          sale: "¡PROMOCIÓN!"
+		  sale: "¡PROMOCIÓN!",
+		  codProfessional: "17402529-0",
+		  validationCollege: false,
+		  dispProfessional: "Lunes a sábado"
         }
       ]
     };
@@ -179,14 +200,20 @@ export default {
 	  picProfessional,
       nameProfessional,
       titleProfessional,
-      priceProfessional
+	  priceProfessional,
+	  codProfessional,
+	  validationCollege,
+	  dispProfessional
     ) {
       let vm = this;
 
 	  vm.imageP = picProfessional;
       vm.professional = nameProfessional;
       vm.title = titleProfessional;
-      vm.price = priceProfessional;
+	  vm.price = priceProfessional;
+	  vm.codigoPsy = codProfessional;
+	  vm.valCollege = validationCollege;
+	  vm.dispProf = dispProfessional;
     }
   }
 };
