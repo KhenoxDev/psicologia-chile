@@ -3028,6 +3028,125 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/WeWereNews.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/WeWereNews.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vueperslides__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vueperslides */ "./node_modules/vueperslides/dist/vueperslides.common.js");
+/* harmony import */ var vueperslides__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vueperslides__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    VueperSlides: vueperslides__WEBPACK_IMPORTED_MODULE_0__["VueperSlides"],
+    VueperSlide: vueperslides__WEBPACK_IMPORTED_MODULE_0__["VueperSlide"]
+  },
+  data: function data() {
+    return {
+      breakpoints: {
+        321: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false
+        },
+        376: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false
+        },
+        426: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false
+        },
+        769: {
+          slideRatio: 1 / 4,
+          visibleSlides: 2,
+          arrows: false
+        },
+        1025: {
+          slideRatio: 1 / 6,
+          visibleSlides: 3,
+          arrows: false
+        },
+        1445: {
+          slideRatio: 1 / 8,
+          visibleSlides: 4,
+          arrows: false
+        },
+        2561: {
+          slideRatio: 1 / 8,
+          visibleSlides: 4,
+          arrows: false
+        }
+      },
+      slides: [{
+        title: "Slide #1",
+        content: "Slide content.",
+        image: "img/we_were_news/canal_mega.jpg",
+        imageDesc: "mega",
+        urlNews: "https://www.mega.cl/home/"
+      }, {
+        title: "Slide #2",
+        content: "Slide content.",
+        image: "img/we_were_news/canal_tvn.png",
+        imageDesc: "tvn",
+        urlNews: "https://www.tvn.cl/"
+      }, {
+        title: "Slide #3",
+        content: "Slide content.",
+        image: "img/we_were_news/canal_trece.jpg",
+        imageDesc: "trece",
+        urlNews: "https://www.13.cl/"
+      }, {
+        title: "Slide #4",
+        content: "Slide content.",
+        image: "img/we_were_news/canal_chilevision2.png",
+        imageDesc: "chilevision",
+        urlNews: "https://www.chilevision.cl/"
+      }, {
+        title: "Slide #5",
+        content: "Slide content.",
+        image: "img/we_were_news/canal_chilevision2.png",
+        imageDesc: "chilevision",
+        urlNews: "https://www.chilevision.cl/"
+      }]
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.js":
 /*!*****************************************************!*\
   !*** ./node_modules/bootstrap/dist/js/bootstrap.js ***!
@@ -61002,6 +61121,97 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/WeWereNews.vue?vue&type=template&id=c48faee6&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/WeWereNews.vue?vue&type=template&id=c48faee6& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "container mt-4 mb-4", attrs: { id: "mainWeWereNews" } },
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("hr", { staticClass: "line--separator" }),
+      _vm._v(" "),
+      _c(
+        "vueper-slides",
+        {
+          staticClass: "no-shadow",
+          attrs: {
+            breakpoints: _vm.breakpoints,
+            "bullets-outside": "",
+            autoplay: false,
+            infinite: "",
+            "slide-multiple": "",
+            touchable: false
+          }
+        },
+        _vm._l(_vm.slides, function(slide) {
+          return _c("vueper-slide", {
+            key: slide.id,
+            style: "margin-bottom:" + ["1rem"],
+            scopedSlots: _vm._u(
+              [
+                {
+                  key: "content",
+                  fn: function() {
+                    return [
+                      _c("div", { staticClass: "card--wewerenews" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: slide.urlNews, target: "_blank" } },
+                          [
+                            _c("img", {
+                              staticClass: "img-fluid",
+                              attrs: { src: slide.image, alt: slide.imageDesc }
+                            })
+                          ]
+                        )
+                      ])
+                    ]
+                  },
+                  proxy: true
+                }
+              ],
+              null,
+              true
+            )
+          })
+        }),
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "title--section" }, [
+      _c("strong", [_vm._v("Fuimos")]),
+      _vm._v(" noticia\n    ")
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Whatsapp.vue?vue&type=template&id=645665fd&":
 /*!***********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Whatsapp.vue?vue&type=template&id=645665fd& ***!
@@ -79324,6 +79534,7 @@ Vue.component('copyright', __webpack_require__(/*! ./components/Copyright.vue */
 Vue.component('featuredprofessionals', __webpack_require__(/*! ./components/FeaturedProfessionals.vue */ "./resources/js/components/FeaturedProfessionals.vue")["default"]);
 Vue.component('news', __webpack_require__(/*! ./components/News.vue */ "./resources/js/components/News.vue")["default"]);
 Vue.component('whatsapp', __webpack_require__(/*! ./components/Whatsapp.vue */ "./resources/js/components/Whatsapp.vue")["default"]);
+Vue.component('wewerenews', __webpack_require__(/*! ./components/WeWereNews.vue */ "./resources/js/components/WeWereNews.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -82957,6 +83168,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/WeWereNews.vue":
+/*!************************************************!*\
+  !*** ./resources/js/components/WeWereNews.vue ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _WeWereNews_vue_vue_type_template_id_c48faee6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./WeWereNews.vue?vue&type=template&id=c48faee6& */ "./resources/js/components/WeWereNews.vue?vue&type=template&id=c48faee6&");
+/* harmony import */ var _WeWereNews_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./WeWereNews.vue?vue&type=script&lang=js& */ "./resources/js/components/WeWereNews.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _WeWereNews_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _WeWereNews_vue_vue_type_template_id_c48faee6___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _WeWereNews_vue_vue_type_template_id_c48faee6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/WeWereNews.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/WeWereNews.vue?vue&type=script&lang=js&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/WeWereNews.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_WeWereNews_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./WeWereNews.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/WeWereNews.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_WeWereNews_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/WeWereNews.vue?vue&type=template&id=c48faee6&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/WeWereNews.vue?vue&type=template&id=c48faee6& ***!
+  \*******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_WeWereNews_vue_vue_type_template_id_c48faee6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./WeWereNews.vue?vue&type=template&id=c48faee6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/WeWereNews.vue?vue&type=template&id=c48faee6&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_WeWereNews_vue_vue_type_template_id_c48faee6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_WeWereNews_vue_vue_type_template_id_c48faee6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Whatsapp.vue":
 /*!**********************************************!*\
   !*** ./resources/js/components/Whatsapp.vue ***!
@@ -83252,8 +83532,8 @@ global.$ = global.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jqu
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Psicología Chile\psicologia-chile\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Psicología Chile\psicologia-chile\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\alvaro\Desktop\Psicologia Chile\Upgrade Psicologia\Upgrade Psicologia Chile\psicologia-chile\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\alvaro\Desktop\Psicologia Chile\Upgrade Psicologia\Upgrade Psicologia Chile\psicologia-chile\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

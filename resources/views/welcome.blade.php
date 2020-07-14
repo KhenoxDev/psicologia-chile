@@ -19,6 +19,7 @@
 					<carousel></carousel>
 					<three-steps></three-steps>
 					<prevision></prevision>
+					<wewerenews></wewerenews>
 				</div>
 				<div class="bg--gray">
 					<specialists></specialists>
