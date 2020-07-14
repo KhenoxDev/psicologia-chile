@@ -2228,6 +2228,46 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2243,6 +2283,8 @@ __webpack_require__.r(__webpack_exports__);
       codigoPsy: "",
       valCollege: "",
       dispProf: "",
+      descProf: "",
+      specProf: [],
       breakpoints: {
         321: {
           slideRatio: 1 / 2,
@@ -2286,7 +2328,17 @@ __webpack_require__.r(__webpack_exports__);
         sale: "Primera Sesión GRATIS",
         codProfessional: "16303320-8",
         validationCollege: true,
-        dispProfessional: "Lunes a sábado"
+        dispProfessional: "Lunes a sábado",
+        descProfessional: "Psicologa Clínica, titulada la de universidad Arcis, orientación psicoanalítica.Cuento con un diplomado en clinica psicoanalitica y sistemica. Me especializo en Psicoterapia y Psicodiagnósticos de adultos y adolescentes. Ofresco un espacio de escucha activa, de confidencialidad y respeto. para abordar en conjunto, los aspectos de su vida, que provocan dolor. Reconocer la Problematica y  llegar a una solución, al Cambio y al alivio. Especialidades que trabajo: Ansiedad, autoestima, trastornos de personalidad, depresión, duelos amorosos, duelos, estres, dependencia emocional, trastornos alimenticios, problemas de genero, control de impulso, déficit atenciónal, terapia adolecente y adulto, sexologia. Orientación padres y adolescentes en crisis. Traumas Universidad de arte y ciencias sociales ARCIS",
+        specialist: [{
+          name: "Ansiedad"
+        }, {
+          name: "Autoestima"
+        }, {
+          name: "Dependencia emocional"
+        }, {
+          name: "Trastorno Alimenticio"
+        }]
       }, {
         title: "Slide #2",
         content: "Slide content.",
@@ -2298,7 +2350,15 @@ __webpack_require__.r(__webpack_exports__);
         sale: "¡PROMOCIÓN!",
         codProfessional: "17403380-3",
         validationCollege: false,
-        dispProfessional: "Lunes a sábado"
+        dispProfessional: "Lunes a sábado",
+        descProfessional: "Psicólogo Clínico de la Universidad Andrés Bello, actualmente cursando Magister en Psicología e Intervención en Salud Mental. Realizo procesos de psicodiagnóstico, psicoterapia y acompañamiento terapéutico en distintas etapas del ciclo vital mediante un enfoque psicoanalítico con apertura a terapias narrativas para que así, en el trabajo y la exploración conjunta, mediante historización y resignificación puedas encontrar un nuevo sentido a tu experiencia.",
+        specialist: [{
+          name: "Ansiedad"
+        }, {
+          name: "Bullying"
+        }, {
+          name: "Depresión"
+        }]
       }, {
         title: "Slide #3",
         content: "Slide content.",
@@ -2310,7 +2370,19 @@ __webpack_require__.r(__webpack_exports__);
         sale: "¡PROMOCIÓN!",
         codProfessional: "12239542-1",
         validationCollege: true,
-        dispProfessional: "Lunes a sábado"
+        dispProfessional: "Lunes a sábado",
+        descProfessional: "Licenciada en Psicología,  titulada de la Universidad Santo Tomás, con experiencia en el centro de atención psicológica de la Universidad Santo Tomás y de manera particular.  Entregando  atención psicológica  a pacientes infanto juvenil y adultos, trabajando tanto individualmente como grupalmente. Experiencia en Coaching, Psicodiagnóstico e intervenciones terapéuticas.  Diseños e intervenciones grupales en el área clínica. Cruz del norte.",
+        specialist: [{
+          name: "Autoestima"
+        }, {
+          name: "Coaching"
+        }, {
+          name: "Duelos"
+        }, {
+          name: "Estrés"
+        }, {
+          name: "Estrés laboral"
+        }]
       }, {
         title: "Slide #4",
         content: "Slide content.",
@@ -2322,7 +2394,15 @@ __webpack_require__.r(__webpack_exports__);
         sale: "¡PROMOCIÓN!",
         codProfessional: "18097123-8",
         validationCollege: false,
-        dispProfessional: "Lunes a sábado"
+        dispProfessional: "Lunes a sábado",
+        descProfessional: "Psicólogo clínico de la Universidad San Sebastián, certificado en técnicas de psicoterapia breve en Cesist Chile. Tengo experiencia trabajando en diversas temáticas de salud mental, tanto con pacientes infanto-juveniles como con adultos. Trabajo desde un enfoque activo, que busca establecer la relación entre nuestros afectos, conductas, cogniciones y aspectos de nuestro propio ser, con el fin de funcionar de manera cohesionada y adaptativa según tus deseos y necesidades. Juntos trabajaremos en un espacio de escucha activa y de confianza utilizando técnicas y, la palabra como herramienta, con el fin de generar autonomía para dar resolución a tus problemas.",
+        specialist: [{
+          name: "Habilidades sociales"
+        }, {
+          name: "Terapia de pareja"
+        }, {
+          name: "Dependencia emocional"
+        }]
       }, {
         title: "Slide #5",
         content: "Slide content.",
@@ -2334,12 +2414,20 @@ __webpack_require__.r(__webpack_exports__);
         sale: "¡PROMOCIÓN!",
         codProfessional: "17402529-0",
         validationCollege: false,
-        dispProfessional: "Lunes a sábado"
+        dispProfessional: "Lunes a sábado",
+        descProfessional: "Profesional con experiencia de trabajo en área laboral y Clínica-Comunitaria. Mi formación y trayectoria profesional, me ha llevado a conocer a las personas desde su diversidad, entendiéndolas como seres integrales, tomando en consideración todos sus aspectos. No somos solo cuerpo, somos seres biopsicosociales por lo que es importante tomar en cuenta todas sus variables para poder entendernos y desarrollarnos mejor como seres humanos.  Mi formación inicialmente fue laboral y organizacional. Sin Embargo, después de diversas especializaciones, hoy me desarrollo como psicóloga clínica y comunitaria.   Me titulé de psicóloga el año 2014, en la Universidad del Pacífco, en Santiago de Chile, adquiriendo una formación humanista-transpersonal, que me ha llevado a integrar diversas técnicas y metodologías integrando meditación, arte terapia, entre otras, dentro del proceso terapéutico, comprendiendo a la persona como un ser integral, abarcando todos sus ejes. El 2015, comienzo estudios de Maestría en estudios de Género en la UCES, De Buenos Aires, donde integro la perspectiva de género a la consulta, abriendo posibilidades de comprender desde esta rama, diversas problemáticas y crisis con respecto a identidad y roles  del paciente, especializándome en adolescentes y adultos. Actualmente en el 2019, me especializo en Dolor Crónico No Oncológico, en el Centro del Dolor De Chile, trabajando a nivel terapéutico el tratamiento y la aceptación del dolor en pacientes que sufren de enfermedades relacionadas con el dolor crónico como fibromialgia, lumbago, Colon irritable entre otros. Isapres Cruz del norte.",
+        specialist: [{
+          name: "Coaching"
+        }, {
+          name: "Duelos amorosos"
+        }, {
+          name: "Psicología geriátrica"
+        }]
       }]
     };
   },
   methods: {
-    getDataProfessional: function getDataProfessional(picProfessional, nameProfessional, titleProfessional, priceProfessional, codProfessional, validationCollege, dispProfessional) {
+    getDataProfessional: function getDataProfessional(picProfessional, nameProfessional, titleProfessional, priceProfessional, codProfessional, validationCollege, dispProfessional, descProfessional, specialist) {
       var vm = this;
       vm.imageP = picProfessional;
       vm.professional = nameProfessional;
@@ -2348,6 +2436,8 @@ __webpack_require__.r(__webpack_exports__);
       vm.codigoPsy = codProfessional;
       vm.valCollege = validationCollege;
       vm.dispProf = dispProfessional;
+      vm.descProf = descProfessional;
+      vm.specProf = specialist;
     }
   }
 });
@@ -60140,7 +60230,9 @@ var render = function() {
                                             slide.priceProfessional,
                                             slide.codProfessional,
                                             slide.validationCollege,
-                                            slide.dispProfessional
+                                            slide.dispProfessional,
+                                            slide.descProfessional,
+                                            slide.specialist
                                           )
                                         }
                                       }
@@ -60199,50 +60291,130 @@ var render = function() {
             [
               _c("div", { staticClass: "modal-content" }, [
                 _c("div", { staticClass: "modal-body details--container" }, [
-                  _c("div", { staticClass: "div--image" }, [
-                    _c("img", {
-                      staticClass: "img--professional--modal rounded-circle",
-                      attrs: { src: _vm.imageP, alt: _vm.professional }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "div--text" }, [
-                    _c("span", { staticClass: "span--name" }, [
-                      _vm._v(_vm._s(_vm.professional))
+                  _c("div", { staticClass: "professional--container" }, [
+                    _c("div", { staticClass: "div--image" }, [
+                      _c("img", {
+                        staticClass: "img--professional--modal",
+                        attrs: { src: _vm.imageP, alt: _vm.professional }
+                      })
                     ]),
                     _vm._v(" "),
-                    _vm.valCollege == true
-                      ? _c("span", { staticClass: "span--title" }, [
-                          _c("img", {
-                            attrs: { src: "img/check-circle.svg", alt: "" }
-                          }),
-                          _vm._v(
-                            " " +
-                              _vm._s(_vm.title) +
-                              " verificado por colegiopsicologos.cl"
-                          )
-                        ])
-                      : _c("span", { staticClass: "span--title" }, [
-                          _c("img", {
-                            attrs: { src: "img/check-circle.svg", alt: "" }
-                          }),
-                          _vm._v(" " + _vm._s(_vm.title) + " ")
-                        ]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "span--price" }, [
-                      _c("i", { staticClass: "fas fa-tags" }),
-                      _vm._v(" " + _vm._s(_vm.price))
-                    ]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "span--disp" }, [
-                      _c("i", { staticClass: "far fa-calendar-alt" }, [
+                    _c("div", { staticClass: "div--text" }, [
+                      _c("span", { staticClass: "span--name" }, [
+                        _vm._v(_vm._s(_vm.professional))
+                      ]),
+                      _vm._v(" "),
+                      _vm.valCollege == true
+                        ? _c("span", { staticClass: "span--title" }, [
+                            _c("img", {
+                              attrs: { src: "img/check-circle.svg", alt: "" }
+                            }),
+                            _vm._v(
+                              " " +
+                                _vm._s(_vm.title) +
+                                " verificado por colegiopsicologos.cl"
+                            )
+                          ])
+                        : _c("span", { staticClass: "span--title" }, [
+                            _c("img", {
+                              attrs: { src: "img/check-circle.svg", alt: "" }
+                            }),
+                            _vm._v(" " + _vm._s(_vm.title) + " ")
+                          ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "span--price" }, [
+                        _c("i", { staticClass: "fas fa-money-bill" }),
+                        _vm._v(" " + _vm._s(_vm.price))
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "span--disp" }, [
+                        _c("i", { staticClass: "far fa-calendar-alt" }),
                         _vm._v(" " + _vm._s(_vm.dispProf) + " ")
                       ])
                     ])
-                  ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "acordeon--body--specialist",
+                      attrs: { id: "accordion" }
+                    },
+                    [
+                      _vm._m(1),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "collapse hide",
+                          attrs: {
+                            id: "collapseOne",
+                            "aria-labelledby": "headingOne",
+                            "data-parent": "#accordion"
+                          }
+                        },
+                        [
+                          _c("div", [
+                            _c(
+                              "div",
+                              { staticClass: "specialist--container" },
+                              _vm._l(_vm.specProf, function(spec) {
+                                return _c(
+                                  "span",
+                                  {
+                                    key: spec.id,
+                                    staticClass:
+                                      "badge badge-primary span--specialist"
+                                  },
+                                  [_vm._v(" " + _vm._s(spec.name) + " ")]
+                                )
+                              }),
+                              0
+                            )
+                          ])
+                        ]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "acordeon--body--description",
+                      attrs: { id: "accordion" }
+                    },
+                    [
+                      _vm._m(2),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "collapse hide",
+                          attrs: {
+                            id: "collapseTwo",
+                            "aria-labelledby": "headingOne",
+                            "data-parent": "#accordion"
+                          }
+                        },
+                        [
+                          _c("div", [
+                            _c(
+                              "div",
+                              { staticClass: "description--container" },
+                              [
+                                _c("span", { staticClass: "span--desc" }, [
+                                  _vm._v(" " + _vm._s(_vm.descProf) + " ")
+                                ])
+                              ]
+                            )
+                          ])
+                        ]
+                      )
+                    ]
+                  )
                 ]),
                 _vm._v(" "),
-                _vm._m(1)
+                _vm._m(3)
               ])
             ]
           )
@@ -60260,6 +60432,60 @@ var staticRenderFns = [
     return _c("span", { staticClass: "title--section" }, [
       _c("strong", [_vm._v("Profesionales")]),
       _vm._v(" destacados\n    ")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { attrs: { id: "headingOne" } }, [
+      _c("h5", { staticClass: "mb-2" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn pointer",
+            attrs: {
+              "data-toggle": "collapse",
+              "data-target": "#collapseOne",
+              "aria-expanded": "false",
+              "aria-controls": "collapseOne"
+            }
+          },
+          [
+            _vm._v("\n\t\t\t\t\tEspecialidades\n\t\t\t\t\t"),
+            _c("i", { staticClass: "fas fa-plus" }),
+            _vm._v(" "),
+            _c("i", { staticClass: "fas fa-minus" })
+          ]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { attrs: { id: "headingOne" } }, [
+      _c("h5", { staticClass: "mb-2" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn pointer",
+            attrs: {
+              "data-toggle": "collapse",
+              "data-target": "#collapseTwo",
+              "aria-expanded": "false",
+              "aria-controls": "collapseTwo"
+            }
+          },
+          [
+            _vm._v("\n\t\t\t\t\tDescripción\n\t\t\t\t\t"),
+            _c("i", { staticClass: "fas fa-plus" }),
+            _vm._v(" "),
+            _c("i", { staticClass: "fas fa-minus" })
+          ]
+        )
+      ])
     ])
   },
   function() {
