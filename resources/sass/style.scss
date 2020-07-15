@@ -1153,13 +1153,50 @@
 
 			#spanDate {
 				color: $white;
-				padding: 0.5rem 1rem;
+				padding: 0.5rem 1rem 0rem 1rem;
+				font-size: 0.7rem;
+				position: absolute;
+				top: 54%;
+				right: 59%;
 			}
 
 			#spanText {
 				color: $white;
 				padding: 1rem;
-				margin: 0rem 0rem 1rem 2rem;
+				margin: 0rem 0rem -1rem 2rem;
+				font-size: 0.7rem;
+				position: absolute;
+				top: 61%;
+				right: -3%;
+				width: 100%;
+			}
+
+			.span--comment {
+				color: $white;
+				position: absolute;
+				top: 90%;
+				right: 88%;
+				opacity: 0.6;
+				font-size: 0.8rem;
+			}
+
+			.span--like {
+				color: $white;
+				position: absolute;
+				top: 90%;
+				right: 2%;
+				opacity: 0.6;
+				font-size: 0.8rem;
+			}
+
+			.news--autor {
+				color: $white;
+				opacity: 0.6;
+				font-size: 0.7rem;
+				position: absolute;
+				top: 82%;
+				right: -74%;
+				width: 100%;
 			}
 
 		}
@@ -1181,13 +1218,50 @@
 
 			#spanDate {
 				color: $white;
-				padding: 0.5rem 1rem;
+				padding: 0.5rem 1rem 0rem 1rem;
+				font-size: 0.7rem;
+				position: absolute;
+				top: 54%;
+				right: 59%;
 			}
 
 			#spanText {
 				color: $white;
 				padding: 1rem;
-				margin: 0rem 0rem 1rem 2rem;
+				margin: 0rem 0rem -1rem 2rem;
+				font-size: 0.7rem;
+				position: absolute;
+				top: 61%;
+				right: -3%;
+				width: 100%;
+			}
+
+			.span--comment {
+				color: $white;
+				position: absolute;
+				top: 90%;
+				right: 88%;
+				opacity: 0.6;
+				font-size: 0.8rem;
+			}
+
+			.span--like {
+				color: $white;
+				position: absolute;
+				top: 90%;
+				right: 2%;
+				opacity: 0.6;
+				font-size: 0.8rem;
+			}
+
+			.news--autor {
+				color: $white;
+				opacity: 0.6;
+				font-size: 0.7rem;
+				position: absolute;
+				top: 82%;
+				right: -74%;
+				width: 100%;
 			}
 
 		}
@@ -1617,10 +1691,46 @@
 					font-size: 9px;
 					padding: 1rem;
 					margin: 0rem 0rem 1rem 3rem;
+					position: absolute;
+					top: 68%;
+					right: -7%;
+					width: 100%;
 				}
 
 				#spanDate {
 					font-size: 8px;
+					position: absolute;
+					top: 61%;
+					right: 1%;
+					width: 100%;
+				}
+
+				.news--autor {
+					color: #fff;
+					opacity: 0.6;
+					font-size: 0.5rem;
+					position: absolute;
+					top: 82%;
+					right: 46%;
+					width: 100%;
+				}
+
+				.span--comment {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 88%;
+					opacity: 0.6;
+					font-size: 0.8rem;
+				}
+
+				.span--like {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 2%;
+					opacity: 0.6;
+					font-size: 0.8rem;
 				}
 			}
 
@@ -1629,10 +1739,46 @@
 					font-size: 9px;
 					padding: 1rem;
 					margin: 0rem 0rem 1rem 3rem;
+					position: absolute;
+					top: 68%;
+					right: -7%;
+					width: 100%;
 				}
 
 				#spanDate {
 					font-size: 8px;
+					position: absolute;
+					top: 61%;
+					right: 1%;
+					width: 100%;
+				}
+
+				.news--autor {
+					color: #fff;
+					opacity: 0.6;
+					font-size: 0.5rem;
+					position: absolute;
+					top: 82%;
+					right: 46%;
+					width: 100%;
+				}
+
+				.span--comment {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 88%;
+					opacity: 0.6;
+					font-size: 0.8rem;
+				}
+
+				.span--like {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 2%;
+					opacity: 0.6;
+					font-size: 0.8rem;
 				}
 			}
 
@@ -1955,10 +2101,46 @@
 					font-size: 9px;
 					padding: 1rem;
 					margin: 0rem 0rem 1rem 3rem;
+					position: absolute;
+					top: 68%;
+					right: -7%;
+					width: 100%;
 				}
 
 				#spanDate {
 					font-size: 8px;
+					position: absolute;
+					top: 61%;
+					right: 1%;
+					width: 100%;
+				}
+
+				.news--autor {
+					color: #fff;
+					opacity: 0.6;
+					font-size: 0.6rem;
+					position: absolute;
+					top: 82%;
+					right: 46%;
+					width: 100%;
+				}
+
+				.span--comment {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 88%;
+					opacity: 0.6;
+					font-size: 0.8rem;
+				}
+
+				.span--like {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 2%;
+					opacity: 0.6;
+					font-size: 0.8rem;
 				}
 			}
 
@@ -1967,10 +2149,46 @@
 					font-size: 9px;
 					padding: 1rem;
 					margin: 0rem 0rem 1rem 3rem;
+					position: absolute;
+					top: 68%;
+					right: -7%;
+					width: 100%;
 				}
 
 				#spanDate {
 					font-size: 8px;
+					position: absolute;
+					top: 61%;
+					right: 1%;
+					width: 100%;
+				}
+
+				.news--autor {
+					color: #fff;
+					opacity: 0.6;
+					font-size: 0.6rem;
+					position: absolute;
+					top: 82%;
+					right: 46%;
+					width: 100%;
+				}
+
+				.span--comment {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 88%;
+					opacity: 0.6;
+					font-size: 0.8rem;
+				}
+
+				.span--like {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 2%;
+					opacity: 0.6;
+					font-size: 0.8rem;
 				}
 			}
 
@@ -2298,11 +2516,47 @@
 				#spanText {
 					font-size: 9px;
 					padding: 1rem;
-					margin: 0rem 0rem 2rem 5rem;
+					margin: 0rem 0rem 1rem 3rem;
+					position: absolute;
+					top: 68%;
+					right: -7%;
+					width: 100%;
 				}
 
 				#spanDate {
 					font-size: 8px;
+					position: absolute;
+					top: 61%;
+					right: 1%;
+					width: 100%;
+				}
+
+				.news--autor {
+					color: #fff;
+					opacity: 0.6;
+					font-size: 0.6rem;
+					position: absolute;
+					top: 82%;
+					right: 46%;
+					width: 100%;
+				}
+
+				.span--comment {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 88%;
+					opacity: 0.6;
+					font-size: 0.8rem;
+				}
+
+				.span--like {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 2%;
+					opacity: 0.6;
+					font-size: 0.8rem;
 				}
 			}
 
@@ -2310,11 +2564,47 @@
 				#spanText {
 					font-size: 9px;
 					padding: 1rem;
-					margin: 0rem 0rem 2rem 5rem;
+					margin: 0rem 0rem 1rem 3rem;
+					position: absolute;
+					top: 68%;
+					right: -7%;
+					width: 100%;
 				}
 
 				#spanDate {
 					font-size: 8px;
+					position: absolute;
+					top: 61%;
+					right: 1%;
+					width: 100%;
+				}
+
+				.news--autor {
+					color: #fff;
+					opacity: 0.6;
+					font-size: 0.6rem;
+					position: absolute;
+					top: 82%;
+					right: 46%;
+					width: 100%;
+				}
+
+				.span--comment {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 88%;
+					opacity: 0.6;
+					font-size: 0.8rem;
+				}
+
+				.span--like {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 2%;
+					opacity: 0.6;
+					font-size: 0.8rem;
 				}
 			}
 
@@ -2624,25 +2914,97 @@
 
 			.wave--container--first {
 				#spanText {
-					font-size: 80%;
+					font-size: 9px;
 					padding: 1rem;
-					margin: 0rem 0rem 2rem 3rem;
+					margin: 0rem 0rem 1rem 3rem;
+					position: absolute;
+					top: 68%;
+					right: -7%;
+					width: 100%;
 				}
 
 				#spanDate {
-					font-size: 80%;
+					font-size: 8px;
+					position: absolute;
+					top: 61%;
+					right: 1%;
+					width: 100%;
+				}
+
+				.news--autor {
+					color: #fff;
+					opacity: 0.6;
+					font-size: 0.6rem;
+					position: absolute;
+					top: 82%;
+					right: 46%;
+					width: 100%;
+				}
+
+				.span--comment {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 88%;
+					opacity: 0.6;
+					font-size: 0.8rem;
+				}
+
+				.span--like {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 2%;
+					opacity: 0.6;
+					font-size: 0.8rem;
 				}
 			}
 
 			.wave--container--another {
 				#spanText {
-					font-size: 80%;
+					font-size: 9px;
 					padding: 1rem;
-					margin: 0rem 0rem 2rem 3rem;
+					margin: 0rem 0rem 1rem 3rem;
+					position: absolute;
+					top: 68%;
+					right: -7%;
+					width: 100%;
 				}
 
 				#spanDate {
-					font-size: 80%;
+					font-size: 8px;
+					position: absolute;
+					top: 61%;
+					right: 1%;
+					width: 100%;
+				}
+
+				.news--autor {
+					color: #fff;
+					opacity: 0.6;
+					font-size: 0.6rem;
+					position: absolute;
+					top: 82%;
+					right: 46%;
+					width: 100%;
+				}
+
+				.span--comment {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 88%;
+					opacity: 0.6;
+					font-size: 0.8rem;
+				}
+
+				.span--like {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 2%;
+					opacity: 0.6;
+					font-size: 0.8rem;
 				}
 			}
 
@@ -3087,25 +3449,97 @@
 
 			.wave--container--first {
 				#spanText {
-					font-size: 80%;
+					font-size: 9px;
 					padding: 1rem;
-					margin: 0rem 0rem 1rem 2rem;
+					margin: 0rem 0rem 1rem 3rem;
+					position: absolute;
+					top: 68%;
+					right: -7%;
+					width: 100%;
 				}
 
 				#spanDate {
-					font-size: 80%;
+					font-size: 8px;
+					position: absolute;
+					top: 61%;
+					right: 1%;
+					width: 100%;
+				}
+
+				.news--autor {
+					color: #fff;
+					opacity: 0.6;
+					font-size: 0.6rem;
+					position: absolute;
+					top: 82%;
+					right: 46%;
+					width: 100%;
+				}
+
+				.span--comment {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 88%;
+					opacity: 0.6;
+					font-size: 0.8rem;
+				}
+
+				.span--like {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 2%;
+					opacity: 0.6;
+					font-size: 0.8rem;
 				}
 			}
 
 			.wave--container--another {
 				#spanText {
-					font-size: 80%;
+					font-size: 9px;
 					padding: 1rem;
-					margin: 0rem 0rem 1rem 2rem;
+					margin: 0rem 0rem 1rem 3rem;
+					position: absolute;
+					top: 68%;
+					right: -7%;
+					width: 100%;
 				}
 
 				#spanDate {
-					font-size: 80%;
+					font-size: 8px;
+					position: absolute;
+					top: 61%;
+					right: 1%;
+					width: 100%;
+				}
+
+				.news--autor {
+					color: #fff;
+					opacity: 0.6;
+					font-size: 0.6rem;
+					position: absolute;
+					top: 82%;
+					right: 46%;
+					width: 100%;
+				}
+
+				.span--comment {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 88%;
+					opacity: 0.6;
+					font-size: 0.8rem;
+				}
+
+				.span--like {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 2%;
+					opacity: 0.6;
+					font-size: 0.8rem;
 				}
 			}
 
