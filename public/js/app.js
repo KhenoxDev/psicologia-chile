@@ -2547,7 +2547,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -2615,7 +2614,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var timers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! timers */ "./node_modules/timers-browserify/main.js");
 /* harmony import */ var timers__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(timers__WEBPACK_IMPORTED_MODULE_0__);
-//
 //
 //
 //
@@ -61171,13 +61169,7 @@ var render = function() {
       _c(
         "div",
         { staticClass: "bg--white" },
-        [
-          _c("carousel"),
-          _vm._v(" "),
-          _c("three-steps"),
-          _vm._v(" "),
-          _c("prevision")
-        ],
+        [_c("three-steps"), _vm._v(" "), _c("prevision")],
         1
       ),
       _vm._v(" "),
@@ -61245,14 +61237,9 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "btn btn-orange btn-xl js-scroll-trigger",
-                attrs: { href: "#download" }
-              },
-              [_vm._v("Conócenos!")]
-            )
+            _c("a", { staticClass: "btn btn-2", attrs: { href: "#" } }, [
+              _vm._v("Conócenos!")
+            ])
           ])
         ])
       ])

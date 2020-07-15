@@ -12,7 +12,6 @@
     <masthead></masthead>
     <whatsapp></whatsapp>
     <div class="bg--white">
-      <carousel></carousel>
       <three-steps></three-steps>
       <prevision></prevision>
     </div>

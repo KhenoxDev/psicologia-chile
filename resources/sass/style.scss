@@ -129,6 +129,7 @@
 	position: relative;
 
 	width: 100%;
+	height: 100vh;
 	padding-top: 150px;
 	padding-bottom: 100px;
 
@@ -148,6 +149,63 @@
 			color: $dark;
 			font-size: 30px;
 		}
+
+		.btn {
+			color: $dark;
+			cursor: pointer;
+			// display: block;
+			font-size: 1rem;
+			font-weight: 400;
+			line-height: 45px;
+			// margin: 0 0 2em;
+			max-width: 160px;
+			position: relative;
+			text-decoration: none;
+			text-transform: uppercase;
+			width: 100%;
+			text-align: left;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		.btn-2 {
+			letter-spacing: 0;
+		}
+
+		.btn-2:hover,
+		.btn-2:active {
+			letter-spacing: 5px;
+		}
+
+		.btn-2:after,
+		.btn-2:before {
+			backface-visibility: hidden;
+			border: 1px solid rgba($dark, 0);
+			bottom: 0px;
+			content: " ";
+			display: block;
+			margin: 0 auto;
+			position: relative;
+			transition: all 280ms ease-in-out;
+			width: 0;
+		}
+
+		.btn-2:hover:after,
+		.btn-2:hover:before {
+			backface-visibility: hidden;
+			border-color: $dark;
+			transition: width 350ms width;
+			width: 80%;
+		}
+
+		.btn-2:hover:before {
+			bottom: auto;
+			top: 0;
+			width: 80%;
+		}
+
 	}
 
 	.device-container {
@@ -157,27 +215,6 @@
 
 		.screen img {
 			border-radius: 3px;
-		}
-	}
-
-	@media (min-width: 992px) {
-		height: 100vh;
-		min-height: 775px;
-		padding-top: 0;
-		padding-bottom: 0;
-
-		.header-content {
-			margin-bottom: 0;
-
-			text-align: left;
-
-			h1 {
-				font-size: 50px;
-			}
-		}
-
-		.device-container {
-			max-width: 325px;
 		}
 	}
 }
@@ -1072,15 +1109,15 @@
 #mainSocial {
 	.float {
 		position: fixed;
-		width: 60px;
-		height: 60px;
-		bottom: 40px;
-		right: 40px;
+		width: 40px;
+		height: 40px;
+		bottom: 15px;
+		right: 10px;
 		background-color: #25d366;
 		color: #FFF;
 		border-radius: 50px;
 		text-align: center;
-		font-size: 30px;
+		font-size: 25px;
 		box-shadow: 2px 2px 3px #999;
 		z-index: 100;
 
@@ -1088,10 +1125,6 @@
 			text-decoration: none;
 			color: #25d366;
 			background-color: #fff;
-		}
-
-		.my-float {
-			margin-top: 16px;
 		}
 	}
 
@@ -1224,6 +1257,14 @@
 			.fa-bars {
 				color: $dark;
 				font-size: xx-large;
+			}
+		}
+	}
+
+	#mainHead {
+		.header-content {
+			.btn {
+				text-align: center;
 			}
 		}
 	}
@@ -1567,6 +1608,14 @@
 		}
 	}
 
+	#mainHead {
+		.header-content {
+			.btn {
+				text-align: center;
+			}
+		}
+	}
+
 	#mainSteps {
 		.step--line {
 			&::before {
@@ -1893,6 +1942,14 @@
 			.fa-bars {
 				color: $dark;
 				font-size: xx-large;
+			}
+		}
+	}
+
+	#mainHead {
+		.header-content {
+			.btn {
+				text-align: center;
 			}
 		}
 	}
@@ -2232,6 +2289,14 @@
 		}
 	}
 
+	#mainHead {
+		.header-content {
+			.btn {
+				text-align: center;
+			}
+		}
+	}
+
 	#mainSteps {
 		.step--line {
 			&::before {
@@ -2541,6 +2606,14 @@
 		}
 	}
 
+	#mainHead {
+		.header-content {
+			.btn {
+				text-align: center;
+			}
+		}
+	}
+
 	#mainSteps {
 		.step--line {
 			&::before {
@@ -2718,6 +2791,27 @@
 		}
 	}
 
+	#mainHead {
+		height: 100vh;
+		min-height: 775px;
+		padding-top: 0;
+		padding-bottom: 0;
+
+		.header-content {
+			margin-bottom: 0;
+
+			text-align: left;
+
+			h1 {
+				font-size: 50px;
+			}
+		}
+
+		.device-container {
+			max-width: 325px;
+		}
+	}
+
 	#mainSteps {
 		.title--three-steps {
 			span {
@@ -2878,6 +2972,28 @@
 		}
 	}
 
+	#mainHead {
+		height: 100vh;
+		min-height: 775px;
+		padding-top: 0;
+		padding-bottom: 0;
+
+		.header-content {
+			margin-bottom: 0;
+
+			text-align: left;
+
+			h1 {
+				font-size: 50px;
+			}
+		}
+
+		.device-container {
+			max-width: 325px;
+		}
+	}
+
+
 	#mainSteps {
 		.title--three-steps {
 			span {
@@ -2993,6 +3109,28 @@
 		}
 	}
 
+	#mainHead {
+		height: 100vh;
+		min-height: 775px;
+		padding-top: 0;
+		padding-bottom: 0;
+
+		.header-content {
+			margin-bottom: 0;
+
+			text-align: left;
+
+			h1 {
+				font-size: 50px;
+			}
+		}
+
+		.device-container {
+			max-width: 325px;
+		}
+	}
+
+
 	#mainSteps {
 		.title--three-steps {
 			span {
@@ -3095,6 +3233,28 @@
 			display: none;
 		}
 	}
+
+	#mainHead {
+		height: 100vh;
+		min-height: 775px;
+		padding-top: 0;
+		padding-bottom: 0;
+
+		.header-content {
+			margin-bottom: 0;
+
+			text-align: left;
+
+			h1 {
+				font-size: 50px;
+			}
+		}
+
+		.device-container {
+			max-width: 325px;
+		}
+	}
+
 
 	#mainSteps {
 		.title--three-steps {

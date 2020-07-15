@@ -12,8 +12,7 @@
               </span>
               <span class="cursor" :class="{'typing': typeStatus}">&nbsp;</span>
             </h1>
-
-            <a href="#download" class="btn btn-orange btn-xl js-scroll-trigger">Conócenos!</a>
+            <a href="#" class="btn btn-2">Conócenos!</a>
           </div>
         </div>
       </div>
