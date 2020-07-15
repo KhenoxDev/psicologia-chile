@@ -24,20 +24,7 @@ window.Vue = require('vue');
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
-Vue.component('navbar', require('./components/Navbar.vue').default);
-Vue.component('carousel', require('./components/Carousel.vue').default);
-Vue.component('three-steps', require('./components/ThreeSteps.vue').default);
-Vue.component('prevision', require('./components/Prevision.vue').default);
-Vue.component('frequentlyquestions', require('./components/FrequentlyQuestions.vue').default);
-Vue.component('featuredplans', require('./components/FeaturedPlans.vue').default);
-Vue.component('specialists', require('./components/Specialists.vue').default);
-Vue.component('voluntary', require('./components/Voluntary.vue').default);
-Vue.component('footer-component', require('./components/Footer.vue').default);
-Vue.component('copyright', require('./components/Copyright.vue').default);
-Vue.component('featuredprofessionals', require('./components/FeaturedProfessionals.vue').default);
-Vue.component('news', require('./components/News.vue').default);
-Vue.component('whatsapp', require('./components/Whatsapp.vue').default);
+Vue.component('main-component', require('./components/Main.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
