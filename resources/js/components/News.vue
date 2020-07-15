@@ -11,6 +11,7 @@
       infinite
 	  bullets-outside
 	  slide-multiple
+	  :touchable="false"
     >
       <vueper-slide v-for="(slide, i) in slides" :index="i" :key="slide.id">
         <template v-slot:content>
@@ -26,10 +27,20 @@
 			  <div v-if="i == 0" class="wave--container--first">
 				  <span id="spanDate">{{ slide.newsDate }}</span>
 				  <span id="spanText">{{ slide.newsText }} </span>
+				  <div class="commentsandlikes">
+					<!-- <span> {{ slide.newsAutor }} </span> -->
+					<span> <i class="far fa-comment-dots"></i>  {{ slide.countComments }} </span>
+					<span> <i class="far fa-thumbs-up"></i> {{ slide.countLikes }} </span>
+				  </div>
 			  </div>
 			  <div v-else class="wave--container--another">
-				  <span id="spanDate">{{ slide.newsDate }}</span>
+				  <span id="spanDate"> {{ slide.newsDate }}</span>
 				  <span id="spanText">{{ slide.newsText }} </span>
+				  <div class="commentsandlikes">
+					<!-- <span> {{ slide.newsAutor }} </span> -->
+					<span> <i class="far fa-comment-dots"></i>  {{ slide.countComments }} </span>
+					<span> <i class="far fa-thumbs-up"></i> {{ slide.countLikes }} </span>
+				  </div>
 			  </div>
 			  <div class="seemore--news">
 				<button>continuar leyendo <em class="fa fa-arrow-right"></em> </button>
@@ -95,7 +106,10 @@ export default {
 		  newsPic: "img/news/news_born.jpg",
 		  newsName: "news_born",
 		  newsDate: "8 de abril de 2020",
-		  newsText: "Lorem ipsum dolor sit amet."
+		  newsText: "Lorem ipsum dolor sit amet.",
+		  newsAutor: "Evo",
+		  countComments: "3",
+		  countLikes: "5"
         },
         {
           title: "Slide #2",
@@ -103,7 +117,10 @@ export default {
 		  newsPic: "img/news/news_autoestima.jpg",
 		  newsName: "news_autoestima",
 		  newsDate: "9 de abril de 2020",
-		  newsText: "Lorem ipsum dolor sit amet."
+		  newsText: "Lorem ipsum dolor sit amet.",
+		  newsAutor: "Matias",
+		  countComments: "0",
+		  countLikes: "0"
 		},
 		{
 		  title: "Slide #3",
@@ -111,7 +128,10 @@ export default {
 		  newsPic: "img/news/news_lenguaje.png",
 		  newsName: "news_lenguaje",
 		  newsDate: "10 de abril de 2020",
-		  newsText: "Lorem ipsum dolor sit amet."
+		  newsText: "Lorem ipsum dolor sit amet.",
+		  newsAutor: "Matias",
+		  countComments: "0",
+		  countLikes: "0"
 		},
 		{
 		  title: "Slide #4",
@@ -119,7 +139,10 @@ export default {
 		  newsPic: "img/news/news_cerebro.jpeg",
 		  newsName: "news_cerebro",
 		  newsDate: "11 de abril de 2020",
-		  newsText: "Lorem ipsum dolor sit amet."
+		  newsText: "Lorem ipsum dolor sit amet.",
+		  newsAutor: "Matias",
+		  countComments: "0",
+		  countLikes: "0"
 		},
 		{
 		  title: "Slide #5",
@@ -127,7 +150,10 @@ export default {
 		  newsPic: "img/news/news_piedras.png",
 		  newsName: "news_piedras",
 		  newsDate: "12 de abril de 2020",
-		  newsText: "Lorem ipsum dolor sit amet."
+		  newsText: "Lorem ipsum dolor sit amet.",
+		  newsAutor: "Matias",
+		  countComments: "0",
+		  countLikes: "0"
 		}
 
       ]

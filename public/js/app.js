@@ -2637,6 +2637,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2688,35 +2699,50 @@ __webpack_require__.r(__webpack_exports__);
         newsPic: "img/news/news_born.jpg",
         newsName: "news_born",
         newsDate: "8 de abril de 2020",
-        newsText: "Lorem ipsum dolor sit amet."
+        newsText: "Lorem ipsum dolor sit amet.",
+        newsAutor: "Evo",
+        countComments: "3",
+        countLikes: "5"
       }, {
         title: "Slide #2",
         content: "Slide content.",
         newsPic: "img/news/news_autoestima.jpg",
         newsName: "news_autoestima",
         newsDate: "9 de abril de 2020",
-        newsText: "Lorem ipsum dolor sit amet."
+        newsText: "Lorem ipsum dolor sit amet.",
+        newsAutor: "Matias",
+        countComments: "0",
+        countLikes: "0"
       }, {
         title: "Slide #3",
         content: "Slide content.",
         newsPic: "img/news/news_lenguaje.png",
         newsName: "news_lenguaje",
         newsDate: "10 de abril de 2020",
-        newsText: "Lorem ipsum dolor sit amet."
+        newsText: "Lorem ipsum dolor sit amet.",
+        newsAutor: "Matias",
+        countComments: "0",
+        countLikes: "0"
       }, {
         title: "Slide #4",
         content: "Slide content.",
         newsPic: "img/news/news_cerebro.jpeg",
         newsName: "news_cerebro",
         newsDate: "11 de abril de 2020",
-        newsText: "Lorem ipsum dolor sit amet."
+        newsText: "Lorem ipsum dolor sit amet.",
+        newsAutor: "Matias",
+        countComments: "0",
+        countLikes: "0"
       }, {
         title: "Slide #5",
         content: "Slide content.",
         newsPic: "img/news/news_piedras.png",
         newsName: "news_piedras",
         newsDate: "12 de abril de 2020",
-        newsText: "Lorem ipsum dolor sit amet."
+        newsText: "Lorem ipsum dolor sit amet.",
+        newsAutor: "Matias",
+        countComments: "0",
+        countLikes: "0"
       }]
     };
   }
@@ -60510,7 +60536,8 @@ var render = function() {
             autoplay: false,
             infinite: "",
             "bullets-outside": "",
-            "slide-multiple": ""
+            "slide-multiple": "",
+            touchable: false
           }
         },
         _vm._l(_vm.slides, function(slide, i) {
@@ -60545,7 +60572,33 @@ var render = function() {
                                   _vm._v(" "),
                                   _c("span", { attrs: { id: "spanText" } }, [
                                     _vm._v(_vm._s(slide.newsText) + " ")
-                                  ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "commentsandlikes" },
+                                    [
+                                      _c("span", [
+                                        _c("i", {
+                                          staticClass: "far fa-comment-dots"
+                                        }),
+                                        _vm._v(
+                                          "  " +
+                                            _vm._s(slide.countComments) +
+                                            " "
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("span", [
+                                        _c("i", {
+                                          staticClass: "far fa-thumbs-up"
+                                        }),
+                                        _vm._v(
+                                          " " + _vm._s(slide.countLikes) + " "
+                                        )
+                                      ])
+                                    ]
+                                  )
                                 ]
                               )
                             : _c(
@@ -60553,12 +60606,38 @@ var render = function() {
                                 { staticClass: "wave--container--another" },
                                 [
                                   _c("span", { attrs: { id: "spanDate" } }, [
-                                    _vm._v(_vm._s(slide.newsDate))
+                                    _vm._v(" " + _vm._s(slide.newsDate))
                                   ]),
                                   _vm._v(" "),
                                   _c("span", { attrs: { id: "spanText" } }, [
                                     _vm._v(_vm._s(slide.newsText) + " ")
-                                  ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "commentsandlikes" },
+                                    [
+                                      _c("span", [
+                                        _c("i", {
+                                          staticClass: "far fa-comment-dots"
+                                        }),
+                                        _vm._v(
+                                          "  " +
+                                            _vm._s(slide.countComments) +
+                                            " "
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("span", [
+                                        _c("i", {
+                                          staticClass: "far fa-thumbs-up"
+                                        }),
+                                        _vm._v(
+                                          " " + _vm._s(slide.countLikes) + " "
+                                        )
+                                      ])
+                                    ]
+                                  )
                                 ]
                               ),
                           _vm._v(" "),
@@ -83252,8 +83331,8 @@ global.$ = global.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jqu
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Psicología Chile\psicologia-chile\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Psicología Chile\psicologia-chile\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\alvaro\Desktop\Psicologia Chile\Upgrade Psicologia\Upgrade Psicologia Chile\psicologia-chile\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\alvaro\Desktop\Psicologia Chile\Upgrade Psicologia\Upgrade Psicologia Chile\psicologia-chile\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
