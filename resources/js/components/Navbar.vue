@@ -1,8 +1,8 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-white text-uppercase container" id="mainNav">
-    <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <img class="logo" :src="logo" :alt="logo_txt" />
+        <img src="img/navbar/logo.png" alt="Logo" />
       </a>
       <button
         class="hamburger hamburger--collapse"
@@ -21,38 +21,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item mx-0 mx-lg-1">
-            <a
-              class="nav-link py-3 px-0 px-lg-2 rounded js-scroll-trigger"
-              href="#portfolio"
-            >¿Quienes somos?</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a
-              class="nav-link py-3 px-0 px-lg-2 rounded js-scroll-trigger"
-              href="#portfolio"
-            >¿Cómo funciona?</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a
-              class="nav-link py-3 px-0 px-lg-2 rounded js-scroll-trigger"
-              href="#portfolio"
-            >Profesionales</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a
-              class="nav-link py-3 px-0 px-lg-2 rounded js-scroll-trigger"
-              href="#portfolio"
-            >Especialidades</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-2 rounded js-scroll-trigger" href="#portfolio">Planes</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a
-              class="nav-link py-3 px-0 px-lg-2 rounded js-scroll-trigger"
-              href="#portfolio"
-            >Previsión</a>
+          <li class="nav-item" v-for="link in links" :key="link.id">
+            <a class="nav-link js-scroll-trigger" :href="link.href">{{ link.text }}</a>
           </li>
           <div class="vertical"></div>
           <li class="nav-item mx-0 mx-lg-1">
@@ -71,10 +41,31 @@
 </template>
 <script>
 export default {
-  props: ["logo", "logo_txt"],
   data() {
     return {
-      active: false
+      active: false,
+      links: [
+        {
+          href: "#",
+          text: "Quienes somos"
+        },
+        {
+          href: "#",
+          text: "Cómo funciona"
+        },
+        {
+          href: "#",
+          text: "Profesionales"
+        },
+        {
+          href: "#",
+          text: "Especialidades"
+        },
+        {
+          href: "#",
+          text: "Planes"
+        }
+      ]
     };
   },
   methods: {
@@ -88,4 +79,3 @@ export default {
   }
 };
 </script>
-
