@@ -27,20 +27,20 @@
 			  <div v-if="i == 0" class="wave--container--first">
 				  <span id="spanDate">{{ slide.newsDate }}</span>
 				  <span id="spanText">{{ slide.newsText }} </span>
-				  <div class="commentsandlikes">
-					<!-- <span> {{ slide.newsAutor }} </span> -->
-					<span> <i class="far fa-comment-dots"></i>  {{ slide.countComments }} </span>
-					<span> <i class="far fa-thumbs-up"></i> {{ slide.countLikes }} </span>
+				  <div class="news--autor">
+					  <span> - {{ slide.newsAutor }} </span>
 				  </div>
+					<span class="span--comment"> <i class="far fa-comment-dots"></i>  {{ slide.countComments }} </span>
+					<span class="span--like"> <i class="far fa-thumbs-up"></i> {{ slide.countLikes }} </span>
 			  </div>
 			  <div v-else class="wave--container--another">
 				  <span id="spanDate"> {{ slide.newsDate }}</span>
 				  <span id="spanText">{{ slide.newsText }} </span>
-				  <div class="commentsandlikes">
-					<!-- <span> {{ slide.newsAutor }} </span> -->
-					<span> <i class="far fa-comment-dots"></i>  {{ slide.countComments }} </span>
-					<span> <i class="far fa-thumbs-up"></i> {{ slide.countLikes }} </span>
+				   <div class="news--autor">
+					  <span> - {{ slide.newsAutor }} </span>
 				  </div>
+					<span class="span--comment"> <i class="far fa-comment-dots"></i>  {{ slide.countComments }} </span>
+					<span class="span--like"> <i class="far fa-thumbs-up"></i> {{ slide.countLikes }} </span>
 			  </div>
 			  <div class="seemore--news">
 				<button>continuar leyendo <em class="fa fa-arrow-right"></em> </button>
@@ -106,7 +106,7 @@ export default {
 		  newsPic: "img/news/news_born.jpg",
 		  newsName: "news_born",
 		  newsDate: "8 de abril de 2020",
-		  newsText: "Lorem ipsum dolor sit amet.",
+		  newsText: "El Síndrome de Burn Out.",
 		  newsAutor: "Evo",
 		  countComments: "3",
 		  countLikes: "5"
@@ -117,10 +117,10 @@ export default {
 		  newsPic: "img/news/news_autoestima.jpg",
 		  newsName: "news_autoestima",
 		  newsDate: "9 de abril de 2020",
-		  newsText: "Lorem ipsum dolor sit amet.",
+		  newsText: "La Autoestima y el Autoconocimiento.",
 		  newsAutor: "Matias",
 		  countComments: "0",
-		  countLikes: "0"
+		  countLikes: "1"
 		},
 		{
 		  title: "Slide #3",
@@ -128,10 +128,10 @@ export default {
 		  newsPic: "img/news/news_lenguaje.png",
 		  newsName: "news_lenguaje",
 		  newsDate: "10 de abril de 2020",
-		  newsText: "Lorem ipsum dolor sit amet.",
+		  newsText: "El Lenguaje Humano.",
 		  newsAutor: "Matias",
 		  countComments: "0",
-		  countLikes: "0"
+		  countLikes: "2"
 		},
 		{
 		  title: "Slide #4",
@@ -139,7 +139,7 @@ export default {
 		  newsPic: "img/news/news_cerebro.jpeg",
 		  newsName: "news_cerebro",
 		  newsDate: "11 de abril de 2020",
-		  newsText: "Lorem ipsum dolor sit amet.",
+		  newsText: "Expertos Advierten Una Ola De Trastornos Postpandemia.",
 		  newsAutor: "Matias",
 		  countComments: "0",
 		  countLikes: "0"

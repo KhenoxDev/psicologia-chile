@@ -2699,7 +2699,7 @@ __webpack_require__.r(__webpack_exports__);
         newsPic: "img/news/news_born.jpg",
         newsName: "news_born",
         newsDate: "8 de abril de 2020",
-        newsText: "Lorem ipsum dolor sit amet.",
+        newsText: "El Síndrome de Burn Out.",
         newsAutor: "Evo",
         countComments: "3",
         countLikes: "5"
@@ -2709,27 +2709,27 @@ __webpack_require__.r(__webpack_exports__);
         newsPic: "img/news/news_autoestima.jpg",
         newsName: "news_autoestima",
         newsDate: "9 de abril de 2020",
-        newsText: "Lorem ipsum dolor sit amet.",
+        newsText: "La Autoestima y el Autoconocimiento.",
         newsAutor: "Matias",
         countComments: "0",
-        countLikes: "0"
+        countLikes: "1"
       }, {
         title: "Slide #3",
         content: "Slide content.",
         newsPic: "img/news/news_lenguaje.png",
         newsName: "news_lenguaje",
         newsDate: "10 de abril de 2020",
-        newsText: "Lorem ipsum dolor sit amet.",
+        newsText: "El Lenguaje Humano.",
         newsAutor: "Matias",
         countComments: "0",
-        countLikes: "0"
+        countLikes: "2"
       }, {
         title: "Slide #4",
         content: "Slide content.",
         newsPic: "img/news/news_cerebro.jpeg",
         newsName: "news_cerebro",
         newsDate: "11 de abril de 2020",
-        newsText: "Lorem ipsum dolor sit amet.",
+        newsText: "Expertos Advierten Una Ola De Trastornos Postpandemia.",
         newsAutor: "Matias",
         countComments: "0",
         countLikes: "0"
@@ -60574,31 +60574,29 @@ var render = function() {
                                     _vm._v(_vm._s(slide.newsText) + " ")
                                   ]),
                                   _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    { staticClass: "commentsandlikes" },
-                                    [
-                                      _c("span", [
-                                        _c("i", {
-                                          staticClass: "far fa-comment-dots"
-                                        }),
-                                        _vm._v(
-                                          "  " +
-                                            _vm._s(slide.countComments) +
-                                            " "
-                                        )
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("span", [
-                                        _c("i", {
-                                          staticClass: "far fa-thumbs-up"
-                                        }),
-                                        _vm._v(
-                                          " " + _vm._s(slide.countLikes) + " "
-                                        )
-                                      ])
-                                    ]
-                                  )
+                                  _c("div", { staticClass: "news--autor" }, [
+                                    _c("span", [
+                                      _vm._v(
+                                        " - " + _vm._s(slide.newsAutor) + " "
+                                      )
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("span", { staticClass: "span--comment" }, [
+                                    _c("i", {
+                                      staticClass: "far fa-comment-dots"
+                                    }),
+                                    _vm._v(
+                                      "  " + _vm._s(slide.countComments) + " "
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("span", { staticClass: "span--like" }, [
+                                    _c("i", {
+                                      staticClass: "far fa-thumbs-up"
+                                    }),
+                                    _vm._v(" " + _vm._s(slide.countLikes) + " ")
+                                  ])
                                 ]
                               )
                             : _c(
@@ -60613,31 +60611,29 @@ var render = function() {
                                     _vm._v(_vm._s(slide.newsText) + " ")
                                   ]),
                                   _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    { staticClass: "commentsandlikes" },
-                                    [
-                                      _c("span", [
-                                        _c("i", {
-                                          staticClass: "far fa-comment-dots"
-                                        }),
-                                        _vm._v(
-                                          "  " +
-                                            _vm._s(slide.countComments) +
-                                            " "
-                                        )
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("span", [
-                                        _c("i", {
-                                          staticClass: "far fa-thumbs-up"
-                                        }),
-                                        _vm._v(
-                                          " " + _vm._s(slide.countLikes) + " "
-                                        )
-                                      ])
-                                    ]
-                                  )
+                                  _c("div", { staticClass: "news--autor" }, [
+                                    _c("span", [
+                                      _vm._v(
+                                        " - " + _vm._s(slide.newsAutor) + " "
+                                      )
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("span", { staticClass: "span--comment" }, [
+                                    _c("i", {
+                                      staticClass: "far fa-comment-dots"
+                                    }),
+                                    _vm._v(
+                                      "  " + _vm._s(slide.countComments) + " "
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("span", { staticClass: "span--like" }, [
+                                    _c("i", {
+                                      staticClass: "far fa-thumbs-up"
+                                    }),
+                                    _vm._v(" " + _vm._s(slide.countLikes) + " ")
+                                  ])
                                 ]
                               ),
                           _vm._v(" "),
