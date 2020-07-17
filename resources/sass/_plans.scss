@@ -1,0 +1,124 @@
+#mainPlans {
+	.vueperslides__bullet {
+		&:focus {
+			outline: none;
+		}
+
+		.default {
+			background-color: rgba(0, 0, 0, 0.3);
+			border: none;
+			box-shadow: none;
+			transition: 0.3s;
+			width: 16px;
+			height: 16px;
+		}
+	}
+
+	.vueperslides__bullet--active {
+		.default {
+			background-color: $orange-selected;
+		}
+	}
+
+	.vueperslides__bullet {
+		span {
+			display: block;
+			color: #fff;
+			font-size: 10px;
+			opacity: 0.8;
+		}
+	}
+
+	.vueperslides__parallax-wrapper {
+		padding: 3rem;
+	}
+
+	.card--featuredplans {
+		padding: 0;
+		border-radius: 0.5rem;
+		height: 100px;
+		width: 98%;
+
+		.price--container {
+			background: $card-top;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+			span {
+				color: $white;
+			}
+
+			.text--price {
+				font-weight: bold;
+				font-size: x-large;
+			}
+
+			.text--cantsessions {
+				font-size: x-large;
+			}
+
+			.text--promotion {
+				color: $white;
+				font-size: 65%;
+				font-style: oblique;
+				font-weight: bold;
+				background-color: $orange-selected;
+				padding: 0.3rem;
+				border-radius: 0.5rem;
+				margin-top: 0.2rem;
+				text-align: right;
+				position: absolute;
+				top: 0%;
+				right: 1%;
+			}
+		}
+
+		.description--container {
+			background: $card-bottom;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0rem 2rem;
+
+			span {
+				font-size: 100%;
+				color: $white;
+				text-align: center;
+			}
+
+		}
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	#mainPlans {
+
+		.desktop--plans {
+			display: none;
+		}
+
+		.mobile--plans {
+			display: block;
+
+			.price--container {
+				.text--price {
+					font-weight: bold;
+					font-size: large;
+				}
+
+				.text--cantsessions {
+					font-size: medium;
+				}
+			}
+
+			.description--container {
+				span {
+					text-overflow: ellipsis;
+					font-size: 80%;
+				}
+			}
+		}
+	}
+}

@@ -5,7 +5,21 @@
 @import '~bootstrap/scss/bootstrap';
 
 //Core theme
-@import 'style';
+@import 'variables';
+@import 'global';
+@import 'navbar';
+@import 'head';
+@import 'steps';
+@import 'prevision';
+@import 'specialists';
+@import 'plans';
+@import 'professionals';
+@import 'voluntary';
+@import 'questions';
+@import 'news';
+@import 'footer';
+@import 'copyright';
+@import 'social';
 
 // Vueper Slider
 @import '~vueperslides/dist/vueperslides.css';

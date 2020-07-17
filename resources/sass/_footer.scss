@@ -1,0 +1,56 @@
+#mainFooter {
+	.navigation--container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		a {
+			color: $dark;
+			text-decoration: none;
+		}
+	}
+
+	.contact--container {
+		display: flex;
+		flex-direction: column;
+
+		.social {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+
+			a {
+				margin: 0 0.5rem;
+
+				img {
+					width: 2rem;
+				}
+			}
+		}
+	}
+
+	.payment--container {
+		display: flex;
+		flex-direction: column;
+
+		.payment {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			flex-wrap: wrap;
+
+			.payment--method {
+				display: flex;
+				flex-direction: column;
+
+				span {
+					margin-bottom: 1rem;
+				}
+
+				img {
+					width: 8rem;
+				}
+			}
+		}
+	}
+}
