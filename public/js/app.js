@@ -3065,6 +3065,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -3100,6 +3102,11 @@ __webpack_require__.r(__webpack_exports__);
           arrows: false
         },
         1445: {
+          slideRatio: 1 / 8,
+          visibleSlides: 4,
+          arrows: false
+        },
+        1921: {
           slideRatio: 1 / 8,
           visibleSlides: 4,
           arrows: false
@@ -61202,7 +61209,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("span", { staticClass: "title--section" }, [
       _c("strong", [_vm._v("Fuimos")]),
-      _vm._v(" noticia\n    ")
+      _vm._v(" noticia\n  ")
     ])
   }
 ]

@@ -11,13 +11,15 @@
       :autoplay="false"
       infinite
       slide-multiple
-	  :touchable="false"
+      :touchable="false"
     >
       <vueper-slide v-for="slide in slides" :key="slide.id" :style="'margin-bottom:' + ['1rem']">
         <template v-slot:content>
-			<!-- card card-body -->
+          <!-- card card-body -->
           <div class="card--wewerenews">
-           <a :href="slide.urlNews" target="_blank"> <img class="img-fluid" :src="slide.image" :alt="slide.imageDesc" /> </a>
+            <a :href="slide.urlNews" target="_blank">
+              <img class="img-fluid" :src="slide.image" :alt="slide.imageDesc" />
+            </a>
           </div>
         </template>
       </vueper-slide>
@@ -62,6 +64,11 @@ export default {
           visibleSlides: 4,
           arrows: false
         },
+        1921: {
+          slideRatio: 1 / 8,
+          visibleSlides: 4,
+          arrows: false
+        },
         2561: {
           slideRatio: 1 / 8,
           visibleSlides: 4,
@@ -73,37 +80,37 @@ export default {
           title: "Slide #1",
           content: "Slide content.",
           image: "img/we_were_news/canal_mega.jpg",
-		  imageDesc: "mega",
-		  urlNews: "https://www.mega.cl/home/"
+          imageDesc: "mega",
+          urlNews: "https://www.mega.cl/home/"
         },
         {
           title: "Slide #2",
           content: "Slide content.",
           image: "img/we_were_news/canal_tvn.png",
-		  imageDesc: "tvn",
-		  urlNews: "https://www.tvn.cl/"
+          imageDesc: "tvn",
+          urlNews: "https://www.tvn.cl/"
         },
         {
           title: "Slide #3",
           content: "Slide content.",
           image: "img/we_were_news/canal_trece.jpg",
-		  imageDesc: "trece",
-		  urlNews: "https://www.13.cl/"
+          imageDesc: "trece",
+          urlNews: "https://www.13.cl/"
         },
         {
           title: "Slide #4",
           content: "Slide content.",
           image: "img/we_were_news/canal_chilevision2.png",
-		  imageDesc: "chilevision",
-		  urlNews: "https://www.chilevision.cl/"
-		},
-		{
+          imageDesc: "chilevision",
+          urlNews: "https://www.chilevision.cl/"
+        },
+        {
           title: "Slide #5",
           content: "Slide content.",
           image: "img/we_were_news/canal_chilevision2.png",
-		  imageDesc: "chilevision",
-		  urlNews: "https://www.chilevision.cl/"
-        },
+          imageDesc: "chilevision",
+          urlNews: "https://www.chilevision.cl/"
+        }
       ]
     };
   }
