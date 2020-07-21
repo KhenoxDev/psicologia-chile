@@ -2697,6 +2697,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -3072,6 +3073,17 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vueperslides__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vueperslides */ "./node_modules/vueperslides/dist/vueperslides.common.js");
 /* harmony import */ var vueperslides__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vueperslides__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -61753,7 +61765,7 @@ var render = function() {
           staticClass: "no-shadow",
           attrs: {
             breakpoints: _vm.breakpoints,
-            autoplay: false,
+            autoplay: "",
             infinite: "",
             "slide-multiple": "",
             "bullets-outside": "",
@@ -61945,7 +61957,7 @@ var render = function() {
           attrs: {
             breakpoints: _vm.breakpoints,
             "slide-multiple": "",
-            autoplay: false,
+            autoplay: "",
             touchable: false,
             infinite: "",
             "bullets-outside": ""
@@ -62446,6 +62458,7 @@ var render = function() {
             "slide-multiple": "",
             infinite: "",
             "3d": "",
+            touchable: false,
             breakpoints: _vm.breakpoints
           }
         },
@@ -62509,7 +62522,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("span", { staticClass: "title--section" }, [
       _c("strong", [_vm._v("Consultas")]),
-      _vm._v(" frecuentes\n  ")
+      _vm._v(" frecuentes\n    ")
     ])
   },
   function() {
@@ -62824,7 +62837,7 @@ var render = function() {
           staticClass: "no-shadow",
           attrs: {
             breakpoints: _vm.breakpoints,
-            autoplay: false,
+            autoplay: "",
             infinite: "",
             "bullets-outside": "",
             "slide-multiple": "",
@@ -62862,14 +62875,12 @@ var render = function() {
                                   ]),
                                   _vm._v(" "),
                                   _c("span", { attrs: { id: "spanText" } }, [
-                                    _vm._v(_vm._s(slide.newsText) + " ")
+                                    _vm._v(_vm._s(slide.newsText))
                                   ]),
                                   _vm._v(" "),
                                   _c("div", { staticClass: "news--autor" }, [
                                     _c("span", [
-                                      _vm._v(
-                                        " - " + _vm._s(slide.newsAutor) + " "
-                                      )
+                                      _vm._v("- " + _vm._s(slide.newsAutor))
                                     ])
                                   ]),
                                   _vm._v(" "),
@@ -62878,7 +62889,9 @@ var render = function() {
                                       staticClass: "far fa-comment-dots"
                                     }),
                                     _vm._v(
-                                      "  " + _vm._s(slide.countComments) + " "
+                                      "\n              " +
+                                        _vm._s(slide.countComments) +
+                                        "\n            "
                                     )
                                   ]),
                                   _vm._v(" "),
@@ -62886,7 +62899,11 @@ var render = function() {
                                     _c("i", {
                                       staticClass: "far fa-thumbs-up"
                                     }),
-                                    _vm._v(" " + _vm._s(slide.countLikes) + " ")
+                                    _vm._v(
+                                      "\n              " +
+                                        _vm._s(slide.countLikes) +
+                                        "\n            "
+                                    )
                                   ])
                                 ]
                               )
@@ -62895,18 +62912,16 @@ var render = function() {
                                 { staticClass: "wave--container--another" },
                                 [
                                   _c("span", { attrs: { id: "spanDate" } }, [
-                                    _vm._v(" " + _vm._s(slide.newsDate))
+                                    _vm._v(_vm._s(slide.newsDate))
                                   ]),
                                   _vm._v(" "),
                                   _c("span", { attrs: { id: "spanText" } }, [
-                                    _vm._v(_vm._s(slide.newsText) + " ")
+                                    _vm._v(_vm._s(slide.newsText))
                                   ]),
                                   _vm._v(" "),
                                   _c("div", { staticClass: "news--autor" }, [
                                     _c("span", [
-                                      _vm._v(
-                                        " - " + _vm._s(slide.newsAutor) + " "
-                                      )
+                                      _vm._v("- " + _vm._s(slide.newsAutor))
                                     ])
                                   ]),
                                   _vm._v(" "),
@@ -62915,7 +62930,9 @@ var render = function() {
                                       staticClass: "far fa-comment-dots"
                                     }),
                                     _vm._v(
-                                      "  " + _vm._s(slide.countComments) + " "
+                                      "\n              " +
+                                        _vm._s(slide.countComments) +
+                                        "\n            "
                                     )
                                   ]),
                                   _vm._v(" "),
@@ -62923,14 +62940,20 @@ var render = function() {
                                     _c("i", {
                                       staticClass: "far fa-thumbs-up"
                                     }),
-                                    _vm._v(" " + _vm._s(slide.countLikes) + " ")
+                                    _vm._v(
+                                      "\n              " +
+                                        _vm._s(slide.countLikes) +
+                                        "\n            "
+                                    )
                                   ])
                                 ]
                               ),
                           _vm._v(" "),
                           _c("div", { staticClass: "seemore--news" }, [
                             _c("button", [
-                              _vm._v("continuar leyendo "),
+                              _vm._v(
+                                "\n              continuar leyendo\n              "
+                              ),
                               _c("em", { staticClass: "fa fa-arrow-right" })
                             ])
                           ])
@@ -62961,7 +62984,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("span", { staticClass: "title--section" }, [
       _c("strong", [_vm._v("Psicología")]),
-      _vm._v(" para ti\n    ")
+      _vm._v(" para ti\n  ")
     ])
   },
   function() {

@@ -11,6 +11,7 @@
       slide-multiple
       infinite
       3d
+	  :touchable="false"
       :breakpoints="breakpoints"
     >
       <vueper-slide v-for="(slide, i) in slides" :index="i" :key="slide.id">
