@@ -113,4 +113,14 @@ export default {
   backface-visibility: visible !important;
   animation-name: flipInX;
 }
+
+@media only screen and (max-width: 768px) {
+  .promotion--show {
+    &::before {
+      content: "";
+      width: 7.5rem;
+      border-width: 25px 25px 0 0;
+    }
+  }
+}
 </style>

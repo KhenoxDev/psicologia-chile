@@ -1985,8 +1985,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vueperslides__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vueperslides */ "./node_modules/vueperslides/dist/vueperslides.common.js");
 /* harmony import */ var vueperslides__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vueperslides__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _helpers_Card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers/Card */ "./resources/js/components/helpers/Card.vue");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 //
 //
 //
@@ -2043,7 +2041,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2072,6 +2069,11 @@ __webpack_require__.r(__webpack_exports__);
           arrows: false
         },
         769: {
+          slideRatio: 1 / 4,
+          visibleSlides: 2,
+          arrows: false
+        },
+        992: {
           slideRatio: 1 / 4,
           visibleSlides: 2,
           arrows: false
@@ -2167,7 +2169,17 @@ __webpack_require__.r(__webpack_exports__);
     formatPrice: function formatPrice(value) {
       var val = (value / 1).toFixed(0);
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    },
+    getPlans: function getPlans() {
+      axios.get("https://online.psicologiachile.cl/gateway-json.php?service=planes").then(function (response) {
+        console.log(response.data);
+      })["catch"](function (err) {
+        console.error(err);
+      });
     }
+  },
+  mounted: function mounted() {
+    this.getPlans;
   }
 });
 
@@ -8413,7 +8425,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".center[data-v-b2d1f176] {\n  text-align: center;\n}\n.flashcard[data-v-b2d1f176] {\n  cursor: pointer;\n  border-radius: 10px;\n  margin: 20px;\n  padding: 15px;\n  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.4);\n  text-align: center;\n}\n.promotion--show[data-v-b2d1f176]::before {\n  content: \"\";\n  width: 0;\n  height: 0;\n  border-style: solid;\n  border-width: 30px 32px 0 0;\n  border-color: #24abe2 transparent transparent transparent;\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 1;\n}\n.promotion--show[data-v-b2d1f176]:hover::before {\n  transition: 0.3s width ease-in-out;\n  width: 9rem;\n}\n.flashcard[data-v-b2d1f176]:hover {\n  box-shadow: 0 0px 15px rgba(0, 0, 0, 0.7);\n}\n.animated[data-v-b2d1f176] {\n  -webkit-animation-duration: 1s;\n          animation-duration: 1s;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n}\n@-webkit-keyframes flipInX-data-v-b2d1f176 {\nfrom {\n    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);\n    -webkit-animation-timing-function: ease-in;\n            animation-timing-function: ease-in;\n    opacity: 0;\n}\n40% {\n    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);\n    -webkit-animation-timing-function: ease-in;\n            animation-timing-function: ease-in;\n}\n60% {\n    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);\n    opacity: 1;\n}\n80% {\n    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);\n}\nto {\n    transform: perspective(400px);\n}\n}\n@keyframes flipInX-data-v-b2d1f176 {\nfrom {\n    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);\n    -webkit-animation-timing-function: ease-in;\n            animation-timing-function: ease-in;\n    opacity: 0;\n}\n40% {\n    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);\n    -webkit-animation-timing-function: ease-in;\n            animation-timing-function: ease-in;\n}\n60% {\n    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);\n    opacity: 1;\n}\n80% {\n    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);\n}\nto {\n    transform: perspective(400px);\n}\n}\n.flipInX[data-v-b2d1f176] {\n  -webkit-backface-visibility: visible !important;\n          backface-visibility: visible !important;\n  -webkit-animation-name: flipInX-data-v-b2d1f176;\n          animation-name: flipInX-data-v-b2d1f176;\n}", ""]);
+exports.push([module.i, ".center[data-v-b2d1f176] {\n  text-align: center;\n}\n.flashcard[data-v-b2d1f176] {\n  cursor: pointer;\n  border-radius: 10px;\n  margin: 20px;\n  padding: 15px;\n  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.4);\n  text-align: center;\n}\n.promotion--show[data-v-b2d1f176]::before {\n  content: \"\";\n  width: 0;\n  height: 0;\n  border-style: solid;\n  border-width: 30px 32px 0 0;\n  border-color: #24abe2 transparent transparent transparent;\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 1;\n}\n.promotion--show[data-v-b2d1f176]:hover::before {\n  transition: 0.3s width ease-in-out;\n  width: 9rem;\n}\n.flashcard[data-v-b2d1f176]:hover {\n  box-shadow: 0 0px 15px rgba(0, 0, 0, 0.7);\n}\n.animated[data-v-b2d1f176] {\n  -webkit-animation-duration: 1s;\n          animation-duration: 1s;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n}\n@-webkit-keyframes flipInX-data-v-b2d1f176 {\nfrom {\n    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);\n    -webkit-animation-timing-function: ease-in;\n            animation-timing-function: ease-in;\n    opacity: 0;\n}\n40% {\n    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);\n    -webkit-animation-timing-function: ease-in;\n            animation-timing-function: ease-in;\n}\n60% {\n    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);\n    opacity: 1;\n}\n80% {\n    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);\n}\nto {\n    transform: perspective(400px);\n}\n}\n@keyframes flipInX-data-v-b2d1f176 {\nfrom {\n    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);\n    -webkit-animation-timing-function: ease-in;\n            animation-timing-function: ease-in;\n    opacity: 0;\n}\n40% {\n    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);\n    -webkit-animation-timing-function: ease-in;\n            animation-timing-function: ease-in;\n}\n60% {\n    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);\n    opacity: 1;\n}\n80% {\n    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);\n}\nto {\n    transform: perspective(400px);\n}\n}\n.flipInX[data-v-b2d1f176] {\n  -webkit-backface-visibility: visible !important;\n          backface-visibility: visible !important;\n  -webkit-animation-name: flipInX-data-v-b2d1f176;\n          animation-name: flipInX-data-v-b2d1f176;\n}\n@media only screen and (max-width: 768px) {\n.promotion--show[data-v-b2d1f176]::before {\n    content: \"\";\n    width: 7.5rem;\n    border-width: 25px 25px 0 0;\n}\n}", ""]);
 
 // exports
 

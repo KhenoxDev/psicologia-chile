@@ -57,7 +57,6 @@
 <script>
 import { VueperSlides, VueperSlide } from "vueperslides";
 import VueFlashcard from "./helpers/Card";
-import axios from "axios";
 
 export default {
   components: {
@@ -85,6 +84,11 @@ export default {
           arrows: false
         },
         769: {
+          slideRatio: 1 / 4,
+          visibleSlides: 2,
+          arrows: false
+        },
+        992: {
           slideRatio: 1 / 4,
           visibleSlides: 2,
           arrows: false
@@ -205,7 +209,22 @@ export default {
     formatPrice: function(value) {
       let val = (value / 1).toFixed(0);
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    },
+    getPlans: function() {
+      axios
+        .get(
+          "https://online.psicologiachile.cl/gateway-json.php?service=planes"
+        )
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(err => {
+          console.error(err);
+        });
     }
+  },
+  mounted() {
+    this.getPlans;
   }
 };
 </script>

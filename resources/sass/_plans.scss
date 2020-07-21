@@ -31,7 +31,7 @@
 	}
 
 	.vueperslides__parallax-wrapper {
-		padding: 7rem;
+		padding-bottom: 20rem !important;
 	}
 
 	#front {
@@ -163,29 +163,218 @@
 
 @media only screen and (max-width: 320px) {
 	#mainPlans {
-
-		.desktop--plans {
-			display: none;
+		.vueperslides__parallax-wrapper {
+			padding-bottom: 19rem !important;
 		}
 
-		.mobile--plans {
-			display: block;
+		#front {
+			.promotion--span {
+				font-size: 0.8rem;
+				top: 1%;
+			}
 
-			.price--container {
-				.text--price {
-					font-weight: bold;
-					font-size: large;
-				}
+			.card-header {
+				font-size: 1rem;
+			}
 
-				.text--cantsessions {
-					font-size: medium;
+			.card-footer {
+				font-size: 1rem;
+			}
+		}
+
+		#back {
+			.card-header {
+				font-size: 1.1rem;
+			}
+
+			.card-content {
+				a {
+					img {
+						height: 2rem;
+						width: 2rem;
+					}
 				}
 			}
 
-			.description--container {
-				span {
-					text-overflow: ellipsis;
-					font-size: 80%;
+			.card-footer {
+				a {
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 321px) and (max-width: 375px) {
+	#mainPlans {
+		.vueperslides__parallax-wrapper {
+			padding-bottom: 19rem !important;
+		}
+
+		#front {
+			.promotion--span {
+				font-size: 0.8rem;
+				top: 1%;
+			}
+
+			.card-header {
+				font-size: 1rem;
+			}
+
+			.card-footer {
+				font-size: 1rem;
+			}
+		}
+
+		#back {
+			.card-header {
+				font-size: 1.1rem;
+			}
+
+			.card-content {
+				a {
+					img {
+						height: 2rem;
+						width: 2rem;
+					}
+				}
+			}
+
+			.card-footer {
+				a {
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 376px) and (max-width: 425px) {
+	#mainPlans {
+		.vueperslides__parallax-wrapper {
+			padding-bottom: 19rem !important;
+		}
+
+		#front {
+			.promotion--span {
+				font-size: 0.8rem;
+				top: 1%;
+			}
+
+			.card-header {
+				font-size: 1rem;
+			}
+
+			.card-footer {
+				font-size: 1rem;
+			}
+		}
+
+		#back {
+			.card-header {
+				font-size: 1.1rem;
+			}
+
+			.card-content {
+				a {
+					img {
+						height: 2rem;
+						width: 2rem;
+					}
+				}
+			}
+
+			.card-footer {
+				a {
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+	#mainPlans {
+		.vueperslides__parallax-wrapper {
+			padding-bottom: 19rem !important;
+		}
+
+		#front {
+			.promotion--span {
+				font-size: 0.8rem;
+				top: 1%;
+			}
+
+			.card-header {
+				font-size: 1rem;
+			}
+
+			.card-footer {
+				font-size: 1rem;
+			}
+		}
+
+		#back {
+			.card-header {
+				font-size: 1.1rem;
+			}
+
+			.card-content {
+				a {
+					img {
+						height: 2rem;
+						width: 2rem;
+					}
+				}
+			}
+
+			.card-footer {
+				a {
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 769px) and (max-width: 991px) {
+	#mainPlans {
+		.vueperslides__parallax-wrapper {
+			padding-bottom: 19rem !important;
+		}
+
+		#front {
+			.promotion--span {
+				font-size: 0.8rem;
+				top: 1%;
+			}
+
+			.card-header {
+				font-size: 1rem;
+			}
+
+			.card-footer {
+				font-size: 1rem;
+			}
+		}
+
+		#back {
+			.card-header {
+				font-size: 1.1rem;
+			}
+
+			.card-content {
+				a {
+					img {
+						height: 2rem;
+						width: 2rem;
+					}
+				}
+			}
+
+			.card-footer {
+				a {
+					font-size: 1rem;
 				}
 			}
 		}
