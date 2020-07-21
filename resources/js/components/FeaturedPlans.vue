@@ -7,25 +7,48 @@
     <vueper-slides
       :breakpoints="breakpoints"
       class="no-shadow"
-      autoplay
+      :autoplay="false"
       infinite
       slide-multiple
       bullets-outside
+      :touchable="false"
     >
       <vueper-slide v-for="slide in slides" :key="slide.id">
         <template v-slot:content>
-          <!-- Campos tabla planes destacados -->
-          <div class="card card-body card--featuredplans">
-            <div class="col-md-12 price--container">
-              <span class="text--promotion" v-if="slide.promocion">¡Promoción!</span>
-              <span class="text--price">{{ slide.price }}</span>
-              <span class="text--cantsessions">{{ slide.cantSes }}</span>
-            </div>
-            <div class="col-md-12 description--container">
-              <span>{{ slide.description }}</span>
-            </div>
-          </div>
-          <!-- fin campos tabla planes destacados -->
+          <vue-flashcard colorBack="#f4b034" :promotion="slide.promotion">
+            <template v-slot:frontContent>
+              <div id="front">
+                <span class="promotion--span" v-show="slide.promotion">Promoción!</span>
+                <div class="card-header">{{slide.title}}</div>
+                <div class="card-content center">
+                  <p>{{ slide.description }}</p>
+                </div>
+                <div class="card-footer">Cuéntame más!</div>
+              </div>
+            </template>
+            <template v-slot:backContent>
+              <div id="back">
+                <div class="card-header">
+                  <strong>{{ slide.sessions}}</strong> sesiones a
+                  <strong>${{ formatPrice(slide.price) }}</strong>
+                </div>
+                <div class="card-content center">
+                  <a
+                    v-for="professional in slide.professionals"
+                    :key="professional.id"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img :src="professional.src" :alt="professional.alt" :title="professional.alt" />
+                  </a>
+                </div>
+                <div class="card-footer">
+                  <a href="http://">Lo quiero!</a>
+                </div>
+              </div>
+            </template>
+          </vue-flashcard>
         </template>
       </vueper-slide>
     </vueper-slides>
@@ -33,11 +56,18 @@
 </template>
 <script>
 import { VueperSlides, VueperSlide } from "vueperslides";
+import VueFlashcard from "./helpers/Card";
+import axios from "axios";
 
 export default {
-  components: { VueperSlides, VueperSlide },
+  components: {
+    VueperSlides,
+    VueperSlide,
+    VueFlashcard
+  },
   data() {
     return {
+      lists: [],
       breakpoints: {
         321: {
           slideRatio: 1 / 2,
@@ -77,57 +107,105 @@ export default {
       },
       slides: [
         {
-          title: "Slide #1",
-          content: "Slide content.",
-          price: "$14.490 c/sesión",
-          cantSes: "5 Sesiones",
+          title: "Plan Contenci-ON Light",
+          price: 15000,
+          sessions: 5,
+          promotion: false,
           description:
-            "En este plan ingresan psicologos seleccionados para dar un servicio de calidad a un precio accesible.",
-          promocion: true,
-          sale: "¡PROMOCIÓN!"
+            "Plan pensado en una terapia de 1 a 4 meses, dependiendo de la frecuencia de las sesiones.",
+          professionals: [
+            {
+              alt: "Alex Balada",
+              src: "img/professionals/Alex_Balada_Carrasco.png"
+            },
+            {
+              alt: "Carla Oyarce",
+              src: "img/professionals/Carla_Oyarce.png"
+            },
+            {
+              alt: "Claudia Jeldres Guajardo",
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
+            },
+            {
+              alt: "Alex Balada",
+              src: "img/professionals/Alex_Balada_Carrasco.png"
+            },
+            {
+              alt: "Carla Oyarce",
+              src: "img/professionals/Carla_Oyarce.png"
+            },
+            {
+              alt: "Claudia Jeldres Guajardo",
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
+            },
+            {
+              alt: "Alex Balada",
+              src: "img/professionals/Alex_Balada_Carrasco.png"
+            },
+            {
+              alt: "Carla Oyarce",
+              src: "img/professionals/Carla_Oyarce.png"
+            },
+            {
+              alt: "Claudia Jeldres Guajardo",
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
+            }
+          ]
         },
         {
-          title: "Slide #2",
-          content: "Slide content.",
-          price: "$12.490 c/sesión",
-          cantSes: "4 Sesiones",
+          title: "Plan Contenci-ON Pro",
+          price: 30000,
+          sessions: 8,
+          promotion: true,
           description:
-            "En este plan ingresan psicologos seleccionados para dar un servicio de calidad a un precio accesible.",
-          promocion: false,
-          sale: "Promoción!"
-        },
-        {
-          title: "Slide #3",
-          content: "Slide content.",
-          price: "$17.490 c/sesión",
-          cantSes: "3 Sesiones",
-          description:
-            "En este plan ingresan psicologos seleccionados para dar un servicio de calidad a un precio accesible.",
-          promocion: false,
-          sale: "Promoción!"
-        },
-        {
-          title: "Slide #4",
-          content: "Slide content.",
-          price: "$00.000 c/sesión",
-          cantSes: "0 Sesiones",
-          description:
-            "En este plan ingresan psicologos seleccionados para dar un servicio de calidad a un precio accesible.",
-          promocion: true,
-          sale: "¡PROXIMAMENTE!"
-        },
-        {
-          title: "Slide #5",
-          content: "Slide content.",
-          price: "$00.000 c/sesión",
-          cantSes: "0 Sesiones",
-          description:
-            "En este plan ingresan psicologos seleccionados para dar un servicio de calidad a un precio accesible.",
-          promocion: true,
-          sale: "¡PROXIMAMENTE!"
+            "Plan considerado para una terapia de 1 a 4 meses, dependiendo la frecuencia de las sesiones, con Profesionales con más de 10 años de experiencia ó desde 5 años y postítulo en su especialidad",
+          professionals: [
+            {
+              alt: "Alex Balada",
+              src: "img/professionals/Alex_Balada_Carrasco.png"
+            },
+            {
+              alt: "Carla Oyarce",
+              src: "img/professionals/Carla_Oyarce.png"
+            },
+            {
+              alt: "Claudia Jeldres Guajardo",
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
+            },
+            {
+              alt: "Alex Balada",
+              src: "img/professionals/Alex_Balada_Carrasco.png"
+            },
+            {
+              alt: "Carla Oyarce",
+              src: "img/professionals/Carla_Oyarce.png"
+            },
+            {
+              alt: "Claudia Jeldres Guajardo",
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
+            },
+            {
+              alt: "Alex Balada",
+              src: "img/professionals/Alex_Balada_Carrasco.png"
+            },
+            {
+              alt: "Carla Oyarce",
+              src: "img/professionals/Carla_Oyarce.png"
+            },
+            {
+              alt: "Claudia Jeldres Guajardo",
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
+            }
+          ]
         }
       ]
     };
+  },
+  methods: {
+    formatPrice: function(value) {
+      let val = (value / 1).toFixed(0);
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
   }
 };
 </script>
