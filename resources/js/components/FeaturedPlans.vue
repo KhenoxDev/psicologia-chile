@@ -201,6 +201,144 @@ export default {
               src: "img/professionals/Claudia_Jeldres_Guajardo.png"
             }
           ]
+        },
+        {
+          title: "Plan Contenci-ON Pro",
+          price: 30000,
+          sessions: 8,
+          promotion: true,
+          description:
+            "Plan considerado para una terapia de 1 a 4 meses, dependiendo la frecuencia de las sesiones, con Profesionales con más de 10 años de experiencia ó desde 5 años y postítulo en su especialidad",
+          professionals: [
+            {
+              alt: "Alex Balada",
+              src: "img/professionals/Alex_Balada_Carrasco.png"
+            },
+            {
+              alt: "Carla Oyarce",
+              src: "img/professionals/Carla_Oyarce.png"
+            },
+            {
+              alt: "Claudia Jeldres Guajardo",
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
+            },
+            {
+              alt: "Alex Balada",
+              src: "img/professionals/Alex_Balada_Carrasco.png"
+            },
+            {
+              alt: "Carla Oyarce",
+              src: "img/professionals/Carla_Oyarce.png"
+            },
+            {
+              alt: "Claudia Jeldres Guajardo",
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
+            },
+            {
+              alt: "Alex Balada",
+              src: "img/professionals/Alex_Balada_Carrasco.png"
+            },
+            {
+              alt: "Carla Oyarce",
+              src: "img/professionals/Carla_Oyarce.png"
+            },
+            {
+              alt: "Claudia Jeldres Guajardo",
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
+            }
+          ]
+        },
+        {
+          title: "Plan Contenci-ON Pro",
+          price: 30000,
+          sessions: 8,
+          promotion: true,
+          description:
+            "Plan considerado para una terapia de 1 a 4 meses, dependiendo la frecuencia de las sesiones, con Profesionales con más de 10 años de experiencia ó desde 5 años y postítulo en su especialidad",
+          professionals: [
+            {
+              alt: "Alex Balada",
+              src: "img/professionals/Alex_Balada_Carrasco.png"
+            },
+            {
+              alt: "Carla Oyarce",
+              src: "img/professionals/Carla_Oyarce.png"
+            },
+            {
+              alt: "Claudia Jeldres Guajardo",
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
+            },
+            {
+              alt: "Alex Balada",
+              src: "img/professionals/Alex_Balada_Carrasco.png"
+            },
+            {
+              alt: "Carla Oyarce",
+              src: "img/professionals/Carla_Oyarce.png"
+            },
+            {
+              alt: "Claudia Jeldres Guajardo",
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
+            },
+            {
+              alt: "Alex Balada",
+              src: "img/professionals/Alex_Balada_Carrasco.png"
+            },
+            {
+              alt: "Carla Oyarce",
+              src: "img/professionals/Carla_Oyarce.png"
+            },
+            {
+              alt: "Claudia Jeldres Guajardo",
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
+            }
+          ]
+        },
+        {
+          title: "Plan Contenci-ON Pro",
+          price: 30000,
+          sessions: 8,
+          promotion: true,
+          description:
+            "Plan considerado para una terapia de 1 a 4 meses, dependiendo la frecuencia de las sesiones, con Profesionales con más de 10 años de experiencia ó desde 5 años y postítulo en su especialidad",
+          professionals: [
+            {
+              alt: "Alex Balada",
+              src: "img/professionals/Alex_Balada_Carrasco.png"
+            },
+            {
+              alt: "Carla Oyarce",
+              src: "img/professionals/Carla_Oyarce.png"
+            },
+            {
+              alt: "Claudia Jeldres Guajardo",
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
+            },
+            {
+              alt: "Alex Balada",
+              src: "img/professionals/Alex_Balada_Carrasco.png"
+            },
+            {
+              alt: "Carla Oyarce",
+              src: "img/professionals/Carla_Oyarce.png"
+            },
+            {
+              alt: "Claudia Jeldres Guajardo",
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
+            },
+            {
+              alt: "Alex Balada",
+              src: "img/professionals/Alex_Balada_Carrasco.png"
+            },
+            {
+              alt: "Carla Oyarce",
+              src: "img/professionals/Carla_Oyarce.png"
+            },
+            {
+              alt: "Claudia Jeldres Guajardo",
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
+            }
+          ]
         }
       ]
     };

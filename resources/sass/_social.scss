@@ -1,22 +1,26 @@
 #mainSocial {
 	.float {
 		position: fixed;
-		width: 40px;
-		height: 40px;
-		bottom: 15px;
-		right: 10px;
-		background-color: #25d366;
+		width: 3rem;
+		height: 3rem;
+		bottom: 2%;
+		right: 1%;
+		background-color: $green;
 		color: #FFF;
 		border-radius: 50px;
 		text-align: center;
-		font-size: 25px;
-		box-shadow: 2px 2px 3px #999;
+		font-size: 2rem;
+		box-shadow: 1px 1px 5px $gray-3;
 		z-index: 100;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
 		&:hover {
 			text-decoration: none;
-			color: #25d366;
-			background-color: #fff;
+			color: $green-1;
+			background-color: $white;
+			box-shadow: 1px 1px 10px $gray-2
 		}
 	}
 
