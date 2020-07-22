@@ -3586,6 +3586,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -63471,8 +63477,8 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("span", { staticClass: "title--section" }, [
-      _c("strong", [_vm._v("Fuimos")]),
-      _vm._v(" noticia\n  ")
+      _c("strong", [_vm._v("Somos")]),
+      _vm._v(" noticia ")
     ])
   }
 ]
@@ -86099,8 +86105,8 @@ global.$ = global.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jqu
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Psicología Chile\psicologia-chile\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Psicología Chile\psicologia-chile\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\alvaro\Desktop\Psicologia Chile\Upgrade Psicologia\Upgrade Psicologia Chile\psicologia-chile\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\alvaro\Desktop\Psicologia Chile\Upgrade Psicologia\Upgrade Psicologia Chile\psicologia-chile\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
