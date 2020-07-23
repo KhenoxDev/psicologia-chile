@@ -15,6 +15,7 @@
       <three-steps></three-steps>
       <prevision></prevision>
       <were-news></were-news>
+      <covenants></covenants>
     </div>
     <div class="bg--gray">
       <specialists></specialists>
@@ -58,6 +59,7 @@ import News from "./News";
 import FooterComponent from "./Footer";
 import Copyright from "./Copyright";
 import WereNews from "./WeWereNews";
+import Covenants from "./Covenants";
 
 export default {
   data() {
@@ -82,7 +84,8 @@ export default {
     News,
     FooterComponent,
     Copyright,
-    WereNews
+    WereNews,
+    Covenants
   },
   mounted() {
     this.onLoad();

@@ -1973,6 +1973,150 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Covenants.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Covenants.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vueperslides__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vueperslides */ "./node_modules/vueperslides/dist/vueperslides.common.js");
+/* harmony import */ var vueperslides__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vueperslides__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    VueperSlides: vueperslides__WEBPACK_IMPORTED_MODULE_0__["VueperSlides"],
+    VueperSlide: vueperslides__WEBPACK_IMPORTED_MODULE_0__["VueperSlide"]
+  },
+  data: function data() {
+    return {
+      breakpoints: {
+        321: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false
+        },
+        376: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false
+        },
+        426: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false
+        },
+        769: {
+          slideRatio: 1 / 4,
+          visibleSlides: 2,
+          arrows: false
+        },
+        1025: {
+          slideRatio: 1 / 6,
+          visibleSlides: 3,
+          arrows: false
+        },
+        1445: {
+          slideRatio: 1 / 8,
+          visibleSlides: 4,
+          arrows: false
+        },
+        1921: {
+          slideRatio: 1 / 8,
+          visibleSlides: 4,
+          arrows: false
+        },
+        2561: {
+          slideRatio: 1 / 8,
+          visibleSlides: 4,
+          arrows: false
+        }
+      },
+      slides: [{
+        title: "Slide #1",
+        content: "Slide content.",
+        image: "img/covenants/banco_chile2.jfif",
+        imageDesc: "banco_chile",
+        urlCovenants: "#"
+      }, {
+        title: "Slide #2",
+        content: "Slide content.",
+        image: "img/covenants/banco_itau.jfif",
+        imageDesc: "banco_itau",
+        urlCovenants: "#"
+      }, {
+        title: "Slide #3",
+        content: "Slide content.",
+        image: "img/covenants/dell.png",
+        imageDesc: "dell",
+        urlCovenants: "#"
+      }, {
+        title: "Slide #4",
+        content: "Slide content.",
+        image: "img/covenants/metrogas.png",
+        imageDesc: "metrogas",
+        urlCovenants: "#"
+      }, {
+        title: "Slide #5",
+        content: "Slide content.",
+        image: "img/covenants/enel.png",
+        imageDesc: "enel",
+        urlCovenants: "#"
+      }, {
+        title: "Slide #6",
+        content: "Slide content.",
+        image: "img/covenants/avon.jpg",
+        imageDesc: "avon",
+        urlCovenants: "#"
+      }, {
+        title: "Slide #7",
+        content: "Slide content.",
+        image: "img/covenants/volvo.jpg",
+        imageDesc: "volvo",
+        urlCovenants: "#"
+      }, {
+        title: "Slide #8",
+        content: "Slide content.",
+        image: "img/covenants/finning_cat.png",
+        imageDesc: "finning_cat",
+        urlCovenants: "#"
+      }]
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/FeaturedPlans.vue?vue&type=script&lang=js&":
 /*!************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/FeaturedPlans.vue?vue&type=script&lang=js& ***!
@@ -2797,6 +2941,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Footer */ "./resources/js/components/Footer.vue");
 /* harmony import */ var _Copyright__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Copyright */ "./resources/js/components/Copyright.vue");
 /* harmony import */ var _WeWereNews__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./WeWereNews */ "./resources/js/components/WeWereNews.vue");
+/* harmony import */ var _Covenants__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./Covenants */ "./resources/js/components/Covenants.vue");
 //
 //
 //
@@ -2840,6 +2985,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+
 
 
 
@@ -2879,7 +3026,8 @@ __webpack_require__.r(__webpack_exports__);
     News: _News__WEBPACK_IMPORTED_MODULE_12__["default"],
     FooterComponent: _Footer__WEBPACK_IMPORTED_MODULE_13__["default"],
     Copyright: _Copyright__WEBPACK_IMPORTED_MODULE_14__["default"],
-    WereNews: _WeWereNews__WEBPACK_IMPORTED_MODULE_15__["default"]
+    WereNews: _WeWereNews__WEBPACK_IMPORTED_MODULE_15__["default"],
+    Covenants: _Covenants__WEBPACK_IMPORTED_MODULE_16__["default"]
   },
   mounted: function mounted() {
     this.onLoad();
@@ -61736,6 +61884,102 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Covenants.vue?vue&type=template&id=5be6c844&":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Covenants.vue?vue&type=template&id=5be6c844& ***!
+  \************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "container mt-4 mb-4", attrs: { id: "mainCovenants" } },
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("hr", { staticClass: "line--separator" }),
+      _vm._v(" "),
+      _c(
+        "vueper-slides",
+        {
+          staticClass: "no-shadow",
+          attrs: {
+            breakpoints: _vm.breakpoints,
+            "bullets-outside": "",
+            autoplay: false,
+            infinite: "",
+            "slide-multiple": "",
+            touchable: false
+          }
+        },
+        _vm._l(_vm.slides, function(slide) {
+          return _c("vueper-slide", {
+            key: slide.id,
+            style: "margin-bottom:" + ["1rem"],
+            scopedSlots: _vm._u(
+              [
+                {
+                  key: "content",
+                  fn: function() {
+                    return [
+                      _c("div", { staticClass: "card--covenants" }, [
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: slide.urlCovenants,
+                              target: "_blank"
+                            }
+                          },
+                          [
+                            _c("img", {
+                              staticClass: "img-fluid",
+                              attrs: { src: slide.image, alt: slide.imageDesc }
+                            })
+                          ]
+                        )
+                      ])
+                    ]
+                  },
+                  proxy: true
+                }
+              ],
+              null,
+              true
+            )
+          })
+        }),
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "title--section" }, [
+      _c("strong", [_vm._v("Empresas")]),
+      _vm._v(" que confiaron en nosotros\n  ")
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/FeaturedPlans.vue?vue&type=template&id=073fc081&":
 /*!****************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/FeaturedPlans.vue?vue&type=template&id=073fc081& ***!
@@ -62593,7 +62837,9 @@ var render = function() {
           _vm._v(" "),
           _c("prevision"),
           _vm._v(" "),
-          _c("were-news")
+          _c("were-news"),
+          _vm._v(" "),
+          _c("covenants")
         ],
         1
       ),
@@ -84838,6 +85084,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Covenants.vue":
+/*!***********************************************!*\
+  !*** ./resources/js/components/Covenants.vue ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Covenants_vue_vue_type_template_id_5be6c844___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Covenants.vue?vue&type=template&id=5be6c844& */ "./resources/js/components/Covenants.vue?vue&type=template&id=5be6c844&");
+/* harmony import */ var _Covenants_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Covenants.vue?vue&type=script&lang=js& */ "./resources/js/components/Covenants.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Covenants_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Covenants_vue_vue_type_template_id_5be6c844___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Covenants_vue_vue_type_template_id_5be6c844___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Covenants.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Covenants.vue?vue&type=script&lang=js&":
+/*!************************************************************************!*\
+  !*** ./resources/js/components/Covenants.vue?vue&type=script&lang=js& ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Covenants_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Covenants.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Covenants.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Covenants_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Covenants.vue?vue&type=template&id=5be6c844&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/Covenants.vue?vue&type=template&id=5be6c844& ***!
+  \******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Covenants_vue_vue_type_template_id_5be6c844___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Covenants.vue?vue&type=template&id=5be6c844& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Covenants.vue?vue&type=template&id=5be6c844&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Covenants_vue_vue_type_template_id_5be6c844___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Covenants_vue_vue_type_template_id_5be6c844___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/FeaturedPlans.vue":
 /*!***************************************************!*\
   !*** ./resources/js/components/FeaturedPlans.vue ***!
@@ -86099,8 +86414,8 @@ global.$ = global.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jqu
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Psicología Chile\psicologia-chile\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Psicología Chile\psicologia-chile\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\alvaro\Desktop\Psicologia Chile\Upgrade Psicologia\Upgrade Psicologia Chile\psicologia-chile\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\alvaro\Desktop\Psicologia Chile\Upgrade Psicologia\Upgrade Psicologia Chile\psicologia-chile\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
