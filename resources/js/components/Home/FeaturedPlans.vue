@@ -56,13 +56,13 @@
 </template>
 <script>
 import { VueperSlides, VueperSlide } from "vueperslides";
-import VueFlashcard from "./helpers/Card";
+import VueFlashcard from "../helpers/Card";
 
 export default {
   components: {
     VueperSlides,
     VueperSlide,
-    VueFlashcard
+    VueFlashcard,
   },
   data() {
     return {
@@ -71,43 +71,43 @@ export default {
         321: {
           slideRatio: 1 / 2,
           visibleSlides: 1,
-          arrows: false
+          arrows: false,
         },
         376: {
           slideRatio: 1 / 2,
           visibleSlides: 1,
-          arrows: false
+          arrows: false,
         },
         426: {
           slideRatio: 1 / 2,
           visibleSlides: 1,
-          arrows: false
+          arrows: false,
         },
         769: {
           slideRatio: 1 / 4,
           visibleSlides: 2,
-          arrows: false
+          arrows: false,
         },
         992: {
           slideRatio: 1 / 4,
           visibleSlides: 2,
-          arrows: false
+          arrows: false,
         },
         1025: {
           slideRatio: 1 / 4,
           visibleSlides: 2,
-          arrows: false
+          arrows: false,
         },
         1445: {
           slideRatio: 1 / 6,
           visibleSlides: 3,
-          arrows: false
+          arrows: false,
         },
         2561: {
           slideRatio: 1 / 6,
           visibleSlides: 3,
-          arrows: false
-        }
+          arrows: false,
+        },
       },
       slides: [
         {
@@ -120,41 +120,41 @@ export default {
           professionals: [
             {
               alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png"
+              src: "img/professionals/Alex_Balada_Carrasco.png",
             },
             {
               alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png"
+              src: "img/professionals/Carla_Oyarce.png",
             },
             {
               alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
             },
             {
               alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png"
+              src: "img/professionals/Alex_Balada_Carrasco.png",
             },
             {
               alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png"
+              src: "img/professionals/Carla_Oyarce.png",
             },
             {
               alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
             },
             {
               alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png"
+              src: "img/professionals/Alex_Balada_Carrasco.png",
             },
             {
               alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png"
+              src: "img/professionals/Carla_Oyarce.png",
             },
             {
               alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
-            }
-          ]
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
+            },
+          ],
         },
         {
           title: "Plan Contenci-ON Pro",
@@ -166,41 +166,41 @@ export default {
           professionals: [
             {
               alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png"
+              src: "img/professionals/Alex_Balada_Carrasco.png",
             },
             {
               alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png"
+              src: "img/professionals/Carla_Oyarce.png",
             },
             {
               alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
             },
             {
               alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png"
+              src: "img/professionals/Alex_Balada_Carrasco.png",
             },
             {
               alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png"
+              src: "img/professionals/Carla_Oyarce.png",
             },
             {
               alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
             },
             {
               alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png"
+              src: "img/professionals/Alex_Balada_Carrasco.png",
             },
             {
               alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png"
+              src: "img/professionals/Carla_Oyarce.png",
             },
             {
               alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
-            }
-          ]
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
+            },
+          ],
         },
         {
           title: "Plan Contenci-ON Pro",
@@ -212,41 +212,41 @@ export default {
           professionals: [
             {
               alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png"
+              src: "img/professionals/Alex_Balada_Carrasco.png",
             },
             {
               alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png"
+              src: "img/professionals/Carla_Oyarce.png",
             },
             {
               alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
             },
             {
               alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png"
+              src: "img/professionals/Alex_Balada_Carrasco.png",
             },
             {
               alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png"
+              src: "img/professionals/Carla_Oyarce.png",
             },
             {
               alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
             },
             {
               alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png"
+              src: "img/professionals/Alex_Balada_Carrasco.png",
             },
             {
               alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png"
+              src: "img/professionals/Carla_Oyarce.png",
             },
             {
               alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
-            }
-          ]
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
+            },
+          ],
         },
         {
           title: "Plan Contenci-ON Pro",
@@ -258,41 +258,41 @@ export default {
           professionals: [
             {
               alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png"
+              src: "img/professionals/Alex_Balada_Carrasco.png",
             },
             {
               alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png"
+              src: "img/professionals/Carla_Oyarce.png",
             },
             {
               alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
             },
             {
               alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png"
+              src: "img/professionals/Alex_Balada_Carrasco.png",
             },
             {
               alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png"
+              src: "img/professionals/Carla_Oyarce.png",
             },
             {
               alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
             },
             {
               alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png"
+              src: "img/professionals/Alex_Balada_Carrasco.png",
             },
             {
               alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png"
+              src: "img/professionals/Carla_Oyarce.png",
             },
             {
               alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
-            }
-          ]
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
+            },
+          ],
         },
         {
           title: "Plan Contenci-ON Pro",
@@ -304,65 +304,65 @@ export default {
           professionals: [
             {
               alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png"
+              src: "img/professionals/Alex_Balada_Carrasco.png",
             },
             {
               alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png"
+              src: "img/professionals/Carla_Oyarce.png",
             },
             {
               alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
             },
             {
               alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png"
+              src: "img/professionals/Alex_Balada_Carrasco.png",
             },
             {
               alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png"
+              src: "img/professionals/Carla_Oyarce.png",
             },
             {
               alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
             },
             {
               alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png"
+              src: "img/professionals/Alex_Balada_Carrasco.png",
             },
             {
               alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png"
+              src: "img/professionals/Carla_Oyarce.png",
             },
             {
               alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png"
-            }
-          ]
-        }
-      ]
+              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
+            },
+          ],
+        },
+      ],
     };
   },
   methods: {
-    formatPrice: function(value) {
+    formatPrice: function (value) {
       let val = (value / 1).toFixed(0);
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     },
-    getPlans: function() {
+    getPlans: function () {
       axios
         .get(
           "https://online.psicologiachile.cl/gateway-json.php?service=planes"
         )
-        .then(response => {
+        .then((response) => {
           console.log(response.data);
         })
-        .catch(err => {
+        .catch((err) => {
           console.error(err);
         });
-    }
+    },
   },
   mounted() {
     this.getPlans;
-  }
+  },
 };
 </script>

@@ -63,7 +63,7 @@ export default {
   data() {
     return {
       isLoading: true,
-      fullPage: true
+      fullPage: true,
     };
   },
   components: {
@@ -82,7 +82,7 @@ export default {
     News,
     FooterComponent,
     Copyright,
-    WereNews
+    WereNews,
   },
   mounted() {
     this.onLoad();
@@ -93,7 +93,7 @@ export default {
       setTimeout(() => {
         this.isLoading = false;
       }, 2000);
-    }
-  }
+    },
+  },
 };
 </script>
