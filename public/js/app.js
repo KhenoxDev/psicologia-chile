@@ -3743,31 +3743,31 @@ __webpack_require__.r(__webpack_exports__);
         content: "Slide content.",
         image: "img/we_were_news/canal_mega.jpg",
         imageDesc: "mega",
-        urlNews: "https://www.mega.cl/home/"
+        urlNews: "#"
       }, {
         title: "Slide #2",
         content: "Slide content.",
         image: "img/we_were_news/canal_tvn.png",
         imageDesc: "tvn",
-        urlNews: "https://www.tvn.cl/"
+        urlNews: "#"
       }, {
         title: "Slide #3",
         content: "Slide content.",
         image: "img/we_were_news/canal_trece.jpg",
         imageDesc: "trece",
-        urlNews: "https://www.13.cl/"
+        urlNews: "#"
       }, {
         title: "Slide #4",
         content: "Slide content.",
         image: "img/we_were_news/canal_chilevision2.png",
         imageDesc: "chilevision",
-        urlNews: "https://www.chilevision.cl/"
+        urlNews: "#"
       }, {
         title: "Slide #5",
         content: "Slide content.",
         image: "img/we_were_news/canal_chilevision2.png",
         imageDesc: "chilevision",
-        urlNews: "https://www.chilevision.cl/"
+        urlNews: "#"
       }]
     };
   }
@@ -63573,7 +63573,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("span", { staticClass: "title--section" }, [
-      _c("strong", [_vm._v("Fuimos")]),
+      _c("strong", [_vm._v("Somos")]),
       _vm._v(" noticia\n  ")
     ])
   }
@@ -86201,8 +86201,8 @@ global.$ = global.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jqu
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Psicología Chile\psicologia-chile\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Psicología Chile\psicologia-chile\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\alvaro\Desktop\Psicologia Chile\Upgrade Psicologia\Upgrade Psicologia Chile\psicologia-chile\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\alvaro\Desktop\Psicologia Chile\Upgrade Psicologia\Upgrade Psicologia Chile\psicologia-chile\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

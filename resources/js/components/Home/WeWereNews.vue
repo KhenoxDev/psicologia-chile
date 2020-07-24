@@ -1,7 +1,7 @@
 <template>
   <div id="mainWeWereNews" class="container mt-4 mb-4">
     <span class="title--section">
-      <strong>Fuimos</strong> noticia
+      <strong>Somos</strong> noticia
     </span>
     <hr class="line--separator" />
     <vueper-slides
@@ -81,35 +81,35 @@ export default {
           content: "Slide content.",
           image: "img/we_were_news/canal_mega.jpg",
           imageDesc: "mega",
-          urlNews: "https://www.mega.cl/home/"
+          urlNews: "#"
         },
         {
           title: "Slide #2",
           content: "Slide content.",
           image: "img/we_were_news/canal_tvn.png",
           imageDesc: "tvn",
-          urlNews: "https://www.tvn.cl/"
+          urlNews: "#"
         },
         {
           title: "Slide #3",
           content: "Slide content.",
           image: "img/we_were_news/canal_trece.jpg",
           imageDesc: "trece",
-          urlNews: "https://www.13.cl/"
+          urlNews: "#"
         },
         {
           title: "Slide #4",
           content: "Slide content.",
           image: "img/we_were_news/canal_chilevision2.png",
           imageDesc: "chilevision",
-          urlNews: "https://www.chilevision.cl/"
+          urlNews: "#"
         },
         {
           title: "Slide #5",
           content: "Slide content.",
           image: "img/we_were_news/canal_chilevision2.png",
           imageDesc: "chilevision",
-          urlNews: "https://www.chilevision.cl/"
+          urlNews: "#"
         }
       ]
     };
