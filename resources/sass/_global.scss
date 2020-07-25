@@ -41,3 +41,17 @@
 .bg--dark {
 	background-color: $dark;
 }
+
+.bg--about-banner {
+	background-image: linear-gradient(to bottom, $white 20%, transparent 80%),
+		url('img/about/about.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 1rem;
+	height: 25rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+}

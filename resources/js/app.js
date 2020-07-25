@@ -26,7 +26,15 @@ const cors = require('cors');
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-Vue.component('main-component', require('./components/Home/Main.vue').default);
+/* Global Components */
+Vue.component('navbar-component', require('./components/Global/Navbar.vue').default);
+Vue.component('whatsapp-component', require('./components/Global/Whatsapp.vue').default);
+Vue.component('copyright-component', require('./components/Global/Copyright.vue').default);
+Vue.component('footer-component', require('./components/Global/Footer.vue').default);
+
+/* Section Components */
+Vue.component('home-component', require('./components/Home/Main.vue').default);
+Vue.component('about-component', require('./components/About/Main.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

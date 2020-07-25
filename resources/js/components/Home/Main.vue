@@ -8,9 +8,7 @@
         v-bind:color="'#f4b034'"
       ></loading-component>
     </transition>
-    <navbar></navbar>
     <masthead></masthead>
-    <whatsapp></whatsapp>
     <div class="bg--white">
       <three-steps></three-steps>
       <prevision></prevision>
@@ -33,20 +31,12 @@
     <div class="bg--white">
       <news></news>
     </div>
-    <div class="bg--white">
-      <footer-component></footer-component>
-    </div>
-    <div class="bg--dark">
-      <copyright></copyright>
-    </div>
   </div>
 </template>
 
 <script>
 import LoadingComponent from "vue-loading-overlay";
-import Navbar from "./Navbar";
 import Masthead from "./Masthead";
-import Whatsapp from "./Whatsapp";
 import Carousel from "./Carousel";
 import ThreeSteps from "./ThreeSteps";
 import Prevision from "./Prevision";
@@ -56,8 +46,6 @@ import FeaturedProfessionals from "./FeaturedProfessionals";
 import FrequentlyQuestions from "./FrequentlyQuestions";
 import Voluntary from "./Voluntary";
 import News from "./News";
-import FooterComponent from "./Footer";
-import Copyright from "./Copyright";
 import WereNews from "./WeWereNews";
 import Covenants from "./Covenants";
 
@@ -70,9 +58,7 @@ export default {
   },
   components: {
     LoadingComponent,
-    Navbar,
     Masthead,
-    Whatsapp,
     Carousel,
     ThreeSteps,
     Prevision,
@@ -82,8 +68,6 @@ export default {
     FrequentlyQuestions,
     Voluntary,
     News,
-    FooterComponent,
-    Copyright,
     WereNews,
     Covenants,
   },

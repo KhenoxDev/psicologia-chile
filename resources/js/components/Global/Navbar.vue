@@ -46,36 +46,36 @@ export default {
       active: false,
       links: [
         {
-          href: "#",
-          text: "Quienes somos"
+          href: "/quienes-somos",
+          text: "Quienes somos",
         },
         {
           href: "#",
-          text: "Cómo funciona"
+          text: "Cómo funciona",
         },
         {
           href: "#",
-          text: "Profesionales"
+          text: "Profesionales",
         },
         {
           href: "#",
-          text: "Especialidades"
+          text: "Especialidades",
         },
         {
           href: "#",
-          text: "Planes"
-        }
-      ]
+          text: "Planes",
+        },
+      ],
     };
   },
   methods: {
-    isActive: function() {
+    isActive: function () {
       if (this.active == false) {
         this.active = true;
       } else {
         this.active = false;
       }
-    }
-  }
+    },
+  },
 };
 </script>
