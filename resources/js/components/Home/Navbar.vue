@@ -47,35 +47,35 @@ export default {
       links: [
         {
           href: "#",
-          text: "Quienes somos"
+          text: "Quienes somos",
+        },
+        {
+          href: "/como-funciona",
+          text: "Cómo funciona",
         },
         {
           href: "#",
-          text: "Cómo funciona"
+          text: "Profesionales",
         },
         {
           href: "#",
-          text: "Profesionales"
+          text: "Especialidades",
         },
         {
           href: "#",
-          text: "Especialidades"
+          text: "Planes",
         },
-        {
-          href: "#",
-          text: "Planes"
-        }
-      ]
+      ],
     };
   },
   methods: {
-    isActive: function() {
+    isActive: function () {
       if (this.active == false) {
         this.active = true;
       } else {
         this.active = false;
       }
-    }
-  }
+    },
+  },
 };
 </script>

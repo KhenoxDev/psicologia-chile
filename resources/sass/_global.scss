@@ -41,3 +41,18 @@
 .bg--dark {
 	background-color: $dark;
 }
+
+
+.bg--work-banner {
+	background-image: linear-gradient(to bottom, $white 15%, transparent 80%),
+		url('img/work/banner_work_2.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 1rem;
+	height: 30rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+}

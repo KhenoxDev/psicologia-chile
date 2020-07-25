@@ -27,6 +27,7 @@ const cors = require('cors');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 Vue.component('main-component', require('./components/Home/Main.vue').default);
+Vue.component('main-work', require('./components/Work/Main.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
