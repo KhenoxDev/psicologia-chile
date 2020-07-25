@@ -8,7 +8,7 @@
         v-bind:color="'#f4b034'"
       ></loading-component>
     </transition>
-    <div class="bg--about-banner">
+    <div class="bg--section bg--about-banner">
       <banner></banner>
     </div>
   </div>
