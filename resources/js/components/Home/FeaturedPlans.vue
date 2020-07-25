@@ -56,7 +56,7 @@
 </template>
 <script>
 import { VueperSlides, VueperSlide } from "vueperslides";
-import VueFlashcard from "../helpers/Card";
+import VueFlashcard from "../Reusable/Card";
 
 export default {
   components: {
