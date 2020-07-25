@@ -1,10 +1,25 @@
 <template>
-  <div id="mainWork--section" class="container mt-4">{{ body }}</div>
+  <div id="mainWork--section" class="container mt-4">
+    <span>{{ body }}</span>
+  </div>
 </template>
 
 
 <script>
 export default {
-  props: ["header", "body", "image"],
+  props: {
+    header: {
+      type: String,
+      default: "",
+    },
+    body: {
+      type: String,
+      default: "",
+    },
+    image: {
+      type: String,
+      default: "",
+    },
+  },
 };
 </script>

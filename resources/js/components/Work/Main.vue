@@ -12,7 +12,11 @@
       <banner></banner>
     </div>
     <div class="bg--white">
-      <section v-for="image in imageSectionList" v-bind:key="image.id" v-bind:body="image.body"></section>
+      <section-component
+        v-for="image in imageSectionList"
+        v-bind:key="image.id"
+        v-bind:body="image.body"
+      ></section-component>
     </div>
   </div>
 </template>
@@ -20,14 +24,18 @@
 <script>
 import LoadingComponent from "vue-loading-overlay";
 import Banner from "./Banner.vue";
-import Section from "./Section.vue";
+import SectionComponent from "./Section.vue";
 
 export default {
+  components: {
+    LoadingComponent,
+    Banner,
+    SectionComponent,
+  },
   data() {
     return {
       isLoading: true,
       fullPage: true,
-      //agregar lista de imagenes y contenido
       imageSectionList: [
         {
           id: 0,
@@ -43,11 +51,6 @@ export default {
         },
       ],
     };
-  },
-  components: {
-    LoadingComponent,
-    Banner,
-    Section,
   },
   mounted() {
     this.onLoad();
