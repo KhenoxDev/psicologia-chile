@@ -35,6 +35,7 @@ Vue.component('footer-component', require('./components/Global/Footer.vue').defa
 /* Section Components */
 Vue.component('home-component', require('./components/Home/Main.vue').default);
 Vue.component('about-component', require('./components/About/Main.vue').default);
+Vue.component('work-component', require('./components/Work/Main.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

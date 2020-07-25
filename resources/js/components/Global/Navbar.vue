@@ -50,7 +50,7 @@ export default {
           text: "Quienes somos",
         },
         {
-          href: "#",
+          href: "/como-funciona",
           text: "Cómo funciona",
         },
         {
