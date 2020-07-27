@@ -1,9 +1,9 @@
 <template>
   <header id="mainHead">
     <div class="container h-100">
-      <div class="row h-100 w-100">
-        <div class="col-lg-12 my-auto">
-          <div class="header-content mr-auto">
+      <div class="row h-100 w-100 m-0">
+        <div class="col-lg-12 my-auto d-flex justify-content-center align-items-center">
+          <div class="header-content">
             <h1 class="mb-5">
               Psicología Chile es
               <br />
@@ -12,7 +12,7 @@
               </span>
               <span class="cursor" :class="{'typing': typeStatus}">&nbsp;</span>
             </h1>
-            <a href="#" class="btn btn-2">Regístrate!</a>
+            <a href="#" class="btn btn-2 shadow-sm">Regístrate!</a>
           </div>
         </div>
       </div>
@@ -31,7 +31,7 @@ export default {
       erasingSpeed: 100,
       newTextDelay: 2000,
       typeArrayIndex: 0,
-      charIndex: 0
+      charIndex: 0,
     };
   },
   methods: {
@@ -64,47 +64,10 @@ export default {
           this.typeArrayIndex = 0;
         setTimeout(this.typeText, this.typingSpeed + 1000);
       }
-    }
+    },
   },
   created() {
     setTimeout(this.typeText, this.newTextDelay + 200);
-  }
+  },
 };
 </script>
-<style lang="scss" scoped>
-.container {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-h1 {
-  font-size: 6rem;
-  font-weight: normal;
-  span.typed-text {
-    color: #f4b034;
-  }
-  span.cursor {
-    display: inline-block;
-    margin-left: 3px;
-    width: 4px;
-    background-color: #323232;
-    animation: cursorBlink 1s infinite;
-  }
-  span.cursor.typing {
-    animation: none;
-  }
-}
-@keyframes cursorBlink {
-  49% {
-    background-color: #323232;
-  }
-  50% {
-    background-color: transparent;
-  }
-  99% {
-    background-color: transparent;
-  }
-}
-</style>

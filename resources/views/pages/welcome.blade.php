@@ -1,4 +1,4 @@
-@extends('layout.template')
+@extends('layout.template', ['toLinks' => $toLinks ?? ''])
 
 @section('title', 'Psicología Chile')
 

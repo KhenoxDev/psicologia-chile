@@ -177,33 +177,33 @@ export default {
         321: {
           slideRatio: 1 / 2,
           visibleSlides: 1,
-          arrows: false
+          arrows: false,
         },
         376: {
           slideRatio: 1 / 2,
           visibleSlides: 1,
-          arrows: false
+          arrows: false,
         },
         769: {
           slideRatio: 1 / 4,
           visibleSlides: 2,
-          arrows: false
+          arrows: false,
         },
         1025: {
           slideRatio: 1 / 8,
           visibleSlides: 4,
-          arrows: false
+          arrows: false,
         },
         1445: {
           slideRatio: 1 / 8,
           visibleSlides: 4,
-          arrows: false
+          arrows: false,
         },
         2561: {
           slideRatio: 1 / 8,
           visibleSlides: 5,
-          arrows: false
-        }
+          arrows: false,
+        },
       },
       slides: [
         {
@@ -224,8 +224,8 @@ export default {
             { name: "Ansiedad" },
             { name: "Autoestima" },
             { name: "Dependencia emocional" },
-            { name: "Trastorno Alimenticio" }
-          ]
+            { name: "Trastorno Alimenticio" },
+          ],
         },
         {
           title: "Slide #2",
@@ -244,8 +244,8 @@ export default {
           specialist: [
             { name: "Ansiedad" },
             { name: "Bullying" },
-            { name: "Depresión" }
-          ]
+            { name: "Depresión" },
+          ],
         },
         {
           title: "Slide #3",
@@ -266,8 +266,8 @@ export default {
             { name: "Coaching" },
             { name: "Duelos" },
             { name: "Estrés" },
-            { name: "Estrés laboral" }
-          ]
+            { name: "Estrés laboral" },
+          ],
         },
         {
           title: "Slide #4",
@@ -286,8 +286,8 @@ export default {
           specialist: [
             { name: "Habilidades sociales" },
             { name: "Terapia de pareja" },
-            { name: "Dependencia emocional" }
-          ]
+            { name: "Dependencia emocional" },
+          ],
         },
         {
           title: "Slide #5",
@@ -306,14 +306,14 @@ export default {
           specialist: [
             { name: "Coaching" },
             { name: "Duelos amorosos" },
-            { name: "Psicología geriátrica" }
-          ]
-        }
-      ]
+            { name: "Psicología geriátrica" },
+          ],
+        },
+      ],
     };
   },
   methods: {
-    getDataProfessional: function(
+    getDataProfessional: function (
       picProfessional,
       nameProfessional,
       titleProfessional,
@@ -335,7 +335,7 @@ export default {
       vm.dispProf = dispProfessional;
       vm.descProf = descProfessional;
       vm.specProf = specialist;
-    }
-  }
+    },
+  },
 };
 </script>

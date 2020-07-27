@@ -1,6 +1,9 @@
+@import "../../variables";
+@import "../../mixins";
+
 #mainProfessionals {
 	.vueperslides__parallax-wrapper {
-		padding: 7rem;
+		padding-bottom: 30% !important;
 	}
 
 	.vueperslides__bullet {
@@ -20,7 +23,7 @@
 
 	.vueperslides__bullet--active {
 		.default {
-			background-color: $orange-selected;
+			background-color: $orange;
 		}
 	}
 
@@ -48,7 +51,7 @@
 		.circulo--professionals {
 			height: 28%;
 			width: 41%;
-			background-color: $card-top;
+			background-color: $blue;
 			border-radius: 50%;
 
 			display: inline-block;

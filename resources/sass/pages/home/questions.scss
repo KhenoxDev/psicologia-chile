@@ -1,3 +1,6 @@
+@import "../../variables";
+@import "../../mixins";
+
 #mainQuestions {
 	.vueperslides__parallax-wrapper {
 		padding: 3rem;
@@ -20,7 +23,7 @@
 
 	.vueperslides__bullet--active {
 		.default {
-			background-color: $orange-selected;
+			background-color: $orange;
 		}
 	}
 
@@ -44,7 +47,7 @@
 
 	.first-card-faq {
 		background: $teal-tiny;
-		background-image: url("img/faq_interrogacion_primera_pregunta.svg");
+		background-image: url("../../../img/faq_interrogacion_primera_pregunta.svg");
 		background-size: cover;
 		background-position: center center;
 		background-repeat: no-repeat;

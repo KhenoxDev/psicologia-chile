@@ -57,22 +57,22 @@ export default {
           img: "img/1.png",
           title: "Registrate",
           content:
-            "Llena Nuestro formulario para encontrar al psicólogo especializado para tí."
+            "Llena Nuestro formulario para encontrar al psicólogo especializado para tí.",
         },
         {
           img: "img/2.png",
           title: "Agenda tu hora",
           content:
-            "Atendemos de lunes a domingo, en el horario que más te acomode."
+            "Atendemos de lunes a domingo, en el horario que más te acomode.",
         },
         {
           img: "img/3.png",
           title: "Atiéndete",
           content:
-            "Escoge libremente el lugar que prefieras para iniciar tu sesión online."
-        }
-      ]
+            "Escoge libremente el lugar que prefieras para iniciar tu sesión online.",
+        },
+      ],
     };
-  }
+  },
 };
 </script>

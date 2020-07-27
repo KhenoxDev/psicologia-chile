@@ -6,15 +6,12 @@
 
 
 
-// require('./popper.min');
 require('./bootstrap.bundle.min');
 require('./jquery.easing.min');
 require('./scripts');
 require('./bootstrap');
 
 window.Vue = require('vue');
-const axios = require('axios').default;
-const cors = require('cors');
 
 /**
  * The following block of code may be used to automatically register your
@@ -29,7 +26,6 @@ const cors = require('cors');
 /* Global Components */
 Vue.component('navbar-component', require('./components/Global/Navbar.vue').default);
 Vue.component('whatsapp-component', require('./components/Global/Whatsapp.vue').default);
-Vue.component('copyright-component', require('./components/Global/Copyright.vue').default);
 Vue.component('footer-component', require('./components/Global/Footer.vue').default);
 
 /* Section Components */

@@ -1,136 +1,86 @@
-#mainHead {
-	position: relative;
+@import "../../variables";
+@import "../../mixins";
 
+#mainHead {
+	font-family: $font-family;
+	position: relative;
 	width: 100%;
 	height: 100vh;
 	padding-top: 150px;
 	padding-bottom: 100px;
-
 	color: white;
-	background: url('img/bg-masthead.jpg'), $theme-primary;
+	background: linear-gradient(rgba(244, 175, 52, 0.9) 10%, rgba(244, 175, 52, 0.2) 90%),
+		url('../../../img/bg-masthead.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
+	background-attachment: fixed;
+
 
 	.header-content {
-		max-width: 500px;
+		max-width: 35rem;
 		margin-bottom: 100px;
-
 		text-align: center;
+		z-index: 1;
 
 		h1 {
-			color: $dark;
-			font-size: 30px;
+			color: $white;
+			font-size: 2rem;
+			text-transform: uppercase;
+			font-weight: bold;
+			text-shadow: 1px 1px 2px $dark;
+
+			span.typed-text {
+				color: #f4b034;
+			}
+
+			span.cursor {
+				display: inline-block;
+				margin-left: 3px;
+				width: 4px;
+				height: 3.3rem;
+				background-color: #ffffff;
+				animation: cursorBlink 1s infinite;
+			}
+
+			span.cursor.typing {
+				animation: none;
+			}
 		}
 
-		// .btn {
-		// 	color: $dark;
-		// 	cursor: pointer;
-		// 	// display: block;
-		// 	font-size: 1rem;
-		// 	font-weight: 400;
-		// 	line-height: 45px;
-		// 	// margin: 0 0 2em;
-		// 	max-width: 160px;
-		// 	position: relative;
-		// 	text-decoration: none;
-		// 	text-transform: uppercase;
-		// 	width: 100%;
-		// 	text-align: left;
+		@keyframes cursorBlink {
+			49% {
+				background-color: #f4b034;
+			}
 
-		// 	&:hover {
-		// 		text-decoration: none;
-		// 	}
-		// }
+			50% {
+				background-color: transparent;
+			}
+
+			99% {
+				background-color: transparent;
+			}
+		}
+
 		.btn {
-			position: relative;
-			letter-spacing: 0.25em;
-			margin: 0 auto;
-			padding: 1rem 2.5rem;
-			background: transparent;
-			outline: none;
-			font-size: 1.5rem;
-			z-index: 1;
-			color: $dark;
-
-			&::after,
-			&::before {
-				content: "";
-				position: absolute;
-				height: 50%;
-				width: 50%;
-				transform: skewX(30deg);
-				transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-				z-index: -2;
-			}
-
-			&::before {
-				background-color: $blue-official;
-				top: 1.2rem;
-				left: 0rem;
-			}
-
-			&::after {
-				background-color: $orange-official;
-				top: 1.5rem;
-				left: 8rem;
-			}
+			text-transform: uppercase;
+			text-decoration: none;
+			font-family: $font-family;
+			font-size: 1rem;
+			font-weight: bold;
+			color: $white;
+			background-color: $blue;
+			padding: 0.8rem 1rem;
+			border-radius: 1rem;
+			letter-spacing: 0.2rem;
 
 			&:hover {
-
-				&::before,
-				&::after {
-					top: 1.2rem;
-					transform: skewx(0deg);
-				}
-
-				&::after {
-					left: 0rem;
-				}
-
-				&::before {
-					left: 7.75rem;
-				}
+				border: 0.1rem $blue solid;
+				background-color: $white;
+				color: $blue;
+				animation: pulse-blue 0.7s infinite;
 			}
 		}
-
-
-		// .btn-2 {
-		// 	letter-spacing: 0;
-		// }
-
-		// .btn-2:hover,
-		// .btn-2:active {
-		// 	letter-spacing: 5px;
-		// }
-
-		// .btn-2:after,
-		// .btn-2:before {
-		// 	backface-visibility: hidden;
-		// 	border: 1px solid rgba($dark, 0);
-		// 	bottom: 0px;
-		// 	content: " ";
-		// 	display: block;
-		// 	margin: 0 auto;
-		// 	position: relative;
-		// 	transition: all 280ms ease-in-out;
-		// 	width: 0;
-		// }
-
-		// .btn-2:hover:after,
-		// .btn-2:hover:before {
-		// 	backface-visibility: hidden;
-		// 	border-color: $dark;
-		// 	transition: width 350ms width;
-		// 	width: 80%;
-		// }
-
-		// .btn-2:hover:before {
-		// 	bottom: auto;
-		// 	top: 0;
-		// 	width: 80%;
-		// }
-
 	}
 
 	.device-container {
@@ -205,8 +155,6 @@
 		.header-content {
 			margin-bottom: 0;
 
-			text-align: left;
-
 			h1 {
 				font-size: 50px;
 			}
@@ -227,8 +175,6 @@
 
 		.header-content {
 			margin-bottom: 0;
-
-			text-align: left;
 
 			h1 {
 				font-size: 50px;
@@ -251,8 +197,6 @@
 		.header-content {
 			margin-bottom: 0;
 
-			text-align: left;
-
 			h1 {
 				font-size: 50px;
 			}
@@ -273,8 +217,6 @@
 
 		.header-content {
 			margin-bottom: 0;
-
-			text-align: left;
 
 			h1 {
 				font-size: 50px;

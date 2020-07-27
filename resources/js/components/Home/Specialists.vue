@@ -54,44 +54,44 @@ export default {
           order: 1,
           title: "Psicología Infantil",
           image: "img/specialists/infantil.jpg",
-          class: ""
+          class: "",
         },
         {
           title: "Bullying",
           image: "img/specialists/bullying.jpg",
-          class: ""
+          class: "",
         },
         {
           title: "Estrés Laboral",
           image: "img/specialists/estres.jpg",
-          class: ""
-        }
+          class: "",
+        },
       ],
       col2: [
         {
           title: "Psicología Online",
           image: "img/specialists/psicologia.jpg",
-          class: "card--specialist-max"
-        }
+          class: "card--specialist-max",
+        },
       ],
       col3: [
         {
           title: "Ruptura Emocional",
           image: "img/specialists/ruptura.jpg",
-          class: ""
+          class: "",
         },
         {
           title: "Depresión",
           image: "img/specialists/depresion.jpg",
-          class: ""
+          class: "",
         },
         {
           title: "Terapia Parejas",
           image: "img/specialists/parejas.jpg",
-          class: ""
-        }
-      ]
+          class: "",
+        },
+      ],
     };
-  }
+  },
 };
 </script>

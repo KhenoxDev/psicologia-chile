@@ -37,43 +37,43 @@ export default {
         321: {
           slideRatio: 1 / 2,
           visibleSlides: 1,
-          arrows: false
+          arrows: false,
         },
         376: {
           slideRatio: 1 / 2,
           visibleSlides: 1,
-          arrows: false
+          arrows: false,
         },
         426: {
           slideRatio: 1 / 2,
           visibleSlides: 1,
-          arrows: false
+          arrows: false,
         },
         769: {
           slideRatio: 1 / 4,
           visibleSlides: 2,
-          arrows: false
+          arrows: false,
         },
         1025: {
           slideRatio: 1 / 6,
           visibleSlides: 3,
-          arrows: false
+          arrows: false,
         },
         1445: {
           slideRatio: 1 / 8,
           visibleSlides: 4,
-          arrows: false
+          arrows: false,
         },
         1921: {
           slideRatio: 1 / 8,
           visibleSlides: 4,
-          arrows: false
+          arrows: false,
         },
         2561: {
           slideRatio: 1 / 8,
           visibleSlides: 4,
-          arrows: false
-        }
+          arrows: false,
+        },
       },
       slides: [
         {
@@ -81,38 +81,38 @@ export default {
           content: "Slide content.",
           image: "img/we_were_news/canal_mega.jpg",
           imageDesc: "mega",
-          urlNews: "#"
+          urlNews: "#",
         },
         {
           title: "Slide #2",
           content: "Slide content.",
           image: "img/we_were_news/canal_tvn.png",
           imageDesc: "tvn",
-          urlNews: "#"
+          urlNews: "#",
         },
         {
           title: "Slide #3",
           content: "Slide content.",
           image: "img/we_were_news/canal_trece.jpg",
           imageDesc: "trece",
-          urlNews: "#"
+          urlNews: "#",
         },
         {
           title: "Slide #4",
           content: "Slide content.",
           image: "img/we_were_news/canal_chilevision2.png",
           imageDesc: "chilevision",
-          urlNews: "#"
+          urlNews: "#",
         },
         {
           title: "Slide #5",
           content: "Slide content.",
           image: "img/we_were_news/canal_chilevision2.png",
           imageDesc: "chilevision",
-          urlNews: "#"
-        }
-      ]
+          urlNews: "#",
+        },
+      ],
     };
-  }
+  },
 };
 </script>

@@ -1,3 +1,6 @@
+@import "../../variables";
+@import "../../mixins";
+
 #mainPlans {
 
 	.vueperslides__bullet {
@@ -17,7 +20,7 @@
 
 	.vueperslides__bullet--active {
 		.default {
-			background-color: $orange-selected;
+			background-color: $orange;
 		}
 	}
 
@@ -31,7 +34,7 @@
 	}
 
 	.vueperslides__parallax-wrapper {
-		padding-bottom: 20rem !important;
+		padding-bottom: 30% !important;
 	}
 
 	#front {
@@ -67,7 +70,7 @@
 		.card-footer {
 			color: white;
 			font-size: 1.2rem;
-			background-color: $blue-official;
+			background-color: $blue;
 			font-weight: bold;
 			text-transform: uppercase;
 			border-radius: 0.5rem;
@@ -133,7 +136,7 @@
 				text-transform: uppercase;
 			}
 
-			background-color: $blue-official;
+			background-color: $blue;
 			border-radius: 0.5rem;
 			animation: pulse-blue 2s infinite;
 

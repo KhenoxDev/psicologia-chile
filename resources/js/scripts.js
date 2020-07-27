@@ -4,48 +4,23 @@
  * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-freelancer/blob/master/LICENSE)
  */
 global.$ = global.jQuery = require('jquery');
-(function ($) {
-	"use strict"; // Start of use strict
+$(function () {
+	"use strict";
+	var nav_offset_top = $('header').height() + 10;
 
-	// Smooth scrolling using jQuery easing
-	$('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
-		if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-			var target = $(this.hash);
-			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-			if (target.length) {
-				$('html, body').animate({
-					scrollTop: (target.offset().top - 48)
-				}, 1000, "easeInOutExpo");
-				return false;
-			}
-		}
-	});
-
-	// Closes responsive menu when a scroll trigger link is clicked
-	$('.js-scroll-trigger').click(function () {
-		$('.navbar-collapse').collapse('hide');
-	});
-
-	// Activate scrollspy to add active class to navbar items on scroll
-	$('body').scrollspy({
-		target: '#mainNav',
-		offset: 54
-	});
-
-	// Collapse Navbar
-	var navbarCollapse = function () {
-		var main = $("#mainNav");
-		if (main.length) {
-			if ($("#mainNav").offset().top > 100) {
-				$("#mainNav").addClass("navbar-shrink");
-			} else {
-				$("#mainNav").removeClass("navbar-shrink");
-			}
-		}
+	function navbarFixed() {
+		if ($('.header_area').length) {
+			$(window).scroll(function () {
+				var scroll = $(window).scrollTop();
+				if (scroll >= nav_offset_top) {
+					$(".header_area").addClass("navbar_fixed");
+					$(".float").css('display', 'flex');
+				} else {
+					$(".header_area").removeClass("navbar_fixed");
+					$(".float").css('display', 'none');
+				}
+			});
+		};
 	};
-	// Collapse now if page is not at top
-	navbarCollapse();
-	// Collapse the navbar when page is scrolled
-	$(window).scroll(navbarCollapse);
-
-})(jQuery); // End of use strict
+	navbarFixed();
+});

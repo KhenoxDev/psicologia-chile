@@ -1,27 +1,17 @@
-/* Voluntary */
-#mainVoluntary {
-	.voluntary--container {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: flex-end;
+@import "../../variables";
+@import "../../mixins";
 
+#mainAbout--banner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.banner--container {
 		span {
-			font-size: xx-large;
+			font-size: 4rem;
 			color: $white;
 			font-weight: bold;
-			margin-bottom: 0.5rem;
-		}
-
-		button {
-			background-color: $yellow-1;
-			color: $dark;
-			padding: 0.5rem 1rem;
-			text-transform: uppercase;
-			border: none;
-			border-radius: 0.5rem;
-			width: 11rem;
-			font-weight: bold;
+			text-shadow: 1px 1px 2px $dark;
 		}
 	}
 }

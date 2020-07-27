@@ -1,3 +1,6 @@
+@import "./variables";
+@import "./mixins";
+
 #mainSocial {
 	.float {
 		position: fixed;
@@ -15,10 +18,11 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		@include transition;
 
 		&:hover {
 			text-decoration: none;
-			color: $green-1;
+			color: $dark-green;
 			background-color: $white;
 			box-shadow: 1px 1px 10px $gray-2
 		}

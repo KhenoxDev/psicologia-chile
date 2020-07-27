@@ -77,38 +77,38 @@ export default {
         321: {
           slideRatio: 1 / 2,
           visibleSlides: 1,
-          arrows: false
+          arrows: false,
         },
         376: {
           slideRatio: 1 / 2,
           visibleSlides: 1,
-          arrows: false
+          arrows: false,
         },
         426: {
           slideRatio: 1 / 2,
           visibleSlides: 1,
-          arrows: false
+          arrows: false,
         },
         769: {
           slideRatio: 1 / 4,
           visibleSlides: 2,
-          arrows: false
+          arrows: false,
         },
         1025: {
           slideRatio: 1 / 6,
           visibleSlides: 3,
-          arrows: false
+          arrows: false,
         },
         1445: {
           slideRatio: 1 / 4,
           visibleSlides: 3,
-          arrows: false
+          arrows: false,
         },
         2561: {
           slideRatio: 1 / 4,
           visibleSlides: 3,
-          arrows: false
-        }
+          arrows: false,
+        },
       },
       slides: [
         {
@@ -120,7 +120,7 @@ export default {
           newsText: "El Síndrome de Burn Out.",
           newsAutor: "Evo",
           countComments: "3",
-          countLikes: "5"
+          countLikes: "5",
         },
         {
           title: "Slide #2",
@@ -131,7 +131,7 @@ export default {
           newsText: "La Autoestima y el Autoconocimiento.",
           newsAutor: "Matias",
           countComments: "0",
-          countLikes: "1"
+          countLikes: "1",
         },
         {
           title: "Slide #3",
@@ -142,7 +142,7 @@ export default {
           newsText: "El Lenguaje Humano.",
           newsAutor: "Matias",
           countComments: "0",
-          countLikes: "2"
+          countLikes: "2",
         },
         {
           title: "Slide #4",
@@ -153,7 +153,7 @@ export default {
           newsText: "Expertos Advierten Una Ola De Trastornos Postpandemia.",
           newsAutor: "Matias",
           countComments: "0",
-          countLikes: "0"
+          countLikes: "0",
         },
         {
           title: "Slide #5",
@@ -164,10 +164,10 @@ export default {
           newsText: "Lorem ipsum dolor sit amet.",
           newsAutor: "Matias",
           countComments: "0",
-          countLikes: "0"
-        }
-      ]
+          countLikes: "0",
+        },
+      ],
     };
-  }
+  },
 };
 </script>
