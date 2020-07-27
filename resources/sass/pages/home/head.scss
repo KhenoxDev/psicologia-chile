@@ -30,7 +30,8 @@
 			font-weight: bold;
 
 			span.typed-text {
-				color: $dark;
+				color: $orange;
+				text-shadow: 1px 1px 2px $gray-1;
 			}
 
 			span.cursor {
@@ -49,7 +50,7 @@
 
 		@keyframes cursorBlink {
 			49% {
-				background-color: $dark;
+				background-color: $orange;
 			}
 
 			50% {
