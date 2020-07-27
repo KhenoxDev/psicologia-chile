@@ -1,6 +1,16 @@
+* {
+	font-family: $font-family;
+}
+
 .title--section {
+
 	font-size: 1.7rem;
 	color: $dark;
+
+	strong {
+		font-size: 1.7rem;
+		color: $dark;
+	}
 }
 
 .bg--gray {
@@ -19,6 +29,7 @@
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-attachment: fixed;
 	padding: 1rem;
 	height: 20rem;
 	display: flex;

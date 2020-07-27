@@ -72,6 +72,14 @@
 					}
 				}
 
+				&.active {
+					.nav-link {
+						font-weight: bold;
+						border-bottom: 2px $orange solid;
+						padding-bottom: 0.5rem;
+					}
+				}
+
 				&:last-child {
 					margin-right: 0rem;
 				}

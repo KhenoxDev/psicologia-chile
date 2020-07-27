@@ -4,7 +4,7 @@
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container box_1620">
           <a class="navbar-brand logo_h" href="/">
-            <img src="img/navbar/logo.png" alt />
+            <img src="img/navbar/logo.png" alt="Psicología Chile" />
           </a>
           <button
             class="hamburger hamburger--collapse"
@@ -24,7 +24,12 @@
 
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav justify-content-end">
-              <li v-for="link in links" :key="link.id" class="nav-item">
+              <li
+                v-for="link in links"
+                :key="link.id"
+                class="nav-item"
+                :class="current == link.name ? 'active' : ''"
+              >
                 <a class="nav-link" :href="link.href">{{ link.text }}</a>
               </li>
             </ul>
@@ -42,33 +47,38 @@
 </template>
 <script>
 export default {
-	// props: {
-	// 	links: {
-	// 		type: Array,
-	// 		default: ''
-	// 	}
-	// },
+  props: {
+    current: {
+      type: String,
+      default: "",
+    },
+  },
   data() {
     return {
       active: false,
       links: [
         {
+          name: "about",
           href: "/quienes-somos",
           text: "Quiénes somos",
         },
         {
+          name: "work",
           href: "/como-funciona",
           text: "Cómo funciona",
         },
         {
+          name: "",
           href: "#",
           text: "Profesionales",
         },
         {
+          name: "",
           href: "#",
           text: "Especialidades",
         },
         {
+          name: "",
           href: "#",
           text: "Planes",
         },

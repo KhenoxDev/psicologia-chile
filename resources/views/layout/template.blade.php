@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div id="app">
-		<navbar-component links="{{ $toLinks ?? '' }}"></navbar-component>
+		<navbar-component current="{{ Route::currentRouteName() }}"></navbar-component>
 		<whatsapp-component></whatsapp-component>
 
 		@yield('content')
