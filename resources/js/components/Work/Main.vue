@@ -15,7 +15,9 @@
       <section-component
         v-for="image in imageSectionList"
         v-bind:key="image.id"
+        v-bind:header="image.title"
         v-bind:body="image.body"
+        v-bind:image="image.url"
       ></section-component>
     </div>
   </div>
@@ -39,15 +41,24 @@ export default {
       imageSectionList: [
         {
           id: 0,
-          title: "titulo prueba 1",
-          body: "cuerpa prueba 1",
+          title: "Completa el formulario para crear tu cuenta.",
+          body:
+            "Llena nuestro formulario para encontrar al psicólogo especializado para tí.",
           url: "img/work/section_1.svg",
         },
         {
           id: 1,
-          title: "titulo prueba 2",
-          body: "cuerpa prueba 2",
+          title: "Visualiza el catálogo de profesionales.",
+          body:
+            "Atendemos de lunes a domingo, en el horario que más te acomode.",
           url: "img/work/section_2.svg",
+        },
+        {
+          id: 2,
+          title: "Contrata a tu favorito.",
+          body:
+            "Escoge libremente el lugar que prefieras para iniciar tu sesión online.",
+          url: "img/work/section_3.svg",
         },
       ],
     };
