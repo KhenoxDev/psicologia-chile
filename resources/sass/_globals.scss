@@ -52,10 +52,11 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: flex-end;
+	background-attachment: fixed;
 }
 
 .bg--work-banner {
-	background-image: linear-gradient(to bottom, $white 15%, transparent 80%),
+	background-image: linear-gradient(rgba(244, 175, 52, 0.9) 10%, rgba(244, 175, 52, 0.1) 60%),
 		url('img/work/banner_work_2.jpg');
 }
 

@@ -1,0 +1,16 @@
+@import "../../variables";
+@import "../../mixins";
+
+#mainWork--banner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.banner--container {
+		span {
+			font-size: 4rem;
+			color: $white;
+			font-weight: bold;
+		}
+	}
+}

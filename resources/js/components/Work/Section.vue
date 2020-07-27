@@ -13,6 +13,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   props: {
@@ -51,41 +52,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-#mainWork--section {
-  display: flex;
-  justify-content: center;
-
-  .div--header--body {
-    display: flex;
-    flex-direction: column;
-
-    .div--header {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-      font-weight: bold;
-      width: 22rem;
-    }
-
-    .div--body {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-      text-align: left;
-      width: 22rem;
-      color: gray;
-    }
-  }
-
-  .div--image {
-    margin: 1rem 9rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-
-    img {
-      width: 80%;
-      height: auto;
-    }
-  }
-}
-</style>
