@@ -1,40 +1,35 @@
-// Fonts
+/* Main */
+@import 'variables';
+@import 'mixins';
+@import 'globals';
+@import 'socials';
+
+/* Layout */
+@import 'layout/module';
+
+/* Home */
+@import 'pages/home/module';
+
+/* About */
+@import 'pages/about/module';
+
+/* Fonts */
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Bootstrap
+/* Bootstrap */
 @import '~bootstrap/scss/bootstrap';
 
-//Core theme
-@import 'variables';
-@import 'global';
-@import 'navbar';
-@import 'head';
-@import 'steps';
-@import 'prevision';
-@import 'specialists';
-@import 'plans';
-@import 'professionals';
-@import 'voluntary';
-@import 'questions';
-@import 'news';
-@import 'footer';
-@import 'copyright';
-@import 'social';
-@import 'werenews';
-@import 'covenants';
+/* Vueper Sliders */
+@import "~vueperslides/dist/vueperslides.css";
 
-
-// Vueper Slider
-@import '~vueperslides/dist/vueperslides.css';
-
-//Font Awesome
+/* Font Awesome */
 @import '~@fortawesome/fontawesome-free/scss/brands';
 @import '~@fortawesome/fontawesome-free/scss/regular';
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
-//Hamburguers
+/* Hamburguers */
 @import '~hamburgers/_sass/hamburgers/hamburgers.scss';
 
-//Loading
+/* Loading */
 @import '~vue-loading-overlay/dist/vue-loading.css';

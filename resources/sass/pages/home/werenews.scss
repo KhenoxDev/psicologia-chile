@@ -1,4 +1,7 @@
-#mainCovenants {
+@import "../../variables";
+@import "../../mixins";
+
+#mainWeWereNews {
 
 	.vueperslides__bullet {
 		&:focus {
@@ -17,7 +20,7 @@
 
 	.vueperslides__bullet--active {
 		.default {
-			background-color: $orange-selected;
+			background-color: $orange;
 		}
 	}
 
@@ -30,7 +33,7 @@
 		}
 	}
 
-	.card--covenants {
+	.card--wewerenews {
 		margin: 1rem;
 		height: 100%;
 		display: flex;
@@ -42,14 +45,13 @@
 			width: 100%;
 			height: 7.8rem;
 			border-radius: 0.5rem;
-			box-shadow: 2px 1px 7px 0px rgba(0, 0, 0, 0.3);
 		}
 	}
 
 }
 
 @media only screen and (max-width: 320px) {
-	#mainCovenants {
+	#mainWeWereNews {
 		.vueperslides__parallax-wrapper {
 			padding-bottom: 60% ! important;
 		}
@@ -57,12 +59,12 @@
 }
 
 @media only screen and (min-width: 321px) and (max-width: 375px) {
-	#mainCovenants {
+	#mainWeWereNews {
 		.vueperslides__parallax-wrapper {
 			padding-bottom: 60% ! important;
 		}
 
-		.card--covenants {
+		.card--wewerenews {
 			img {
 				height: 8.8rem;
 			}
@@ -72,12 +74,12 @@
 }
 
 @media only screen and (min-width: 376px) and (max-width: 425px) {
-	#mainCovenants {
+	#mainWeWereNews {
 		.vueperslides__parallax-wrapper {
 			padding-bottom: 50% ! important;
 		}
 
-		.card--covenants {
+		.card--wewerenews {
 			img {
 				height: 9.8rem;
 			}
@@ -86,12 +88,12 @@
 }
 
 @media only screen and (min-width: 426px) and (max-width: 768px) {
-	#mainCovenants {
+	#mainWeWereNews {
 		.vueperslides__parallax-wrapper {
 			padding-bottom: 26% ! important;
 		}
 
-		.card--covenants {
+		.card--wewerenews {
 			img {
 				height: 9.8rem;
 			}
@@ -101,12 +103,12 @@
 
 
 @media only screen and (min-width: 992px) and (max-width: 1024px) {
-	#mainCovenants {
+	#mainWeWereNews {
 		.vueperslides__parallax-wrapper {
 			padding-bottom: 17% ! important;
 		}
 
-		.card--covenants {
+		.card--wewerenews {
 			img {
 				height: 8.8rem;
 			}
@@ -115,12 +117,12 @@
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
-	#mainCovenants {
+	#mainWeWereNews {
 		.vueperslides__parallax-wrapper {
 			padding-bottom: 15.5% ! important;
 		}
 
-		.card--covenants {
+		.card--wewerenews {
 			img {
 				height: 8.8rem;
 			}

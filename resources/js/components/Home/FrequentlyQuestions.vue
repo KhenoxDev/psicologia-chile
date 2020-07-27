@@ -11,7 +11,7 @@
       slide-multiple
       infinite
       3d
-	  :touchable="false"
+      :touchable="false"
       :breakpoints="breakpoints"
     >
       <vueper-slide v-for="(slide, i) in slides" :index="i" :key="slide.id">
@@ -49,74 +49,74 @@ export default {
         321: {
           slideRatio: 1 / 2,
           visibleSlides: 1,
-          arrows: false
+          arrows: false,
         },
         376: {
           slideRatio: 1 / 2,
           visibleSlides: 1,
-          arrows: false
+          arrows: false,
         },
         426: {
           slideRatio: 1 / 2,
           visibleSlides: 1,
-          arrows: false
+          arrows: false,
         },
         769: {
           slideRatio: 1 / 4,
           visibleSlides: 2,
-          arrows: false
+          arrows: false,
         },
         1025: {
           slideRatio: 1 / 6,
           visibleSlides: 3,
-          arrows: false
+          arrows: false,
         },
         1445: {
           slideRatio: 1 / 8,
           visibleSlides: 4,
-          arrows: false
+          arrows: false,
         },
         2561: {
           slideRatio: 1 / 8,
           visibleSlides: 4,
-          arrows: false
-        }
+          arrows: false,
+        },
       },
       slides: [
         {
           descFAQ: "Tengo crisis de pánico muy seguido ¿qué puedo hacer?",
-          comments: 100
+          comments: 100,
         },
         {
           descFAQ: "¿Qué es la terapia psicológica online?",
-          comments: 109
+          comments: 109,
         },
         {
           descFAQ:
             "Cómo puedo superar mis miedos, aceptarme y enfrentar la vida",
-          comments: 2
+          comments: 2,
         },
         {
           descFAQ:
             "¿Cuál es la principal diferencia de la terapia online, versus la terapia psicológica tradicional?",
-          comments: 6
+          comments: 6,
         },
         {
           descFAQ: "¿Por qué es más económica?",
-          comments: 4
+          comments: 4,
         },
         {
           descFAQ: "¿Cómo es la confidencialidad de la terapia?",
-          comments: 32
+          comments: 32,
         },
         {
           descFAQ:
             "¿Cómo es el proceso de selección de nuestros profesionales?",
-          comments: 34
-        }
-      ]
+          comments: 34,
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 

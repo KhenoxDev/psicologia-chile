@@ -38,78 +38,78 @@ export default {
         321: {
           slideRatio: 1 / 2,
           visibleSlides: 1,
-          arrows: false
+          arrows: false,
         },
         376: {
           slideRatio: 1 / 2,
           visibleSlides: 1,
-          arrows: false
+          arrows: false,
         },
         426: {
           slideRatio: 1 / 2,
           visibleSlides: 1,
-          arrows: false
+          arrows: false,
         },
         769: {
           slideRatio: 1 / 4,
           visibleSlides: 2,
-          arrows: false
+          arrows: false,
         },
         1025: {
           slideRatio: 1 / 6,
           visibleSlides: 3,
-          arrows: false
+          arrows: false,
         },
         1445: {
           slideRatio: 1 / 8,
           visibleSlides: 3,
-          arrows: false
+          arrows: false,
         },
         2561: {
           slideRatio: 1 / 8,
           visibleSlides: 3,
-          arrows: false
-        }
+          arrows: false,
+        },
       },
       slides: [
         {
           title: "Slide #1",
           content: "Slide content.",
           image: "img/Logo_Banmedica.png",
-          imageDesc: "Banmedica"
+          imageDesc: "Banmedica",
         },
         {
           title: "Slide #2",
           content: "Slide content.",
           image: "img/Logo_Fonasa.svg",
-          imageDesc: "Fonasa"
+          imageDesc: "Fonasa",
         },
         {
           title: "Slide #3",
           content: "Slide content.",
           image: "img/Logo_Colmena_2.jpg",
-          imageDesc: "Colmena"
+          imageDesc: "Colmena",
         },
         {
           title: "Slide #4",
           content: "Slide content.",
           image: "img/Logo_Masvida.png",
-          imageDesc: "Masvida"
+          imageDesc: "Masvida",
         },
         {
           title: "Slide #5",
           content: "Slide content.",
           image: "img/Logo_Cruz_Blanca.png",
-          imageDesc: "Cruzblanca"
+          imageDesc: "Cruzblanca",
         },
         {
           title: "Slide #6",
           content: "Slide content.",
           image: "img/Logo_Consalud.png",
-          imageDesc: "Consalud"
-        }
-      ]
+          imageDesc: "Consalud",
+        },
+      ],
     };
-  }
+  },
 };
 </script>

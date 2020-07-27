@@ -9,17 +9,12 @@
 </head>
 <body>
 	<div id="app">
-		<navbar-component></navbar-component>
+		<navbar-component current="{{ Route::currentRouteName() }}"></navbar-component>
 		<whatsapp-component></whatsapp-component>
 
 		@yield('content')
 
-		<div class="bg--white">
-			<footer-component></footer-component>
-		</div>
-		<div class="bg--dark">
-			<copyright-component></copyright-component>
-		</div>
+		<footer-component></footer-component>
 	</div>
 	<script src="{{ asset('js/app.js') }}"></script>
 </body>

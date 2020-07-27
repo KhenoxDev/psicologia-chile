@@ -2,7 +2,6 @@
   <div>
     <div
       @click="isToggle=!isToggle"
-      v-bind:style="{backgroundColor: colorFront, color: colorTextFront}"
       v-show="!isToggle"
       class="animated flipInX flashcard"
       :class="promotion ? 'promotion--show' : ''"
@@ -11,7 +10,7 @@
     </div>
     <div
       @click="isToggle=!isToggle"
-      v-bind:style="{backgroundColor: colorBack, color: colorTextBack}"
+      v-bind:style="{backgroundColor: colorBack}"
       v-show="isToggle"
       class="animated flipInX flashcard"
     >
@@ -23,23 +22,23 @@
 export default {
   data() {
     return {
-      isToggle: false
+      isToggle: false,
     };
   },
   props: {
     colorFront: {
       type: String,
-      default: "white"
+      default: "white",
     },
     colorBack: {
       type: String,
-      default: "#2ecc71"
+      default: "#2ecc71",
     },
     promotion: {
       type: Boolean,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>

@@ -1,4 +1,6 @@
-/* Voluntary */
+@import "../../variables";
+@import "../../mixins";
+
 #mainVoluntary {
 	.voluntary--container {
 		display: flex;
@@ -14,7 +16,7 @@
 		}
 
 		button {
-			background-color: $yellow-1;
+			background-color: $dark-yellow;
 			color: $dark;
 			padding: 0.5rem 1rem;
 			text-transform: uppercase;

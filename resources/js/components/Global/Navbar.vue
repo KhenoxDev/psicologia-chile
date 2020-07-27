@@ -1,67 +1,84 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <img src="img/navbar/logo.png" alt="Logo" />
-      </a>
-      <button
-        class="hamburger hamburger--collapse"
-        :class="{'is-active': active}"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarResponsive"
-        aria-controls="navbarResponsive"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-        @click="isActive"
-      >
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item" v-for="link in links" :key="link.id">
-            <a class="nav-link js-scroll-trigger" :href="link.href">{{ link.text }}</a>
-          </li>
-          <div class="vertical"></div>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="login--link" href="#" target="_blank" rel="noopener noreferrer">
-              <img src="img/navbar/usuario.svg" alt />
-              <span>
-                Ingresa
-                <strong>aquí</strong>
-              </span>
-            </a>
-          </li>
-        </ul>
-      </div>
+  <header class="header_area">
+    <div class="main_menu">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container box_1620">
+          <a class="navbar-brand logo_h" href="/">
+            <img src="img/navbar/logo.png" alt="Psicología Chile" />
+          </a>
+          <button
+            class="hamburger hamburger--collapse"
+            :class="{'is-active': active}"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            @click="isActive"
+          >
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+
+          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+            <ul class="nav navbar-nav menu_nav justify-content-end">
+              <li
+                v-for="link in links"
+                :key="link.id"
+                class="nav-item"
+                :class="current == link.name ? 'active' : ''"
+              >
+                <a class="nav-link" :href="link.href">{{ link.text }}</a>
+              </li>
+            </ul>
+
+            <ul class="nav-right text-center">
+              <li>
+                <a href="#">Ingresa aquí</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </div>
-  </nav>
+  </header>
 </template>
 <script>
 export default {
+  props: {
+    current: {
+      type: String,
+      default: "",
+    },
+  },
   data() {
     return {
       active: false,
       links: [
         {
+          name: "about",
           href: "/quienes-somos",
-          text: "Quienes somos",
+          text: "Quiénes somos",
         },
         {
+          name: "work",
           href: "/como-funciona",
           text: "Cómo funciona",
         },
         {
+          name: "",
           href: "#",
           text: "Profesionales",
         },
         {
+          name: "",
           href: "#",
           text: "Especialidades",
         },
         {
+          name: "",
           href: "#",
           text: "Planes",
         },

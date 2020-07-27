@@ -1,3 +1,6 @@
+@import "../../variables";
+@import "../../mixins";
+
 #mainSteps {
 	.step--container-button {
 		display: flex;
@@ -114,7 +117,7 @@
 
 		.vueperslides__bullet--active {
 			.default {
-				background-color: $orange-selected;
+				background-color: $orange;
 			}
 		}
 
@@ -178,7 +181,7 @@
 
 		.vueperslides__bullet--active {
 			.default {
-				background-color: $orange-selected;
+				background-color: $orange;
 			}
 		}
 
@@ -242,7 +245,7 @@
 
 		.vueperslides__bullet--active {
 			.default {
-				background-color: $orange-selected;
+				background-color: $orange;
 			}
 		}
 
@@ -306,7 +309,7 @@
 
 		.vueperslides__bullet--active {
 			.default {
-				background-color: $orange-selected;
+				background-color: $orange;
 			}
 		}
 
@@ -370,7 +373,7 @@
 
 		.vueperslides__bullet--active {
 			.default {
-				background-color: $orange-selected;
+				background-color: $orange;
 			}
 		}
 

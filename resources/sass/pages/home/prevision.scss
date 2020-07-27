@@ -1,3 +1,6 @@
+@import "../../variables";
+@import "../../mixins";
+
 #mainPrevision {
 	.card--prevision {
 		margin: 1rem;
@@ -30,7 +33,7 @@
 
 	.vueperslides__bullet--active {
 		.default {
-			background-color: $orange-selected;
+			background-color: $orange;
 		}
 	}
 

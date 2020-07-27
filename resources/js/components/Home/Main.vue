@@ -37,7 +37,6 @@
 <script>
 import LoadingComponent from "vue-loading-overlay";
 import Masthead from "./Masthead";
-import Carousel from "./Carousel";
 import ThreeSteps from "./ThreeSteps";
 import Prevision from "./Prevision";
 import Specialists from "./Specialists";
@@ -59,7 +58,6 @@ export default {
   components: {
     LoadingComponent,
     Masthead,
-    Carousel,
     ThreeSteps,
     Prevision,
     Specialists,

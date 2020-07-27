@@ -1,3 +1,6 @@
+@import "../../variables";
+@import "../../mixins";
+
 #mainSpecialist {
 	.cards--container {
 		display: flex;
@@ -42,7 +45,7 @@
 					text-transform: uppercase;
 					font-weight: bold;
 					color: $dark;
-					background-color: $yellow-1;
+					background-color: $dark-yellow;
 					border-radius: 0.5rem;
 
 					&:hover {

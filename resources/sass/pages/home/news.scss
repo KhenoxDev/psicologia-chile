@@ -1,3 +1,6 @@
+@import "../../variables";
+@import "../../mixins";
+
 #mainNews {
 	.vueperslides__bullet {
 		&:focus {
@@ -16,7 +19,7 @@
 
 	.vueperslides__bullet--active {
 		.default {
-			background-color: $orange-selected;
+			background-color: $orange;
 		}
 	}
 
@@ -41,7 +44,7 @@
 		/* inicio wave */
 		/* primera tarjeta */
 		.wave--container--first {
-			background-image: url('img/news/wave2.svg');
+			background-image: url('../../../img/news/wave2.svg');
 			background-position: bottom;
 			background-repeat: no-repeat;
 			background-size: 200rem;
@@ -106,7 +109,7 @@
 
 		/* resto de tarjetas */
 		.wave--container--another {
-			background-image: url('img/news/wave.svg');
+			background-image: url('../../../img/news/wave.svg');
 			background-position: bottom;
 			background-repeat: no-repeat;
 			background-size: 200rem;
