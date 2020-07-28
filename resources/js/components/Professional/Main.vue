@@ -11,18 +11,32 @@
     <div class="bg--section bg--professional-banner">
       <banner banner-identification="mainProfessional--banner" banner-title="Profesionales"></banner>
     </div>
-    <div>
-      <!-- <professional
-        v-for="professional in professionals"
-        :key="professional.id"
-        :photo="professional.foto"
-      ></professional>-->
+    <div class="bg--white">
+      <div class="section--professional">
+        <div class="d-flex flex-row flex-wrap header--professional">
+          <div class="d-flex mr-auto mb-2">
+            <button class="btn btn-warning">Selecciona tus preferencias</button>
+          </div>
+          <div class="d-flex flex-row justify-content-between align-items-center">
+            <span class="mr-3">Busca a tu profesional</span>
+            <autocomplete
+              :items="items"
+              v-model="item"
+              :get-label="getLabel"
+              :component-item="template"
+              @update-items="updateItems"
+            ></autocomplete>
+          </div>
+        </div>
+        <hr />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import LoadingComponent from "vue-loading-overlay";
+import Autocomplete from "v-autocomplete";
 import Banner from "../Reusable/Banner";
 import Professional from "./Professional";
 
@@ -32,10 +46,12 @@ export default {
       isLoading: true,
       fullPage: true,
       professionals: [],
+      professional: {},
     };
   },
   components: {
     LoadingComponent,
+    Autocomplete,
     Banner,
     Professional,
   },
@@ -60,6 +76,14 @@ export default {
         .catch((e) => {
           console.log(e);
         });
+    },
+    getLabel(item) {
+      return item.nombreCompleto;
+    },
+    updateItems(text) {
+      yourGetItemsMethod(text).then((response) => {
+        this.items = response;
+      });
     },
   },
 };
