@@ -2,15 +2,32 @@
 @import "../../mixins";
 
 #listProfessional--section {
-	width: 20rem;
+	width: 21rem;
 
 	.listProfessional--card {
 		display: flex;
-		/* flex-direction: column; */
 		font-size: 1rem;
 
 		img {
 			border-radius: 0.5rem;
+			border-bottom: groove;
+			border-color: blue;
+			height: 100%;
+			width: 100%;
+		}
+
+	}
+
+	.div--nameprofessional {
+		span {
+			color: black;
+			font-size: 22px;
+			font-family: "Work Sans",
+				Arial,
+				sans-serif;
+			justify-content: center;
+			display: flex;
+			line-height: 1.8;
 		}
 	}
 }

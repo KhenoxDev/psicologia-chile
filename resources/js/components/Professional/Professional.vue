@@ -5,11 +5,12 @@
         <img class :src="photo" alt />
       </div>
 
-      <!-- <div>{{ nameProfessional }}</div>
+      <!-- <div>{{ titleProfessional }}</div> -->
 
-      <div>{{ titleProfessional }}</div>
-
-      <div>Botón</div>-->
+      <!-- <div>Botón</div> -->
+    </div>
+    <div class="div--nameprofessional">
+      <span>{{ nameProfessional }}</span>
     </div>
   </div>
 </template>

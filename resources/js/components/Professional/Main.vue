@@ -11,12 +11,13 @@
     <div class="bg--section bg--professional-banner">
       <banner banner-identification="mainProfessional--banner" banner-title="Profesionales"></banner>
     </div>
-    <div class="bg--white d-flex flex-row flex-wrap">
+    <div class="bg--white bg--flex">
       <professional
         v-for="professional in professionals"
         :key="professional.id"
         v-bind:photo="professional.foto"
         v-bind:name-professional="professional.nombreCompleto"
+        v-bind:title-professional="professional.profesion"
       ></professional>
     </div>
   </div>
@@ -56,12 +57,18 @@ export default {
         .get("https://online.psicologiachile.cl/gateway-json.php?service=staff")
         .then((response) => {
           this.professionals = response.data.items;
+          /* this.professionals.forEach((element) => {
+            element.profesion = substr(element.profesion, 1, 4);
+          }); */
           console.log(this.professionals);
         })
         .catch((e) => {
           console.log(e);
         });
     },
+    /* getSubstr: function (value) {
+      return substr(value, 1, 6);
+    }, */
   },
 };
 </script>
