@@ -11,12 +11,20 @@
     <div class="bg--section bg--professional-banner">
       <banner banner-identification="mainProfessional--banner" banner-title="Profesionales"></banner>
     </div>
+    <div>
+      <!-- <professional
+        v-for="professional in professionals"
+        :key="professional.id"
+        :photo="professional.foto"
+      ></professional>-->
+    </div>
   </div>
 </template>
 
 <script>
 import LoadingComponent from "vue-loading-overlay";
 import Banner from "../Reusable/Banner";
+import Professional from "./Professional";
 
 export default {
   data() {
@@ -29,6 +37,7 @@ export default {
   components: {
     LoadingComponent,
     Banner,
+    Professional,
   },
   mounted() {
     this.onLoad();
@@ -46,6 +55,7 @@ export default {
         .get("https://online.psicologiachile.cl/gateway-json.php?service=staff")
         .then((response) => {
           this.professionals = response.data.items;
+          console.log(this.professionals);
         })
         .catch((e) => {
           console.log(e);
