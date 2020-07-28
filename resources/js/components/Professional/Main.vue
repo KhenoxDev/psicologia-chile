@@ -11,12 +11,13 @@
     <div class="bg--section bg--professional-banner">
       <banner banner-identification="mainProfessional--banner" banner-title="Profesionales"></banner>
     </div>
-    <div>
-      <!-- <professional
+    <div class="bg--white d-flex flex-row flex-wrap">
+      <professional
         v-for="professional in professionals"
         :key="professional.id"
-        :photo="professional.foto"
-      ></professional>-->
+        v-bind:photo="professional.foto"
+        v-bind:name-professional="professional.nombreCompleto"
+      ></professional>
     </div>
   </div>
 </template>
