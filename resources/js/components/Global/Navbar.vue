@@ -68,8 +68,8 @@ export default {
           text: "Cómo funciona",
         },
         {
-          name: "",
-          href: "#",
+          name: "professional",
+          href: "/profesionales",
           text: "Profesionales",
         },
         {

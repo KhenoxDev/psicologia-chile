@@ -9,7 +9,7 @@
       ></loading-component>
     </transition>
     <div class="bg--section bg--about-banner">
-      <banner></banner>
+      <banner banner-identification="mainAbout--banner" banner-title="¿Quiénes somos?"></banner>
     </div>
     <div class="bg--white container d-lg-flex justify-content-between">
       <feature
@@ -25,7 +25,7 @@
 
 <script>
 import LoadingComponent from "vue-loading-overlay";
-import Banner from "./Banner";
+import Banner from "../Reusable/Banner";
 import Feature from "./Feature";
 
 export default {

@@ -9,7 +9,7 @@
       ></loading-component>
     </transition>
     <div class="bg--section bg--work-banner">
-      <banner></banner>
+      <banner banner-identification="mainWork--banner" banner-title="¿Cómo Funciona?"></banner>
     </div>
     <div class="bg--white">
       <section-component
@@ -25,7 +25,7 @@
 
 <script>
 import LoadingComponent from "vue-loading-overlay";
-import Banner from "./Banner.vue";
+import Banner from "../Reusable/Banner";
 import SectionComponent from "./Section.vue";
 
 export default {

@@ -24,3 +24,7 @@ Route::get('/quienes-somos', function () {
 Route::get('/como-funciona', function () {
 	return view('pages.work');
 })->name('work');
+
+Route::get('/profesionales', function () {
+	return view('pages.professional');
+})->name('professional');

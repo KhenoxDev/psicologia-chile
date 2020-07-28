@@ -56,10 +56,16 @@
 }
 
 .bg--work-banner {
-	background-image: linear-gradient(rgba(244, 175, 52, 0.9) 10%, rgba(244, 175, 52, 0.1) 60%),
+	background-image: linear-gradient(rgba(244, 175, 52, 0.5) 5%, rgba(244, 175, 52, 0.1) 70%),
 		url('img/work/banner_work_2.jpg');
 }
 
 .bg--about-banner {
-	background-image: linear-gradient(rgba(244, 175, 52, 0.9) 10%, rgba(244, 175, 52, 0.1) 60%), url('../../../img/about/about.jpg');
+	background-image: linear-gradient(rgba(244, 175, 52, 0.5) 5%, rgba(244, 175, 52, 0.1) 70%),
+		url('../../../img/about/about.jpg');
+}
+
+.bg--professional-banner {
+	background-image: linear-gradient(rgba(244, 175, 52, 0.5) 5%, rgba(244, 175, 52, 0.1) 70%),
+		url('../../../img/about/about.jpg');
 }
