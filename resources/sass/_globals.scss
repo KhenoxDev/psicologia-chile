@@ -55,6 +55,11 @@
 	background-attachment: fixed;
 }
 
+.bg--flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+
 .bg--work-banner {
 	background-image: linear-gradient(rgba(244, 175, 52, 0.5) 5%, rgba(244, 175, 52, 0.1) 70%),
 		url('img/work/banner_work_2.jpg');

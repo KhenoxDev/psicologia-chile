@@ -44,7 +44,13 @@
         </div>
         <hr />
         <div class="content--professional">
-          <professional v-for="list in filteredList" :key="list.id" :photo="list.foto"></professional>
+          <professional
+            v-for="list in filteredList"
+            :key="list.id"
+            :photo="list.foto"
+            :name-professional="list.nombreCompleto"
+            :title-professional="list.profesion"
+          ></professional>
           <div class="no-results" v-show="filteredList.length == 0">
             <!-- TODO: Dar estilo a mensaje de No Results -->
             <span>No se encontraron resultados</span>

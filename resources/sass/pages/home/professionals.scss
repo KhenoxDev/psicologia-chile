@@ -283,7 +283,7 @@
 @media only screen and (max-width: 320px) {
 	#mainProfessionals {
 		.vueperslides__parallax-wrapper {
-			padding: 7rem;
+			padding-bottom: 95% !important;
 		}
 
 		.card--featuredprofessionals {
@@ -372,7 +372,7 @@
 @media only screen and (min-width: 321px) and (max-width: 375px) {
 	#mainProfessionals {
 		.vueperslides__parallax-wrapper {
-			padding: 9rem;
+			padding-bottom: 85% !important;
 		}
 
 		.card--featuredprofessionals {
@@ -719,7 +719,7 @@
 @media only screen and (min-width: 992px) and (max-width: 1024px) {
 	#mainProfessionals {
 		.vueperslides__parallax-wrapper {
-			padding: 8rem;
+			padding-bottom: 25% !important;
 		}
 
 		.card--featuredprofessionals {
@@ -760,7 +760,7 @@
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
 	#mainProfessionals {
 		.vueperslides__parallax-wrapper {
-			padding: 8rem;
+			padding-bottom: 25% !important;
 		}
 
 		.card--featuredprofessionals {
