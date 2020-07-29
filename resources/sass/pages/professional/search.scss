@@ -1,6 +1,48 @@
 @import "../../variables";
 @import "../../mixins";
 
-.search--professional-input {
-	background-color: $gray-3;
+.section--professional {
+	.header--professional {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+
+		.filter--container {
+			display: flex;
+			margin-right: auto;
+			align-items: center;
+
+			.btn--filter {
+				background-color: $orange;
+				color: $dark;
+				font-weight: bold;
+				font-size: 1rem;
+				padding: 0.5rem 1rem;
+			}
+
+			.vue-simple-drawer {
+				color: $dark;
+				background: $white;
+				width: 25%;
+			}
+		}
+
+		.search--container {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+
+	.content--professional {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		.no-results {
+			span {}
+		}
+	}
 }

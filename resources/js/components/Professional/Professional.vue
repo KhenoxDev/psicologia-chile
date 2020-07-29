@@ -1,5 +1,5 @@
 <template>
-  <div id="listProfessional--section" class="container mt-4">
+  <div id="listProfessional--section" class="mt-4">
     <div class="listProfessional--card">
       <div>
         <img class :src="photo" alt />

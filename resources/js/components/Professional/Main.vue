@@ -12,18 +12,23 @@
       <banner banner-identification="mainProfessional--banner" banner-title="Profesionales"></banner>
     </div>
     <div class="bg--white">
-      <div class="section--professional">
-        <div class="d-flex flex-row flex-wrap header--professional">
-          <div class="d-flex mr-auto mb-2">
-            <button class="btn btn-warning">Selecciona tus preferencias</button>
+      <div class="section--professional container">
+        <div class="header--professional">
+          <div class="filter--container">
+            <button class="btn btn--filter" @click="toggle">
+              <i class="fas fa-filter"></i>
+              Filtrar
+            </button>
+            <Drawer @close="toggle" align="left" :closeable="true">
+              <div v-if="open">content here</div>
+            </Drawer>
           </div>
-          <div class="d-flex flex-row justify-content-between align-items-center">
-            <span class="mr-3">Busca a tu profesional</span>
+          <div class="search--container">
             <input
-              class="form-control"
+              class="form-control mr-3"
               v-model="search"
               type="text"
-              placeholder="Buscar ..."
+              placeholder="Busca a tu profesional"
               v-on:keyup.enter="getFilterData"
             />
             <select
@@ -37,19 +42,14 @@
             </select>
           </div>
         </div>
+        <hr />
         <div class="content--professional">
-          <div
-            class="d-flex flex-row flex-wrap"
-            :class="filteredList.length == 0 ? 'justify-content-center' : ''"
-          >
-            <professional v-for="list in filteredList" :key="list.id" :photo="list.foto"></professional>
-            <div v-show="filteredList.length == 0">
-              <!-- TODO: Dar estilo a mensaje de No Results -->
-              <span>No se encontraron resultados</span>
-            </div>
+          <professional v-for="list in filteredList" :key="list.id" :photo="list.foto"></professional>
+          <div class="no-results" v-show="filteredList.length == 0">
+            <!-- TODO: Dar estilo a mensaje de No Results -->
+            <span>No se encontraron resultados</span>
           </div>
         </div>
-        <hr />
       </div>
     </div>
   </div>
@@ -59,6 +59,7 @@
 import LoadingComponent from "vue-loading-overlay";
 import Banner from "../Reusable/Banner";
 import Professional from "./Professional";
+import Drawer from "vue-simple-drawer";
 
 export default {
   data() {
@@ -68,12 +69,14 @@ export default {
       professionals: [],
       search: "",
       sortKey: "precioASC",
+      open: false,
     };
   },
   components: {
     LoadingComponent,
     Banner,
     Professional,
+    Drawer,
   },
   mounted() {
     this.onLoad();
@@ -101,6 +104,9 @@ export default {
       } catch (error) {
         console.log(error);
       }
+    },
+    toggle() {
+      this.open = !this.open;
     },
   },
   computed: {
