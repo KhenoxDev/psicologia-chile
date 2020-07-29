@@ -11,14 +11,25 @@
     <div class="bg--section bg--professional-banner">
       <banner banner-identification="mainProfessional--banner" banner-title="Profesionales"></banner>
     </div>
-    <div class="bg--white bg--flex">
-      <professional
-        v-for="professional in professionals"
-        :key="professional.id"
-        v-bind:photo="professional.foto"
-        v-bind:name-professional="professional.nombreCompleto"
-        v-bind:title-professional="professional.profesion"
-      ></professional>
+    <div class="bg--white">
+      <div class="section--professional container">
+        <div class="d-flex flex-row flex-wrap header--professional">
+          <div class="d-flex mr-auto mb-2"></div>
+          <div class="d-flex flex-row justify-content-between align-items-center"></div>
+        </div>
+        <div class="content--professional">
+          <div class="d-flex flex-row flex-wrap justify-content-center">
+            <professional
+              v-for="professional in professionals"
+              :key="professional.id"
+              v-bind:photo="professional.foto"
+              v-bind:name-professional1="professional.nombreCompleto"
+              v-bind:title-professional="professional.profesion"
+            ></professional>
+          </div>
+        </div>
+        <hr />
+      </div>
     </div>
   </div>
 </template>
@@ -69,6 +80,23 @@ export default {
     /* getSubstr: function (value) {
       return substr(value, 1, 6);
     }, */
+    /* removeCharacter: function (value) {
+      return replace("Carmen", "");
+	}, */
+    /* myFunction: function () {
+      this.message = this.message.replace("Carmen", "");
+    }, */
   },
+  /* computed: {
+    processedHtml() {
+      let html = this.html.replace(
+        "[Placeholder]",
+        "<professional></professional>"
+      );
+      return {
+        template: "<div>" + html + "</div>",
+      };
+    },
+  }, */
 };
 </script>
