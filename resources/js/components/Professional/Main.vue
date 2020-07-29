@@ -19,13 +19,34 @@
           </div>
           <div class="d-flex flex-row justify-content-between align-items-center">
             <span class="mr-3">Busca a tu profesional</span>
-            <autocomplete
-              :items="items"
-              v-model="item"
-              :get-label="getLabel"
-              :component-item="template"
-              @update-items="updateItems"
-            ></autocomplete>
+            <input
+              class="form-control"
+              v-model="search"
+              type="text"
+              placeholder="Buscar ..."
+              v-on:keyup.enter="getFilterData"
+            />
+            <select
+              class="form-control"
+              v-model="sortKey"
+              placeholder="Ordenar"
+              v-on:change="getProfessionals"
+            >
+              <option value="precioASC">Precio ascendente</option>
+              <option value="precioDESC">Precio descendente</option>
+            </select>
+          </div>
+        </div>
+        <div class="content--professional">
+          <div
+            class="d-flex flex-row flex-wrap"
+            :class="filteredList.length == 0 ? 'justify-content-center' : ''"
+          >
+            <professional v-for="list in filteredList" :key="list.id" :photo="list.foto"></professional>
+            <div v-show="filteredList.length == 0">
+              <!-- TODO: Dar estilo a mensaje de No Results -->
+              <span>No se encontraron resultados</span>
+            </div>
           </div>
         </div>
         <hr />
@@ -36,7 +57,6 @@
 
 <script>
 import LoadingComponent from "vue-loading-overlay";
-import Autocomplete from "v-autocomplete";
 import Banner from "../Reusable/Banner";
 import Professional from "./Professional";
 
@@ -46,12 +66,12 @@ export default {
       isLoading: true,
       fullPage: true,
       professionals: [],
-      professional: {},
+      search: "",
+      sortKey: "precioASC",
     };
   },
   components: {
     LoadingComponent,
-    Autocomplete,
     Banner,
     Professional,
   },
@@ -66,23 +86,29 @@ export default {
         this.isLoading = false;
       }, 2000);
     },
-    getProfessionals() {
-      axios
-        .get("https://online.psicologiachile.cl/gateway-json.php?service=staff")
-        .then((response) => {
-          this.professionals = response.data.items;
-          console.log(this.professionals);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
+    async getProfessionals() {
+      this.professionals = [];
+      this.onLoad();
+      const api =
+        "https://online.psicologiachile.cl/gateway-json.php?service=staff&filtro=" +
+        this.sortKey;
+
+      try {
+        let response = await axios.get(api);
+        for (let index = 0; index < response.data.items.length; index++) {
+          this.professionals.push(response.data.items[index]);
+        }
+      } catch (error) {
+        console.log(error);
+      }
     },
-    getLabel(item) {
-      return item.nombreCompleto;
-    },
-    updateItems(text) {
-      yourGetItemsMethod(text).then((response) => {
-        this.items = response;
+  },
+  computed: {
+    filteredList() {
+      return this.professionals.filter((professional) => {
+        return professional.nombreCompleto
+          .toLowerCase()
+          .includes(this.search.toLowerCase());
       });
     },
   },

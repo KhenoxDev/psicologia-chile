@@ -91,7 +91,7 @@
 		.main_menu {
 			position: fixed;
 			width: 100%;
-			top: -9%;
+			top: -70px;
 			left: 0;
 			right: 0;
 			background: $white;
@@ -184,12 +184,6 @@
 				font-size: xx-large;
 			}
 		}
-
-		&.navbar_fixed {
-			.main_menu {
-				top: -10%;
-			}
-		}
 	}
 }
 
@@ -253,12 +247,6 @@
 			.fa-bars {
 				color: $dark;
 				font-size: xx-large;
-			}
-		}
-
-		&.navbar_fixed {
-			.main_menu {
-				top: -10%;
 			}
 		}
 	}
@@ -326,12 +314,6 @@
 				font-size: xx-large;
 			}
 		}
-
-		&.navbar_fixed {
-			.main_menu {
-				top: -10%;
-			}
-		}
 	}
 }
 
@@ -397,22 +379,11 @@
 				font-size: xx-large;
 			}
 		}
-
-		&.navbar_fixed {
-			.main_menu {
-				top: -10%;
-			}
-		}
 	}
 }
 
 @include screen(769px, 991px) {
 	.header_area {
-		&.navbar_fixed {
-			.main_menu {
-				top: -10%;
-			}
-		}
 
 		.menu_nav {
 			text-align: center;
@@ -474,22 +445,11 @@
 				font-size: xx-large;
 			}
 		}
-
-		&.navbar_fixed {
-			.main_menu {
-				top: -10%;
-			}
-		}
 	}
 }
 
 @include screen(992px, 1024px) {
 	.header_area {
-		&.navbar_fixed {
-			.main_menu {
-				top: -10%;
-			}
-		}
 
 		.navbar {
 			.navbar-brand {
@@ -512,11 +472,6 @@
 
 @include screen(1025px, 1440px) {
 	.header_area {
-		&.navbar_fixed {
-			.main_menu {
-				top: -10%;
-			}
-		}
 
 		.navbar {
 			.navbar-brand {

@@ -1,9 +1,16 @@
 <template>
-  <div>
-    <div>Foto</div>
-    <div>Nombre</div>
-    <div>Titulo</div>
-    <div>Botón</div>
+  <div id="listProfessional--section" class="container mt-4">
+    <div class="listProfessional--card">
+      <div>
+        <img class :src="photo" alt />
+      </div>
+
+      <!-- <div>{{ nameProfessional }}</div>
+
+      <div>{{ titleProfessional }}</div>
+
+      <div>Botón</div>-->
+    </div>
   </div>
 </template>
 <script>
@@ -15,7 +22,10 @@ export default {
     photo: {
       type: String,
     },
-    name: {
+    nameProfessional: {
+      type: String,
+    },
+    titleProfessional: {
       type: String,
     },
   },
