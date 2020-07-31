@@ -60,12 +60,7 @@ export default {
         {
           name: "about",
           href: "/quienes-somos",
-          text: "Quiénes somos",
-        },
-        {
-          name: "work",
-          href: "/como-funciona",
-          text: "Cómo funciona",
+          text: "Nuestra empresa",
         },
         {
           name: "professional",

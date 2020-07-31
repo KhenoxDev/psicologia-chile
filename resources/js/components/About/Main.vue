@@ -9,7 +9,7 @@
       ></loading-component>
     </transition>
     <div class="bg--section bg--about-banner">
-      <banner banner-identification="mainAbout--banner" banner-title="¿Quiénes somos?"></banner>
+      <banner banner-identification="mainAbout--banner" banner-title="Nuestra Empresa"></banner>
     </div>
     <div class="bg--white container d-lg-flex justify-content-between">
       <feature
@@ -20,6 +20,20 @@
         :description="feature.description"
       ></feature>
     </div>
+    <hr />
+    <span class="title--about--work">
+      <strong>¿Cómo funciona?</strong>
+    </span>
+    <hr />
+    <div class="bg--white">
+      <section-component
+        v-for="image in imageSectionList"
+        v-bind:key="image.id"
+        v-bind:header="image.title"
+        v-bind:body="image.body"
+        v-bind:image="image.url"
+      ></section-component>
+    </div>
   </div>
 </template>
 
@@ -27,6 +41,7 @@
 import LoadingComponent from "vue-loading-overlay";
 import Banner from "../Reusable/Banner";
 import Feature from "./Feature";
+import SectionComponent from "../Work/Section.vue";
 
 export default {
   data() {
@@ -53,12 +68,36 @@ export default {
             "Creatividad e innovación, Profesionalismo, Seguridad, Compromiso y Vocación.",
         },
       ],
+      imageSectionList: [
+        {
+          id: 0,
+          title: "Completa el formulario para crear tu cuenta.",
+          body:
+            "Llena nuestro formulario para encontrar al psicólogo especializado para tí.",
+          url: "img/work/section_1.svg",
+        },
+        {
+          id: 1,
+          title: "Visualiza el catálogo de profesionales.",
+          body:
+            "Atendemos de lunes a domingo, en el horario que más te acomode.",
+          url: "img/work/section_2.svg",
+        },
+        {
+          id: 2,
+          title: "Contrata a tu favorito.",
+          body:
+            "Escoge libremente el lugar que prefieras para iniciar tu sesión online.",
+          url: "img/work/section_3.svg",
+        },
+      ],
     };
   },
   components: {
     LoadingComponent,
     Banner,
     Feature,
+    SectionComponent,
   },
   mounted() {
     this.onLoad();
@@ -73,3 +112,5 @@ export default {
   },
 };
 </script>
+
+
