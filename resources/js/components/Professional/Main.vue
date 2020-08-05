@@ -20,7 +20,104 @@
               Filtrar
             </button>
             <Drawer @close="toggle" align="left" :closeable="true">
-              <div v-if="open">content here</div>
+              <div class="filter--content" v-if="open">
+                <div class="mb-2">
+                  <a
+                    data-toggle="collapse"
+                    href="#collapsePrevision"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="collapsePrevision"
+                  >Previsión</a>
+                  <hr />
+                  <div id="collapsePrevision" class="collapse filter--options">
+                    <div class="filter--option" v-for="prevision in previsions" :key="prevision.id">
+                      <input
+                        type="checkbox"
+                        v-model="previsionSelected"
+                        :id="prevision.id"
+                        :name="prevision.nombre"
+                        :value="prevision.nombre"
+                      />
+                      <label :for="prevision.id">{{ prevision.nombre }}</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-2 mt-3">
+                  <a
+                    data-toggle="collapse"
+                    href="#collapseSpecialist"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="collapseSpecialist"
+                  >Especialidades</a>
+                  <hr />
+                  <div id="collapseSpecialist" class="collapse filter--options">
+                    <div
+                      class="filter--option"
+                      v-for="specialist in specialists"
+                      :key="specialist.id"
+                    >
+                      <input
+                        type="checkbox"
+                        v-model="specialistSelected"
+                        :id="specialist.codigo"
+                        :name="specialist.nombre"
+                        :value="specialist.nombre"
+                      />
+                      <label :for="specialist.codigo">{{ specialist.nombre }}</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-2 mt-3">
+                  <a
+                    data-toggle="collapse"
+                    href="#collapseSchedule"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="collapseSchedule"
+                  >Horario de atención</a>
+                  <hr />
+                  <div id="collapseSchedule" class="collapse filter--options">
+                    <div class="filter--option" v-for="schedule in schedules" :key="schedule.id">
+                      <input
+                        type="checkbox"
+                        v-model="scheduleSelected"
+                        :id="schedule"
+                        :name="schedule"
+                        :value="schedule"
+                      />
+                      <label :for="schedule">{{ schedule }}</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-2 mt-3">
+                  <a
+                    data-toggle="collapse"
+                    href="#collapseGender"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="collapseGender"
+                  >Género</a>
+                  <hr />
+                  <div id="collapseGender" class="collapse filter--options">
+                    <div class="filter--option" v-for="gender in genders" :key="gender.id">
+                      <input
+                        type="checkbox"
+                        v-model="genderSelected"
+                        :id="gender"
+                        :name="gender"
+                        :value="gender"
+                      />
+                      <label :for="gender">{{ gender }}</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="filter--buttons fixed-bottom">
+                  <button class="btn btn--filter">Filtrar</button>
+                  <button class="btn btn--clean" @click="cleanOptions">Limpiar</button>
+                </div>
+              </div>
             </Drawer>
           </div>
           <div class="search--container">
@@ -39,6 +136,7 @@
             >
               <option value="precioASC">Precio ascendente</option>
               <option value="precioDESC">Precio descendente</option>
+              <option value="sesionesgratis">Sesiones gratuitas</option>
             </select>
           </div>
         </div>
@@ -73,6 +171,22 @@ export default {
       isLoading: true,
       fullPage: true,
       professionals: [],
+      previsions: [],
+      specialists: [],
+      schedules: [
+        "Lunes",
+        "Martes",
+        "Miércoles",
+        "Jueves",
+        "Viernes",
+        "Sábado",
+        "Domingo",
+      ],
+      genders: ["Varón", "Mujer"],
+      previsionSelected: [],
+      specialistSelected: [],
+      scheduleSelected: [],
+      genderSelected: [],
       search: "",
       sortKey: "precioASC",
       open: false,
@@ -111,17 +225,82 @@ export default {
         console.log(error);
       }
     },
+    async getPrevisions() {
+      this.previsions = [];
+      const api =
+        "https://online.psicologiachile.cl/gateway-json.php?service=prevision";
+
+      try {
+        let response = await axios.get(api);
+        for (let index = 0; index < response.data.items.length; index++) {
+          this.previsions.push(response.data.items[index]);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    async getSpecialists() {
+      this.specialists = [];
+      const api =
+        "https://online.psicologiachile.cl/gateway-json.php?service=especialidades";
+
+      try {
+        let response = await axios.get(api);
+        for (let index = 0; index < response.data.items.length; index++) {
+          this.specialists.push(response.data.items[index]);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    },
     toggle() {
       this.open = !this.open;
+      this.getPrevisions();
+      this.getSpecialists();
     },
+    cleanOptions() {
+      this.previsionSelected = [];
+      this.specialistSelected = [];
+      this.scheduleSelected = [];
+      this.genderSelected = [];
+    },
+    filterProcess() {},
   },
   computed: {
     filteredList() {
-      return this.professionals.filter((professional) => {
-        return professional.nombreCompleto
-          .toLowerCase()
-          .includes(this.search.toLowerCase());
+      // return this.professionals.filter((professional) => {
+      //   return professional.nombreCompleto
+      //     .toLowerCase()
+      //     .includes(this.search.toLowerCase());
+      // });
+      if (
+        this.previsionSelected.length == 0 &&
+        this.specialistSelected.length == 0
+      ) {
+        return this.professionals;
+      }
+
+      var aux = this.professionals.filter((professional) => {
+        var specialist = professional.especialidades.some((specialist) => {
+          return this.specialistSelected.includes(specialist);
+        });
+
+        var prevision = professional.prevision.some((prevision) => {
+          return this.previsionSelected.includes(prevision);
+        });
+
+        if (specialist && prevision) {
+          return true;
+        } else if (!specialist && prevision) {
+          return true;
+        } else if (specialist && !prevision) {
+          return true;
+        } else {
+          return false;
+        }
       });
+      console.log(aux);
+      return aux;
     },
   },
 };
