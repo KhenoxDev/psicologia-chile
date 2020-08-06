@@ -273,34 +273,48 @@ export default {
       //     .toLowerCase()
       //     .includes(this.search.toLowerCase());
       // });
+
+      //   if (
+      //     this.previsionSelected.length == 0 &&
+      //     this.specialistSelected.length == 0
+      //   ) {
+      //     return this.professionals;
+      //   }
+
+      //   var aux = this.professionals.filter((professional) => {
+      //     return (
+      //       professional.especialidades.some((specialist) => {
+      //         return this.specialistSelected.includes(specialist);
+      //       }) &&
+      //       professional.prevision.some((prevision) => {
+      //         return this.previsionSelected.includes(prevision);
+      //       })
+      //     );
+      //   });
+
+      //   console.log(aux);
+      //   return aux;
+
       if (
         this.previsionSelected.length == 0 &&
         this.specialistSelected.length == 0
-      ) {
+      )
         return this.professionals;
-      }
 
-      var aux = this.professionals.filter((professional) => {
-        var specialist = professional.especialidades.some((specialist) => {
-          return this.specialistSelected.includes(specialist);
-        });
+      var activeProfessionals = [];
+      var filters = this.previsionSelected;
 
-        var prevision = professional.prevision.some((prevision) => {
-          return this.previsionSelected.includes(prevision);
-        });
+      this.professionals.forEach(function (professional) {
+        function professionalContainsPrevision(filter) {
+          return professional.prevision.indexOf(filter) != -1;
+        }
 
-        if (specialist && prevision) {
-          return true;
-        } else if (!specialist && prevision) {
-          return true;
-        } else if (specialist && !prevision) {
-          return true;
-        } else {
-          return false;
+        if (filters.every(professionalContainsPrevision)) {
+          activeProfessionals.push(professional);
         }
       });
-      console.log(aux);
-      return aux;
+
+      return activeProfessionals;
     },
   },
 };
