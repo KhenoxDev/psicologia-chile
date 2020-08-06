@@ -22,7 +22,7 @@
 export default {
   props: {
     identificator: {
-      type: String,
+      type: Number,
     },
     photo: {
       type: String,

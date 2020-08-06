@@ -29,4 +29,4 @@ Route::get('/profesionales', function () {
 	return view('pages.professional');
 })->name('professional');
 
-Route::get('/profesionales/{id}', 'ProfessionalController@getDetail')->name('professional.detail');
+Route::get('/profesionales/{id}', 'ProfessionalController@getDetail')->name('professional');

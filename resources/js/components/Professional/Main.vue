@@ -20,7 +20,7 @@
               Filtrar
             </button>
             <Drawer @close="toggle" align="left" :closeable="true">
-              <div v-if="open">content here</div>
+              <div cla &#x26;#x26;#x26;#x26;#x26;#x26;#x3C;div v-if="open">content here</div>
             </Drawer>
           </div>
           <div class="search--container">

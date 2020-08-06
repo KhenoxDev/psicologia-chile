@@ -8,11 +8,18 @@
         v-bind:color="'#f4b034'"
       ></loading-component>
     </transition>
-    <!-- Acá va tu código de diseño -->
+    <div class="bg--section bg--professional-banner">
+      <banner
+        banner-identification="mainProfessional--banner"
+        :banner-title="professionals[0].nombre"
+      ></banner>
+    </div>
+    <!-- Acá va tu código de diseño recorrer professionals-->
   </div>
 </template>
 <script>
 import LoadingComponent from "vue-loading-overlay";
+import Banner from "../Reusable/Banner";
 
 export default {
   props: {
@@ -26,15 +33,15 @@ export default {
       isLoading: true,
       fullPage: true,
       professionals: [],
-      professionalSelected: [],
     };
   },
   components: {
     LoadingComponent,
+    Banner,
   },
   mounted() {
     this.onLoad();
-    this.getProfessionals(this.codeProfessional);
+    this.getProfessionals();
   },
   methods: {
     onLoad() {
@@ -43,7 +50,7 @@ export default {
         this.isLoading = false;
       }, 2000);
     },
-    async getProfessionals(code) {
+    async getProfessionals() {
       this.professionals = [];
       this.onLoad();
       const api =
@@ -51,11 +58,14 @@ export default {
 
       try {
         let response = await axios.get(api);
-        for (let index = 0; index < response.data.items.length; index++) {
-          this.professionals.push(response.data.items[index]);
-        }
 
-        //Generar método para buscar según el parametro .find()
+        let aux = response.data.items.filter((professional) => {
+          return professional.index == this.codeProfessional;
+        });
+
+        for (let index = 0; index < aux.length; index++) {
+          this.professionals.push(aux[index]);
+        }
       } catch (error) {
         console.log(error);
       }

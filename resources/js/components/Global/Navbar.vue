@@ -4,7 +4,7 @@
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container box_1620">
           <a class="navbar-brand logo_h" href="/">
-            <img src="img/navbar/logo.png" alt="Psicología Chile" />
+            <img :src="imgLogo" alt="Psicología Chile" />
           </a>
           <button
             class="hamburger hamburger--collapse"
@@ -51,6 +51,9 @@ export default {
     current: {
       type: String,
       default: "",
+    },
+    imgLogo: {
+      type: String,
     },
   },
   data() {
