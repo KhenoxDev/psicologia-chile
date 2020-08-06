@@ -50,6 +50,7 @@
             :photo="list.foto"
             :name-professional="list.nombreCompleto"
             :title-professional="list.profesion"
+            :identificator="list.index"
           ></professional>
           <div class="no-results" v-show="filteredList.length == 0">
             <!-- TODO: Dar estilo a mensaje de No Results -->

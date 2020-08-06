@@ -53,7 +53,7 @@
 		justify-content: center;
 
 
-		button {
+		a {
 			font-size: x-small;
 			color: $dark;
 			font-weight: bold;
@@ -64,6 +64,7 @@
 			border: none;
 			margin-top: 2rem;
 			position: absolute;
+			text-transform: none;
 		}
 	}
 

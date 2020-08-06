@@ -33,6 +33,7 @@ Vue.component('home-component', require('./components/Home/Main.vue').default);
 Vue.component('about-component', require('./components/About/Main.vue').default);
 Vue.component('work-component', require('./components/Work/Main.vue').default);
 Vue.component('professional-component', require('./components/Professional/Main.vue').default);
+Vue.component('detail-component', require('./components/Professional/DetailProfessional.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

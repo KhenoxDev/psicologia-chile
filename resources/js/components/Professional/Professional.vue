@@ -13,7 +13,7 @@
       <span>Psicólogo</span>
     </div>
     <div class="button--listprofessionals">
-      <button>Ver ficha</button>
+      <a :href="'profesionales/' + identificator">Ver ficha</a>
     </div>
     <!-- <div>{{ titleProfessional }}</div> -->
   </div>
