@@ -129,7 +129,6 @@
 	}
 
 	.modal--style {
-
 		.details--container {
 			display: flex;
 			flex-direction: column;
@@ -168,7 +167,6 @@
 					.span--name {
 						font-weight: bold;
 						font-size: 150%;
-
 					}
 
 					.span--title {
@@ -178,7 +176,6 @@
 							width: 100%;
 							max-width: 1rem;
 						}
-
 					}
 
 					.span--price {
@@ -189,7 +186,6 @@
 						font-size: 0.8rem;
 					}
 				}
-
 			}
 
 			.description--container {
@@ -205,7 +201,6 @@
 			}
 
 			.specialist--container {
-
 				.span--specialist {
 					margin-right: 0.1rem;
 					font-size: 0.7rem;
@@ -213,11 +208,9 @@
 					margin-bottom: 1rem;
 				}
 			}
-
 		}
 
 		.acordeon--body--specialist {
-
 			button {
 
 				.fa-plus,
@@ -227,11 +220,11 @@
 				}
 			}
 
-			button[aria-expanded=true] .fa-plus {
+			button[aria-expanded="true"] .fa-plus {
 				display: none;
 			}
 
-			button[aria-expanded=false] .fa-minus {
+			button[aria-expanded="false"] .fa-minus {
 				display: none;
 			}
 
@@ -241,7 +234,6 @@
 		}
 
 		.acordeon--body--description {
-
 			button {
 
 				.fa-plus,
@@ -251,11 +243,11 @@
 				}
 			}
 
-			button[aria-expanded=true] .fa-plus {
+			button[aria-expanded="true"] .fa-plus {
 				display: none;
 			}
 
-			button[aria-expanded=false] .fa-minus {
+			button[aria-expanded="false"] .fa-minus {
 				display: none;
 			}
 
@@ -263,7 +255,6 @@
 				cursor: pointer;
 			}
 		}
-
 
 		.modal-footer {
 			border: none;
@@ -274,9 +265,7 @@
 			button:first-child {
 				margin-right: auto;
 			}
-
 		}
-
 	}
 }
 
@@ -296,7 +285,6 @@
 		}
 
 		.modal--style {
-
 			.details--container {
 				display: flex;
 				flex-direction: column;
@@ -345,7 +333,6 @@
 								width: 100%;
 								max-width: 0.8rem;
 							}
-
 						}
 
 						.span--price {
@@ -353,19 +340,15 @@
 							width: 100%;
 						}
 
-
 						.span--disp {
 							margin-bottom: 0;
 							width: 100%;
 							font-size: 0.6rem;
 						}
 					}
-
 				}
-
 			}
 		}
-
 	}
 }
 
@@ -377,7 +360,7 @@
 
 		.card--featuredprofessionals {
 			width: 60%;
-			height: 220px;
+			height: 91%;
 			margin-left: 20% !important;
 
 			.seemore--professionals {
@@ -393,7 +376,6 @@
 		}
 
 		.modal--style {
-
 			.details--container {
 				display: flex;
 				flex-direction: column;
@@ -442,7 +424,6 @@
 								width: 100%;
 								max-width: 0.8rem;
 							}
-
 						}
 
 						.span--price {
@@ -450,16 +431,13 @@
 							width: 100%;
 						}
 
-
 						.span--disp {
 							margin-bottom: 0;
 							width: 100%;
 							font-size: 0.6rem;
 						}
 					}
-
 				}
-
 			}
 		}
 	}
@@ -467,7 +445,6 @@
 
 @media only screen and (min-width: 376px) and (max-width: 425px) {
 	#mainProfessionals {
-
 		.vueperslides__parallax-wrapper {
 			padding: 11rem;
 		}
@@ -478,7 +455,7 @@
 
 		.card--featuredprofessionals {
 			width: 100%;
-			height: 220px;
+			height: 88%;
 
 			.professionals--container {
 				span {
@@ -490,10 +467,13 @@
 				display: block;
 				top: 95%;
 			}
+
+			.circulo--professionals {
+				width: 36%;
+			}
 		}
 
 		.modal--style {
-
 			.details--container {
 				display: flex;
 				flex-direction: column;
@@ -542,7 +522,6 @@
 								width: 100%;
 								max-width: 0.8rem;
 							}
-
 						}
 
 						.span--price {
@@ -550,24 +529,20 @@
 							width: 100%;
 						}
 
-
 						.span--disp {
 							margin-bottom: 0;
 							width: 100%;
 							font-size: 0.7rem;
 						}
 					}
-
 				}
-
 			}
 		}
 	}
 }
 
-@media only screen and (min-width: 426px) and (max-width: 768px) {
+@media only screen and (min-width: 426px) and (max-width: 767px) {
 	#mainProfessionals {
-
 		.vueperslides__parallax-wrapper {
 			padding: 8rem;
 		}
@@ -577,15 +552,14 @@
 		}
 
 		.card--featuredprofessionals {
-			width: 70%;
-			height: 260px;
+			width: 88%;
+			height: 94%;
 
 			.professionals--container {
 				span {
 					margin-bottom: 0rem;
 					margin-top: 0rem;
 				}
-
 			}
 
 			.circulo--professionals {
@@ -593,17 +567,20 @@
 				width: 32%;
 				top: -4%;
 				right: 78%;
+
+				span {
+					font-size: 48%;
+				}
 			}
 
 			.seemore--professionals {
 				display: block;
 				top: 96%;
-				right: 30%;
+				right: 25%;
 			}
 		}
 
 		.modal--style {
-
 			.details--container {
 				display: flex;
 				flex-direction: column;
@@ -652,7 +629,6 @@
 								width: 100%;
 								max-width: 0.8rem;
 							}
-
 						}
 
 						.span--price {
@@ -660,6 +636,112 @@
 							width: 100%;
 						}
 
+						.span--disp {
+							margin-bottom: 0;
+							width: 100%;
+							font-size: 0.7rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include screen(768px, 780px) {
+	#mainProfessionals {
+		.vueperslides__parallax-wrapper {
+			padding: 8rem;
+		}
+
+		.circulo--flotante {
+			padding: 1rem 1.5rem;
+		}
+
+		.card--featuredprofessionals {
+			width: 64%;
+			height: 78%;
+
+			.professionals--container {
+				span {
+					margin-bottom: 0rem;
+					margin-top: 0rem;
+				}
+			}
+
+			.circulo--professionals {
+				height: 25%;
+				width: 32%;
+				top: -4%;
+				right: 78%;
+
+				span {
+					font-size: 48%;
+				}
+			}
+
+			.seemore--professionals {
+				display: block;
+				top: 96%;
+				right: 25%;
+			}
+		}
+
+		.modal--style {
+			.details--container {
+				display: flex;
+				flex-direction: column;
+
+				.professional--container {
+					display: flex;
+					flex-flow: row nowrap;
+					margin-bottom: 1rem;
+
+					.div--image {
+						justify-content: flex-start;
+						width: 29%;
+						margin-right: 2rem;
+						margin-left: 0.7rem;
+
+						.img--professional--modal {
+							height: 92%;
+							width: 87%;
+							box-shadow: 2px 1px 7px 0px rgba(0, 0, 0, 0.3);
+							border-radius: 1rem;
+						}
+					}
+
+					.div--text {
+						display: flex;
+						flex-direction: column;
+
+						span {
+							margin-bottom: 0.6rem;
+
+							&:last-child {
+								margin-bottom: 0;
+							}
+						}
+
+						.span--name {
+							font-weight: bold;
+							font-size: 94%;
+						}
+
+						.span--title {
+							font-size: 0.7rem;
+							width: 100%;
+
+							img {
+								width: 100%;
+								max-width: 0.8rem;
+							}
+						}
+
+						.span--price {
+							font-size: 0.7rem;
+							width: 100%;
+						}
 
 						.span--disp {
 							margin-bottom: 0;
@@ -667,13 +749,12 @@
 							font-size: 0.7rem;
 						}
 					}
-
 				}
-
 			}
 		}
 	}
 }
+
 
 @media only screen and (min-width: 769px) and (max-width: 991px) {
 	#mainProfessionals {
@@ -682,6 +763,9 @@
 		}
 
 		.card--featuredprofessionals {
+			width: 100%;
+			height: 59%;
+
 			.professionals--container {
 				span {
 					margin-bottom: 0rem;
@@ -689,7 +773,7 @@
 
 				.seemore--professionals {
 					top: 95%;
-					right: 25%;
+					right: 20%;
 				}
 			}
 		}
@@ -723,6 +807,8 @@
 		}
 
 		.card--featuredprofessionals {
+			height: 95%;
+
 			.professionals--container {
 				span {
 					margin-bottom: 0rem;
@@ -765,6 +851,7 @@
 
 		.card--featuredprofessionals {
 			width: 70%;
+			height: 89%;
 
 			.professionals--container {
 				span {
@@ -773,13 +860,12 @@
 
 				.seemore--professionals {
 					top: 95%;
-					right: 25%;
+					right: 19%;
 				}
 			}
 		}
 
 		.modal--style {
-
 			.details--container {
 				display: flex;
 				flex-direction: column;
@@ -828,7 +914,6 @@
 								width: 100%;
 								max-width: 0.8rem;
 							}
-
 						}
 
 						.span--price {
@@ -836,18 +921,14 @@
 							width: 100%;
 						}
 
-
 						.span--disp {
 							margin-bottom: 0;
 							width: 100%;
 							font-size: 0.8rem;
 						}
 					}
-
 				}
-
 			}
-
 		}
 	}
 }

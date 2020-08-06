@@ -6,7 +6,7 @@
     <hr class="line--separator" />
     <vueper-slides
       class="no-shadow"
-      autoplay
+      :autoplay="off"
       bullets-outside
       slide-multiple
       infinite
