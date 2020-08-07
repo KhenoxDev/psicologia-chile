@@ -11,13 +11,16 @@
     <div class="bg--section bg--professional-banner">
       <banner banner-identification="mainSpecialist--banner" banner-title="Especialidades"></banner>
     </div>
-    <div class="d-flex flex-wrap bg--gray">
-      <specialist
-        v-for="specialist in specialists"
-        :key="specialist.id"
-        :specialist-title="specialist.nombre"
-        specialist-image="img/specialists/infantil.jpg"
-      ></specialist>
+    <div class="container pt-4">
+      <ul class="list--specialist">
+        <li class="list--specialist-item" v-for="specialist in specialists" :key="specialist.id">
+          <a
+            :title="specialist.nombre"
+            :id="specialist.codigo"
+            href="/acoso-laboral"
+          >{{ specialist.nombre }}</a>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -25,7 +28,6 @@
 <script>
 import LoadingComponent from "vue-loading-overlay";
 import Banner from "../Reusable/Banner";
-import Specialist from "./Specialist";
 
 export default {
   data() {
@@ -38,7 +40,6 @@ export default {
   components: {
     LoadingComponent,
     Banner,
-    Specialist,
   },
   mounted() {
     this.onLoad();
@@ -58,6 +59,7 @@ export default {
 
       try {
         let response = await axios.get(api);
+        console.log(response.data);
         for (let index = 0; index < response.data.items.length; index++) {
           this.specialists.push(response.data.items[index]);
         }
