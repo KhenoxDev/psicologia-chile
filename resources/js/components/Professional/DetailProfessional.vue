@@ -19,10 +19,18 @@
       <div class="detailProfessional--content">
         <div class="detailImage">
           <img :src="this.professionals[0].foto" alt />
+          <div class="div--textImage">
+            <span class="span--fullname">{{ this.professionals[0].nombreCompleto }}</span>
+          </div>
+          <div class="schedule--container">
+            <span class="schedule--title">Días de atención:</span>
+            <span
+              class="span--schedule badge badge--schedule"
+            >{{ this.professionals[0].diasAtencion }}</span>
+          </div>
         </div>
 
         <div class="detailText">
-          <span class="span--fullname">{{ this.professionals[0].nombreCompleto }}</span>
           <span class="span--profesion" v-html="this.professionals[0].profesion"></span>
           <span class="span--codigo">
             <strong>Código:</strong>
@@ -48,12 +56,6 @@
               :key="prev.id"
             >{{ prev }}</span>
           </div>
-          <div class="schedule--container">
-            <span class="schedule--title">Días de atención:</span>
-            <span
-              class="span--schedule badge badge--schedule"
-            >{{ this.professionals[0].diasAtencion }}</span>
-          </div>
         </div>
       </div>
     </div>
@@ -61,13 +63,41 @@
     <div id="detailPlan--section" class="bg--white">
       <span class="planSection--title">Planes y valores</span>
       <hr />
-      <span class="span--plan" v-for="pln in this.professionals[0].plan" :key="pln.id">{{ pln }}</span>
+      <div class="card--container">
+        <card v-for="pln in this.professionals[0].planes" :key="pln.id" color-back="#f4b034">
+          <template v-slot:frontContent>
+            <div id="front">
+              <div class="card-header">{{pln.plan}}</div>
+              <div class="card-content center">
+                <p>{{ pln.sesiones }} sesiones.</p>
+              </div>
+              <div class="card-footer">Cuéntame más!</div>
+            </div>
+          </template>
+          <template v-slot:backContent>
+            <div id="back">
+              <div class="card-header">
+                <strong>{{ pln.sesiones}}</strong> sesiones a
+                <strong>${{ formatPrice(pln.valor) }}</strong>
+              </div>
+
+              <div class="card-content center">
+                <p>{{ pln.sesiones }} sesiones.</p>
+              </div>
+              <div class="card-footer">
+                <a href="http://">Lo quiero!</a>
+              </div>
+            </div>
+          </template>
+        </card>
+      </div>
     </div>
   </div>
 </template>
 <script>
 import LoadingComponent from "vue-loading-overlay";
 import Banner from "../Reusable/Banner";
+import Card from "../Reusable/Card";
 
 export default {
   props: {
@@ -86,6 +116,7 @@ export default {
   components: {
     LoadingComponent,
     Banner,
+    Card,
   },
   mounted() {
     this.onLoad();
@@ -117,6 +148,10 @@ export default {
       } catch (error) {
         console.log(error);
       }
+    },
+    formatPrice: function (value) {
+      let val = (value / 1).toFixed(0);
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     },
   },
 };
