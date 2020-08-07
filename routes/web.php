@@ -28,3 +28,7 @@ Route::get('/como-funciona', function () {
 Route::get('/profesionales', function () {
 	return view('pages.professional');
 })->name('professional');
+
+Route::get('/especialidades', function () {
+	return view('pages.specialist');
+})->name('specialist');

@@ -19,7 +19,7 @@
               <i class="fas fa-filter"></i>
               Filtrar
             </button>
-            <Drawer @close="toggle" align="left" :closeable="true">
+            <Drawer @close="toggle" align="left" :closeable="true" :maskClosable="true">
               <div class="filter--content" v-if="open">
                 <div class="mb-2">
                   <a
@@ -114,7 +114,6 @@
                   </div>
                 </div>
                 <div class="filter--buttons fixed-bottom">
-                  <button class="btn btn--filter">Filtrar</button>
                   <button class="btn btn--clean" @click="cleanOptions">Limpiar</button>
                 </div>
               </div>
@@ -274,47 +273,64 @@ export default {
       //     .includes(this.search.toLowerCase());
       // });
 
-      //   if (
-      //     this.previsionSelected.length == 0 &&
-      //     this.specialistSelected.length == 0
-      //   ) {
-      //     return this.professionals;
-      //   }
-
-      //   var aux = this.professionals.filter((professional) => {
-      //     return (
-      //       professional.especialidades.some((specialist) => {
-      //         return this.specialistSelected.includes(specialist);
-      //       }) &&
-      //       professional.prevision.some((prevision) => {
-      //         return this.previsionSelected.includes(prevision);
-      //       })
-      //     );
-      //   });
-
-      //   console.log(aux);
-      //   return aux;
-
       if (
         this.previsionSelected.length == 0 &&
         this.specialistSelected.length == 0
       )
-        return this.professionals;
+        return (
+          this.professionals &&
+          this.professionals.filter((professional) => {
+            return professional.nombreCompleto
+              .toLowerCase()
+              .includes(this.search.toLowerCase());
+          })
+        );
 
-      var activeProfessionals = [];
-      var filters = this.previsionSelected;
+      if (
+        this.previsionSelected.length > 0 &&
+        this.specialistSelected.length == 0
+      ) {
+        var aux = this.professionals.filter((professional) => {
+          return professional.prevision.some((prevision) => {
+            return (
+              this.previsionSelected.includes(prevision) &&
+              professional.nombreCompleto
+                .toLowerCase()
+                .includes(this.search.toLowerCase())
+            );
+          });
+        });
+      } else if (
+        this.previsionSelected.length == 0 &&
+        this.specialistSelected.length > 0
+      ) {
+        var aux = this.professionals.filter((professional) => {
+          return professional.especialidades.some((specialist) => {
+            return (
+              this.specialistSelected.includes(specialist) &&
+              professional.nombreCompleto
+                .toLowerCase()
+                .includes(this.search.toLowerCase())
+            );
+          });
+        });
+      } else {
+        var aux = this.professionals.filter((professional) => {
+          return (
+            professional.especialidades.some((specialist) => {
+              return this.specialistSelected.includes(specialist);
+            }) &&
+            professional.prevision.some((prevision) => {
+              return this.previsionSelected.includes(prevision);
+            }) &&
+            professional.nombreCompleto
+              .toLowerCase()
+              .includes(this.search.toLowerCase())
+          );
+        });
+      }
 
-      this.professionals.forEach(function (professional) {
-        function professionalContainsPrevision(filter) {
-          return professional.prevision.indexOf(filter) != -1;
-        }
-
-        if (filters.every(professionalContainsPrevision)) {
-          activeProfessionals.push(professional);
-        }
-      });
-
-      return activeProfessionals;
+      return aux;
     },
   },
 };

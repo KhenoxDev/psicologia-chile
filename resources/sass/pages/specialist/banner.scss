@@ -1,7 +1,7 @@
 @import "../../variables";
 @import "../../mixins";
 
-#mainProfessional--banner {
+#mainSpecialist--banner {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -16,7 +16,7 @@
 }
 
 @include screen-min(425px) {
-	#mainProfessional--banner {
+	#mainSpecialist--banner {
 
 		.banner--container {
 			span {
