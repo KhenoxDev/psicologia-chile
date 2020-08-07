@@ -9,18 +9,16 @@
       ></loading-component>
     </transition>
     <div class="bg--section bg--professional-banner">
-      <banner
-        banner-identification="mainProfessional--banner"
-        :banner-title="this.professionals[0].nombreCompleto"
-      ></banner>
+      <banner banner-identification="mainProfessional--banner" banner-title="Profesional"></banner>
     </div>
     <!-- Acá va tu código de diseño recorrer professionals-->
-    <div id="detailProfessional--section" class="bg--white">
+    <div id="detailProfessional--section" class="container bg--white">
       <div class="detailProfessional--content">
         <div class="detailImage">
           <img :src="this.professionals[0].foto" alt />
           <div class="div--textImage">
             <span class="span--fullname">{{ this.professionals[0].nombreCompleto }}</span>
+            <span class="span--profesion" v-html="this.professionals[0].profesion"></span>
           </div>
           <div class="schedule--container">
             <span class="schedule--title">Días de atención:</span>
@@ -31,7 +29,6 @@
         </div>
 
         <div class="detailText">
-          <span class="span--profesion" v-html="this.professionals[0].profesion"></span>
           <span class="span--codigo">
             <strong>Código:</strong>
             {{ this.professionals[0].codigo }}
@@ -60,7 +57,7 @@
       </div>
     </div>
 
-    <div id="detailPlan--section" class="bg--white">
+    <div id="detailPlan--section" class="container bg--white">
       <span class="planSection--title">Planes y valores</span>
       <hr />
       <div class="card--container">
