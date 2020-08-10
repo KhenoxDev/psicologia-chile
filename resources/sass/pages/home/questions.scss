@@ -51,6 +51,7 @@
 		background-size: cover;
 		background-position: center center;
 		background-repeat: no-repeat;
+		background-size: 48%;
 
 		.description {
 			color: $white;
@@ -125,21 +126,47 @@
 		.card--question {
 			margin: 0rem;
 		}
+
+		.first-card-faq {
+			background-size: 44%;
+		}
 	}
 }
 
 @media only screen and (min-width: 426px) and (max-width: 768px) {
 	#mainQuestions {
 		.card--question {
-			margin: 0rem;
+			margin: 0rem 1rem;
 		}
+
+		.first-card-faq {
+			background-size: 65%;
+
+			.description {
+				font-size: 77%;
+			}
+
+		}
+
+		.another-card-faq {
+
+			span {
+				font-size: 77%;
+			}
+
+		}
+
 	}
 }
 
 @media only screen and (min-width: 769px) and (max-width: 991px) {
 	#mainQuestions {
 		.card--question {
-			margin: 0rem;
+			margin: 0rem 1rem;
+		}
+
+		.first-card-faq {
+			background-size: 65%;
 		}
 	}
 }
@@ -155,7 +182,11 @@
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
 	#mainQuestions {
 		.card--question {
-			margin: 1rem;
+			margin: 0rem 1rem;
+		}
+
+		.first-card-faq {
+			background-size: 65%;
 		}
 	}
 }

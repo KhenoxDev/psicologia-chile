@@ -53,7 +53,13 @@
 @media only screen and (max-width: 320px) {
 	#mainWeWereNews {
 		.vueperslides__parallax-wrapper {
-			padding-bottom: 60% ! important;
+			padding-bottom: 52% ! important;
+		}
+
+		.card--wewerenews {
+			img {
+				height: 6.8rem;
+			}
 		}
 	}
 }
@@ -66,7 +72,7 @@
 
 		.card--wewerenews {
 			img {
-				height: 8.8rem;
+				height: 8.6rem;
 			}
 		}
 
@@ -81,7 +87,7 @@
 
 		.card--wewerenews {
 			img {
-				height: 9.8rem;
+				height: 9rem;
 			}
 		}
 	}
@@ -95,7 +101,7 @@
 
 		.card--wewerenews {
 			img {
-				height: 9.8rem;
+				height: 5rem;
 			}
 		}
 	}
@@ -124,7 +130,23 @@
 
 		.card--wewerenews {
 			img {
-				height: 8.8rem;
+				height: 7.8rem;
+			}
+		}
+	}
+}
+
+@include screen(769px, 992px) {
+	#mainWeWereNews {
+		.vueperslides__parallax-wrapper {
+			padding-bottom: 20% ! important;
+			//coment
+		}
+
+		.card--wewerenews {
+			img {
+				height: 6.8rem;
+				//coment
 			}
 		}
 	}

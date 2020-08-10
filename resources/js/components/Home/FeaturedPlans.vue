@@ -7,7 +7,7 @@
     <vueper-slides
       :breakpoints="breakpoints"
       class="no-shadow"
-      autoplay
+      :autoplay="off"
       infinite
       slide-multiple
       bullets-outside
@@ -83,6 +83,11 @@ export default {
           visibleSlides: 1,
           arrows: false,
         },
+        546: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+          arrows: false,
+        },
         769: {
           slideRatio: 1 / 4,
           visibleSlides: 2,
@@ -94,6 +99,11 @@ export default {
           arrows: false,
         },
         1025: {
+          slideRatio: 1 / 4,
+          visibleSlides: 2,
+          arrows: false,
+        },
+        1200: {
           slideRatio: 1 / 4,
           visibleSlides: 2,
           arrows: false,

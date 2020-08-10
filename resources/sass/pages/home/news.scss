@@ -623,10 +623,11 @@
 
 		.card--featurednews {
 			margin-left: 1.5rem;
+			height: 94%;
 
 			.wave--container--first {
 				#spanText {
-					font-size: 9px;
+					font-size: 11px;
 					padding: 1rem;
 					margin: 0rem 0rem 1rem 3rem;
 					position: absolute;
@@ -636,7 +637,7 @@
 				}
 
 				#spanDate {
-					font-size: 8px;
+					font-size: 9px;
 					position: absolute;
 					top: 61%;
 					right: 1%;
@@ -646,7 +647,7 @@
 				.news--autor {
 					color: #fff;
 					opacity: 0.6;
-					font-size: 0.6rem;
+					font-size: 0.8rem;
 					position: absolute;
 					top: 82%;
 					right: 46%;
@@ -721,7 +722,141 @@
 			}
 
 			.img--container {
-				height: 62%;
+				height: 50%;
+				width: 100%;
+
+				img {
+					height: 13rem;
+					width: 100%;
+				}
+			}
+
+			.seemore--news {
+				display: block;
+				right: 22%;
+			}
+		}
+
+		.seeall--news {
+			margin-top: 0rem;
+		}
+	}
+}
+
+@include screen(769px, 991px) {
+	#mainNews {
+		.vueperslides__parallax-wrapper {
+			padding: 9rem;
+		}
+
+		.card--featurednews {
+			margin-left: 1.5rem;
+			height: 94%;
+
+			.wave--container--first {
+				#spanText {
+					font-size: 11px;
+					padding: 1rem;
+					margin: 0rem 0rem 1rem 3rem;
+					position: absolute;
+					top: 68%;
+					right: -7%;
+					width: 100%;
+				}
+
+				#spanDate {
+					font-size: 9px;
+					position: absolute;
+					top: 61%;
+					right: 1%;
+					width: 100%;
+				}
+
+				.news--autor {
+					color: #fff;
+					opacity: 0.6;
+					font-size: 0.8rem;
+					position: absolute;
+					top: 82%;
+					right: 46%;
+					width: 100%;
+				}
+
+				.span--comment {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 88%;
+					opacity: 0.6;
+					font-size: 0.8rem;
+				}
+
+				.span--like {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 2%;
+					opacity: 0.6;
+					font-size: 0.8rem;
+				}
+			}
+
+			.wave--container--another {
+				#spanText {
+					font-size: 9px;
+					padding: 1rem;
+					margin: 0rem 0rem 1rem 3rem;
+					position: absolute;
+					top: 68%;
+					right: -7%;
+					width: 100%;
+				}
+
+				#spanDate {
+					font-size: 8px;
+					position: absolute;
+					top: 61%;
+					right: 1%;
+					width: 100%;
+				}
+
+				.news--autor {
+					color: #fff;
+					opacity: 0.6;
+					font-size: 0.6rem;
+					position: absolute;
+					top: 82%;
+					right: 46%;
+					width: 100%;
+				}
+
+				.span--comment {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 88%;
+					opacity: 0.6;
+					font-size: 0.8rem;
+				}
+
+				.span--like {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 2%;
+					opacity: 0.6;
+					font-size: 0.8rem;
+				}
+			}
+
+			.img--container {
+				height: 50%;
+				width: 100%;
+
+				img {
+					height: 13rem;
+					width: 100%;
+				}
 			}
 
 			.seemore--news {
@@ -849,6 +984,134 @@
 				right: 22%;
 			}
 
+		}
+
+		.seeall--news {
+			margin-top: 0rem;
+		}
+	}
+}
+
+@include screen(1025px, 2560px) {
+	#mainNews {
+		.vueperslides__parallax-wrapper {
+			padding: 9rem;
+		}
+
+		.card--featurednews {
+			margin-left: 1.5rem;
+			height: 68%;
+
+			.wave--container--first {
+				#spanText {
+					font-size: 11px;
+					padding: 1rem;
+					margin: 0rem 0rem 1rem 3rem;
+					position: absolute;
+					top: 68%;
+					right: -7%;
+					width: 100%;
+				}
+
+				#spanDate {
+					font-size: 9px;
+					position: absolute;
+					top: 61%;
+					right: 1%;
+					width: 100%;
+				}
+
+				.news--autor {
+					color: #fff;
+					opacity: 0.6;
+					font-size: 0.8rem;
+					position: absolute;
+					top: 82%;
+					right: 46%;
+					width: 100%;
+				}
+
+				.span--comment {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 88%;
+					opacity: 0.6;
+					font-size: 0.8rem;
+				}
+
+				.span--like {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 2%;
+					opacity: 0.6;
+					font-size: 0.8rem;
+				}
+			}
+
+			.wave--container--another {
+				#spanText {
+					font-size: 9px;
+					padding: 1rem;
+					margin: 0rem 0rem 1rem 3rem;
+					position: absolute;
+					top: 68%;
+					right: -7%;
+					width: 100%;
+				}
+
+				#spanDate {
+					font-size: 8px;
+					position: absolute;
+					top: 61%;
+					right: 1%;
+					width: 100%;
+				}
+
+				.news--autor {
+					color: #fff;
+					opacity: 0.6;
+					font-size: 0.6rem;
+					position: absolute;
+					top: 82%;
+					right: 46%;
+					width: 100%;
+				}
+
+				.span--comment {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 88%;
+					opacity: 0.6;
+					font-size: 0.8rem;
+				}
+
+				.span--like {
+					color: #fff;
+					position: absolute;
+					top: 92%;
+					right: 2%;
+					opacity: 0.6;
+					font-size: 0.8rem;
+				}
+			}
+
+			.img--container {
+				height: 50%;
+				width: 100%;
+
+				img {
+					height: 13rem;
+					width: 100%;
+				}
+			}
+
+			.seemore--news {
+				display: block;
+				right: 22%;
+			}
 		}
 
 		.seeall--news {

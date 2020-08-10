@@ -349,7 +349,8 @@
 		#front {
 			.promotion--span {
 				font-size: 0.8rem;
-				top: 1%;
+				top: 2%;
+				left: 6.5%;
 			}
 
 			.card-header {
@@ -380,6 +381,14 @@
 					font-size: 1rem;
 				}
 			}
+		}
+	}
+}
+
+@include screen(992px, 2560px) {
+	#mainPlans {
+		.vueperslides__parallax-wrapper {
+			padding-bottom: 32% !important;
 		}
 	}
 }
