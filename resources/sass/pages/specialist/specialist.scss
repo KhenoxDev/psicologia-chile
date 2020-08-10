@@ -1,0 +1,54 @@
+@import "../../variables";
+@import "../../mixins";
+
+.list--specialist {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	list-style: none;
+	padding: 1rem;
+	border: 1px $gray-3 solid;
+	background-color: $gray-5;
+
+	.list--specialist-item {
+		width: 24%;
+		height: 4rem;
+		display: flex;
+		align-items: center;
+
+		a {
+			text-decoration: none;
+			cursor: pointer;
+			color: $dark;
+
+			&:hover {
+				color: $blue;
+			}
+		}
+	}
+}
+
+@include screen-min(400px) {
+	.list--specialist {
+		.list--specialist-item {
+			width: 98%;
+		}
+	}
+}
+
+@include screen(401px, 768px) {
+	.list--specialist {
+		.list--specialist-item {
+			width: 48%;
+		}
+	}
+}
+
+@include screen(769px, 1024px) {
+	.list--specialist {
+		.list--specialist-item {
+			width: 30%;
+		}
+	}
+}

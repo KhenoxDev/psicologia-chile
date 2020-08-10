@@ -1,0 +1,385 @@
+@import "../../variables";
+@import "../../mixins";
+
+#mainPlans {
+
+	.vueperslides__bullet {
+		&:focus {
+			outline: none;
+		}
+
+		.default {
+			background-color: rgba(0, 0, 0, 0.3);
+			border: none;
+			box-shadow: none;
+			transition: 0.3s;
+			width: 16px;
+			height: 16px;
+		}
+	}
+
+	.vueperslides__bullet--active {
+		.default {
+			background-color: $orange;
+		}
+	}
+
+	.vueperslides__bullet {
+		span {
+			display: block;
+			color: #fff;
+			font-size: 10px;
+			opacity: 0.8;
+		}
+	}
+
+	.vueperslides__parallax-wrapper {
+		padding-bottom: 30% !important;
+	}
+
+	#front {
+		.promotion--span {
+			color: white;
+			font-size: 1rem;
+			font-weight: bold;
+			position: absolute;
+			top: 1%;
+			left: 6%;
+			z-index: 1;
+		}
+
+		.card-header {
+			font-size: 1.2rem;
+			text-transform: uppercase;
+			font-weight: bold;
+			padding: 1rem 0rem;
+			color: $dark;
+			background-color: unset;
+		}
+
+		.card-content {
+			overflow-y: scroll;
+			height: 6rem;
+			margin-bottom: 1rem;
+
+			p {
+				padding: 0rem 0.5rem;
+			}
+		}
+
+		.card-footer {
+			color: white;
+			font-size: 1.2rem;
+			background-color: $blue;
+			font-weight: bold;
+			text-transform: uppercase;
+			border-radius: 0.5rem;
+			animation: pulse-blue 2s infinite;
+
+			@keyframes pulse-blue {
+				0% {
+					transform: scale(0.95);
+					box-shadow: 0 0 0 0 rgba(52, 172, 224, 0.7);
+				}
+
+				70% {
+					transform: scale(1);
+					box-shadow: 0 0 0 10px rgba(52, 172, 224, 0);
+				}
+
+				100% {
+					transform: scale(0.95);
+					box-shadow: 0 0 0 0 rgba(52, 172, 224, 0);
+				}
+			}
+		}
+	}
+
+	#back {
+		.card-header {
+			padding: 0.8rem 0rem;
+			color: $white;
+			background-color: unset;
+			text-transform: uppercase;
+			font-size: 1.5rem;
+		}
+
+		.card-content {
+			overflow-y: scroll;
+			height: 6rem;
+			margin-bottom: 1rem;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			padding-bottom: 0.5rem;
+
+			a {
+				margin: 0.5rem 0.5rem 0 0;
+
+				img {
+					height: 3rem;
+					width: 3rem;
+					border-radius: 50%;
+					box-shadow: 10px 10px 29px -12px rgba(0, 0, 0, 0.75);
+				}
+			}
+		}
+
+		.card-footer {
+
+			a {
+				color: white;
+				text-decoration: none;
+				font-size: 1.2rem;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+
+			background-color: $blue;
+			border-radius: 0.5rem;
+			animation: pulse-blue 2s infinite;
+
+			&:hover {
+				animation: pulse-blue 0.3s infinite;
+			}
+
+			@keyframes pulse-blue {
+				0% {
+					transform: scale(0.95);
+					box-shadow: 0 0 0 0 rgba(52, 172, 224, 0.7);
+				}
+
+				70% {
+					transform: scale(1);
+					box-shadow: 0 0 0 10px rgba(52, 172, 224, 0);
+				}
+
+				100% {
+					transform: scale(0.95);
+					box-shadow: 0 0 0 0 rgba(52, 172, 224, 0);
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	#mainPlans {
+		.vueperslides__parallax-wrapper {
+			padding-bottom: 19rem !important;
+		}
+
+		#front {
+			.promotion--span {
+				font-size: 0.8rem;
+				top: 1%;
+			}
+
+			.card-header {
+				font-size: 1rem;
+			}
+
+			.card-footer {
+				font-size: 1rem;
+			}
+		}
+
+		#back {
+			.card-header {
+				font-size: 1.1rem;
+			}
+
+			.card-content {
+				a {
+					img {
+						height: 2rem;
+						width: 2rem;
+					}
+				}
+			}
+
+			.card-footer {
+				a {
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 321px) and (max-width: 375px) {
+	#mainPlans {
+		.vueperslides__parallax-wrapper {
+			padding-bottom: 19rem !important;
+		}
+
+		#front {
+			.promotion--span {
+				font-size: 0.8rem;
+				top: 1%;
+			}
+
+			.card-header {
+				font-size: 1rem;
+			}
+
+			.card-footer {
+				font-size: 1rem;
+			}
+		}
+
+		#back {
+			.card-header {
+				font-size: 1.1rem;
+			}
+
+			.card-content {
+				a {
+					img {
+						height: 2rem;
+						width: 2rem;
+					}
+				}
+			}
+
+			.card-footer {
+				a {
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 376px) and (max-width: 425px) {
+	#mainPlans {
+		.vueperslides__parallax-wrapper {
+			padding-bottom: 19rem !important;
+		}
+
+		#front {
+			.promotion--span {
+				font-size: 0.8rem;
+				top: 1%;
+			}
+
+			.card-header {
+				font-size: 1rem;
+			}
+
+			.card-footer {
+				font-size: 1rem;
+			}
+		}
+
+		#back {
+			.card-header {
+				font-size: 1.1rem;
+			}
+
+			.card-content {
+				a {
+					img {
+						height: 2rem;
+						width: 2rem;
+					}
+				}
+			}
+
+			.card-footer {
+				a {
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+	#mainPlans {
+		.vueperslides__parallax-wrapper {
+			padding-bottom: 19rem !important;
+		}
+
+		#front {
+			.promotion--span {
+				font-size: 0.8rem;
+				top: 1%;
+			}
+
+			.card-header {
+				font-size: 1rem;
+			}
+
+			.card-footer {
+				font-size: 1rem;
+			}
+		}
+
+		#back {
+			.card-header {
+				font-size: 1.1rem;
+			}
+
+			.card-content {
+				a {
+					img {
+						height: 2rem;
+						width: 2rem;
+					}
+				}
+			}
+
+			.card-footer {
+				a {
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 769px) and (max-width: 991px) {
+	#mainPlans {
+		.vueperslides__parallax-wrapper {
+			padding-bottom: 19rem !important;
+		}
+
+		#front {
+			.promotion--span {
+				font-size: 0.8rem;
+				top: 1%;
+			}
+
+			.card-header {
+				font-size: 1rem;
+			}
+
+			.card-footer {
+				font-size: 1rem;
+			}
+		}
+
+		#back {
+			.card-header {
+				font-size: 1.1rem;
+			}
+
+			.card-content {
+				a {
+					img {
+						height: 2rem;
+						width: 2rem;
+					}
+				}
+			}
+
+			.card-footer {
+				a {
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+}

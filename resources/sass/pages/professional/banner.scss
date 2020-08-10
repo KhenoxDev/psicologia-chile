@@ -1,0 +1,27 @@
+@import "../../variables";
+@import "../../mixins";
+
+#mainProfessional--banner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.banner--container {
+		span {
+			font-size: 4rem;
+			color: $white;
+			font-weight: bold;
+		}
+	}
+}
+
+@include screen-min(425px) {
+	#mainProfessional--banner {
+
+		.banner--container {
+			span {
+				font-size: 3rem;
+			}
+		}
+	}
+}

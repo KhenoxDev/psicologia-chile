@@ -1,0 +1,76 @@
+* {
+	font-family: $font-family;
+}
+
+.title--section {
+
+	font-size: 1.7rem;
+	color: $dark;
+
+	strong {
+		font-size: 1.7rem;
+		color: $dark;
+	}
+}
+
+.bg--gray {
+	background-color: $gray-5;
+	padding: 1rem;
+}
+
+.bg--white {
+	background-color: $white;
+	padding: 1rem;
+}
+
+.bg--voluntary {
+	background-image: linear-gradient(to left, $teal-tiny 20%, transparent 80%),
+		url('img/voluntario.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	padding: 1rem;
+	height: 20rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.bg--dark {
+	background-color: $dark;
+}
+
+.bg--section {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 1rem;
+	height: 20rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+	background-attachment: fixed;
+}
+
+.bg--flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.bg--work-banner {
+	background-image: linear-gradient(rgba(244, 175, 52, 0.5) 5%, rgba(244, 175, 52, 0.1) 70%),
+		url('img/work/banner_work_2.jpg');
+}
+
+.bg--about-banner {
+	background-image: linear-gradient(rgba(244, 175, 52, 0.5) 5%, rgba(244, 175, 52, 0.1) 70%),
+		url('../../../img/about/about.jpg');
+}
+
+.bg--professional-banner {
+	background-image: linear-gradient(rgba(244, 175, 52, 0.5) 5%, rgba(244, 175, 52, 0.1) 70%),
+		url('../../../img/about/about.jpg');
+}

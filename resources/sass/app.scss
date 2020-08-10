@@ -1,11 +1,47 @@
-// Fonts
+/* Main */
+@import 'variables';
+@import 'mixins';
+@import 'globals';
+@import 'socials';
+
+/* Layout */
+@import 'layout/module';
+
+/* Home */
+@import 'pages/home/module';
+
+/* About */
+@import 'pages/about/module';
+
+/* Work */
+@import 'pages/work/module';
+
+/* Professional */
+@import 'pages/professional/module';
+
+/* Specialist */
+@import 'pages/specialist/module';
+
+/* Fonts */
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Bootstrap
+/* Bootstrap */
 @import '~bootstrap/scss/bootstrap';
 
-//Core theme
-@import 'style';
-
-// Vueper Slider
+/* Vueper Sliders */
 @import "~vueperslides/dist/vueperslides.css";
+
+/* Autocomplete */
+@import "~vue-simple-drawer/src/index";
+
+/* Font Awesome */
+@import '~@fortawesome/fontawesome-free/scss/brands';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+/* Hamburguers */
+@import '~hamburgers/_sass/hamburgers/hamburgers.scss';
+
+/* Loading */
+@import '~vue-loading-overlay/dist/vue-loading.css';

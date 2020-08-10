@@ -1,0 +1,31 @@
+@import "./variables";
+@import "./mixins";
+
+#mainSocial {
+	.float {
+		position: fixed;
+		width: 3rem;
+		height: 3rem;
+		bottom: 2%;
+		right: 1%;
+		background-color: $green;
+		color: #FFF;
+		border-radius: 50px;
+		text-align: center;
+		font-size: 2rem;
+		box-shadow: 1px 1px 5px $gray-3;
+		z-index: 100;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include transition;
+
+		&:hover {
+			text-decoration: none;
+			color: $dark-green;
+			background-color: $white;
+			box-shadow: 1px 1px 10px $gray-2
+		}
+	}
+
+}

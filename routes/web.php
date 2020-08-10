@@ -14,5 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+	return view('pages.welcome');
+})->name('home');
+
+Route::get('/quienes-somos', function () {
+	return view('pages.about');
+})->name('about');
+
+Route::get('/como-funciona', function () {
+	return view('pages.work');
+})->name('work');
+
+Route::get('/profesionales', function () {
+	return view('pages.professional');
+})->name('professional');
+
+Route::get('/especialidades', function () {
+	return view('pages.specialist');
+})->name('specialist');

@@ -6,12 +6,10 @@
 
 
 
-// require('./popper.min');
 require('./bootstrap.bundle.min');
 require('./jquery.easing.min');
 require('./scripts');
 require('./bootstrap');
-
 
 window.Vue = require('vue');
 
@@ -25,10 +23,17 @@ window.Vue = require('vue');
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+/* Global Components */
+Vue.component('navbar-component', require('./components/Global/Navbar.vue').default);
+Vue.component('whatsapp-component', require('./components/Global/Whatsapp.vue').default);
+Vue.component('footer-component', require('./components/Global/Footer.vue').default);
 
-Vue.component('navbar', require('./components/Navbar.vue').default);
-Vue.component('carousel', require('./components/Carousel.vue').default);
-Vue.component('three-steps', require('./components/ThreeSteps.vue').default);
+/* Section Components */
+Vue.component('home-component', require('./components/Home/Main.vue').default);
+Vue.component('about-component', require('./components/About/Main.vue').default);
+Vue.component('work-component', require('./components/Work/Main.vue').default);
+Vue.component('professional-component', require('./components/Professional/Main.vue').default);
+Vue.component('specialist-component', require('./components/Specialist/Main.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
