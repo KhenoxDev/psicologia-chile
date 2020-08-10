@@ -1,11 +1,6 @@
 <template>
   <div>
-    <div
-      @click="isToggle=!isToggle"
-      v-show="!isToggle"
-      class="animated flipInX flashcard"
-      :class="promotion ? 'promotion--show' : ''"
-    >
+    <div @click="isToggle=!isToggle" v-show="!isToggle" class="animated flipInX flashcard">
       <slot name="frontContent"></slot>
     </div>
     <div

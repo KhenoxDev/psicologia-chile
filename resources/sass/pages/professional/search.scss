@@ -14,7 +14,15 @@
 
 			.btn--filter {
 				background-color: $orange;
-				color: $dark;
+				color: $white;
+				font-weight: bold;
+				font-size: 1rem;
+				padding: 0.5rem 1rem;
+			}
+
+			.btn--clean {
+				background-color: $red;
+				color: $white;
 				font-weight: bold;
 				font-size: 1rem;
 				padding: 0.5rem 1rem;
@@ -23,7 +31,40 @@
 			.vue-simple-drawer {
 				color: $dark;
 				background: $white;
-				width: 25%;
+				width: 27%;
+				overflow-y: visible;
+
+				.filter--content {
+					a {
+						font-size: 1.2rem;
+						color: $dark;
+						text-decoration: none;
+					}
+
+					hr {
+						margin-top: 0.1rem !important;
+						margin-bottom: 0.3rem !important;
+					}
+
+					.filter--options {
+						.filter--option {
+							padding: 0.2rem 0.5rem;
+						}
+					}
+
+					.filter--buttons {
+						width: 27%;
+						display: flex;
+						justify-content: center;
+						background: $white;
+						padding: 1rem;
+						position: fixed;
+
+						button:first-child {
+							margin-right: 1rem;
+						}
+					}
+				}
 			}
 		}
 
@@ -43,6 +84,95 @@
 
 		.no-results {
 			span {}
+		}
+	}
+}
+
+@include screen-min(470px) {
+	.section--professional {
+		.header--professional {
+
+			.filter--container {
+				width: 100%;
+
+				.btn--filter {
+					width: 100%;
+					margin-bottom: 1rem;
+				}
+
+				.vue-simple-drawer {
+					width: 100%;
+
+					.filter--content {
+						.filter--buttons {
+							width: 100%;
+						}
+					}
+				}
+			}
+
+			.search--container {
+				width: 100%;
+				flex-direction: column;
+
+				input,
+				select {
+					width: 100%;
+				}
+
+				input {
+					margin-bottom: 1rem;
+					margin-right: 0rem !important;
+				}
+			}
+		}
+	}
+}
+
+@include screen(471px, 768px) {
+	.section--professional {
+		.header--professional {
+
+			.filter--container {
+				width: 100%;
+
+				.btn--filter {
+					width: 100%;
+					margin-bottom: 1rem;
+				}
+
+				.vue-simple-drawer {
+					width: 100%;
+
+					.filter--content {
+						.filter--buttons {
+							width: 100%;
+						}
+					}
+				}
+			}
+
+			.search--container {
+				width: 100%;
+			}
+		}
+	}
+}
+
+@include screen(769px, 1489px) {
+	.section--professional {
+		.header--professional {
+			.filter--container {
+				.vue-simple-drawer {
+					width: 50%;
+
+					.filter--content {
+						.filter--buttons {
+							width: 100%;
+						}
+					}
+				}
+			}
 		}
 	}
 }

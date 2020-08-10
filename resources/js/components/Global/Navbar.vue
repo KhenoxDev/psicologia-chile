@@ -71,8 +71,8 @@ export default {
           text: "Profesionales",
         },
         {
-          name: "",
-          href: "#",
+          name: "specialist",
+          href: "/especialidades",
           text: "Especialidades",
         },
         {
