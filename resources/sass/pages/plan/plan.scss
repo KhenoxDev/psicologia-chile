@@ -16,7 +16,7 @@
 
 		.card--container--son {
 			display: flex;
-			flex-direction: flex-row;
+			flex-direction: row;
 
 
 			#front {
@@ -40,7 +40,7 @@
 				}
 
 				.card-content {
-					/* overflow-y: scroll; */
+					overflow-y: scroll;
 					height: 6rem;
 					margin-bottom: 1rem;
 
@@ -88,7 +88,8 @@
 
 				.card-content {
 					/* overflow-y: scroll; */
-					height: 6rem;
+					height: 4rem;
+					width: 13rem;
 					margin-bottom: 1rem;
 					display: flex;
 					flex-direction: row;

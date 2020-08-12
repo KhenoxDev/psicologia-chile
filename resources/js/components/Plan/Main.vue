@@ -35,7 +35,15 @@
                 </div>
 
                 <div class="card-content center">
-                  <p>{{ pln2.sesiones }} sesiones.</p>
+                  <!--  <a
+                    v-for="prof in professionals"
+                    :key="prof.id"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img :src="prof.foto" alt />
+                  </a>-->
                 </div>
                 <div class="card-footer">
                   <a href="http://">Lo quiero!</a>
@@ -60,6 +68,7 @@ export default {
       isLoading: true,
       fullPage: true,
       plans: [],
+      professionals: [],
     };
   },
   components: {
@@ -70,6 +79,7 @@ export default {
   mounted() {
     this.onLoad();
     this.getPlans();
+    this.getProfessionals();
   },
   methods: {
     onLoad() {
@@ -96,6 +106,21 @@ export default {
     formatPrice: function (value) {
       let val = (value / 1).toFixed(0);
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    },
+    async getProfessionals() {
+      this.professionals = [];
+      const api =
+        "https://online.psicologiachile.cl/gateway-json.php?service=staff";
+
+      try {
+        let response = await axios.get(api);
+        console.log(response.data);
+        for (let index = 0; index < response.data.items.length; index++) {
+          this.professionals.push(response.data.items[index]);
+        }
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
 };
