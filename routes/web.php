@@ -34,6 +34,6 @@ Route::get('/especialidades', function () {
 	return view('pages.specialist');
 })->name('specialist');
 
-Route::get('/questions', function () {
+Route::get('/preguntas-frecuentes', function () {
 	return view('pages.question');
 })->name('question');

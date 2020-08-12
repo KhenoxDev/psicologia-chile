@@ -9,16 +9,38 @@
       ></loading-component>
     </transition>
     <div class="bg--section bg--professional-banner">
-      <banner banner-identification="mainQuestion--banner" banner-title="FAQ"></banner>
+      <banner banner-identification="mainQuestion--banner" banner-title="Preguntas Frecuentes"></banner>
     </div>
-    <div class="container pt-4">
-      <ul class="list--question">
-        <li
-          class="list--specialist-item"
-          v-for="faq in questions"
-          :key="faq.id"
-        >{{ faq.title }} - {{ faq.answer }}</li>
-      </ul>
+    <div id="list--questions" class="container pt-4">
+      <!-- Inicio Acordeón FAQ-->
+      <div class="accordion" id="accordionExample">
+        <div class="card" v-for="faq in questions" :key="faq.id">
+          <div id="headingOne" class="card-header card--header--style">
+            <button
+              class="btn btn-block text-left"
+              type="btn pointer"
+              data-toggle="collapse"
+              :data-target="'#collapse' + faq.id"
+              aria-expanded="false"
+              aria-controls="collapseOne"
+            >
+              <i class="fas fa-plus"></i>
+              <i class="fas fa-minus"></i>
+              {{ faq.title }}
+            </button>
+          </div>
+
+          <div
+            :id="'collapse' + faq.id"
+            class="collapse hide"
+            aria-labelledby="headingOne"
+            data-parent="#accordionExample"
+          >
+            <div class="card-body">{{ faq.answer }}</div>
+          </div>
+        </div>
+      </div>
+      <!-- Fin Acordeón FAQ -->
     </div>
   </div>
 </template>
