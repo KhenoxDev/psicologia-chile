@@ -16,7 +16,7 @@
       <span class="planSection--title">Planes y valores</span>
       <hr />
       <div class="card--container">
-        <div v-for="pln in plans" :key="pln.id">
+        <div v-for="pln in plans" :key="pln.id" class="card--container--son">
           <card v-for="pln2 in pln.precios" :key="pln2.id" color-back="#f4b034">
             <template v-slot:frontContent>
               <div id="front">
