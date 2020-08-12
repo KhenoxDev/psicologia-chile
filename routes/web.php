@@ -30,6 +30,11 @@ Route::get('/profesionales', function () {
 })->name('professional');
 
 Route::get('/profesionales/{id}', 'ProfessionalController@getDetail')->name('professional');
+
 Route::get('/especialidades', function () {
 	return view('pages.specialist');
 })->name('specialist');
+
+Route::get('/noticias', function () {
+	return view('pages.news');
+})->name('news');

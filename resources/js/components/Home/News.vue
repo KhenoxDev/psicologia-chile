@@ -62,7 +62,7 @@
       </vueper-slide>
     </vueper-slides>
     <div class="seeall--news">
-      <button>ver todas las noticias</button>
+      <a href="/noticias">ver todas las noticias</a>
     </div>
   </div>
 </template>

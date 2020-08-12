@@ -1,0 +1,19 @@
+@import "../../variables";
+@import "../../mixins";
+
+.news--card-container {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 20rem;
+	height: 20rem;
+	border-radius: 0.5rem;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+
+	span {
+		color: $white;
+		padding: 1rem;
+	}
+}
