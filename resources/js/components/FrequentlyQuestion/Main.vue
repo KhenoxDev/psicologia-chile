@@ -13,9 +13,11 @@
     </div>
     <div class="container pt-4">
       <ul class="list--question">
-        <li class="list--specialist-item" v-for="faq in questions" :key="faq.id">
-          <a :title="faq.nombre" :answer="faq.answer" href="/acoso-laboral">{{ specialist.nombre }}</a>
-        </li>
+        <li
+          class="list--specialist-item"
+          v-for="faq in questions"
+          :key="faq.id"
+        >{{ faq.title }} - {{ faq.answer }}</li>
       </ul>
     </div>
   </div>
@@ -26,11 +28,17 @@ import LoadingComponent from "vue-loading-overlay";
 import Banner from "../Reusable/Banner";
 
 export default {
+  props: {
+    urlApi: {
+      type: String,
+    },
+  },
   data() {
     return {
       isLoading: true,
       fullPage: true,
       questions: [],
+      sortKey: "desc",
     };
   },
   components: {
@@ -39,7 +47,7 @@ export default {
   },
   mounted() {
     this.onLoad();
-    this.getSpecialists();
+    this.getQuestions();
   },
   methods: {
     onLoad() {
@@ -48,16 +56,14 @@ export default {
         this.isLoading = false;
       }, 2000);
     },
-    async getSpecialists() {
-      this.specialists = [];
-      const api =
-        "https://online.psicologiachile.cl/gateway-json.php?service=especialidades";
+    async getQuestions() {
+      this.questions = [];
+      const api = this.urlApi + "/" + this.sortKey;
 
       try {
         let response = await axios.get(api);
-        console.log(response.data);
-        for (let index = 0; index < response.data.items.length; index++) {
-          this.specialists.push(response.data.items[index]);
+        for (let index = 0; index < response.data.data.length; index++) {
+          this.questions.push(response.data.data[index]);
         }
       } catch (error) {
         console.log(error);

@@ -3,5 +3,5 @@
 @section('title', 'Psicología Chile')
 
 @section('content')
-	<question-component></question-component>
+	<question-component url-api="{{ route('api.questions') }}"></question-component>
 @endsection
