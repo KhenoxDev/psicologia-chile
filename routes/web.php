@@ -33,3 +33,7 @@ Route::get('/profesionales/{id}', 'ProfessionalController@getDetail')->name('pro
 Route::get('/especialidades', function () {
 	return view('pages.specialist');
 })->name('specialist');
+
+Route::get('/planes', function () {
+	return view('pages.plan');
+})->name('plan');

@@ -76,8 +76,8 @@ export default {
           text: "Especialidades",
         },
         {
-          name: "",
-          href: "#",
+          name: "plan",
+          href: "/planes",
           text: "Planes",
         },
       ],
