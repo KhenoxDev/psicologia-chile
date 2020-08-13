@@ -38,3 +38,8 @@ Route::get('/especialidades', function () {
 Route::get('/noticias', function () {
 	return view('pages.news');
 })->name('news');
+
+//ruta de test para redireccion explicita detalle noticias.
+Route::get('/detalle-noticias', function () {
+	return view('pages.news-detail');
+})->name('news.detail');
