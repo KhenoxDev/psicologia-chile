@@ -1,0 +1,19 @@
+@import "../../variables";
+@import "../../mixins";
+
+.list-news--header {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+
+	select {
+		width: 25%;
+	}
+}
+
+.list-news--container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}

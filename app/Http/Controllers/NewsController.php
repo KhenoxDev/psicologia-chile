@@ -15,7 +15,7 @@ class NewsController extends Controller
 	public function getNews($order = null)
 	{
 		if (!is_null($order)) {
-			$rows = $this->news::orderBy('created_at', $order)->paginate();
+			$rows = $this->news::orderBy('posted_on', $order)->paginate();
 		} else {
 			$rows = $this->news::paginate();
 		}

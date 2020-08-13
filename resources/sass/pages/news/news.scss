@@ -1,19 +1,81 @@
 @import "../../variables";
 @import "../../mixins";
 
-.news--card-container {
-	background-position: center center;
+.news--container {
+	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 20rem;
+	width: 32%;
 	height: 20rem;
-	border-radius: 0.5rem;
 	display: flex;
 	align-items: flex-end;
-	justify-content: flex-end;
+	border-radius: 0.5rem;
+	margin-bottom: 1rem;
 
-	span {
-		color: $white;
-		padding: 1rem;
+	&:first-child {
+		width: 66%;
+		height: 25rem;
+
+		.news--link {
+			.news--content {
+				.news--title {
+					font-size: 2rem;
+				}
+			}
+		}
+	}
+
+	&:nth-child(2) {
+		height: 25rem;
+	}
+
+	.news--link {
+		text-decoration: none;
+		width: 100%;
+		border-radius: 0 0 0.5rem 0.5rem;
+
+		.news--content {
+			display: flex;
+			flex-direction: column;
+			background: rgba(50, 50, 50, 0.8);
+			width: 100%;
+			padding: 1rem;
+			border-radius: 0 0 0.5rem 0.5rem;
+			color: $white;
+
+			.news--title {
+				color: $orange;
+				margin-bottom: 1rem;
+				font-size: 1rem;
+			}
+
+			.news--list {
+				display: inline-flex;
+				list-style: none;
+				margin: 0rem !important;
+				font-size: 0.8rem;
+				padding: 0rem !important;
+
+				li {
+					margin-right: 1.2rem;
+
+					&:first-child {
+						margin-right: auto;
+					}
+
+					span {
+						margin-right: 1rem;
+
+						b {
+							color: $orange;
+						}
+					}
+
+					i {
+						color: $orange;
+					}
+				}
+			}
+		}
 	}
 }
