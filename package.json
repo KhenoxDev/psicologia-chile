@@ -34,6 +34,7 @@
 		"vue-infinite-loading": "^2.4.5",
 		"vue-loading-overlay": "^3.3.2",
 		"vue-mugen-scroll": "^0.2.6",
+		"vue-paginate": "^3.6.0",
 		"vue-simple-drawer": "^1.0.6",
 		"vueperslides": "^2.9.0"
 	}

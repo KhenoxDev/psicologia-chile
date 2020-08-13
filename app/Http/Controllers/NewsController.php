@@ -12,13 +12,9 @@ class NewsController extends Controller
 		$this->news = new News();
 	}
 
-	public function getNews($order = null)
+	public function getNews()
 	{
-		if (!is_null($order)) {
-			$rows = $this->news::orderBy('posted_on', $order)->paginate();
-		} else {
-			$rows = $this->news::paginate();
-		}
+		$rows = $this->news::paginate();
 
 		return response()->json($rows);
 	}

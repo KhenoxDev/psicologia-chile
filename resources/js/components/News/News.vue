@@ -44,7 +44,7 @@ export default {
       default: "Anónimo",
     },
     publish: {
-      type: Date,
+      type: String,
     },
     likes: {
       type: Number,

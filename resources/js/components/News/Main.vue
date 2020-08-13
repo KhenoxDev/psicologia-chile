@@ -17,23 +17,26 @@
     <div class="bg--white">
       <div class="container">
         <div class="list-news--header">
-          <select v-model="sortKey" v-on:change="getNews" class="form-control w-25">
+          <select v-model="sortKey" class="form-control w-25">
             <option value="desc" selected>Más recientes</option>
             <option value="asc">Más antiguos</option>
           </select>
         </div>
         <hr />
-        <div class="list-news--container">
-          <news
-            v-for="n in news"
-            :key="n.id"
-            :image="n.image"
-            :title="n.title"
-            :content="n.content"
-            :autor="n.autor"
-            :publish="n.posted_on"
-          ></news>
-        </div>
+        <paginate name="newsList" :list="orderedList" :per="5">
+          <div class="list-news--container">
+            <news
+              v-for="n in paginated('newsList')"
+              :key="n.id"
+              :image="n.image"
+              :title="n.title"
+              :content="n.content"
+              :autor="n.autor"
+              :publish="n.posted_on"
+            ></news>
+          </div>
+        </paginate>
+        <paginate-links class="pagination" for="newsList"></paginate-links>
       </div>
     </div>
   </div>
@@ -42,6 +45,7 @@
 import News from "./News";
 import LoadingComponent from "vue-loading-overlay";
 import Banner from "../Reusable/Banner";
+import VuePaginate from "vue-paginate";
 
 export default {
   props: {
@@ -53,6 +57,7 @@ export default {
     News,
     LoadingComponent,
     Banner,
+    VuePaginate,
   },
   data() {
     return {
@@ -60,11 +65,17 @@ export default {
       fullPage: true,
       news: [],
       sortKey: "desc",
+      paginate: ["newsList"],
     };
   },
   mounted() {
     this.onLoad();
     this.getNews();
+  },
+  computed: {
+    orderedList: function () {
+      return _.orderBy(this.news, "posted_on", this.sortKey);
+    },
   },
   methods: {
     onLoad() {
@@ -74,9 +85,7 @@ export default {
       }, 2000);
     },
     async getNews() {
-      this.news = [];
-      this.onLoad();
-      const api = this.urlApi + "/" + this.sortKey;
+      const api = this.urlApi;
 
       try {
         let response = await axios.get(api);

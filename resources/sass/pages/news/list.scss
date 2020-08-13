@@ -17,3 +17,23 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
+
+.newsList {
+	justify-content: center;
+
+	li {
+		background-color: $gray-4;
+		color: $dark;
+		padding: 1rem;
+
+		a {
+			cursor: pointer;
+		}
+
+		&.active {
+			background-color: $blue;
+			color: $white;
+			font-weight: bold;
+		}
+	}
+}
