@@ -3,5 +3,5 @@
 @section('title', 'Psicología Chile')
 
 @section('content')
-	<news-detail></news-detail>
+	<news-detail id-news="{{ $id }}" url-api="{{ route("api.news") }}"></news-detail>
 @endsection

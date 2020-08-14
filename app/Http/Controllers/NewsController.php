@@ -12,10 +12,21 @@ class NewsController extends Controller
 		$this->news = new News();
 	}
 
-	public function getNews()
+	public function getNews($id = null)
 	{
-		$rows = $this->news::paginate();
+		if (!is_null($id)) {
+			$rows = $this->news::find($id);
+		} else {
+
+			$rows = $this->news::paginate();
+		}
+
 
 		return response()->json($rows);
+	}
+
+	public function getDetail($id)
+	{
+		return view("pages.news-detail", compact('id'));
 	}
 }

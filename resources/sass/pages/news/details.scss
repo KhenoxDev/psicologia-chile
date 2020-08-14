@@ -27,14 +27,10 @@
 			padding: 1rem 0rem;
 			flex-direction: column;
 			align-items: flex-start;
-
-			background-image: url("http://lorempixel.com/output/city-q-c-1920-1080-7.jpg");
-			/* background-image: url("img/news/news_piedras.png"); */
 			background-position: center;
 			background-repeat: no-repeat;
 			background-attachment: fixed;
 			background-size: cover;
-
 		}
 
 
@@ -148,7 +144,6 @@
 		.comment--card {
 			display: flex;
 			justify-content: flex-start;
-			border-style: groove;
 			border-color: $gray-4;
 			border-radius: 1rem;
 			padding-left: 1rem;
