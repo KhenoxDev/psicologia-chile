@@ -36,6 +36,8 @@ Vue.component('professional-component', require('./components/Professional/Main.
 Vue.component('detail-component', require('./components/Professional/DetailProfessional.vue').default);
 Vue.component('specialist-component', require('./components/Specialist/Main.vue').default);
 Vue.component('news-component', require('./components/News/Main.vue').default);
+//eliminar despues.
+Vue.component('news-detail', require('./components/News/DetailNews.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
