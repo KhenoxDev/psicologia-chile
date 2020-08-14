@@ -11,7 +11,7 @@
             <span>
               <b>{{ autor }}</b>
             </span>
-            {{ formatDate(publish) }}
+            {{ publish }}
           </li>
           <li>
             <i class="far fa-thumbs-up"></i>
@@ -56,18 +56,6 @@ export default {
     },
     link: {
       type: String,
-    },
-  },
-  methods: {
-    formatDate(date) {
-      var format_date = new Date(date);
-      return (
-        format_date.getDate() +
-        "/" +
-        format_date.getMonth() +
-        "/" +
-        format_date.getFullYear()
-      );
     },
   },
 };
