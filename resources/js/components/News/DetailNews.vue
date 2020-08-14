@@ -95,20 +95,24 @@
         </div>
 
         <div class="comment--card">
-          <div class="comment--authorpic">
-            <img :src="comment_author_pic" alt />
+          <div class="authorpic--content">
+            <div class="comment--authorpic">
+              <img :src="comment_author_pic" alt />
+            </div>
           </div>
 
-          <div class="comment--author--container">
-            <span class="span--comment--author">{{ comment_author }}</span>
-          </div>
+          <div class="text--content--comment">
+            <div class="comment--author--container">
+              <span class="span--comment--author">{{ comment_author }}</span>
+            </div>
 
-          <div class="comment--date--container">
-            <span class="span--comment--date">{{ comment_date }}</span>
-          </div>
+            <div class="comment--date--container">
+              <span class="span--comment--date">{{ comment_date }}</span>
+            </div>
 
-          <div class="comment--content">
-            <span class="span--comment--content">{{ comment_content }}</span>
+            <div class="comment--content">
+              <span class="span--comment--content">{{ comment_content }}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -154,7 +158,7 @@ export default {
     },
     countComments: {
       type: String,
-      default: "3",
+      default: "1",
     },
     countLikes: {
       type: String,
