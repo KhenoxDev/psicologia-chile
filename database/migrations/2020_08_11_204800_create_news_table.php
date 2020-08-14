@@ -20,9 +20,10 @@ class CreateNewsTable extends Migration
 			$table->string('content');
 			$table->string('image');
 			$table->boolean('is_posted');
-			$table->timestamp('posted_on', 0);
+			$table->date('posted_on');
 			$table->string('updated_by');
-			$table->timestamps();
+			$table->timestamp('created_at')->useCurrent();
+			$table->timestamp('updated_at')->useCurrent();
 		});
 	}
 

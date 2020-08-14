@@ -17,7 +17,8 @@ class CreateFrequentlyQuestionTable extends Migration
 			$table->id()->autoIncrement();
 			$table->string('title');
 			$table->string('answer');
-			$table->timestamps();
+			$table->timestamp('created_at')->useCurrent();
+			$table->timestamp('updated_at')->useCurrent();
 		});
 	}
 

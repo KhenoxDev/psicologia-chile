@@ -1,6 +1,6 @@
 <template>
   <div class="news--container" :style="'background-image: url('+ image +')'">
-    <a class="news--link" href="#">
+    <a class="news--link" :href="'noticias/' + identificator">
       <div class="news--content">
         <span class="news--title">
           <b>{{ title.substring(40,0) }}</b>
@@ -53,6 +53,9 @@ export default {
     comments: {
       type: Number,
       default: 0,
+    },
+    link: {
+      type: String,
     },
   },
   methods: {

@@ -19,7 +19,8 @@ class CreateGeneralityTable extends Migration
 			$table->string('image');
 			$table->string('text');
 			$table->string('updated_by');
-			$table->timestamps();
+			$table->timestamp('created_at')->useCurrent();
+			$table->timestamp('updated_at')->useCurrent();
 		});
 	}
 

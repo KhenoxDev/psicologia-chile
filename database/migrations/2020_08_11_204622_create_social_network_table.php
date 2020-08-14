@@ -18,7 +18,8 @@ class CreateSocialNetworkTable extends Migration
 			$table->string('name');
 			$table->string('link');
 			$table->string('image');
-			$table->timestamps();
+			$table->timestamp('created_at')->useCurrent();
+			$table->timestamp('updated_at')->useCurrent();
 		});
 	}
 

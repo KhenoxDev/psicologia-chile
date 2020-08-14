@@ -16,7 +16,8 @@ class CreateModuleTable extends Migration
 		Schema::create('module', function (Blueprint $table) {
 			$table->id()->autoIncrement();
 			$table->string('name');
-			$table->timestamps();
+			$table->timestamp('created_at')->useCurrent();
+			$table->timestamp('updated_at')->useCurrent();
 		});
 	}
 

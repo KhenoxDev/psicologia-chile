@@ -13,9 +13,9 @@ $factory->define(News::class, function (Faker $faker) {
 		'content' => $faker->realText(200),
 		'image' => $faker->imageUrl,
 		'is_posted' => $faker->boolean,
-		'posted_on' => $faker->dateTime('now'),
+		'posted_on' => Carbon::now(),
 		'updated_by' => $faker->name,
-		'created_at' => $faker->dateTime('now'),
-		'updated_at' => $faker->dateTime('now'),
+		'created_at' => Carbon::now(),
+		'updated_at' => Carbon::now(),
 	];
 });

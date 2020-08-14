@@ -28,6 +28,7 @@
             <news
               v-for="n in paginated('newsList')"
               :key="n.id"
+              :identificator="n.id"
               :image="n.image"
               :title="n.title"
               :content="n.content"

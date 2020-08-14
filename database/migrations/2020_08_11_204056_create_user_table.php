@@ -18,7 +18,8 @@ class CreateUserTable extends Migration
 			$table->string('rut')->unique();
 			$table->string('password');
 			$table->unsignedBigInteger('id_rol');
-			$table->timestamps();
+			$table->timestamp('created_at')->useCurrent();
+			$table->timestamp('updated_at')->useCurrent();
 
 			$table->foreign('id_rol')->references('id')->on('rol');
 		});

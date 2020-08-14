@@ -17,7 +17,8 @@ class CreateNewsletterTable extends Migration
 			$table->id()->autoIncrement();
 			$table->string('email');
 			$table->boolean('is_active');
-			$table->timestamps();
+			$table->timestamp('created_at')->useCurrent();
+			$table->timestamp('updated_at')->useCurrent();
 		});
 	}
 
