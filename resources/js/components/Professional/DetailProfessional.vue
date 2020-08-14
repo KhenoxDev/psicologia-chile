@@ -15,32 +15,30 @@
     <div id="detailProfessional--section" class="container bg--white">
       <div class="detailProfessional--content">
         <div class="detailImage">
-          <img :src="this.professionals[0].foto" alt />
+          <img :src="this.professionals.foto" alt />
           <div class="div--textImage">
-            <span class="span--fullname">{{ this.professionals[0].nombreCompleto }}</span>
-            <span class="span--profesion" v-html="this.professionals[0].profesion"></span>
+            <span class="span--fullname">{{ this.professionals.nombreCompleto }}</span>
+            <span class="span--profesion" v-html="this.professionals.profesion"></span>
           </div>
           <div class="schedule--container">
             <span class="schedule--title">Días de atención:</span>
-            <span
-              class="span--schedule badge badge--schedule"
-            >{{ this.professionals[0].diasAtencion }}</span>
+            <span class="span--schedule badge badge--schedule">{{ this.professionals.diasAtencion }}</span>
           </div>
         </div>
 
         <div class="detailText">
           <span class="span--codigo">
             <strong>Código:</strong>
-            {{ this.professionals[0].codigo }}
+            {{ this.professionals.codigo }}
           </span>
           <div class="description--container">
-            <p class="p--descripcion" v-html="this.professionals[0].descripcion"></p>
+            <p class="p--descripcion" v-html="this.professionals.descripcion"></p>
           </div>
           <div class="specialist--container">
             <span class="specialist--title">Especialidades:</span>
             <span
               class="badge badge--psicologia span--specialist"
-              v-for="spec in this.professionals[0].especialidades"
+              v-for="spec in this.professionals.especialidades"
               :key="spec.id"
             >{{ spec }}</span>
           </div>
@@ -49,7 +47,7 @@
             <span class="prevision--title">Previsiones:</span>
             <span
               class="badge badge--psicologia span--prevision"
-              v-for="prev in this.professionals[0].prevision"
+              v-for="prev in this.professionals.prevision"
               :key="prev.id"
             >{{ prev }}</span>
           </div>
@@ -61,7 +59,7 @@
       <span class="planSection--title">Planes y valores</span>
       <hr />
       <div class="card--container">
-        <card v-for="pln in this.professionals[0].planes" :key="pln.id" color-back="#f4b034">
+        <card v-for="pln in this.professionals.planes" :key="pln.id" color-back="#f4b034">
           <template v-slot:frontContent>
             <div id="front">
               <div class="card-header">{{pln.plan}}</div>
@@ -97,6 +95,11 @@ import Banner from "../Reusable/Banner";
 import Card from "../Reusable/Card";
 
 export default {
+  components: {
+    LoadingComponent,
+    Banner,
+    Card,
+  },
   props: {
     codeProfessional: {
       type: String,
@@ -110,11 +113,6 @@ export default {
       professionals: [],
     };
   },
-  components: {
-    LoadingComponent,
-    Banner,
-    Card,
-  },
   mounted() {
     this.onLoad();
     this.getProfessionals();
@@ -127,8 +125,6 @@ export default {
       }, 2000);
     },
     async getProfessionals() {
-      this.professionals = [];
-      this.onLoad();
       const api =
         "https://online.psicologiachile.cl/gateway-json.php?service=staff";
 
@@ -139,9 +135,7 @@ export default {
           return professional.index == this.codeProfessional;
         });
 
-        for (let index = 0; index < aux.length; index++) {
-          this.professionals.push(aux[index]);
-        }
+        this.professionals = aux[0];
       } catch (error) {
         console.log(error);
       }
