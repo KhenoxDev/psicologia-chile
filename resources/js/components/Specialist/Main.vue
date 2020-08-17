@@ -138,9 +138,13 @@ export default {
               specialist.descripcion =
                 "Los trastornos de la personalidad son un grupo de afecciones mentales en las cuales una persona tiene un patrón prolongado de comportamientos, emociones y pensamientos que es muy diferente a las expectativas de su cultura. Estos comportamientos interfieren con la capacidad de la persona para desempeñarse en las relaciones interpersonales, el trabajo y otros contextos.";
               break;
-            case "Trastornos alimenticios":
+            case "Trastorno Alimenticio":
               specialist.descripcion =
                 "Los trastornos de la alimentación son afecciones graves que se relacionan con las conductas alimentarias que afectan negativamente la salud, las emociones y la capacidad de desempeñarte en áreas importantes de la vida. Los trastornos de la alimentación más frecuentes son la anorexia nerviosa, la bulimia nerviosa, y el trastorno alimentario compulsivo.";
+              break;
+            case "Trastorno del sueño":
+              specialist.descripcion =
+                "Un trastorno del sueño puede afectar tu salud, seguridad y calidad de vida en general. La falta de sueño puede afectar tu capacidad para conducir con seguridad y aumentar el riesgo de otros problemas de salud.";
               break;
             case "Trastornos del sueño":
               specialist.descripcion =
