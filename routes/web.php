@@ -40,3 +40,7 @@ Route::get('/noticias', function () {
 })->name('news');
 
 Route::get('/noticias/{id}', 'NewsController@getDetail')->name('news');
+
+Route::get('/planes', function () {
+	return view('pages.plan');
+})->name('plan');
