@@ -16,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('throttle:60,1')->group(function () {
 	Route::get('news/{id?}', 'NewsController@getNews')->name('api.news');
+	Route::get('questions/{order?}', 'FrequentlyQuestionController@getQuestions')->name('api.questions');
 });

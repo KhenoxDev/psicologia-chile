@@ -44,3 +44,7 @@ Route::get('/noticias/{id}', 'NewsController@getDetail')->name('news');
 Route::get('/planes', function () {
 	return view('pages.plan');
 })->name('plan');
+
+Route::get('/preguntas-frecuentes', function () {
+	return view('pages.question');
+})->name('question');

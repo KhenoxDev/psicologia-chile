@@ -38,6 +38,8 @@ Vue.component('specialist-component', require('./components/Specialist/Main.vue'
 Vue.component('news-component', require('./components/News/Main.vue').default);
 Vue.component('news-detail', require('./components/News/DetailNews.vue').default);
 Vue.component('plan-component', require('./components/Plan/Main.vue').default);
+Vue.component('question-component', require('./components/FrequentlyQuestion/Main.vue').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

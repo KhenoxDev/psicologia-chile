@@ -34,7 +34,8 @@
       </vueper-slide>
     </vueper-slides>
     <div class="seemore--questions">
-      <button>ver todas las consultas</button>
+      <!-- <button>ver todas las consultas</button> -->
+      <a :href="'preguntas-frecuentes/'">ver todas las consultas</a>
     </div>
   </div>
 </template>

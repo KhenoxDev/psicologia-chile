@@ -1,0 +1,60 @@
+@import "../../variables";
+@import "../../mixins";
+
+#list--questions {
+
+	/* display: flex;
+	    justify-content: flex-start;
+		flex-direction: column; */
+	.card {
+		margin-bottom: 0.5rem !important;
+		border: none !important;
+
+		.card--header--style {
+			background: $teal-tiny;
+			border-radius: 0.5rem 0.5rem;
+			/* padding-bottom: 0rem; */
+
+			button {
+				display: flex;
+				align-items: center;
+				font-size: 1.2rem;
+				margin-right: 1rem;
+				color: $white;
+
+				.fa-plus,
+				.fa-minus {
+					color: $yellow;
+					font-size: 1.2rem;
+					margin-right: 1rem;
+
+				}
+
+				&::focus {
+					border: none !important;
+				}
+
+				&[aria-expanded="true"] .fa-plus {
+					display: none;
+				}
+
+				&[aria-expanded="false"] .fa-minus {
+					display: none;
+				}
+			}
+
+			.pointer {
+				cursor: pointer;
+			}
+		}
+
+		.card-body {
+			background: $gray-4;
+			border-radius: 0.5rem 0.5rem;
+		}
+
+		.card-header {
+			padding: 1rem !important;
+		}
+	}
+}
