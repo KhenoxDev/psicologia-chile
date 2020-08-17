@@ -23,7 +23,7 @@
           </select>
         </div>
         <hr />
-        <paginate name="newsList" :list="orderedList" :per="5">
+        <paginate name="newsList" :list="orderedList" :per="6">
           <div class="list-news--container">
             <news
               v-for="n in paginated('newsList')"
@@ -34,6 +34,7 @@
               :content="n.content"
               :autor="n.autor"
               :publish="n.posted_on"
+              width-prop="32%"
             ></news>
           </div>
         </paginate>

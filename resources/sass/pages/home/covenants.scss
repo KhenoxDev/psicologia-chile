@@ -2,6 +2,10 @@
 @import "../../mixins";
 
 #mainCovenants {
+	.vueperslides__parallax-wrapper {
+		padding-bottom: 13.5% !important;
+	}
+
 	.vueperslides__bullet {
 		&:focus {
 			outline: none;

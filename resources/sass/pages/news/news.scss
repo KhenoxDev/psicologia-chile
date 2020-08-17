@@ -5,29 +5,11 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 32%;
 	height: 20rem;
 	display: flex;
 	align-items: flex-end;
 	border-radius: 0.5rem;
 	margin-bottom: 1rem;
-
-	&:first-child {
-		width: 66%;
-		height: 25rem;
-
-		.news--link {
-			.news--content {
-				.news--title {
-					font-size: 2rem;
-				}
-			}
-		}
-	}
-
-	&:nth-child(2) {
-		height: 25rem;
-	}
 
 	.news--link {
 		text-decoration: none;

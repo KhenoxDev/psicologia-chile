@@ -1,5 +1,5 @@
 <template>
-  <div class="news--container" :style="'background-image: url('+ image +')'">
+  <div class="news--container" :style="'background-image: url('+ image +'); width:'+ widthProp">
     <a class="news--link" :href="'noticias/' + identificator">
       <div class="news--content">
         <span class="news--title">
@@ -55,6 +55,9 @@ export default {
       default: 0,
     },
     link: {
+      type: String,
+    },
+    widthProp: {
       type: String,
     },
   },
