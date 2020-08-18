@@ -20,20 +20,23 @@
           <card v-for="pln2 in pln.precios" :key="pln2.id" color-back="#f4b034">
             <template v-slot:frontContent>
               <div id="front">
-                <div class="card-header">{{ pln2.plan }}</div>
-                <div class="card-content center">
-                  <p v-html="pln.descripcion"></p>
-                </div>
-                <div class="card-footer">Cuéntame más!</div>
-              </div>
-            </template>
-            <template v-slot:backContent>
-              <div id="back">
                 <div class="card-header">
                   <strong>{{ pln2.sesiones }}</strong>
                   sesiones a
                   <strong>${{ formatPrice(pln2.valor) }}</strong>
                 </div>
+
+                <div class="card-content center">
+                  <p v-html="pln.descripcion"></p>
+                </div>
+                <div class="card-footer">
+                  <a :href="pln2.contratar" target="_blank">Lo quiero!</a>
+                </div>
+              </div>
+            </template>
+            <template v-slot:backContent>
+              <div id="back">
+                <div class="card-header">{{ pln2.plan }}</div>
 
                 <div class="card-content center">
                   <a
@@ -47,7 +50,7 @@
                   </a>
                 </div>
                 <div class="card-footer">
-                  <a href="http://">Lo quiero!</a>
+                  <a :href="pln2.contratar" target="_blank">Lo quiero!</a>
                 </div>
               </div>
             </template>

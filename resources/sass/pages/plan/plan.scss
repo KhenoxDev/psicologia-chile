@@ -51,13 +51,22 @@
 				}
 
 				.card-footer {
-					color: white;
-					font-size: 1.2rem;
+
+					a {
+						color: white;
+						text-decoration: none;
+						font-size: 1.2rem;
+						font-weight: bold;
+						text-transform: uppercase;
+					}
+
 					background-color: $blue;
-					font-weight: bold;
-					text-transform: uppercase;
 					border-radius: 0.5rem;
 					animation: pulse-blue 2s infinite;
+
+					&:hover {
+						animation: pulse-blue 0.3s infinite;
+					}
 
 					@keyframes pulse-blue {
 						0% {
@@ -90,12 +99,10 @@
 				.card-content {
 					overflow-y: scroll;
 					height: 4rem;
-					/* width: 13rem; */
 					margin-bottom: 1rem;
 					display: flex;
 					flex-direction: row;
 					flex-wrap: wrap;
-					/* justify-content: flex-start; */
 					justify-content: center;
 					padding-bottom: 0.5rem;
 
@@ -159,6 +166,17 @@
 			.card--container--son {
 				display: flex;
 				flex-direction: column;
+
+				#back {
+					.card-header {
+						font-size: 1.2rem;
+					}
+
+					.card-content {
+						height: 6.2rem;
+						width: 13rem;
+					}
+				}
 			}
 		}
 	}
