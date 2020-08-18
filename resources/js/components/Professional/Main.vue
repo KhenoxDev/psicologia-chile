@@ -229,6 +229,10 @@ export default {
       if (this.filterOpt == "prev") {
         this.previsionSelected.push(this.nameOpt);
       }
+
+      if (this.filterOpt == "spec") {
+        this.specialistSelected.push(this.nameOpt);
+      }
     }
   },
   methods: {

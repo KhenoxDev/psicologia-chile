@@ -6,16 +6,18 @@
     <hr class="line--separator" />
     <div class="row">
       <div class="col-lg-3 col-md-3 col-sm-12 cards--container">
-        <div
+        <a
           v-for="item in col1"
           :key="item.id"
           :class="'card--specialist ' + item.class"
           :style="'background-image: linear-gradient(to left, white 30%, transparent 80%), url(' + item.image + ');'"
+          :href="'profesionales/spec/' + item.title"
+          target="_blank"
         >
           <div class="specialist">
             <span>{{ item.title }}</span>
           </div>
-        </div>
+        </a>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12 cards--container">
         <div
@@ -26,21 +28,27 @@
         >
           <div class="specialist">
             <span class="title--psicologia">{{ item.title }}</span>
-            <button class="btn btn--specialist">Encuentra tu especialista</button>
+            <a
+              class="btn btn--specialist"
+              href="profesionales"
+              target="_blank"
+            >Encuentra tu especialista</a>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-md-3 col-sm-12 cards--container">
-        <div
+        <a
           v-for="item in col3"
           :key="item.id"
           :class="'card--specialist ' + item.class"
           :style="'background-image: linear-gradient(to left, white 30%, transparent 80%), url(' + item.image + ');'"
+          :href="'profesionales/spec/' + item.title"
+          target="_blank"
         >
           <div class="specialist">
             <span>{{ item.title }}</span>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>
@@ -51,9 +59,8 @@ export default {
     return {
       col1: [
         {
-          order: 1,
-          title: "Psicología Infantil",
-          image: "img/specialists/infantil.jpg",
+          title: "Adicciones",
+          image: "img/specialists/adicciones.jpg",
           class: "",
         },
         {
@@ -62,7 +69,7 @@ export default {
           class: "",
         },
         {
-          title: "Estrés Laboral",
+          title: "Estrés",
           image: "img/specialists/estres.jpg",
           class: "",
         },
@@ -86,7 +93,7 @@ export default {
           class: "",
         },
         {
-          title: "Terapia Parejas",
+          title: "Terapia de Parejas",
           image: "img/specialists/parejas.jpg",
           class: "",
         },
