@@ -77,7 +77,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="mb-2 mt-3">
+                <!-- <div class="mb-2 mt-3">
                   <a
                     data-toggle="collapse"
                     href="#collapseSchedule"
@@ -128,7 +128,7 @@
                       </label>
                     </div>
                   </div>
-                </div>
+                </div>-->
                 <div class="filter--buttons fixed-bottom">
                   <button class="btn btn--clean" @click="cleanOptions">Limpiar</button>
                 </div>
