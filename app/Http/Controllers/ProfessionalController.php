@@ -14,4 +14,9 @@ class ProfessionalController extends Controller
 	{
 		return view('pages.detail', compact('id'));
 	}
+
+	public function getProfessionalsByFilter($filter, $name)
+	{
+		return view('pages.professional', compact('filter', 'name'));
+	}
 }

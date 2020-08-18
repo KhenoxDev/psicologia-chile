@@ -17,10 +17,16 @@
       :visible-slides="3"
       :slide-ratio="1 / 8"
     >
-      <vueper-slide v-for="slide in slides" :key="slide.id" :style="'margin-bottom:' + ['1rem']">
+      <vueper-slide
+        v-for="prevision in previsions"
+        :key="prevision.id"
+        :style="'margin-bottom:' + ['1rem']"
+      >
         <template v-slot:content>
           <div class="card card-body card--prevision">
-            <img class="img-fluid" :src="slide.image" :alt="slide.imageDesc" />
+            <a :href="'profesionales/prev/' + prevision.nombre">
+              <img class="img-fluid" :src="prevision.image" :alt="prevision.nombre" />
+            </a>
           </div>
         </template>
       </vueper-slide>
@@ -71,45 +77,58 @@ export default {
           arrows: false,
         },
       },
-      slides: [
-        {
-          title: "Slide #1",
-          content: "Slide content.",
-          image: "img/Logo_Banmedica.png",
-          imageDesc: "Banmedica",
-        },
-        {
-          title: "Slide #2",
-          content: "Slide content.",
-          image: "img/Logo_Fonasa.svg",
-          imageDesc: "Fonasa",
-        },
-        {
-          title: "Slide #3",
-          content: "Slide content.",
-          image: "img/Logo_Colmena_2.jpg",
-          imageDesc: "Colmena",
-        },
-        {
-          title: "Slide #4",
-          content: "Slide content.",
-          image: "img/Logo_Masvida.png",
-          imageDesc: "Masvida",
-        },
-        {
-          title: "Slide #5",
-          content: "Slide content.",
-          image: "img/Logo_Cruz_Blanca.png",
-          imageDesc: "Cruzblanca",
-        },
-        {
-          title: "Slide #6",
-          content: "Slide content.",
-          image: "img/Logo_Consalud.png",
-          imageDesc: "Consalud",
-        },
-      ],
+      previsions: [],
     };
+  },
+  mounted() {
+    this.getPrevisions();
+  },
+  methods: {
+    async getPrevisions() {
+      this.previsions = [];
+      const api =
+        "https://online.psicologiachile.cl/gateway-json.php?service=prevision";
+
+      try {
+        let response = await axios.get(api);
+        for (let index = 0; index < response.data.items.length; index++) {
+          this.previsions.push(response.data.items[index]);
+        }
+
+        this.previsions.some((prev) => {
+          switch (prev.nombre) {
+            case "Fonasa":
+              prev.image = "img/prevision/Logo_Fonasa.svg";
+              break;
+            case "Isapre Banmédica":
+              prev.image = "img/prevision/Logo_Banmedica.png";
+              break;
+            case "Isapre Consalud":
+              prev.image = "img/prevision/Logo_Consalud.png";
+              break;
+            case "Isapre Colmena":
+              prev.image = "img/prevision/Logo_Colmena_2.jpg";
+              break;
+            case "Isapre CruzBlanca":
+              prev.image = "img/prevision/Logo_Cruz_Blanca.png";
+              break;
+            case "Isapre Nueva Masvida":
+              prev.image = "img/prevision/Logo_Masvida.png";
+              break;
+            case "Isapre Vida Tres":
+              prev.image = "img/prevision/Logo_Vidatres.png";
+              break;
+            case "Isapre Cruz del Norte":
+              prev.image = "img/prevision/Logo_Cruznorte.png";
+              break;
+            default:
+              break;
+          }
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    },
   },
 };
 </script>

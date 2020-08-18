@@ -31,6 +31,8 @@ Route::get('/profesionales', function () {
 
 Route::get('/profesionales/{id}', 'ProfessionalController@getDetail')->name('professional');
 
+Route::get('/profesionales/{filter}/{name}', 'ProfessionalController@getProfessionalsByFilter')->name('professional.filter');
+
 Route::get('/especialidades', function () {
 	return view('pages.specialist');
 })->name('specialist');

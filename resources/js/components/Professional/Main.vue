@@ -182,6 +182,14 @@ import Professional from "./Professional";
 import Drawer from "vue-simple-drawer";
 
 export default {
+  props: {
+    filterOpt: {
+      type: String,
+    },
+    nameOpt: {
+      type: String,
+    },
+  },
   data() {
     return {
       isLoading: true,
@@ -217,6 +225,11 @@ export default {
   mounted() {
     this.onLoad();
     this.getProfessionals();
+    if (this.filterOpt.length > 0 && this.nameOpt.length > 0) {
+      if (this.filterOpt == "prev") {
+        this.previsionSelected.push(this.nameOpt);
+      }
+    }
   },
   methods: {
     onLoad() {

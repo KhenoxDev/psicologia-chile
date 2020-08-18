@@ -160,6 +160,13 @@
 				display: flex;
 				flex-direction: column;
 			}
+
+			#front,
+			#back {
+				.card-content {
+					width: 100%;
+				}
+			}
 		}
 	}
 }

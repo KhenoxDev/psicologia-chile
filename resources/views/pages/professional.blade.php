@@ -3,5 +3,5 @@
 @section('title', 'Psicología Chile')
 
 @section('content')
-	<professional-component></professional-component>
+	<professional-component filter-opt="{{ isset($filter) ? $filter : '' }}" name-opt="{{ isset($name) ? $name : '' }}"></professional-component>
 @endsection
