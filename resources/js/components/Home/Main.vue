@@ -10,7 +10,7 @@
     </transition>
     <masthead></masthead>
     <div class="bg--white">
-      <three-steps></three-steps>
+      <video-component></video-component>
       <prevision></prevision>
       <were-news></were-news>
       <covenants></covenants>
@@ -37,7 +37,7 @@
 <script>
 import LoadingComponent from "vue-loading-overlay";
 import Masthead from "./Masthead";
-import ThreeSteps from "./ThreeSteps";
+import VideoComponent from "./Video";
 import Prevision from "./Prevision";
 import Specialists from "./Specialists";
 import FeaturedPlans from "./FeaturedPlans";
@@ -58,7 +58,7 @@ export default {
   components: {
     LoadingComponent,
     Masthead,
-    ThreeSteps,
+    VideoComponent,
     Prevision,
     Specialists,
     FeaturedPlans,
