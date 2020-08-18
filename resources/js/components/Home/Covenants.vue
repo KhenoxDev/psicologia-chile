@@ -1,7 +1,7 @@
 <template>
   <div id="mainCovenants" class="container mt-4 mb-4">
     <span class="title--section">
-      <strong>Empresas</strong> que confiaron en nosotros
+      <strong>Con</strong>venios
     </span>
     <hr class="line--separator" />
     <vueper-slides
@@ -79,57 +79,58 @@ export default {
         {
           title: "Slide #1",
           content: "Slide content.",
-          image: "img/covenants/claro.png",
-          imageDesc: "claro",
+          image: "img/covenants/banco_chile3.png",
+          imageDesc: "banco_chile",
           urlCovenants: "#",
         },
         {
           title: "Slide #2",
-          content: "Slide content.",
-          image: "img/covenants/achs2.png",
-          imageDesc: "achs",
-          urlCovenants: "#",
-        },
-        {
-          title: "Slide #3",
-          content: "Slide content.",
-          image: "img/covenants/banco_itau.jfif",
-          imageDesc: "banco_itau",
-          urlCovenants: "#",
-        },
-        {
-          title: "Slide #4",
-          content: "Slide content.",
-          image: "img/covenants/colegio_psicologos.jpg",
-          imageDesc: "colegio_psicologos",
-          urlCovenants: "#",
-        },
-        {
-          title: "Slide #5",
-          content: "Slide content.",
-          image: "img/covenants/sky.png",
-          imageDesc: "sky",
-          urlCovenants: "#",
-        },
-        {
-          title: "Slide #6",
-          content: "Slide content.",
-          image: "img/covenants/fldsmith.png",
-          imageDesc: "fldsmith",
-          urlCovenants: "#",
-        },
-        {
-          title: "Slide #7",
           content: "Slide content.",
           image: "img/covenants/banco_security.jpg",
           imageDesc: "banco_security",
           urlCovenants: "#",
         },
         {
+          title: "Slide #3",
+          content: "Slide content.",
+          image: "img/covenants/banco_itau3.png",
+          imageDesc: "banco_itau",
+          urlCovenants: "#",
+        },
+        {
+          title: "Slide #4",
+          content: "Slide content.",
+          image: "img/covenants/colegio_psicologos2.jpg",
+          imageDesc: "colegio_psicologos",
+          urlCovenants: "#",
+        },
+        {
+          title: "Slide #5",
+          content: "Slide content.",
+          image: "img/covenants/claro.png",
+          imageDesc: "claro",
+          urlCovenants: "#",
+        },
+
+        {
+          title: "Slide #6",
+          content: "Slide content.",
+          image: "img/covenants/sky.png",
+          imageDesc: "sky",
+          urlCovenants: "#",
+        },
+        {
+          title: "Slide #7",
+          content: "Slide content.",
+          image: "img/covenants/fldsmith.png",
+          imageDesc: "fldsmith",
+          urlCovenants: "#",
+        },
+        {
           title: "Slide #8",
           content: "Slide content.",
-          image: "img/covenants/banco_chile2.jfif",
-          imageDesc: "banco_chile",
+          image: "img/covenants/achs3.png",
+          imageDesc: "achs",
           urlCovenants: "#",
         },
       ],
