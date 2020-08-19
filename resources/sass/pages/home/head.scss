@@ -9,8 +9,6 @@
 	padding-top: 150px;
 	padding-bottom: 100px;
 	color: white;
-	background: linear-gradient(rgba(244, 175, 52, 0.5) 5%, rgba(244, 175, 52, 0.1) 70%),
-		url('../../../img/bg-masthead.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -18,10 +16,21 @@
 
 
 	.header-content {
-		max-width: 35rem;
+		// max-width: 35rem;
 		margin-bottom: 100px;
 		text-align: center;
 		z-index: 1;
+		max-width: 70rem;
+		background-image: url('../../../img/global/burbuja_1.svg');
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		width: 100%;
+		height: 40rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 
 		h1 {
 			color: $white;
@@ -30,8 +39,9 @@
 			font-weight: bold;
 
 			span.typed-text {
-				color: $orange;
-				text-shadow: 1px 1px 2px $gray-1;
+				// color: $orange;
+				color: $blue;
+				// text-shadow: 1px 1px 2px $gray-1;
 			}
 
 			span.cursor {
@@ -50,7 +60,7 @@
 
 		@keyframes cursorBlink {
 			49% {
-				background-color: $orange;
+				background-color: $blue;
 			}
 
 			50% {

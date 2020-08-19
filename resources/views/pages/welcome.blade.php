@@ -3,5 +3,5 @@
 @section('title', 'Psicología Chile')
 
 @section('content')
-	<home-component></home-component>
+	<home-component img-background="{{ asset('img/banner/terapiaonline.jpg') }}"></home-component>
 @endsection
