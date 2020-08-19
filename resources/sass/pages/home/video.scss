@@ -5,9 +5,15 @@
 	.vid--container {
 		display: flex;
 		justify-content: center;
+		background: url("img/global_images/burbuja_3.svg");
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		padding: 5rem 0rem;
+		height: 28rem;
+	}
 
-		.vid--frame {
-			border-radius: 1rem;
-		}
+	.vid--frame {
+		border-radius: 1rem;
 	}
 }
