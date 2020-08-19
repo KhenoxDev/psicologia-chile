@@ -1,0 +1,13 @@
+@import "../../variables";
+@import "../../mixins";
+
+#mainVideo {
+	.vid--container {
+		display: flex;
+		justify-content: center;
+
+		.vid--frame {
+			border-radius: 1rem;
+		}
+	}
+}
