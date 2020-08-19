@@ -1,5 +1,5 @@
 <template>
-  <header id="mainHead">
+  <header id="mainHead" :style="'background-image: url(' + imgBackground + ');'">
     <div class="container h-100">
       <div class="row h-100 w-100 m-0">
         <div class="col-lg-12 my-auto d-flex justify-content-center align-items-center">
@@ -22,6 +22,11 @@
 <script>
 import { setTimeout } from "timers";
 export default {
+  props: {
+    imgBackground: {
+      type: String,
+    },
+  },
   data: () => {
     return {
       typeValue: "",

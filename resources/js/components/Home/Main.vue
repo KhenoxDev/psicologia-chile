@@ -8,7 +8,7 @@
         v-bind:color="'#f4b034'"
       ></loading-component>
     </transition>
-    <masthead></masthead>
+    <masthead :img-background="imgBackground"></masthead>
     <div class="bg--white">
       <video-component></video-component>
       <prevision></prevision>
@@ -49,6 +49,11 @@ import WereNews from "./WeWereNews";
 import Covenants from "./Covenants";
 
 export default {
+  props: {
+    imgBackground: {
+      type: String,
+    },
+  },
   data() {
     return {
       isLoading: true,
