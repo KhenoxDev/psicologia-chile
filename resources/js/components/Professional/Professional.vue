@@ -9,15 +9,21 @@
     <div class="div--nameprofessional">
       <span>{{ nameProfessional }}</span>
     </div>
-    <div class="div--titleprofessional">
-      <span>Psicólogo</span>
+    <div class="button--container">
+      <a class="button--detail" :href="'profesionales/' + identificator">Ver ficha</a>
+
+      <a
+        class="button--plan"
+        data-target="#modalProfessional"
+        data-toggle="modal"
+        @click="getProfessional(identificator)"
+      >Ver planes</a>
     </div>
-    <div class="button--listprofessionals">
-      <a :href="'profesionales/' + identificator">Ver ficha</a>
-    </div>
+
     <!-- <div>{{ titleProfessional }}</div> -->
   </div>
 </template>
+
 <script type="text/javascript">
 export default {
   props: {
@@ -32,6 +38,11 @@ export default {
     },
     titleProfessional: {
       type: String,
+    },
+  },
+  methods: {
+    getProfessional(identificator) {
+      this.$parent.getProfessional(identificator);
     },
   },
 };

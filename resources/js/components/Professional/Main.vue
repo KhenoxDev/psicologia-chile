@@ -172,6 +172,37 @@
         </div>
       </div>
     </div>
+
+    <!-- Modal -->
+    <div
+      id="modalProfessional"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="professionalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="professionalLabel">{{ professionalSelected.nombreCompleto }}</h5>
+          </div>
+          <div id="modalBody" class="modal-body">
+            <select name id class="form-control" v-model="urlProfessional">
+              <option value>Seleccione plan</option>
+              <option
+                v-for="prof in professionalSelected.planes"
+                :key="prof.id"
+                :value="prof.contratar"
+              >{{ prof.sesiones }} Sesiones por {{ prof.valor }}</option>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <a :href="urlProfessional">Contratar</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -214,6 +245,9 @@ export default {
       search: "",
       sortKey: "precioASC",
       open: false,
+      professionalId: "",
+      professionalSelected: {},
+      urlProfessional: "",
     };
   },
   components: {
@@ -236,6 +270,12 @@ export default {
     }
   },
   methods: {
+    getProfessional(identificator) {
+      var aux = this.professionals.find((prof) => {
+        return prof.index == identificator;
+      });
+      this.professionalSelected = aux;
+    },
     onLoad() {
       this.isLoading = true;
       setTimeout(() => {

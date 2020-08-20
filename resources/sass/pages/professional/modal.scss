@@ -1,0 +1,27 @@
+@import "../../variables";
+@import "../../mixins";
+
+#modalProfessional {
+
+	.modal-header {
+		justify-content: center;
+	}
+
+	.modal-footer {
+		justify-content: center;
+
+		a {
+			font-size: 0.8rem;
+			color: $dark;
+			font-weight: bold;
+			padding: 0.5rem 1rem 0.5rem 1rem;
+			text-transform: uppercase;
+			border-radius: 0.5rem;
+			border: none;
+			margin-top: 0.5rem;
+			text-decoration: none;
+			cursor: pointer;
+			background-color: $blue;
+		}
+	}
+}

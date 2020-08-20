@@ -49,30 +49,31 @@
 		}
 	}
 
-	.button--listprofessionals {
-		display: none;
-		align-items: center;
-		justify-content: center;
 
+	.button--container {
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
 
 		a {
-			font-size: x-small;
+			font-size: 0.8rem;
 			color: $dark;
 			font-weight: bold;
 			padding: 0.5rem 1rem 0.5rem 1rem;
 			text-transform: uppercase;
-			background-color: #f0c828;
 			border-radius: 0.5rem;
 			border: none;
-			margin-top: 2rem;
-			position: absolute;
-			text-transform: none;
+			margin-top: 0.5rem;
+			text-decoration: none;
+			cursor: pointer;
 		}
-	}
 
-	&:hover {
-		.button--listprofessionals {
-			display: flex;
+		.button--detail {
+			background-color: #f0c828;
+		}
+
+		.button--plan {
+			background-color: $teal-tiny;
 		}
 	}
 }
