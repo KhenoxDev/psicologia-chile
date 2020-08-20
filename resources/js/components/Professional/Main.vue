@@ -164,6 +164,9 @@
             :name-professional="list.nombreCompleto"
             :title-professional="list.profesion"
             :identificator="list.index"
+            width-prop="13rem"
+            button-prop="0.5rem"
+            title-prop="0.8rem"
           ></professional>
           <div class="no-results" v-show="filteredList.length == 0">
             <!-- TODO: Dar estilo a mensaje de No Results -->
@@ -186,15 +189,61 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="professionalLabel">{{ professionalSelected.nombreCompleto }}</h5>
+            <span>Código: {{ professionalSelected.codigo }}</span>
           </div>
           <div id="modalBody" class="modal-body">
+            <div>
+              <span v-html="professionalSelected.profesion"></span>
+            </div>
+
+            <div class="accordion" id="accordionExample">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h1 class="mb-0">
+                    <button
+                      class="btn btn-link btn-block text-left"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >Especialidades</button>
+                  </h1>
+                </div>
+                <div class="card-header" id="headingTwo">
+                  <h1 class="mb-0">
+                    <button
+                      class="btn btn-link btn-block text-left"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >Previsiones</button>
+                  </h1>
+                </div>
+                <div class="card-header" id="headingThree">
+                  <h1 class="mb-0">
+                    <button
+                      class="btn btn-link btn-block text-left"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >Días atención</button>
+                  </h1>
+                </div>
+              </div>
+            </div>
+
             <select name id class="form-control" v-model="urlProfessional">
               <option value>Seleccione plan</option>
               <option
                 v-for="prof in professionalSelected.planes"
                 :key="prof.id"
                 :value="prof.contratar"
-              >{{ prof.sesiones }} Sesiones por {{ prof.valor }}</option>
+              >{{ prof.sesiones }} Sesiones por {{ formatPrice(prof.valor) }}</option>
             </select>
           </div>
           <div class="modal-footer">
@@ -336,6 +385,10 @@ export default {
       this.specialistSelected = [];
       this.scheduleSelected = [];
       this.genderSelected = [];
+    },
+    formatPrice: function (value) {
+      let val = (value / 1).toFixed(0);
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     },
   },
   computed: {
