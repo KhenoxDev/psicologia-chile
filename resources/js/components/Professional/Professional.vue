@@ -10,11 +10,11 @@
       <span :style="'font-size: ' + titleProp">{{ nameProfessional }}</span>
     </div>
     <div class="button--container">
-      <a
+      <!--  <a
         class="button--detail"
         :style=" 'font-size: ' + buttonProp"
         :href="'profesionales/' + identificator"
-      >Ver ficha</a>
+      >Ver ficha</a>-->
 
       <a
         class="button--plan"

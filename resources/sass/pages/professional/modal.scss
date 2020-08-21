@@ -4,7 +4,89 @@
 #modalProfessional {
 
 	.modal-header {
-		justify-content: center;
+		display: flex !important;
+		justify-content: center !important;
+		flex-direction: column !important;
+		align-items: center !important;
+	}
+
+	.card {
+		margin-bottom: 0.5rem !important;
+		border: none !important;
+
+
+
+		.card-header {
+			background: $teal-tiny;
+			border-radius: 0.5rem 0.5rem;
+			margin-bottom: 0.2rem;
+		}
+
+		.card-body {
+			background: $gray-4;
+			border-radius: 0.5rem 0.5rem;
+			margin-bottom: 0.2rem;
+
+			.badge--schedule {
+				color: $white;
+				/* background-color: #ffc107; */
+				background-color: $blue;
+				padding: 0.5rem 1rem;
+			}
+
+			.badge--psicologia {
+				color: $white;
+				background-color: $blue;
+			}
+
+			.span--specialist {
+				margin-right: 0.2rem;
+				font-size: 0.7rem;
+				margin-bottom: 1rem;
+				padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+			}
+
+			.span--prevision {
+				margin-right: 0.2rem;
+				font-size: 0.7rem;
+				margin-bottom: 1rem;
+				padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+			}
+
+			.p--description {
+				font-size: 0.8rem;
+			}
+		}
+
+		button {
+			display: flex;
+			align-items: center;
+			font-size: 1rem;
+			margin-right: 1rem;
+			color: $white;
+			text-decoration: none;
+
+			.fa-plus,
+			.fa-minus {
+				color: $yellow;
+				font-size: 1.2rem;
+				margin-right: 1rem;
+			}
+
+			&::focus {
+				border: none !important;
+			}
+
+			&[aria-expanded="true"] .fa-plus {
+				display: none;
+			}
+
+			&[aria-expanded="false"] .fa-minus {
+				display: none;
+			}
+		}
+
+
 	}
 
 	.modal-footer {
@@ -12,7 +94,7 @@
 
 		a {
 			font-size: 0.8rem;
-			color: $dark;
+			color: $white;
 			font-weight: bold;
 			padding: 0.5rem 1rem 0.5rem 1rem;
 			text-transform: uppercase;
@@ -21,7 +103,8 @@
 			margin-top: 0.5rem;
 			text-decoration: none;
 			cursor: pointer;
-			background-color: $blue;
+			background-color: $teal-tiny;
 		}
 	}
+
 }
