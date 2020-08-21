@@ -188,6 +188,9 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
             <h5 class="modal-title" id="professionalLabel">{{ professionalSelected.nombreCompleto }}</h5>
             <span>Código: {{ professionalSelected.codigo }}</span>
           </div>
@@ -320,14 +323,24 @@
               </div>
             </div>
 
-            <select name id class="form-control" v-model="urlProfessional">
-              <option value>Seleccione plan</option>
-              <option
-                v-for="prof in professionalSelected.planes"
-                :key="prof.id"
-                :value="prof.contratar"
-              >{{ prof.sesiones }} Sesiones por {{ formatPrice(prof.valor) }}</option>
-            </select>
+            <div>
+              <select
+                name="plan"
+                id="plan"
+                class="form-control"
+                v-model="urlProfessional"
+                onfocus="this.size=5;"
+                onblur="this.size=1;"
+                onchange="this.size=1; this.blur();"
+              >
+                <option value>Seleccione plan</option>
+                <option
+                  v-for="prof in professionalSelected.planes"
+                  :key="prof.id"
+                  :value="prof.contratar"
+                >{{ prof.sesiones }} Sesiones por {{ formatPrice(prof.valor) }}</option>
+              </select>
+            </div>
           </div>
           <div class="modal-footer">
             <a :href="urlProfessional">Contratar</a>

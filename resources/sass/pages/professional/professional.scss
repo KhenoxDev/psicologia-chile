@@ -68,12 +68,9 @@
 			cursor: pointer;
 		}
 
-		.button--detail {
-			background-color: #f0c828;
-		}
-
 		.button--plan {
 			background-color: $teal-tiny;
+			color: $white;
 		}
 	}
 }

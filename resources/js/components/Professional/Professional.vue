@@ -22,7 +22,7 @@
         data-target="#modalProfessional"
         data-toggle="modal"
         @click="getProfessional(identificator)"
-      >Ver planes</a>
+      >¡Conóceme!</a>
     </div>
 
     <!-- <div>{{ titleProfessional }}</div> -->
