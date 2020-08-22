@@ -51,15 +51,6 @@
           </div>
 
           <div class="icons--container">
-            <span class="span--like">
-              <i class="far fa-thumbs-up"></i>
-              a {{ news.likes }} personas les gusta esto.
-            </span>
-            <span class="span--comment">
-              <i class="far fa-comment-dots"></i>
-              0 comentarios.
-            </span>
-
             <ul class="instafeed d-flex flex-wrap">
               <li>
                 <a href>

@@ -17,13 +17,13 @@
     <div class="bg--white">
       <div class="container">
         <div class="list-news--header">
-          <select v-model="sortKey" class="form-control w-25">
+          <select v-model="sortKey" class="form-control">
             <option value="desc" selected>Más recientes</option>
             <option value="asc">Más antiguos</option>
           </select>
         </div>
         <hr />
-        <paginate name="newsList" :list="orderedList" :per="6">
+        <paginate class="paginated--list" name="newsList" :list="orderedList" :per="6">
           <div class="list-news--container">
             <news
               v-for="n in paginated('newsList')"
@@ -35,7 +35,6 @@
               :autor="n.author"
               :publish="n.posted_on"
               :likes="n.likes"
-              width-prop="32%"
             ></news>
           </div>
         </paginate>

@@ -23,7 +23,6 @@
             :content="n.content"
             :autor="n.autor"
             :publish="n.posted_on"
-            width-prop="96%"
           ></news>
           <!-- fin campos tabla noticias -->
         </template>

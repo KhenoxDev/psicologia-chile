@@ -91,31 +91,11 @@
 
 		.icons--container {
 			display: flex;
-			flex-direction: row;
+			flex-direction: row-reverse;
 			align-items: center;
-			justify-content: space-between;
+			/* justify-content: space-between; */
 
-			.span--like {
-				opacity: 0.6;
-				font-size: 0.8rem;
-				display: flex;
-				align-items: center;
 
-				i {
-					margin-right: 0.5rem;
-				}
-			}
-
-			.span--comment {
-				opacity: 0.6;
-				font-size: 0.8rem;
-				display: flex;
-				align-items: center;
-
-				i {
-					margin-right: 0.5rem;
-				}
-			}
 
 			.instafeed {
 				padding: 0rem;

@@ -31,7 +31,7 @@
 				}
 
 				.card-header {
-					font-size: 1.2rem;
+					font-size: 1rem;
 					text-transform: uppercase;
 					font-weight: bold;
 					padding: 1rem 0rem;
@@ -41,7 +41,7 @@
 
 				.card-content {
 					overflow-y: scroll;
-					height: 6rem;
+					height: 8rem;
 					margin-bottom: 1rem;
 					width: 13rem;
 
@@ -89,16 +89,16 @@
 
 			#back {
 				.card-header {
-					padding: 0.8rem 0rem;
+					padding: 1rem 0rem;
 					color: $white;
 					background-color: unset;
 					text-transform: uppercase;
-					font-size: 1.4rem;
+					font-size: 1rem;
 				}
 
 				.card-content {
 					overflow-y: scroll;
-					height: 4rem;
+					height: 8rem;
 					margin-bottom: 1rem;
 					display: flex;
 					flex-direction: row;
@@ -173,7 +173,6 @@
 					}
 
 					.card-content {
-						height: 6.2rem;
 						width: 13rem;
 					}
 				}
@@ -204,9 +203,7 @@
 
 				#back {
 					.card-content {
-						height: 6.2rem;
 						width: 17rem;
-
 					}
 				}
 			}
@@ -229,9 +226,7 @@
 
 				#back {
 					.card-content {
-						height: 6.2rem;
 						width: 15rem;
-
 					}
 				}
 			}
@@ -250,20 +245,11 @@
 					.card-content {
 						width: 12rem;
 					}
-
-					.card-header {
-						font-size: 1rem;
-					}
 				}
 
 				#back {
 					.card-content {
-						height: 6.2rem;
 						width: 12rem;
-					}
-
-					.card-header {
-						font-size: 1rem;
 					}
 				}
 			}
