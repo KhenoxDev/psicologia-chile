@@ -17,7 +17,6 @@ class NewsController extends Controller
 		if (!is_null($id)) {
 			$rows = $this->news::find($id);
 		} else {
-
 			$rows = $this->news::paginate();
 		}
 

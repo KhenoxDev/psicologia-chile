@@ -86,7 +86,7 @@ export default {
 
       try {
         let response = await axios.get(api);
-        for (let index = 0; index < response.data.items.length; index++) {
+        for (let index = 0; index < 6; index++) {
           this.professionals.push(response.data.items[index]);
         }
       } catch (error) {

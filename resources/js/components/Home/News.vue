@@ -98,7 +98,7 @@ export default {
 
       try {
         let response = await axios.get(api);
-        for (let index = 0; index < response.data.data.length; index++) {
+        for (let index = 0; index < 6; index++) {
           this.news.push(response.data.data[index]);
         }
       } catch (error) {

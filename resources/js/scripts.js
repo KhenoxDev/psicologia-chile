@@ -7,6 +7,7 @@ global.$ = global.jQuery = require('jquery');
 $(function () {
 	"use strict";
 	var nav_offset_top = $('header').height() + 10;
+	var nav_offset_top_2 = $('header').height() + 200;
 
 	function navbarFixed() {
 		if ($('.header_area').length) {
@@ -14,15 +15,32 @@ $(function () {
 				var scroll = $(window).scrollTop();
 				if (scroll >= nav_offset_top) {
 					$(".header_area").addClass("navbar_fixed");
+					$(".float").css("display", "block");
 					$("#btnBackTop").addClass('show');
 				} else {
 					$(".header_area").removeClass("navbar_fixed");
+					$(".float").css("display", "none");
 					$("#btnBackTop").removeClass('show');
 				}
 			});
 		};
 	};
+
+	function socialFixed() {
+		if ($('.header_area').length) {
+			$(window).scroll(function () {
+				var scroll = $(window).scrollTop();
+				if (scroll >= nav_offset_top_2) {
+					$(".float").css("display", "block");
+				} else {
+					$(".float").css("display", "none");
+				}
+			});
+		};
+	}
+
 	navbarFixed();
+	socialFixed();
 
 	$('#btnBackTop').on('click', function (e) {
 		e.preventDefault();
