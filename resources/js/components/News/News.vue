@@ -7,8 +7,8 @@
         </span>
         <ul class="news--list">
           <li>
-            by
             <span>
+              by
               <b>{{ autor }}</b>
             </span>
             {{ publish }}

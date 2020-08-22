@@ -1,0 +1,47 @@
+@import "./variables";
+@import "./mixins";
+
+.register--content {
+	width: 100%;
+	padding: 1rem;
+
+	.register--header {
+		border-radius: 1rem;
+		background: $teal-tiny;
+		padding: 1rem;
+		text-align: center;
+		width: 100%;
+
+		span {
+			color: $white;
+			font-size: 1rem;
+			font-weight: bold;
+		}
+	}
+
+	.register--body {
+		background: $gray-5;
+		padding: 1rem;
+		border-radius: 1rem;
+		margin-top: 0.2rem;
+		height: 12rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.btn--register {
+			background-color: $teal-tiny;
+			padding: 0.5rem 1rem;
+			color: $white;
+			font-weight: bold;
+			text-transform: uppercase;
+			border-radius: 0.5rem;
+			border: none;
+			text-decoration: none;
+
+			&:hover {
+				animation: pulse-blue 1s infinite;
+			}
+		}
+	}
+}

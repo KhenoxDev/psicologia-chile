@@ -1,0 +1,39 @@
+@import "./variables";
+@import "./mixins";
+
+
+.newsletter--content {
+	width: 100%;
+	padding: 1rem;
+
+	.newsletter--header {
+		width: 100%;
+		background-color: $orange;
+		padding: 1rem;
+		text-align: center;
+		border-radius: 1rem;
+
+		span {
+			color: $white;
+			font-size: 1rem;
+			font-weight: bold;
+		}
+	}
+
+	.newsletter--body {
+		background: $gray-5;
+		padding: 1rem;
+		border-radius: 1rem;
+		margin-top: 0.2rem;
+		height: 12rem;
+
+		.btn--suscription {
+			background: $orange;
+			color: $white;
+			font-weight: bold;
+			border-radius: 0.5rem;
+			padding: 0.5rem 1rem;
+			border: none;
+		}
+	}
+}

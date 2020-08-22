@@ -104,3 +104,15 @@
 	background-image: linear-gradient(rgba(244, 175, 52, 0.5) 5%, rgba(244, 175, 52, 0.1) 70%),
 		url('../../../img/about/about.jpg');
 }
+
+.support-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+@include screen-min(1199px) {
+	.support-container {
+		flex-direction: column;
+	}
+}

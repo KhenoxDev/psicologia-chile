@@ -36,11 +36,46 @@
             aria-labelledby="headingOne"
             data-parent="#accordionExample"
           >
-            <div class="card-body">{{ faq.answer }}</div>
+            <div class="card-body">
+              {{ faq.answer }}
+              <hr />
+              <a
+                href="#"
+                data-target="#modalQuestion"
+                data-toggle="modal"
+              >¿Te sirvió esta respuesta?</a>
+            </div>
           </div>
         </div>
       </div>
-      <!-- Fin Acordeón FAQ -->
+      <div
+        class="modal fade"
+        id="modalQuestion"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="modalQuestionTitle"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Contáctanos!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="support-container">
+                <newsletter-form></newsletter-form>
+                <register-form></register-form>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -48,6 +83,9 @@
 <script>
 import LoadingComponent from "vue-loading-overlay";
 import Banner from "../Reusable/Banner";
+
+import NewsletterForm from "../Global/Newsletter";
+import RegisterForm from "../Global/Register";
 
 export default {
   props: {
@@ -66,6 +104,8 @@ export default {
   components: {
     LoadingComponent,
     Banner,
+    NewsletterForm,
+    RegisterForm,
   },
   mounted() {
     this.onLoad();

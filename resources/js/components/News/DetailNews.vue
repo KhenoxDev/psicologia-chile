@@ -105,17 +105,26 @@
           </div>
         </div>
       </div>
+      <hr />
+      <div class="support-container">
+        <newsletter-form></newsletter-form>
+        <register-form></register-form>
+      </div>
     </div>
   </div>
 </template>
 <script>
 import LoadingComponent from "vue-loading-overlay";
 import Banner from "../Reusable/Banner";
+import NewsletterForm from "../Global/Newsletter";
+import RegisterForm from "../Global/Register";
 
 export default {
   components: {
     LoadingComponent,
     Banner,
+    NewsletterForm,
+    RegisterForm,
   },
   props: {
     idNews: {
