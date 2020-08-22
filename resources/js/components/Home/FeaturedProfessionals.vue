@@ -20,6 +20,9 @@
             :name-professional="list.nombreCompleto"
             :title-professional="list.profesion"
             :identificator="list.index"
+            width-prop="13rem"
+            button-prop="0.5rem"
+            title-prop="0.8rem"
           ></professional>
         </template>
       </vueper-slide>
@@ -56,8 +59,8 @@ export default {
           arrows: false,
         },
         1445: {
-          slideRatio: 1 / 6,
-          visibleSlides: 3,
+          slideRatio: 1 / 10,
+          visibleSlides: 5,
           arrows: false,
         },
         2561: {

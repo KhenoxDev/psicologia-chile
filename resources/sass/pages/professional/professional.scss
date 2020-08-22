@@ -11,12 +11,12 @@
 		justify-content: center;
 
 		img {
-			/* border-radius: 0.5rem;
-			border-bottom: groove;
-			border-color: blue; */
 			height: 100%;
 			width: 100%;
+
 		}
+
+
 
 		.border--image {
 			border: 10px solid transparent;
@@ -49,30 +49,28 @@
 		}
 	}
 
-	.button--listprofessionals {
-		display: none;
-		align-items: center;
-		justify-content: center;
 
+	.button--container {
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
 
 		a {
-			font-size: x-small;
+			font-size: 100%;
 			color: $dark;
 			font-weight: bold;
-			padding: 0.5rem 1rem 0.5rem 1rem;
+			padding: 0.5rem;
 			text-transform: uppercase;
-			background-color: #f0c828;
 			border-radius: 0.5rem;
 			border: none;
-			margin-top: 2rem;
-			position: absolute;
-			text-transform: none;
+			margin-top: 0.5rem;
+			text-decoration: none;
+			cursor: pointer;
 		}
-	}
 
-	&:hover {
-		.button--listprofessionals {
-			display: flex;
+		.button--plan {
+			background-color: $teal-tiny;
+			color: $white;
 		}
 	}
 }
