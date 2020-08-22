@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\SetCookie;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,40 +14,42 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-	return view('pages.welcome');
-})->name('home');
+Route::group(['middleware' => [SetCookie::class]], function () {
+	Route::get('/', function () {
+		return view('pages.welcome');
+	})->name('home');
 
-Route::get('/quienes-somos', function () {
-	return view('pages.about');
-})->name('about');
+	Route::get('/quienes-somos', function () {
+		return view('pages.about');
+	})->name('about');
 
-Route::get('/como-funciona', function () {
-	return view('pages.work');
-})->name('work');
+	Route::get('/como-funciona', function () {
+		return view('pages.work');
+	})->name('work');
 
-Route::get('/profesionales', function () {
-	return view('pages.professional');
-})->name('professional');
+	Route::get('/profesionales', function () {
+		return view('pages.professional');
+	})->name('professional');
 
-Route::get('/profesionales/{id}', 'ProfessionalController@getDetail')->name('professional');
+	Route::get('/profesionales/{id}', 'ProfessionalController@getDetail')->name('professional');
 
-Route::get('/profesionales/{filter}/{name}', 'ProfessionalController@getProfessionalsByFilter')->name('professional.filter');
+	Route::get('/profesionales/{filter}/{name}', 'ProfessionalController@getProfessionalsByFilter')->name('professional.filter');
 
-Route::get('/especialidades', function () {
-	return view('pages.specialist');
-})->name('specialist');
+	Route::get('/especialidades', function () {
+		return view('pages.specialist');
+	})->name('specialist');
 
-Route::get('/noticias', function () {
-	return view('pages.news');
-})->name('news');
+	Route::get('/noticias', function () {
+		return view('pages.news');
+	})->name('news');
 
-Route::get('/noticias/{id}', 'NewsController@getDetail')->name('news');
+	Route::get('/noticias/{id}', 'NewsController@getDetail')->name('news');
 
-Route::get('/planes', function () {
-	return view('pages.plan');
-})->name('plan');
+	Route::get('/planes', function () {
+		return view('pages.plan');
+	})->name('plan');
 
-Route::get('/preguntas-frecuentes', function () {
-	return view('pages.question');
-})->name('question');
+	Route::get('/preguntas-frecuentes', function () {
+		return view('pages.question');
+	})->name('question');
+});

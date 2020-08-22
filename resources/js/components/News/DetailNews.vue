@@ -25,7 +25,7 @@
               <div class="author--container">
                 <span class="span--author">
                   {{
-                  news.autor
+                  news.author
                   }}
                 </span>
               </div>
@@ -41,7 +41,7 @@
 
             <div class="pic--content">
               <div class="authorpic--container">
-                <img src alt />
+                <img :src="news.author_image" alt />
               </div>
             </div>
           </div>
@@ -53,7 +53,7 @@
           <div class="icons--container">
             <span class="span--like">
               <i class="far fa-thumbs-up"></i>
-              a personas 0 les gusta esto.
+              a {{ news.likes }} personas les gusta esto.
             </span>
             <span class="span--comment">
               <i class="far fa-comment-dots"></i>
@@ -106,47 +106,22 @@
         </div>
       </div>
     </div>
-
-    <hr />
-    <div id="detailComments--section" class="container bg--white">
-      <div class="detailComments--content">
-        <div class="comment--title--container">
-          <span class="span--comment--title">0 comentarios</span>
-        </div>
-
-        <div class="comment--card">
-          <div class="authorpic--content">
-            <div class="comment--authorpic">
-              <img src alt />
-            </div>
-          </div>
-
-          <div class="text--content--comment">
-            <div class="comment--author--container">
-              <span class="span--comment--author"></span>
-            </div>
-
-            <div class="comment--date--container">
-              <span class="span--comment--date"></span>
-            </div>
-
-            <div class="comment--content">
-              <span class="span--comment--content"></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <comment></comment>
+    <form-comment></form-comment>
   </div>
 </template>
 <script>
 import LoadingComponent from "vue-loading-overlay";
 import Banner from "../Reusable/Banner";
+import Comment from "./Comment";
+import FormComment from "./FormComment";
 
 export default {
   components: {
     LoadingComponent,
+    Comment,
     Banner,
+    FormComment,
   },
   props: {
     idNews: {

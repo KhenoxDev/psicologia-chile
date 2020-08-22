@@ -9,9 +9,11 @@ use Carbon\Carbon;
 $factory->define(News::class, function (Faker $faker) {
 	return [
 		'title' => $faker->sentence(6),
-		'autor' => $faker->name,
+		'author' => $faker->name,
+		'author_image' => $faker->imageUrl,
 		'content' => $faker->realText(200),
 		'image' => $faker->imageUrl,
+		'likes' => $faker->randomDigit,
 		'is_posted' => $faker->boolean,
 		'posted_on' => Carbon::now(),
 		'updated_by' => $faker->name,

@@ -4,15 +4,23 @@
       <div class="row h-100 w-100 m-0">
         <div class="col-lg-12 my-auto d-flex justify-content-center align-items-center">
           <div class="header-content">
-            <h1 class="mb-5">
+            <!-- <h1 class="mb-5">
               Psicología Chile es
               <br />
               <span class="typed-text">
                 <strong>{{ typeValue }}</strong>
               </span>
               <span class="cursor" :class="{'typing': typeStatus}">&nbsp;</span>
-            </h1>
-            <a href="#" class="btn btn-2 shadow-sm">Regístrate!</a>
+            </h1>-->
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/TJLjpG_sS4U"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+            <a href="#" class="btn btn-2 shadow-sm">¡Comienza ya!</a>
           </div>
         </div>
       </div>
