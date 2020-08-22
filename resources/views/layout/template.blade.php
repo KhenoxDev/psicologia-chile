@@ -11,6 +11,7 @@
 	<div id="app">
 		<navbar-component current="{{ Route::currentRouteName() }}" img-logo="{{ asset('img/navbar/logo.png') }}"></navbar-component>
 		<whatsapp-component></whatsapp-component>
+		<backtop-component></backtop-component>
 
 		@yield('content')
 

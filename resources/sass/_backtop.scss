@@ -1,0 +1,45 @@
+@import "./variables";
+@import "./mixins";
+
+#mainBackTop {
+
+	#btnBackTop {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: $orange;
+		width: 2rem;
+		height: 2rem;
+		border-radius: 4px;
+		position: fixed;
+		bottom: 2%;
+		right: 1%;
+		transition: background-color .3s,
+			opacity .5s, visibility .5s;
+		opacity: 0;
+		visibility: hidden;
+		z-index: 1000;
+		border-radius: 50%;
+
+
+		&:hover {
+			cursor: pointer;
+			animation: pulse-orange 1s infinite;
+		}
+
+		&.show {
+			opacity: 1;
+			visibility: visible;
+			font-size: 2rem;
+		}
+
+		.fa-angle-up {
+			color: $white;
+			font-size: 2rem;
+		}
+	}
+
+
+
+
+}
