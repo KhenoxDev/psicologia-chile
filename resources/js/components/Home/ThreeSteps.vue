@@ -25,11 +25,11 @@
           <p>Escoge libremente el lugar que prefieras para iniciar tu sesión online.</p>
         </div>
       </div>
-      <div class="col-md-12">
+      <!--  <div class="col-md-12">
         <div class="step--container-button">
           <button>¿Quieres saber más?</button>
         </div>
-      </div>
+      </div>-->
     </div>
     <vueper-slides autoplay class="mobile--steps" fixed-height="300px">
       <vueper-slide v-for="slide in slides" :key="slide.id">
