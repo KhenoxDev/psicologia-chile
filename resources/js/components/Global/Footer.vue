@@ -15,7 +15,14 @@
               <div class="col">
                 <ul>
                   <li v-for="nav in navigation" :key="nav.id">
-                    <a :href="nav.link">{{ nav.title }}</a>
+                    <a
+                      v-if="nav.modal"
+                      :href="nav.link"
+                      data-target="#modalForm"
+                      data-toggle="modal"
+                      @click="toggleModal(nav.title)"
+                    >{{ nav.title }}</a>
+                    <a v-else :href="nav.link">{{ nav.title }}</a>
                   </li>
                 </ul>
               </div>
@@ -86,184 +93,80 @@
     </div>
     <div
       class="modal fade"
-      id="modalWorkUs"
+      id="modalForm"
       tabindex="-1"
       role="dialog"
-      aria-labelledby="modalWorkUsTitle"
+      aria-labelledby="modalFormTitle"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Trabaja con nosotros</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form action>
-              <div class="form-group">
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  class="form-control"
-                  placeholder="Nombre y apellido"
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  class="form-control"
-                  placeholder="Correo electrónico"
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  type="tel"
-                  name="telefono"
-                  id="telefono"
-                  class="form-control"
-                  placeholder="Teléfono"
-                />
-              </div>
-              <div class="form-group">
-                <input type="text" name="pais" id="pais" class="form-control" placeholder="País" />
-              </div>
-              <div class="form-group">
-                <input
-                  type="text"
-                  name="ciudad"
-                  id="ciudad"
-                  class="form-control"
-                  placeholder="Ciudad"
-                />
-              </div>
-              <div class="form-group">
-                <input type="file" name="cv" id="cv" class="form-control" />
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary">Enviar</button>
-          </div>
-        </div>
+      <div v-if="modalSelected == 'Trabaja con nosotros'">
+        <form-work-us></form-work-us>
       </div>
-    </div>
-    <div
-      class="modal fade"
-      id="modalVoluntary"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="modalVoluntaryTitle"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Sé voluntario</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form action>
-              <div class="form-group">
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  class="form-control"
-                  placeholder="Nombre y apellido"
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  class="form-control"
-                  placeholder="Correo electrónico"
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  type="tel"
-                  name="telefono"
-                  id="telefono"
-                  class="form-control"
-                  placeholder="Teléfono"
-                />
-              </div>
-              <div class="form-group">
-                <select name="voluntario" id="voluntario" class="form-control">
-                  <option value="1">Voluntariado 1</option>
-                  <option value="2">Voluntariado 2</option>
-                  <option value="3">Voluntariado 3</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <textarea
-                  name="mensaje"
-                  id="mensaje"
-                  cols="30"
-                  rows="10"
-                  class="form-control"
-                  placeholder="Mensaje"
-                ></textarea>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary">Enviar</button>
-          </div>
-        </div>
+      <div v-else-if="modalSelected == 'Voluntariado'">
+        <form-voluntary></form-voluntary>
+      </div>
+      <div v-else-if="modalSelected == 'Contacto'">
+        <form-contact></form-contact>
       </div>
     </div>
   </footer>
 </template>
 <script>
+import FormWorkUs from "./Modal/FormWorkUs";
+import FormVoluntary from "./Modal/FormVoluntary";
+import FormContact from "./Modal/FormContact";
+
 export default {
+  components: {
+    FormWorkUs,
+    FormVoluntary,
+    FormContact,
+  },
   data() {
     return {
+      modalSelected: "",
       about:
         "Somos una plataforma de encuentro entre psicólogos y pacientes donde se desarrollan las terapias de forma vanguardista e innovadora , dando mayor facilidad de comunicación entre ambos, rompiendo las barreras del tiempo y la distancia.",
       navigation: [
         {
           title: "Inicio",
           link: "/",
+          modal: false,
         },
         {
           title: "Quiénes somos",
           link: "/quienes-somos",
+          modal: false,
         },
         {
           title: "Profesionales",
           link: "/profesionales",
+          modal: false,
         },
         {
           title: "Preguntas frecuentes",
           link: "/preguntas-frecuentes",
+          modal: false,
         },
         {
           title: "Trabaja con nosotros",
           link: "#",
+          modal: true,
         },
         {
           title: "Voluntariado",
           link: "#",
+          modal: true,
         },
         {
           title: "Contacto",
           link: "#",
+          modal: true,
         },
         {
           title: "Noticias",
           link: "/noticias",
+          modal: false,
         },
       ],
       contacts: [
@@ -315,6 +218,11 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    toggleModal(link) {
+      this.modalSelected = link;
+    },
   },
 };
 </script>
