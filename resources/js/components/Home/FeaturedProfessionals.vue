@@ -1,7 +1,7 @@
 <template>
   <div id="mainProfessionals" class="container mt-4">
     <span class="title--section">
-      <strong>Profesionales</strong> destacados
+      <strong>Profe</strong>sionales
     </span>
     <hr class="line--separator" />
     <vueper-slides
