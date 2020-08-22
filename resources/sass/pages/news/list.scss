@@ -11,6 +11,10 @@
 	}
 }
 
+.paginated--list {
+	padding: 0rem !important;
+}
+
 .list-news--container {
 	display: flex;
 	flex-direction: row;
@@ -34,6 +38,32 @@
 			background-color: $blue;
 			color: $white;
 			font-weight: bold;
+		}
+	}
+}
+
+
+@include screen-min(425px) {
+	.list-news--container {
+		flex-direction: column;
+	}
+
+	.list-news--header {
+		select {
+			width: 100%;
+		}
+	}
+}
+
+
+@include screen(426px, 768px) {
+	.list-news--container {
+		flex-direction: column;
+	}
+
+	.list-news--header {
+		select {
+			width: 50%;
 		}
 	}
 }

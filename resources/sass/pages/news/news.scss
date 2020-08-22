@@ -10,6 +10,7 @@
 	align-items: flex-end;
 	border-radius: 0.5rem;
 	margin-bottom: 1rem;
+	width: 32%;
 
 	.news--link {
 		text-decoration: none;
@@ -39,25 +40,32 @@
 				padding: 0rem !important;
 
 				li {
-					margin-right: 1.2rem;
-
-					&:first-child {
-						margin-right: auto;
-					}
+					display: flex;
+					justify-content: space-between;
+					width: 100%;
 
 					span {
-						margin-right: 1rem;
-
 						b {
 							color: $orange;
 						}
 					}
-
-					i {
-						color: $orange;
-					}
 				}
 			}
 		}
+	}
+}
+
+
+@include screen-min(768px) {
+	.news--container {
+		width: 100%;
+	}
+}
+
+
+
+@include screen(769px, 1199px) {
+	.news--container {
+		width: 49%;
 	}
 }
