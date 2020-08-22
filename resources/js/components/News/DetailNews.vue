@@ -106,22 +106,16 @@
         </div>
       </div>
     </div>
-    <comment></comment>
-    <form-comment></form-comment>
   </div>
 </template>
 <script>
 import LoadingComponent from "vue-loading-overlay";
 import Banner from "../Reusable/Banner";
-import Comment from "./Comment";
-import FormComment from "./FormComment";
 
 export default {
   components: {
     LoadingComponent,
-    Comment,
     Banner,
-    FormComment,
   },
   props: {
     idNews: {
