@@ -26,13 +26,29 @@
     </span>
     <hr />
     <div class="bg--white">
-      <section-component
+      <div id="mainVideo" class="container mt-4">
+        <div class="vid--container">
+          <iframe
+            class="vid--frame"
+            width="560"
+            height="315"
+            :src="urlVid"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="bg--white">
+      <!-- <section-component
         v-for="image in imageSectionList"
         v-bind:key="image.id"
         v-bind:header="image.title"
         v-bind:body="image.body"
         v-bind:image="image.url"
-      ></section-component>
+      ></section-component>-->
+      <three-steps></three-steps>
     </div>
   </div>
 </template>
@@ -42,6 +58,7 @@ import LoadingComponent from "vue-loading-overlay";
 import Banner from "../Reusable/Banner";
 import Feature from "./Feature";
 import SectionComponent from "../Work/Section.vue";
+import ThreeSteps from "../Home/ThreeSteps";
 
 export default {
   data() {
@@ -93,11 +110,19 @@ export default {
       ],
     };
   },
+  props: {
+    urlVid: {
+      type: String,
+      default:
+        "https://www.youtube.com/embed/L05eMmZqHNs?autoplay=1&mute=1&playlist=L05eMmZqHNs&loop=1",
+    },
+  },
   components: {
     LoadingComponent,
     Banner,
     Feature,
     SectionComponent,
+    ThreeSteps,
   },
   mounted() {
     this.onLoad();
