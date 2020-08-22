@@ -27,6 +27,7 @@ window.Vue = require('vue');
 Vue.component('navbar-component', require('./components/Global/Navbar.vue').default);
 Vue.component('whatsapp-component', require('./components/Global/Whatsapp.vue').default);
 Vue.component('footer-component', require('./components/Global/Footer.vue').default);
+Vue.component('backtop-component', require('./components/Global/BackTop.vue').default);
 
 /* Section Components */
 Vue.component('home-component', require('./components/Home/Main.vue').default);

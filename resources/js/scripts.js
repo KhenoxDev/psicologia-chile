@@ -15,12 +15,21 @@ $(function () {
 				if (scroll >= nav_offset_top) {
 					$(".header_area").addClass("navbar_fixed");
 					$(".float").css('display', 'flex');
+					$("#btnBackTop").addClass('show');
 				} else {
 					$(".header_area").removeClass("navbar_fixed");
 					$(".float").css('display', 'none');
+					$("#btnBackTop").removeClass('show');
 				}
 			});
 		};
 	};
 	navbarFixed();
+
+	$('#btnBackTop').on('click', function (e) {
+		e.preventDefault();
+		$('html, body').animate({
+			scrollTop: 0
+		}, '300');
+	});
 });
