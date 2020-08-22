@@ -8,7 +8,10 @@
         v-bind:color="'#f4b034'"
       ></loading-component>
     </transition>
-    <masthead :img-background="imgBackground"></masthead>
+    <masthead
+      :img-background="imgBackground"
+      url-vid="https://www.youtube.com/embed/TJLjpG_sS4U?autoplay=1&mute=1&playlist=TJLjpG_sS4U&loop=1"
+    ></masthead>
     <div class="bg--white">
       <news></news>
       <video-component></video-component>

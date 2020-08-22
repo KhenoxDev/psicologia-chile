@@ -13,9 +13,10 @@
               <span class="cursor" :class="{'typing': typeStatus}">&nbsp;</span>
             </h1>-->
             <iframe
+              class="video--presentation"
               width="560"
               height="315"
-              src="https://www.youtube.com/embed/TJLjpG_sS4U"
+              :src="urlVid"
               frameborder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
@@ -32,6 +33,9 @@ import { setTimeout } from "timers";
 export default {
   props: {
     imgBackground: {
+      type: String,
+    },
+    urlVid: {
       type: String,
     },
   },
