@@ -14,10 +14,8 @@ $(function () {
 				var scroll = $(window).scrollTop();
 				if (scroll >= nav_offset_top) {
 					$(".header_area").addClass("navbar_fixed");
-					$(".float").css('display', 'flex');
 				} else {
 					$(".header_area").removeClass("navbar_fixed");
-					$(".float").css('display', 'none');
 				}
 			});
 		};

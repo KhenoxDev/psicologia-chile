@@ -6,10 +6,10 @@
 		position: fixed;
 		width: 3rem;
 		height: 3rem;
-		bottom: 2%;
+		bottom: 93%;
 		right: 1%;
 		background-color: $green;
-		color: #FFF;
+		color: $white;
 		border-radius: 50px;
 		text-align: center;
 		font-size: 2rem;
@@ -18,13 +18,12 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		text-decoration: none;
+		cursor: pointer;
 		@include transition;
 
 		&:hover {
-			text-decoration: none;
-			color: $dark-green;
-			background-color: $white;
-			box-shadow: 1px 1px 10px $gray-2
+			animation: pulse-green 1s infinite;
 		}
 	}
 
