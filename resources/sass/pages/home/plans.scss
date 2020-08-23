@@ -25,6 +25,8 @@
 	}
 
 	.vueperslides__bullet {
+		margin: 1em 0.5em !important;
+
 		span {
 			display: block;
 			color: #fff;
@@ -34,7 +36,7 @@
 	}
 
 	.vueperslides__parallax-wrapper {
-		padding-bottom: 30% !important;
+		padding-bottom: 20rem !important;
 	}
 
 	#front {
@@ -49,7 +51,7 @@
 		}
 
 		.card-header {
-			font-size: 1.2rem;
+			font-size: 1rem;
 			text-transform: uppercase;
 			font-weight: bold;
 			padding: 1rem 0rem;
@@ -59,8 +61,9 @@
 
 		.card-content {
 			overflow-y: scroll;
-			height: 6rem;
+			height: 8rem;
 			margin-bottom: 1rem;
+			width: 100%;
 
 			p {
 				padding: 0rem 0.5rem;
@@ -68,13 +71,22 @@
 		}
 
 		.card-footer {
-			color: white;
-			font-size: 1.2rem;
+
+			a {
+				color: white;
+				text-decoration: none;
+				font-size: 1.2rem;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+
 			background-color: $blue;
-			font-weight: bold;
-			text-transform: uppercase;
 			border-radius: 0.5rem;
 			animation: pulse-blue 2s infinite;
+
+			&:hover {
+				animation: pulse-blue 0.3s infinite;
+			}
 
 			@keyframes pulse-blue {
 				0% {
@@ -97,21 +109,22 @@
 
 	#back {
 		.card-header {
-			padding: 0.8rem 0rem;
+			padding: 1rem 0rem;
 			color: $white;
 			background-color: unset;
 			text-transform: uppercase;
-			font-size: 1.5rem;
+			font-size: 1rem;
 		}
 
 		.card-content {
 			overflow-y: scroll;
-			height: 6rem;
+			height: 8rem;
+			width: 100%;
 			margin-bottom: 1rem;
 			display: flex;
 			flex-direction: row;
 			flex-wrap: wrap;
-			justify-content: flex-start;
+			justify-content: center;
 			padding-bottom: 0.5rem;
 
 			a {
@@ -160,235 +173,6 @@
 					box-shadow: 0 0 0 0 rgba(52, 172, 224, 0);
 				}
 			}
-		}
-	}
-}
-
-@media only screen and (max-width: 320px) {
-	#mainPlans {
-		.vueperslides__parallax-wrapper {
-			padding-bottom: 19rem !important;
-		}
-
-		#front {
-			.promotion--span {
-				font-size: 0.8rem;
-				top: 1%;
-			}
-
-			.card-header {
-				font-size: 1rem;
-			}
-
-			.card-footer {
-				font-size: 1rem;
-			}
-		}
-
-		#back {
-			.card-header {
-				font-size: 1.1rem;
-			}
-
-			.card-content {
-				a {
-					img {
-						height: 2rem;
-						width: 2rem;
-					}
-				}
-			}
-
-			.card-footer {
-				a {
-					font-size: 1rem;
-				}
-			}
-		}
-	}
-}
-
-@media only screen and (min-width: 321px) and (max-width: 375px) {
-	#mainPlans {
-		.vueperslides__parallax-wrapper {
-			padding-bottom: 19rem !important;
-		}
-
-		#front {
-			.promotion--span {
-				font-size: 0.8rem;
-				top: 1%;
-			}
-
-			.card-header {
-				font-size: 1rem;
-			}
-
-			.card-footer {
-				font-size: 1rem;
-			}
-		}
-
-		#back {
-			.card-header {
-				font-size: 1.1rem;
-			}
-
-			.card-content {
-				a {
-					img {
-						height: 2rem;
-						width: 2rem;
-					}
-				}
-			}
-
-			.card-footer {
-				a {
-					font-size: 1rem;
-				}
-			}
-		}
-	}
-}
-
-@media only screen and (min-width: 376px) and (max-width: 425px) {
-	#mainPlans {
-		.vueperslides__parallax-wrapper {
-			padding-bottom: 19rem !important;
-		}
-
-		#front {
-			.promotion--span {
-				font-size: 0.8rem;
-				top: 1%;
-			}
-
-			.card-header {
-				font-size: 1rem;
-			}
-
-			.card-footer {
-				font-size: 1rem;
-			}
-		}
-
-		#back {
-			.card-header {
-				font-size: 1.1rem;
-			}
-
-			.card-content {
-				a {
-					img {
-						height: 2rem;
-						width: 2rem;
-					}
-				}
-			}
-
-			.card-footer {
-				a {
-					font-size: 1rem;
-				}
-			}
-		}
-	}
-}
-
-@media only screen and (min-width: 426px) and (max-width: 768px) {
-	#mainPlans {
-		.vueperslides__parallax-wrapper {
-			padding-bottom: 19rem !important;
-		}
-
-		#front {
-			.promotion--span {
-				font-size: 0.8rem;
-				top: 1%;
-			}
-
-			.card-header {
-				font-size: 1rem;
-			}
-
-			.card-footer {
-				font-size: 1rem;
-			}
-		}
-
-		#back {
-			.card-header {
-				font-size: 1.1rem;
-			}
-
-			.card-content {
-				a {
-					img {
-						height: 2rem;
-						width: 2rem;
-					}
-				}
-			}
-
-			.card-footer {
-				a {
-					font-size: 1rem;
-				}
-			}
-		}
-	}
-}
-
-@media only screen and (min-width: 769px) and (max-width: 991px) {
-	#mainPlans {
-		.vueperslides__parallax-wrapper {
-			padding-bottom: 19rem !important;
-		}
-
-		#front {
-			.promotion--span {
-				font-size: 0.8rem;
-				top: 2%;
-				left: 6.5%;
-			}
-
-			.card-header {
-				font-size: 1rem;
-			}
-
-			.card-footer {
-				font-size: 1rem;
-			}
-		}
-
-		#back {
-			.card-header {
-				font-size: 1.1rem;
-			}
-
-			.card-content {
-				a {
-					img {
-						height: 2rem;
-						width: 2rem;
-					}
-				}
-			}
-
-			.card-footer {
-				a {
-					font-size: 1rem;
-				}
-			}
-		}
-	}
-}
-
-@include screen(992px, 2560px) {
-	#mainPlans {
-		.vueperslides__parallax-wrapper {
-			padding-bottom: 32% !important;
 		}
 	}
 }

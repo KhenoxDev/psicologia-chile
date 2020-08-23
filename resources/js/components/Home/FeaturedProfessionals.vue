@@ -8,7 +8,7 @@
       class="no-shadow"
       :breakpoints="breakpoints"
       slide-multiple
-      :autoplay="off"
+      :autoplay="false"
       :touchable="false"
       infinite
       bullets-outside

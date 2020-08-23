@@ -7,48 +7,52 @@
     <vueper-slides
       :breakpoints="breakpoints"
       class="no-shadow"
-      :autoplay="off"
+      :autoplay="false"
       infinite
       slide-multiple
       bullets-outside
       :touchable="false"
     >
-      <vueper-slide v-for="slide in slides" :key="slide.id">
+      <vueper-slide v-for="pln in plansHome" :key="pln.id">
         <template v-slot:content>
-          <vue-flashcard colorBack="#f4b034" :promotion="slide.promotion">
+          <card color-back="#f4b034">
             <template v-slot:frontContent>
               <div id="front">
-                <span class="promotion--span" v-show="slide.promotion">Promoción!</span>
-                <div class="card-header">{{slide.title}}</div>
-                <div class="card-content center">
-                  <p>{{ slide.description }}</p>
+                <div class="card-header">
+                  <strong>{{ pln.sesiones }}</strong>
+                  sesiones a
+                  <strong>${{ formatPrice(pln.valor) }}</strong>
                 </div>
-                <div class="card-footer">Cuéntame más!</div>
+
+                <div class="card-content center">
+                  <p v-html="pln.descripcion"></p>
+                </div>
+                <div class="card-footer">
+                  <a :href="pln.contratar" target="_blank">Lo quiero!</a>
+                </div>
               </div>
             </template>
             <template v-slot:backContent>
               <div id="back">
-                <div class="card-header">
-                  <strong>{{ slide.sessions}}</strong> sesiones a
-                  <strong>${{ formatPrice(slide.price) }}</strong>
-                </div>
+                <div class="card-header">{{ pln.plan }}</div>
+
                 <div class="card-content center">
                   <a
-                    v-for="professional in slide.professionals"
-                    :key="professional.id"
-                    href="#"
+                    v-for="prof in pln.professionals"
+                    :key="prof.index"
+                    :href="'profesionales/' + prof.index"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img :src="professional.src" :alt="professional.alt" :title="professional.alt" />
+                    <img :src="prof.foto" :alt="prof.nombreCompleto" />
                   </a>
                 </div>
                 <div class="card-footer">
-                  <a href="http://">Lo quiero!</a>
+                  <a :href="pln.contratar" target="_blank">Lo quiero!</a>
                 </div>
               </div>
             </template>
-          </vue-flashcard>
+          </card>
         </template>
       </vueper-slide>
     </vueper-slides>
@@ -56,17 +60,16 @@
 </template>
 <script>
 import { VueperSlides, VueperSlide } from "vueperslides";
-import VueFlashcard from "../Reusable/Card";
+import Card from "../Reusable/Card";
 
 export default {
   components: {
     VueperSlides,
     VueperSlide,
-    VueFlashcard,
+    Card,
   },
   data() {
     return {
-      lists: [],
       breakpoints: {
         321: {
           slideRatio: 1 / 2,
@@ -119,260 +122,67 @@ export default {
           arrows: false,
         },
       },
-      slides: [
-        {
-          title: "Plan Contenci-ON Light",
-          price: 15000,
-          sessions: 5,
-          promotion: false,
-          description:
-            "Plan pensado en una terapia de 1 a 4 meses, dependiendo de la frecuencia de las sesiones.",
-          professionals: [
-            {
-              alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png",
-            },
-            {
-              alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png",
-            },
-            {
-              alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
-            },
-            {
-              alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png",
-            },
-            {
-              alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png",
-            },
-            {
-              alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
-            },
-            {
-              alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png",
-            },
-            {
-              alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png",
-            },
-            {
-              alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
-            },
-          ],
-        },
-        {
-          title: "Plan Contenci-ON Pro",
-          price: 30000,
-          sessions: 8,
-          promotion: true,
-          description:
-            "Plan considerado para una terapia de 1 a 4 meses, dependiendo la frecuencia de las sesiones, con Profesionales con más de 10 años de experiencia ó desde 5 años y postítulo en su especialidad",
-          professionals: [
-            {
-              alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png",
-            },
-            {
-              alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png",
-            },
-            {
-              alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
-            },
-            {
-              alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png",
-            },
-            {
-              alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png",
-            },
-            {
-              alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
-            },
-            {
-              alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png",
-            },
-            {
-              alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png",
-            },
-            {
-              alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
-            },
-          ],
-        },
-        {
-          title: "Plan Contenci-ON Pro",
-          price: 30000,
-          sessions: 8,
-          promotion: true,
-          description:
-            "Plan considerado para una terapia de 1 a 4 meses, dependiendo la frecuencia de las sesiones, con Profesionales con más de 10 años de experiencia ó desde 5 años y postítulo en su especialidad",
-          professionals: [
-            {
-              alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png",
-            },
-            {
-              alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png",
-            },
-            {
-              alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
-            },
-            {
-              alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png",
-            },
-            {
-              alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png",
-            },
-            {
-              alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
-            },
-            {
-              alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png",
-            },
-            {
-              alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png",
-            },
-            {
-              alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
-            },
-          ],
-        },
-        {
-          title: "Plan Contenci-ON Pro",
-          price: 30000,
-          sessions: 8,
-          promotion: true,
-          description:
-            "Plan considerado para una terapia de 1 a 4 meses, dependiendo la frecuencia de las sesiones, con Profesionales con más de 10 años de experiencia ó desde 5 años y postítulo en su especialidad",
-          professionals: [
-            {
-              alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png",
-            },
-            {
-              alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png",
-            },
-            {
-              alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
-            },
-            {
-              alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png",
-            },
-            {
-              alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png",
-            },
-            {
-              alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
-            },
-            {
-              alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png",
-            },
-            {
-              alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png",
-            },
-            {
-              alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
-            },
-          ],
-        },
-        {
-          title: "Plan Contenci-ON Pro",
-          price: 30000,
-          sessions: 8,
-          promotion: true,
-          description:
-            "Plan considerado para una terapia de 1 a 4 meses, dependiendo la frecuencia de las sesiones, con Profesionales con más de 10 años de experiencia ó desde 5 años y postítulo en su especialidad",
-          professionals: [
-            {
-              alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png",
-            },
-            {
-              alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png",
-            },
-            {
-              alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
-            },
-            {
-              alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png",
-            },
-            {
-              alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png",
-            },
-            {
-              alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
-            },
-            {
-              alt: "Alex Balada",
-              src: "img/professionals/Alex_Balada_Carrasco.png",
-            },
-            {
-              alt: "Carla Oyarce",
-              src: "img/professionals/Carla_Oyarce.png",
-            },
-            {
-              alt: "Claudia Jeldres Guajardo",
-              src: "img/professionals/Claudia_Jeldres_Guajardo.png",
-            },
-          ],
-        },
-      ],
+      plans: [],
+      plansHome: [],
+      planSelected: "",
     };
+  },
+  mounted() {
+    this.getPlans();
   },
   methods: {
     formatPrice: function (value) {
       let val = (value / 1).toFixed(0);
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     },
-    getPlans: function () {
-      axios
-        .get(
-          "https://online.psicologiachile.cl/gateway-json.php?service=planes"
-        )
-        .then((response) => {
-          console.log(response.data);
-        })
-        .catch((err) => {
-          console.error(err);
-        });
+    async getPlans() {
+      this.plans = [];
+      const api =
+        "https://online.psicologiachile.cl/gateway-json.php?service=planes";
+
+      try {
+        let response = await axios.get(api);
+        console.log(response.data.items);
+        for (let i = 0; i < 2; i++) {
+          this.plans.push(response.data.items[i]);
+        }
+
+        for (let i = 0; i < this.plans.length; i++) {
+          this.planSelected = this.plans[i].id;
+          this.plans[i].professionals = this.listProfesionals;
+          for (let j = 0; j < this.plans[i].precios.length; j++) {
+            this.plans[i].precios[j].descripcion = this.plans[i].descripcion;
+            this.plans[i].precios[j].professionals = this.plans[
+              i
+            ].professionals;
+            this.plansHome.push(this.plans[i].precios[j]);
+          }
+        }
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
-  mounted() {
-    this.getPlans;
+  computed: {
+    listProfesionals: function () {
+      const api =
+        "https://online.psicologiachile.cl/gateway-json.php?service=staff&plan=" +
+        this.planSelected;
+      let array = [];
+
+      axios
+        .get(api)
+        .then((response) => {
+          for (let index = 0; index < response.data.items.length; index++) {
+            array.push(response.data.items[index]);
+          }
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+
+      return array;
+    },
   },
 };
 </script>

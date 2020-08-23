@@ -41,8 +41,6 @@ import Specialists from "./Specialists";
 import FeaturedPlans from "./FeaturedPlans";
 import FeaturedProfessionals from "./FeaturedProfessionals";
 import FrequentlyQuestions from "./FrequentlyQuestions";
-import Voluntary from "./Voluntary";
-import WorkUs from "./WorkUs";
 import News from "./News";
 import WereNews from "./WeWereNews";
 import Covenants from "./Covenants";
@@ -68,11 +66,9 @@ export default {
     FeaturedPlans,
     FeaturedProfessionals,
     FrequentlyQuestions,
-    Voluntary,
     News,
     WereNews,
     Covenants,
-    WorkUs,
   },
   mounted() {
     this.onLoad();
