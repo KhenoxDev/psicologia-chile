@@ -7,7 +7,7 @@ global.$ = global.jQuery = require('jquery');
 $(function () {
 	"use strict";
 	var nav_offset_top = $('header').height() + 10;
-	var nav_offset_top_2 = $('header').height() + 200;
+	var nav_offset_top_2 = $('header').height() + 10;
 
 	function navbarFixed() {
 		if ($('.header_area').length) {
