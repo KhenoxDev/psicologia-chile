@@ -13,16 +13,13 @@
       infinite
       bullets-outside
     >
-      <vueper-slide v-for="list in professionals" :key="list.id" class="circulo--flotante">
+      <vueper-slide v-for="list in professionals" :key="list.id">
         <template v-slot:content>
           <professional
             :photo="list.foto"
             :name-professional="list.nombreCompleto"
             :title-professional="list.profesion"
             :identificator="list.index"
-            width-prop="13rem"
-            button-prop="0.5rem"
-            title-prop="0.8rem"
           ></professional>
         </template>
       </vueper-slide>
@@ -48,6 +45,11 @@ export default {
           visibleSlides: 1,
           arrows: false,
         },
+        426: {
+          slideRatio: 1 / 4,
+          visibleSlides: 2,
+          arrows: false,
+        },
         769: {
           slideRatio: 1 / 4,
           visibleSlides: 2,
@@ -59,13 +61,13 @@ export default {
           arrows: false,
         },
         1445: {
-          slideRatio: 1 / 10,
-          visibleSlides: 5,
+          slideRatio: 1 / 8,
+          visibleSlides: 4,
           arrows: false,
         },
         2561: {
-          slideRatio: 1 / 6,
-          visibleSlides: 3,
+          slideRatio: 1 / 10,
+          visibleSlides: 5,
           arrows: false,
         },
       },

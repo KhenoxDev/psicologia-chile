@@ -77,58 +77,6 @@
                     </div>
                   </div>
                 </div>
-                <!-- <div class="mb-2 mt-3">
-                  <a
-                    data-toggle="collapse"
-                    href="#collapseSchedule"
-                    role="button"
-                    aria-expanded="false"
-                    aria-controls="collapseSchedule"
-                  >Horario de atención</a>
-                  <hr />
-                  <div id="collapseSchedule" class="collapse filter--options">
-                    <div class="filter--option" v-for="schedule in schedules" :key="schedule.id">
-                      <input
-                        type="checkbox"
-                        v-model="scheduleSelected"
-                        :id="schedule"
-                        :name="schedule"
-                        :value="schedule"
-                      />
-                      <label :for="schedule">
-                        {{
-                        schedule
-                        }}
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="mb-2 mt-3">
-                  <a
-                    data-toggle="collapse"
-                    href="#collapseGender"
-                    role="button"
-                    aria-expanded="false"
-                    aria-controls="collapseGender"
-                  >Género</a>
-                  <hr />
-                  <div id="collapseGender" class="collapse filter--options">
-                    <div class="filter--option" v-for="gender in genders" :key="gender.id">
-                      <input
-                        type="checkbox"
-                        v-model="genderSelected"
-                        :id="gender"
-                        :name="gender"
-                        :value="gender"
-                      />
-                      <label :for="gender">
-                        {{
-                        gender
-                        }}
-                      </label>
-                    </div>
-                  </div>
-                </div>-->
                 <div class="filter--buttons fixed-bottom">
                   <button class="btn btn--clean" @click="cleanOptions">Limpiar</button>
                 </div>
@@ -149,9 +97,9 @@
               placeholder="Ordenar"
               v-on:change="getProfessionals"
             >
-              <option value="precioASC">Precio ascendente</option>
-              <option value="precioDESC">Precio descendente</option>
-              <option value="sesionesgratis">Sesiones gratuitas</option>
+              <option value="precioASC">Valor consulta ascendente</option>
+              <option value="precioDESC">Valor consulta descendente</option>
+              <option value="sesionesgratis">Sesiones costo cero</option>
             </select>
           </div>
         </div>
@@ -164,9 +112,6 @@
             :name-professional="list.nombreCompleto"
             :title-professional="list.profesion"
             :identificator="list.index"
-            width-prop="13rem"
-            button-prop="0.6rem"
-            title-prop="0.8rem"
           ></professional>
           <div class="no-results" v-show="filteredList.length == 0">
             <!-- TODO: Dar estilo a mensaje de No Results -->
