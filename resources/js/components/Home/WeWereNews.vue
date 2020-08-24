@@ -49,7 +49,7 @@ export default {
           visibleSlides: 1,
           arrows: false,
         },
-        769: {
+        768: {
           slideRatio: 1 / 4,
           visibleSlides: 2,
           arrows: false,
