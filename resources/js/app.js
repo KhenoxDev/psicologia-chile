@@ -11,6 +11,8 @@ require('./jquery.easing.min');
 require('./scripts');
 require('./bootstrap');
 
+import store from './store';
+
 window.Vue = require('vue');
 
 /**
@@ -50,4 +52,5 @@ Vue.component('question-component', require('./components/FrequentlyQuestion/Mai
 
 const app = new Vue({
 	el: '#app',
+	store
 });

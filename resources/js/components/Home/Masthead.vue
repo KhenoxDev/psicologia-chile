@@ -21,7 +21,7 @@
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             ></iframe>
-            <a href="#" class="btn btn-2 shadow-sm">¡Comienza ya!</a>
+            <a href="https://online.psicologiachile.cl/" class="btn btn-2 shadow-sm">¡Comienza ya!</a>
           </div>
         </div>
       </div>

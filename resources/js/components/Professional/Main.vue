@@ -77,58 +77,6 @@
                     </div>
                   </div>
                 </div>
-                <!-- <div class="mb-2 mt-3">
-                  <a
-                    data-toggle="collapse"
-                    href="#collapseSchedule"
-                    role="button"
-                    aria-expanded="false"
-                    aria-controls="collapseSchedule"
-                  >Horario de atención</a>
-                  <hr />
-                  <div id="collapseSchedule" class="collapse filter--options">
-                    <div class="filter--option" v-for="schedule in schedules" :key="schedule.id">
-                      <input
-                        type="checkbox"
-                        v-model="scheduleSelected"
-                        :id="schedule"
-                        :name="schedule"
-                        :value="schedule"
-                      />
-                      <label :for="schedule">
-                        {{
-                        schedule
-                        }}
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="mb-2 mt-3">
-                  <a
-                    data-toggle="collapse"
-                    href="#collapseGender"
-                    role="button"
-                    aria-expanded="false"
-                    aria-controls="collapseGender"
-                  >Género</a>
-                  <hr />
-                  <div id="collapseGender" class="collapse filter--options">
-                    <div class="filter--option" v-for="gender in genders" :key="gender.id">
-                      <input
-                        type="checkbox"
-                        v-model="genderSelected"
-                        :id="gender"
-                        :name="gender"
-                        :value="gender"
-                      />
-                      <label :for="gender">
-                        {{
-                        gender
-                        }}
-                      </label>
-                    </div>
-                  </div>
-                </div>-->
                 <div class="filter--buttons fixed-bottom">
                   <button class="btn btn--clean" @click="cleanOptions">Limpiar</button>
                 </div>
@@ -390,8 +338,6 @@ export default {
       search: "",
       sortKey: "precioASC",
       open: false,
-      professionalId: "",
-      professionalSelected: {},
       urlProfessional: "",
     };
   },
@@ -415,12 +361,6 @@ export default {
     }
   },
   methods: {
-    getProfessional(identificator) {
-      var aux = this.professionals.find((prof) => {
-        return prof.index == identificator;
-      });
-      this.professionalSelected = aux;
-    },
     onLoad() {
       this.isLoading = true;
       setTimeout(() => {
@@ -488,13 +428,7 @@ export default {
     },
   },
   computed: {
-    filteredList() {
-      // return this.professionals.filter((professional) => {
-      //   return professional.nombreCompleto
-      //     .toLowerCase()
-      //     .includes(this.search.toLowerCase());
-      // });
-
+    filteredList: function () {
       if (
         this.previsionSelected.length == 0 &&
         this.specialistSelected.length == 0
@@ -553,6 +487,17 @@ export default {
       }
 
       return aux;
+    },
+    professionalSelected: function () {
+      var item = {};
+
+      if (this.$store.state.professionalId > 0) {
+        item = this.professionals.find((prof) => {
+          return prof.index == this.$store.state.professionalId;
+        });
+      }
+
+      return item;
     },
   },
 };

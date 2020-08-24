@@ -21,7 +21,7 @@
         :style=" 'font-size: ' + buttonProp"
         data-target="#modalProfessional"
         data-toggle="modal"
-        @click="getProfessional(identificator)"
+        @click="changeId(identificator)"
       >¡Conóceme!</a>
     </div>
 
@@ -55,8 +55,8 @@ export default {
     },
   },
   methods: {
-    getProfessional(identificator) {
-      this.$parent.getProfessional(identificator);
+    changeId(identificator) {
+      this.$store.commit("setProfessional", identificator);
     },
   },
 };
