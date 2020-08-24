@@ -9,7 +9,11 @@
       ></loading-component>
     </transition>
     <div class="bg--section bg--about-banner">
-      <banner banner-identification="mainAbout--banner" banner-title="Nuestra Empresa"></banner>
+      <banner
+        banner-identification="mainAbout--banner"
+        banner-title-bkg="../../../img/global/burbuja_1.svg"
+        banner-title="Nuestra Empresa"
+      ></banner>
     </div>
     <div class="bg--white container d-lg-flex justify-content-between">
       <feature

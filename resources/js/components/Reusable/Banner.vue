@@ -1,6 +1,6 @@
 <template>
-  <div :id="BannerIdentification" class="container mt-4">
-    <div class="banner--container">
+  <div :id="BannerIdentification" class="container">
+    <div class="banner--container" :style="'background-image: url(' + BannerTitleBkg + ');'">
       <span>{{ BannerTitle }}</span>
     </div>
   </div>
@@ -13,6 +13,10 @@ export default {
       default: "",
     },
     BannerIdentification: {
+      type: String,
+      default: "",
+    },
+    BannerTitleBkg: {
       type: String,
       default: "",
     },

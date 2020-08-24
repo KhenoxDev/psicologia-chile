@@ -76,7 +76,6 @@
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	padding: 1rem;
 	height: 20rem;
 	display: flex;
 	flex-direction: row;
@@ -96,8 +95,7 @@
 }
 
 .bg--about-banner {
-	background-image: linear-gradient(rgba(244, 175, 52, 0.5) 5%, rgba(244, 175, 52, 0.1) 70%),
-		url('../../../img/about/about.jpg');
+	background-image: url('../../../img/about/about.jpg');
 }
 
 .bg--professional-banner {
