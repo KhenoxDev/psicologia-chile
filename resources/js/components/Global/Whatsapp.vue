@@ -7,7 +7,13 @@
     >
       <i class="fab fa-whatsapp my-float"></i>
     </a>-->
-    <a v-for="social in socials" :key="social.id" :href="social.link" :class="social.class">
+    <a
+      v-for="social in socials"
+      :key="social.id"
+      :href="social.link"
+      :class="social.class"
+      target="_blank"
+    >
       <i :class="'fab ' + social.src"></i>
     </a>
   </div>
