@@ -63,7 +63,7 @@
             <h6 class="mb-20">Síguenos en nuestras redes</h6>
             <ul class="instafeed d-flex flex-wrap">
               <li v-for="social in socials" :key="social.id">
-                <a :href="social.link">
+                <a :href="social.link" target="_blank">
                   <img :src="social.src" :alt="social.alt" />
                 </a>
               </li>
