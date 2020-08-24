@@ -5,8 +5,19 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding: 0rem;
+	height: 100%;
 
 	.banner--container {
+		background-repeat: no-repeat;
+		background-size: 35rem;
+		background-position: center;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		width: 100%;
+		justify-content: center;
+
 		span {
 			font-size: 4rem;
 			color: $white;

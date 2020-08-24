@@ -8,8 +8,12 @@
         v-bind:color="'#f4b034'"
       ></loading-component>
     </transition>
-    <div class="bg--section bg--professional-banner">
-      <banner banner-identification="mainSpecialist--banner" banner-title="Especialidades"></banner>
+    <div class="bg--section bg--specialist-banner">
+      <banner
+        banner-identification="mainSpecialist--banner"
+        banner-title-bkg="../../../img/global/burbuja_1.svg"
+        banner-title="Especialidades"
+      ></banner>
     </div>
     <div class="container pt-4">
       <ul class="list--specialist">
