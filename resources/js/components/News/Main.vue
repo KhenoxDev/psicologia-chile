@@ -8,10 +8,11 @@
         v-bind:color="'#f4b034'"
       ></loading-component>
     </transition>
-    <div class="bg--section bg--professional-banner">
+    <div class="bg--section bg--news-banner">
       <banner
-        banner-identification="mainProfessional--banner"
-        banner-title="Entérate de nuestras novedades"
+        banner-identification="mainNews--banner"
+        banner-title-bkg="../../../img/global/burbuja_1.svg"
+        banner-title="Nuestros tips!"
       ></banner>
     </div>
     <div class="bg--white">

@@ -8,8 +8,12 @@
         v-bind:color="'#f4b034'"
       ></loading-component>
     </transition>
-    <div class="bg--section bg--professional-banner">
-      <banner banner-identification="mainQuestion--banner" banner-title="Preguntas Frecuentes"></banner>
+    <div class="bg--section bg--questions-banner">
+      <banner
+        banner-identification="mainQuestion--banner"
+        banner-title-bkg="../../../img/global/burbuja_1.svg"
+        banner-title="Dudas Frecuentes"
+      ></banner>
     </div>
     <div id="list--questions" class="container pt-4">
       <!-- Inicio Acordeón FAQ-->
