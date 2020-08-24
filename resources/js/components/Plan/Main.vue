@@ -8,8 +8,12 @@
         v-bind:color="'#f4b034'"
       ></loading-component>
     </transition>
-    <div class="bg--section bg--professional-banner">
-      <banner banner-identification="mainPlan--banner" banner-title="Planes"></banner>
+    <div class="bg--section bg--plan-banner">
+      <banner
+        banner-identification="mainPlan--banner"
+        banner-title-bkg="../../../img/global/burbuja_1.svg"
+        banner-title="Planes"
+      ></banner>
     </div>
 
     <div id="detailPlan--section" class="container bg--white">

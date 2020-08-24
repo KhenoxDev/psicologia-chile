@@ -98,10 +98,15 @@
 	background-image: url('../../../img/about/about.jpg');
 }
 
+.bg--plan-banner {
+	background-image: url('../../../img/plans/banner_plans.jpg');
+}
+
 .bg--professional-banner {
 	background-image: linear-gradient(rgba(244, 175, 52, 0.5) 5%, rgba(244, 175, 52, 0.1) 70%),
 		url('../../../img/about/about.jpg');
 }
+
 
 .support-container {
 	display: flex;
