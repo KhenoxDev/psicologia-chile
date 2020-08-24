@@ -18,7 +18,7 @@
 	}
 
 	.vueperslides__parallax-wrapper {
-		padding-bottom: 35% !important;
+		padding-bottom: 20rem !important;
 	}
 
 	.vueperslides__bullet--active {
@@ -28,6 +28,8 @@
 	}
 
 	.vueperslides__bullet {
+		margin: 1em 0.5em !important;
+
 		span {
 			display: block;
 			color: #fff;
@@ -40,7 +42,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		margin-top: 2rem;
+		margin-top: 1rem;
 
 		a {
 			color: $dark;
@@ -53,12 +55,9 @@
 			text-decoration: none;
 		}
 	}
-}
 
-@include screen-min(991px) {
-	#mainNews {
-		.vueperslides__parallax-wrapper {
-			padding-bottom: 50% !important;
-		}
+	/* Sobreescribiendo noticias */
+	.news--container {
+		width: 98%;
 	}
 }

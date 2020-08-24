@@ -97,9 +97,9 @@
               placeholder="Ordenar"
               v-on:change="getProfessionals"
             >
-              <option value="precioASC">Precio ascendente</option>
-              <option value="precioDESC">Precio descendente</option>
-              <option value="sesionesgratis">Sesiones gratuitas</option>
+              <option value="precioASC">Valor consulta ascendente</option>
+              <option value="precioDESC">Valor consulta descendente</option>
+              <option value="sesionesgratis">Sesiones costo cero</option>
             </select>
           </div>
         </div>
@@ -112,9 +112,6 @@
             :name-professional="list.nombreCompleto"
             :title-professional="list.profesion"
             :identificator="list.index"
-            width-prop="13rem"
-            button-prop="0.6rem"
-            title-prop="0.8rem"
           ></professional>
           <div class="no-results" v-show="filteredList.length == 0">
             <!-- TODO: Dar estilo a mensaje de No Results -->

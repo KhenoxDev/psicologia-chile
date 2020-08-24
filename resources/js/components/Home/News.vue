@@ -7,7 +7,7 @@
     <vueper-slides
       :breakpoints="breakpoints"
       class="no-shadow"
-      :autoplay="off"
+      :autoplay="false"
       infinite
       bullets-outside
       slide-multiple
@@ -73,13 +73,13 @@ export default {
           arrows: false,
         },
         1445: {
-          slideRatio: 1 / 4,
-          visibleSlides: 2,
+          slideRatio: 1 / 6,
+          visibleSlides: 3,
           arrows: false,
         },
         2561: {
-          slideRatio: 1 / 4,
-          visibleSlides: 2,
+          slideRatio: 1 / 6,
+          visibleSlides: 3,
           arrows: false,
         },
       },
@@ -98,7 +98,7 @@ export default {
 
       try {
         let response = await axios.get(api);
-        for (let index = 0; index < response.data.data.length; index++) {
+        for (let index = 0; index < 6; index++) {
           this.news.push(response.data.data[index]);
         }
       } catch (error) {

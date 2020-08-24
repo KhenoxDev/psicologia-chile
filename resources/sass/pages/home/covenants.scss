@@ -28,6 +28,8 @@
 	}
 
 	.vueperslides__bullet {
+		margin: 1em 0.5em !important;
+
 		span {
 			display: block;
 			color: #fff;
@@ -56,7 +58,14 @@
 @media only screen and (max-width: 320px) {
 	#mainCovenants {
 		.vueperslides__parallax-wrapper {
-			padding-bottom: 60% !important;
+			/* padding-bottom: 60% !important; */
+			padding-bottom: 10rem !important;
+		}
+
+		.card--covenants {
+			img {
+				height: 6.8rem;
+			}
 		}
 	}
 }
@@ -64,7 +73,8 @@
 @media only screen and (min-width: 321px) and (max-width: 375px) {
 	#mainCovenants {
 		.vueperslides__parallax-wrapper {
-			padding-bottom: 60% !important;
+			/* padding-bottom: 60% !important; */
+			padding-bottom: 12rem !important;
 		}
 
 		.card--covenants {
@@ -78,7 +88,8 @@
 @media only screen and (min-width: 376px) and (max-width: 425px) {
 	#mainCovenants {
 		.vueperslides__parallax-wrapper {
-			padding-bottom: 50% !important;
+			/* padding-bottom: 50% !important; */
+			padding-bottom: 12rem !important;
 		}
 
 		.card--covenants {
@@ -92,12 +103,13 @@
 @media only screen and (min-width: 426px) and (max-width: 768px) {
 	#mainCovenants {
 		.vueperslides__parallax-wrapper {
-			padding-bottom: 26% !important;
+			/* padding-bottom: 26% !important; */
+			padding-bottom: 10rem !important;
 		}
 
 		.card--covenants {
 			img {
-				height: 4.8rem;
+				height: 6.8rem;
 			}
 		}
 	}
@@ -106,7 +118,8 @@
 @include screen(769px, 991px) {
 	#mainCovenants {
 		.vueperslides__parallax-wrapper {
-			padding-bottom: 26% !important;
+			/* padding-bottom: 26% !important; */
+			padding-bottom: 10rem !important;
 		}
 
 		.card--covenants {

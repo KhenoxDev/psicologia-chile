@@ -72,7 +72,6 @@ export default {
       isLoading: true,
       fullPage: true,
       plans: [],
-      PlanProfessionals: [],
       planSelected: "",
     };
   },
