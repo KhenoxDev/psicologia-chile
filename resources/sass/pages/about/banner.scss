@@ -6,11 +6,11 @@
 	justify-content: center;
 	align-items: center;
 	padding: 0rem;
-	height: 36vh;
+	height: 100%;
 
 	.banner--container {
 		background-repeat: no-repeat;
-		background-size: 23rem;
+		background-size: 35rem;
 		background-position: center;
 		height: 100%;
 		display: flex;
@@ -19,7 +19,7 @@
 		justify-content: center;
 
 		span {
-			font-size: 2.5rem;
+			font-size: 4rem;
 			color: $white;
 			font-weight: bold;
 		}

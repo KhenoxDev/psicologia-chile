@@ -76,7 +76,7 @@
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 20rem;
+	height: 30rem;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -89,18 +89,12 @@
 	flex-wrap: wrap;
 }
 
-.bg--work-banner {
-	background-image: linear-gradient(rgba(244, 175, 52, 0.5) 5%, rgba(244, 175, 52, 0.1) 70%),
-		url('img/work/banner_work_2.jpg');
+.bg--professional-banner {
+	background-image: url('../../../img/professionals/professionals.jpg');
 }
 
 .bg--about-banner {
 	background-image: url('../../../img/about/about.jpg');
-}
-
-.bg--professional-banner {
-	background-image: linear-gradient(rgba(244, 175, 52, 0.5) 5%, rgba(244, 175, 52, 0.1) 70%),
-		url('../../../img/about/about.jpg');
 }
 
 .support-container {

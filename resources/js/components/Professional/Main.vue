@@ -9,7 +9,11 @@
       ></loading-component>
     </transition>
     <div class="bg--section bg--professional-banner">
-      <banner banner-identification="mainProfessional--banner" banner-title="Profesionales"></banner>
+      <banner
+        banner-identification="mainProfessional--banner"
+        banner-title-bkg="../../../img/global/burbuja_1.svg"
+        banner-title="Profesionales"
+      ></banner>
     </div>
     <div class="bg--white">
       <div class="section--professional container">
