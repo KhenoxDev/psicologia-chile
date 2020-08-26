@@ -10,7 +10,7 @@
     </transition>
     <masthead
       :img-background="imgBackground"
-      url-vid="https://www.youtube.com/embed/TJLjpG_sS4U?autoplay=1&mute=1&playlist=TJLjpG_sS4U&loop=1"
+      url-vid="https://www.youtube.com/embed/R6zFANXg7Zo?autoplay=1&mute=1&playlist=R6zFANXg7Zo&loop=1"
     ></masthead>
     <div class="bg--white">
       <news></news>

@@ -17,15 +17,74 @@
       :visible-slides="3"
       :slide-ratio="1 / 8"
     >
-      <vueper-slide
-        v-for="prevision in previsions"
-        :key="prevision.id"
-        :style="'margin-bottom:' + ['1rem']"
-      >
+      <vueper-slide :style="'margin-bottom:' + ['1rem']">
         <template v-slot:content>
           <div class="card card-body card--prevision">
-            <a :href="'profesionales/prev/' + prevision.nombre">
-              <img class="img-fluid" :src="prevision.image" :alt="prevision.nombre" />
+            <a :href="'profesionales/prev/' + previsions[0].nombre">
+              <img class="img-fluid" :src="previsions[0].image" :alt="previsions[0].nombre" />
+            </a>
+          </div>
+        </template>
+      </vueper-slide>
+      <vueper-slide :style="'margin-bottom:' + ['1rem']">
+        <template v-slot:content>
+          <div class="card card-body card--prevision">
+            <a :href="'profesionales/prev/' + previsions[2].nombre">
+              <img class="img-fluid" :src="previsions[2].image" :alt="previsions[2].nombre" />
+            </a>
+          </div>
+        </template>
+      </vueper-slide>
+      <vueper-slide :style="'margin-bottom:' + ['1rem']">
+        <template v-slot:content>
+          <div class="card card-body card--prevision">
+            <a :href="'profesionales/prev/' + previsions[1].nombre">
+              <img class="img-fluid" :src="previsions[1].image" :alt="previsions[1].nombre" />
+            </a>
+          </div>
+        </template>
+      </vueper-slide>
+      <vueper-slide :style="'margin-bottom:' + ['1rem']">
+        <template v-slot:content>
+          <div class="card card-body card--prevision">
+            <a :href="'profesionales/prev/' + previsions[6].nombre">
+              <img class="img-fluid" :src="previsions[6].image" :alt="previsions[6].nombre" />
+            </a>
+          </div>
+        </template>
+      </vueper-slide>
+      <vueper-slide :style="'margin-bottom:' + ['1rem']">
+        <template v-slot:content>
+          <div class="card card-body card--prevision">
+            <a :href="'profesionales/prev/' + previsions[7].nombre">
+              <img class="img-fluid" :src="previsions[7].image" :alt="previsions[7].nombre" />
+            </a>
+          </div>
+        </template>
+      </vueper-slide>
+      <vueper-slide :style="'margin-bottom:' + ['1rem']">
+        <template v-slot:content>
+          <div class="card card-body card--prevision">
+            <a :href="'profesionales/prev/' + previsions[3].nombre">
+              <img class="img-fluid" :src="previsions[3].image" :alt="previsions[3].nombre" />
+            </a>
+          </div>
+        </template>
+      </vueper-slide>
+      <vueper-slide :style="'margin-bottom:' + ['1rem']">
+        <template v-slot:content>
+          <div class="card card-body card--prevision">
+            <a :href="'profesionales/prev/' + previsions[5].nombre">
+              <img class="img-fluid" :src="previsions[5].image" :alt="previsions[5].nombre" />
+            </a>
+          </div>
+        </template>
+      </vueper-slide>
+      <vueper-slide :style="'margin-bottom:' + ['1rem']">
+        <template v-slot:content>
+          <div class="card card-body card--prevision">
+            <a :href="'profesionales/prev/' + previsions[4].nombre">
+              <img class="img-fluid" :src="previsions[4].image" :alt="previsions[4].nombre" />
             </a>
           </div>
         </template>
