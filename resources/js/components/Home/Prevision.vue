@@ -17,74 +17,15 @@
       :visible-slides="3"
       :slide-ratio="1 / 8"
     >
-      <vueper-slide :style="'margin-bottom:' + ['1rem']">
+      <vueper-slide
+        v-for="prevision in previsions"
+        :key="prevision.id"
+        :style="'margin-bottom:' + ['1rem']"
+      >
         <template v-slot:content>
           <div class="card card-body card--prevision">
-            <a :href="'profesionales/prev/' + previsions[0].nombre">
-              <img class="img-fluid" :src="previsions[0].image" :alt="previsions[0].nombre" />
-            </a>
-          </div>
-        </template>
-      </vueper-slide>
-      <vueper-slide :style="'margin-bottom:' + ['1rem']">
-        <template v-slot:content>
-          <div class="card card-body card--prevision">
-            <a :href="'profesionales/prev/' + previsions[2].nombre">
-              <img class="img-fluid" :src="previsions[2].image" :alt="previsions[2].nombre" />
-            </a>
-          </div>
-        </template>
-      </vueper-slide>
-      <vueper-slide :style="'margin-bottom:' + ['1rem']">
-        <template v-slot:content>
-          <div class="card card-body card--prevision">
-            <a :href="'profesionales/prev/' + previsions[1].nombre">
-              <img class="img-fluid" :src="previsions[1].image" :alt="previsions[1].nombre" />
-            </a>
-          </div>
-        </template>
-      </vueper-slide>
-      <vueper-slide :style="'margin-bottom:' + ['1rem']">
-        <template v-slot:content>
-          <div class="card card-body card--prevision">
-            <a :href="'profesionales/prev/' + previsions[6].nombre">
-              <img class="img-fluid" :src="previsions[6].image" :alt="previsions[6].nombre" />
-            </a>
-          </div>
-        </template>
-      </vueper-slide>
-      <vueper-slide :style="'margin-bottom:' + ['1rem']">
-        <template v-slot:content>
-          <div class="card card-body card--prevision">
-            <a :href="'profesionales/prev/' + previsions[7].nombre">
-              <img class="img-fluid" :src="previsions[7].image" :alt="previsions[7].nombre" />
-            </a>
-          </div>
-        </template>
-      </vueper-slide>
-      <vueper-slide :style="'margin-bottom:' + ['1rem']">
-        <template v-slot:content>
-          <div class="card card-body card--prevision">
-            <a :href="'profesionales/prev/' + previsions[3].nombre">
-              <img class="img-fluid" :src="previsions[3].image" :alt="previsions[3].nombre" />
-            </a>
-          </div>
-        </template>
-      </vueper-slide>
-      <vueper-slide :style="'margin-bottom:' + ['1rem']">
-        <template v-slot:content>
-          <div class="card card-body card--prevision">
-            <a :href="'profesionales/prev/' + previsions[5].nombre">
-              <img class="img-fluid" :src="previsions[5].image" :alt="previsions[5].nombre" />
-            </a>
-          </div>
-        </template>
-      </vueper-slide>
-      <vueper-slide :style="'margin-bottom:' + ['1rem']">
-        <template v-slot:content>
-          <div class="card card-body card--prevision">
-            <a :href="'profesionales/prev/' + previsions[4].nombre">
-              <img class="img-fluid" :src="previsions[4].image" :alt="previsions[4].nombre" />
+            <a :href="'profesionales/prev/' + prevision.nombre">
+              <img class="img-fluid" :src="prevision.image" :alt="prevision.nombre" />
             </a>
           </div>
         </template>
@@ -158,31 +99,46 @@ export default {
           switch (prev.nombre) {
             case "Fonasa":
               prev.image = "img/prevision/Logo_Fonasa.svg";
+              prev.order = 1;
               break;
             case "Isapre Banmédica":
               prev.image = "img/prevision/Logo_Banmedica.png";
+              prev.order = 3;
               break;
             case "Isapre Consalud":
               prev.image = "img/prevision/Logo_Consalud.png";
+              prev.order = 2;
               break;
             case "Isapre Colmena":
               prev.image = "img/prevision/Logo_Colmena_2.jpg";
+              prev.order = 6;
               break;
             case "Isapre CruzBlanca":
               prev.image = "img/prevision/Logo_Cruz_Blanca.png";
+              prev.order = 8;
               break;
             case "Isapre Nueva Masvida":
               prev.image = "img/prevision/Logo_Masvida.png";
+              prev.order = 7;
               break;
             case "Isapre Vida Tres":
               prev.image = "img/prevision/Logo_Vidatres.png";
+              prev.order = 4;
               break;
             case "Isapre Cruz del Norte":
               prev.image = "img/prevision/Logo_Cruznorte.png";
+              prev.order = 5;
               break;
             default:
               break;
           }
+        });
+
+        this.previsions.sort((a, b) => {
+          if (a.order > b.order) return 1;
+          if (b.order > a.order) return -1;
+
+          return 0;
         });
       } catch (error) {
         console.log(error);
