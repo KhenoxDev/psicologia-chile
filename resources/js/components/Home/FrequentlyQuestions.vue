@@ -18,23 +18,14 @@
         <template v-slot:content>
           <div v-if="i == 0" class="card card-body card--question first-card-faq">
             <span class="description">{{ slide.descFAQ }}</span>
-            <!-- <span class="comments">
-              <i class="far fa-comment-dots"></i>
-              {{ slide.comments }}
-            </span>-->
           </div>
           <div v-else class="card card-body card--question another-card-faq">
             <span class="description">{{ slide.descFAQ }}</span>
-            <!-- <span class="comments">
-              <i class="far fa-comment-dots"></i>
-              {{ slide.comments }}
-            </span>-->
           </div>
         </template>
       </vueper-slide>
     </vueper-slides>
     <div class="seemore--questions">
-      <!-- <button>ver todas las consultas</button> -->
       <a :href="'preguntas-frecuentes/'">ver todas las consultas</a>
     </div>
   </div>

@@ -12,7 +12,7 @@
       <banner
         banner-identification="mainQuestion--banner"
         banner-title-bkg="../../../img/global/burbuja_1.svg"
-        banner-title="Dudas Frecuentes"
+        banner-title="Consultas"
       ></banner>
     </div>
     <div id="list--questions" class="container pt-4">
