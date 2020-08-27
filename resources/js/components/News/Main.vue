@@ -32,7 +32,7 @@
               :identificator="n.id"
               :image="n.image"
               :title="n.title"
-              :content="n.content"
+              :v-html:content="n.content"
               :autor="n.author"
               :publish="n.posted_on"
               :likes="n.likes"

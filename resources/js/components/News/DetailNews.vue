@@ -13,7 +13,7 @@
         <a href="/noticias" id="back--button">
           <i class="fas fa-arrow-left"></i> Volver
         </a>
-        <div class="image--container" :style="'background-image: url(' + news.image + ');'"></div>
+        <div class="image--container" :style="'background-image: url(../' + news.image + ');'"></div>
 
         <div class="p-4">
           <div class="title--container">
@@ -41,13 +41,13 @@
 
             <div class="pic--content">
               <div class="authorpic--container">
-                <img :src="news.author_image" alt />
+                <img :src="'../' + news.author_image" alt />
               </div>
             </div>
           </div>
 
           <div class="content--container">
-            <p>{{ news.content }}</p>
+            <p v-html="news.content"></p>
           </div>
 
           <div class="icons--container">
