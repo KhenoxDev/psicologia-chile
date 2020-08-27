@@ -74,19 +74,18 @@ export default {
           icon: "fas fa-crosshairs",
           title: "Misión",
           description:
-            "Buscamos acercar la terapia psicológica a la vida de las personas, valiéndonos del uso de la tecnología, permitiendo que las personas accedan a una atención de calidad con una amplia red de psicólogos de distintas especialidades sin la necesidad de salir de sus hogares.",
+            "Prestar un servicio de psicología de alto nivel, presentando un abanico amplio de especialidades y profesionales, en donde podamos satisfacer las necesidades de cada consultante,  logrando una recuperación pronta y efectiva.",
         },
         {
           icon: "far fa-eye",
           title: "Visión",
           description:
-            "Queremos posicionarnos como la plataforma más importante en sudamérica de terapia online, con la mayor cantidad de psicólogos de diversas especialidades clinicas de toda habla hispana, rompiendo las barreras de la distancia.",
+            "Posicionarnos como la principal plataforma de atención psicológica Online a nivel Nacional.",
         },
         {
           icon: "fas fa-hand-holding-heart",
           title: "Valores",
-          description:
-            "Creatividad e innovación, Profesionalismo, Seguridad, Compromiso y Vocación.",
+          description: "Confianza, Profesionalismo y Seguridad.",
         },
       ],
       imageSectionList: [
