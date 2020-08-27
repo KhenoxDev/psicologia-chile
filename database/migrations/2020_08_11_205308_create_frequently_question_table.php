@@ -16,7 +16,7 @@ class CreateFrequentlyQuestionTable extends Migration
 		Schema::create('frequently_question', function (Blueprint $table) {
 			$table->id()->autoIncrement();
 			$table->string('title');
-			$table->string('answer');
+			$table->longText('answer');
 			$table->timestamp('created_at')->useCurrent();
 			$table->timestamp('updated_at')->useCurrent();
 		});

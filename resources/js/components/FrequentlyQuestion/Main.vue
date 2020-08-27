@@ -41,7 +41,7 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              {{ faq.answer }}
+              <p v-html="faq.answer"></p>
               <hr />
               <a
                 href="#"
