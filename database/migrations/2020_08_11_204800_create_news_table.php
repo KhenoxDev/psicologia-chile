@@ -18,11 +18,11 @@ class CreateNewsTable extends Migration
 			$table->string('title');
 			$table->string('author');
 			$table->string('author_image');
-			$table->string('content');
+			$table->longText('content');
 			$table->string('image');
-			$table->boolean('is_posted');
+			$table->boolean('is_posted')->default(0);
 			$table->date('posted_on');
-			$table->string('updated_by');
+			$table->string('updated_by')->nullable();
 			$table->timestamp('created_at')->useCurrent();
 			$table->timestamp('updated_at')->useCurrent();
 		});
