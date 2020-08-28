@@ -131,9 +131,9 @@ Luego de ello, procedemos con estos comandos para levantar la aplicación.
 
 Una vez todo se haya ejecutado correctamente, <strong>solo debe levantar su servidor de aplicaciones y estaría todo listo.</strong>
 
-## Laravel Sponsors
+## Patrocinadores de Laravel
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Nos gustaría extender nuestro agradecimiento a los siguientes patrocinadores por financiar el desarrollo de Laravel. Si está interesado en convertirse en patrocinador, visite el Laravel [Patreon page](https://patreon.com/taylorotwell).
 
 - **[Vehikl](https://vehikl.com/)**
 - **[Tighten Co.](https://tighten.co)**
@@ -166,18 +166,18 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 - [OP.GG](https://op.gg)
 - [云软科技](http://www.yunruan.ltd/)
 
-## Contributing
+## Contribuyendo
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+¡Gracias por considerar contribuir al marco de Laravel! La guía de contribución se puede encontrar en la [documentación de Laravel](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+## Código de Conducta
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Para garantizar que la comunidad de Laravel sea acogedora para todos, revise y acate el [Código de conducta](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+## Vulnerabilidades de seguridad
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Si descubre una vulnerabilidad de seguridad dentro de Laravel, envíe un correo electrónico a Taylor Otwell a través de [taylor@laravel.com](mailto:taylor@laravel.com). Todas las vulnerabilidades de seguridad se abordarán de inmediato.
 
-## License
+## Licencia
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+El marco de Laravel es un software de código abierto con licencia bajo la [MIT license](https://opensource.org/licenses/MIT).
