@@ -14,13 +14,13 @@
       :touchable="false"
       :breakpoints="breakpoints"
     >
-      <vueper-slide v-for="(slide, i) in slides" :index="i" :key="slide.id">
+      <vueper-slide v-for="(faq, i) in questions" :index="i" :key="faq.id">
         <template v-slot:content>
           <div v-if="i == 0" class="card card-body card--question first-card-faq">
-            <span class="description">{{ slide.descFAQ }}</span>
+            <span class="description">{{ faq.title }}</span>
           </div>
           <div v-else class="card card-body card--question another-card-faq">
-            <span class="description">{{ slide.descFAQ }}</span>
+            <span class="description">{{ faq.title }}</span>
           </div>
         </template>
       </vueper-slide>
@@ -37,6 +37,7 @@ export default {
   components: { VueperSlides, VueperSlide },
   data() {
     return {
+      questions: [],
       breakpoints: {
         321: {
           slideRatio: 1 / 2,
@@ -74,40 +75,24 @@ export default {
           arrows: false,
         },
       },
-      slides: [
-        {
-          descFAQ: "Tengo crisis de pánico muy seguido ¿qué puedo hacer?",
-          comments: 100,
-        },
-        {
-          descFAQ: "¿Qué es la terapia psicológica online?",
-          comments: 109,
-        },
-        {
-          descFAQ:
-            "Cómo puedo superar mis miedos, aceptarme y enfrentar la vida",
-          comments: 2,
-        },
-        {
-          descFAQ:
-            "¿Cuál es la principal diferencia de la terapia online, versus la terapia psicológica tradicional?",
-          comments: 6,
-        },
-        {
-          descFAQ: "¿Por qué es más económica?",
-          comments: 4,
-        },
-        {
-          descFAQ: "¿Cómo es la confidencialidad de la terapia?",
-          comments: 32,
-        },
-        {
-          descFAQ:
-            "¿Cómo es el proceso de selección de nuestros profesionales?",
-          comments: 34,
-        },
-      ],
     };
+  },
+  mounted() {
+    this.getQuestions();
+  },
+  methods: {
+    async getQuestions() {
+      const api = "http://127.0.0.1:8000/api/questions";
+
+      try {
+        let response = await axios.get(api);
+        for (let index = 0; index < 8; index++) {
+          this.questions.push(response.data.data[index]);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    },
   },
 };
 </script>
