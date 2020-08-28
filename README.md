@@ -7,25 +7,130 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+## Acerca de Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Laravel es un marco de aplicación web con una sintaxis elegante y expresiva. Creemos que el desarrollo debe ser una experiencia divertida y creativa para ser verdaderamente satisfactorio. Laravel elimina la molestia del desarrollo al facilitar las tareas comunes que se usan en muchos proyectos web, como:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+527/5000
+- [Motor de enrutamiento simple y rápido] (https://laravel.com/docs/routing).
+- [Potente contenedor de inyección de dependencias] (https://laravel.com/docs/container).
+- Múltiples back-end para el almacenamiento de [sesión] (https://laravel.com/docs/session) y [caché] (https://laravel.com/docs/cache).
+- Expresivo, intuitivo [base de datos ORM] (https://laravel.com/docs/eloquent).
+- Agnóstico de base de datos [migraciones de esquemas] (https://laravel.com/docs/migrations).
+- [Procesamiento robusto de trabajos en segundo plano] (https://laravel.com/docs/queues).
+- [Transmisión de eventos en tiempo real](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Laravel es accesible, potente y proporciona las herramientas necesarias para aplicaciones grandes y robustas.
 
-## Learning Laravel
+## Requisitos técnicos
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- PHP >= 7.2.5
+- Apache o Nginx
+- Composer
+- Node Js
+- Npm
+- MySQL >= 5.6
+- Extensión PHP BCMath
+- Extensión PHP Ctype
+- Extensión PHP Fileinfo
+- Extensión PHP JSON
+- Extensión PHP Mbstring
+- Extensión PHP OpenSSL
+- Extensión PHP PDO
+- Extensión PHP Tokenizer
+- Extensión PHP XML
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Clonar proyecto
+
+Se debe solicitar acceso para ingresar al repositorio. <strong>Favor enviar credenciales de Github para otorgar acceso</strong>.
+
+- git clone https://github.com/KhenoxDev/psicologia-chile.git
+
+En caso de error al clonar el respositorio, es probable que no tengas configurado Git dentro de la máquina. Para solucionar, correr los siguientes comandos.
+
+- git config --global user.name "Su nombre"
+- git config --global user.email Su correo
+
+## Configuración básica
+
+Para iniciar un proyecto con Laravel + Vue, se debe considerar lo siguiente:
+
+- Copiar el archivo .env.example y pegarlo en la raíz del proyecto.
+- Renombrar el archivo previamente pegado, y colocar .env
+- Dentro de este archivo, se debe configurar la base de datos.
+
+	DB_CONNECTION=mysql
+	DB_HOST=127.0.0.1
+	DB_PORT=3306
+	DB_DATABASE=basededatos
+	DB_USERNAME=usuario
+	DB_PASSWORD=password
+
+- También se debe dejar APP_DEBUG en <strong>False</strong>
+
+Una vez hecho esto, correr los siguientes comandos.
+
+- php artisan key:generate 	=> Se generará automaticamente una key en el archivo .env, especificamente en APP_KEY.
+- composer install 			=> Se instalarán todas las dependencias declaradas en <strong>composer.json</strong>
+- npm install 				=> Se instalarán todas las dependencias declaradas en <strong>package.json</strong>
+- npm run dev				=> Se compilará todo lo desarrollado en Vue y los declarado en webpack.mix.js
+- composer dump-autoload	=> Se encargará der mapear las migraciones
+- php artisan migrate		=> Se encargará de conectarse a la base de datos y crear las tablas.
+- php artisan db:seed		=> Se encargará de ejecutar los Seeder con información dentro de las tablas correspondientes.
+
+## Despliegue
+
+En caso de utilizar Nginx, Laravel propone la siguiente configuración como punto de partida para configurar su servidor web. Lo más probable es que este archivo deba personalizarse según la configuración de su servidor. 
+
+	server {
+		listen 80;
+		server_name example.com;
+		root /srv/example.com/public;
+
+		add_header X-Frame-Options "SAMEORIGIN";
+		add_header X-XSS-Protection "1; mode=block";
+		add_header X-Content-Type-Options "nosniff";
+
+		index index.php;
+
+		charset utf-8;
+
+		location / {
+			try_files $uri $uri/ /index.php?$query_string;
+		}
+
+		location = /favicon.ico { access_log off; log_not_found off; }
+		location = /robots.txt  { access_log off; log_not_found off; }
+
+		error_page 404 /index.php;
+
+		location ~ \.php$ {
+			fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+			fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+			include fastcgi_params;
+		}
+
+		location ~ /\.(?!well-known).* {
+			deny all;
+		}
+	}
+
+Para que Laravel detecte que la aplicación pasará a producción, se debe cambiar en el archivo .env el siguiente elemento.
+
+- APP_ENV=local a APP_ENV=production
+
+Una vez modificado el archivo, correr el siguiente comando para que las configuraciones se apliquen correctamente.
+
+- php artisan config:clear
+
+Luego de ello, procedemos con estos comandos para levantar la aplicación.
+
+- composer install --optimize-autoloader --no-dev
+- php artisan config:cache
+- php artisan route:cache
+- php artisan view:cache
+
+Una vez todo se haya ejecutado correctamente, <strong>solo debe levantar su servidor de aplicaciones y estaría todo listo.</strong>
 
 ## Laravel Sponsors
 
