@@ -7,7 +7,7 @@
     <vueper-slides
       :breakpoints="breakpoints"
       class="no-shadow"
-      :autoplay="false"
+      autoplay
       infinite
       slide-multiple
       bullets-outside
