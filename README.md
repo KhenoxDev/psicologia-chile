@@ -11,7 +11,6 @@
 
 Laravel es un marco de aplicación web con una sintaxis elegante y expresiva. Creemos que el desarrollo debe ser una experiencia divertida y creativa para ser verdaderamente satisfactorio. Laravel elimina la molestia del desarrollo al facilitar las tareas comunes que se usan en muchos proyectos web, como:
 
-527/5000
 - [Motor de enrutamiento simple y rápido] (https://laravel.com/docs/routing).
 - [Potente contenedor de inyección de dependencias] (https://laravel.com/docs/container).
 - Múltiples back-end para el almacenamiento de [sesión] (https://laravel.com/docs/session) y [caché] (https://laravel.com/docs/cache).
