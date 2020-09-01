@@ -21,7 +21,7 @@
             :image="n.image"
             :title="n.title"
             :content="n.content"
-            :autor="n.autor"
+            :autor="n.author"
             :publish="n.posted_on"
           ></news>
           <!-- fin campos tabla noticias -->
