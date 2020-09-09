@@ -261,7 +261,7 @@ return [
 		],
 		[
 			'text' => 'Consultas frecuentes',
-			'url'  => 'admin/questions',
+			'url'  => 'admin/consultas-frecuentes',
 			'icon' => 'fas fa-fw fa-question',
 		],
 		[
