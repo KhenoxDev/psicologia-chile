@@ -27,9 +27,8 @@ class FrequentlyQuestionController extends Controller
 
 	public function index()
 	{
-		$questions = FrequentlyQuestion::latest()->paginate(5);
+		$questions = $this->question::all();
 
-		return view('questions.index)', compact('questions')
-			->with('i', (request()->input('page', 1) - 1) * 5));
+		return view('pages.admin.questions', compact('questions'));
 	}
 }
