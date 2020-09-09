@@ -53,3 +53,7 @@ Route::group(['middleware' => [SetCookie::class]], function () {
 		return view('pages.question');
 	})->name('question');
 });
+
+Route::get('/admin', function () {
+	return view('pages.admin.test');
+});
