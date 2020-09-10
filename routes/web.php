@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\SetCookie;
+use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+/* Client Routes */
 
 Route::group(['middleware' => [SetCookie::class]], function () {
 	Route::get('/', function () {
@@ -54,10 +57,18 @@ Route::group(['middleware' => [SetCookie::class]], function () {
 	})->name('question');
 });
 
-Route::get('/admin', function () {
-	return view('pages.admin.test');
-});
+/* Admin Routes */
 
-Route::get('/admin/consultas-frecuentes', function () {
-	return view('pages.admin.questions');
-})->name('admin.questions');
+Route::get('/admin/inicio', 'AuthController@index')->name('admin.form.login');
+Route::post('/admin/iniciar', 'AuthController@postLogin')->name('admin.login');
+Route::get('/admin/salir', 'AuthController@logout')->name('admin.logout');
+
+Route::group(['middleware' => ['auth']], function () {
+	Route::get('/admin', function () {
+		return view('pages.admin.home');
+	})->name('admin.home');
+
+	Route::get('/admin/consultas-frecuentes', function () {
+		return view('pages.admin.questions');
+	})->name('admin.questions');
+});

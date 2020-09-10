@@ -16,6 +16,8 @@ class CreateUserTable extends Migration
 		Schema::create('user', function (Blueprint $table) {
 			$table->id()->autoIncrement();
 			$table->string('rut')->unique();
+			$table->string('name');
+			$table->string('last_name')->nullable();
 			$table->string('password');
 			$table->unsignedBigInteger('id_rol');
 			$table->timestamp('created_at')->useCurrent();

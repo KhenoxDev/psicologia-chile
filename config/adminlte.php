@@ -190,11 +190,11 @@ return [
 
 	'dashboard_url' => 'home',
 
-	'logout_url' => 'logout',
+	'logout_url' => 'admin/salir',
 
-	'login_url' => 'login',
+	'login_url' => 'admin/inicio',
 
-	'register_url' => 'register',
+	'register_url' => 'admin/registro',
 
 	'password_reset_url' => 'password/reset',
 
