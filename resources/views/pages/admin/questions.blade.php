@@ -7,26 +7,7 @@
 @stop
 
 @section('content')
-    <table class="table table-light">
-		<thead class="thead-light">
-			<tr>
-				<th>th1</th>
-				<th>th2</th>
-				<th>th3</th>
-				<th>Editar</th>
-				<th>Eliminar</th>
-			</tr>
-		</thead>
-		<tbody>
-			@foreach($questions as $question)
-			<tr>
-				<td>{{ $question->id }}</td>
-				<td>{{ $question->title }}</td>
-				<td>{{ $question->answer }}</td>
-			</tr>
-			@endforeach
-		</tbody>
-	</table>
+    <p>Welcome to this beautiful admin panel.</p>
 @stop
 
 @section('css')
@@ -34,5 +15,5 @@
 @stop
 
 @section('js')
-
+    <script> console.log('Hi!'); </script>
 @stop
