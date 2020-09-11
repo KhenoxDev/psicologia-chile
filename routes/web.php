@@ -59,3 +59,7 @@ Route::get('/admin', function () {
 });
 
 Route::get('/admin/consultas-frecuentes', 'FrequentlyQuestionController@index')->name('admin.questions');
+Route::post('/admin/consultas-frecuentes', 'FrequentlyQuestionController@store')->name('admin.store.questions');
+Route::get('/admin/consultas-frecuentes/editar/{id}', 'FrequentlyQuestionController@edit')->name('admin.edit.questions');
+Route::put('/admin/consultas-frecuentes/editar', 'FrequentlyQuestionController@update')->name('admin.update.questions');
+Route::get('/admin/consultas-frecuentes/eliminar/{id}', 'FrequentlyQuestionController@delete')->name('admin.delete.questions');
