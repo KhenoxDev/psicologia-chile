@@ -13,7 +13,7 @@
       url-vid="https://www.youtube.com/embed/TrREbV49fuU?autoplay=1&mute=1&playlist=TrREbV49fuU&loop=1"
     ></masthead>
     <div class="bg--white">
-      <news></news>
+      <news :url-base="urlBase"></news>
       <video-component></video-component>
     </div>
     <div class="bg--gray">
@@ -27,7 +27,7 @@
       <were-news></were-news>
     </div>
     <div class="bg--gray">
-      <frequently-questions></frequently-questions>
+      <frequently-questions :url-base="urlBase"></frequently-questions>
     </div>
   </div>
 </template>
@@ -48,6 +48,9 @@ import Covenants from "./Covenants";
 export default {
   props: {
     imgBackground: {
+      type: String,
+    },
+    urlBase: {
       type: String,
     },
   },

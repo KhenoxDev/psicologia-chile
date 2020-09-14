@@ -35,6 +35,11 @@ import { VueperSlides, VueperSlide } from "vueperslides";
 
 export default {
   components: { VueperSlides, VueperSlide },
+  props: {
+    urlBase: {
+      type: String,
+    },
+  },
   data() {
     return {
       questions: [],
@@ -82,7 +87,7 @@ export default {
   },
   methods: {
     async getQuestions() {
-      const api = "http://127.0.0.1:8000/api/questions";
+      const api = this.urlBase + "/api/questions";
 
       try {
         let response = await axios.get(api);

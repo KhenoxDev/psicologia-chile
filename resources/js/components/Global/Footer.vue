@@ -122,6 +122,11 @@ export default {
     FormVoluntary,
     FormContact,
   },
+  props: {
+    urlBase: {
+      type: String,
+    },
+  },
   data() {
     return {
       modalSelected: "",
@@ -182,7 +187,7 @@ export default {
       payments: [
         {
           alt: "Webpay",
-          src: "http://127.0.0.1:8000/img/footer/webpay.png",
+          src: this.urlBase + "/img/footer/webpay.png",
         },
         // {
         //   alt: "Tranferencia",
@@ -192,28 +197,28 @@ export default {
       socials: [
         {
           alt: "Facebook",
-          src: "http://127.0.0.1:8000/img/footer/social-network/facebook.svg",
+          src: this.urlBase + "/img/footer/social-network/facebook.svg",
           link: "https://www.facebook.com/PsicologiaChileOnline",
         },
         {
           alt: "Instagram",
-          src: "http://127.0.0.1:8000/img/footer/social-network/instagram.svg",
+          src: this.urlBase + "/img/footer/social-network/instagram.svg",
           link: "https://www.instagram.com/psicologiachileonline/",
         },
         {
           alt: "Youtube",
-          src: "http://127.0.0.1:8000/img/footer/social-network/youtube.svg",
+          src: this.urlBase + "/img/footer/social-network/youtube.svg",
           link: "https://www.youtube.com/channel/UCznPWn2VjzUDtm8fULeeT1w",
         },
         {
           alt: "Linkedin",
-          src: "http://127.0.0.1:8000/img/footer/social-network/linkedin.svg",
+          src: this.urlBase + "/img/footer/social-network/linkedin.svg",
           link:
             "https://www.linkedin.com/company/psicologiachile/?viewAsMember=true",
         },
         {
           alt: "Whatsapp",
-          src: "http://127.0.0.1:8000/img/footer/social-network/whatsapp.svg",
+          src: this.urlBase + "/img/footer/social-network/whatsapp.svg",
           link: "https://api.whatsapp.com/send?phone=56995863952",
         },
       ],
