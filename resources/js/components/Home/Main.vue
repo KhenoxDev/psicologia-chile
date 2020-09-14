@@ -13,7 +13,7 @@
       url-vid="https://www.youtube.com/embed/TrREbV49fuU?autoplay=1&mute=1&playlist=TrREbV49fuU&loop=1"
     ></masthead>
     <div class="bg--white">
-      <news :url-base="urlBase"></news>
+      <news></news>
       <video-component></video-component>
     </div>
     <div class="bg--gray">
@@ -27,7 +27,7 @@
       <were-news></were-news>
     </div>
     <div class="bg--gray">
-      <frequently-questions :url-base="urlBase"></frequently-questions>
+      <frequently-questions></frequently-questions>
     </div>
   </div>
 </template>
@@ -50,7 +50,7 @@ export default {
     imgBackground: {
       type: String,
     },
-    urlBase: {
+    appUrl: {
       type: String,
     },
   },
@@ -75,6 +75,7 @@ export default {
   },
   mounted() {
     this.onLoad();
+    this.$store.commit("setAppUrl", this.appUrl);
   },
   methods: {
     onLoad() {

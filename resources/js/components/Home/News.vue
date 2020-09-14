@@ -39,11 +39,6 @@ import News from "../News/News";
 
 export default {
   components: { VueperSlides, VueperSlide },
-  props: {
-    urlBase: {
-      type: String,
-    },
-  },
   data() {
     return {
       breakpoints: {
@@ -99,7 +94,7 @@ export default {
   },
   methods: {
     async getNews() {
-      const api = this.urlBase + "/api/news";
+      const api = this.$store.state.appUrl + "/api/news";
 
       try {
         let response = await axios.get(api);
