@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+    <p>Acá se modifica el vídeo principal</p>
 @stop
 
 @section('css')

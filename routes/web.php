@@ -71,4 +71,34 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/admin/consultas-frecuentes', function () {
 		return view('pages.admin.questions');
 	})->name('admin.questions');
+
+	Route::get('/admin/configuracion/logo', function () {
+		return view('pages.admin.generalities.logo');
+	})->name('admin.logo');
+
+	Route::post('/admin/configuracion/logo', 'GeneralityController@setLogo')->name('admin.store.logo');
+
+	Route::get('/admin/configuracion/redes-sociales', function () {
+		return view('pages.admin.generalities.social');
+	})->name('admin.social');
+
+	Route::get('/admin/configuracion/metodos-pago', function () {
+		return view('pages.admin.generalities.pay');
+	})->name('admin.pay');
+
+	Route::get('/admin/configuracion/video', function () {
+		return view('pages.admin.generalities.video');
+	})->name('admin.video');
+
+	Route::get('/admin/configuracion/banner', function () {
+		return view('pages.admin.generalities.banner');
+	})->name('admin.banner');
+
+	Route::get('/admin/configuracion/nuestra-empresa', function () {
+		return view('pages.admin.generalities.business');
+	})->name('admin.business');
+
+	Route::get('/admin/configuracion/popup', function () {
+		return view('pages.admin.generalities.popup');
+	})->name('admin.popup');
 });

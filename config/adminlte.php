@@ -248,16 +248,29 @@ return [
 		// 	'label'       => 4,
 		// 	'label_color' => 'success',
 		// ],
-		['header' => 'Mantenedores'],
+		['header' => 'Administración'],
 		[
 			'text' => 'Usuarios',
-			'url'  => 'admin/users',
+			'url'  => 'admin/usuarios',
 			'icon' => 'fas fa-fw fa-user',
 		],
 		[
 			'text' => 'Noticias',
-			'url'  => 'admin/news',
 			'icon' => 'far fa-fw fa-newspaper',
+			'submenu' => [
+				[
+					'text' => 'Subir noticia',
+					'url'  => '#',
+				],
+				[
+					'text' => 'Noticias públicadas',
+					'url'  => '#',
+				],
+				[
+					'text' => 'Noticias sin publicar',
+					'url'  => '#',
+				],
+			],
 		],
 		[
 			'text' => 'Consultas frecuentes',
@@ -265,9 +278,38 @@ return [
 			'icon' => 'fas fa-fw fa-question',
 		],
 		[
-			'text' => 'Generalidades',
-			'url'  => 'admin/settings',
-			'icon' => 'fas fa-fw fa-globe',
+			'text'    => 'Generalidades',
+			'icon'    => 'fas fa-fw fa-globe',
+			'submenu' => [
+				[
+					'text' => 'Logo',
+					'url'  => 'admin/configuracion/logo',
+				],
+				[
+					'text' => 'Redes sociales',
+					'url'  => 'admin/configuracion/redes-sociales',
+				],
+				[
+					'text' => 'Métodos de pago',
+					'url'  => 'admin/configuracion/metodos-pago',
+				],
+				[
+					'text' => 'Vídeo Principal',
+					'url'  => 'admin/configuracion/video',
+				],
+				[
+					'text' => 'Banner Principal',
+					'url'  => 'admin/configuracion/banner',
+				],
+				[
+					'text' => 'Popup Informativo',
+					'url'  => 'admin/configuracion/popup',
+				],
+				[
+					'text' => 'Nuestra empresa',
+					'url'  => 'admin/configuracion/nuestra-empresa',
+				],
+			],
 		],
 	],
 
@@ -307,7 +349,7 @@ return [
 
 	'plugins' => [
 		'Datatables' => [
-			'active' => false,
+			'active' => true,
 			'files' => [
 				[
 					'type' => 'js',

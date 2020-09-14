@@ -21,7 +21,7 @@ class RolSeeder extends Seeder
 		],
 		[
 			'name' => 'Editor',
-			'description' => 'Puede crear y modificar: Noticias, Preguntas'
+			'description' => 'Puede crear, modificar y dar de baja: Noticias, Preguntas'
 		],
 	];
 

@@ -16,8 +16,7 @@ class CreateGeneralityTable extends Migration
 		Schema::create('generality', function (Blueprint $table) {
 			$table->id()->autoIncrement();
 			$table->unsignedBigInteger('id_module');
-			$table->string('image');
-			$table->string('text');
+			$table->json('json');
 			$table->string('updated_by');
 			$table->timestamp('created_at')->useCurrent();
 			$table->timestamp('updated_at')->useCurrent();
