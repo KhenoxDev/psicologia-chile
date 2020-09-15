@@ -85,7 +85,7 @@ Route::group(['middleware' => ['auth']], function () {
 		return view('pages.admin.generalities.logo');
 	})->name('admin.logo');
 
-	Route::post('/admin/configuracion/logo', 'GeneralityController@setLogo')->name('admin.store.logo');
+	Route::post('/admin/configuracion/guardar-logo', 'LogoController@uploadLogo')->name('admin.store.logo');
 
 	Route::get('/admin/configuracion/redes-sociales', function () {
 		return view('pages.admin.generalities.social');

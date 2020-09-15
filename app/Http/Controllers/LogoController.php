@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Generality;
+use App\Logo;
 use App\Traits\UploadTrait;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 
-class GeneralityController extends Controller
+class LogoController extends Controller
 {
 	use UploadTrait;
 
 	public function __construct()
 	{
-		$this->generality = new Generality();
+		$this->logo = new Logo();
 	}
 
 	public function uploadLogo(Request $request)
