@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Consultas frecuentes</h1>
+    <h1>Usuarios</h1>
 @stop
 
 @section('content')
@@ -13,25 +13,31 @@
         <thead class="thead-light">
             <tr>
                 <th>#</th>
-                <th>Título</th>
-                <th>Respuesta</th>
-                <th>Editar</th>
-                <th>Eliminar</th>
+                <th>Rut</th>
+				<th>Nombre</th>
+				<th>Apellido</th>
+				<th>Rol</th>
+				<th>Descripción</th>
+				<th>Estado</th>
+				<th></th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($questions as $question)
+            @foreach ($users as $user)
                 <tr>
-                    <td>{{ $question->id }}</td>
-                    <td>{{ $question->title }}</td>
-                    <td>{{ $question->answer }}</td>
+					<td>{{ $user->id }}</td>
+					<td>{{ $user->rut }}</td>
+                    <td>{{ $user->name }}</td>
+					<td>{{ $user->last_name }}</td>
+					<td>{{ $user->rol->name }}</td>
+					<td>{{ $user->rol->description }}</td>
+					<td>{{ $user->is_active ? 'Activo' : 'Inactivo' }}</td>
                     <td>
-                        <a href="{{ route('admin.edit.questions', $question->id) }}" type="button"
-                            class="btn btn-warning">Editar</a>
-                    </td>
-                    <td>
-                        <a href="{{ route('admin.delete.questions', $question->id) }}"
-                            class="btn btn-danger delete-confirm">Eliminar</a>
+                        <a href="{{ route('admin.edit.users', $user->id) }}" type="button"
+							><i class="far fa-edit"></i></a>
+
+							 {{--  <a href="{{ route('admin.delete.questions', $question->id) }}"
+                            class="btn btn-danger delete-confirm">Eliminar</a>  --}}
                     </td>
                 </tr>
             @endforeach
@@ -46,19 +52,39 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="{{ route('admin.store.questions') }}" method="POST">
+                <form action="{{ route('admin.store.users') }}" method="POST">
                     @csrf
                     <div class="modal-body">
 
                         <div class="form-group">
-                            <label for="pregunta">Pregunta</label>
-                            <input type="text" class="form-control" id="pregunta" name="pregunta">
-                        </div>
+                            <label for="rut">Rut</label>
+                            <input type="text" class="form-control" id="rut" name="rut">
+						</div>
 
-                        <div class="form-group">
-                            <label for="respuesta">Respuesta</label>
-                            <textarea id="editor" name="respuesta" cols="30" rows="10"></textarea>
-                        </div>
+						<div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" class="form-control" id="name" name="name">
+						</div>
+
+						<div class="form-group">
+                            <label for="last_name">Apellido</label>
+                            <input type="text" class="form-control" id="last_name" name="last_name">
+						</div>
+
+						<div class="form-group">
+                            <label for="password">Contraseña</label>
+                            <input type="password" class="form-control" id="password" name="password">
+						</div>
+
+						<div class="form-group">
+                            <label for="id_rol">Rol</label>
+							 <select name="id_rol" id="id_rol" class="form-control">
+								 <option value="#">Seleccione</option>
+								<option value="1">Administrador</option>
+								<option value="2">Operador</option>
+								<option value="3">Editor</option>
+							</select>
+						</div>
 
 
                     </div>
@@ -77,16 +103,6 @@
 @stop
 
 @section('js')
-    <script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/classic/ckeditor.js"></script>
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#editor'))
-            .catch(error => {
-                console.error(error);
-            });
-
-    </script>
-
     <script>
         $('.delete-confirm').on('click', function(event) {
             event.preventDefault();

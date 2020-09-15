@@ -70,6 +70,14 @@ Route::group(['middleware' => ['auth']], function () {
 		return view('pages.admin.home');
 	})->name('admin.home');
 
+	/* Users */
+	Route::get('/admin/usuarios', function () {
+		return view('pages.admin.users');
+	})->name('admin.users');
+	Route::get('/admin/usuarios', 'UserController@index')->name('admin.users');
+	Route::post('/admin/usuarios', 'UserController@store')->name('admin.store.users');
+	Route::get('/admin/usuarios/editar/{id}', 'UserController@edit')->name('admin.edit.users');
+
 	/* Frequently questions */
 	Route::get('/admin/consultas-frecuentes', function () {
 		return view('pages.admin.questions');
