@@ -64,14 +64,23 @@ Route::post('/admin/iniciar', 'AuthController@postLogin')->name('admin.login');
 Route::get('/admin/salir', 'AuthController@logout')->name('admin.logout');
 
 Route::group(['middleware' => ['auth']], function () {
+
+	/* Home */
 	Route::get('/admin', function () {
 		return view('pages.admin.home');
 	})->name('admin.home');
 
+	/* Frequently questions */
 	Route::get('/admin/consultas-frecuentes', function () {
 		return view('pages.admin.questions');
 	})->name('admin.questions');
+	Route::get('/admin/consultas-frecuentes', 'FrequentlyQuestionController@index')->name('admin.questions');
+	Route::post('/admin/consultas-frecuentes', 'FrequentlyQuestionController@store')->name('admin.store.questions');
+	Route::get('/admin/consultas-frecuentes/editar/{id}', 'FrequentlyQuestionController@edit')->name('admin.edit.questions');
+	Route::put('/admin/consultas-frecuentes/editar', 'FrequentlyQuestionController@update')->name('admin.update.questions');
+	Route::get('/admin/consultas-frecuentes/eliminar/{id}', 'FrequentlyQuestionController@delete')->name('admin.delete.questions');
 
+	/* Generalities */
 	Route::get('/admin/configuracion/logo', function () {
 		return view('pages.admin.generalities.logo');
 	})->name('admin.logo');
