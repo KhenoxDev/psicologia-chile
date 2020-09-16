@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Rol;
 use App\User;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
 	public function __construct()
 	{
 		$this->user = new User();
+		$this->roles = new Rol();
 	}
 
 	public function getUsers($order = null)
@@ -26,8 +28,8 @@ class UserController extends Controller
 	public function index()
 	{
 		$users = $this->user::all();
-
-		return view('pages.admin.users', compact('users'));
+		$roles = $this->roles::all();
+		return view('pages.admin.users', compact('users', 'roles'));
 	}
 
 
@@ -38,6 +40,7 @@ class UserController extends Controller
 		$this->user->last_name = $request->input('last_name');
 		$this->user->password = $request->input('password');
 		$this->user->id_rol = $request->input('id_rol');
+		$this->user->is_active = $request->input('is_active');
 
 		$this->user->save();
 
@@ -47,25 +50,55 @@ class UserController extends Controller
 	public function edit($id)
 	{
 		$users = $this->user::find($id);
-		return view('pages.admin.users_edit', compact('users'));
+		$roles = $this->roles::where("id", "!=", $users->id_rol)->get();
+		return view('pages.admin.users_edit', compact('users', 'roles'));
 	}
 
-	/*
+
 	public function update(Request $request)
 	{
-		$current = $this->question::find($request->input('id'));
+		$current = $this->user::find($request->input('id'));
 
-		$current->title = $request->input('pregunta');
-		$current->answer = $request->input('respuesta');
+		$current->rut = $request->input('rut');
+		$current->name = $request->input('name');
+		$current->last_name = $request->input('last_name');
+		$current->id_rol = $request->input('id_rol');
 
 		$current->save();
 
-		$questions = $this->question::all();
+		$users = $this->user::all();
 
-		return view('pages.admin.questions', compact('questions'));
+		return view('pages.admin.users', compact('users'));
 	}
 
 
+	public function active($id)
+	{
+		$current = $this->user::find($id);
+
+		$current->is_active = 1;
+
+		$current->save();
+
+		toastr()->success("El usuario se ha activado.");
+
+		return back();
+	}
+
+	public function inactive($id)
+	{
+		$current = $this->user::find($id);
+
+		$current->is_active = 0;
+
+		$current->save();
+
+		toastr()->success("El usuario se ha desactivado.");
+
+		return back();
+	}
+
+	/*
 	public function delete($id)
 	{
 		$erase = $this->question::find($id);

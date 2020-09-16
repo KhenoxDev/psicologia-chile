@@ -14,30 +14,39 @@
             <tr>
                 <th>#</th>
                 <th>Rut</th>
-				<th>Nombre</th>
-				<th>Apellido</th>
-				<th>Rol</th>
-				<th>Descripción</th>
-				<th>Estado</th>
-				<th></th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Rol</th>
+                <th>Descripción</th>
+                <th>Estado</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             @foreach ($users as $user)
                 <tr>
-					<td>{{ $user->id }}</td>
-					<td>{{ $user->rut }}</td>
+                    <td>{{ $user->id }}</td>
+                    <td>{{ $user->rut }}</td>
                     <td>{{ $user->name }}</td>
-					<td>{{ $user->last_name }}</td>
-					<td>{{ $user->rol->name }}</td>
-					<td>{{ $user->rol->description }}</td>
-					<td>{{ $user->is_active ? 'Activo' : 'Inactivo' }}</td>
+                    <td>{{ $user->last_name }}</td>
+                    <td>{{ $user->rol->name }}</td>
+                    <td>{{ $user->rol->description }}</td>
+                    <td>{{ $user->is_active ? 'Activo' : 'Inactivo' }}</td>
                     <td>
-                        <a href="{{ route('admin.edit.users', $user->id) }}" type="button"
-							><i class="far fa-edit"></i></a>
+                        <a title="Cambiar contraseña"
+                            href="{{--  {{ route('admin.delete.questions', $question->id) }}  --}}"><i
+                                class="fas fa-key"></i></a>
 
-							 {{--  <a href="{{ route('admin.delete.questions', $question->id) }}"
-                            class="btn btn-danger delete-confirm">Eliminar</a>  --}}
+                        <a title="Editar" href="{{ route('admin.edit.users', $user->id) }}"><i class="far fa-edit"></i></a>
+                        @if ($user->is_active)
+                            <a title="Activar" href="{{ route('admin.inactive.users', $user->id) }}"><i
+                                    class="fas fa-minus-circle"></i></a>
+                        @else
+                            <a title="Desactivar" href="{{ route('admin.active.users', $user->id) }}"><i
+                                    class="far fa-check-circle"></i></a>
+                        @endif
+
+
                     </td>
                 </tr>
             @endforeach
@@ -59,32 +68,49 @@
                         <div class="form-group">
                             <label for="rut">Rut</label>
                             <input type="text" class="form-control" id="rut" name="rut">
-						</div>
+                        </div>
 
-						<div class="form-group">
+                        <div class="form-group">
                             <label for="name">Nombre</label>
                             <input type="text" class="form-control" id="name" name="name">
-						</div>
+                        </div>
 
-						<div class="form-group">
+                        <div class="form-group">
                             <label for="last_name">Apellido</label>
                             <input type="text" class="form-control" id="last_name" name="last_name">
-						</div>
+                        </div>
 
-						<div class="form-group">
+                        <div class="form-group">
                             <label for="password">Contraseña</label>
                             <input type="password" class="form-control" id="password" name="password">
-						</div>
+                        </div>
 
-						<div class="form-group">
+                        <div class="form-group">
                             <label for="id_rol">Rol</label>
-							 <select name="id_rol" id="id_rol" class="form-control">
-								 <option value="#">Seleccione</option>
-								<option value="1">Administrador</option>
-								<option value="2">Operador</option>
-								<option value="3">Editor</option>
-							</select>
-						</div>
+                            <select name="id_rol" id="id_rol" class="form-control">
+                                @foreach ($roles as $rol)
+                                    <option value="{{ $rol->id }}">{{ $rol->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="is_active" id="activo" value="1">
+                                <label class="form-check-label" for="activo">
+                                    Activo
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="is_active" id="inactivo" value="0"
+                                    checked>
+                                <label class="form-check-label" for="inactivo">
+                                    Inactivo
+                                </label>
+                            </div>
+                        </div>
+
+
 
 
                     </div>
