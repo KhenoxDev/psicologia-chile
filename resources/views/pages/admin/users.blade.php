@@ -37,7 +37,9 @@
                             data-id="{{ $user->id }}"><i class="fas fa-key" data-toggle="modal"
                                 data-target="#ModalEditPass"></i></a>
 
-                        <a title="Editar" href="{{ route('admin.edit.users', $user->id) }}"><i class="far fa-edit"></i></a>
+                        <a title="Editar" href="#" class="editModalBtn" data-toggle="modal" data-id="{{ $user->id }}"><i
+                                class="far fa-edit"></i></a>
+
                         @if ($user->is_active)
                             <a title="Activar" href="{{ route('admin.inactive.users', $user->id) }}"><i
                                     class="fas fa-minus-circle"></i></a>
@@ -161,10 +163,59 @@
         </div>
     </div>
 
+    {{-- Modal editar usuario --}}
+
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">{{ __('Actualizar datos') }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="{{ route('admin.update.users') }}" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <div class="modal-body">
+                        <input type="hidden" id="id_edit" name="id_edit">
+
+                        <div class="form-group">
+                            <label for="rut_edit">Rut</label>
+                            <input type="text" class="form-control" id="rut_edit" name="rut_edit">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name_edit">Nombre</label>
+                            <input type="text" class="form-control" id="name_edit" name="name_edit">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="last_name_edit">Apellido</label>
+                            <input type="text" class="form-control" id="last_name_edit" name="last_name_edit">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="rol_id_edit">Rol</label>
+                            <select name="rol_id_edit" id="rol_id_edit" class="form-control">
+
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('Cerrar') }}</button>
+                        <button type="submit" class="btn btn-primary">{{ __('Actualizar') }}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
     @toastr_css
 @stop
 
@@ -174,9 +225,44 @@
     @toastr_render
 
     <script>
-        $(".passwordBtn").click(function() {
-            var id = $(this).data("id");
-            $("#id").val(id);
+        $(document).ready(function() {
+
+            $(".passwordBtn").click(function() {
+                var id = $(this).data("id");
+                $("#id").val(id);
+            });
+
+            $('.editModalBtn').click(function() {
+                var id = $(this).data('id');
+                var url = "{{ route('admin.edit.users') }}";
+
+                $.ajax({
+                    type: 'get',
+                    url: url,
+                    data: {
+                        'id': id
+                    },
+                    success: function(data) {
+                        console.log(data[0].id);
+                        $('#id_edit').val(data[0].id);
+                        $('#rut_edit').val(data[0].rut);
+                        $('#name_edit').val(data[0].name);
+                        $('#last_name_edit').val(data[0].last_name);
+                        $('#rol_id_edit').empty();
+                        $.each(data[1], function(i, item) {
+                            if (data[0].rol_id == item.id) {
+                                $("#rol_id_edit").append("<option value='" + item.id +
+                                    "' selected>" + item.name + "</option>")
+
+                            } else {
+                                $("#rol_id_edit").append("<option value='" + item.id +
+                                    "'>" + item.name + "</option>")
+                            }
+                        });
+                        $('#editModal').modal('show');
+                    }
+                });
+            });
         });
 
     </script>

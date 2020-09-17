@@ -6,6 +6,7 @@ use App\Rol;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -48,28 +49,46 @@ class UserController extends Controller
 		return back();
 	}
 
-	public function edit($id)
+	public function edit(Request $request)
 	{
-		$users = $this->user::find($id);
-		$roles = $this->roles::where("id", "!=", $users->rol_id)->get();
-		return view('pages.admin.users_edit', compact('users', 'roles'));
+		if ($request->ajax()) {
+			$users = $this->user::find($request->id);
+
+			$roles = $this->roles::all();
+
+			return response()->json([$users, $roles]);
+		}
+
+		toastr()->error('No tienes permisos para realizar esta acción.');
+		return back();
 	}
 
 
 	public function update(Request $request)
 	{
-		$current = $this->user::find($request->input('id'));
+		$validator = Validator::make($request->all(), [
+			'rut_edit' => 'required',
+			'name_edit' => 'required',
+			'last_name_edit' => 'required',
+			'rol_id_edit' => 'required',
+		]);
 
-		$current->rut = $request->input('rut');
-		$current->name = $request->input('name');
-		$current->last_name = $request->input('last_name');
-		$current->rol_id = $request->input('rol_id');
+		if ($validator->fails()) {
+			toastr()->error('Hay problemas con el formulario. Por favor, complete todos los campos e intente nuevamente.');
+			return back();
+		}
 
-		$current->save();
+		$user = $this->user::find($request->input('id_edit'));
 
-		$users = $this->user::all();
+		$user->rut = $request->input('rut_edit');
+		$user->name = $request->input('name_edit');
+		$user->last_name = $request->input('last_name_edit');
+		$user->rol_id = $request->input('rol_id_edit');
 
-		return view('pages.admin.users', compact('users'));
+		$user->save();
+
+		toastr()->success('Se actualizó correctamente.');
+		return back();
 	}
 
 

@@ -76,7 +76,7 @@ Route::group(['middleware' => ['auth']], function () {
 	})->name('admin.users');
 	Route::get('/admin/usuarios', 'UserController@index')->name('admin.users');
 	Route::post('/admin/usuarios', 'UserController@store')->name('admin.store.users');
-	Route::get('/admin/usuarios/editar/{id}', 'UserController@edit')->name('admin.edit.users');
+	Route::get('/admin/usuarios/editar', 'UserController@edit')->name('admin.edit.users');
 	Route::put('/admin/usuarios/editar', 'UserController@update')->name('admin.update.users');
 	Route::get('/admin/usuarios/activar/{id}', 'UserController@active')->name('admin.active.users');
 	Route::get('/admin/usuarios/desactivar/{id}', 'UserController@inactive')->name('admin.inactive.users');
