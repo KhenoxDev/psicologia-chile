@@ -87,12 +87,8 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/admin/noticias/subir', function () {
 		return view('pages.admin.news');
 	})->name('admin.news');
-	Route::get('/admin/noticias/publicadas', function () {
-		return view('pages.admin.news_published');
-	})->name('admin.news_published');
-	Route::get('/admin/noticias/sin-publicar', function () {
-		return view('pages.admin.news_unpublished');
-	})->name('admin.news_unpublished');
+	Route::get('/admin/noticias/publicadas', 'NewsController@getNewsPublished')->name('admin.publish.news');
+	Route::get('/admin/noticias/sin-publicar', 'NewsController@getNewsUnpublished')->name('admin.unpublish.news');
 
 
 	/* Frequently questions */
