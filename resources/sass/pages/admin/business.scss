@@ -1,0 +1,25 @@
+@import '../../mixins';
+@import '../../variables';
+
+.business-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	.no-results {
+		font-size: 1rem;
+		color: $dark;
+		font-weight: bold;
+		margin: 1rem;
+	}
+
+	.card {
+		width: 30rem !important;
+		margin: 1rem !important;
+	}
+}
+
+.ck-editor__editable {
+	height: 15rem !important;
+}

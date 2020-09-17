@@ -14,7 +14,7 @@ return [
     |
     */
 
-	'title' => 'AdminLTE 3',
+	'title' => 'Psicología Chile',
 	'title_prefix' => '',
 	'title_postfix' => '',
 
@@ -188,7 +188,7 @@ return [
 
 	'use_route_url' => false,
 
-	'dashboard_url' => 'home',
+	'dashboard_url' => 'admin',
 
 	'logout_url' => 'admin/salir',
 
@@ -283,31 +283,45 @@ return [
 			'submenu' => [
 				[
 					'text' => 'Logo',
-					'url'  => 'admin/configuracion/logo',
+					'url'  => 'admin/logo',
 				],
 				[
 					'text' => 'Redes sociales',
-					'url'  => 'admin/configuracion/redes-sociales',
+					'url'  => 'admin/redes-sociales',
 				],
 				[
 					'text' => 'Métodos de pago',
-					'url'  => 'admin/configuracion/metodos-pago',
+					'url'  => 'admin/metodos-pago',
 				],
 				[
 					'text' => 'Vídeo Principal',
-					'url'  => 'admin/configuracion/video',
+					'url'  => 'admin/video',
 				],
 				[
 					'text' => 'Banner Principal',
-					'url'  => 'admin/configuracion/banner',
+					'url'  => 'admin/banner',
 				],
 				[
 					'text' => 'Popup Informativo',
-					'url'  => 'admin/configuracion/popup',
+					'url'  => 'admin/popup',
 				],
 				[
 					'text' => 'Nuestra empresa',
-					'url'  => 'admin/configuracion/nuestra-empresa',
+					'url'  => 'admin/nuestra-empresa',
+				],
+			],
+		],
+		[
+			'text'    => 'Documentación',
+			'icon'    => 'far fa-fw fa-file-alt',
+			'submenu' => [
+				[
+					'text' => 'Políticas de Privacidad',
+					'url'  => 'admin/privacidad',
+				],
+				[
+					'text' => 'Términos y condiciones',
+					'url'  => 'admin/condiciones',
 				],
 			],
 		],

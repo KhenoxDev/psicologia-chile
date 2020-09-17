@@ -80,34 +80,48 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::put('/admin/consultas-frecuentes/editar', 'FrequentlyQuestionController@update')->name('admin.update.questions');
 	Route::get('/admin/consultas-frecuentes/eliminar/{id}', 'FrequentlyQuestionController@delete')->name('admin.delete.questions');
 
-	/* Generalities */
-	Route::get('/admin/configuracion/logo', function () {
-		return view('pages.admin.generalities.logo');
-	})->name('admin.logo');
+	/* Logos */
+	Route::get('/admin/logo', 'LogoController@index')->name('admin.logo');
+	Route::post('/admin/logo/guardar', 'LogoController@uploadLogo')->name('admin.store.logo');
+	Route::get('/admin/logo/defecto/{id}', 'LogoController@activeLogo')->name('admin.default.logo');
+	Route::get('/admin/logo/baja/{id}', 'LogoController@inactiveLogo')->name('admin.down.logo');
+	Route::get('/admin/logo/eliminar/{id}', 'LogoController@deleteLogo')->name('admin.destroy.logo');
 
-	Route::post('/admin/configuracion/guardar-logo', 'LogoController@uploadLogo')->name('admin.store.logo');
+	/* Social Networks */
+	Route::get('/admin/redes-sociales', 'SocialController@index')->name('admin.social');
+	Route::post('/admin/redes-sociales/guardar', 'SocialController@store')->name('admin.store.social');
+	Route::get('/admin/redes-sociales/eliminar/{id}', 'SocialController@destroy')->name('admin.destroy.social');
+	Route::get('/admin/redes-sociales/editar', 'SocialController@edit')->name('admin.edit.social');
+	Route::put('/admin/redes-sociales/actualizar', 'SocialController@update')->name('admin.update.social');
 
-	Route::get('/admin/configuracion/redes-sociales', function () {
-		return view('pages.admin.generalities.social');
-	})->name('admin.social');
+	/* Payment methods */
+	Route::get('/admin/metodos-pago', 'PaymentMethodController@index')->name('admin.pay');
+	Route::post('/admin/metodos-pago/guardar', 'PaymentMethodController@store')->name('admin.store.pay');
+	Route::get('/admin/metodos-pago/eliminar/{id}', 'PaymentMethodController@destroy')->name('admin.destroy.pay');
 
-	Route::get('/admin/configuracion/metodos-pago', function () {
-		return view('pages.admin.generalities.pay');
-	})->name('admin.pay');
+	/* Main video */
+	Route::get('/admin/video', 'GeneralityController@getMainVideo')->name('admin.video');
+	Route::post('/admin/video/guardar', 'GeneralityController@setMainVideo')->name('admin.store.video');
+	Route::get('/admin/video/defecto/{id}', 'GeneralityController@setDefaultVideo')->name('admin.default.video');
+	Route::get('/admin/video/eliminar/{id}', 'GeneralityController@destroyMainVideo')->name('admin.destroy.video');
 
-	Route::get('/admin/configuracion/video', function () {
-		return view('pages.admin.generalities.video');
-	})->name('admin.video');
+	/* Main banner */
+	Route::get('/admin/banner', 'GeneralityController@getMainBanner')->name('admin.banner');
+	Route::post('/admin/banner/guardar', 'GeneralityController@setMainBanner')->name('admin.store.banner');
+	Route::get('/admin/banner/defecto/{id}', 'GeneralityController@setDefaultBanner')->name('admin.default.banner');
+	Route::get('/admin/banner/eliminar/{id}', 'GeneralityController@destroyMainBanner')->name('admin.destroy.banner');
 
-	Route::get('/admin/configuracion/banner', function () {
-		return view('pages.admin.generalities.banner');
-	})->name('admin.banner');
+	/* Pop up */
+	Route::get('/admin/popup', 'GeneralityController@getMainPopup')->name('admin.popup');
+	Route::post('/admin/popup/guardar', 'GeneralityController@setMainPopup')->name('admin.store.popup');
+	Route::get('/admin/popup/defecto/{id}', 'GeneralityController@setDefaultPopup')->name('admin.default.popup');
+	Route::get('/admin/popup/baja/{id}', 'GeneralityController@unsetDefaultPopup')->name('admin.unset.popup');
+	Route::get('/admin/popup/eliminar/{id}', 'GeneralityController@destroyMainPopup')->name('admin.destroy.popup');
 
-	Route::get('/admin/configuracion/nuestra-empresa', function () {
-		return view('pages.admin.generalities.business');
-	})->name('admin.business');
-
-	Route::get('/admin/configuracion/popup', function () {
-		return view('pages.admin.generalities.popup');
-	})->name('admin.popup');
+	/* Own Business */
+	Route::get('/admin/nuestra-empresa', 'GeneralityController@getBusinessInfo')->name('admin.business');
+	Route::post('/admin/nuestra-empresa/guardar', 'GeneralityController@setBusinessInfo')->name('admin.store.business');
+	Route::get('/admin/nuestra-empresa/editar', 'GeneralityController@editBusinessInfo')->name('admin.edit.business');
+	Route::put('/admin/nuestra-empresa/actualizar', 'GeneralityController@updateBusinessInfo')->name('admin.update.business');
+	Route::get('/admin/nuestra-empresa/eliminar/{id}', 'GeneralityController@destroyBusinessInfo')->name('admin.destroy.business');
 });

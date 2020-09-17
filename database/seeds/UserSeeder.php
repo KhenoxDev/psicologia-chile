@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
 			'name' => 'Super',
 			'last_name' => 'Administrador',
 			'password' => Hash::make('123'),
-			'id_rol' => 1,
+			'rol_id' => 1,
 		]);
 	}
 }

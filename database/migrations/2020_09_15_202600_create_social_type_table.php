@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSocialNetworkTable extends Migration
+class CreateSocialTypeTable extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -13,11 +13,9 @@ class CreateSocialNetworkTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('social_network', function (Blueprint $table) {
+		Schema::create('social_type', function (Blueprint $table) {
 			$table->id()->autoIncrement();
 			$table->string('name');
-			$table->string('link');
-			$table->string('image');
 			$table->timestamp('created_at')->useCurrent();
 			$table->timestamp('updated_at')->useCurrent();
 		});
@@ -30,6 +28,6 @@ class CreateSocialNetworkTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('social_network');
+		Schema::dropIfExists('social_type');
 	}
 }

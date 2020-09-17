@@ -14,10 +14,12 @@ class CreateLogoTable extends Migration
 	public function up()
 	{
 		Schema::create('logo', function (Blueprint $table) {
-			$table->id();
-			$table->string('name')->unique();
+			$table->id()->autoIncrement();
+			$table->string('name');
+			$table->string('file_path')->unique();
 			$table->boolean('is_active')->default(0);
-			$table->timestamps();
+			$table->timestamp('created_at')->useCurrent();
+			$table->timestamp('updated_at')->useCurrent();
 		});
 	}
 

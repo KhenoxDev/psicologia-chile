@@ -1,0 +1,47 @@
+@import '../../mixins';
+@import '../../variables';
+
+.social-form {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+
+	form {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		background: $white;
+		padding: 1rem;
+		border-radius: 0.5rem;
+
+		button {
+			margin-top: 1rem;
+		}
+
+		input,
+		select {
+			margin: 1rem 0rem;
+			width: 100%;
+		}
+	}
+}
+
+.social-container {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	background-color: $white;
+	border-radius: 0.5rem;
+	width: 100%;
+	margin-top: 2rem;
+	padding: 1rem;
+
+	.no-results {
+		font-size: 1rem;
+		color: $dark;
+		font-weight: bold;
+		margin: 1rem;
+	}
+}
