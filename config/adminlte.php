@@ -260,15 +260,15 @@ return [
 			'submenu' => [
 				[
 					'text' => 'Subir noticia',
-					'url'  => '#',
+					'url'  => 'admin/noticias/subir',
 				],
 				[
 					'text' => 'Noticias públicadas',
-					'url'  => '#',
+					'url'  => 'admin/noticias/publicadas',
 				],
 				[
 					'text' => 'Noticias sin publicar',
-					'url'  => '#',
+					'url'  => 'admin/noticias/sin-publicar',
 				],
 			],
 		],
