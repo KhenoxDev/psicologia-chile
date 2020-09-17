@@ -93,7 +93,7 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/admin/noticias/sin-publicar', function () {
 		return view('pages.admin.news_unpublished');
 	})->name('admin.news_unpublished');
-
+	Route::post('/admin/news', 'NewsController@store')->name('admin.store.news');
 
 	/* Frequently questions */
 	Route::get('/admin/consultas-frecuentes', function () {
