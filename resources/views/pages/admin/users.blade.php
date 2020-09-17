@@ -33,9 +33,8 @@
                     <td>{{ $user->rol->description }}</td>
                     <td>{{ $user->is_active ? 'Activo' : 'Inactivo' }}</td>
                     <td>
-                        <a title="Cambiar contraseña"
-                            href="{{--  {{ route('admin.delete.questions', $question->id) }}  --}}"><i
-                                class="fas fa-key"></i></a>
+                        <a title="Cambiar contraseña" href=" {{ route('admin.edit_password.users', $user->id) }} "><i
+                                class="fas fa-key" data-toggle="modal" data-target="#ModalEditPass"></i></a>
 
                         <a title="Editar" href="{{ route('admin.edit.users', $user->id) }}"><i class="far fa-edit"></i></a>
                         @if ($user->is_active)
@@ -122,6 +121,37 @@
             </div>
         </div>
     </div>
+
+    {{-- Modal editar password --}}
+
+    <div class="modal fade" id="ModalEditPass" tabindex="-1" aria-labelledby="ModalLabelEditPass" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabelEditPass">Formulario creación </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="{{ route('admin.update_password.users') }}" method="POST">
+                    @csrf
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label for="password">Contraseña</label>
+                            <input type="text" class="form-control" id="password" name="password">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 @stop
 
 @section('css')

@@ -98,6 +98,29 @@ class UserController extends Controller
 		return back();
 	}
 
+
+	//Metodos cambio de contraseña
+	public function edit_password($id)
+	{
+		$users = $this->user::find($id);
+		/* return view('pages.admin.users_edit', compact('users')); */
+	}
+
+
+	public function update_password(Request $request)
+	{
+		$current = $this->user::find($request->input('id'));
+
+		$current->password = $request->input('password');
+
+		$current->save();
+
+		$users = $this->user::all();
+
+		/* return back(); */
+	}
+
+
 	/*
 	public function delete($id)
 	{

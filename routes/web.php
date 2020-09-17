@@ -81,6 +81,9 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/admin/usuarios/activar/{id}', 'UserController@active')->name('admin.active.users');
 	Route::get('/admin/usuarios/desactivar/{id}', 'UserController@inactive')->name('admin.inactive.users');
 
+	Route::get('/admin/usuarios/editar-password/{id}', 'UserController@edit_password')->name('admin.edit_password.users');
+	Route::put('/admin/usuarios/editar-password', 'UserController@update_password')->name('admin.update_password.users');
+
 
 
 	/* Frequently questions */
