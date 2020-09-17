@@ -3,55 +3,57 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Usuarios</h1>
+    <h1>{{ __('Administración de usuarios') }}</h1>
 @stop
 
 @section('content')
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Crear </button>
-    <br><br>
-    <table class="table table-light">
-        <thead class="thead-light">
-            <tr>
-                <th>#</th>
-                <th>Rut</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Rol</th>
-                <th>Descripción</th>
-                <th>Estado</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($users as $user)
+    <div class="user-container shadow-sm">
+        <table id="users" class="table table-hover">
+            <thead class="thead-light">
                 <tr>
-                    <td>{{ $user->id }}</td>
-                    <td>{{ $user->rut }}</td>
-                    <td>{{ $user->name }}</td>
-                    <td>{{ $user->last_name }}</td>
-                    <td>{{ $user->rol->name }}</td>
-                    <td>{{ $user->rol->description }}</td>
-                    <td>{{ $user->is_active ? 'Activo' : 'Inactivo' }}</td>
-                    <td>
-                        <a title="Cambiar contraseña" class="passwordBtn" href="javascript::void(0)"
-                            data-id="{{ $user->id }}"><i class="fas fa-key" data-toggle="modal"
-                                data-target="#ModalEditPass"></i></a>
-
-                        <a title="Editar" href="{{ route('admin.edit.users', $user->id) }}"><i class="far fa-edit"></i></a>
-                        @if ($user->is_active)
-                            <a title="Activar" href="{{ route('admin.inactive.users', $user->id) }}"><i
-                                    class="fas fa-minus-circle"></i></a>
-                        @else
-                            <a title="Desactivar" href="{{ route('admin.active.users', $user->id) }}"><i
-                                    class="far fa-check-circle"></i></a>
-                        @endif
-
-
-                    </td>
+                    <th>#</th>
+                    <th>Rut</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Rol</th>
+                    <th>Descripción</th>
+                    <th>Estado</th>
+                    <th></th>
                 </tr>
-            @endforeach
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach ($users as $user)
+                    <tr>
+                        <td>{{ $user->id }}</td>
+                        <td>{{ $user->rut }}</td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->last_name }}</td>
+                        <td>{{ $user->rol->name }}</td>
+                        <td>{{ $user->rol->description }}</td>
+                        <td>{{ $user->is_active ? 'Activo' : 'Inactivo' }}</td>
+                        <td>
+                            <a title="Cambiar contraseña" class="passwordBtn" href="javascript::void(0)"
+                                data-id="{{ $user->id }}"><i class="fas fa-key" data-toggle="modal"
+                                    data-target="#ModalEditPass"></i></a>
+
+                            <a title="Editar" href="{{ route('admin.edit.users', $user->id) }}"><i
+                                    class="far fa-edit"></i></a>
+                            @if ($user->is_active)
+                                <a title="Activar" href="{{ route('admin.inactive.users', $user->id) }}"><i
+                                        class="fas fa-minus-circle"></i></a>
+                            @else
+                                <a title="Desactivar" href="{{ route('admin.active.users', $user->id) }}"><i
+                                        class="far fa-check-circle"></i></a>
+                            @endif
+
+
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -122,9 +124,6 @@
             </div>
         </div>
     </div>
-
-    {{-- Modal editar password --}}
-
     <div class="modal fade" id="ModalEditPass" tabindex="-1" aria-labelledby="ModalLabelEditPass" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -160,24 +159,57 @@
             </div>
         </div>
     </div>
-
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
     @toastr_css
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/datatables/css/dataTables.bootstrap4.min.css') }}">
 @stop
-
 @section('js')
     @jquery
     @toastr_js
     @toastr_render
-
+    <script src="{{ asset('vendor/datatables/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/js/jquery.dataTables.min.js') }}" defer></script>
     <script>
-        $(".passwordBtn").click(function() {
-            var id = $(this).data("id");
-            $("#id").val(id);
+        $(document).ready(function() {
+            $(".passwordBtn").click(function() {
+                var id = $(this).data("id");
+                $("#id").val(id);
+            });
+
+            $('#users').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "language": {
+                    "emptyTable": "No hay datos para mostrar",
+                    "info": "Mostrando _START_ de _END_ del _TOTAL_ registros",
+                    "infoEmpty": "Mostrando 0 de 0 de 0 registros",
+                    "infoFiltered": "(filtrado de _MAX_ entradas totales)",
+                    "lengthMenu": "Mostrar entradas de _MENU_",
+                    "loadingRecords": "Cargando...",
+                    "processing": "Procesando...",
+                    "search": "Buscar: ",
+                    "zeroRecords": "No hay registros",
+                    "paginate": {
+                        "first": "First",
+                        "last": "<i class='far fa-chevron-double-right'></i>",
+                        "next": "<i class='fas fa-chevron-right'></i>",
+                        "previous": "<i class='fas fa-chevron-left'></i>"
+                    },
+                    "aria": {
+                        "sortAscending": ": activate to sort column ascending",
+                        "sortDescending": ": activate to sort column descending"
+                    },
+                }
+            });
         });
 
     </script>
 @stop
+@Push('https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js')
