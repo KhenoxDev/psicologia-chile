@@ -12,9 +12,9 @@
     <table class="table table-light">
         <thead class="thead-light">
             <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Answer</th>
+                <th>#</th>
+                <th>Título</th>
+                <th>Respuesta</th>
                 <th>Editar</th>
                 <th>Eliminar</th>
             </tr>
@@ -74,9 +74,14 @@
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
+    @toastr_css
 @stop
 
 @section('js')
+    @jquery
+    @toastr_js
+    @toastr_render
+
     <script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/classic/ckeditor.js"></script>
     <script>
         ClassicEditor
