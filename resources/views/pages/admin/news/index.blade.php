@@ -38,9 +38,13 @@
                                 alt="{{ $new->title }}"></td>
                         <td>{{ date('d-m-Y', strtotime($new->posted_on)) }}</td>
                         <td>
-                            <a href="">Publicar</a>
-                            <a href="">Editar</a>
-                            <a href="">Eliminar</a>
+                            @if ($new->is_posted)
+                                <a href="" title="Quitar noticia"><i class="fas fa-eye-slash"></i></a>
+                            @else
+                                <a href="" title="Publicar noticia"><i class="fas fa-eye"></i></a>
+                            @endif
+                            <a href="" title="Modificar noticia"><i class="fas fa-edit"></i></a>
+                            <a href="" title="Eliminar noticia"><i class="fas fa-times"></i></a>
                         </td>
                     </tr>
                 @endforeach
@@ -52,10 +56,47 @@
 @section('css')
     @toastr_css
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/datatables/css/dataTables.bootstrap4.min.css') }}">
 @stop
 
 @section('js')
     @jquery
     @toastr_js
     @toastr_render
+    <script src="{{ asset('vendor/datatables/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/js/jquery.dataTables.min.js') }}" defer></script>
+    <script>
+        $(document).ready(function() {
+            $('#news').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "language": {
+                    "emptyTable": "No hay datos para mostrar",
+                    "info": "Mostrando _START_ de _END_ del _TOTAL_ registros",
+                    "infoEmpty": "Mostrando 0 de 0 de 0 registros",
+                    "infoFiltered": "(filtrado de _MAX_ entradas totales)",
+                    "lengthMenu": "Mostrar entradas de _MENU_",
+                    "loadingRecords": "Cargando...",
+                    "processing": "Procesando...",
+                    "search": "Buscar: ",
+                    "zeroRecords": "No hay registros",
+                    "paginate": {
+                        "first": "First",
+                        "last": "<i class='far fa-chevron-double-right'></i>",
+                        "next": "<i class='fas fa-chevron-right'></i>",
+                        "previous": "<i class='fas fa-chevron-left'></i>"
+                    },
+                    "aria": {
+                        "sortAscending": ": activate to sort column ascending",
+                        "sortDescending": ": activate to sort column descending"
+                    },
+                }
+            });
+        });
+
+    </script>
 @stop

@@ -21,7 +21,6 @@ class NewsController extends Controller
 			$rows = $this->news::paginate();
 		}
 
-
 		return response()->json($rows);
 	}
 

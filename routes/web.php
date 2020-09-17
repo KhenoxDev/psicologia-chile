@@ -85,8 +85,9 @@ Route::group(['middleware' => ['auth']], function () {
 
 	/* News */
 	Route::get('/admin/noticias/subir', function () {
-		return view('pages.admin.news');
+		return view('pages.admin.news.up');
 	})->name('admin.news');
+
 	Route::get('/admin/noticias/publicadas', 'NewsController@getNewsPublished')->name('admin.publish.news');
 	Route::get('/admin/noticias/sin-publicar', 'NewsController@getNewsUnpublished')->name('admin.unpublish.news');
 
