@@ -21,7 +21,7 @@ class CreateNewsTable extends Migration
 			$table->longText('content');
 			$table->string('image');
 			$table->boolean('is_posted')->default(0);
-			$table->date('posted_on');
+			$table->date('posted_on')->nullable();
 			$table->string('updated_by')->nullable();
 			$table->timestamp('created_at')->useCurrent();
 			$table->timestamp('updated_at')->useCurrent();

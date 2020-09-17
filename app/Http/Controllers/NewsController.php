@@ -26,7 +26,6 @@ class NewsController extends Controller
 			$rows = $this->news::paginate();
 		}
 
-
 		return response()->json($rows);
 	}
 
@@ -36,10 +35,16 @@ class NewsController extends Controller
 	}
 
 
-	public function index()
+	public function getNewsPublished()
 	{
-		$news = $this->new::all();
-		return view('pages.admin.news', compact('news'));
+		$news = $this->news::where('is_posted', 1)->get();
+		return view('pages.admin.news.index', compact('news'));
+	}
+
+	public function getNewsUnpublished()
+	{
+		$news = $this->news::where('is_posted', 0)->get();
+		return view('pages.admin.news.index', compact('news'));
 	}
 
 	public function store(Request $request)
