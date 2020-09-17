@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Rol;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -100,33 +101,23 @@ class UserController extends Controller
 
 
 	//Metodos cambio de contraseña
-	public function edit_password($id)
-	{
-		$users = $this->user::find($id);
-		/* return view('pages.admin.users_edit', compact('users')); */
-	}
-
-
 	public function update_password(Request $request)
 	{
+		if ($request->input('newPassword') != $request->input('repeatPassword')) {
+			toastr()->error("Las contraseñas no son iguales, por favor volver a intentarlo.");
+
+			return back();
+		}
+
 		$current = $this->user::find($request->input('id'));
 
-		$current->password = $request->input('password');
+		$current->password = Hash::make($request->input('newPassword'));
 
 		$current->save();
 
-		$users = $this->user::all();
 
-		/* return back(); */
-	}
-
-
-	/*
-	public function delete($id)
-	{
-		$erase = $this->question::find($id);
-		$erase->delete();
+		toastr()->success("Contraseña actualizada.");
 
 		return back();
-	} */
+	}
 }

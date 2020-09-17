@@ -33,8 +33,9 @@
                     <td>{{ $user->rol->description }}</td>
                     <td>{{ $user->is_active ? 'Activo' : 'Inactivo' }}</td>
                     <td>
-                        <a title="Cambiar contraseña" href=" {{ route('admin.edit_password.users', $user->id) }} "><i
-                                class="fas fa-key" data-toggle="modal" data-target="#ModalEditPass"></i></a>
+                        <a title="Cambiar contraseña" class="passwordBtn" href="javascript::void(0)"
+                            data-id="{{ $user->id }}"><i class="fas fa-key" data-toggle="modal"
+                                data-target="#ModalEditPass"></i></a>
 
                         <a title="Editar" href="{{ route('admin.edit.users', $user->id) }}"><i class="far fa-edit"></i></a>
                         @if ($user->is_active)
@@ -135,11 +136,19 @@
                 </div>
                 <form action="{{ route('admin.update_password.users') }}" method="POST">
                     @csrf
+                    @method('put')
                     <div class="modal-body">
 
+                        <input type="hidden" name="id" id="id">
+
                         <div class="form-group">
-                            <label for="password">Contraseña</label>
-                            <input type="text" class="form-control" id="password" name="password">
+                            <label for="newPassword">Nueva contraseña</label>
+                            <input type="password" class="form-control" id="newPassword" name="newPassword">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="repeatPassword">Repetir contraseña</label>
+                            <input type="password" class="form-control" id="repeatPassword" name="repeatPassword">
                         </div>
 
                     </div>
@@ -156,27 +165,18 @@
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
+    @toastr_css
 @stop
 
 @section('js')
+    @jquery
+    @toastr_js
+    @toastr_render
+
     <script>
-        $('.delete-confirm').on('click', function(event) {
-            event.preventDefault();
-            const url = $(this).attr('href');
-            console.log(url);
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-            }).then((result) => {
-                if (result.value) {
-                    window.location.href = url;
-                }
-            });
+        $(".passwordBtn").click(function() {
+            var id = $(this).data("id");
+            $("#id").val(id);
         });
 
     </script>
