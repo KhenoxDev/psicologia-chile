@@ -7,18 +7,19 @@
 @stop
 
 @section('content')
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Crear </button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">{{ __('Crear') }}
+    </button>
     <div class="user-container shadow-sm">
         <table id="users" class="table table-hover">
             <thead class="thead-light">
                 <tr>
-                    <th>#</th>
-                    <th>Rut</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Rol</th>
-                    <th>Descripción</th>
-                    <th>Estado</th>
+                    <th>{{ __('#') }}</th>
+                    <th>{{ __('Rut') }}</th>
+                    <th>{{ __('Nombre') }}</th>
+                    <th>{{ __('Apellido') }}</th>
+                    <th>{{ __('Rol') }}</th>
+                    <th>{{ __('Descripción') }}</th>
+                    <th>{{ __('Estado') }}</th>
                     <th></th>
                 </tr>
             </thead>
@@ -57,7 +58,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Formulario creación </h5>
+                    <h5 class="modal-title" id="exampleModalLabel">{{ __('¡Crea un usuario!') }}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -65,29 +66,33 @@
                 <form action="{{ route('admin.store.users') }}" method="POST">
                     @csrf
                     <div class="modal-body">
-
                         <div class="form-group">
-                            <label for="rut">Rut</label>
-                            <input type="text" class="form-control" id="rut" name="rut">
+                            <label for="rut">{{ __('Rut') }}</label>
+                            <input type="text" class="rut form-control" id="rut" name="rut">
                         </div>
 
                         <div class="form-group">
-                            <label for="name">Nombre</label>
+                            <label for="name">{{ __('Nombre') }}</label>
                             <input type="text" class="form-control" id="name" name="name">
                         </div>
 
                         <div class="form-group">
-                            <label for="last_name">Apellido</label>
+                            <label for="last_name">{{ __('Apellido') }}</label>
                             <input type="text" class="form-control" id="last_name" name="last_name">
                         </div>
 
                         <div class="form-group">
-                            <label for="password">Contraseña</label>
+                            <label for="password">{{ __('Contraseña') }}</label>
                             <input type="password" class="form-control" id="password" name="password">
                         </div>
 
                         <div class="form-group">
-                            <label for="rol_id">Rol</label>
+                            <label for="password_confirm">{{ __('Confirmar Contraseña') }}</label>
+                            <input type="password" class="form-control" id="password_confirm" name="password_confirm">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="rol_id">{{ __('Rol') }}</label>
                             <select name="rol_id" id="rol_id" class="form-control">
                                 @foreach ($roles as $rol)
                                     <option value="{{ $rol->id }}">{{ $rol->name }}</option>
@@ -99,14 +104,14 @@
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="is_active" id="activo" value="1">
                                 <label class="form-check-label" for="activo">
-                                    Activo
+                                    {{ __('Activo') }}
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="is_active" id="inactivo" value="0"
                                     checked>
                                 <label class="form-check-label" for="inactivo">
-                                    Inactivo
+                                    {{ __('Inactivo') }}
                                 </label>
                             </div>
                         </div>
@@ -116,8 +121,8 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('Cerrar') }}</button>
+                        <button type="submit" class="btn btn-primary">{{ __('Guardar') }}</button>
                     </div>
                 </form>
             </div>
@@ -127,7 +132,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="ModalLabelEditPass">Formulario creación </h5>
+                    <h5 class="modal-title" id="ModalLabelEditPass">{{ __('¡Cambia tu contraseña!') }}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -136,23 +141,21 @@
                     @csrf
                     @method('put')
                     <div class="modal-body">
-
                         <input type="hidden" name="id" id="id">
-
                         <div class="form-group">
-                            <label for="newPassword">Nueva contraseña</label>
+                            <label for="newPassword">{{ __('Nueva contraseña') }}</label>
                             <input type="password" class="form-control" id="newPassword" name="newPassword">
                         </div>
 
                         <div class="form-group">
-                            <label for="repeatPassword">Repetir contraseña</label>
+                            <label for="repeatPassword">{{ __('Repetir contraseña') }}</label>
                             <input type="password" class="form-control" id="repeatPassword" name="repeatPassword">
                         </div>
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('Cerrar') }}</button>
+                        <button type="submit" class="btn btn-primary">{{ __('Guardar') }}</button>
                     </div>
                 </form>
             </div>
@@ -162,7 +165,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="editModalLabel">{{ __('Actualizar datos') }}</h5>
+                    <h5 class="modal-title" id="editModalLabel">{{ __('¡Actualiza tus datos!') }}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -172,25 +175,24 @@
                     @method('PUT')
                     <div class="modal-body">
                         <input type="hidden" id="id_edit" name="id_edit">
-
                         <div class="form-group">
-                            <label for="rut_edit">Rut</label>
-                            <input type="text" class="form-control" id="rut_edit" name="rut_edit">
+                            <label for="rut_edit">{{ __('Rut') }}</label>
+                            <input type="text" class="rut form-control" id="rut_edit" name="rut_edit">
                         </div>
 
                         <div class="form-group">
-                            <label for="name_edit">Nombre</label>
+                            <label for="name_edit">{{ __('Nombre') }}</label>
                             <input type="text" class="form-control" id="name_edit" name="name_edit">
                         </div>
 
                         <div class="form-group">
-                            <label for="last_name_edit">Apellido</label>
+                            <label for="last_name_edit">{{ __('Apellido') }}</label>
                             <input type="text" class="form-control" id="last_name_edit" name="last_name_edit">
                         </div>
 
 
                         <div class="form-group">
-                            <label for="rol_id_edit">Rol</label>
+                            <label for="rol_id_edit">{{ __('Rol') }}</label>
                             <select name="rol_id_edit" id="rol_id_edit" class="form-control">
 
                             </select>
@@ -217,6 +219,7 @@
     @toastr_js
     @toastr_render
     <script src="{{ asset('vendor/datatables/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.rut.min.js') }}" defer></script>
     <script src="{{ asset('vendor/datatables/js/jquery.dataTables.min.js') }}" defer></script>
     <script>
         $(document).ready(function() {
@@ -287,6 +290,11 @@
                         $('#editModal').modal('show');
                     }
                 });
+            });
+
+            $(".rut").rut({
+                formatOn: 'keyup',
+                minimumLength: 8,
             });
         });
 
