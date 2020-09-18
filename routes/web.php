@@ -91,6 +91,8 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::post('/admin/news', 'NewsController@store')->name('admin.store.news');
 	Route::get('/admin/noticias/publicadas', 'NewsController@getNewsPublished')->name('admin.publish.news');
 	Route::get('/admin/noticias/sin-publicar', 'NewsController@getNewsUnpublished')->name('admin.unpublish.news');
+	Route::get('/admin/noticias/publicar/{id}', 'NewsController@newsPublished')->name('admin.published.news');
+	Route::get('/admin/noticias/quitar/{id}', 'NewsController@newsUnpublished')->name('admin.unpublished.news');
 
 
 	/* Frequently questions */

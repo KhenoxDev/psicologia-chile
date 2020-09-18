@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\News;
+use Carbon\Carbon;
 use App\Traits\UploadTrait;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -37,14 +38,59 @@ class NewsController extends Controller
 
 	public function getNewsPublished()
 	{
+		$title = "Noticias publicadas";
 		$news = $this->news::where('is_posted', 1)->get();
-		return view('pages.admin.news.index', compact('news'));
+		return view('pages.admin.news.index', compact('news', 'title'));
 	}
 
 	public function getNewsUnpublished()
 	{
+		$title = "Noticias sin publicar";
 		$news = $this->news::where('is_posted', 0)->get();
-		return view('pages.admin.news.index', compact('news'));
+		return view('pages.admin.news.index', compact('news', 'title'));
+	}
+
+	public function newsDestroy($id)
+	{
+		$delete = $this->news::find($id);
+		if (@getimagesize(public_path() . $delete->image)) {
+			unlink(public_path() . $delete->image);
+			$delete->delete();
+
+			toastr()->success('Se eliminó la imagen y el registro correctamente');
+			return back();
+		} else {
+			$delete->delete();
+
+			toastr()->warning('Se eliminó el registro correctamente pero la imagen no pudo encontrarse');
+			return back();
+		}
+	}
+
+	public function newsPublished($id)
+	{
+		$now = Carbon::now('America/Santiago');
+		$news = $this->news::find($id);
+		$news->is_posted = 1;
+		$news->posted_on = $now;
+		$news->updated_at = $now;
+		$news->save();
+
+		toastr()->success('Se publicó la noticia');
+		return back();
+	}
+
+	public function newsUnpublished($id)
+	{
+		$now = Carbon::now('America/Santiago');
+		$news = $this->news::find($id);
+		$news->is_posted = 0;
+		$news->posted_on = null;
+		$news->updated_at = $now;
+		$news->save();
+
+		toastr()->success('Se quito la publicación de tu noticia');
+		return back();
 	}
 
 	public function store(Request $request)

@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>{{ __('Noticias publicadas') }}</h1>
+    <h1>{{ __($title) }}</h1>
 @stop
 
 @section('content')
@@ -39,9 +39,11 @@
                         <td>{{ date('d-m-Y', strtotime($new->posted_on)) }}</td>
                         <td>
                             @if ($new->is_posted)
-                                <a href="" title="Quitar noticia"><i class="fas fa-eye-slash"></i></a>
+                                <a href="{{ route('admin.unpublished.news', $new->id) }}" title="Quitar noticia"><i
+                                        class="fas fa-eye-slash"></i></a>
                             @else
-                                <a href="" title="Publicar noticia"><i class="fas fa-eye"></i></a>
+                                <a href="{{ route('admin.published.news', $new->id) }}" title="Publicar noticia"><i
+                                        class="fas fa-eye"></i></a>
                             @endif
                             <a href="" title="Modificar noticia"><i class="fas fa-edit"></i></a>
                             <a href="" title="Eliminar noticia"><i class="fas fa-times"></i></a>
