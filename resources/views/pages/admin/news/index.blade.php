@@ -26,9 +26,9 @@
                     <tr>
                         <td>{{ $new->id }}</td>
                         <td>{{ $new->title }}</td>
-                        <td>{{ $new->author }}</td>
-                        <td><img width="50" height="50" class="img-responsive" src="{{ asset($new->author_image) }}"
-                                alt="{{ $new->author }}"></td>
+                        <td>{{ $new->author->name }}</td>
+                        <td><img width="50" height="50" class="img-responsive" src="{{ asset($new->author->image) }}"
+                                alt="{{ $new->author->name }}"></td>
                         <td>
                             <div class="limit-height">
                                 {!! $new->content !!}
