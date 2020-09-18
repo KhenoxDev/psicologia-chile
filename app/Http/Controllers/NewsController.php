@@ -51,8 +51,7 @@ class NewsController extends Controller
 	{
 		$validator = Validator::make($request->all(), [
 			'title' => 'required',
-			'author' => 'required',
-			'author_image' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048',
+			'author' => 'required|exists:App\Author,id',
 			'content' => 'required',
 			'image' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048'
 		]);
@@ -69,20 +68,11 @@ class NewsController extends Controller
 			$filePath = $folder . $name . '.' . $image->getClientOriginalExtension();
 			$this->uploadOne($image, $folder, 'public', $name);
 
-			if ($request->has('author_image')) {
-				$author_image = $request->file('author_image');
-				$folder_autor = '/img/news/autor/';
-				$name_autor = Str::slug($author_image->hashName());
-				$filePath_autor = $folder_autor . $name_autor . '.' . $author_image->getClientOriginalExtension();
-				$this->uploadOne($author_image, $folder_autor, 'public', $name_autor);
-
-				$this->news->title = $request->input('title');
-				$this->news->author = $request->input('author');
-				$this->news->author_image = $filePath_autor;
-				$this->news->content = $request->input('content');
-				$this->news->image = $filePath;
-				$this->news->save();
-			}
+			$this->news->title = $request->input('title');
+			$this->news->author_id = $request->input('author');
+			$this->news->content = $request->input('content');
+			$this->news->image = $filePath;
+			$this->news->save();
 		}
 
 		toastr()->success('Se creó correctamente');

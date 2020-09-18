@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNewsTable extends Migration
+class CreateAuthorTable extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -13,19 +13,12 @@ class CreateNewsTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('news', function (Blueprint $table) {
+		Schema::create('author', function (Blueprint $table) {
 			$table->id()->autoIncrement();
-			$table->string('title');
-			$table->unsignedBigInteger('author_id');
-			$table->longText('content');
+			$table->string('name');
 			$table->string('image');
-			$table->boolean('is_posted')->default(0);
-			$table->date('posted_on')->nullable();
-			$table->string('updated_by')->nullable();
 			$table->timestamp('created_at')->useCurrent();
 			$table->timestamp('updated_at')->useCurrent();
-
-			$table->foreign('author_id')->references('id')->on('author');
 		});
 	}
 
@@ -36,6 +29,6 @@ class CreateNewsTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('news');
+		Schema::dropIfExists('author');
 	}
 }
