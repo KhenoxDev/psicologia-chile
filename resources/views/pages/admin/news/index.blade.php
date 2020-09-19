@@ -1,13 +1,13 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Psicología Chile')
 
 @section('content_header')
     <h1>{{ __($title) }}</h1>
 @stop
 
 @section('content')
-    <div class="news-container">
+    <div class="news-container shadow-sm">
         <table id="news" class="table table-hover">
             <thead>
                 <tr>
@@ -45,8 +45,10 @@
                                 <a href="{{ route('admin.published.news', $new->id) }}" title="Publicar noticia"><i
                                         class="fas fa-eye"></i></a>
                             @endif
-                            <a href="" title="Modificar noticia"><i class="fas fa-edit"></i></a>
-                            <a href="" title="Eliminar noticia"><i class="fas fa-times"></i></a>
+                            <a href="{{ route('admin.edit.news', $new->id) }}" title="Modificar noticia"><i
+                                    class="fas fa-edit"></i></a>
+                            <a href="{{ route('admin.destroy.news', $new->id) }}" title="Eliminar noticia"><i
+                                    class="fas fa-times"></i></a>
                         </td>
                     </tr>
                 @endforeach
@@ -58,15 +60,17 @@
 @section('css')
     @toastr_css
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/datatables/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs4/dt-1.10.22/r-2.2.6/sc-2.0.3/datatables.min.css" />
 @stop
 
 @section('js')
     @jquery
     @toastr_js
     @toastr_render
-    <script src="{{ asset('vendor/datatables/js/dataTables.bootstrap4.min.js') }}"></script>
-    <script src="{{ asset('vendor/datatables/js/jquery.dataTables.min.js') }}" defer></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.22/r-2.2.6/sc-2.0.3/datatables.min.js"
+        defer></script>
+
     <script>
         $(document).ready(function() {
             $('#news').DataTable({

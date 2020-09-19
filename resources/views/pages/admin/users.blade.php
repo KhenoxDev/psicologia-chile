@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Psicología Chile')
 
 @section('content_header')
     <h1>{{ __('Administración de usuarios') }}</h1>
@@ -10,7 +10,7 @@
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Crear </button>
     <div class="user-container shadow-sm">
         <table id="users" class="table table-hover">
-            <thead class="thead-light">
+            <thead>
                 <tr>
                     <th>#</th>
                     <th>Rut</th>
@@ -210,14 +210,15 @@
 @section('css')
     @toastr_css
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/datatables/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs4/dt-1.10.22/r-2.2.6/sc-2.0.3/datatables.min.css" />
 @stop
 @section('js')
     @jquery
     @toastr_js
     @toastr_render
-    <script src="{{ asset('vendor/datatables/js/dataTables.bootstrap4.min.js') }}"></script>
-    <script src="{{ asset('vendor/datatables/js/jquery.dataTables.min.js') }}" defer></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.22/r-2.2.6/sc-2.0.3/datatables.min.js"
+        defer></script>
     <script>
         $(document).ready(function() {
             $(".passwordBtn").click(function() {

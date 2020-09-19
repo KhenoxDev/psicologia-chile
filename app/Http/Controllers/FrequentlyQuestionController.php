@@ -41,10 +41,16 @@ class FrequentlyQuestionController extends Controller
 		return back();
 	}
 
-	public function edit($id)
+	public function edit(Request $request)
 	{
-		$questions = $this->question::find($id);
-		return view('pages.admin.questions_edit', compact('questions'));
+		if ($request->ajax()) {
+			$questions = $this->question::find($request->id);
+
+			return response()->json($questions);
+		}
+
+		toastr()->error('No tienes permisos para realizar esta acción.');
+		return back();
 	}
 
 

@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Psicología Chile')
 
 @section('content_header')
     <h1>Administración de redes sociales</h1>
@@ -9,33 +9,29 @@
 @section('content')
     <button class="btn btn-primary" data-toggle="modal"
         data-target="#createModal">{{ __('Crear nueva red social') }}</button>
-    <div class="social-container">
-        @if (count($socials) > 0)
-            <table class="table">
-                <thead>
+    <div class="social-container shadow-sm">
+        <table id="socials" class="table table-hover">
+            <thead>
+                <tr>
+                    <th>{{ __('Tipo') }}</th>
+                    <th>{{ __('Link') }}</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($socials as $social)
                     <tr>
-                        <th>{{ __('Tipo') }}</th>
-                        <th>{{ __('Link') }}</th>
-                        <th></th>
+                        <td>{{ $social->type->name }}</td>
+                        <td>{{ $social->link }}</td>
+                        <td>
+                            <a href="#" class="editModalBtn" data-toggle="modal" data-id="{{ $social->id }}"><i
+                                    class="far fa-edit"></i></a>
+                            <a href="{{ route('admin.destroy.social', $social->id) }}"><i class="fas fa-times"></i></a>
+                        </td>
                     </tr>
-                </thead>
-                <tbody>
-                    @foreach ($socials as $social)
-                        <tr>
-                            <td>{{ $social->type->name }}</td>
-                            <td>{{ $social->link }}</td>
-                            <td>
-                                <a href="#" class="editModalBtn" data-toggle="modal" data-id="{{ $social->id }}"><i
-                                        class="far fa-edit"></i></a>
-                                <a href="{{ route('admin.destroy.social', $social->id) }}"><i class="fas fa-times"></i></a>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        @else
-            <span class="no-results">No hay datos para mostrar</span>
-        @endif
+                @endforeach
+            </tbody>
+        </table>
     </div>
     <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel"
         aria-hidden="true">
@@ -105,12 +101,16 @@
 @section('css')
     @toastr_css
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs4/dt-1.10.22/r-2.2.6/sc-2.0.3/datatables.min.css" />
 @stop
 
 @section('js')
     @jquery
     @toastr_js
     @toastr_render
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.22/r-2.2.6/sc-2.0.3/datatables.min.js"
+        defer></script>
     <script>
         $(document).ready(function() {
             $('.editModalBtn').click(function() {
@@ -129,6 +129,36 @@
                         $('#editModal').modal('show');
                     }
                 });
+            });
+
+            $('#socials').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": true,
+                "language": {
+                    "emptyTable": "No hay datos para mostrar",
+                    "info": "Mostrando _START_ de _END_ del _TOTAL_ registros",
+                    "infoEmpty": "Mostrando 0 de 0 de 0 registros",
+                    "infoFiltered": "(filtrado de _MAX_ entradas totales)",
+                    "lengthMenu": "Mostrar entradas de _MENU_",
+                    "loadingRecords": "Cargando...",
+                    "processing": "Procesando...",
+                    "search": "Buscar: ",
+                    "zeroRecords": "No hay registros",
+                    "paginate": {
+                        "first": "First",
+                        "last": "<i class='far fa-chevron-double-right'></i>",
+                        "next": "<i class='fas fa-chevron-right'></i>",
+                        "previous": "<i class='fas fa-chevron-left'></i>"
+                    },
+                    "aria": {
+                        "sortAscending": ": activate to sort column ascending",
+                        "sortDescending": ": activate to sort column descending"
+                    },
+                }
             });
         });
 

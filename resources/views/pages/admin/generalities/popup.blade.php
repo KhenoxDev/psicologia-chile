@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Psicología Chile')
 
 @section('content_header')
     <h1>{{ __('Administración de pop up informátivo') }}</h1>
@@ -41,7 +41,7 @@
             </div>
         </div>
     </div>
-    <div class="popups-container">
+    <div class="popups-container shadow-sm">
         @if (count($popups) > 0)
             @foreach ($popups as $popup)
                 <div class="popup-card {{ $popup->is_active ? 'active' : '' }}">

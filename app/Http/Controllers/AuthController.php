@@ -25,8 +25,7 @@ class AuthController extends Controller
 			'password' => 'required',
 		]);
 
-		$credentials = $request->only('rut', 'password');
-		if (Auth::attempt($credentials)) {
+		if (Auth::attempt(['rut' => $request->input('rut'), 'password' => $request->input('password'), 'is_active' => 1])) {
 			return redirect()->route('admin.home');
 		}
 

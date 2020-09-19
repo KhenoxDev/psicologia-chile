@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Psicología Chile')
 
 @section('content_header')
     <h1>{{ __('Administración de banner principal') }}</h1>
@@ -39,7 +39,7 @@
             </div>
         </div>
     </div>
-    <div class="banners-container">
+    <div class="banners-container shadow-sm">
         @if (count($banners) > 0)
             @foreach ($banners as $banner)
                 <div class="banner-card {{ $banner->is_active ? 'active' : '' }}">

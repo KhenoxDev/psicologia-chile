@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\News;
+use App\Author;
 use Carbon\Carbon;
 use App\Traits\UploadTrait;
 use Illuminate\Support\Str;
@@ -17,6 +18,7 @@ class NewsController extends Controller
 	public function __construct()
 	{
 		$this->news = new News();
+		$this->author = new Author();
 	}
 
 	public function getNews($id = null)
@@ -65,6 +67,51 @@ class NewsController extends Controller
 			toastr()->warning('Se eliminó el registro correctamente pero la imagen no pudo encontrarse');
 			return back();
 		}
+	}
+
+	public function edit($id)
+	{
+		$news = $this->news::find($id);
+		$authors = $this->author::all();
+
+		return view('pages.admin.news.up', compact('news', 'authors'));
+	}
+
+	public function update(Request $request)
+	{
+		$validator = Validator::make($request->all(), [
+			'title' => 'required',
+			'author' => 'required|exists:App\Author,id',
+			'content' => 'required'
+		]);
+
+		if ($validator->fails()) {
+			toastr()->error('Hubo errores en el formulario. Por favor, intentar nuevamente.');
+			return back();
+		}
+
+		$current = $this->news::find($request->input('id'));
+		$current->title = $request->input('title');
+		$current->author_id = $request->input('author');
+		$current->content = $request->input('content');
+
+		if ($request->has('image')) {
+			if (@getimagesize(public_path() . $current->image)) {
+				unlink(public_path() . $current->image);
+			}
+			$image = $request->file('image');
+			$folder = '/img/news/';
+			$name = Str::slug($image->hashName());
+			$filePath = $folder . $name . '.' . $image->getClientOriginalExtension();
+			$this->uploadOne($image, $folder, 'public', $name);
+
+			$current->image = $filePath;
+		}
+
+		$current->save();
+
+		toastr()->success('Se actualizó correctamente');
+		return back();
 	}
 
 	public function newsPublished($id)

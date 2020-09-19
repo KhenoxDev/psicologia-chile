@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Psicología Chile')
 
 @section('content_header')
     <h1>{{ __('Administración de textos en Nuestra Empresa') }}</h1>
@@ -69,22 +69,26 @@
             </div>
         </div>
     </div>
-    <div class="business-container">
-        @foreach ($business as $bus)
-            <div class="card">
-                <div class="card-header">
-                    <h3>{{ json_decode($bus->json)->section }}</h3>
+    <div class="business-container shadow-sm">
+        @if (count($business) > 0)
+            @foreach ($business as $bus)
+                <div class="card">
+                    <div class="card-header">
+                        <h3>{{ json_decode($bus->json)->section }}</h3>
+                    </div>
+                    <div class="card-body">
+                        {!! json_decode($bus->json)->text !!}
+                    </div>
+                    <div class="card-footer">
+                        <a href="javascript::void(0)" data-toggle="modal" data-id="{{ $bus->id }}"
+                            class="editModalBtn btn btn-warning">Editar</a>
+                        <a href="{{ route('admin.destroy.business', $bus->id) }}" class="btn btn-danger">Eliminar</a>
+                    </div>
                 </div>
-                <div class="card-body">
-                    {!! json_decode($bus->json)->text !!}
-                </div>
-                <div class="card-footer">
-                    <a href="javascript::void(0)" data-toggle="modal" data-id="{{ $bus->id }}"
-                        class="editModalBtn btn btn-warning">Editar</a>
-                    <a href="{{ route('admin.destroy.business', $bus->id) }}" class="btn btn-danger">Eliminar</a>
-                </div>
-            </div>
-        @endforeach
+            @endforeach
+        @else
+            <span class="no-results">No hay datos para mostrar</span>
+        @endif
     </div>
 @stop
 
