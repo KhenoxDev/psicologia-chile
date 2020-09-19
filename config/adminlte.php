@@ -46,11 +46,11 @@ return [
     */
 
 	'logo' => '<b>Psicología</b> Chile',
-	'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+	'logo_img' => 'img/isologo.png',
 	'logo_img_class' => 'brand-image img-circle elevation-3',
 	'logo_img_xl' => null,
 	'logo_img_xl_class' => 'brand-image-xs',
-	'logo_img_alt' => 'AdminLTE',
+	'logo_img_alt' => 'Psicología Chile',
 
 	/*
     |--------------------------------------------------------------------------
@@ -260,15 +260,15 @@ return [
 			'submenu' => [
 				[
 					'text' => 'Subir noticia',
-					'url'  => '#',
+					'url'  => 'admin/noticias/subir',
 				],
 				[
 					'text' => 'Noticias públicadas',
-					'url'  => '#',
+					'url'  => 'admin/noticias/publicadas',
 				],
 				[
 					'text' => 'Noticias sin publicar',
-					'url'  => '#',
+					'url'  => 'admin/noticias/sin-publicar',
 				],
 			],
 		],

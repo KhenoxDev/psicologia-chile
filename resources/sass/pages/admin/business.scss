@@ -6,6 +6,10 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
+	background-color: $white;
+	border-radius: 0.5rem;
+	margin-top: 2rem;
+	padding: 1rem;
 
 	.no-results {
 		font-size: 1rem;

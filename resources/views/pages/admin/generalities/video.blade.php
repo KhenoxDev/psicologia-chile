@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Psicología Chile')
 
 @section('content_header')
     <h1>{{ __('Administración de vídeo principal') }}</h1>
@@ -35,7 +35,7 @@
             </div>
         </div>
     </div>
-    <div class="videos-container">
+    <div class="videos-container shadow-sm">
         @if (count($videos) > 0)
             @foreach ($videos as $video)
                 <div class="video-card {{ $video->is_active ? 'active' : '' }}">

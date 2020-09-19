@@ -80,9 +80,21 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::put('/admin/usuarios/editar', 'UserController@update')->name('admin.update.users');
 	Route::get('/admin/usuarios/activar/{id}', 'UserController@active')->name('admin.active.users');
 	Route::get('/admin/usuarios/desactivar/{id}', 'UserController@inactive')->name('admin.inactive.users');
-
 	Route::put('/admin/usuarios/editar-password', 'UserController@update_password')->name('admin.update_password.users');
 
+	/* News */
+	Route::get('/admin/noticias/subir', 'AuthorController@getAuthors')->name('admin.news');
+	Route::post('/admin/noticias', 'NewsController@store')->name('admin.store.news');
+	Route::get('/admin/noticias/publicadas', 'NewsController@getNewsPublished')->name('admin.publish.news');
+	Route::get('/admin/noticias/sin-publicar', 'NewsController@getNewsUnpublished')->name('admin.unpublish.news');
+	Route::get('/admin/noticias/publicar/{id}', 'NewsController@newsPublished')->name('admin.published.news');
+	Route::get('/admin/noticias/quitar/{id}', 'NewsController@newsUnpublished')->name('admin.unpublished.news');
+	Route::get('/admin/noticias/eliminar/{id}', 'NewsController@newsDestroy')->name('admin.destroy.news');
+	Route::get('/admin/noticias/subir/{id}', 'NewsController@edit')->name('admin.edit.news');
+	Route::put('/admin/noticias/update', 'NewsController@update')->name('admin.update.news');
+
+	/* Authors */
+	Route::post('/admin/noticias/autor', 'AuthorController@store')->name('admin.store.author');
 
 
 	/* Frequently questions */
@@ -91,8 +103,8 @@ Route::group(['middleware' => ['auth']], function () {
 	})->name('admin.questions');
 	Route::get('/admin/consultas-frecuentes', 'FrequentlyQuestionController@index')->name('admin.questions');
 	Route::post('/admin/consultas-frecuentes', 'FrequentlyQuestionController@store')->name('admin.store.questions');
-	Route::get('/admin/consultas-frecuentes/editar/{id}', 'FrequentlyQuestionController@edit')->name('admin.edit.questions');
-	Route::put('/admin/consultas-frecuentes/editar', 'FrequentlyQuestionController@update')->name('admin.update.questions');
+	Route::get('/admin/consultas-frecuentes/editar', 'FrequentlyQuestionController@edit')->name('admin.edit.questions');
+	Route::put('/admin/consultas-frecuentes/actualizar', 'FrequentlyQuestionController@update')->name('admin.update.questions');
 	Route::get('/admin/consultas-frecuentes/eliminar/{id}', 'FrequentlyQuestionController@delete')->name('admin.delete.questions');
 
 	/* Logos */
@@ -139,4 +151,15 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/admin/nuestra-empresa/editar', 'GeneralityController@editBusinessInfo')->name('admin.edit.business');
 	Route::put('/admin/nuestra-empresa/actualizar', 'GeneralityController@updateBusinessInfo')->name('admin.update.business');
 	Route::get('/admin/nuestra-empresa/eliminar/{id}', 'GeneralityController@destroyBusinessInfo')->name('admin.destroy.business');
+
+	/* Documentation */
+	Route::get('/admin/documentos', 'DocumentController@index')->name('admin.document');
+	Route::get('/admin/documentos/subir', 'DocumentController@store')->name('admin.store.document');
+	Route::get('/admin/documentos/eliminar/{id}', 'DocumentController@destroy')->name('admin.destroy.document');
+
+	/* Privacy policies */
+	Route::get('/admin/politicas-privacidad', 'PrivacyController@index')->name('admin.privacy');
+	Route::get('/admin/politicas-privacidad/subir', 'PrivacyController@store')->name('admin.store.privacy');
+	Route::get('/admin/politicas-privacidad/actualizar', 'PrivacyController@update')->name('admin.update.privacy');
+	Route::get('/admin/politicas-privacidad/eliminar/{id}', 'PrivacyController@destroy')->name('admin.destroy.privacy');
 });

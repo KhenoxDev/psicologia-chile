@@ -28,20 +28,9 @@
 }
 
 .payment-container {
-	display: flex;
-	justify-content: center;
-	flex-direction: row;
-	flex-wrap: wrap;
 	background-color: $white;
 	border-radius: 0.5rem;
 	width: 100%;
 	margin-top: 2rem;
-	padding: 1rem;
-
-	.no-results {
-		font-size: 1rem;
-		color: $dark;
-		font-weight: bold;
-		margin: 1rem;
-	}
+	padding: 3rem;
 }
