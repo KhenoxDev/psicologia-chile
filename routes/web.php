@@ -151,4 +151,15 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/admin/nuestra-empresa/editar', 'GeneralityController@editBusinessInfo')->name('admin.edit.business');
 	Route::put('/admin/nuestra-empresa/actualizar', 'GeneralityController@updateBusinessInfo')->name('admin.update.business');
 	Route::get('/admin/nuestra-empresa/eliminar/{id}', 'GeneralityController@destroyBusinessInfo')->name('admin.destroy.business');
+
+	/* Documentation */
+	Route::get('/admin/documentos', 'DocumentController@index')->name('admin.document');
+	Route::get('/admin/documentos/subir', 'DocumentController@store')->name('admin.store.document');
+	Route::get('/admin/documentos/eliminar/{id}', 'DocumentController@destroy')->name('admin.destroy.document');
+
+	/* Privacy policies */
+	Route::get('/admin/politicas-privacidad', 'PrivacyController@index')->name('admin.privacy');
+	Route::get('/admin/politicas-privacidad/subir', 'PrivacyController@store')->name('admin.store.privacy');
+	Route::get('/admin/politicas-privacidad/actualizar', 'PrivacyController@update')->name('admin.update.privacy');
+	Route::get('/admin/politicas-privacidad/eliminar/{id}', 'PrivacyController@destroy')->name('admin.destroy.privacy');
 });
