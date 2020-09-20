@@ -56,7 +56,7 @@ class PaymentMethodController extends Controller
 	public function destroy($id)
 	{
 		$delete = $this->pay::find($id);
-		if (File::exists(public_path($delete->image) . )) {
+		if (File::exists(public_path($delete->image))) {
 			File::delete(public_path($delete->image));
 			$delete->delete();
 
