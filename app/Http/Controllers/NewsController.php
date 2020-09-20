@@ -9,6 +9,7 @@ use App\Traits\UploadTrait;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
 class NewsController extends Controller
@@ -55,8 +56,8 @@ class NewsController extends Controller
 	public function newsDestroy($id)
 	{
 		$delete = $this->news::find($id);
-		if (@getimagesize(public_path() . $delete->image)) {
-			unlink(public_path() . $delete->image);
+		if (File::exists(public_path($delete->image))) {
+			File::delete(public_path($delete->image));
 			$delete->delete();
 
 			toastr()->success('Se eliminó la imagen y el registro correctamente');
@@ -96,8 +97,8 @@ class NewsController extends Controller
 		$current->content = $request->input('content');
 
 		if ($request->has('image')) {
-			if (@getimagesize(public_path() . $current->image)) {
-				unlink(public_path() . $current->image);
+			if (File::exists(public_path($current->image))) {
+				File::delete(public_path($current->image));
 			}
 			$image = $request->file('image');
 			$folder = '/img/news/';

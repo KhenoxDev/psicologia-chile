@@ -6,6 +6,7 @@ use App\PaymentMethod;
 use App\Traits\UploadTrait;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
 class PaymentMethodController extends Controller
@@ -55,8 +56,8 @@ class PaymentMethodController extends Controller
 	public function destroy($id)
 	{
 		$delete = $this->pay::find($id);
-		if (@getimagesize(public_path() . $delete->image)) {
-			unlink(public_path() . $delete->image);
+		if (File::exists(public_path($delete->image) . )) {
+			File::delete(public_path($delete->image));
 			$delete->delete();
 
 			toastr()->success('Se eliminó la imagen y el registro correctamente');

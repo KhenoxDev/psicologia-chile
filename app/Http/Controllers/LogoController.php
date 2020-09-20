@@ -7,6 +7,7 @@ use App\Traits\UploadTrait;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
 class LogoController extends Controller
@@ -82,8 +83,8 @@ class LogoController extends Controller
 	public function deleteLogo($id)
 	{
 		$delete = $this->logo::find($id);
-		if (@getimagesize(public_path() . $delete->file_path)) {
-			unlink(public_path() . $delete->file_path);
+		if (File::exists(public_path($delete->file_path))) {
+			File::delete(public_path($delete->file_path));
 			$delete->delete();
 
 			toastr()->success('Se eliminó la imagen y el registro correctamente');

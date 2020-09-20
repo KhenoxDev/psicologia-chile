@@ -6,6 +6,7 @@ use App\Generality;
 use App\Traits\UploadTrait;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
 class GeneralityController extends Controller
@@ -135,8 +136,8 @@ class GeneralityController extends Controller
 	public function destroyMainBanner($id)
 	{
 		$delete = $this->generality::find($id);
-		if (@getimagesize(public_path() . json_decode($delete->json)->link)) {
-			unlink(public_path() . json_decode($delete->json)->link);
+		if (File::exists(public_path(json_decode($delete->json)->link))) {
+			File::delete(public_path(json_decode($delete->json)->link));
 			$delete->delete();
 
 			toastr()->success('Se eliminó la imagen y el registro correctamente');
@@ -220,8 +221,8 @@ class GeneralityController extends Controller
 	public function destroyMainPopup($id)
 	{
 		$delete = $this->generality::find($id);
-		if (@getimagesize(public_path() . json_decode($delete->json)->link)) {
-			unlink(public_path() . json_decode($delete->json)->link);
+		if (File::exists(public_path(json_decode($delete->json)->link))) {
+			File::delete(public_path(json_decode($delete->json)->link));
 			$delete->delete();
 
 			toastr()->success('Se eliminó la imagen y el registro correctamente');
