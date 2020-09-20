@@ -207,6 +207,11 @@ export default {
           link: "/noticias",
           modal: false,
         },
+        {
+          title: "Políticas de privacidad",
+          link: "/politicas-privacidad",
+          modal: false,
+        },
       ],
       contacts: [
         {
