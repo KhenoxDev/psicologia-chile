@@ -17,4 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('throttle:60,1')->group(function () {
 	Route::get('news/{id?}', 'NewsController@getNews')->name('api.news');
 	Route::get('questions/{order?}', 'FrequentlyQuestionController@getQuestions')->name('api.questions');
+	Route::get('generalities/', 'GeneralityController@getGeneralities')->name('api.generalities');
+	Route::get('logos/', 'LogoController@getLogos')->name('api.logos');
+	Route::get('payments/', 'PaymentMethodController@getPayments')->name('api.payments');
+	Route::get('socials/', 'SocialController@getSocials')->name('api.socials');
 });

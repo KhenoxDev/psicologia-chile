@@ -19,6 +19,13 @@ class LogoController extends Controller
 		$this->logo = new Logo();
 	}
 
+	public function getLogos()
+	{
+		$logos = $this->logo::all();
+
+		return response()->json($logos);
+	}
+
 	public function index()
 	{
 		$logos = $this->logo::all();

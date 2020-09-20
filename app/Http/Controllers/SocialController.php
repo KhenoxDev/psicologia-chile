@@ -15,6 +15,13 @@ class SocialController extends Controller
 		$this->social_type = new SocialType();
 	}
 
+	public function getSocials()
+	{
+		$socials = $this->social::all();
+
+		return response()->json($socials);
+	}
+
 	public function index()
 	{
 		$socials = $this->social::all();

@@ -18,6 +18,13 @@ class PaymentMethodController extends Controller
 		$this->pay = new PaymentMethod();
 	}
 
+	public function getPayments()
+	{
+		$payment = $this->pay::all();
+
+		return response()->json($payment);
+	}
+
 	public function index()
 	{
 		$payments = $this->pay::all();

@@ -18,6 +18,13 @@ class GeneralityController extends Controller
 		$this->generality = new Generality();
 	}
 
+	public function getGeneralities()
+	{
+		$generality = $this->generality::all();
+
+		return response()->json($generality);
+	}
+
 	/* Main video */
 
 	public function getMainVideo()
