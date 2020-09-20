@@ -45,11 +45,10 @@
                             <input type="text" class="form-control" name="name" id="name" required>
                         </div>
                         <div class="form-group">
-                            <label class="d-flex" for="logo">{{ __('Logo *') }} <i
-                                    class="fas fa-exclamation ml-auto text-warning" data-toggle="tooltip"
-                                    data-placement="right"
-                                    title="Tipos: png, jpg, jpeg y svg | Dimensiones recomendadas: 220 x 48"></i></label>
+                            <label class="d-flex" for="logo">{{ __('Logo *') }}</label>
                             <input type="file" name="logo" id="logo" class="form-control" required>
+                            <small id="logoAyuda" class="form-text text-muted">Tipos: png, jpg, jpeg y svg <br> Dimensiones
+                                recomendadas: 220 x 48</small>
                         </div>
                     </div>
                     <div class="modal-footer">

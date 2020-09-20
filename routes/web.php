@@ -154,7 +154,8 @@ Route::group(['middleware' => ['auth']], function () {
 
 	/* Documentation */
 	Route::get('/admin/documentos', 'DocumentController@index')->name('admin.document');
-	Route::get('/admin/documentos/subir', 'DocumentController@store')->name('admin.store.document');
+	Route::post('/admin/documentos/subir', 'DocumentController@store')->name('admin.store.document');
+	Route::get('/admin/documentos/descargar/{id}', 'DocumentController@download')->name('admin.download.document');
 	Route::get('/admin/documentos/eliminar/{id}', 'DocumentController@destroy')->name('admin.destroy.document');
 
 	/* Privacy policies */

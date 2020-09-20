@@ -320,8 +320,8 @@ return [
 					'url'  => 'admin/privacidad',
 				],
 				[
-					'text' => 'Términos y condiciones',
-					'url'  => 'admin/condiciones',
+					'text' => 'Gestión de documentos',
+					'url'  => 'admin/documentos',
 				],
 			],
 		],
