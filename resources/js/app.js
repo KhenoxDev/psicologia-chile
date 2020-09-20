@@ -12,8 +12,11 @@ require('./scripts');
 require('./bootstrap');
 
 import store from './store';
+import VueSweetalert2 from 'vue-sweetalert2';
 
 window.Vue = require('vue');
+
+Vue.use(VueSweetalert2);
 
 /**
  * The following block of code may be used to automatically register your

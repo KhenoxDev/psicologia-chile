@@ -11,6 +11,10 @@ export default new Vuex.Store({
 		mainVideo: [],
 		mainBanner: [],
 		mainPopup: [],
+		mainSocials: [],
+		mainLogo: [],
+		mainPayments: [],
+		mainBusiness: [],
 	},
 	mutations: {
 		setProfessional(state, payload) {
@@ -27,6 +31,18 @@ export default new Vuex.Store({
 		},
 		setMainPopup(state, payload) {
 			return state.mainPopup = payload;
+		},
+		setMainLogo(state, payload) {
+			return state.mainLogo = payload;
+		},
+		setMainSocials(state, payload) {
+			return state.mainSocials = payload;
+		},
+		setMainPayments(state, payload) {
+			return state.mainPayments = payload;
+		},
+		setMainBusiness(state, payload) {
+			return state.mainBusiness = payload;
 		},
 	},
 	actions: {
@@ -66,5 +82,54 @@ export default new Vuex.Store({
 					console.log(e);
 				});
 		},
+		loadMainLogo: function ({
+			state,
+			commit
+		}) {
+			let url = state.appUrl + '/api/logos';
+			axios.get(url)
+				.then(response => {
+					commit('setMainLogo', response.data)
+				}).catch((e) => {
+					console.log(e);
+				});
+		},
+		loadSocials: function ({
+			state,
+			commit
+		}) {
+			let url = state.appUrl + '/api/socials';
+			axios.get(url)
+				.then((response) => {
+					commit('setMainSocials', response.data)
+				}).catch((e) => {
+					console.log(e);
+				});
+		},
+		loadPayments: function ({
+			state,
+			commit
+		}) {
+			let url = state.appUrl + '/api/payments';
+			axios.get(url)
+				.then((response) => {
+					commit('setMainPayments', response.data)
+				}).catch((e) => {
+					console.log(e);
+				});
+		},
+		loadBusiness: function ({
+			state,
+			commit
+		}) {
+			let url = state.appUrl + '/api/generalities/business';
+			axios.get(url)
+				.then((response) => {
+					commit('setMainBusiness', response.data)
+				}).catch((e) => {
+					console.log(e);
+				});
+		},
+
 	}
 });

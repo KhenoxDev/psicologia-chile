@@ -21,7 +21,7 @@ class LogoController extends Controller
 
 	public function getLogos()
 	{
-		$logos = $this->logo::all();
+		$logos = $this->logo::where('is_active', 1)->get();
 
 		return response()->json($logos);
 	}

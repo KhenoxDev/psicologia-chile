@@ -8,40 +8,21 @@
         v-bind:color="'#f4b034'"
       ></loading-component>
     </transition>
-    <div
-      class="modal fade"
-      id="modalInfo"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="modalInfoTitle"
-      aria-hidden="true"
-      ref="popupinfo"
-    >
-      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-body">
-            <img :src="mainPopup[0].element" :alt="mainPopup[0].module" />
-          </div>
-        </div>
-      </div>
-    </div>
+
     <div v-if="mainBanner.length > 0 && mainVideo.length > 0">
       <masthead :img-background="mainBanner[0].element" :url-vid="mainVideo[0].element"></masthead>
     </div>
-    <div v-if="mainVideo.length > 0 && mainBanner.lenght == 0">
+    <div v-else-if="mainVideo.length > 0 && mainBanner.lenght == 0">
       <masthead :img-background="imgBackground" :url-vid="mainVideo[0].element"></masthead>
     </div>
-    <div v-if="mainBanner.length > 0 && mainVideo.length == 0">
+    <div v-else-if="mainBanner.length > 0 && mainVideo.length == 0">
       <masthead
         :img-background="mainBanner[0].element"
-        url-vid="https://www.youtube.com/embed/TrREbV49fuU?autoplay=1&mute=1&playlist=TrREbV49fuU&loop=1"
+        url-vid="https://www.youtube.com/embed/TrREbV49fuU"
       ></masthead>
     </div>
     <div v-else>
-      <masthead
-        :img-background="imgBackground"
-        url-vid="https://www.youtube.com/embed/TrREbV49fuU?autoplay=1&mute=1&playlist=TrREbV49fuU&loop=1"
-      ></masthead>
+      <masthead :img-background="imgBackground" url-vid="https://www.youtube.com/embed/TrREbV49fuU"></masthead>
     </div>
     <div class="bg--white">
       <news></news>
@@ -76,6 +57,7 @@ import News from "./News";
 import WereNews from "./WeWereNews";
 import Covenants from "./Covenants";
 import { mapState } from "vuex";
+import { setTimeout } from "timers";
 
 export default {
   props: {
@@ -106,13 +88,27 @@ export default {
     WereNews,
     Covenants,
   },
-  mounted() {
-    this.onLoad();
-    this.$store.commit("setAppUrl", this.appUrl);
+  created() {
     this.$store.dispatch("loadMainVideo");
     this.$store.dispatch("loadMainBanner");
     this.$store.dispatch("loadMainPopup");
-    this.openAuto();
+    this.$store.dispatch("loadMainLogo");
+  },
+  mounted() {
+    this.onLoad();
+    this.$store.commit("setAppUrl", this.appUrl);
+    setTimeout(() => {
+      if (this.mainPopup.length > 0) {
+        this.$swal({
+          width: 1000,
+          imageUrl: this.mainPopup[0].element,
+          imageAlt: this.mainPopup[0].module,
+          imageHeight: 500,
+          showConfirmButton: false,
+          timer: 8000,
+        });
+      }
+    }, 2000);
   },
   methods: {
     onLoad() {
@@ -121,10 +117,9 @@ export default {
         this.isLoading = false;
       }, 2000);
     },
-    openAuto() {
-      this.$refs["popupinfo"].show();
-    },
   },
   computed: mapState(["mainVideo", "mainBanner", "mainPopup"]),
 };
 </script>
+<style lang="scss" scoped>
+</style>

@@ -17,11 +17,11 @@
     </div>
     <div class="bg--white container d-lg-flex justify-content-between">
       <feature
-        v-for="feature in features"
+        v-for="feature in mainBusiness"
         :key="feature.id"
-        :icon="feature.icon"
-        :title="feature.title"
-        :description="feature.description"
+        :icon="feature.module == 'mision' ? 'fas fa-crosshairs' : feature.module == 'vision' ? 'far fa-eye' : feature.module == 'valores' ? 'fas fa-hand-holding-heart' : ''"
+        :title="feature.module"
+        :description="feature.element"
       ></feature>
     </div>
     <hr />
@@ -58,6 +58,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import LoadingComponent from "vue-loading-overlay";
 import Banner from "../Reusable/Banner";
 import Feature from "./Feature";
@@ -113,6 +114,9 @@ export default {
       ],
     };
   },
+  created() {
+    this.$store.dispatch("loadBusiness");
+  },
   props: {
     urlVid: {
       type: String,
@@ -138,6 +142,7 @@ export default {
       }, 2000);
     },
   },
+  computed: mapState(["mainBusiness"]),
 };
 </script>
 

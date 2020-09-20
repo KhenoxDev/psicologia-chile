@@ -266,7 +266,7 @@ class GeneralityController extends Controller
 		if ($request->ajax()) {
 			$business = $this->generality::find($request->id);
 
-			return response()->element($business);
+			return response()->json($business);
 		}
 
 		toastr()->error('No tienes permisos para realizar esta acción.');

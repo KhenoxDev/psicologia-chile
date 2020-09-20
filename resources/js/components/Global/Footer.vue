@@ -60,11 +60,40 @@
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="single-footer-widget mail-chimp text-left">
-            <h6 class="mb-20">Síguenos en nuestras redes</h6>
+            <h6 class="mb-2">Síguenos en nuestras redes</h6>
             <ul class="instafeed d-flex flex-wrap">
-              <li v-for="social in socials" :key="social.id">
+              <li v-for="social in mainSocials" :key="social.id">
                 <a :href="social.link" target="_blank">
-                  <img :src="social.src" :alt="social.alt" />
+                  <img
+                    v-if="social.type_id == 1"
+                    :src="urlBase + '/img/footer/social-network/facebook.svg'"
+                    alt="Facebook"
+                  />
+                  <img
+                    v-else-if="social.type_id == 2"
+                    :src="urlBase + '/img/footer/social-network/instagram.svg'"
+                    alt="Instagram"
+                  />
+                  <img
+                    v-else-if="social.type_id == 3"
+                    :src="urlBase + '/img/footer/social-network/twitter.svg'"
+                    alt="Twitter"
+                  />
+                  <img
+                    v-else-if="social.type_id == 4"
+                    :src="urlBase + '/img/footer/social-network/youtube.svg'"
+                    alt="Youtube"
+                  />
+                  <img
+                    v-else-if="social.type_id == 5"
+                    :src="urlBase + '/img/footer/social-network/whatsapp.svg'"
+                    alt="Whatsapp"
+                  />
+                  <img
+                    v-else-if="social.type_id == 6"
+                    :src="urlBase + '/img/footer/social-network/linkedin.svg'"
+                    alt="Linkedin"
+                  />
                 </a>
               </li>
             </ul>
@@ -72,8 +101,8 @@
           <div class="single-footer-widget mail-chimp text-left">
             <h6 class="mb-20">Métodos de pagos</h6>
             <ul class="instafeed payments d-flex flex-wrap">
-              <li v-for="pay in payments" :key="pay.id">
-                <img :src="pay.src" :alt="pay.alt" />
+              <li v-for="pay in mainPayments" :key="pay.id">
+                <img :src="urlBase + pay.image" :alt="pay.name" />
               </li>
             </ul>
           </div>
@@ -112,6 +141,7 @@
   </footer>
 </template>
 <script>
+import { mapState } from "vuex";
 import FormWorkUs from "./Modal/FormWorkUs";
 import FormVoluntary from "./Modal/FormVoluntary";
 import FormContact from "./Modal/FormContact";
@@ -127,8 +157,12 @@ export default {
       type: String,
     },
   },
+  mounted() {
+    console.log();
+  },
   data() {
     return {
+      store: this.$store.state,
       modalSelected: "",
       about:
         "Somos una plataforma de encuentro entre psicólogos y pacientes donde se desarrollan las terapias de forma vanguardista e innovadora , dando mayor facilidad de comunicación entre ambos, rompiendo las barreras del tiempo y la distancia.",
@@ -194,40 +228,17 @@ export default {
         //   src: "img/footer/transferencia.png"
         // }
       ],
-      socials: [
-        {
-          alt: "Facebook",
-          src: this.urlBase + "/img/footer/social-network/facebook.svg",
-          link: "https://www.facebook.com/PsicologiaChileOnline",
-        },
-        {
-          alt: "Instagram",
-          src: this.urlBase + "/img/footer/social-network/instagram.svg",
-          link: "https://www.instagram.com/psicologiachileonline/",
-        },
-        {
-          alt: "Youtube",
-          src: this.urlBase + "/img/footer/social-network/youtube.svg",
-          link: "https://www.youtube.com/channel/UCznPWn2VjzUDtm8fULeeT1w",
-        },
-        {
-          alt: "Linkedin",
-          src: this.urlBase + "/img/footer/social-network/linkedin.svg",
-          link:
-            "https://www.linkedin.com/company/psicologiachile/?viewAsMember=true",
-        },
-        {
-          alt: "Whatsapp",
-          src: this.urlBase + "/img/footer/social-network/whatsapp.svg",
-          link: "https://api.whatsapp.com/send?phone=56995863952",
-        },
-      ],
     };
+  },
+  created() {
+    this.$store.dispatch("loadSocials");
+    this.$store.dispatch("loadPayments");
   },
   methods: {
     toggleModal(link) {
       this.modalSelected = link;
     },
   },
+  computed: mapState(["mainSocials", "mainPayments"]),
 };
 </script>

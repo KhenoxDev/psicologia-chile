@@ -4,32 +4,37 @@
       <strong>Psicología</strong> para ti
     </span>
     <hr class="line--separator" />
-    <vueper-slides
-      :breakpoints="breakpoints"
-      class="no-shadow"
-      autoplay
-      infinite
-      bullets-outside
-      slide-multiple
-      :touchable="false"
-    >
-      <vueper-slide v-for="(n, i) in news" :index="i" :key="n.id">
-        <template v-slot:content>
-          <!-- Campos tabla noticias -->
-          <news
-            :identificator="n.id"
-            :image="n.image"
-            :title="n.title"
-            :content="n.content"
-            :autor="n.author"
-            :publish="n.posted_on"
-          ></news>
-          <!-- fin campos tabla noticias -->
-        </template>
-      </vueper-slide>
-    </vueper-slides>
-    <div class="seeall--news">
-      <a href="/noticias">ver todas las noticias</a>
+    <div v-if="this.news.length > 0">
+      <vueper-slides
+        :breakpoints="breakpoints"
+        class="no-shadow"
+        autoplay
+        infinite
+        bullets-outside
+        slide-multiple
+        :touchable="false"
+      >
+        <vueper-slide v-for="(n, i) in news" :index="i" :key="n.id">
+          <template v-slot:content>
+            <!-- Campos tabla noticias -->
+            <news
+              :identificator="n.id"
+              :image="n.image"
+              :title="n.title"
+              :content="n.content"
+              :autor="n.author"
+              :publish="n.posted_on"
+            ></news>
+            <!-- fin campos tabla noticias -->
+          </template>
+        </vueper-slide>
+      </vueper-slides>
+      <div class="seeall--news">
+        <a href="/noticias">ver todas las noticias</a>
+      </div>
+    </div>
+    <div v-else class="text-center">
+      <span class="h4">No hay noticias publicadas</span>
     </div>
   </div>
 </template>

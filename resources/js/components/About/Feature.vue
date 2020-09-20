@@ -3,8 +3,8 @@
     <div class="feature-icon shadow">
       <i :class="icon"></i>
     </div>
-    <h3>{{ title }}</h3>
-    <p>{{ description }}</p>
+    <h3>{{ title.toUpperCase() }}</h3>
+    <p v-html="description"></p>
   </div>
 </template>
 <script>
