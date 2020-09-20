@@ -166,3 +166,8 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::put('/admin/politicas-privacidad/actualizar', 'PrivacyController@update')->name('admin.update.privacy');
 	Route::get('/admin/politicas-privacidad/eliminar/{id}', 'PrivacyController@destroy')->name('admin.destroy.privacy');
 });
+
+/* Send email */
+Route::get('enviar', function () {
+	return '#';
+});
