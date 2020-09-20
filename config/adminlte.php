@@ -317,7 +317,7 @@ return [
 			'submenu' => [
 				[
 					'text' => 'Políticas de Privacidad',
-					'url'  => 'admin/privacidad',
+					'url'  => 'admin/politicas-privacidad',
 				],
 				[
 					'text' => 'Gestión de documentos',

@@ -160,7 +160,7 @@ Route::group(['middleware' => ['auth']], function () {
 
 	/* Privacy policies */
 	Route::get('/admin/politicas-privacidad', 'PrivacyController@index')->name('admin.privacy');
-	Route::get('/admin/politicas-privacidad/subir', 'PrivacyController@store')->name('admin.store.privacy');
-	Route::get('/admin/politicas-privacidad/actualizar', 'PrivacyController@update')->name('admin.update.privacy');
+	Route::post('/admin/politicas-privacidad/subir', 'PrivacyController@store')->name('admin.store.privacy');
+	Route::put('/admin/politicas-privacidad/actualizar', 'PrivacyController@update')->name('admin.update.privacy');
 	Route::get('/admin/politicas-privacidad/eliminar/{id}', 'PrivacyController@destroy')->name('admin.destroy.privacy');
 });
