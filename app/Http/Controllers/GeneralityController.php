@@ -18,13 +18,6 @@ class GeneralityController extends Controller
 		$this->generality = new Generality();
 	}
 
-	public function getGeneralities()
-	{
-		$generality = $this->generality::all();
-
-		return response()->json($generality);
-	}
-
 	/* Main video */
 
 	public function getMainVideo()
@@ -44,12 +37,8 @@ class GeneralityController extends Controller
 			return back();
 		}
 
-		$array = [
-			'link' => $request->input('video')
-		];
-
 		$this->generality->module = "main_video";
-		$this->generality->json = json_encode($array);
+		$this->generality->element = $request->input('video');
 		$this->generality->save();
 
 		toastr()->success('Se creó correctamente');
@@ -94,7 +83,7 @@ class GeneralityController extends Controller
 	{
 		$validator = Validator::make($request->all(), [
 			'nombre' => 'required',
-			'banner' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048'
+			'banner' => 'required|image|mimes:jpeg,png,jpg,svg|max:5096'
 		]);
 
 		if ($validator->fails()) {
@@ -109,12 +98,8 @@ class GeneralityController extends Controller
 			$filePath = $folder . $name . '.' . $image->getClientOriginalExtension();
 			$this->uploadOne($image, $folder, 'public', $name);
 
-			$array = [
-				'link' => $filePath
-			];
-
 			$this->generality->module = 'main_banner';
-			$this->generality->json = json_encode($array);
+			$this->generality->element = $filePath;
 			$this->generality->save();
 		}
 
@@ -143,8 +128,8 @@ class GeneralityController extends Controller
 	public function destroyMainBanner($id)
 	{
 		$delete = $this->generality::find($id);
-		if (File::exists(public_path(json_decode($delete->json)->link))) {
-			File::delete(public_path(json_decode($delete->json)->link));
+		if (File::exists(public_path($delete->element))) {
+			File::delete(public_path($delete->element));
 			$delete->delete();
 
 			toastr()->success('Se eliminó la imagen y el registro correctamente');
@@ -184,12 +169,8 @@ class GeneralityController extends Controller
 			$filePath = $folder . $name . '.' . $image->getClientOriginalExtension();
 			$this->uploadOne($image, $folder, 'public', $name);
 
-			$array = [
-				'link' => $filePath
-			];
-
 			$this->generality->module = 'popup_info';
-			$this->generality->json = json_encode($array);
+			$this->generality->element = $filePath;
 			$this->generality->save();
 		}
 
@@ -228,8 +209,8 @@ class GeneralityController extends Controller
 	public function destroyMainPopup($id)
 	{
 		$delete = $this->generality::find($id);
-		if (File::exists(public_path(json_decode($delete->json)->link))) {
-			File::delete(public_path(json_decode($delete->json)->link));
+		if (File::exists(public_path($delete->element))) {
+			File::delete(public_path($delete->element));
 			$delete->delete();
 
 			toastr()->success('Se eliminó la imagen y el registro correctamente');
@@ -246,16 +227,16 @@ class GeneralityController extends Controller
 
 	public function getBusinessInfo()
 	{
-		$business = $this->generality::where('module', 'business_info')->get();
+		$business = $this->generality::whereIn('module', ['mision', 'vision', 'valores'])->get();
 		return view('pages.admin.generalities.business', compact('business'));
 	}
 
 	public function setBusinessInfo(Request $request)
 	{
-		$business = $this->generality::where('module', 'business_info')->get();
+		$business = $this->generality::all();
 
 		foreach ($business as $bus) {
-			if (json_decode($bus->json)->section == $request->input('seccion')) {
+			if ($bus->module == $request->input('seccion')) {
 				toastr()->error('Ya existe un registro: ' . $request->input('seccion'));
 				return back();
 			}
@@ -271,13 +252,8 @@ class GeneralityController extends Controller
 			return back();
 		}
 
-		$array = [
-			'section' => $request->input('seccion'),
-			'text' => $request->input('texto')
-		];
-
-		$this->generality->module = "business_info";
-		$this->generality->json = json_encode($array);
+		$this->generality->module = $request->input('seccion');
+		$this->generality->element = $request->input('texto');
 		$this->generality->is_active = 1;
 		$this->generality->save();
 
@@ -290,7 +266,7 @@ class GeneralityController extends Controller
 		if ($request->ajax()) {
 			$business = $this->generality::find($request->id);
 
-			return response()->json($business);
+			return response()->element($business);
 		}
 
 		toastr()->error('No tienes permisos para realizar esta acción.');
@@ -310,13 +286,7 @@ class GeneralityController extends Controller
 			return back();
 		}
 
-		$section = json_decode($data->json)->section;
-		$newjson = [
-			'section' => $section,
-			'text' => $request->input('texto'),
-		];
-
-		$data->json = json_encode($newjson);
+		$data->element = $request->input('texto');
 		$data->save();
 
 		toastr()->success('Se actualizó correctamente');
@@ -329,5 +299,34 @@ class GeneralityController extends Controller
 
 		toastr()->success('Se eliminó correctamente');
 		return back();
+	}
+
+	/* Api */
+	public function getVideoApi()
+	{
+		$video = $this->generality::where('module', 'main_video')->where('is_active', 1)->get();
+
+		return response()->json($video);
+	}
+
+	public function getBannerApi()
+	{
+		$banner = $this->generality::where('module', 'main_banner')->where('is_active', 1)->get();
+
+		return response()->json($banner);
+	}
+
+	public function getPopupApi()
+	{
+		$popup = $this->generality::where('module', 'popup_info')->where('is_active', 1)->get();
+
+		return response()->json($popup);
+	}
+
+	public function getBusinessApi()
+	{
+		$business = $this->generality::whereIn('module', ['mision', 'vision', 'valores'])->where('is_active', 1)->get();
+
+		return response()->json($business);
 	}
 }

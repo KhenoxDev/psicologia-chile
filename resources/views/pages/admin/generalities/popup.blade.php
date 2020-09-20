@@ -45,7 +45,7 @@
         @if (count($popups) > 0)
             @foreach ($popups as $popup)
                 <div class="popup-card {{ $popup->is_active ? 'active' : '' }}">
-                    <iframe width="200" height="200" src="{{ json_decode($popup->json)->link }}" frameborder="0"></iframe>
+                    <iframe width="200" height="200" src="{{ $popup->element }}" frameborder="0"></iframe>
                     @if (!$popup->is_active)
                         <a href="{{ route('admin.default.popup', $popup->id) }}" class="btn btn-primary mt-2">Por
                             defecto</a>

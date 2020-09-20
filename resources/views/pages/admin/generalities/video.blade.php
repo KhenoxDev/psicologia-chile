@@ -40,7 +40,7 @@
             @foreach ($videos as $video)
                 <div class="video-card {{ $video->is_active ? 'active' : '' }}">
                     <iframe width="{{ $video->is_active ? '250' : '200' }}" height="{{ $video->is_active ? '250' : '200' }}"
-                        src="{{ json_decode($video->json)->link }}" frameborder="0"
+                        src="{{ $video->element }}" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
                     @if (!$video->is_active)
                         <a href="{{ route('admin.default.video', $video->id) }}" class="btn btn-primary mt-2">Por

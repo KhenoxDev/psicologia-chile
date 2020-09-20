@@ -24,9 +24,9 @@
                         <div class="form-group w-100">
                             <label for="seccion">{{ __('Sección *') }}</label>
                             <select name="seccion" id="seccion" class="form-control">
-                                <option value="Misión">Misión</option>
-                                <option value="Visión">Visión</option>
-                                <option value="Valores">Valores</option>
+                                <option value="mision">Misión</option>
+                                <option value="vision">Visión</option>
+                                <option value="valores">Valores</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -74,10 +74,23 @@
             @foreach ($business as $bus)
                 <div class="card">
                     <div class="card-header">
-                        <h3>{{ json_decode($bus->json)->section }}</h3>
+                        @switch($bus->module)
+                            @case('mision')
+                            <h3>Misión</h3>
+                            @break
+                            @case('vision')
+                            <h3>Visión</h3>
+                            @break
+                            @case('valores')
+                            <h3>Valores</h3>
+                            @break
+                            @default
+                            <h3>Sin título</h3>
+                            @break
+                        @endswitch
                     </div>
                     <div class="card-body">
-                        {!! json_decode($bus->json)->text !!}
+                        {!! $bus->element !!}
                     </div>
                     <div class="card-footer">
                         <a href="javascript::void(0)" data-toggle="modal" data-id="{{ $bus->id }}"
@@ -132,9 +145,8 @@
                         'id': id
                     },
                     success: function(data) {
-                        var json = JSON.parse(data.json);
                         $('#id').val(data.id);
-                        editorData.data.set(json.text);
+                        editorData.data.set(data.element);
                         $('#editModal').modal('show');
                     }
                 });

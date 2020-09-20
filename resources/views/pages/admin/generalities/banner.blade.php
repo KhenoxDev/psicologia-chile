@@ -44,7 +44,7 @@
             @foreach ($banners as $banner)
                 <div class="banner-card {{ $banner->is_active ? 'active' : '' }}">
                     <iframe width="{{ $banner->is_active ? '200' : '200' }}"
-                        height="{{ $banner->is_active ? '300' : '200' }}" src="{{ json_decode($banner->json)->link }}"
+                        height="{{ $banner->is_active ? '300' : '200' }}" src="{{ $banner->element }}"
                         frameborder="0"></iframe>
                     @if (!$banner->is_active)
                         <a href="{{ route('admin.default.banner', $banner->id) }}" class="btn btn-primary mt-2">Por

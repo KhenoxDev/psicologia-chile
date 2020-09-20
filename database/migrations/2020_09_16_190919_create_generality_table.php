@@ -16,7 +16,7 @@ class CreateGeneralityTable extends Migration
 		Schema::create('generality', function (Blueprint $table) {
 			$table->id()->autoIncrement();
 			$table->string('module');
-			$table->json('json');
+			$table->string('element');
 			$table->boolean('is_active')->default(0);
 			$table->timestamp('created_at')->useCurrent();
 			$table->timestamp('updated_at')->useCurrent();
