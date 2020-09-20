@@ -94,7 +94,7 @@ export default {
   },
   methods: {
     async getNews() {
-      const api = "http://127.0.0.1:8000/api/news";
+      const api = this.$store.state.appUrl + "/api/news";
 
       try {
         let response = await axios.get(api);

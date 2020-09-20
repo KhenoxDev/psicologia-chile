@@ -82,7 +82,7 @@ export default {
   },
   methods: {
     async getQuestions() {
-      const api = "http://127.0.0.1:8000/api/questions";
+      const api = this.$store.state.appUrl + "/api/questions";
 
       try {
         let response = await axios.get(api);

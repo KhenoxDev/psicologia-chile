@@ -50,6 +50,9 @@ export default {
     imgBackground: {
       type: String,
     },
+    appUrl: {
+      type: String,
+    },
   },
   data() {
     return {
@@ -72,6 +75,7 @@ export default {
   },
   mounted() {
     this.onLoad();
+    this.$store.commit("setAppUrl", this.appUrl);
   },
   methods: {
     onLoad() {
