@@ -43,7 +43,6 @@
     @endif
 
     @if (count($privacies) > 0)
-        {{-- Listar politicas para editarlas --}}
         <div class="privacy-container">
             <form action="{{ route('admin.update.privacy') }}" method="POST">
                 @csrf
@@ -52,8 +51,9 @@
                 <input type="hidden" name="id_edit" id="id_edit" value="{{ $privacies[0]->id }}">
 
                 <div class="form-group">
-                    <label for="contentEdit">{{ __('Contenido *') }}</label>
-                    <textarea name="contentEdit" id="editor" cols="100" rows="40">{{ $privacies[0]->content }}</textarea>
+                    <label for="contentEdit">{{ __('Editar contenido') }}</label>
+                    <textarea name="contentEdit" id="editorEdit" cols="100"
+                        rows="40">{{ $privacies[0]->content }}</textarea>
                 </div>
                 <hr>
                 <button type="submit" class="btn btn-primary">{{ _('Actualizar') }}</button>
@@ -77,6 +77,15 @@
     <script>
         ClassicEditor
             .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+
+    </script>
+
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editorEdit'))
             .catch(error => {
                 console.error(error);
             });

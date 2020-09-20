@@ -42,7 +42,7 @@ class PrivacyController extends Controller
 	public function update(Request $request)
 	{
 		$validator = Validator::make($request->all(), [
-			'content' => 'required|string'
+			'contentEdit' => 'required|string'
 		]);
 
 		if ($validator->fails()) {
@@ -56,5 +56,13 @@ class PrivacyController extends Controller
 
 		toastr()->success('Se actualizó correctamente.');
 		return back();
+	}
+
+
+	public function getPrivacy()
+	{
+		$privacy = $this->privacy::first();
+
+		return view('pages.privacy', compact('privacy'));
 	}
 }

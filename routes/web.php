@@ -55,6 +55,8 @@ Route::group(['middleware' => [SetCookie::class]], function () {
 	Route::get('/preguntas-frecuentes', function () {
 		return view('pages.question');
 	})->name('question');
+
+	Route::get('/politicas-privacidad', 'PrivacyController@getPrivacy')->name('privacy');
 });
 
 /* Admin Routes */
