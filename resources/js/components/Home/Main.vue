@@ -93,10 +93,10 @@ export default {
     this.$store.dispatch("loadMainBanner");
     this.$store.dispatch("loadMainPopup");
     this.$store.dispatch("loadMainLogo");
+    this.$store.commit("setAppUrl", this.appUrl);
   },
   mounted() {
     this.onLoad();
-    this.$store.commit("setAppUrl", this.appUrl);
     setTimeout(() => {
       if (this.mainPopup.length > 0) {
         this.$swal({

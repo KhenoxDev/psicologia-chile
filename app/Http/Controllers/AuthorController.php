@@ -18,9 +18,9 @@ class AuthorController extends Controller
 		$this->author = new Author();
 	}
 
-	public function getAuthorsJson($id)
+	public function getAuthorsJson()
 	{
-		$authors = $this->author::find($id);
+		$authors = $this->author::all();
 
 		return response()->json($authors);
 	}

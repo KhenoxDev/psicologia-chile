@@ -21,7 +21,8 @@ export default new Vuex.Store({
 			return state.professionalId = payload;
 		},
 		setAppUrl(state, payload) {
-			return state.appUrl = payload;
+			state.appUrl = payload;
+			return localStorage.setItem("appurl", state.appUrl);
 		},
 		setMainVideo(state, payload) {
 			return state.mainVideo = payload;
@@ -130,6 +131,10 @@ export default new Vuex.Store({
 					console.log(e);
 				});
 		},
-
+	},
+	getters: {
+		getAppUrl: (state, getters) => {
+			return localStorage.getItem('appurl')
+		}
 	}
 });

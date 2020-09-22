@@ -48,7 +48,7 @@ class NewsSeeder extends Seeder
 						con constantes ensayos a distancia, estudiando sus instrumentos en sus casas y creando
 						nuevas composiciones, pues consideran, de forma correcta, que su labor se asimila a la
 						de un deportista de elite.',
-			'image' => 'img/news/news_piedras.png',
+			'image' => '/img/news/news_piedras.png',
 			'posted_on' => '2020-06-11',
 		],
 
@@ -90,7 +90,7 @@ class NewsSeeder extends Seeder
 						En el caso de los profesionales de la salud “en primera línea de combate de la pandemia” dijo que van a sufrir “una epidemia de síndrome de estrés postraumático” y es “necesario estar atentos y preparar a la población para esta situación”. Cetkovich puso al hospital Carlos III de Madrid como referencia para los países latinoamericanos por haber encargado a un grupo de psiquiatras la tarea de atender a los trabajadores de la salud del centro y ayudarlos a lidiar con el estrés y sus sentimientos.
 						<br><br>
 						El español Pedro M. Sánchez Gómez, del hospital psiquiátrico de Alava (Osakidetza) y profesor de la Universidad del País Vasco, destacó los obstáculos que encontraron en España en el momento álgido de la pandemia para tratar a pacientes con cuadros depresivos mayores en medio de la cuarentena. “Prácticamente tuvimos que reinventarnos y generar nuevos protocolos de atención para los pacientes con trastornos de salud mental, como por ejemplo el uso de la telemedicina, programas de prevención de hospitalizaciones, brindar asesoría a los cuidadores y familiares para que funcionaran como coterapeutas, e incluso hacer intervenciones domiciliarias”.',
-			'image' => 'img/news/news_cerebro.jpeg',
+			'image' => '/img/news/news_cerebro.jpeg',
 			'posted_on' => '2020-06-09',
 		],
 
@@ -118,7 +118,7 @@ class NewsSeeder extends Seeder
 						Si quieres cambiar los resultados es imperante saber que te dices, y luego descubrir porque te dices o te cuentas esa historia.
 						<br><br>
 						El primer paso de la Transformación, es hacer consciente aquello que no estas viendo.',
-			'image' => 'img/news/news_lenguaje.png',
+			'image' => '/img/news/news_lenguaje.png',
 			'posted_on' => '2020-06-05',
 		],
 
@@ -146,7 +146,7 @@ class NewsSeeder extends Seeder
 						Define que te hace sentir dolor o frustración, averigua como aparecen estos sentimientos y emociones y evítalos o limita los eventos que los producen.
 						<br><br>
 						Escucha tus emociones, cuanto más intentes suprimir o evadir una emoción, más fuerte se hace, pero una vez que la escuchas, suele desaparecer.',
-			'image' => 'img/news/news_flor.png',
+			'image' => '/img/news/news_flor.png',
 			'posted_on' => '2020-05-08',
 		],
 
@@ -160,7 +160,7 @@ class NewsSeeder extends Seeder
 						Nuestra Psicóloga clínica y co-founder de Psicología Chile, Andrea Rojas Trincado, señaló a diario El Mercurio que la mayor dificultad está en compatibilizar casa y trabajo: “Esto implica un cambio en las prácticas cotidianas, ya que normalmente tendemos a pensar la casa y el trabajo como esferas importantes, pero separadas. Tener espacios reservados para diferentes actividades ayuda en la planificación de nuestras vidas”, dijo nuestra experta.
 						<br><br>
 						Cabe destacar que el estudio reveló preocupantes cifras. Entre las razones que les generan estrés, un 59% de los encuestados dice que les ha aumentado la carga laboral; un 54%, que no les alcanza el tiempo; un 49% siente inseguridad laboral, y un 48% siente más presión de sus jefaturas. Sobre los distractores, el repartir tiempo entre la casa y el trabajo (35%) es la principal razón que no facilita una conexión para lograr un buen teletrabajo.',
-			'image' => 'img/news/news_teletrabajo.jpeg',
+			'image' => '/img/news/news_teletrabajo.jpeg',
 			'posted_on' => '2020-05-04',
 		],
 
@@ -173,7 +173,7 @@ class NewsSeeder extends Seeder
 						<br>
 						Otro ejemplo: la creencia limitadora “el que te quiere te aporrea”. Esta frase normativiza el acto de violencia, por lo que cuando recibes una agresión reiterativa, esto genera emociones doble vinculantes: por una parte, felicidad porque “te sientes querido”; por la otra, rabia frente al abuso y violencia. He acá la importancia de reconocer nuestras emociones y reflexionar bajo qué contextos, con qué personas y en qué circunstancias estas se manifiestan en ti.
 						Para Julio Olalla, la reflexión debe hacerse desde la conciencia de que somos un tipo de observador, e incluye el esfuerzo de observarnos observando. El lenguaje de las emociones y el cuerpo son distinciones fundamentales que hemos desarrollado para posibilitar esa observación. El lenguaje permite distinguir narrativas, como los ejemplos anteriores, las emociones nos disponen a mirar de cierta manera y el cuerpo nos permite percibir a través de los sentidos.',
-			'image' => 'img/news/news_significado_emociones.jpg',
+			'image' => '/img/news/news_significado_emociones.jpg',
 			'posted_on' => '2020-01-25',
 		],
 
@@ -196,7 +196,7 @@ class NewsSeeder extends Seeder
 						¡Atención a las creencias limitadoras!
 						<br><br>
 						son concepciones de la vida que asumimos como totales y verdaderas, y en efecto actuamos acorde a estas. Entonces, la creencia que tengas de ti mismo impactará en tu confianza personal, por ejemplo: en la infancia tu madre te decía que eras “flojo”, lo que generó en ti una creencia, la cual incorporas como una verdad incuestionable: en efecto, te terminarás sintiendo y actuando como “flojo” y no invertirás energia para cambiarlo. Por ende la invitación está dirigida a analizar la raíz la creencia y de dónde viene, para luego analizar qué tan cierta es y qué hacer al respecto con ella.',
-			'image' => 'img/news/news_autoestima.jpg',
+			'image' => '/img/news/news_autoestima.jpg',
 			'posted_on' => '2020-01-25',
 		],
 
@@ -230,7 +230,7 @@ class NewsSeeder extends Seeder
 						Este trastorno tiene que ser tratado por un especialista de la salud mental, para poder sobrellevarlo de la mejor manera y mitigar los efectos que impactan en nuestro desempeño laboral y en las relaciones con nuestros compañeros, colaboradores o equipos de trabajo.
 						<br>
 						En una terapia se indaga sobre la raíz de este trastorno, y se diseña un plan de trabajo para así dar lineamientos sobre las actitudes que deben ser superadas y que emergen en terapia. También es una gran oportunidad para trabajar en ciertas competencias laborales que están más débiles y que impactan en el desempeño, metas u objetivos relacionados al mundo laboral, o bien en la vida familiar o social.',
-			'image' => 'img/news/news_born.jpg',
+			'image' => '/img/news/news_born.jpg',
 			'posted_on' => '2018-04-27',
 		],
 
@@ -258,7 +258,7 @@ class NewsSeeder extends Seeder
 						Para desterrarlas de la conciencia debes hacer un acto reparatorio de la acción que generó esa culpa, como por ejemplo: si fuiste infiel y esto te genera cierta culpa que se manifiesta en pensamientos o creencias de que “te van a engañar” o “dejar” por tu falta y lo significas casi como si te lo merecieras, has caído en el mecanismo punitivo y obsesivo de la culpa.
 						<br><br>
 						La forma de hacer un acto reparatorio no tiene que ver en este caso con el afectado, si no contigo mismo: debes pensar en lo que hiciste o sea reconocerlo a ti mismo -ya que es usual evitar pensar en ello- y poner en la balanza el disfrute que te produjo el acto infiel versus estos pensamientos obsesivos e intranquilizadores que te persiguen. Al comprender los resultantes quizás podrás hacer un compromiso de no volverlo a hacer, pero no solo por la consideración abstracta de que está mal, si no por las consecuencias que este acto produjo en ti.',
-			'image' => 'img/news/news_culpa.jpg',
+			'image' => '/img/news/news_culpa.jpg',
 			'posted_on' => '2020-01-25',
 		],
 	];

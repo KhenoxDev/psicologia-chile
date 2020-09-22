@@ -99,7 +99,7 @@ export default {
   },
   methods: {
     async getNews() {
-      const api = this.$store.state.appUrl + "/api/news";
+      const api = this.$store.getters.getAppUrl + "/api/news";
 
       try {
         let response = await axios.get(api);
