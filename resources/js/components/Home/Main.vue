@@ -8,7 +8,6 @@
         v-bind:color="'#f4b034'"
       ></loading-component>
     </transition>
-
     <div v-if="mainBanner.length > 0 && mainVideo.length > 0">
       <masthead :img-background="mainBanner[0].element" :url-vid="mainVideo[0].element"></masthead>
     </div>

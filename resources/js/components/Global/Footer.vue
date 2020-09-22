@@ -157,12 +157,8 @@ export default {
       type: String,
     },
   },
-  mounted() {
-    console.log();
-  },
   data() {
     return {
-      store: this.$store.state,
       modalSelected: "",
       about:
         "Somos una plataforma de encuentro entre psicólogos y pacientes donde se desarrollan las terapias de forma vanguardista e innovadora , dando mayor facilidad de comunicación entre ambos, rompiendo las barreras del tiempo y la distancia.",

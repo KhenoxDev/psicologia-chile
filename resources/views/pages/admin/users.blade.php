@@ -221,6 +221,7 @@
     @toastr_render
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.22/r-2.2.6/sc-2.0.3/datatables.min.js"
         defer></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.rut.min.js') }}" defer></script>
     <script>
         $(document).ready(function() {
             $(".passwordBtn").click(function() {
