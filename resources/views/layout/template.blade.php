@@ -21,6 +21,28 @@
         <footer-component url-base="{{ env('APP_URL') }}"></footer-component>
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            $('html').animate({
+                scrollTop: 0
+            }, 'slow'); // para IE, FF
+            $('body').animate({
+                scrollTop: 0
+            }, 'slow'); // Para Chrome
+
+            $(window).resize(function() {
+                $('html').animate({
+                    scrollTop: 0
+                }, 'slow'); // para IE, FF
+                $('body').animate({
+                    scrollTop: 0
+                }, 'slow'); // Para Chrome
+            });
+        });
+
+    </script>
 </body>
 
 </html>

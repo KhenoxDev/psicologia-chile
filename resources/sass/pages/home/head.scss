@@ -56,6 +56,15 @@
 	}
 }
 
+@include screen(310px, 700px) {
+	#mainHead {
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+
+	}
+}
+
+
 @include screen-min(768px) {
 	#mainHead {
 		.header-content {

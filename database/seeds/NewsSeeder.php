@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
+
 class NewsSeeder extends Seeder
 {
 	/**
@@ -14,8 +15,7 @@ class NewsSeeder extends Seeder
 	const NEWS_DATA = [
 		[
 			'title' => 'Por un equilibrio mental en tiempos de pandemia',
-			'author' => 'Psicólogo',
-			'author_image' => 'img/news/anonimo.png',
+			'author_id' => 1,
 			'content' => '<strong> Si bien es de suma relevancia respetar las medidas sanitarias para recuperar la
 						salud física, también es importante concentrar los esfuerzos en la salud mental. </strong>
 						<br><br>
@@ -54,8 +54,7 @@ class NewsSeeder extends Seeder
 
 		[
 			'title' => 'Expertos advierten una ola de trastornos postpandemia',
-			'author' => 'Psicólogo',
-			'author_image' => 'img/news/anonimo.png',
+			'author_id' => 1,
 			'content' => 'ANÁLISIS DE INVESTIGADORES DE LATINOAMÉRICA Y ESPAÑA
 						<br><br>
 						Los segmentos más propensos al estrés y la depresión, detallan, son los adultos mayores y los trabajadores de la salud. Más de mil profesionales tuvieron un encuentro virtual y coincidieron en que el impacto del covid-19 no tiene precedentes.
@@ -97,8 +96,7 @@ class NewsSeeder extends Seeder
 
 		[
 			'title' => 'El Lenguaje Humano',
-			'author' => 'Psicólogo',
-			'author_image' => 'img/news/anonimo.png',
+			'author_id' => 1,
 			'content' => 'El Lenguaje Humano
 						<br><br>
 						Rafael Echeverría describe a los Seres Humanos, como seres Lingüísticos, seres que viven en el Lenguaje.
@@ -126,8 +124,7 @@ class NewsSeeder extends Seeder
 
 		[
 			'title' => 'La Emocionalidad',
-			'author' => 'Psicólogo',
-			'author_image' => 'img/news/anonimo.png',
+			'author_id' => 1,
 			'content' => 'La Emocionalidad
 						<br><br>
 						¿Cuán relegada esta?
@@ -155,8 +152,7 @@ class NewsSeeder extends Seeder
 
 		[
 			'title' => 'Efectos del coronavirus por la rápida transición de la oficina a la casa',
-			'author' => 'Psicólogo',
-			'author_image' => 'img/news/anonimo.png',
+			'author_id' => 1,
 			'content' => '<strong> 72% de los colaboradores se ha sentido más estresado producto del teletrabajo </strong>
 						<br><br>
 						La crisis sanitaria ha cambiado la forma de trabajar a nivel mundial. La repentina y forzosa transición de la oficina a la casa no logró preparar a los colaboradores para este cambio, quienes luego de un mes y medio han empezado a sentir los efectos secundarios del trabajo remoto. Así lo reveló una reciente encuesta realizada por Trabajando.com en donde muestra que el 72% de las personas que realizan teletrabajo declaran sentirse más estresado debido a la carga laboral más los cuidados de la casa.
@@ -170,8 +166,7 @@ class NewsSeeder extends Seeder
 
 		[
 			'title' => 'El significado de las emociones',
-			'author' => 'Psicólogo',
-			'author_image' => 'img/news/anonimo.png',
+			'author_id' => 1,
 			'content' => 'Las emociones son estímulos producidos por el sistema nervioso central, las cuales se manifiestan a través de los sentidos. Esto genera un pensamiento o viceversa: un pensamiento puede generar una emoción. Las emociones, entonces, son estructuras dinámicas que provocan una reacción o una conducta determinada. Existen emociones básicas, las cuales están dotadas de sentimientos que constituyen o determinan a un ser humano a ser quién es y a actuar de determinada manera; en dicha constitución participan elementos valóricos y culturales que producen una dualidad entre valores sociales y ético- religiosos.
 						<br><br>
 						La cultura occidental no enseña el significado ni la importancia de las emociones y  las castra desde la infancia mediante alguna construcción o creencia limitadora, como por ejemplo “los niños no lloran”. Desde acá se produce una desconexión emocional en el niño, ya que no puede manifestar la pena y siente vergüenza de ello, entonces la reprime. Esta emoción no desaparece, si no que aparece con otra emoción que sí es aceptada a nivel social, como la rabia, pero es una rabia estéril, la cual se sostiene sobre pena e impotencia.
@@ -184,8 +179,7 @@ class NewsSeeder extends Seeder
 
 		[
 			'title' => 'La Autoestima y el Autoconocimiento',
-			'author' => 'Psicólogo',
-			'author_image' => 'img/news/anonimo.png',
+			'author_id' => 1,
 			'content' => 'La Autoestima y el Autoconocimiento
 						<br><br>
 						Abraham Maslow define la autoestima como “la necesidad de respeto y confianza en nosotros mismos, los seres humanos tenemos del deseo de ser aceptados y valorados por los demás”. La autoestima, entonces, se relaciona con la confianza al sí mismo.
@@ -208,8 +202,7 @@ class NewsSeeder extends Seeder
 
 		[
 			'title' => 'El Síndrome de burn out o Síndrome del quemado o cabeza Quemada',
-			'author' => 'Psicólogo',
-			'author_image' => 'img/news/anonimo.png',
+			'author_id' => 1,
 			'content' => 'A lo largo de la vida laboral nos enfrentamos a diversos trabajos, los cuales tienen diversas dificultades. En todo tipo de empleos -por más entretenidos o monótonos que éstos parezcan- es común que en  algún momento nos agotemos o aburramos. Existe un fenómeno llamado “Síndrome de burn out” o “Síndrome del quemado”, éste refiere al estrés que genera el trabajo, gatilla ansiedad y depresión.
 						<br><br>
 						<strong>Comencemos por definir el estrés</strong>
@@ -243,8 +236,7 @@ class NewsSeeder extends Seeder
 
 		[
 			'title' => '¿Qué es la culpa?',
-			'author' => 'Psicólogo',
-			'author_image' => 'img/news/anonimo.png',
+			'author_id' => 1,
 			'content' => 'La culpa y su relación con las emociones
 						<br><br>
 						Cuando quiebras una norma o creencia impuesta por un ente formador como la familia, la religión o la moral, se produce un pensamiento, generalmente obsesivo, sobre el suceso en el que se quiebra la norma. Esto genera un sentimiento de culpa, el que termina por provocar sensaciones desagradables en el cuerpo como malestar, indigestión o hasta vómitos.
@@ -276,8 +268,7 @@ class NewsSeeder extends Seeder
 		for ($i = 0; $i < count(self::NEWS_DATA); $i++) {
 			DB::table('news')->insert([
 				'title' => self::NEWS_DATA[$i]['title'],
-				'author' => self::NEWS_DATA[$i]['author'],
-				'author_image' => self::NEWS_DATA[$i]['author_image'],
+				'author_id' => self::NEWS_DATA[$i]['author_id'],
 				'content' => self::NEWS_DATA[$i]['content'],
 				'image' => self::NEWS_DATA[$i]['image'],
 				'posted_on' => self::NEWS_DATA[$i]['posted_on'],

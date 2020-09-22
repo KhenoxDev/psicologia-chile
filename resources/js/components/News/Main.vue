@@ -55,6 +55,9 @@ export default {
     urlApi: {
       type: String,
     },
+    urlAuthor: {
+      type: String,
+    },
   },
   components: {
     News,
@@ -89,6 +92,19 @@ export default {
     },
     async getNews() {
       const api = this.urlApi;
+
+      try {
+        let response = await axios.get(api);
+        for (let index = 0; index < response.data.data.length; index++) {
+          this.news.push(response.data.data[index]);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    },
+
+    async getAuthors(id) {
+      const api = this.$store.state.appUrl + "authors/" + id;
 
       try {
         let response = await axios.get(api);

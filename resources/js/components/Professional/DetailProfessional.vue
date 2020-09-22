@@ -80,7 +80,7 @@
                 <p>{{ pln.sesiones }} sesiones.</p>
               </div>
               <div class="card-footer">
-                <a href="http://">Lo quiero!</a>
+                <a :href="pln.contratar" target="_blank">Lo quiero!</a>
               </div>
             </div>
           </template>

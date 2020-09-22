@@ -121,7 +121,7 @@
 }
 
 @mixin screen ($min, $max) {
-	@media only screen and (min-width: $min) and (max-width: $max) {
+	@media only screen and (min-device-width: $min) and (max-device-width: $max) {
 		@content;
 	}
 }

@@ -18,6 +18,12 @@ class AuthorController extends Controller
 		$this->author = new Author();
 	}
 
+	public function getAuthorsJson($id)
+	{
+		$authors = $this->author::find($id);
+
+		return response()->json($authors);
+	}
 
 	public function store(Request $request)
 	{

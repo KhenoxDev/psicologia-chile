@@ -24,4 +24,5 @@ Route::middleware('throttle:60,1')->group(function () {
 	Route::get('generalities/banner', 'GeneralityController@getBannerApi')->name('api.generalities.banner');
 	Route::get('generalities/popup', 'GeneralityController@getPopupApi')->name('api.generalities.popup');
 	Route::get('generalities/business', 'GeneralityController@getBusinessApi')->name('api.generalities.business');
+	Route::get('authors/{id?}', 'AuthorController@getAuthorsJson')->name('api.authors');
 });
