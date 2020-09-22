@@ -2,6 +2,7 @@
 
 use App\Http\Middleware\SetCookie;
 use Illuminate\Routing\RouteGroup;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -168,6 +169,14 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
 /* Send email */
-Route::get('enviar', function () {
-	return '#';
+Route::get('send-mail', function () {
+
+	$details = [
+		'title' => 'Mail from ItSolutionStuff.com',
+		'body' => 'This is for testing email using smtp'
+	];
+
+	\Mail::to('jean.rodriguezr@gmail.com')->send(new \App\Mail\TestMail($details));
+
+	dd("Email is Sent.");
 });
