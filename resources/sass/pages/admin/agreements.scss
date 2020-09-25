@@ -1,0 +1,13 @@
+@import '../../mixins';
+@import '../../variables';
+
+.agreements-container {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+	margin-top: 2rem;
+	padding: 1rem;
+
+}

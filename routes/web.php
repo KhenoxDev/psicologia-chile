@@ -84,6 +84,15 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/admin/usuarios/desactivar/{id}', 'UserController@inactive')->name('admin.inactive.users');
 	Route::put('/admin/usuarios/editar-password', 'UserController@update_password')->name('admin.update_password.users');
 
+	/* Agreemnets */
+	Route::get('/admin/convenios', function () {
+		return view('pages.admin.agreements');
+	})->name('admin.agreements');
+	Route::get('/admin/convenios', 'AgreementController@index')->name('admin.agreements');
+	Route::post('/admin/convenios', 'AgreementController@store')->name('admin.store.agreements');
+	Route::get('/admin/convenios/eliminar/{id}', 'AgreementController@destroy')->name('admin.destroy.agreements');
+
+
 	/* News */
 	Route::get('/admin/noticias/subir', 'AuthorController@getAuthors')->name('admin.news');
 	Route::post('/admin/noticias', 'NewsController@store')->name('admin.store.news');

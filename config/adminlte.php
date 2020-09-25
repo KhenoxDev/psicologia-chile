@@ -255,6 +255,11 @@ return [
 			'icon' => 'fas fa-fw fa-user',
 		],
 		[
+			'text' => 'Convenios',
+			'url'  => 'admin/convenios',
+			'icon' => 'fas fa-fw fa-handshake',
+		],
+		[
 			'text' => 'Noticias',
 			'icon' => 'far fa-fw fa-newspaper',
 			'submenu' => [
