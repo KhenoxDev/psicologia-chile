@@ -15,6 +15,7 @@ export default new Vuex.Store({
 		mainLogo: [],
 		mainPayments: [],
 		mainBusiness: [],
+		agreementSelected: 0
 	},
 	mutations: {
 		setProfessional(state, payload) {
@@ -45,6 +46,9 @@ export default new Vuex.Store({
 		setMainBusiness(state, payload) {
 			return state.mainBusiness = payload;
 		},
+		setAgreementSelected(state, payload) {
+			return state.agreementSelected = payload;
+		}
 	},
 	actions: {
 		loadMainVideo: function ({
@@ -135,6 +139,9 @@ export default new Vuex.Store({
 	getters: {
 		getAppUrl: (state, getters) => {
 			return localStorage.getItem('appurl')
+		},
+		getAgreement: (state, getters) => {
+			return state.agreementSelected;
 		}
 	}
 });

@@ -1,8 +1,6 @@
 <template>
   <div id="mainCovenants" class="container mt-4 mb-4">
-    <span class="title--section">
-      <strong>Con</strong>venios
-    </span>
+    <span class="title--section"> <strong>Con</strong>venios </span>
     <hr class="line--separator" />
     <vueper-slides
       class="no-shadow"
@@ -13,17 +11,80 @@
       slide-multiple
       :touchable="false"
     >
-      <vueper-slide v-for="slide in slides" :key="slide.id" :style="'margin-bottom:' + ['1rem']">
+      <vueper-slide
+        v-for="slide in slides"
+        :key="slide.id"
+        :style="'margin-bottom:' + ['1rem']"
+      >
         <template v-slot:content>
           <!-- card card-body -->
           <div class="card--covenants">
-            <a :href="slide.urlCovenants" target="_blank">
-              <img class="img-fluid" :src="slide.image" :alt="slide.imageDesc" />
+            <a
+              href="javascript:void(0)"
+              target="_blank"
+              @click="getAgreement(slide.id)"
+              data-toggle="modal"
+              data-target="#modalConvenant"
+            >
+              <img class="img-fluid" :src="slide.img" :alt="slide.title" />
             </a>
           </div>
         </template>
       </vueper-slide>
     </vueper-slides>
+    <div
+      class="modal fade"
+      id="modalConvenant"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modalConvenantLabel"
+      aria-hidden="true"
+    >
+      <div
+        v-if="agreementSelected.length > 0"
+        class="modal-dialog"
+        role="document"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalConvenantLabel">
+              {{ agreementSelected[0].title }}
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <span class="h4">Descripción</span>
+            <hr />
+            <p v-html="agreementSelected[0].description"></p>
+            <span class="h4">¿Cómo funciona?</span>
+            <hr />
+            <p v-html="agreementSelected[0].conditions"></p>
+            <a
+              :href="this.$store.getters.getAppUrl + agreementSelected[0].doc"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Términos y condiciones</a
+            >
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -75,66 +136,37 @@ export default {
           arrows: false,
         },
       },
-      slides: [
-        {
-          title: "Slide #1",
-          content: "Slide content.",
-          image: "img/covenants/banco_chile3.png",
-          imageDesc: "banco_chile",
-          urlCovenants: "#",
-        },
-        {
-          title: "Slide #2",
-          content: "Slide content.",
-          image: "img/covenants/banco_security.jpg",
-          imageDesc: "banco_security",
-          urlCovenants: "#",
-        },
-        {
-          title: "Slide #3",
-          content: "Slide content.",
-          image: "img/covenants/banco_itau3.png",
-          imageDesc: "banco_itau",
-          urlCovenants: "#",
-        },
-        {
-          title: "Slide #4",
-          content: "Slide content.",
-          image: "img/covenants/colegio_psicologos2.jpg",
-          imageDesc: "colegio_psicologos",
-          urlCovenants: "#",
-        },
-        {
-          title: "Slide #5",
-          content: "Slide content.",
-          image: "img/covenants/claro.png",
-          imageDesc: "claro",
-          urlCovenants: "#",
-        },
-
-        {
-          title: "Slide #6",
-          content: "Slide content.",
-          image: "img/covenants/sky.png",
-          imageDesc: "sky",
-          urlCovenants: "#",
-        },
-        {
-          title: "Slide #7",
-          content: "Slide content.",
-          image: "img/covenants/fldsmith.png",
-          imageDesc: "fldsmith",
-          urlCovenants: "#",
-        },
-        {
-          title: "Slide #8",
-          content: "Slide content.",
-          image: "img/covenants/achs3.png",
-          imageDesc: "achs",
-          urlCovenants: "#",
-        },
-      ],
+      slides: [],
+      agreementSelected: [],
     };
   },
+  mounted() {
+    this.getAgreements();
+  },
+  methods: {
+    async getAgreements() {
+      const api = this.$store.getters.getAppUrl + "/api/agreement";
+
+      try {
+        let response = await axios.get(api);
+        for (let index = 0; index < response.data.length; index++) {
+          this.slides.push(response.data[index]);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    getAgreement(id) {
+      this.agreementSelected = [];
+      let aux = this.slides.find(function (item) {
+        return item.id == id;
+      });
+
+      console.log(aux);
+
+      this.agreementSelected.push(aux);
+    },
+  },
+  computed: {},
 };
 </script>
