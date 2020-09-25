@@ -22,4 +22,58 @@ class FrequentlyQuestionController extends Controller
 
 		return response()->json($row);
 	}
+
+	public function index()
+	{
+		$questions = $this->question::all();
+
+		return view('pages.admin.questions', compact('questions'));
+	}
+
+
+	public function store(Request $request)
+	{
+		$this->question->title = $request->input('pregunta');
+		$this->question->answer = $request->input('respuesta');
+
+		$this->question->save();
+
+		return back();
+	}
+
+	public function edit(Request $request)
+	{
+		if ($request->ajax()) {
+			$questions = $this->question::find($request->id);
+
+			return response()->json($questions);
+		}
+
+		toastr()->error('No tienes permisos para realizar esta acción.');
+		return back();
+	}
+
+
+	public function update(Request $request)
+	{
+		$current = $this->question::find($request->input('id'));
+
+		$current->title = $request->input('pregunta');
+		$current->answer = $request->input('respuesta');
+
+		$current->save();
+
+		$questions = $this->question::all();
+
+		return view('pages.admin.questions', compact('questions'));
+	}
+
+
+	public function delete($id)
+	{
+		$erase = $this->question::find($id);
+		$erase->delete();
+
+		return back();
+	}
 }

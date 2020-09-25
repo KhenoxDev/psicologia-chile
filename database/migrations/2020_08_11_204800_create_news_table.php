@@ -16,15 +16,16 @@ class CreateNewsTable extends Migration
 		Schema::create('news', function (Blueprint $table) {
 			$table->id()->autoIncrement();
 			$table->string('title');
-			$table->string('author');
-			$table->string('author_image');
+			$table->unsignedBigInteger('author_id');
 			$table->longText('content');
 			$table->string('image');
 			$table->boolean('is_posted')->default(0);
-			$table->date('posted_on');
+			$table->date('posted_on')->nullable();
 			$table->string('updated_by')->nullable();
 			$table->timestamp('created_at')->useCurrent();
 			$table->timestamp('updated_at')->useCurrent();
+
+			$table->foreign('author_id')->references('id')->on('author');
 		});
 	}
 

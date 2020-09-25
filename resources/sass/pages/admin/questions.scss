@@ -1,0 +1,10 @@
+@import '../../mixins';
+@import '../../variables';
+
+.questions-container {
+	background-color: $white;
+	border-radius: 0.5rem;
+	width: 100%;
+	margin-top: 2rem;
+	padding: 3rem;
+}

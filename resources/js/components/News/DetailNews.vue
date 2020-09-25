@@ -13,7 +13,7 @@
         <a href="/noticias" id="back--button">
           <i class="fas fa-arrow-left"></i> Volver
         </a>
-        <div class="image--container" :style="'background-image: url(../' + news.image + ');'"></div>
+        <div class="image--container" :style="'background-image: url(' + news.image + ');'"></div>
 
         <div class="p-4">
           <div class="title--container">
@@ -25,7 +25,7 @@
               <div class="author--container">
                 <span class="span--author">
                   {{
-                  news.author
+                  news.author_name
                   }}
                 </span>
               </div>
@@ -41,7 +41,7 @@
 
             <div class="pic--content">
               <div class="authorpic--container">
-                <img :src="'../' + news.author_image" alt />
+                <img :src="news.author_image" alt />
               </div>
             </div>
           </div>
@@ -55,7 +55,7 @@
               <li>
                 <a href>
                   <img
-                    src="http://127.0.0.1:8000/img/footer/social-network/facebook.svg"
+                    :src="this.$store.getters.getAppUrl + '/img/footer/social-network/facebook.svg'"
                     alt="Facebook"
                   />
                 </a>
@@ -63,7 +63,7 @@
               <li>
                 <a href>
                   <img
-                    src="http://127.0.0.1:8000/img/footer/social-network/instagram.svg"
+                    :src="this.$store.getters.getAppUrl + '/img/footer/social-network/instagram.svg'"
                     alt="Instagram"
                   />
                 </a>
@@ -71,7 +71,7 @@
               <li>
                 <a href>
                   <img
-                    src="http://127.0.0.1:8000/img/footer/social-network/youtube.svg"
+                    :src="this.$store.getters.getAppUrl + '/img/footer/social-network/youtube.svg'"
                     alt="Youtube"
                   />
                 </a>
@@ -79,7 +79,7 @@
               <li>
                 <a href>
                   <img
-                    src="http://127.0.0.1:8000/img/footer/social-network/linkedin.svg"
+                    :src="this.$store.getters.getAppUrl + '/img/footer/social-network/linkedin.svg'"
                     alt="Linkedin"
                   />
                 </a>
@@ -87,7 +87,7 @@
               <li>
                 <a href>
                   <img
-                    src="http://127.0.0.1:8000/img/footer/social-network/whatsapp.svg"
+                    :src="this.$store.getters.getAppUrl + '/img/footer/social-network/whatsapp.svg'"
                     alt="Whatsapp"
                   />
                 </a>
@@ -124,16 +124,21 @@ export default {
     urlApi: {
       type: String,
     },
+    urlAuthor: {
+      type: String,
+    },
   },
   data() {
     return {
       isLoading: true,
       fullPage: true,
       news: [],
+      authors: [],
     };
   },
   mounted() {
     this.onLoad();
+    this.getAuthors();
     this.getNews();
   },
   methods: {
@@ -150,6 +155,28 @@ export default {
         let response = await axios.get(api);
 
         this.news = response.data;
+        let aux = this.$store.getters.getAppUrl + this.news.image;
+        this.news.image = aux;
+
+        for (let j = 0; j < this.authors.length; j++) {
+          if (this.news.author_id == this.authors[j].id) {
+            this.news.author_name = this.authors[j].name;
+            this.news.author_image =
+              this.$store.getters.getAppUrl + this.authors[j].image;
+          }
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    async getAuthors() {
+      const api = this.urlAuthor;
+
+      try {
+        let response = await axios.get(api);
+        for (let index = 0; index < response.data.length; index++) {
+          this.authors.push(response.data[index]);
+        }
       } catch (error) {
         console.log(error);
       }

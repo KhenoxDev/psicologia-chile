@@ -16,7 +16,7 @@
               class="video--presentation"
               width="560"
               height="315"
-              :src="urlVid"
+              :src="urlVid + '?autoplay=1&mute=1&playlist=TrREbV49fuU&loop=1'"
               frameborder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen

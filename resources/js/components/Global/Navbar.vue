@@ -4,7 +4,12 @@
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container box_1620">
           <a class="navbar-brand logo_h" href="/">
-            <img :src="imgLogo" alt="Psicología Chile" />
+            <img
+              v-if="this.$store.state.mainLogo.length > 0"
+              :src="this.$store.state.mainLogo[0].file_path"
+              :alt="this.$store.state.mainLogo[0].name"
+            />
+            <img v-else :src="imgLogo" alt="Psicología Chile" />
           </a>
           <button
             class="hamburger hamburger--collapse"

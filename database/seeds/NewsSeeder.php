@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
+
 class NewsSeeder extends Seeder
 {
 	/**
@@ -14,8 +15,7 @@ class NewsSeeder extends Seeder
 	const NEWS_DATA = [
 		[
 			'title' => 'Por un equilibrio mental en tiempos de pandemia',
-			'author' => 'Psicólogo',
-			'author_image' => 'img/news/anonimo.png',
+			'author_id' => 1,
 			'content' => '<strong> Si bien es de suma relevancia respetar las medidas sanitarias para recuperar la
 						salud física, también es importante concentrar los esfuerzos en la salud mental. </strong>
 						<br><br>
@@ -48,14 +48,13 @@ class NewsSeeder extends Seeder
 						con constantes ensayos a distancia, estudiando sus instrumentos en sus casas y creando
 						nuevas composiciones, pues consideran, de forma correcta, que su labor se asimila a la
 						de un deportista de elite.',
-			'image' => 'img/news/news_piedras.png',
+			'image' => '/img/news/news_piedras.png',
 			'posted_on' => '2020-06-11',
 		],
 
 		[
 			'title' => 'Expertos advierten una ola de trastornos postpandemia',
-			'author' => 'Psicólogo',
-			'author_image' => 'img/news/anonimo.png',
+			'author_id' => 1,
 			'content' => 'ANÁLISIS DE INVESTIGADORES DE LATINOAMÉRICA Y ESPAÑA
 						<br><br>
 						Los segmentos más propensos al estrés y la depresión, detallan, son los adultos mayores y los trabajadores de la salud. Más de mil profesionales tuvieron un encuentro virtual y coincidieron en que el impacto del covid-19 no tiene precedentes.
@@ -91,14 +90,13 @@ class NewsSeeder extends Seeder
 						En el caso de los profesionales de la salud “en primera línea de combate de la pandemia” dijo que van a sufrir “una epidemia de síndrome de estrés postraumático” y es “necesario estar atentos y preparar a la población para esta situación”. Cetkovich puso al hospital Carlos III de Madrid como referencia para los países latinoamericanos por haber encargado a un grupo de psiquiatras la tarea de atender a los trabajadores de la salud del centro y ayudarlos a lidiar con el estrés y sus sentimientos.
 						<br><br>
 						El español Pedro M. Sánchez Gómez, del hospital psiquiátrico de Alava (Osakidetza) y profesor de la Universidad del País Vasco, destacó los obstáculos que encontraron en España en el momento álgido de la pandemia para tratar a pacientes con cuadros depresivos mayores en medio de la cuarentena. “Prácticamente tuvimos que reinventarnos y generar nuevos protocolos de atención para los pacientes con trastornos de salud mental, como por ejemplo el uso de la telemedicina, programas de prevención de hospitalizaciones, brindar asesoría a los cuidadores y familiares para que funcionaran como coterapeutas, e incluso hacer intervenciones domiciliarias”.',
-			'image' => 'img/news/news_cerebro.jpeg',
+			'image' => '/img/news/news_cerebro.jpeg',
 			'posted_on' => '2020-06-09',
 		],
 
 		[
 			'title' => 'El Lenguaje Humano',
-			'author' => 'Psicólogo',
-			'author_image' => 'img/news/anonimo.png',
+			'author_id' => 1,
 			'content' => 'El Lenguaje Humano
 						<br><br>
 						Rafael Echeverría describe a los Seres Humanos, como seres Lingüísticos, seres que viven en el Lenguaje.
@@ -120,14 +118,13 @@ class NewsSeeder extends Seeder
 						Si quieres cambiar los resultados es imperante saber que te dices, y luego descubrir porque te dices o te cuentas esa historia.
 						<br><br>
 						El primer paso de la Transformación, es hacer consciente aquello que no estas viendo.',
-			'image' => 'img/news/news_lenguaje.png',
+			'image' => '/img/news/news_lenguaje.png',
 			'posted_on' => '2020-06-05',
 		],
 
 		[
 			'title' => 'La Emocionalidad',
-			'author' => 'Psicólogo',
-			'author_image' => 'img/news/anonimo.png',
+			'author_id' => 1,
 			'content' => 'La Emocionalidad
 						<br><br>
 						¿Cuán relegada esta?
@@ -149,14 +146,13 @@ class NewsSeeder extends Seeder
 						Define que te hace sentir dolor o frustración, averigua como aparecen estos sentimientos y emociones y evítalos o limita los eventos que los producen.
 						<br><br>
 						Escucha tus emociones, cuanto más intentes suprimir o evadir una emoción, más fuerte se hace, pero una vez que la escuchas, suele desaparecer.',
-			'image' => 'img/news/news_flor.png',
+			'image' => '/img/news/news_flor.png',
 			'posted_on' => '2020-05-08',
 		],
 
 		[
 			'title' => 'Efectos del coronavirus por la rápida transición de la oficina a la casa',
-			'author' => 'Psicólogo',
-			'author_image' => 'img/news/anonimo.png',
+			'author_id' => 1,
 			'content' => '<strong> 72% de los colaboradores se ha sentido más estresado producto del teletrabajo </strong>
 						<br><br>
 						La crisis sanitaria ha cambiado la forma de trabajar a nivel mundial. La repentina y forzosa transición de la oficina a la casa no logró preparar a los colaboradores para este cambio, quienes luego de un mes y medio han empezado a sentir los efectos secundarios del trabajo remoto. Así lo reveló una reciente encuesta realizada por Trabajando.com en donde muestra que el 72% de las personas que realizan teletrabajo declaran sentirse más estresado debido a la carga laboral más los cuidados de la casa.
@@ -164,28 +160,26 @@ class NewsSeeder extends Seeder
 						Nuestra Psicóloga clínica y co-founder de Psicología Chile, Andrea Rojas Trincado, señaló a diario El Mercurio que la mayor dificultad está en compatibilizar casa y trabajo: “Esto implica un cambio en las prácticas cotidianas, ya que normalmente tendemos a pensar la casa y el trabajo como esferas importantes, pero separadas. Tener espacios reservados para diferentes actividades ayuda en la planificación de nuestras vidas”, dijo nuestra experta.
 						<br><br>
 						Cabe destacar que el estudio reveló preocupantes cifras. Entre las razones que les generan estrés, un 59% de los encuestados dice que les ha aumentado la carga laboral; un 54%, que no les alcanza el tiempo; un 49% siente inseguridad laboral, y un 48% siente más presión de sus jefaturas. Sobre los distractores, el repartir tiempo entre la casa y el trabajo (35%) es la principal razón que no facilita una conexión para lograr un buen teletrabajo.',
-			'image' => 'img/news/news_teletrabajo.jpeg',
+			'image' => '/img/news/news_teletrabajo.jpeg',
 			'posted_on' => '2020-05-04',
 		],
 
 		[
 			'title' => 'El significado de las emociones',
-			'author' => 'Psicólogo',
-			'author_image' => 'img/news/anonimo.png',
+			'author_id' => 1,
 			'content' => 'Las emociones son estímulos producidos por el sistema nervioso central, las cuales se manifiestan a través de los sentidos. Esto genera un pensamiento o viceversa: un pensamiento puede generar una emoción. Las emociones, entonces, son estructuras dinámicas que provocan una reacción o una conducta determinada. Existen emociones básicas, las cuales están dotadas de sentimientos que constituyen o determinan a un ser humano a ser quién es y a actuar de determinada manera; en dicha constitución participan elementos valóricos y culturales que producen una dualidad entre valores sociales y ético- religiosos.
 						<br><br>
 						La cultura occidental no enseña el significado ni la importancia de las emociones y  las castra desde la infancia mediante alguna construcción o creencia limitadora, como por ejemplo “los niños no lloran”. Desde acá se produce una desconexión emocional en el niño, ya que no puede manifestar la pena y siente vergüenza de ello, entonces la reprime. Esta emoción no desaparece, si no que aparece con otra emoción que sí es aceptada a nivel social, como la rabia, pero es una rabia estéril, la cual se sostiene sobre pena e impotencia.
 						<br>
 						Otro ejemplo: la creencia limitadora “el que te quiere te aporrea”. Esta frase normativiza el acto de violencia, por lo que cuando recibes una agresión reiterativa, esto genera emociones doble vinculantes: por una parte, felicidad porque “te sientes querido”; por la otra, rabia frente al abuso y violencia. He acá la importancia de reconocer nuestras emociones y reflexionar bajo qué contextos, con qué personas y en qué circunstancias estas se manifiestan en ti.
 						Para Julio Olalla, la reflexión debe hacerse desde la conciencia de que somos un tipo de observador, e incluye el esfuerzo de observarnos observando. El lenguaje de las emociones y el cuerpo son distinciones fundamentales que hemos desarrollado para posibilitar esa observación. El lenguaje permite distinguir narrativas, como los ejemplos anteriores, las emociones nos disponen a mirar de cierta manera y el cuerpo nos permite percibir a través de los sentidos.',
-			'image' => 'img/news/news_significado_emociones.jpg',
+			'image' => '/img/news/news_significado_emociones.jpg',
 			'posted_on' => '2020-01-25',
 		],
 
 		[
 			'title' => 'La Autoestima y el Autoconocimiento',
-			'author' => 'Psicólogo',
-			'author_image' => 'img/news/anonimo.png',
+			'author_id' => 1,
 			'content' => 'La Autoestima y el Autoconocimiento
 						<br><br>
 						Abraham Maslow define la autoestima como “la necesidad de respeto y confianza en nosotros mismos, los seres humanos tenemos del deseo de ser aceptados y valorados por los demás”. La autoestima, entonces, se relaciona con la confianza al sí mismo.
@@ -202,14 +196,13 @@ class NewsSeeder extends Seeder
 						¡Atención a las creencias limitadoras!
 						<br><br>
 						son concepciones de la vida que asumimos como totales y verdaderas, y en efecto actuamos acorde a estas. Entonces, la creencia que tengas de ti mismo impactará en tu confianza personal, por ejemplo: en la infancia tu madre te decía que eras “flojo”, lo que generó en ti una creencia, la cual incorporas como una verdad incuestionable: en efecto, te terminarás sintiendo y actuando como “flojo” y no invertirás energia para cambiarlo. Por ende la invitación está dirigida a analizar la raíz la creencia y de dónde viene, para luego analizar qué tan cierta es y qué hacer al respecto con ella.',
-			'image' => 'img/news/news_autoestima.jpg',
+			'image' => '/img/news/news_autoestima.jpg',
 			'posted_on' => '2020-01-25',
 		],
 
 		[
 			'title' => 'El Síndrome de burn out o Síndrome del quemado o cabeza Quemada',
-			'author' => 'Psicólogo',
-			'author_image' => 'img/news/anonimo.png',
+			'author_id' => 1,
 			'content' => 'A lo largo de la vida laboral nos enfrentamos a diversos trabajos, los cuales tienen diversas dificultades. En todo tipo de empleos -por más entretenidos o monótonos que éstos parezcan- es común que en  algún momento nos agotemos o aburramos. Existe un fenómeno llamado “Síndrome de burn out” o “Síndrome del quemado”, éste refiere al estrés que genera el trabajo, gatilla ansiedad y depresión.
 						<br><br>
 						<strong>Comencemos por definir el estrés</strong>
@@ -237,14 +230,13 @@ class NewsSeeder extends Seeder
 						Este trastorno tiene que ser tratado por un especialista de la salud mental, para poder sobrellevarlo de la mejor manera y mitigar los efectos que impactan en nuestro desempeño laboral y en las relaciones con nuestros compañeros, colaboradores o equipos de trabajo.
 						<br>
 						En una terapia se indaga sobre la raíz de este trastorno, y se diseña un plan de trabajo para así dar lineamientos sobre las actitudes que deben ser superadas y que emergen en terapia. También es una gran oportunidad para trabajar en ciertas competencias laborales que están más débiles y que impactan en el desempeño, metas u objetivos relacionados al mundo laboral, o bien en la vida familiar o social.',
-			'image' => 'img/news/news_born.jpg',
+			'image' => '/img/news/news_born.jpg',
 			'posted_on' => '2018-04-27',
 		],
 
 		[
 			'title' => '¿Qué es la culpa?',
-			'author' => 'Psicólogo',
-			'author_image' => 'img/news/anonimo.png',
+			'author_id' => 1,
 			'content' => 'La culpa y su relación con las emociones
 						<br><br>
 						Cuando quiebras una norma o creencia impuesta por un ente formador como la familia, la religión o la moral, se produce un pensamiento, generalmente obsesivo, sobre el suceso en el que se quiebra la norma. Esto genera un sentimiento de culpa, el que termina por provocar sensaciones desagradables en el cuerpo como malestar, indigestión o hasta vómitos.
@@ -266,7 +258,7 @@ class NewsSeeder extends Seeder
 						Para desterrarlas de la conciencia debes hacer un acto reparatorio de la acción que generó esa culpa, como por ejemplo: si fuiste infiel y esto te genera cierta culpa que se manifiesta en pensamientos o creencias de que “te van a engañar” o “dejar” por tu falta y lo significas casi como si te lo merecieras, has caído en el mecanismo punitivo y obsesivo de la culpa.
 						<br><br>
 						La forma de hacer un acto reparatorio no tiene que ver en este caso con el afectado, si no contigo mismo: debes pensar en lo que hiciste o sea reconocerlo a ti mismo -ya que es usual evitar pensar en ello- y poner en la balanza el disfrute que te produjo el acto infiel versus estos pensamientos obsesivos e intranquilizadores que te persiguen. Al comprender los resultantes quizás podrás hacer un compromiso de no volverlo a hacer, pero no solo por la consideración abstracta de que está mal, si no por las consecuencias que este acto produjo en ti.',
-			'image' => 'img/news/news_culpa.jpg',
+			'image' => '/img/news/news_culpa.jpg',
 			'posted_on' => '2020-01-25',
 		],
 	];
@@ -276,8 +268,7 @@ class NewsSeeder extends Seeder
 		for ($i = 0; $i < count(self::NEWS_DATA); $i++) {
 			DB::table('news')->insert([
 				'title' => self::NEWS_DATA[$i]['title'],
-				'author' => self::NEWS_DATA[$i]['author'],
-				'author_image' => self::NEWS_DATA[$i]['author_image'],
+				'author_id' => self::NEWS_DATA[$i]['author_id'],
 				'content' => self::NEWS_DATA[$i]['content'],
 				'image' => self::NEWS_DATA[$i]['image'],
 				'posted_on' => self::NEWS_DATA[$i]['posted_on'],

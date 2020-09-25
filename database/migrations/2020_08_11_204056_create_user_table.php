@@ -16,12 +16,15 @@ class CreateUserTable extends Migration
 		Schema::create('user', function (Blueprint $table) {
 			$table->id()->autoIncrement();
 			$table->string('rut')->unique();
+			$table->string('name');
+			$table->string('last_name')->nullable();
 			$table->string('password');
-			$table->unsignedBigInteger('id_rol');
+			$table->unsignedBigInteger('rol_id');
+			$table->boolean('is_active')->default(0);
 			$table->timestamp('created_at')->useCurrent();
 			$table->timestamp('updated_at')->useCurrent();
 
-			$table->foreign('id_rol')->references('id')->on('rol');
+			$table->foreign('rol_id')->references('id')->on('rol');
 		});
 	}
 

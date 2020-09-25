@@ -292,7 +292,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <a :href="urlProfessional">Contratar</a>
+            <a :href="urlProfessional" target="_blank">Contratar</a>
           </div>
         </div>
       </div>

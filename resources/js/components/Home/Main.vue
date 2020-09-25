@@ -8,10 +8,22 @@
         v-bind:color="'#f4b034'"
       ></loading-component>
     </transition>
-    <masthead
-      :img-background="imgBackground"
-      url-vid="https://www.youtube.com/embed/TrREbV49fuU?autoplay=1&mute=1&playlist=TrREbV49fuU&loop=1"
-    ></masthead>
+
+    <div v-if="mainBanner.length > 0 && mainVideo.length > 0">
+      <masthead :img-background="mainBanner[0].element" :url-vid="mainVideo[0].element"></masthead>
+    </div>
+    <div v-else-if="mainVideo.length > 0 && mainBanner.lenght == 0">
+      <masthead :img-background="imgBackground" :url-vid="mainVideo[0].element"></masthead>
+    </div>
+    <div v-else-if="mainBanner.length > 0 && mainVideo.length == 0">
+      <masthead
+        :img-background="mainBanner[0].element"
+        url-vid="https://www.youtube.com/embed/TrREbV49fuU"
+      ></masthead>
+    </div>
+    <div v-else>
+      <masthead :img-background="imgBackground" url-vid="https://www.youtube.com/embed/TrREbV49fuU"></masthead>
+    </div>
     <div class="bg--white">
       <news></news>
       <video-component></video-component>
@@ -44,6 +56,8 @@ import FrequentlyQuestions from "./FrequentlyQuestions";
 import News from "./News";
 import WereNews from "./WeWereNews";
 import Covenants from "./Covenants";
+import { mapState } from "vuex";
+import { setTimeout } from "timers";
 
 export default {
   props: {
@@ -58,6 +72,7 @@ export default {
     return {
       isLoading: true,
       fullPage: true,
+      linkVideo: "",
     };
   },
   components: {
@@ -73,9 +88,27 @@ export default {
     WereNews,
     Covenants,
   },
+  created() {
+    this.$store.dispatch("loadMainVideo");
+    this.$store.dispatch("loadMainBanner");
+    this.$store.dispatch("loadMainPopup");
+    this.$store.dispatch("loadMainLogo");
+    this.$store.commit("setAppUrl", this.appUrl);
+  },
   mounted() {
     this.onLoad();
-    this.$store.commit("setAppUrl", this.appUrl);
+    setTimeout(() => {
+      if (this.mainPopup.length > 0) {
+        this.$swal({
+          width: 1000,
+          imageUrl: this.mainPopup[0].element,
+          imageAlt: this.mainPopup[0].module,
+          imageHeight: 500,
+          showConfirmButton: false,
+          timer: 8000,
+        });
+      }
+    }, 2000);
   },
   methods: {
     onLoad() {
@@ -85,5 +118,8 @@ export default {
       }, 2000);
     },
   },
+  computed: mapState(["mainVideo", "mainBanner", "mainPopup"]),
 };
 </script>
+<style lang="scss" scoped>
+</style>

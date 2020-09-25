@@ -1,0 +1,31 @@
+@import '../../mixins';
+@import '../../variables';
+
+.privacy-container {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+	margin-top: 2rem;
+	padding: 1rem;
+
+	form {
+		width: 100%;
+
+		.ck-editor__editable {
+			height: 35rem !important;
+			width: 100% !important;
+		}
+	}
+
+	.no-results {
+		font-size: 1rem;
+		color: $dark;
+		font-weight: bold;
+		margin: 1rem;
+	}
+
+
+
+}

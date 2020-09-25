@@ -1,0 +1,40 @@
+@import '../../mixins';
+@import '../../variables';
+
+.videos-container {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	background-color: $white;
+	border-radius: 0.5rem;
+	width: 100%;
+	margin-top: 2rem;
+	padding: 1rem;
+
+	.no-results {
+		font-size: 1rem;
+		color: $dark;
+		font-weight: bold;
+		margin: 1rem;
+	}
+
+	.video-card {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		border-radius: 1rem;
+		border: 1px $dark solid;
+		padding: 1rem;
+		margin: 1rem;
+
+		iframe {
+			margin-bottom: auto;
+		}
+
+		&.active {
+			border: 2px $orange solid;
+		}
+	}
+}

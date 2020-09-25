@@ -142,7 +142,6 @@ export default {
 
       try {
         let response = await axios.get(api);
-        console.log(response.data.items);
         for (let i = 0; i < 2; i++) {
           this.plans.push(response.data.items[i]);
         }
