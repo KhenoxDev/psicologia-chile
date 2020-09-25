@@ -16,8 +16,8 @@ class CreateAgreementsTable extends Migration
 		Schema::create('agreements', function (Blueprint $table) {
 			$table->id()->autoIncrement();
 			$table->string('title');
-			$table->string('description')->nullable();
-			$table->string('conditions')->nullable();
+			$table->text('description')->nullable();
+			$table->text('conditions')->nullable();
 			$table->string('doc')->nullable();
 			$table->boolean('is_active')->default(1);
 			$table->timestamp('created_at')->useCurrent();
