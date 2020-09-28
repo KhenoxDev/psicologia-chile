@@ -166,3 +166,10 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::put('/admin/politicas-privacidad/actualizar', 'PrivacyController@update')->name('admin.update.privacy');
 	Route::get('/admin/politicas-privacidad/eliminar/{id}', 'PrivacyController@destroy')->name('admin.destroy.privacy');
 });
+
+Route::get("/send-email", "EmailController@sendEmailToUser");
+Route::get("/mail", function () {
+	return view('email.newsletter-mail');
+});
+/* Mailing */
+Route::post("/trabaja-con-nosotros", "EmailController@sendMailWorksWithUs")->name("mailing.workus");
