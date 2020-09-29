@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row m-4">
             <div class="col-md-6 m-auto text-center">
-                <img src="{{ public_path('img/navbar/logo.png') }}" alt="">
+                <img src="{{ env('APP_URL') }}/img/navbar/logo.png" alt="">
             </div>
         </div>
         <div class="row">

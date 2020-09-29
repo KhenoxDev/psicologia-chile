@@ -24,10 +24,10 @@
                 <p> Hay una persona interesada en hacer un voluntariado, te dejo sus datos! </p>
                 <hr>
                 <ul>
-                    <li>Nombre: Bla bla</li>
-                    <li>Correo: blabla@blabla.cl</li>
-                    <li>Teléfono: blabla@blabla.cl</li>
-                    <li>Mensaje: Blablablalbla</li>
+                    <li>Nombre: {{ $name }}</li>
+                    <li>Correo: {{ $email }}</li>
+                    <li>Teléfono: {{ $phone }}</li>
+                    <li>Mensaje: {!! $msg !!}</li>
                 </ul>
                 <hr>
                 <small>Toda la información se encuentra almacenada en una base de datos, por lo que, si se requiere
