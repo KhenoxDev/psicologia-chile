@@ -209,7 +209,7 @@ export default {
         },
         {
           title: "Políticas de privacidad",
-          link: "/politicas-privacidad",
+          link: "/politica-de-privacidad-y-cookies",
           modal: false,
         },
       ],
