@@ -182,3 +182,4 @@ Route::get("/mail", function () {
 });
 /* Mailing */
 Route::post("/trabaja-con-nosotros", "EmailController@sendMailWorksWithUs")->name("mailing.workus");
+Route::post("/voluntario", "EmailController@sendMailVoluntary")->name("mailing.voluntary");
