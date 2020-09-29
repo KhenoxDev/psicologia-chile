@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row m-4">
             <div class="col-md-6 m-auto text-center">
-                <img src="{{ asset('img/navbar/logo.png') }}" alt="">
+                <img src="{{ env('APP_URL') }}/img/navbar/logo.png" alt="">
             </div>
         </div>
         <div class="row">
@@ -29,6 +29,7 @@
                     <li>Teléfono: {{ $phone }}</li>
                     <li>Mensaje: {!! $msg !!}</li>
                 </ul>
+                <br>
                 <hr>
                 <small>Toda la información se encuentra almacenada en una base de datos, por lo que, si se requiere
                     dicha información se debe solicitar al área de soporte.</small>

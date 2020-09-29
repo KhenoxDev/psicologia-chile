@@ -15,8 +15,8 @@ class CreateNewsletterTable extends Migration
 	{
 		Schema::create('newsletter', function (Blueprint $table) {
 			$table->id()->autoIncrement();
-			$table->string('name');
-			$table->string('email');
+			$table->string('name')->nullable();
+			$table->string('email')->unique();
 			$table->boolean('is_active')->default(1);
 			$table->timestamp('created_at')->useCurrent();
 			$table->timestamp('updated_at')->useCurrent();

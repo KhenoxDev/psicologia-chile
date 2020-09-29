@@ -21,7 +21,8 @@
                       data-target="#modalForm"
                       data-toggle="modal"
                       @click="toggleModal(nav.title)"
-                    >{{ nav.title }}</a>
+                      >{{ nav.title }}</a
+                    >
                     <a v-else :href="nav.link">{{ nav.title }}</a>
                   </li>
                 </ul>
@@ -35,21 +36,21 @@
             <p>Suscríbete y recibe todas nuestras novedades!</p>
             <div id="mc_embed_signup">
               <form
-                target="_blank"
-                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                method="get"
+                action="/newsletter"
+                method="post"
                 class="subscription relative"
               >
+                <input type="hidden" name="_token" :value="csrf" />
                 <div class="input-group d-flex flex-row">
                   <input
-                    name="EMAIL"
+                    type="email"
+                    name="correo"
                     placeholder="Email Address"
                     onfocus="this.placeholder = ''"
                     onblur="this.placeholder = 'Email Address '"
                     required
-                    type="email"
                   />
-                  <button class="btn bb-btn">
+                  <button class="btn bb-btn" type="submit">
                     <i class="far fa-paper-plane"></i>
                   </button>
                 </div>
@@ -114,8 +115,8 @@
         <div class="row align-items-center">
           <p class="col-lg-12 col-sm-12 footer-text m-0 text-center">
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;
-            2020 Todos los derechos reservados | Psicología Chile
+            Copyright &copy; 2020 Todos los derechos reservados | Psicología
+            Chile
           </p>
         </div>
       </div>
@@ -162,7 +163,9 @@ export default {
   },
   data() {
     return {
-      store: this.$store.state,
+      csrf: document
+        .querySelector('meta[name="csrf-token"]')
+        .getAttribute("content"),
       modalSelected: "",
       about:
         "Somos una plataforma de encuentro entre psicólogos y pacientes donde se desarrollan las terapias de forma vanguardista e innovadora , dando mayor facilidad de comunicación entre ambos, rompiendo las barreras del tiempo y la distancia.",

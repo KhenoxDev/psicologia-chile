@@ -28,6 +28,7 @@
                     <li>Correo: {{ $email }}</li>
                     <li>Teléfono: {{ $phone }}</li>
                 </ul>
+                <br>
                 <hr>
                 <small>Toda la información se encuentra almacenada en una base de datos, por lo que, si se requiere
                     dicha información se debe solicitar al área de soporte.</small>
