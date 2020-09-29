@@ -330,6 +330,24 @@ return [
 				],
 			],
 		],
+		[
+			'text'    => 'Formularios',
+			'icon'    => 'fab fa-fw fa-wpforms',
+			'submenu' => [
+				[
+					'text' => 'Trabaja con nosotros',
+					'url'  => 'admin/trabaja-con-nosotros',
+				],
+				[
+					'text' => 'Voluntarios',
+					'url'  => 'admin/voluntarios',
+				],
+				[
+					'text' => 'Newsletter',
+					'url'  => 'admin/newsletter',
+				],
+			],
+		],
 	],
 
 	/*
