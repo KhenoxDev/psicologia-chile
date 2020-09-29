@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\NewsLetter;
+use App\Newsletter;
 
-class NewsLetterController extends Controller
+class NewsletterController extends Controller
 {
 	public function __construct()
 	{
