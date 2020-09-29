@@ -13,19 +13,20 @@
     <div class="container">
         <div class="row m-4">
             <div class="col-md-6 m-auto text-center">
-                <img src="{{ asset('img/navbar/logo.png') }}" alt="">
+                <img src="{{ env('APP_URL') }}/img/navbar/logo.png" alt="">
             </div>
         </div>
         <div class="row">
             <div class="col-xl-6 col-lg-6 col-sm-12 m-auto">
                 <h3 class="text-center"> ¡Gracias por suscribirte al Newsletter! </h3>
-                <br>
                 <p> Hola, </p>
                 <p> Te mantendremos al día con todas las promociones, temas de interes, novedades relacionadas con
                     psicología chile. </p>
                 <span><strong>¡Gracias por confiar en nosotros!</strong></span>
+                <br>
                 <hr>
-                <small>Si usted no realizó esta suscripción, puede anularla en el siguiente enlace <a href="#">Anular
+                <small>Si usted no realizó esta suscripción, puede anularla en el siguiente enlace <a target="_blank"
+                        href="{{ route('mailing.inactive.newsletter', $id) }}">Anular
                         suscripción</a></small>
             </div>
         </div>

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\VoluntaryMail;
+use App\Mail\NewsletterMail;
 use App\WorkUs;
 use App\Voluntary;
+use App\Newsletter;
 use App\Mail\WorkUsMail;
+use App\Mail\VoluntaryMail;
 use App\Traits\UploadTrait;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -22,6 +24,7 @@ class EmailController extends Controller
 		$this->to = "desarrollo@psicologiachile.cl";
 		$this->workus = new WorkUs();
 		$this->voluntary = new Voluntary();
+		$this->newsletter = new Newsletter();
 	}
 
 	public function sendMailWorksWithUs(Request $request)
@@ -131,5 +134,51 @@ class EmailController extends Controller
 
 		toastr()->success('Se ha enviado tu postulación. Espera nuestro llamado!');
 		return back();
+	}
+
+	public function sendMailNewsletter(Request $request)
+	{
+		$exists = $this->newsletter::where('email', $request->input('correo'))->exists();
+
+		if ($exists) {
+			toastr()->error('¡Ya te encuentras suscrito!');
+			return back();
+		}
+
+		$validator = Validator::make($request->all(), [
+			'correo' => 'required|email',
+		], [
+			'correo.required' => 'El correo es requerido.',
+			'correo.email' => 'El correo debe ser un email válido.',
+		]);
+
+		if ($validator->fails()) {
+			$errors = $validator->errors();
+
+			foreach ($errors->all() as $message) {
+				toastr()->error($message);
+			}
+
+			return back();
+		}
+
+		$this->newsletter->name = $request->has('nombre') ? $request->input('nombre') : null;
+		$this->newsletter->email = $request->input('correo');
+		$this->newsletter->save();
+
+		Mail::to($request->input('correo'))->send(new NewsletterMail($this->newsletter));
+
+		toastr()->success('¡Te has suscrito!');
+		return back();
+	}
+
+	public function inactiveNewsletter($id)
+	{
+		$row = $this->newsletter::find($id);
+		$row->is_active = 0;
+		$row->save();
+
+		toastr()->success('Se anuló tu suscripción.. Vuelve por favor!');
+		return redirect()->route('home');
 	}
 }
