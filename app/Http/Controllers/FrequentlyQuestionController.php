@@ -38,6 +38,7 @@ class FrequentlyQuestionController extends Controller
 
 		$this->question->save();
 
+		toastr()->success('Se creó correctamente');
 		return back();
 	}
 
