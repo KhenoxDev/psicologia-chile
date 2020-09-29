@@ -60,10 +60,10 @@
             </button>
           </div>
           <div class="modal-body">
-            <span class="h4">Descripción</span>
-            <hr />
+            <!-- <span class="h4">Descripción</span>
+						<hr /> -->
             <p v-html="agreementSelected[0].description"></p>
-            <span class="h4">¿Cómo funciona?</span>
+            <!-- <span class="h4">¿Cómo funciona?</span>
             <hr />
             <p v-html="agreementSelected[0].conditions"></p>
             <a
@@ -71,7 +71,7 @@
               target="_blank"
               rel="noopener noreferrer"
               >Términos y condiciones</a
-            >
+            > -->
           </div>
           <div class="modal-footer">
             <button
