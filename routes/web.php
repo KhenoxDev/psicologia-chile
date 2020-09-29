@@ -57,6 +57,7 @@ Route::group(['middleware' => [SetCookie::class]], function () {
 	})->name('question');
 
 	Route::get('/politica-de-privacidad-y-cookies', 'PrivacyController@getPrivacy')->name('privacy');
+
 });
 
 /* Admin Routes */
@@ -174,6 +175,12 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::post('/admin/politicas-privacidad/subir', 'PrivacyController@store')->name('admin.store.privacy');
 	Route::put('/admin/politicas-privacidad/actualizar', 'PrivacyController@update')->name('admin.update.privacy');
 	Route::get('/admin/politicas-privacidad/eliminar/{id}', 'PrivacyController@destroy')->name('admin.destroy.privacy');
+
+	/* Contact Routes */
+
+	Route::get('/admin/trabaja-con-nosotros', 'WorkUsController@index')->name('admin.workus');
+	Route::get('/admin/voluntarios', 'VoluntaryController@index')->name('admin.voluntary');
+	Route::get('/admin/newsletter', 'NewsletterController@index')->name('admin.newsletter');
 });
 
 /* Mailing */
