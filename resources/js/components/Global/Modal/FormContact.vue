@@ -7,8 +7,9 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+    <form method="POST" action="/contacto">
+	<input type="hidden" name="_token" :value="csrf">
       <div class="modal-body">
-        <form action>
           <div class="form-group">
             <input
               type="text"
@@ -16,6 +17,7 @@
               id="name"
               class="form-control"
               placeholder="Nombre y apellido"
+			  required
             />
           </div>
           <div class="form-group">
@@ -25,6 +27,7 @@
               id="email"
               class="form-control"
               placeholder="Correo electrónico"
+			  required
             />
           </div>
           <div class="form-group">
@@ -34,10 +37,11 @@
               id="telefono"
               class="form-control"
               placeholder="Teléfono"
+			  required
             />
           </div>
           <div class="form-group">
-            <select name="tipo" id="tipo" class="form-control">
+            <select name="tipo" id="tipo" class="form-control" required>
               <option value="1">Dudas</option>
               <option value="2">Sugerencias</option>
               <option value="3">Emergencias</option>
@@ -51,14 +55,26 @@
               rows="10"
               class="form-control"
               placeholder="Mensaje"
+			  required
             ></textarea>
           </div>
-        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Enviar</button>
+        <button type="submit" class="btn btn-primary">Enviar</button>
       </div>
+    </form>
     </div>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      csrf: document
+        .querySelector('meta[name="csrf-token"]')
+        .getAttribute("content"),
+    };
+  },
+};
+</script>

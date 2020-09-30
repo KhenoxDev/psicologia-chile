@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactMail;
 use App\Mail\NewsletterMail;
 use App\WorkUs;
 use App\Voluntary;
@@ -181,4 +182,44 @@ class EmailController extends Controller
 		toastr()->success('Se anuló tu suscripción.. Vuelve por favor!');
 		return redirect()->route('home');
 	}
+
+
+	public function sendMailContact(Request $request)
+	{
+		$validator = Validator::make($request->all(), [
+			'name' => 'required',
+			'email' => 'required|email',
+			'telefono'	=> 'required',
+			'tipo'	=> 'required',
+			'mensaje'	=> 'required',
+
+		], [
+			'name.required'	=> 'El nombre es requerido.',
+			'email.required' => 'El correo es requerido.',
+			'email.email' => 'El correo debe ser un email válido.',
+			'telefono.required'	=> 'El telefono es requerido.',
+			'tipo.required'	=> 'El tipo es requerido.',
+			'mensaje.required'	=> 'El mensaje es requerido.',
+		]);
+
+		if ($validator->fails()) {
+			$errors = $validator->errors();
+
+			foreach ($errors->all() as $message) {
+				toastr()->error($message);
+			}
+
+			return back();
+		}
+
+		$array = [];
+		array_push($array, $request->all());
+
+
+		Mail::to($this->to)->send(new ContactMail($array));
+
+		toastr()->success('Contacto enviado');
+		return back();
+	}
+
 }

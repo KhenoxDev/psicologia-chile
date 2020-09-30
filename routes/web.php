@@ -181,10 +181,12 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/admin/trabaja-con-nosotros', 'WorkUsController@index')->name('admin.workus');
 	Route::get('/admin/voluntarios', 'VoluntaryController@index')->name('admin.voluntary');
 	Route::get('/admin/newsletter', 'NewsletterController@index')->name('admin.newsletter');
+
 });
 
 /* Mailing */
 Route::post("/trabaja-con-nosotros", "EmailController@sendMailWorksWithUs")->name("mailing.workus");
 Route::post("/voluntario", "EmailController@sendMailVoluntary")->name("mailing.voluntary");
 Route::post("/newsletter", "EmailController@sendMailNewsletter")->name("mailing.newsletter");
-Route::get("/newsletter/bajar/{id}", "EmailController@inactiveNewsletter")->name("mailing.inactive.newsletter");
+Route::get("/newsletter/bajar/{id}", "EmailController@inactiveNewsletter")->name("mailing.contact");
+Route::post('/contacto', 'EmailController@sendMailContact')->name('mailing.contact');
