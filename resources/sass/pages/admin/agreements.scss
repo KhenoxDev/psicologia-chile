@@ -1,13 +1,24 @@
-@import '../../mixins';
-@import '../../variables';
+@import "../../mixins";
+@import "../../variables";
 
 .agreements-container {
 	display: flex;
-	justify-content: center;
 	flex-direction: row;
 	flex-wrap: wrap;
-	width: 100%;
+	justify-content: center;
+	background-color: $white;
+	border-radius: 0.5rem;
 	margin-top: 2rem;
 	padding: 1rem;
+}
 
+.staff-list {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	max-height: 600px;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 16px;
+	overflow: overlay;
 }
