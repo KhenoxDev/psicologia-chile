@@ -49,11 +49,10 @@
                             <input type="text" class="form-control" name="nombre" id="nombre" required>
                         </div>
                         <div class="form-group w-100">
-                            <label class="d-flex" for="metodo">{{ __('Imagen *') }} <i
-                                    class="fas fa-exclamation ml-auto text-warning" data-toggle="tooltip"
-                                    data-placement="right"
-                                    title="Tipos: png, jpg, jpeg y svg | Dimensiones recomendadas: 200 x 60"></i></label>
+                            <label class="d-flex" for="metodo">{{ __('Imagen *') }}</label>
                             <input type="file" name="metodo" id="metodo" class="form-control" required>
+                            <small class="form-text text-muted">Recuerde procesar su imagen <a href="https://tinypng.com/"
+                                    target="_blank">aquí</a> para reducir su peso.</small>
                         </div>
                     </div>
                     <div class="modal-footer">

@@ -18,6 +18,12 @@
 		padding-top: 0;
 		padding-bottom: 0;
 
+		.navbar-brand {
+			img {
+				max-width: 220px;
+			}
+		}
+
 		.hamburger {
 			display: none;
 		}
@@ -123,7 +129,6 @@
 
 @include screen-min(320px) {
 	.header_area {
-
 		.menu_nav {
 			text-align: center;
 		}
@@ -384,7 +389,6 @@
 
 @include screen(769px, 991px) {
 	.header_area {
-
 		.menu_nav {
 			text-align: center;
 		}
@@ -450,7 +454,6 @@
 
 @include screen(992px, 1024px) {
 	.header_area {
-
 		.navbar {
 			.navbar-brand {
 				img {
@@ -472,7 +475,6 @@
 
 @include screen(1025px, 1440px) {
 	.header_area {
-
 		.navbar {
 			.navbar-brand {
 				img {

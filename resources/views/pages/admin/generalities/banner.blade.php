@@ -29,6 +29,8 @@
                         <div class="form-group">
                             <label for="banner">{{ __('Imagen *') }}</label>
                             <input type="file" class="form-control" name="banner" id="banner" required>
+                            <small class="form-text text-muted">Recuerde procesar su imagen <a href="https://tinypng.com/"
+                                    target="_blank">aquí</a> para reducir su peso.</small>
                         </div>
                     </div>
                     <div class="modal-footer">
