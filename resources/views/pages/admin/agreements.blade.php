@@ -180,13 +180,11 @@
                     url: url,
                     success: function(response) {
                         let data = JSON.parse(response);
-                        console.log(data.items);
                         $("#staff").empty();
                         data.items.forEach(element => {
-                            $("#staff").append(`<div class="form-check form-check-inline">
-                                   <input class="form-check-input" type="checkbox" id="${element.index}" value="${element.index}">
-                                   <label class="form-check-label" for="${element.index}">${element.nombreCompleto}</label>
-                                   </div>`);
+                            $("#staff").append(
+                                `<div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" id="${element.index}" value="${element.index}"><label class="form-check-label" for="${element.index}">${element.nombreCompleto}</label></div>`
+                                );
                         });
                         // $('#id_edit').val(data[0].id);
                         // $('#rut_edit').val(data[0].rut);

@@ -57,7 +57,6 @@ Route::group(['middleware' => [SetCookie::class]], function () {
 	})->name('question');
 
 	Route::get('/politica-de-privacidad-y-cookies', 'PrivacyController@getPrivacy')->name('privacy');
-
 });
 
 /* Admin Routes */
