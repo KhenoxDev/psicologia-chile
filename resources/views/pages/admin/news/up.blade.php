@@ -44,6 +44,8 @@
             <div class="form-group">
                 <label for="image">{{ isset($news) ? __('Cambiar imagen') : __('Imagen') }}</label>
                 <input type="file" class="form-control" id="image" name="image">
+                <small class="form-text text-muted">Recuerde procesar su imagen <a href="https://tinypng.com/"
+                        target="_blank">aquí</a> para reducir su peso.</small>
             </div>
 
             <hr>

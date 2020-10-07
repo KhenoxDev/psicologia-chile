@@ -8,22 +8,16 @@
         v-bind:color="'#f4b034'"
       ></loading-component>
     </transition>
-
-    <div v-if="mainBanner.length > 0 && mainVideo.length > 0">
-      <masthead :img-background="mainBanner[0].element" :url-vid="mainVideo[0].element"></masthead>
-    </div>
-    <div v-else-if="mainVideo.length > 0 && mainBanner.lenght == 0">
-      <masthead :img-background="imgBackground" :url-vid="mainVideo[0].element"></masthead>
-    </div>
-    <div v-else-if="mainBanner.length > 0 && mainVideo.length == 0">
-      <masthead
-        :img-background="mainBanner[0].element"
-        url-vid="https://www.youtube.com/embed/TrREbV49fuU"
-      ></masthead>
-    </div>
-    <div v-else>
-      <masthead :img-background="imgBackground" url-vid="https://www.youtube.com/embed/TrREbV49fuU"></masthead>
-    </div>
+    <masthead
+      :img-background="
+        this.mainBanner.length > 0 ? this.mainBanner[0].element : imgBackground
+      "
+      :url-vid="
+        this.mainVideo.length > 0
+          ? this.mainVideo[0].element
+          : 'https://www.youtube.com/embed/TrREbV49fuU'
+      "
+    ></masthead>
     <div class="bg--white">
       <news></news>
       <video-component></video-component>
@@ -89,9 +83,9 @@ export default {
     Covenants,
   },
   created() {
-    this.$store.dispatch("loadMainVideo");
-    this.$store.dispatch("loadMainBanner");
     this.$store.dispatch("loadMainPopup");
+    this.$store.dispatch("loadMainBanner");
+    this.$store.dispatch("loadMainVideo");
     this.$store.dispatch("loadMainLogo");
     this.$store.commit("setAppUrl", this.appUrl);
   },
@@ -118,8 +112,6 @@ export default {
       }, 2000);
     },
   },
-  computed: mapState(["mainVideo", "mainBanner", "mainPopup"]),
+  computed: mapState(["mainPopup", "mainVideo", "mainBanner"]),
 };
 </script>
-<style lang="scss" scoped>
-</style>
