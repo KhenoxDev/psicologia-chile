@@ -13,7 +13,7 @@ class CreateSocialTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('Social', function (Blueprint $table) {
+		Schema::create('social', function (Blueprint $table) {
 			$table->id()->autoIncrement();
 			$table->string('link');
 			$table->unsignedBigInteger('type_id')->unique();
