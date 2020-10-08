@@ -9,6 +9,8 @@
         <div class="form-group">
             <label for="author_image">{{ __('Imagen autor *') }}</label>
             <input type="file" class="form-control" id="author_image" name="author_image">
+            <small class="form-text text-muted">Recuerde procesar su imagen <a href="https://tinypng.com/"
+                    target="_blank">aquí</a> para reducir su peso.</small>
         </div>
         <hr>
         <button type="submit" class="btn btn-primary">{{ __('Guardar') }}</button>

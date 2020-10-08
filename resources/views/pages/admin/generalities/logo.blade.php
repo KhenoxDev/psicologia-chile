@@ -49,6 +49,8 @@
                             <input type="file" name="logo" id="logo" class="form-control" required>
                             <small id="logoAyuda" class="form-text text-muted">Tipos: png, jpg, jpeg y svg <br> Dimensiones
                                 recomendadas: 220 x 48</small>
+                            <small class="form-text text-muted">Recuerde procesar su imagen <a href="https://tinypng.com/"
+                                    target="_blank">aquí</a> para reducir su peso.</small>
                         </div>
                     </div>
                     <div class="modal-footer">

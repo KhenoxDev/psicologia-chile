@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Agreement;
+use App\AgreementPsychologist;
 use Illuminate\Http\Request;
 use App\Traits\UploadTrait;
 use Illuminate\Support\Str;
@@ -13,9 +14,13 @@ class AgreementController extends Controller
 {
 	use UploadTrait;
 
+	public $agreement;
+	public $agreement_psch;
+
 	public function __construct()
 	{
 		$this->agreement = new Agreement();
+		$this->agreement_psch = new AgreementPsychologist();
 	}
 
 	public function getAgreements()
@@ -32,7 +37,7 @@ class AgreementController extends Controller
 		return view('pages.admin.agreements', compact('agreements'));
 	}
 
-		public function store(Request $request)
+	public function store(Request $request)
 	{
 		$validator = Validator::make($request->all(), [
 			'titulo' => 'required',
@@ -47,9 +52,9 @@ class AgreementController extends Controller
 			return back();
 		}
 
-			$this->agreement->title = $request->input('titulo');
-			$this->agreement->description = $request->input('descripcion');
-			$this->agreement->conditions = $request->input('condicion');
+		$this->agreement->title = $request->input('titulo');
+		$this->agreement->description = $request->input('descripcion');
+		$this->agreement->conditions = $request->input('condicion');
 
 		if ($request->has('imagen')) {
 			$image = $request->file('imagen');
@@ -58,7 +63,7 @@ class AgreementController extends Controller
 			$filePath = $folder . $name . '.' . $image->getClientOriginalExtension();
 			$this->uploadOne($image, $folder, 'public', $name);
 
-		
+
 			$this->agreement->img = $filePath;
 
 			if ($request->has('documento')) {
@@ -67,12 +72,10 @@ class AgreementController extends Controller
 				$name = Str::slug($file->getClientOriginalName());
 				$filePath2 = $folder . $name . '.' . $file->getClientOriginalExtension();
 				$this->uploadOne($file, $folder, 'public', $name);
-	
+
 
 				$this->agreement->doc = $filePath2;
-				
 			}
-			
 		}
 		$this->agreement->save();
 
@@ -84,32 +87,28 @@ class AgreementController extends Controller
 	{
 		$delete = $this->agreement::find($id);
 
-		if(!File::exists(public_path($delete->doc)) && !File::exists(public_path($delete->img)))
-		{
+		if (!File::exists(public_path($delete->doc)) && !File::exists(public_path($delete->img))) {
 			$delete->delete();
 
 			toastr()->warning('Se eliminó el registro correctamente pero el documento y la imagen no se encontraron');
 			return back();
 		}
-		
+
 		if (File::exists(public_path($delete->doc))) {
 			File::delete(public_path($delete->doc));
 
-			if(File::exists(public_path($delete->img)))
-			{
+			if (File::exists(public_path($delete->img))) {
 				File::delete(public_path($delete->img));
 				$delete->delete();
 
 				toastr()->success('Se eliminó la imagen, el documento y el registro correctamente');
 				return back();
-
 			} else {
 				$delete->delete();
 
 				toastr()->warning('Se eliminó el documento y el registro correctamente pero la imagen no pudo encontrarse');
 				return back();
 			}
-
 		} else {
 			$delete->delete();
 
@@ -118,5 +117,36 @@ class AgreementController extends Controller
 		}
 	}
 
+	public function storePsch(Request $request)
+	{
+		$data = [];
+		$psch = $request->input('psch');
 
+		for ($i = 0; $i < count($psch); $i++) {
+			if (!$this->agreement_psch::where(["agreement_id" => $request->input("agreement_id"), "psychologist_id" => $psch[$i]])->exists()) {
+				array_push($data, ["agreement_id" => $request->input("agreement_id"), "psychologist_id" => $psch[$i]]);
+			}
+		}
+
+		if (count($data) == 0) {
+			toastr()->info("Los psicólogos ya se encuentran enlazados.");
+			return back();
+		}
+
+		$this->agreement_psch::insert($data);
+
+		toastr()->success("Se enlazaron los psicólogos correctamente.");
+		return back();
+	}
+
+	public function getAgreementPsch($agreement = null)
+	{
+		if (is_null($agreement)) {
+			$psch = $this->agreement_psch::all();
+		} else {
+			$psch = $this->agreement_psch::where('agreement_id', $agreement)->get();
+		}
+
+		return response()->json($psch);
+	}
 }

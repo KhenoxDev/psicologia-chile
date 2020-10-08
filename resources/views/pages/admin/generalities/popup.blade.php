@@ -31,6 +31,8 @@
                         <div class="form-group">
                             <label for="popup">{{ __('Imagen *') }}</label>
                             <input type="file" class="form-control" name="popup" id="popup" required>
+                            <small class="form-text text-muted">Recuerde procesar su imagen <a href="https://tinypng.com/"
+                                    target="_blank">aquí</a> para reducir su peso.</small>
                         </div>
                     </div>
                     <div class="modal-footer">

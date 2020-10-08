@@ -23,7 +23,12 @@
               <i class="fas fa-filter"></i>
               Filtrar
             </button>
-            <Drawer @close="toggle" align="left" :closeable="true" :maskClosable="true">
+            <Drawer
+              @close="toggle"
+              align="left"
+              :closeable="true"
+              :maskClosable="true"
+            >
               <div class="filter--content" v-if="open">
                 <div class="mb-2">
                   <a
@@ -32,10 +37,15 @@
                     role="button"
                     aria-expanded="false"
                     aria-controls="collapsePrevision"
-                  >Previsión</a>
+                    >Previsión</a
+                  >
                   <hr />
                   <div id="collapsePrevision" class="collapse filter--options">
-                    <div class="filter--option" v-for="prevision in previsions" :key="prevision.id">
+                    <div
+                      class="filter--option"
+                      v-for="prevision in previsions"
+                      :key="prevision.id"
+                    >
                       <input
                         type="checkbox"
                         v-model="previsionSelected"
@@ -44,9 +54,7 @@
                         :value="prevision.nombre"
                       />
                       <label :for="prevision.id">
-                        {{
-                        prevision.nombre
-                        }}
+                        {{ prevision.nombre }}
                       </label>
                     </div>
                   </div>
@@ -58,7 +66,8 @@
                     role="button"
                     aria-expanded="false"
                     aria-controls="collapseSpecialist"
-                  >Especialidades</a>
+                    >Especialidades</a
+                  >
                   <hr />
                   <div id="collapseSpecialist" class="collapse filter--options">
                     <div
@@ -74,15 +83,44 @@
                         :value="specialist.nombre"
                       />
                       <label :for="specialist.codigo">
-                        {{
-                        specialist.nombre
-                        }}
+                        {{ specialist.nombre }}
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-2 mt-3">
+                  <a
+                    data-toggle="collapse"
+                    href="#collapseAgreements"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="collapseAgreements"
+                    >Convenios</a
+                  >
+                  <hr />
+                  <div id="collapseAgreements" class="collapse filter--options">
+                    <div
+                      class="filter--option"
+                      v-for="agreement in agreements"
+                      :key="agreement.id"
+                    >
+                      <input
+                        type="checkbox"
+                        v-model="agreementsSelected"
+                        :id="'agreement_' + agreement.id"
+                        :name="agreement.title"
+                        :value="agreement.id"
+                      />
+                      <label :for="'agreement_' + agreement.id">
+                        {{ agreement.title }}
                       </label>
                     </div>
                   </div>
                 </div>
                 <div class="filter--buttons fixed-bottom">
-                  <button class="btn btn--clean" @click="cleanOptions">Limpiar</button>
+                  <button class="btn btn--clean" @click="cleanOptions">
+                    Limpiar
+                  </button>
                 </div>
               </div>
             </Drawer>
@@ -137,10 +175,17 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
               <span aria-hidden="true">&times;</span>
             </button>
-            <h5 class="modal-title" id="professionalLabel">{{ professionalSelected.nombreCompleto }}</h5>
+            <h5 class="modal-title" id="professionalLabel">
+              {{ professionalSelected.nombreCompleto }}
+            </h5>
             <span>Código: {{ professionalSelected.codigo }}</span>
           </div>
           <div id="modalBody" class="modal-body">
@@ -173,7 +218,10 @@
                   data-parent="#accordionExample"
                 >
                   <div class="card-body">
-                    <p class="p--description" v-html="professionalSelected.descripcion"></p>
+                    <p
+                      class="p--description"
+                      v-html="professionalSelected.descripcion"
+                    ></p>
                   </div>
                 </div>
 
@@ -205,7 +253,8 @@
                       class="badge badge--psicologia span--specialist"
                       v-for="spec in professionalSelected.especialidades"
                       :key="spec.id"
-                    >{{ spec }}</span>
+                      >{{ spec }}</span
+                    >
                   </div>
                 </div>
 
@@ -237,7 +286,8 @@
                       class="badge badge--psicologia span--prevision"
                       v-for="prev in professionalSelected.prevision"
                       :key="prev.id"
-                    >{{ prev }}</span>
+                      >{{ prev }}</span
+                    >
                   </div>
                 </div>
 
@@ -264,9 +314,9 @@
                   data-parent="#accordionExample"
                 >
                   <div class="card-body">
-                    <span
-                      class="span--schedule badge badge--schedule"
-                    >{{ professionalSelected.diasAtencion }}</span>
+                    <span class="span--schedule badge badge--schedule">{{
+                      professionalSelected.diasAtencion
+                    }}</span>
                   </div>
                 </div>
               </div>
@@ -287,7 +337,9 @@
                   v-for="prof in professionalSelected.planes"
                   :key="prof.id"
                   :value="prof.contratar"
-                >{{ prof.sesiones }} Sesiones por {{ formatPrice(prof.valor) }}</option>
+                >
+                  {{ prof.sesiones }} Sesiones por {{ formatPrice(prof.valor) }}
+                </option>
               </select>
             </div>
           </div>
@@ -322,6 +374,7 @@ export default {
       professionals: [],
       previsions: [],
       specialists: [],
+      agreements: [],
       schedules: [
         "Lunes",
         "Martes",
@@ -336,6 +389,7 @@ export default {
       specialistSelected: [],
       scheduleSelected: [],
       genderSelected: [],
+      agreementsSelected: [],
       search: "",
       sortKey: "precioASC",
       open: false,
@@ -378,8 +432,11 @@ export default {
       try {
         let response = await axios.get(api);
         for (let index = 0; index < response.data.items.length; index++) {
+          response.data.items[index].agreements = [];
           this.professionals.push(response.data.items[index]);
         }
+
+        this.addAgreementInProfessionals();
       } catch (error) {
         console.log(error);
       }
@@ -412,16 +469,52 @@ export default {
         console.log(error);
       }
     },
+    async getAgreements() {
+      this.agreements = [];
+      const api = this.$store.getters.getAppUrl + "/api/agreement";
+
+      try {
+        let response = await axios.get(api);
+        for (let index = 0; index < response.data.length; index++) {
+          this.agreements.push(response.data[index]);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    async addAgreementInProfessionals() {
+      const api = this.$store.getters.getAppUrl + "/api/psychologists";
+
+      try {
+        let response = await axios.get(api);
+        for (let index = 0; index < response.data.length; index++) {
+          this.professionals.find((el) => {
+            if (el.index == response.data[index].psychologist_id) {
+              el.agreements.push(response.data[index].agreement_id);
+
+              return true;
+            }
+
+            return false;
+          });
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    },
+
     toggle() {
       this.open = !this.open;
       this.getPrevisions();
       this.getSpecialists();
+      this.getAgreements();
     },
     cleanOptions() {
       this.previsionSelected = [];
       this.specialistSelected = [];
       this.scheduleSelected = [];
       this.genderSelected = [];
+      this.agreementsSelected = [];
     },
     formatPrice: function (value) {
       let val = (value / 1).toFixed(0);
@@ -432,7 +525,8 @@ export default {
     filteredList: function () {
       if (
         this.previsionSelected.length == 0 &&
-        this.specialistSelected.length == 0
+        this.specialistSelected.length == 0 &&
+        this.agreementsSelected == 0
       )
         return (
           this.professionals &&
@@ -445,7 +539,8 @@ export default {
 
       if (
         this.previsionSelected.length > 0 &&
-        this.specialistSelected.length == 0
+        this.specialistSelected.length == 0 &&
+        this.agreementsSelected.length == 0
       ) {
         var aux = this.professionals.filter((professional) => {
           return professional.prevision.some((prevision) => {
@@ -459,7 +554,8 @@ export default {
         });
       } else if (
         this.previsionSelected.length == 0 &&
-        this.specialistSelected.length > 0
+        this.specialistSelected.length > 0 &&
+        this.agreementsSelected.length == 0
       ) {
         var aux = this.professionals.filter((professional) => {
           return professional.especialidades.some((specialist) => {
@@ -471,6 +567,75 @@ export default {
             );
           });
         });
+      } else if (
+        this.previsionSelected.length == 0 &&
+        this.specialistSelected.length == 0 &&
+        this.agreementsSelected.length > 0
+      ) {
+        var aux = this.professionals.filter((professional) => {
+          return professional.agreements.some((agreement) => {
+            return (
+              this.agreementsSelected.includes(agreement) &&
+              professional.nombreCompleto
+                .toLowerCase()
+                .includes(this.search.toLowerCase())
+            );
+          });
+        });
+      } else if (
+        this.previsionSelected.length > 0 &&
+        this.specialistSelected.length > 0 &&
+        this.agreementsSelected.length == 0
+      ) {
+        var aux = this.professionals.filter((professional) => {
+          return (
+            professional.especialidades.some((specialist) => {
+              return this.specialistSelected.includes(specialist);
+            }) &&
+            professional.prevision.some((prevision) => {
+              return this.previsionSelected.includes(prevision);
+            }) &&
+            professional.nombreCompleto
+              .toLowerCase()
+              .includes(this.search.toLowerCase())
+          );
+        });
+      } else if (
+        this.previsionSelected.length > 0 &&
+        this.specialistSelected.length == 0 &&
+        this.agreementsSelected.length > 0
+      ) {
+        var aux = this.professionals.filter((professional) => {
+          return (
+            professional.agreements.some((agreement) => {
+              return this.agreementsSelected.includes(agreement);
+            }) &&
+            professional.prevision.some((prevision) => {
+              return this.previsionSelected.includes(prevision);
+            }) &&
+            professional.nombreCompleto
+              .toLowerCase()
+              .includes(this.search.toLowerCase())
+          );
+        });
+      } else if (
+        this.previsionSelected.length == 0 &&
+        this.specialistSelected.length > 0 &&
+        this.agreementsSelected.length > 0
+      ) {
+        var aux = this.professionals.filter((professional) => {
+          return (
+            professional.agreements.some((agreement) => {
+              return this.agreementsSelected.includes(agreement);
+            }) &&
+            professional.especialidades.some((specialist) => {
+              return this.specialistSelected.includes(specialist);
+            }) &&
+            professional.nombreCompleto
+              .toLowerCase()
+              .includes(this.search.toLowerCase())
+          );
+        });
       } else {
         var aux = this.professionals.filter((professional) => {
           return (
@@ -479,6 +644,9 @@ export default {
             }) &&
             professional.prevision.some((prevision) => {
               return this.previsionSelected.includes(prevision);
+            }) &&
+            professional.agreements.some((agreement) => {
+              return this.agreementsSelected.includes(agreement);
             }) &&
             professional.nombreCompleto
               .toLowerCase()

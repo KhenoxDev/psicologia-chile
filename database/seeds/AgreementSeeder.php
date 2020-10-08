@@ -127,7 +127,7 @@ class AgreementSeeder extends Seeder
 		],
 		[
 			"title" => "Caja Los Héroes",
-			"img" => "img/covenants/caja-los-heroes.png",
+			"img" => "img/covenants/caja_los_heroes.jpg",
 			"description" => "El descuento para clientes y afiliados del caja los Herores es a partir de
 							Septiembre de 2020, con una vigencia de 12 meses, sin perjuicio al término
 							anticipado por una de las partes mediante carta escrita con al menos 1 mes de
