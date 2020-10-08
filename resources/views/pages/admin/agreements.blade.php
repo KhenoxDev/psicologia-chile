@@ -97,15 +97,19 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <div id="staff" class="form-group staff-list">
+                <form action="{{ route('admin.store.psch') }}" method="POST">
+                    @csrf
+                    <div class="modal-body">
+                        <input type="hidden" id="agreement_id" name="agreement_id">
+                        <div id="staff" class="form-group staff-list">
 
+                        </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn btn-primary">Guardar</button>
-                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -172,8 +176,18 @@
             });
 
             $('.link-btn').click(function() {
+                var aux;
                 var id = $(this).data('id');
                 var url = "https://online.psicologiachile.cl/gateway-json.php?service=staff";
+                var url2 = "{{ route('api.agreement.psch') }}" + '/' + id;
+
+                $.ajax({
+                    type: 'get',
+                    url: url2,
+                    success: function(response) {
+                        aux = response
+                    }
+                });
 
                 $.ajax({
                     type: 'get',
@@ -181,10 +195,21 @@
                     success: function(response) {
                         let data = JSON.parse(response);
                         $("#staff").empty();
+                        $("#agreement_id").val(id);
                         data.items.forEach(element => {
-                            $("#staff").append(
-                                `<div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" id="${element.index}" value="${element.index}"><label class="form-check-label" for="${element.index}">${element.nombreCompleto}</label></div>`
+                            let flag = aux.find((el) => {
+                                return el.psychologist_id == element.index
+                            });
+
+                            if (flag) {
+                                $("#staff").append(
+                                    `<div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" id="${element.index}" name="psch[]" value="${element.index}" checked><label class="form-check-label" for="${element.index}">${element.nombreCompleto}</label></div>`
                                 );
+                            } else {
+                                $("#staff").append(
+                                    `<div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" id="${element.index}" name="psch[]" value="${element.index}"><label class="form-check-label" for="${element.index}">${element.nombreCompleto}</label></div>`
+                                );
+                            }
                         });
                         // $('#id_edit').val(data[0].id);
                         // $('#rut_edit').val(data[0].rut);
