@@ -21,7 +21,7 @@ class EmailController extends Controller
 
 	public function __construct()
 	{
-		$this->to = "desarrollo@psicologiachile.cl";
+		$this->to = "contacto@psicologiachile.cl";
 		$this->workus = new WorkUs();
 		$this->voluntary = new Voluntary();
 		$this->newsletter = new Newsletter();
