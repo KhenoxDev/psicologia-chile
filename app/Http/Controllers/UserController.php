@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Rol;
 use App\User;
+use Illuminate\Auth\Access\Gate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -16,19 +18,12 @@ class UserController extends Controller
 		$this->roles = new Rol();
 	}
 
-	public function getUsers($order = null)
-	{
-		if (!is_null($order)) {
-			$row = $this->user::orderBy('name', $order)->paginate();
-		} else {
-			$row = $this->user::paginate();
-		}
-
-		return response()->json($row);
-	}
-
 	public function index()
 	{
+		if (!in_array(Auth::user()->rol_id, [1])) {
+			return view("pages.error.403");
+		}
+
 		$users = $this->user::all();
 		$roles = $this->roles::all();
 		return view('pages.admin.users', compact('users', 'roles'));
@@ -37,6 +32,10 @@ class UserController extends Controller
 
 	public function store(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1])) {
+			return view("pages.error.403");
+		}
+
 		$validator = Validator::make($request->all(), [
 			'rut' => 'required|cl_rut',
 			'name' => 'required|string',
@@ -66,6 +65,10 @@ class UserController extends Controller
 
 	public function edit(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1])) {
+			return view("pages.error.403");
+		}
+
 		if ($request->ajax()) {
 			$users = $this->user::find($request->id);
 			$roles = $this->roles::all();
@@ -80,6 +83,10 @@ class UserController extends Controller
 
 	public function update(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1])) {
+			return view("pages.error.403");
+		}
+
 		$validator = Validator::make($request->all(), [
 			'rut_edit' => 'required|cl_rut',
 			'name_edit' => 'required|string',
@@ -96,7 +103,7 @@ class UserController extends Controller
 		$user->rut = $request->input('rut_edit');
 		$user->name = $request->input('name_edit');
 		$user->last_name = $request->input('last_name_edit');
-		$user->rol_id = $request->input('rol_id_edit');
+		Auth::user()->rol_id = $request->input('rol_id_edit');
 		$user->save();
 
 		toastr()->success('Se actualizó correctamente.');
@@ -106,6 +113,10 @@ class UserController extends Controller
 
 	public function active($id)
 	{
+		if (!in_array(Auth::user()->rol_id, [1])) {
+			return view("pages.error.403");
+		}
+
 		$current = $this->user::find($id);
 		$current->is_active = 1;
 		$current->save();
@@ -116,6 +127,10 @@ class UserController extends Controller
 
 	public function inactive($id)
 	{
+		if (!in_array(Auth::user()->rol_id, [1])) {
+			return view("pages.error.403");
+		}
+
 		$current = $this->user::find($id);
 		$current->is_active = 0;
 		$current->save();
@@ -126,6 +141,10 @@ class UserController extends Controller
 
 	public function update_password(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1])) {
+			return view("pages.error.403");
+		}
+
 		if ($request->input('newPassword') != $request->input('repeatPassword')) {
 			toastr()->error("Las contraseñas no son iguales, por favor volver a intentarlo.");
 			return back();

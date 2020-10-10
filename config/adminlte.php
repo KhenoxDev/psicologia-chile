@@ -253,11 +253,13 @@ return [
 			'text' => 'Usuarios',
 			'url'  => 'admin/usuarios',
 			'icon' => 'fas fa-fw fa-user',
+			'can' => 'admin-only'
 		],
 		[
 			'text' => 'Convenios',
 			'url'  => 'admin/convenios',
 			'icon' => 'fas fa-fw fa-handshake',
+			'can' => ['admin-only', 'operator-only']
 		],
 		[
 			'text' => 'Noticias',
@@ -276,15 +278,18 @@ return [
 					'url'  => 'admin/noticias/sin-publicar',
 				],
 			],
+			'can' => ['admin-only', 'operator-only', 'editor-only']
 		],
 		[
 			'text' => 'Consultas frecuentes',
 			'url'  => 'admin/consultas-frecuentes',
 			'icon' => 'fas fa-fw fa-question',
+			'can' => ['admin-only', 'operator-only', 'editor-only']
 		],
 		[
 			'text'    => 'Generalidades',
 			'icon'    => 'fas fa-fw fa-globe',
+			'can' => ['admin-only', 'operator-only'],
 			'submenu' => [
 				[
 					'text' => 'Logo',
@@ -329,6 +334,7 @@ return [
 					'url'  => 'admin/documentos',
 				],
 			],
+			'can' => ['admin-only', 'operator-only']
 		],
 		[
 			'text'    => 'Formularios',
@@ -347,6 +353,7 @@ return [
 					'url'  => 'admin/newsletter',
 				],
 			],
+			'can' => ['admin-only', 'operator-only']
 		],
 	],
 
