@@ -1,6 +1,6 @@
 <template>
   <div id="mainProfessionals" class="container mt-4">
-    <span class="title--section">
+    <span class="title--section img-hover">
       <strong>Profe</strong>sionales
     </span>
     <hr class="line--separator" />
