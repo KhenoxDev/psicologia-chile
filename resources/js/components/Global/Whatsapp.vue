@@ -52,7 +52,7 @@ export default {
           alt: "Whatsapp",
           class: "whatsapp",
           src: "fa-whatsapp",
-          link: "https://api.whatsapp.com/send?phone=56995863952",
+          link: "https://api.whatsapp.com/send?phone=56998586960",
         },
       ],
     };
