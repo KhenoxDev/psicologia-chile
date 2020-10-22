@@ -1,6 +1,6 @@
 <template>
   <div id="mainProfessionals" class="container mt-4">
-    <span class="title--section">
+    <span class="title--section img-hover">
       <strong>Profe</strong>sionales
     </span>
     <hr class="line--separator" />
@@ -260,7 +260,7 @@ export default {
 
       try {
         let response = await axios.get(api);
-        for (let index = 0; index < 6; index++) {
+        for (let index = 0; index < 10; index++) {
           this.professionals.push(response.data.items[index]);
         }
       } catch (error) {

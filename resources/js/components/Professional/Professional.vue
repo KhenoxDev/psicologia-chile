@@ -1,9 +1,16 @@
 <template>
   <div id="listProfessional--section" class="mt-4">
     <div class="listProfessional--card">
-      <div class="border--image">
         <img :src="photo" alt />
-      </div>
+<!-- 		<div class="overlay">
+			<div class="text">
+				<i class="fab fa-instagram"></i>
+				<i class="fab fa-facebook"></i>
+				<br>
+				<i class="fab fa-youtube"></i>
+				<i class="fab fa-linkedin"></i>
+			</div>
+		</div> -->
     </div>
 
     <div class="div--nameprofessional">

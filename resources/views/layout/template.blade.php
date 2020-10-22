@@ -35,7 +35,7 @@
                 scrollTop: 0
             }, 'slow'); // Para Chrome
 
-            $(window).resize(function() {
+            $(window).load(function() {
                 $('html').animate({
                     scrollTop: 0
                 }, 'slow'); // para IE, FF
