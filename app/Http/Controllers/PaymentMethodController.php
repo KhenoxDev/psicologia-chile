@@ -6,6 +6,7 @@ use App\PaymentMethod;
 use App\Traits\UploadTrait;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
@@ -27,6 +28,10 @@ class PaymentMethodController extends Controller
 
 	public function index()
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$payments = $this->pay::all();
 
 		return view('pages.admin.generalities.pay', compact('payments'));
@@ -34,6 +39,10 @@ class PaymentMethodController extends Controller
 
 	public function store(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$validator = Validator::make($request->all(), [
 			'nombre' => 'required',
 			'metodo' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048'
@@ -62,6 +71,10 @@ class PaymentMethodController extends Controller
 
 	public function destroy($id)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$delete = $this->pay::find($id);
 		if (File::exists(public_path($delete->image))) {
 			File::delete(public_path($delete->image));

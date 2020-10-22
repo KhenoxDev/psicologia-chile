@@ -6,8 +6,9 @@ use App\Document;
 use App\Traits\UploadTrait;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Validator;
 
 class DocumentController extends Controller
 {
@@ -20,6 +21,10 @@ class DocumentController extends Controller
 
 	public function index()
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$docs = $this->document::all();
 
 		return view('pages.admin.document', compact('docs'));
@@ -27,6 +32,10 @@ class DocumentController extends Controller
 
 	public function store(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$validator = Validator::make($request->all(), [
 			'documento' => 'required|mimes:doc,docx,pdf,xls,xlsx,ppt,pptx|max:5096'
 		]);
@@ -54,6 +63,10 @@ class DocumentController extends Controller
 
 	public function destroy($id)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$delete = $this->document::find($id);
 		if (File::exists(public_path($delete->file))) {
 			File::delete(public_path($delete->file));
@@ -71,6 +84,10 @@ class DocumentController extends Controller
 
 	public function download($id)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$doc = $this->document::find($id);
 
 		if (File::exists(public_path($doc->file))) {

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\FrequentlyQuestion;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FrequentlyQuestionController extends Controller
 {
@@ -25,6 +26,10 @@ class FrequentlyQuestionController extends Controller
 
 	public function index()
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2, 3])) {
+			return view("pages.error.403");
+		}
+
 		$questions = $this->question::all();
 
 		return view('pages.admin.questions', compact('questions'));
@@ -33,6 +38,10 @@ class FrequentlyQuestionController extends Controller
 
 	public function store(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2, 3])) {
+			return view("pages.error.403");
+		}
+
 		$this->question->title = $request->input('pregunta');
 		$this->question->answer = $request->input('respuesta');
 
@@ -43,6 +52,10 @@ class FrequentlyQuestionController extends Controller
 
 	public function edit(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2, 3])) {
+			return view("pages.error.403");
+		}
+
 		if ($request->ajax()) {
 			$questions = $this->question::find($request->id);
 
@@ -56,6 +69,10 @@ class FrequentlyQuestionController extends Controller
 
 	public function update(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2, 3])) {
+			return view("pages.error.403");
+		}
+
 		$current = $this->question::find($request->input('id'));
 
 		$current->title = $request->input('pregunta');
@@ -71,6 +88,10 @@ class FrequentlyQuestionController extends Controller
 
 	public function delete($id)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2, 3])) {
+			return view("pages.error.403");
+		}
+
 		$erase = $this->question::find($id);
 		$erase->delete();
 

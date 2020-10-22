@@ -294,30 +294,37 @@ return [
 				[
 					'text' => 'Logo',
 					'url'  => 'admin/logo',
+					'can' => ['admin-only'],
 				],
 				[
 					'text' => 'Redes sociales',
 					'url'  => 'admin/redes-sociales',
+					'can' => ['admin-only', 'operator-only'],
 				],
 				[
 					'text' => 'Métodos de pago',
 					'url'  => 'admin/metodos-pago',
+					'can' => ['admin-only', 'operator-only'],
 				],
 				[
 					'text' => 'Vídeo Principal',
 					'url'  => 'admin/video',
+					'can' => ['admin-only', 'operator-only'],
 				],
 				[
 					'text' => 'Banner Principal',
 					'url'  => 'admin/banner',
+					'can' => ['admin-only'],
 				],
 				[
 					'text' => 'Popup Informativo',
 					'url'  => 'admin/popup',
+					'can' => ['admin-only', 'operator-only'],
 				],
 				[
 					'text' => 'Nuestra empresa',
 					'url'  => 'admin/nuestra-empresa',
+					'can' => ['admin-only', 'operator-only'],
 				],
 			],
 		],
@@ -328,10 +335,12 @@ return [
 				[
 					'text' => 'Políticas de Privacidad',
 					'url'  => 'admin/politicas-privacidad',
+					'can' => ['admin-only'],
 				],
 				[
 					'text' => 'Gestión de documentos',
 					'url'  => 'admin/documentos',
+					'can' => ['admin-only', 'operator-only'],
 				],
 			],
 			'can' => ['admin-only', 'operator-only']
@@ -343,14 +352,17 @@ return [
 				[
 					'text' => 'Trabaja con nosotros',
 					'url'  => 'admin/trabaja-con-nosotros',
+					'can' => ['admin-only', 'operator-only'],
 				],
 				[
 					'text' => 'Voluntarios',
 					'url'  => 'admin/voluntarios',
+					'can' => ['admin-only', 'operator-only'],
 				],
 				[
 					'text' => 'Newsletter',
 					'url'  => 'admin/newsletter',
+					'can' => ['admin-only', 'operator-only'],
 				],
 			],
 			'can' => ['admin-only', 'operator-only']

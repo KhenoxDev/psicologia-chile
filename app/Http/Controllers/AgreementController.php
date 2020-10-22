@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Agreement;
-use App\AgreementPsychologist;
-use Illuminate\Http\Request;
 use App\Traits\UploadTrait;
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+use App\AgreementPsychologist;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Validator;
 
 class AgreementController extends Controller
 {
@@ -32,6 +33,10 @@ class AgreementController extends Controller
 
 	public function index()
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$agreements = $this->agreement::all();
 
 		return view('pages.admin.agreements', compact('agreements'));
@@ -39,6 +44,10 @@ class AgreementController extends Controller
 
 	public function store(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$validator = Validator::make($request->all(), [
 			'titulo' => 'required',
 			'descripcion' => 'required',
@@ -85,6 +94,10 @@ class AgreementController extends Controller
 
 	public function destroy($id)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$delete = $this->agreement::find($id);
 
 		if (!File::exists(public_path($delete->doc)) && !File::exists(public_path($delete->img))) {
@@ -119,13 +132,19 @@ class AgreementController extends Controller
 
 	public function storePsch(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$data = [];
 		$psch = $request->input('psch');
 
+		$this->agreement_psch::where('agreement_id', $request->input("agreement_id"))->delete();
+
 		for ($i = 0; $i < count($psch); $i++) {
-			if (!$this->agreement_psch::where(["agreement_id" => $request->input("agreement_id"), "psychologist_id" => $psch[$i]])->exists()) {
-				array_push($data, ["agreement_id" => $request->input("agreement_id"), "psychologist_id" => $psch[$i]]);
-			}
+			// if (!$this->agreement_psch::where(["agreement_id" => $request->input("agreement_id"), "psychologist_id" => $psch[$i]])->exists()) {
+			array_push($data, ["agreement_id" => $request->input("agreement_id"), "psychologist_id" => $psch[$i]]);
+			// }
 		}
 
 		if (count($data) == 0) {

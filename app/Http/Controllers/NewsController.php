@@ -9,6 +9,7 @@ use App\Traits\UploadTrait;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
@@ -41,6 +42,10 @@ class NewsController extends Controller
 
 	public function getNewsPublished()
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2, 3])) {
+			return view("pages.error.403");
+		}
+
 		$title = "Noticias publicadas";
 		$news = $this->news::where('is_posted', 1)->get();
 		return view('pages.admin.news.index', compact('news', 'title'));
@@ -48,6 +53,10 @@ class NewsController extends Controller
 
 	public function getNewsUnpublished()
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2, 3])) {
+			return view("pages.error.403");
+		}
+
 		$title = "Noticias sin publicar";
 		$news = $this->news::where('is_posted', 0)->get();
 		return view('pages.admin.news.index', compact('news', 'title'));
@@ -55,6 +64,10 @@ class NewsController extends Controller
 
 	public function newsDestroy($id)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2, 3])) {
+			return view("pages.error.403");
+		}
+
 		$delete = $this->news::find($id);
 		if (File::exists(public_path($delete->image))) {
 			File::delete(public_path($delete->image));
@@ -72,6 +85,10 @@ class NewsController extends Controller
 
 	public function edit($id)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2, 3])) {
+			return view("pages.error.403");
+		}
+
 		$news = $this->news::find($id);
 		$authors = $this->author::all();
 
@@ -80,6 +97,10 @@ class NewsController extends Controller
 
 	public function update(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2, 3])) {
+			return view("pages.error.403");
+		}
+
 		$validator = Validator::make($request->all(), [
 			'title' => 'required',
 			'author' => 'required|exists:App\Author,id',
@@ -117,6 +138,10 @@ class NewsController extends Controller
 
 	public function newsPublished($id)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2, 3])) {
+			return view("pages.error.403");
+		}
+
 		$now = Carbon::now('America/Santiago');
 		$news = $this->news::find($id);
 		$news->is_posted = 1;
@@ -130,6 +155,10 @@ class NewsController extends Controller
 
 	public function newsUnpublished($id)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2, 3])) {
+			return view("pages.error.403");
+		}
+
 		$now = Carbon::now('America/Santiago');
 		$news = $this->news::find($id);
 		$news->is_posted = 0;
@@ -143,6 +172,10 @@ class NewsController extends Controller
 
 	public function store(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2, 3])) {
+			return view("pages.error.403");
+		}
+
 		$validator = Validator::make($request->all(), [
 			'title' => 'required',
 			'author' => 'required|exists:App\Author,id',

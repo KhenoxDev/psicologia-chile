@@ -6,6 +6,7 @@ use App\Author;
 use App\Traits\UploadTrait;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -27,6 +28,10 @@ class AuthorController extends Controller
 
 	public function store(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2, 3])) {
+			return view("pages.error.403");
+		}
+
 		$validator = Validator::make($request->all(), [
 			'author' => 'required',
 			'author_image' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048',
@@ -57,6 +62,10 @@ class AuthorController extends Controller
 
 	public function getAuthors()
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2, 3])) {
+			return view("pages.error.403");
+		}
+
 		$authors = $this->author::all();
 
 		return view('pages.admin.news.up', compact('authors'));

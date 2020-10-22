@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Privacy;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class PrivacyController extends Controller
@@ -16,6 +17,10 @@ class PrivacyController extends Controller
 
 	public function index()
 	{
+		if (!in_array(Auth::user()->rol_id, [1])) {
+			return view("pages.error.403");
+		}
+
 		$privacies = $this->privacy::all();
 		return view('pages.admin.privacy', compact('privacies'));
 	}
@@ -23,6 +28,10 @@ class PrivacyController extends Controller
 
 	public function store(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1])) {
+			return view("pages.error.403");
+		}
+
 		$validator = Validator::make($request->all(), [
 			'content' => 'required|string'
 		]);
@@ -41,6 +50,10 @@ class PrivacyController extends Controller
 
 	public function update(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1])) {
+			return view("pages.error.403");
+		}
+
 		$validator = Validator::make($request->all(), [
 			'contentEdit' => 'required|string'
 		]);

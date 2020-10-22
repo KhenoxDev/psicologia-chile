@@ -6,6 +6,7 @@ use App\Generality;
 use App\Traits\UploadTrait;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
@@ -22,12 +23,20 @@ class GeneralityController extends Controller
 
 	public function getMainVideo()
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$videos = $this->generality::where('module', 'main_video')->orderBy('is_active', 'desc')->get();
 		return view('pages.admin.generalities.video', compact('videos'));
 	}
 
 	public function setMainVideo(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$validator = Validator::make($request->all(), [
 			'video' => ['required', 'regex:/^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$/']
 		]);
@@ -47,6 +56,11 @@ class GeneralityController extends Controller
 
 	public function setDefaultVideo($id)
 	{
+
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$videos = $this->generality::where(['module' => 'main_video', 'is_active' => 1])->get();
 		if (count($videos) > 0) {
 			foreach ($videos as $video) {
@@ -65,6 +79,10 @@ class GeneralityController extends Controller
 
 	public function destroyMainVideo($id)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$this->generality::find($id)->delete();
 
 		toastr()->success("Se eliminó correctamente");
@@ -75,12 +93,20 @@ class GeneralityController extends Controller
 
 	public function getMainBanner()
 	{
+		if (!in_array(Auth::user()->rol_id, [1])) {
+			return view("pages.error.403");
+		}
+
 		$banners = $this->generality::where('module', 'main_banner')->orderBy('is_active', 'desc')->get();
 		return view('pages.admin.generalities.banner', compact('banners'));
 	}
 
 	public function setMainBanner(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1])) {
+			return view("pages.error.403");
+		}
+
 		$validator = Validator::make($request->all(), [
 			'nombre' => 'required',
 			'banner' => 'required|image|mimes:jpeg,png,jpg,svg|max:5096'
@@ -109,6 +135,10 @@ class GeneralityController extends Controller
 
 	public function setDefaultBanner($id)
 	{
+		if (!in_array(Auth::user()->rol_id, [1])) {
+			return view("pages.error.403");
+		}
+
 		$banners = $this->generality::where(['module' => 'main_banner', 'is_active' => 1])->get();
 		if (count($banners) > 0) {
 			foreach ($banners as $banner) {
@@ -127,6 +157,10 @@ class GeneralityController extends Controller
 
 	public function destroyMainBanner($id)
 	{
+		if (!in_array(Auth::user()->rol_id, [1])) {
+			return view("pages.error.403");
+		}
+
 		$delete = $this->generality::find($id);
 		if (File::exists(public_path($delete->element))) {
 			File::delete(public_path($delete->element));
@@ -146,12 +180,20 @@ class GeneralityController extends Controller
 
 	public function getMainPopup()
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$popups = $this->generality::where('module', 'popup_info')->orderBy('is_active', 'desc')->get();
 		return view('pages.admin.generalities.popup', compact('popups'));
 	}
 
 	public function setMainPopup(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$validator = Validator::make($request->all(), [
 			'nombre' => 'required',
 			'popup' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048'
@@ -180,6 +222,10 @@ class GeneralityController extends Controller
 
 	public function setDefaultPopup($id)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$banners = $this->generality::where(['module' => 'popup_info', 'is_active' => 1])->get();
 		if (count($banners) > 0) {
 			foreach ($banners as $banner) {
@@ -198,6 +244,10 @@ class GeneralityController extends Controller
 
 	public function unsetDefaultPopup($id)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$banner_selected = $this->generality::find($id);
 		$banner_selected->is_active = 0;
 		$banner_selected->save();
@@ -208,6 +258,10 @@ class GeneralityController extends Controller
 
 	public function destroyMainPopup($id)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$delete = $this->generality::find($id);
 		if (File::exists(public_path($delete->element))) {
 			File::delete(public_path($delete->element));
@@ -227,12 +281,20 @@ class GeneralityController extends Controller
 
 	public function getBusinessInfo()
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$business = $this->generality::whereIn('module', ['mision', 'vision', 'valores'])->get();
 		return view('pages.admin.generalities.business', compact('business'));
 	}
 
 	public function setBusinessInfo(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$business = $this->generality::all();
 
 		foreach ($business as $bus) {
@@ -263,6 +325,10 @@ class GeneralityController extends Controller
 
 	public function editBusinessInfo(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		if ($request->ajax()) {
 			$business = $this->generality::find($request->id);
 
@@ -275,6 +341,10 @@ class GeneralityController extends Controller
 
 	public function updateBusinessInfo(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$data = $this->generality::find($request->input('id'));
 
 		$validator = Validator::make($request->all(), [
@@ -295,6 +365,10 @@ class GeneralityController extends Controller
 
 	public function destroyBusinessInfo($id)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$this->generality::find($id)->delete();
 
 		toastr()->success('Se eliminó correctamente');

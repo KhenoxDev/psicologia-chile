@@ -7,6 +7,7 @@ use App\Traits\UploadTrait;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
@@ -28,6 +29,10 @@ class LogoController extends Controller
 
 	public function index()
 	{
+		if (!in_array(Auth::user()->rol_id, [1])) {
+			return view("pages.error.403");
+		}
+
 		$logos = $this->logo::all();
 
 		return view('pages.admin.generalities.logo', compact('logos'));
@@ -35,6 +40,10 @@ class LogoController extends Controller
 
 	public function uploadLogo(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1])) {
+			return view("pages.error.403");
+		}
+
 		$validator = Validator::make($request->all(), [
 			'name' => 'required',
 			'logo' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048'
@@ -63,6 +72,10 @@ class LogoController extends Controller
 
 	public function activeLogo($id)
 	{
+		if (!in_array(Auth::user()->rol_id, [1])) {
+			return view("pages.error.403");
+		}
+
 		$all = $this->logo::where('is_active', 1)->get();
 		foreach ($all as $one) {
 			$one->is_active = 0;
@@ -79,6 +92,10 @@ class LogoController extends Controller
 
 	public function inactiveLogo($id)
 	{
+		if (!in_array(Auth::user()->rol_id, [1])) {
+			return view("pages.error.403");
+		}
+
 		$logo = $this->logo::find($id);
 		$logo->is_active = 0;
 		$logo->save();
@@ -89,6 +106,10 @@ class LogoController extends Controller
 
 	public function deleteLogo($id)
 	{
+		if (!in_array(Auth::user()->rol_id, [1])) {
+			return view("pages.error.403");
+		}
+
 		$delete = $this->logo::find($id);
 		if (File::exists(public_path($delete->file_path))) {
 			File::delete(public_path($delete->file_path));

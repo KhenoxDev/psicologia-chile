@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Social;
 use App\SocialType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class SocialController extends Controller
@@ -24,6 +25,10 @@ class SocialController extends Controller
 
 	public function index()
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$socials = $this->social::all();
 		$types = $this->social_type::orderBy('name', 'asc')->get();
 
@@ -32,6 +37,10 @@ class SocialController extends Controller
 
 	public function store(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$validator = Validator::make($request->all(), [
 			'social' => 'required|url',
 			'tipo' => 'required'
@@ -59,6 +68,10 @@ class SocialController extends Controller
 
 	public function edit(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		if ($request->ajax()) {
 			$social = $this->social::find($request->id);
 
@@ -71,6 +84,10 @@ class SocialController extends Controller
 
 	public function update(Request $request)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$validator = Validator::make($request->all(), [
 			'social' => 'required|url',
 		]);
@@ -91,6 +108,10 @@ class SocialController extends Controller
 
 	public function destroy($id)
 	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
+		}
+
 		$this->social::find($id)->delete();
 
 		toastr()->success('Se eliminó correctamente.');
