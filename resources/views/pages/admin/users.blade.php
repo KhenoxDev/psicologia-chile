@@ -40,10 +40,10 @@
                             <a title="Editar" href="#" class="editModalBtn" data-toggle="modal" data-id="{{ $user->id }}"><i
                                     class="far fa-edit"></i></a>
                             @if ($user->is_active)
-                                <a title="Activar" href="{{ route('admin.inactive.users', $user->id) }}"><i
+                                <a title="Desactivar" href="{{ route('admin.inactive.users', $user->id) }}"><i
                                         class="fas fa-minus-circle"></i></a>
                             @else
-                                <a title="Desactivar" href="{{ route('admin.active.users', $user->id) }}"><i
+                                <a title="Activar" href="{{ route('admin.active.users', $user->id) }}"><i
                                         class="far fa-check-circle"></i></a>
                             @endif
 
