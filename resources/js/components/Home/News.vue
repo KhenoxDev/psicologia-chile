@@ -102,10 +102,17 @@ export default {
       const api = this.$store.getters.getAppUrl + "/api/news";
 
       try {
-        let response = await axios.get(api);
-        for (let index = 0; index < 6; index++) {
-          this.news.push(response.data.data[index]);
-        }
+		let response = await axios.get(api);
+		if(response.data.data.length >= 9)
+		{
+			for (let index = 0; index < 9; index++) {
+			  this.news.push(response.data.data[index]);
+			}
+		} else {
+			for (let index = 0; index < response.data.data.length; index++) {
+			  this.news.push(response.data.data[index]);
+			}
+		}
       } catch (error) {
         console.log(error);
       }
