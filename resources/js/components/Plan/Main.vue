@@ -26,8 +26,11 @@
               <div id="front">
                 <div class="card-header">
                   <strong>{{ pln2.sesiones }}</strong>
-                  sesiones a
-                  <strong>${{ formatPrice(pln2.valor) }}</strong>
+                  {{ pln2.sesiones > 1 ? "sesiones" : "sesión" }} a
+                  <strong
+                    >${{ formatPrice(pln2.valor) }}
+                    {{ pln2.sesiones > 1 ? "C/U" : "" }}</strong
+                  >
                 </div>
 
                 <div class="card-content center">

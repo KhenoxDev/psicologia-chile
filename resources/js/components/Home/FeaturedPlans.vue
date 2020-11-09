@@ -1,8 +1,6 @@
 <template>
   <div id="mainPlans" class="container mt-4 mb-4">
-    <span class="title--section">
-      <strong>Planes</strong> destacados
-    </span>
+    <span class="title--section"> <strong>Planes</strong> destacados </span>
     <hr class="line--separator" />
     <vueper-slides
       :breakpoints="breakpoints"
@@ -20,8 +18,11 @@
               <div id="front">
                 <div class="card-header">
                   <strong>{{ pln.sesiones }}</strong>
-                  sesiones a
-                  <strong>${{ formatPrice(pln.valor) }}</strong>
+                  {{ pln.sesiones > 1 ? "sesiones" : "sesión" }} a
+                  <strong
+                    >${{ formatPrice(pln.valor) }}
+                    {{ pln.sesiones > 1 ? "C/U" : "" }}</strong
+                  >
                 </div>
 
                 <div class="card-content center">

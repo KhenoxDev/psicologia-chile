@@ -94,12 +94,12 @@ export default {
     setTimeout(() => {
       if (this.mainPopup.length > 0) {
         this.$swal({
-          width: 1000,
+          width: 800,
+          imageWidth: "100%",
           imageUrl: this.mainPopup[0].element,
           imageAlt: this.mainPopup[0].module,
-          imageHeight: 500,
           showConfirmButton: false,
-          timer: 8000,
+          //   timer: 8000,
         });
       }
     }, 2000);
