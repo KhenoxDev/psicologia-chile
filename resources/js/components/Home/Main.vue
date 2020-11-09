@@ -99,7 +99,7 @@ export default {
           imageUrl: this.mainPopup[0].element,
           imageAlt: this.mainPopup[0].module,
           showConfirmButton: false,
-          //   timer: 8000,
+          showCloseButton: true,
         });
       }
     }, 2000);
