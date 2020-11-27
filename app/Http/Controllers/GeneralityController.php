@@ -197,7 +197,6 @@ class GeneralityController extends Controller
 		$validator = Validator::make($request->all(), [
 			'nombre' => 'required',
 			'popup' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048',
-			'url' => 'url'
 		]);
 
 		if ($validator->fails()) {

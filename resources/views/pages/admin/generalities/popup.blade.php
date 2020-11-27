@@ -35,7 +35,8 @@
                         <div class="form-group">
                             <label for="url">{{ __('Url') }}</label>
                             <input type="text" class="form-control" name="url" id="url">
-                            <small class="form-text text-muted">Si no es necesario que redireccione, dejar en blanco.</small>
+                            <small class="form-text text-muted">Solo agregar en caso de necesitar redireccionar. La url debe
+                                contar con lo siguiente: https://es.stackoverflow.com/</small>
                         </div>
                     </div>
                     <div class="modal-footer">
