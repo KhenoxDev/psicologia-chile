@@ -101,6 +101,14 @@ export default {
           showConfirmButton: false,
           showCloseButton: true,
         });
+        const url = this.mainPopup[0].url;
+
+        if (url !== null) {
+          $(".swal2-image").css("cursor", "pointer");
+          $(".swal2-image").click(function () {
+            window.open(url, "_blank");
+          });
+        }
       }
     }, 2000);
   },

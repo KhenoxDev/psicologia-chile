@@ -26,13 +26,16 @@
                             <label for="nombre">{{ __('Nombre pop up *') }}</label>
                             <input type="text" class="form-control" name="nombre" id="nombre" required>
                         </div>
-                    </div>
-                    <div class="modal-body">
                         <div class="form-group">
                             <label for="popup">{{ __('Imagen *') }}</label>
                             <input type="file" class="form-control" name="popup" id="popup" required>
                             <small class="form-text text-muted">Recuerde procesar su imagen <a href="https://tinypng.com/"
                                     target="_blank">aquí</a> para reducir su peso.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="url">{{ __('Url') }}</label>
+                            <input type="text" class="form-control" name="url" id="url">
+                            <small class="form-text text-muted">Si no es necesario que redireccione, dejar en blanco.</small>
                         </div>
                     </div>
                     <div class="modal-footer">

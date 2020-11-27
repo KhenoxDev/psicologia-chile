@@ -196,7 +196,8 @@ class GeneralityController extends Controller
 
 		$validator = Validator::make($request->all(), [
 			'nombre' => 'required',
-			'popup' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048'
+			'popup' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048',
+			'url' => 'url'
 		]);
 
 		if ($validator->fails()) {
@@ -213,6 +214,7 @@ class GeneralityController extends Controller
 
 			$this->generality->module = 'popup_info';
 			$this->generality->element = $filePath;
+			$this->generality->url = $request->input('url');
 			$this->generality->save();
 		}
 
