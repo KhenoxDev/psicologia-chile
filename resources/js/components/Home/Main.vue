@@ -8,6 +8,19 @@
         v-bind:color="'#f4b034'"
       ></loading-component>
     </transition>
+    <vodal
+      :show="show"
+      @hide="show = false"
+      :width="650"
+      :height="570"
+      :duration="400"
+      animation="rotate"
+    >
+      <div
+        class="light-box"
+        :style="'background-image: url(' + this.mainPopup[0].element + ')'"
+      ></div>
+    </vodal>
     <masthead
       :img-background="
         this.mainBanner.length > 0 ? this.mainBanner[0].element : imgBackground
@@ -50,6 +63,7 @@ import FrequentlyQuestions from "./FrequentlyQuestions";
 import News from "./News";
 import WereNews from "./WeWereNews";
 import Covenants from "./Covenants";
+import Vodal from "vodal";
 import { mapState } from "vuex";
 import { setTimeout } from "timers";
 
@@ -67,6 +81,7 @@ export default {
       isLoading: true,
       fullPage: true,
       linkVideo: "",
+      show: false,
     };
   },
   components: {
@@ -81,6 +96,7 @@ export default {
     News,
     WereNews,
     Covenants,
+    Vodal,
   },
   created() {
     this.$store.dispatch("loadMainPopup");
@@ -93,22 +109,16 @@ export default {
     this.onLoad();
     setTimeout(() => {
       if (this.mainPopup.length > 0) {
-        this.$swal({
-          width: 800,
-          imageWidth: "100%",
-          imageUrl: this.mainPopup[0].element,
-          imageAlt: this.mainPopup[0].module,
-          showConfirmButton: false,
-          showCloseButton: true,
-        });
-        const url = this.mainPopup[0].url;
+        this.show = true;
+      }
 
-        if (url !== null) {
-          $(".swal2-image").css("cursor", "pointer");
-          $(".swal2-image").click(function () {
-            window.open(url, "_blank");
-          });
-        }
+      const url = this.mainPopup[0].url;
+
+      if (url !== null) {
+        $(".light-box").css("cursor", "pointer");
+        $(".light-box").click(function () {
+          window.open(url, "_blank");
+        });
       }
     }, 2000);
   },
@@ -123,3 +133,73 @@ export default {
   computed: mapState(["mainPopup", "mainVideo", "mainBanner"]),
 };
 </script>
+<style lang="scss">
+@import "~vodal/common.css";
+@import "~vodal/rotate.css";
+
+.vodal-dialog {
+  background: transparent;
+  box-shadow: unset;
+
+  .vodal-close {
+    top: 22px;
+    right: 22px;
+  }
+}
+
+.light-box {
+  border-radius: 14px !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
+  height: 100% !important;
+}
+
+@media (max-width: 767px) {
+  .vodal-dialog {
+    width: 84% !important;
+    height: auto !important;
+    max-height: 65% !important;
+  }
+}
+
+@media (max-width: 320px) {
+  .vodal-dialog {
+    width: 84% !important;
+    height: auto !important;
+    max-height: 28% !important;
+  }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 425px) {
+  .vodal-dialog {
+    width: 84% !important;
+    height: auto !important;
+    max-height: 35% !important;
+  }
+}
+
+@media only screen and (min-width: 426px) and (max-width: 500px) {
+  .vodal-dialog {
+    width: 84% !important;
+    height: auto !important;
+    max-height: 42% !important;
+  }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 620px) {
+  .vodal-dialog {
+    width: 84% !important;
+    height: auto !important;
+    max-height: 50% !important;
+  }
+}
+
+@media only screen and (min-width: 621px) and (max-width: 700px) {
+  .vodal-dialog {
+    width: 84% !important;
+    height: auto !important;
+    max-height: 60% !important;
+  }
+}
+</style>

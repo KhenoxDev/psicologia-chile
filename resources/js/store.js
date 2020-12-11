@@ -142,6 +142,9 @@ export default new Vuex.Store({
 		},
 		getAgreement: (state, getters) => {
 			return state.agreementSelected;
+		},
+		getPopup: (state, getters) => {
+			return state.mainPopup;
 		}
 	}
 });
