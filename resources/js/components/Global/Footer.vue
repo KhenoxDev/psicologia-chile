@@ -58,6 +58,12 @@
               </form>
             </div>
           </div>
+          <div class="mt-4">
+            <h6>Contáctanos!</h6>
+            <div v-for="contact in contacts" :key="contact.index">
+              <p class="text-white">{{ contact.title }} {{ contact.link }}</p>
+            </div>
+          </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="single-footer-widget mail-chimp text-left">
@@ -219,10 +225,10 @@ export default {
       contacts: [
         {
           title: "Comunícate al",
-          link: "+562 2979 7700",
+          link: "+56 22 869 3330 / +56 9 9858 6960",
         },
         {
-          title: "Escribenos a",
+          title: "Escríbenos a",
           link: "contacto@psicologiachile.cl",
         },
       ],
