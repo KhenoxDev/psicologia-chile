@@ -28,7 +28,7 @@ class NewsController extends Controller
 		if (!is_null($id)) {
 			$rows = $this->news::find($id);
 		} else {
-			$rows = $this->news::where('is_posted', 1)->paginate();
+			$rows = $this->news::where('is_posted', 1)->paginate(1000);
 		}
 
 		return response()->json($rows);
