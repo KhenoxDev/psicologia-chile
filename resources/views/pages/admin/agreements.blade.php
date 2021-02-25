@@ -31,7 +31,8 @@
                         <td>
                             <a href="{{ route('admin.destroy.agreements', $agreement->id) }}"><i
                                     class="fas fa-times"></i></a>
-                            <a href="#" class="link-btn" data-id="{{ $agreement->id }}"><i class="fas fa-link"></i></a>
+                            {{-- <a href="#" class="link-btn" data-id="{{ $agreement->id }}"><i class="fas fa-link"></i></a> --}}
+                            <a href="{{ route('admin.psicologos.agreements', $agreement->id) }}"><i class="fas fa-link"></i></a>
                         </td>
                     </tr>
                 @endforeach
@@ -174,66 +175,6 @@
                     },
                 }
             });
-
-            $('.link-btn').click(function() {
-                var aux;
-                var id = $(this).data('id');
-                var url = "https://online.psicologiachile.cl/gateway-json.php?service=staff";
-                var url2 = "{{ route('api.agreement.psch') }}" + '/' + id;
-
-                $.ajax({
-                    type: 'get',
-                    url: url2,
-                    success: function(response) {
-                        aux = response
-                    }
-                });
-
-                $.ajax({
-                    type: 'get',
-                    url: url,
-                    success: function(response) {
-                        let data = JSON.parse(response);
-                        $("#staff").empty();
-                        $("#agreement_id").val(id);
-                        data.items.forEach(element => {
-                            let flag = aux.find((el) => {
-                                return el.psychologist_id == element.index
-                            });
-
-                            if (flag) {
-                                $("#staff").append(
-                                    `<div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" id="${element.index}" name="psch[]" value="${element.index}" checked><label class="form-check-label" for="${element.index}">${element.nombreCompleto}</label></div>`
-                                );
-                            } else {
-                                $("#staff").append(
-                                    `<div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" id="${element.index}" name="psch[]" value="${element.index}"><label class="form-check-label" for="${element.index}">${element.nombreCompleto}</label></div>`
-                                );
-                            }
-                        });
-                        // $('#id_edit').val(data[0].id);
-                        // $('#rut_edit').val(data[0].rut);
-                        // $('#name_edit').val(data[0].name);
-                        // $('#last_name_edit').val(data[0].last_name);
-                        // $('#rol_id_edit').empty();
-                        // $.each(data[1], function(i, item) {
-                        //     if (data[0].rol_id == item.id) {
-                        //         $("#rol_id_edit").append("<option value='" +
-                        //             item.id +
-                        //             "' selected>" + item.name +
-                        //             "</option>")
-
-                        //     } else {
-                        //         $("#rol_id_edit").append("<option value='" +
-                        //             item.id +
-                        //             "'>" + item.name + "</option>")
-                        //     }
-                        // });
-                        $('#linkModal').modal('show');
-                    }
-                });
-            });
         });
-
     </script>
 @stop

@@ -10,6 +10,7 @@ use App\AgreementPsychologist;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
+use GuzzleHttp\Client;
 
 class AgreementController extends Controller
 {
@@ -142,9 +143,7 @@ class AgreementController extends Controller
 		$this->agreement_psch::where('agreement_id', $request->input("agreement_id"))->delete();
 
 		for ($i = 0; $i < count($psch); $i++) {
-			// if (!$this->agreement_psch::where(["agreement_id" => $request->input("agreement_id"), "psychologist_id" => $psch[$i]])->exists()) {
 			array_push($data, ["agreement_id" => $request->input("agreement_id"), "psychologist_id" => $psch[$i]]);
-			// }
 		}
 
 		if (count($data) == 0) {
@@ -154,18 +153,33 @@ class AgreementController extends Controller
 
 		$this->agreement_psch::insert($data);
 
-		toastr()->success("Se enlazaron los psicólogos correctamente.");
+		toastr()->success("Se enlazaron los psicólogos correctamente al convenio.");
 		return back();
 	}
 
-	public function getAgreementPsch($agreement = null)
-	{
-		if (is_null($agreement)) {
-			$psch = $this->agreement_psch::all();
-		} else {
-			$psch = $this->agreement_psch::where('agreement_id', $agreement)->get();
+	public function assignPsch($id) {
+		//Obtener los psicologos de la api y armar un nuevo arreglo de objetos
+		$client = new Client();
+		$response = $client->request('GET', 'https://online.psicologiachile.cl/gateway-json.php?service=staff');
+		$body = $response->getBody();
+		$psicologos = json_decode($body->getContents());
+		$newPsch = [];
+
+		foreach ($psicologos->items as $item) {
+			array_push($newPsch, [ 'index' => $item->index, 'nombreCompleto' => preg_replace('/[^a-z0-9]+$/i', ' ', $item->nombreCompleto), 'checked' => false ]);
 		}
 
-		return response()->json($psch);
+		//Obtener los datos de los psicologos asociados
+		$agreementPsch = $this->agreement_psch::where('agreement_id', $id)->get();
+
+		foreach($agreementPsch as $item) {
+			for ($i=0; $i < count($newPsch) ; $i++) {
+				if($item->psychologist_id == $newPsch[$i]['index']) {
+					$newPsch[$i]['checked'] = true;
+				}
+			}
+		}
+
+		return view('pages.admin.agreements.psicologos', compact('newPsch', 'id'));
 	}
 }

@@ -91,6 +91,7 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/admin/convenios', 'AgreementController@index')->name('admin.agreements');
 	Route::post('/admin/convenios', 'AgreementController@store')->name('admin.store.agreements');
 	Route::get('/admin/convenios/eliminar/{id}', 'AgreementController@destroy')->name('admin.destroy.agreements');
+	Route::get('/admin/convenios/psicologos/{id}', 'AgreementController@assignPsch')->name('admin.psicologos.agreements');
 	Route::post('/admin/convenios/enlazar', 'AgreementController@storePsch')->name('admin.store.psch');
 
 
