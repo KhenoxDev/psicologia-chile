@@ -157,6 +157,17 @@ class AgreementController extends Controller
 		return back();
 	}
 
+	public function getAgreementPsch($agreement = null)
+	{
+		if (is_null($agreement)) {
+			$psch = $this->agreement_psch::all();
+		} else {
+			$psch = $this->agreement_psch::where('agreement_id', $agreement)->get();
+		}
+
+		return response()->json($psch);
+	}
+
 	public function assignPsch($id) {
 		//Obtener los psicologos de la api y armar un nuevo arreglo de objetos
 		$client = new Client();

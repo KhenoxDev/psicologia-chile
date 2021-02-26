@@ -413,6 +413,10 @@ export default {
       if (this.filterOpt == "spec") {
         this.specialistSelected.push(this.nameOpt);
       }
+
+      if (this.filterOpt == "psicologos") {
+        this.agreementsSelected.push(parseInt(this.nameOpt));
+      }
     }
   },
   methods: {
