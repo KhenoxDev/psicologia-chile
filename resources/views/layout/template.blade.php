@@ -20,7 +20,12 @@
         gtag('js', new Date());
         gtag('config', 'AW-470819153');
     </script>
-
+    <script>
+        gtag('event', 'conversion', {
+            'send_to': 'AW-470819153/8bxjCJLwuuwBENHCwOAB',
+            'transaction_id': ''
+        });
+    </script>
     <!-- Facebook Tag Manager -->
     <script>
         ! function(f, b, e, v, n, t, s) {
