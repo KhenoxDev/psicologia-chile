@@ -153,6 +153,7 @@
             :photo="list.foto"
             :name-professional="list.nombreCompleto"
             :title-professional="list.profesion"
+            :rating-professional="list.calificacion"
             :identificator="list.index"
           ></professional>
           <div class="no-results" v-show="filteredList.length == 0">
@@ -338,13 +339,20 @@
                   :key="prof.id"
                   :value="prof.contratar"
                 >
-                  {{ prof.sesiones }} Sesiones por {{ formatPrice(prof.valor) }}
+                  <p v-if="prof.valor == 10160">
+                    {{ prof.sesiones }} Sesión por
+                    {{ formatPrice(prof.valor) }} (Bono Fonasa)
+                  </p>
+                  <p v-else>
+                    {{ prof.sesiones }} Sesiones por
+                    {{ formatPrice(prof.valor) }}
+                  </p>
                 </option>
               </select>
             </div>
           </div>
           <div class="modal-footer">
-            <a :href="urlProfessional" target="_blank">Contratar</a>
+            <a :href="urlProfessional" target="_blank">Agendar</a>
           </div>
         </div>
       </div>

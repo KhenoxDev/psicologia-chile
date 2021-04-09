@@ -20,6 +20,7 @@
             :name-professional="list.nombreCompleto"
             :title-professional="list.profesion"
             :identificator="list.index"
+            :rating-professional="list.calificacion"
           ></professional>
         </template>
       </vueper-slide>
@@ -35,10 +36,17 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
               <span aria-hidden="true">&times;</span>
             </button>
-            <h5 class="modal-title" id="professionalLabel">{{ professionalSelected.nombreCompleto }}</h5>
+            <h5 class="modal-title" id="professionalLabel">
+              {{ professionalSelected.nombreCompleto }}
+            </h5>
             <span>Código: {{ professionalSelected.codigo }}</span>
           </div>
           <div id="modalBody" class="modal-body">
@@ -71,7 +79,10 @@
                   data-parent="#accordionExample"
                 >
                   <div class="card-body">
-                    <p class="p--description" v-html="professionalSelected.descripcion"></p>
+                    <p
+                      class="p--description"
+                      v-html="professionalSelected.descripcion"
+                    ></p>
                   </div>
                 </div>
 
@@ -103,7 +114,8 @@
                       class="badge badge--psicologia span--specialist"
                       v-for="spec in professionalSelected.especialidades"
                       :key="spec.id"
-                    >{{ spec }}</span>
+                      >{{ spec }}</span
+                    >
                   </div>
                 </div>
 
@@ -135,7 +147,8 @@
                       class="badge badge--psicologia span--prevision"
                       v-for="prev in professionalSelected.prevision"
                       :key="prev.id"
-                    >{{ prev }}</span>
+                      >{{ prev }}</span
+                    >
                   </div>
                 </div>
 
@@ -162,9 +175,9 @@
                   data-parent="#accordionExample"
                 >
                   <div class="card-body">
-                    <span
-                      class="span--schedule badge badge--schedule"
-                    >{{ professionalSelected.diasAtencion }}</span>
+                    <span class="span--schedule badge badge--schedule">{{
+                      professionalSelected.diasAtencion
+                    }}</span>
                   </div>
                 </div>
               </div>
@@ -185,7 +198,9 @@
                   v-for="prof in professionalSelected.planes"
                   :key="prof.id"
                   :value="prof.contratar"
-                >{{ prof.sesiones }} Sesiones por {{ formatPrice(prof.valor) }}</option>
+                >
+                  {{ prof.sesiones }} Sesiones por {{ formatPrice(prof.valor) }}
+                </option>
               </select>
             </div>
           </div>

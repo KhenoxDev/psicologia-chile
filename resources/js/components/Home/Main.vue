@@ -9,6 +9,7 @@
       ></loading-component>
     </transition>
     <vodal
+      v-if="this.mainPopup.length > 0"
       :show="show"
       @hide="show = false"
       :width="650"
