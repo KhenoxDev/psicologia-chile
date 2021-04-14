@@ -10,22 +10,25 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @toastr_css
     <!-- Google Tag Manager -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-470819153"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PVG5WWK');
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'AW-470819153');
     </script>
-    <script>
-        gtag('event', 'conversion', {
-            'send_to': 'AW-470819153/8bxjCJLwuuwBENHCwOAB',
-            'transaction_id': ''
-        });
-    </script>
+    <!-- End Google Tag Manager -->
+
     <!-- Facebook Tag Manager -->
     <script>
         ! function(f, b, e, v, n, t, s) {
@@ -48,11 +51,19 @@
             'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '453643279248109');
         fbq('track', 'PageView');
+
     </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=453643279248109&ev=PageView&noscript=1" /></noscript>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=453643279248109&ev=PageView&noscript=1" /></noscript>
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVG5WWK" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div id="app">
         <navbar-component current="{{ Route::currentRouteName() }}" img-logo="{{ asset('img/navbar/logo.png') }}">
         </navbar-component>
@@ -85,6 +96,7 @@
                 }, 'slow'); // Para Chrome
             });
         });
+
     </script>
 </body>
 
