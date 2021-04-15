@@ -17,10 +17,11 @@
     </div>
     <div class="professional--star">
       <star-rating
-        :rating="ratingProfessional ? ratingProfessional : 0"
+        :rating="ratingProfessional ? ratingProfessional / 20 : 0"
         :read-only="true"
         :show-rating="false"
         :star-size="15"
+        :round-start-rating="false"
       ></star-rating>
     </div>
     <div class="button--container">
