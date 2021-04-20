@@ -19,9 +19,9 @@
       <star-rating
         :rating="ratingProfessional ? ratingProfessional / 20 : 0"
         :read-only="true"
-        :show-rating="false"
         :star-size="15"
         :round-start-rating="false"
+        text-class="text-star"
       ></star-rating>
     </div>
     <div class="button--container">
@@ -67,3 +67,8 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+.text-star {
+  padding-top: 0.3rem !important;
+}
+</style>
