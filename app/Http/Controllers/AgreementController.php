@@ -102,6 +102,7 @@ class AgreementController extends Controller
 		$delete = $this->agreement::find($id);
 
 		if (!File::exists(public_path($delete->doc)) && !File::exists(public_path($delete->img))) {
+			$this->agreement_psch::where('agreement_id', $id)->delete();
 			$delete->delete();
 
 			toastr()->warning('Se eliminó el registro correctamente pero el documento y la imagen no se encontraron');
@@ -113,17 +114,21 @@ class AgreementController extends Controller
 
 			if (File::exists(public_path($delete->img))) {
 				File::delete(public_path($delete->img));
+
+				$this->agreement_psch::where('agreement_id', $id)->delete();
 				$delete->delete();
 
 				toastr()->success('Se eliminó la imagen, el documento y el registro correctamente');
 				return back();
 			} else {
+				$this->agreement_psch::where('agreement_id', $id)->delete();
 				$delete->delete();
 
 				toastr()->warning('Se eliminó el documento y el registro correctamente pero la imagen no pudo encontrarse');
 				return back();
 			}
 		} else {
+			$this->agreement_psch::where('agreement_id', $id)->delete();
 			$delete->delete();
 
 			toastr()->warning('Se eliminó el registro y la imagen correctamente pero el documento no se pudo encontrar');
@@ -168,7 +173,8 @@ class AgreementController extends Controller
 		return response()->json($psch);
 	}
 
-	public function assignPsch($id) {
+	public function assignPsch($id)
+	{
 		//Obtener los psicologos de la api y armar un nuevo arreglo de objetos
 		$client = new Client();
 		$response = $client->request('GET', 'https://online.psicologiachile.cl/gateway-json.php?service=staff');
@@ -177,15 +183,15 @@ class AgreementController extends Controller
 		$newPsch = [];
 
 		foreach ($psicologos->items as $item) {
-			array_push($newPsch, [ 'index' => $item->index, 'nombreCompleto' => preg_replace('/[^a-z0-9]+$/i', ' ', $item->nombreCompleto), 'checked' => false ]);
+			array_push($newPsch, ['index' => $item->index, 'nombreCompleto' => preg_replace('/[^a-z0-9]+$/i', ' ', $item->nombreCompleto), 'checked' => false]);
 		}
 
 		//Obtener los datos de los psicologos asociados
 		$agreementPsch = $this->agreement_psch::where('agreement_id', $id)->get();
 
-		foreach($agreementPsch as $item) {
-			for ($i=0; $i < count($newPsch) ; $i++) {
-				if($item->psychologist_id == $newPsch[$i]['index']) {
+		foreach ($agreementPsch as $item) {
+			for ($i = 0; $i < count($newPsch); $i++) {
+				if ($item->psychologist_id == $newPsch[$i]['index']) {
 					$newPsch[$i]['checked'] = true;
 				}
 			}
