@@ -17,10 +17,12 @@ $(function () {
 					$(".header_area").addClass("navbar_fixed");
 					$(".float").css("display", "block");
 					$("#btnBackTop").addClass('show');
+					$("#btnWhatsapp").addClass('show');
 				} else {
 					$(".header_area").removeClass("navbar_fixed");
 					$(".float").css("display", "none");
 					$("#btnBackTop").removeClass('show');
+					$("#btnWhatsapp").removeClass('show');
 				}
 			});
 		};

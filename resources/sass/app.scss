@@ -1,44 +1,45 @@
 /* Main */
-@import 'variables';
-@import 'mixins';
-@import 'globals';
-@import 'socials';
-@import 'backtop';
-@import 'newsletter';
-@import 'register';
+@import "variables";
+@import "mixins";
+@import "globals";
+@import "socials";
+@import "backtop";
+@import "btnwhatsapp";
+@import "newsletter";
+@import "register";
 
 /* Layout */
-@import 'layout/module';
+@import "layout/module";
 
 /* Home */
-@import 'pages/home/module';
+@import "pages/home/module";
 
 /* About */
-@import 'pages/about/module';
+@import "pages/about/module";
 
 /* Work */
-@import 'pages/work/module';
+@import "pages/work/module";
 
 /* Professional */
-@import 'pages/professional/module';
+@import "pages/professional/module";
 
 /* Specialist */
-@import 'pages/specialist/module';
+@import "pages/specialist/module";
 
 /* News */
-@import 'pages/news/module';
+@import "pages/news/module";
 
 /* Plan */
-@import 'pages/plan/module';
+@import "pages/plan/module";
 
 /* Question */
-@import 'pages/question/module';
+@import "pages/question/module";
 
 /* Fonts */
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
 /* Bootstrap */
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
 /* Vueper Sliders */
 @import "~vueperslides/dist/vueperslides.css";
@@ -47,16 +48,16 @@
 @import "~vue-simple-drawer/src/index";
 
 /* Sweet Alert */
-@import '~sweetalert2/dist/sweetalert2.min.css';
+@import "~sweetalert2/dist/sweetalert2.min.css";
 
 /* Font Awesome */
-@import '~@fortawesome/fontawesome-free/scss/brands';
-@import '~@fortawesome/fontawesome-free/scss/regular';
-@import '~@fortawesome/fontawesome-free/scss/solid';
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import "~@fortawesome/fontawesome-free/scss/brands";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
 
 /* Hamburguers */
-@import '~hamburgers/_sass/hamburgers/hamburgers.scss';
+@import "~hamburgers/_sass/hamburgers/hamburgers.scss";
 
 /* Loading */
-@import '~vue-loading-overlay/dist/vue-loading.css';
+@import "~vue-loading-overlay/dist/vue-loading.css";

@@ -6,7 +6,7 @@
       target="_blank"
     >
       <i class="fab fa-whatsapp my-float"></i>
-    </a>-->
+    </a> -->
     <a
       v-for="social in socials"
       :key="social.id"

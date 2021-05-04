@@ -33,6 +33,7 @@ Vue.component('navbar-component', require('./components/Global/Navbar.vue').defa
 Vue.component('whatsapp-component', require('./components/Global/Whatsapp.vue').default);
 Vue.component('footer-component', require('./components/Global/Footer.vue').default);
 Vue.component('backtop-component', require('./components/Global/BackTop.vue').default);
+Vue.component('btnwhatsapp-component', require('./components/Global/BtnWhatsapp.vue').default);
 
 /* Section Components */
 Vue.component('home-component', require('./components/Home/Main.vue').default);
