@@ -93,47 +93,36 @@ class AgreementController extends Controller
 		return back();
 	}
 
-	public function destroy($id)
+	public function inactive($id)
 	{
 		if (!in_array(Auth::user()->rol_id, [1, 2])) {
 			return view("pages.error.403");
 		}
 
-		$delete = $this->agreement::find($id);
+		$inactive = $this->agreement::find($id);
+		$inactive->is_active = 0;
 
-		if (!File::exists(public_path($delete->doc)) && !File::exists(public_path($delete->img))) {
-			$this->agreement_psch::where('agreement_id', $id)->delete();
-			$delete->delete();
+		toastr()->warning('Se desactivó el convenio ' . $inactive->title);
 
-			toastr()->warning('Se eliminó el registro correctamente pero el documento y la imagen no se encontraron');
-			return back();
+		$inactive->save();
+
+		return back();
+	}
+
+	public function active($id)
+	{
+		if (!in_array(Auth::user()->rol_id, [1, 2])) {
+			return view("pages.error.403");
 		}
 
-		if (File::exists(public_path($delete->doc))) {
-			File::delete(public_path($delete->doc));
+		$inactive = $this->agreement::find($id);
+		$inactive->is_active = 1;
 
-			if (File::exists(public_path($delete->img))) {
-				File::delete(public_path($delete->img));
+		toastr()->warning('Se activó el convenio ' . $inactive->title);
 
-				$this->agreement_psch::where('agreement_id', $id)->delete();
-				$delete->delete();
+		$inactive->save();
 
-				toastr()->success('Se eliminó la imagen, el documento y el registro correctamente');
-				return back();
-			} else {
-				$this->agreement_psch::where('agreement_id', $id)->delete();
-				$delete->delete();
-
-				toastr()->warning('Se eliminó el documento y el registro correctamente pero la imagen no pudo encontrarse');
-				return back();
-			}
-		} else {
-			$this->agreement_psch::where('agreement_id', $id)->delete();
-			$delete->delete();
-
-			toastr()->warning('Se eliminó el registro y la imagen correctamente pero el documento no se pudo encontrar');
-			return back();
-		}
+		return back();
 	}
 
 	public function storePsch(Request $request)

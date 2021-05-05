@@ -73,9 +73,6 @@ Route::group(['middleware' => ['auth']], function () {
 	})->name('admin.home');
 
 	/* Users */
-	Route::get('/admin/usuarios', function () {
-		return view('pages.admin.users');
-	})->name('admin.users');
 	Route::get('/admin/usuarios', 'UserController@index')->name('admin.users');
 	Route::post('/admin/usuarios', 'UserController@store')->name('admin.store.users');
 	Route::get('/admin/usuarios/editar', 'UserController@edit')->name('admin.edit.users');
@@ -85,12 +82,10 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::put('/admin/usuarios/editar-password', 'UserController@update_password')->name('admin.update_password.users');
 
 	/* Agreemnets */
-	Route::get('/admin/convenios', function () {
-		return view('pages.admin.agreements');
-	})->name('admin.agreements');
 	Route::get('/admin/convenios', 'AgreementController@index')->name('admin.agreements');
 	Route::post('/admin/convenios', 'AgreementController@store')->name('admin.store.agreements');
-	Route::get('/admin/convenios/eliminar/{id}', 'AgreementController@destroy')->name('admin.destroy.agreements');
+	Route::get('/admin/convenios/desactivar/{id}', 'AgreementController@inactive')->name('admin.inactive.agreements');
+	Route::get('/admin/convenios/activar/{id}', 'AgreementController@active')->name('admin.active.agreements');
 	Route::get('/admin/convenios/psicologos/{id}', 'AgreementController@assignPsch')->name('admin.psicologos.agreements');
 	Route::post('/admin/convenios/enlazar', 'AgreementController@storePsch')->name('admin.store.psch');
 

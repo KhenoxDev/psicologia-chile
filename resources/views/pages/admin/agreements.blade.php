@@ -15,7 +15,6 @@
                     <th>{{ __('#') }}</th>
                     <th>{{ __('Nombre') }}</th>
                     <th>{{ __('Descripción') }}</th>
-                    <th>{{ __('Condición') }}</th>
                     <th>{{ __('Documento') }}</th>
                     <th></th>
                 </tr>
@@ -26,13 +25,19 @@
                         <td>{{ $agreement->id }}</td>
                         <td>{{ $agreement->title }}</td>
                         <td>{!! $agreement->description !!}</td>
-                        <td>{!! $agreement->conditions !!}</td>
                         <td> <a href="{{ asset($agreement->doc) }}" target="_blank">Ver documento</a></td>
-                        <td>
-                            <a href="{{ route('admin.destroy.agreements', $agreement->id) }}"><i
-                                    class="fas fa-times"></i></a>
-                            {{-- <a href="#" class="link-btn" data-id="{{ $agreement->id }}"><i class="fas fa-link"></i></a> --}}
-                            <a href="{{ route('admin.psicologos.agreements', $agreement->id) }}"><i class="fas fa-link"></i></a>
+                        <td style="width: 15%">
+                            <div class="d-flex flex-wrap flex-row justify-content-end">
+                                @if ($agreement->is_active)
+                                    <a href="{{ route('admin.inactive.agreements', $agreement->id) }}"
+                                        class="btn btn-sm ml-2 mr-2 mt-sm-2 mb-sm-2 text-white btn-danger">Desactivar</a>
+                                @else
+                                    <a href="{{ route('admin.active.agreements', $agreement->id) }}"
+                                        class="btn btn-sm ml-2 mr-2 mt-sm-2 mb-sm-2 text-white btn-success">Activar</a>
+                                @endif
+                                <a href="{{ route('admin.psicologos.agreements', $agreement->id) }}"
+                                    class="btn btn-sm ml-2 mr-2 mt-sm-2 mb-sm-2 text-white btn-info">Enlazar</a>
+                            </div>
                         </td>
                     </tr>
                 @endforeach
@@ -176,5 +181,6 @@
                 }
             });
         });
+
     </script>
 @stop
