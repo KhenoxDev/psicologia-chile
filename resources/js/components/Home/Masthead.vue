@@ -18,10 +18,8 @@
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             ></iframe>
-            <a
-              href="https://online.psicologiachile.cl/"
-              class="btn btn-2 shadow-sm"
-              >¡Comienza ya!</a
+            <a href="profesionales" class="btn btn-2 shadow-sm"
+              >¡Encuentra tu profesional!</a
             >
           </div>
         </div>
