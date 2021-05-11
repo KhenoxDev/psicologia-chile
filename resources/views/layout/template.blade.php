@@ -68,7 +68,7 @@
         <navbar-component current="{{ Route::currentRouteName() }}" img-logo="{{ asset('img/navbar/logo.png') }}">
         </navbar-component>
         {{-- <whatsapp-component></whatsapp-component> --}}
-        <backtop-component></backtop-component>
+        {{-- <backtop-component></backtop-component> --}}
         <btnwhatsapp-component></btnwhatsapp-component>
 
         @yield('content')
