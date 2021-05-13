@@ -18,6 +18,8 @@ Route::middleware('throttle:60,1')->group(function () {
 	Route::get('news/{id?}', 'NewsController@getNews')->name('api.news');
 	Route::get('questions/{order?}', 'FrequentlyQuestionController@getQuestions')->name('api.questions');
 	Route::get('agreement/', 'AgreementController@getAgreements')->name('api.agreement');
+	Route::get('courses/', 'CourseController@getCourses')->name('api.courses');
+	Route::get('course/{id}', 'CourseController@getCourse')->name('api.course');
 	Route::get('logos/', 'LogoController@getLogos')->name('api.logos');
 	Route::get('payments/', 'PaymentMethodController@getPayments')->name('api.payments');
 	Route::get('socials/', 'SocialController@getSocials')->name('api.socials');

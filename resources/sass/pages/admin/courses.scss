@@ -1,0 +1,9 @@
+@import "../../mixins";
+@import "../../variables";
+
+.courses-container {
+	background-color: $white;
+	border-radius: 0.5rem;
+	margin-top: 2rem;
+	padding: 1rem;
+}

@@ -262,6 +262,12 @@ return [
 			'can' => ['admin-only', 'operator-only']
 		],
 		[
+			'text' => 'Cursos',
+			'url'  => 'admin/cursos',
+			'icon' => 'fas fa-fw fa-book',
+			'can' => ['admin-only', 'operator-only']
+		],
+		[
 			'text' => 'Noticias',
 			'icon' => 'far fa-fw fa-newspaper',
 			'submenu' => [

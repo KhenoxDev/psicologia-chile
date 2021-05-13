@@ -89,6 +89,13 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/admin/convenios/psicologos/{id}', 'AgreementController@assignPsch')->name('admin.psicologos.agreements');
 	Route::post('/admin/convenios/enlazar', 'AgreementController@storePsch')->name('admin.store.psch');
 
+	/* Courses */
+	Route::get('/admin/cursos', 'CourseController@index')->name('admin.courses');
+	Route::post('/admin/cursos', 'CourseController@store')->name('admin.store.courses');
+	Route::get('/admin/cursos/editar/{id}', 'CourseController@edit')->name('admin.edit.courses');
+	Route::put('/admin/cursos/editar', 'CourseController@update')->name('admin.update.courses');
+	Route::get('/admin/cursos/desactivar/{id}', 'CourseController@inactive')->name('admin.inactive.courses');
+	Route::get('/admin/cursos/activar/{id}', 'CourseController@active')->name('admin.active.courses');
 
 	/* News */
 	Route::get('/admin/noticias/subir', 'AuthorController@getAuthors')->name('admin.news');
