@@ -1,8 +1,6 @@
 <template>
   <div id="mainSpecialist" class="container mt-4">
-    <span class="title--section">
-      <strong>Espe</strong>cialidades
-    </span>
+    <span class="title--section"> <strong>Espe</strong>cialidades </span>
     <hr class="line--separator" />
     <div class="row">
       <div class="col-lg-3 col-md-3 col-sm-12 cards--container">
@@ -10,7 +8,15 @@
           v-for="item in col1"
           :key="item.id"
           :class="'card--specialist ' + item.class"
-          :style="'background-image: linear-gradient(' + item.colour + ', ' + item.colour + '), url(' + item.image + ');'"
+          :style="
+            'background-image: linear-gradient(' +
+            item.colour +
+            ', ' +
+            item.colour +
+            '), url(' +
+            item.image +
+            ');'
+          "
           :href="'profesionales/spec/' + item.title"
           target="_blank"
         >
@@ -24,15 +30,21 @@
           v-for="item in col2"
           :key="item.id"
           :class="'card--specialist ' + item.class"
-          :style="'background-image: linear-gradient(' + item.colour + ', ' + item.colour + '), url(' + item.image + ');'"
+          :style="
+            'background-image: linear-gradient(' +
+            item.colour +
+            ', ' +
+            item.colour +
+            '), url(' +
+            item.image +
+            ');'
+          "
         >
           <div class="specialist">
             <span class="title--psicologia">{{ item.title }}</span>
-            <a
-              class="btn btn--specialist"
-              href="profesionales"
-              target="_blank"
-            >Encuentra tu especialista</a>
+            <a class="btn btn--specialist" href="profesionales" target="_blank"
+              >Encuentra tu especialista</a
+            >
           </div>
         </div>
       </div>
@@ -41,7 +53,15 @@
           v-for="item in col3"
           :key="item.id"
           :class="'card--specialist ' + item.class"
-          :style="'background-image: linear-gradient(' + item.colour + ', ' + item.colour + '), url(' + item.image + ');'"
+          :style="
+            'background-image: linear-gradient(' +
+            item.colour +
+            ', ' +
+            item.colour +
+            '), url(' +
+            item.image +
+            ');'
+          "
           :href="'profesionales/spec/' + item.title"
           target="_blank"
         >
@@ -59,7 +79,7 @@ export default {
     return {
       col1: [
         {
-          title: "Adicciones",
+          title: "Angustia",
           image: "img/specialists/adicciones.jpg",
           class: "",
           colour: "rgba(120, 87, 102, 0.7)",
